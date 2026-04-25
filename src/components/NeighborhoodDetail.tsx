@@ -93,18 +93,18 @@ export default function NeighborhoodDetail() {
               <p className="text-xl md:text-3xl text-white/60 font-light mb-12">Estamos a apenas <span className="text-white font-bold">{bairro.tempo}</span> de você!</p>
 
               <div className="flex flex-wrap gap-4">
-                 <a 
+                 <a
                   href={`https://wa.me/554130827282?text=Olá! Estou no ${bairro.name} e preciso de pneu/oficina`}
-                  className="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 text-lg hover:bg-red-700 transition-all"
+                  className="bg-primary text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 text-sm hover:bg-yellow-500 transition-all shadow-lg shadow-primary/30 uppercase tracking-tight"
                  >
-                    <MessageSquare size={20} /> Pedir Orçamento
+                    <MessageSquare size={17} /> Pedir Orçamento
                  </a>
-                 <a 
+                 <a
                   href={`https://www.google.com/maps/dir/${bairro.name},+Curitiba/Carplus+Auto+Center`}
                   target="_blank"
-                  className="bg-white text-dark px-8 py-4 rounded-xl font-bold flex items-center gap-2 text-lg hover:bg-gray-100 transition-all"
+                  className="bg-white text-dark px-6 py-3 rounded-full font-bold flex items-center gap-2 text-sm hover:bg-gray-100 transition-all shadow-md uppercase tracking-tight"
                  >
-                    <Navigation size={20} /> Ver Rota no Maps
+                    <Navigation size={17} /> Ver Rota no Maps
                  </a>
               </div>
            </div>

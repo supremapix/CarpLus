@@ -74,7 +74,7 @@ export default function TireDetail() {
         <div className="text-center">
             <h1 className="text-4xl font-bold uppercase mb-4">Pneu não encontrado</h1>
             <p className="text-gray-500 mb-8">O modelo que você procura não consta em nosso catálogo digital ou foi removido.</p>
-            <Link to="/pneus" className="bg-primary text-black px-8 py-4 rounded-xl font-bold uppercase tracking-widest">Ver Catálogo Completo</Link>
+            <Link to="/pneus" className="bg-primary text-black px-7 py-3 rounded-full font-bold uppercase tracking-widest text-sm">Ver Catálogo Completo</Link>
         </div>
         <Footer />
       </div>
@@ -173,7 +173,7 @@ export default function TireDetail() {
                                 whileTap={{ scale: 0.98 }}
                                 href={`https://wa.me/554130827282?text=${encodeURIComponent(whatsappMsg)}`}
                                 target="_blank"
-                                className="flex-grow flex items-center justify-center gap-3 bg-[#25D366] text-white py-5 rounded-2xl font-bold text-xl hover:bg-green-600 transition-all shadow-2xl shadow-green-200"
+                                className="flex-grow flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-full font-bold text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-200"
                              >
                                 <MessageSquare size={24} /> Orçamento no WhatsApp
                              </motion.a>
@@ -181,7 +181,7 @@ export default function TireDetail() {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 href="tel:+554130827282"
-                                className="bg-black text-white px-8 py-5 rounded-2xl font-bold hover:bg-gray-900 transition-all flex items-center justify-center gap-3"
+                                className="bg-black text-white px-7 py-4 rounded-full font-bold hover:bg-gray-900 transition-all flex items-center justify-center gap-3"
                              >
                                 <Phone size={20} /> Ligar
                              </motion.a>
@@ -293,7 +293,7 @@ export default function TireDetail() {
                     <a 
                         href="https://wa.me/554130827282"
                         target="_blank"
-                        className="bg-black text-white px-6 sm:px-12 py-4 sm:py-5 rounded-2xl font-bold text-base sm:text-xl shadow-2xl hover:bg-gray-900 transition-all flex items-center justify-center gap-4 w-full sm:w-auto"
+                        className="bg-black text-white px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base shadow-2xl hover:bg-gray-900 transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
                     >
                          Sair com Pneus Novos Agora <MessageSquare />
                     </a>

@@ -17,13 +17,13 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                <a
                 href="https://wa.me/554130827282"
-                className="bg-black text-white px-7 py-3.5 rounded-xl font-bold text-base hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg"
+                className="bg-black text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
                >
-                  <MessageSquare size={18} /> WhatsApp Agora
+                  <MessageSquare size={17} /> WhatsApp Agora
                </a>
                <a
                 href="tel:+554130827282"
-                className="bg-black/10 text-black px-7 py-3.5 rounded-xl font-bold text-base hover:bg-black/20 border border-black/10 transition-all flex items-center justify-center gap-2"
+                className="bg-black/10 text-black px-7 py-3 rounded-full font-bold text-sm hover:bg-black/20 border border-black/10 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
                >
                   <Phone size={18} /> (41) 3082-7282
                </a>

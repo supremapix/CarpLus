@@ -121,7 +121,7 @@ export default function TireGallery() {
             >
                 <Link 
                     to="/pneus"
-                    className="bg-dark text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-black transition-all shadow-2xl flex items-center gap-3 justify-center max-w-sm mx-auto uppercase italic tracking-tighter"
+                    className="bg-dark text-white px-10 py-3.5 rounded-full font-bold text-base hover:bg-black transition-all shadow-2xl flex items-center gap-3 justify-center max-w-sm mx-auto uppercase italic tracking-tighter"
                 >
                     Ver Catálogo Completo <ChevronRight />
                 </Link>
@@ -164,7 +164,7 @@ export default function TireGallery() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="https://wa.me/554130827282?text=Olá Mauricio! Gostaria de ajuda para escolher os pneus ideais."
-                className="bg-primary text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/30 uppercase tracking-tight"
+                className="bg-primary text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-yellow-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/30 uppercase tracking-tight"
               >
                 <MessageSquare size={15} /> Falar com Maurício
               </motion.a>
@@ -172,7 +172,7 @@ export default function TireGallery() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="tel:+554130827282"
-                className="bg-white/10 border border-white/25 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight backdrop-blur-sm"
+                className="bg-white/10 border border-white/25 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight backdrop-blur-sm"
               >
                 <CheckCircle2 size={15} /> (41) 3082-7282
               </motion.a>

@@ -77,7 +77,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               href="https://wa.me/554130827282" 
               target="_blank" 
-              className="bg-[#25D366] text-white px-5 py-2 rounded-xl font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all text-sm uppercase tracking-tighter shadow-lg"
+              className="bg-[#25D366] text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all text-sm uppercase tracking-tighter shadow-lg"
             >
               <MessageSquare size={16} /> WhatsApp
             </motion.a>

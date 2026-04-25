@@ -45,7 +45,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href="https://wa.me/554130827282"
-              className="bg-primary hover:bg-yellow-600 text-black px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-lg shadow-primary/30"
+              className="bg-primary hover:bg-yellow-600 text-black px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-lg shadow-primary/30"
             >
               <MessageSquare size={17} /> Orçamento no WhatsApp
             </motion.a>
@@ -54,7 +54,7 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
               target="_blank"
-              className="bg-white hover:bg-gray-100 text-dark px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-md"
+              className="bg-white hover:bg-gray-100 text-dark px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-md"
             >
               <Navigation size={16} /> Ir até o Portão
             </motion.a>
@@ -62,7 +62,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href="tel:+554130827282"
-              className="bg-surface hover:bg-gray-700 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight border border-white/10"
+              className="bg-surface hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight border border-white/10"
             >
               <Phone size={16} /> Ligar
             </motion.a>

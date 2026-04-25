@@ -85,7 +85,7 @@ export default function ServiceDetail() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={`https://wa.me/554130827282?text=Olá! Preciso de orçamento para ${service.title}`}
-                  className="bg-primary text-black px-8 py-4 rounded-xl font-bold flex items-center gap-3 text-lg hover:bg-yellow-600 transition-all shadow-xl uppercase tracking-tighter"
+                  className="bg-primary text-black px-7 py-3 rounded-full font-bold flex items-center gap-3 text-sm hover:bg-yellow-600 transition-all shadow-xl uppercase tracking-tight"
                  >
                     <MessageSquare size={20} /> Agendar Serviço
                  </motion.a>
@@ -143,7 +143,7 @@ export default function ServiceDetail() {
                    whileHover={{ scale: 1.03 }}
                    whileTap={{ scale: 0.97 }}
                    href="https://wa.me/554130827282"
-                   className="bg-black text-white px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
+                   className="bg-black text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
                  >
                     <MessageSquare size={16} /> Chamar no WhatsApp
                  </motion.a>
@@ -151,7 +151,7 @@ export default function ServiceDetail() {
                    whileHover={{ scale: 1.03 }}
                    whileTap={{ scale: 0.97 }}
                    href="tel:+554130827282"
-                   className="bg-black/10 border border-black/20 text-black px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-black/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
+                   className="bg-black/10 border border-black/20 text-black px-7 py-3 rounded-full font-bold text-sm hover:bg-black/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
                  >
                     <LucideIcons.Phone size={16} /> (41) 3082-7282
                  </motion.a>

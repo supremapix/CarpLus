@@ -199,13 +199,13 @@ export default function NeighborhoodMap() {
                     <a 
                       href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
                       target="_blank"
-                      className="flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-bold hover:bg-opacity-90 transition-all font-display uppercase tracking-widest"
+                      className="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-full font-bold hover:bg-opacity-90 transition-all font-display uppercase tracking-widest text-sm"
                     >
                        <Navigation size={20} /> Abrir Rota Google
                     </a>
                     <a 
                       href="tel:+554130827282"
-                      className="flex items-center justify-center gap-2 bg-white/10 text-white py-4 rounded-xl font-bold hover:bg-white/20 transition-all border border-white/10"
+                      className="flex items-center justify-center gap-2 bg-white/10 text-white py-3 rounded-full font-bold hover:bg-white/20 transition-all border border-white/10 text-sm"
                     >
                        <LocateFixed size={20} /> Meu GPS Atual
                     </a>
@@ -249,7 +249,7 @@ export default function NeighborhoodMap() {
                        <a 
                          href="https://wa.me/554130827282?text=Olá! Encontrei vocês pelo mapa e gostaria de um orçamento."
                          target="_blank"
-                         className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 px-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm"
+                         className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 px-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg text-sm"
                        >
                           <MessageSquare size={18} /> Orçamento no WhatsApp
                        </a>
