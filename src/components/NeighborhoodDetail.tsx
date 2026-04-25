@@ -81,7 +81,7 @@ export default function NeighborhoodDetail() {
                 className="w-full h-full object-cover"
                 alt="Curitiba"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/50 to-dark/20" />
+              <div className="absolute inset-0 bg-black/60" />
            </div>
 
            <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-32 pb-24">
