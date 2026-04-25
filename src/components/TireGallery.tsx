@@ -138,39 +138,43 @@ export default function TireGallery() {
           {/* Background image */}
           <div className="absolute inset-0">
             <img
-              src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/slider-mauricio-carplus.webp"
-              alt="Maurício especialista"
-              className="w-full h-full object-cover object-top"
+              src="/carplus-oficina-de-pneus-portao-em-curitba-cwb.png"
+              alt="Loja de pneus Carplus"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/70 to-black/20" />
           </div>
 
           {/* Content over image */}
-          <div className="relative z-10 p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="relative z-10 px-10 py-12 md:px-16 md:py-14 flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/40 text-green-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                Disponível agora
+              <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-primary px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Consultoria gratuita
               </div>
-              <h3 className="text-3xl md:text-4xl font-black mb-2 text-white leading-tight uppercase italic tracking-tighter">Dúvida sobre o pneu ideal?</h3>
-              <p className="text-sm font-medium text-white/70 max-w-md">Fale com o Maurício e receba uma consultoria técnica gratuita.</p>
+              <h3 className="text-3xl md:text-5xl font-black mb-3 text-white leading-tight uppercase italic tracking-tighter">
+                Dúvida sobre o<br className="hidden md:block" /> pneu ideal?
+              </h3>
+              <p className="text-sm md:text-base font-medium text-white/65 max-w-sm">
+                Fale com o Maurício e receba uma consultoria técnica gratuita.
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="https://wa.me/554130827282?text=Olá Mauricio! Gostaria de ajuda para escolher os pneus ideais."
-                className="bg-primary text-black px-7 py-3 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
+                className="bg-primary text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/30 uppercase tracking-tight"
               >
-                <MessageSquare size={16} /> Falar com Maurício
+                <MessageSquare size={15} /> Falar com Maurício
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="tel:+554130827282"
-                className="bg-white/10 border border-white/20 text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
+                className="bg-white/10 border border-white/25 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight backdrop-blur-sm"
               >
-                <CheckCircle2 size={16} /> (41) 3082-7282
+                <CheckCircle2 size={15} /> (41) 3082-7282
               </motion.a>
             </div>
           </div>
