@@ -138,11 +138,11 @@ export default function TireGallery() {
           {/* Background image */}
           <div className="absolute inset-0">
             <img
-              src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/slider-mauricio-carplus.webp"
+              src="/image.png"
               alt="Maurício especialista"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent" />
           </div>
 
           {/* Content over image */}
