@@ -1,14 +1,48 @@
 
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import { NEIGHBORHOODS } from '../data';
-import { Navigation, ArrowLeft, Clock, MapPin, MessageSquare, Star, ChevronRight } from 'lucide-react';
+import { Navigation, ArrowLeft, Clock, MapPin, MessageSquare, Star, ChevronDown } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { motion } from 'motion/react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { motion, AnimatePresence } from 'motion/react';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useSEO } from '../hooks/useSEO';
+import { getFaqCompleto } from '../data/faqBairros';
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-gray-100 last:border-none">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-5 px-6 flex justify-between items-center text-left group"
+      >
+        <span className={`text-base font-bold transition-colors pr-4 ${isOpen ? 'text-primary' : 'text-dark'}`}>{q}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          className={`p-1.5 rounded-full flex-shrink-0 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
+        >
+          <ChevronDown size={18} />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <p className="px-6 pb-5 text-gray-500 leading-relaxed">{a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function NeighborhoodDetail() {
   const { slug } = useParams();
@@ -67,6 +101,7 @@ export default function NeighborhoodDetail() {
   if (!bairro) return <div>Bairro não encontrado</div>;
 
   const carplusPos: [number, number] = [-25.4770, -49.2845];
+  const faqItems = getFaqCompleto(bairro.name, slugForUrl || '', bairro.tempo, bairro.via);
 
   return (
     <div className="bg-white min-h-screen">
@@ -208,6 +243,31 @@ export default function NeighborhoodDetail() {
                 </div>
               ))}
            </div>
+        </section>
+        {/* FAQ por Bairro */}
+        <section className="py-24 bg-white">
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="flex items-center gap-4 mb-10 text-primary uppercase font-bold tracking-[0.3em] text-xs">
+              <div className="w-12 h-px bg-primary" />
+              Dúvidas Frequentes
+            </div>
+            <h2 className="text-4xl mb-12">Perguntas de quem vem do <span className="text-primary italic">{bairro.name}</span></h2>
+            <div className="rounded-3xl border border-gray-100 shadow-xl overflow-hidden">
+              {faqItems.map((item, i) => (
+                <FaqItem key={i} q={item.question} a={item.answer} />
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href={`https://wa.me/554130827282?text=Olá! Moro no ${bairro.name} e tenho uma dúvida.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-opacity-90 transition-all"
+              >
+                <MessageSquare size={16} /> Pergunte no WhatsApp
+              </a>
+            </div>
+          </div>
         </section>
       </main>
 

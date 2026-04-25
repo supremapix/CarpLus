@@ -6,10 +6,10 @@
   --font-display: "Barlow Condensed", sans-serif;
   --font-accent: "Oswald", sans-serif;
 
-  --color-primary: #FAB115;
+  --color-primary: #f59c00;
   --color-dark: #000000;
   --color-surface: #1A1A1A;
-  --color-accent: #FAB115;
+  --color-accent: #f59c00;
 
   @keyframes heartbeat {
     0% { transform: scale(1); }

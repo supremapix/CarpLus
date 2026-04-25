@@ -87,7 +87,7 @@ export default function Hero() {
           to { transform: translateX(-50%); }
         }
         .animate-infinite-scroll {
-          animation: infinite-scroll 40s linear infinite;
+          animation: infinite-scroll 18s linear infinite;
         }
       `}</style>
     </section>

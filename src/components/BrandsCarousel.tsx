@@ -146,7 +146,7 @@ export default function BrandsCarousel() {
           to { transform: translateX(-50%); }
         }
         .animate-brands-scroll {
-          animation: brands-scroll 40s linear infinite;
+          animation: brands-scroll 18s linear infinite;
         }
       `}</style>
     </section>
