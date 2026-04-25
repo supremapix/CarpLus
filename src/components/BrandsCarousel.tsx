@@ -12,11 +12,11 @@ export default function BrandsCarousel() {
 
       {/* Desktop Background Image - Maurício */}
       <div className="hidden md:block absolute inset-0 z-0 select-none pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/60 via-40% to-transparent z-10" />
-        <img 
-          src="https://portao.carpluspneuseoficina.com.br/imagens/vendedor-telas-maiores.webp" 
-          alt="" 
-          className="w-full h-full object-cover object-right opacity-60"
+        <div className="absolute inset-0 bg-gradient-to-l from-dark via-dark/60 via-40% to-transparent z-10" />
+        <img
+          src="https://portao.carpluspneuseoficina.com.br/imagens/vendedor-telas-maiores.webp"
+          alt=""
+          className="w-full h-full object-cover object-left opacity-60"
         />
       </div>
 
@@ -28,12 +28,14 @@ export default function BrandsCarousel() {
             Consultoria Técnica Gratuita
         </div>
 
-        <div className="flex flex-col md:grid md:grid-cols-[1.2fr_1fr] items-center gap-12 lg:gap-24">
-          
-          {/* COLUNA: Conteúdo (Left on PC) */}
-          <div className="w-full space-y-8 md:space-y-10 order-1 text-center md:text-left relative">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_1.2fr] items-center gap-12 lg:gap-24">
+
+          {/* COLUNA ESQUERDA: vazia no desktop / foto no mobile (order muda) */}
+
+          {/* COLUNA: Conteúdo (Right on PC) */}
+          <div className="w-full space-y-8 md:space-y-10 order-1 md:order-2 text-center md:text-right relative md:col-start-2">
             {/* Desktop Only Floating Tag */}
-            <div className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 font-display font-bold text-[10px] tracking-[0.15em] text-white w-fit mb-6">
+            <div className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 font-display font-bold text-[10px] tracking-[0.15em] text-white w-fit mb-6 md:ml-auto">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C853] shadow-[0_0_8px_#00C853] animate-pulse" />
                 ONLINE AGORA
             </div>
@@ -53,7 +55,7 @@ export default function BrandsCarousel() {
                    FALE COM UM<br/>
                    <span className="text-primary not-italic">ESPECIALISTA</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed">
+                <p className="text-xl md:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:ml-auto md:mr-0 leading-tight md:leading-relaxed">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>
             </motion.div>
@@ -83,21 +85,21 @@ export default function BrandsCarousel() {
             {/* Info de Contato vs Botão Mobile */}
             <div className="pt-6 border-t border-white/5 space-y-6">
                 {/* Desktop Contact Info */}
-                <div className="hidden md:flex flex-col gap-5">
-                    <div className="flex items-center gap-4">
+                <div className="hidden md:flex flex-col gap-5 md:items-end">
+                    <div className="flex items-center gap-4 flex-row-reverse">
                         <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <Phone className="text-primary" size={20} />
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col md:items-end">
                             <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Ligue ou chame agora</span>
                             <strong className="text-primary font-display font-black text-xl tracking-wide">(41) 3082-7282</strong>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-row-reverse">
                         <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <Clock className="text-primary" size={20} />
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col md:items-end">
                             <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Horário de atendimento</span>
                             <strong className="text-primary font-display font-black text-lg tracking-wide">Seg–Sex 8h–18h | Sáb 8h–13h</strong>
                         </div>
@@ -122,8 +124,8 @@ export default function BrandsCarousel() {
             </div>
           </div>
 
-          {/* COLUNA DIREITA: Foto no Mobile / Vazia no Desktop */}
-          <div className="w-full relative order-2 flex justify-center md:hidden">
+          {/* COLUNA ESQUERDA: Foto no Mobile / Vazia no Desktop */}
+          <div className="w-full relative order-2 md:order-1 md:col-start-1 flex justify-center md:hidden">
              <div className="relative w-full max-w-[500px] h-[400px] overflow-visible">
                 {/* Tag "Online Agora" - Mobile only here */}
                 <div className="absolute top-10 left-0 z-30 flex items-center gap-2 bg-dark/90 backdrop-blur-md border border-white/10 rounded-full px-5 py-2.5 font-display font-bold text-[11px] tracking-[0.15em] text-white">
@@ -133,16 +135,14 @@ export default function BrandsCarousel() {
 
                 {/* Foto do especialista Mobile */}
                 <picture className="contents">
-                    <img 
-                        src="https://portao.carpluspneuseoficina.com.br/imagens/carplus-vendedor-mobile.webp" 
-                        alt="Maurício – Especialista em Pneus Carplus Curitiba" 
+                    <img
+                        src="https://portao.carpluspneuseoficina.com.br/imagens/carplus-vendedor-mobile.webp"
+                        alt="Maurício – Especialista em Pneus Carplus Curitiba"
                         className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto max-w-none z-20 object-contain object-bottom drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
                     />
                 </picture>
              </div>
           </div>
-
-          <div className="hidden md:block" />
         </div>
       </div>
 
