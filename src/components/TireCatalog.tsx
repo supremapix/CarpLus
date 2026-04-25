@@ -63,50 +63,52 @@ export default function TireCatalog() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-dark py-12 md:py-20 text-white relative overflow-hidden">
+      <section className="bg-dark pb-0 pt-12 md:pt-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img 
-            src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp" 
+          <img
+            src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp"
             className="w-full h-full object-cover"
             alt="Fundo"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
-              ⭐ Revendedor Multimarcas
+              Revendedor Multimarcas
             </span>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tighter italic">
-              Catálogo de Pneus <br /> 
+              Catálogo de Pneus <br />
               em Curitiba
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8 font-medium">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto font-medium">
               Encontre o pneu ideal para seu carro com filtros avançados por medida, aro, categoria e modelo de veículo. Montagem técnica gratuita no Portão.
             </p>
-            <div className="mt-12 -mx-6 overflow-hidden relative">
-               <div className="flex gap-12 whitespace-nowrap animate-infinite-scroll py-4">
-                  {Array(4).fill(["PIRELLI", "MICHELIN", "GOODYEAR", "CONTINENTAL", "FIRESTONE", "BRIDGESTONE", "YOKOHAMA", "DUNLOP"]).flat().map((brand, i) => (
-                    <span key={i} className="text-white/20 font-black text-5xl md:text-7xl uppercase italic tracking-tighter select-none">
-                      {brand}
-                    </span>
-                  ))}
-               </div>
-               
-               <style>{`
-                  @keyframes infinite-scroll {
-                    from { transform: translateX(0); }
-                    to { transform: translateX(-50%); }
-                  }
-                  .animate-infinite-scroll {
-                    animation: infinite-scroll 50s linear infinite;
-                  }
-               `}</style>
-            </div>
           </motion.div>
         </div>
+
+        {/* Brand Ticker — rente ao final do hero */}
+        <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
+          <div className="flex gap-12 whitespace-nowrap animate-tire-scroll">
+            {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE']).flat().map((brand, i) => (
+              <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes tire-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          .animate-tire-scroll {
+            animation: tire-scroll 40s linear infinite;
+          }
+        `}</style>
       </section>
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
