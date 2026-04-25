@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, ChevronRight, CheckCircle2, Search, Filter, CircleHelp } from 'lucide-react';
+import { MessageSquare, ChevronRight, CircleCheck as CheckCircle2, Search, ListFilter as Filter, Circle as CircleHelp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TIRES } from '../data';
 import TireCard from './TireCard';
@@ -129,38 +129,51 @@ export default function TireGallery() {
         </div>
 
         {/* Specialist Advice CTA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 bg-primary rounded-[3rem] p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl shadow-primary/20"
+          className="mt-20 relative rounded-[2.5rem] overflow-hidden shadow-2xl min-h-[260px]"
         >
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="relative group">
-                <img 
-                    src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/slider-mauricio-carplus.webp" 
-                    alt="Maurício especialista" 
-                    className="w-24 h-24 rounded-full object-cover border-4 border-black group-hover:scale-110 transition-transform"
-                />
-                <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-primary animate-pulse" />
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <img
+              src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/slider-mauricio-carplus.webp"
+              alt="Maurício especialista"
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/30" />
+          </div>
+
+          {/* Content over image */}
+          <div className="relative z-10 p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/40 text-green-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                Disponível agora
+              </div>
+              <h3 className="text-3xl md:text-4xl font-black mb-2 text-white leading-tight uppercase italic tracking-tighter">Dúvida sobre o pneu ideal?</h3>
+              <p className="text-sm font-medium text-white/70 max-w-md">Fale com o Maurício e receba uma consultoria técnica gratuita.</p>
             </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-4xl md:text-5xl font-black mb-2 text-black leading-none uppercase italic tracking-tighter">Dúvida sobre o pneu ideal?</h3>
-              <p className="text-xl font-bold text-black/70">Fale com o Maurício agora e receba uma consultoria técnica gratuita.</p>
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
+              <motion.a
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                href="https://wa.me/554130827282?text=Olá Mauricio! Gostaria de ajuda para escolher os pneus ideais."
+                className="bg-primary text-black px-7 py-3 rounded-xl font-bold text-sm hover:bg-yellow-500 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
+              >
+                <MessageSquare size={16} /> Falar com Maurício
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                href="tel:+554130827282"
+                className="bg-white/10 border border-white/20 text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-white/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
+              >
+                <CheckCircle2 size={16} /> (41) 3082-7282
+              </motion.a>
             </div>
           </div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full lg:w-auto"
-          >
-            <a 
-               href="https://wa.me/554130827282?text=Olá Mauricio! Gostaria de ajuda para escolher os pneus ideais."
-               className="bg-black text-white px-10 py-6 rounded-3xl font-black text-2xl hover:bg-gray-900 transition-all flex items-center justify-center gap-4 whitespace-nowrap shadow-2xl uppercase tracking-tighter w-full"
-            >
-              FALAR COM MAURÍCIO <MessageSquare size={32} />
-            </a>
-          </motion.div>
         </motion.div>
       </div>
     </section>

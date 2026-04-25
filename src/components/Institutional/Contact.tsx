@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
-      <main className="pt-[160px] pb-24">
+      <main className="pt-[100px] pb-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-6xl mb-4">Entre em <span className="text-primary italic">Contato</span></h1>

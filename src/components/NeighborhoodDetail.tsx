@@ -21,7 +21,7 @@ export default function NeighborhoodDetail() {
     <div className="bg-white min-h-screen">
       <Navbar />
       
-      <main className="pt-[140px] md:pt-[120px]">
+      <main className="pt-[100px] md:pt-[90px]">
         {/* Sub-Hero */}
         <section className="relative py-24 bg-dark text-white overflow-hidden">
            <div className="absolute inset-0 opacity-20">

@@ -23,14 +23,12 @@ export default function Navbar() {
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#')) {
-      if (window.location.pathname === '/') {
-        e.preventDefault();
-        const id = href.replace('/#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+    if (href.startsWith('/#') && window.location.pathname === '/') {
+      e.preventDefault();
+      const id = href.replace('/#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
     setIsMobileMenuOpen(false);
@@ -52,13 +50,13 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className={`transition-all duration-300 px-4 ${isScrolled ? 'bg-dark shadow-xl py-2' : 'bg-dark py-4'}`}>
+      <nav className={`transition-all duration-300 px-4 ${isScrolled ? 'bg-dark shadow-xl py-2' : 'bg-dark py-3'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex-shrink-1">
             <img 
               src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg" 
               alt="Carplus Auto Center" 
-              className={`transition-all duration-300 w-auto ${isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`}
+              className={`transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
           </Link>
 

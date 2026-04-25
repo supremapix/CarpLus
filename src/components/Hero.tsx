@@ -4,7 +4,7 @@ import { Star, MapPin, CreditCard, Wrench, MessageSquare, Navigation, Phone } fr
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-dark pt-[120px] md:pt-[100px]">
+    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-dark">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/70 to-primary/20" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 pt-20">
+      <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -40,31 +40,31 @@ export default function Hero() {
             Pneus das melhores marcas a partir de R$ 269,00 à vista! Parcelamento em até 10x sem juros. Atendemos toda Curitiba e Região.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-12">
-            <motion.a 
+          <div className="flex flex-wrap gap-3 mb-10">
+            <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="https://wa.me/554130827282" 
-              className="bg-primary hover:bg-yellow-600 text-black px-6 py-4 rounded-xl font-bold text-lg flex items-center gap-2 transition-all transform uppercase tracking-tighter shadow-lg shadow-primary/30 whitespace-nowrap"
+              href="https://wa.me/554130827282"
+              className="bg-primary hover:bg-yellow-600 text-black px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-lg shadow-primary/30"
             >
-              <MessageSquare size={22} /> Orçamento no WhatsApp
+              <MessageSquare size={17} /> Orçamento no WhatsApp
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7" 
+              href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
               target="_blank"
-              className="bg-white hover:bg-gray-100 text-dark px-6 py-4 rounded-xl font-bold text-base flex items-center gap-2 transition-all transform uppercase tracking-tighter shadow-xl"
+              className="bg-white hover:bg-gray-100 text-dark px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-md"
             >
-              <Navigation size={18} /> Ir até o Portão
+              <Navigation size={16} /> Ir até o Portão
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="tel:+554130827282" 
-              className="bg-surface hover:bg-gray-700 text-white px-6 py-4 rounded-xl font-bold text-base flex items-center gap-2 transition-all transform uppercase tracking-widest border border-white/10"
+              href="tel:+554130827282"
+              className="bg-surface hover:bg-gray-700 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight border border-white/10"
             >
-              <Phone size={18} /> Ligar
+              <Phone size={16} /> Ligar
             </motion.a>
           </div>
 

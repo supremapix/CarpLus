@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
-      <main className="pt-[160px] pb-24">
+      <main className="pt-[100px] pb-24">
         <section className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>

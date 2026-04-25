@@ -8,24 +8,24 @@ export default function Footer() {
     <>
     <footer className="bg-dark text-white pt-24 pb-4">
       {/* Pre-footer CTA */}
-      <div className="max-w-7xl mx-auto px-4 -mt-40 mb-24 relative z-10">
-         <div className="bg-primary p-12 md:p-20 rounded-[40px] flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl shadow-primary/30">
+      <div className="max-w-7xl mx-auto px-4 mb-20 relative z-10">
+         <div className="bg-primary p-10 md:p-14 rounded-[32px] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl shadow-primary/30">
             <div className="text-center lg:text-left">
-               <h2 className="text-5xl lg:text-7xl mb-4 leading-none text-black">Precisa de Pneus <br /> ou Oficina?</h2>
-               <p className="text-black/70 text-xl font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
+               <h2 className="text-4xl lg:text-5xl mb-3 leading-tight text-black">Precisa de Pneus <br /> ou Oficina?</h2>
+               <p className="text-black/70 text-base font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-               <a 
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+               <a
                 href="https://wa.me/554130827282"
-                className="bg-black text-white px-10 py-5 rounded-2xl font-bold text-2xl hover:bg-gray-900 transition-all flex items-center justify-center gap-3 shadow-xl"
+                className="bg-black text-white px-7 py-3.5 rounded-xl font-bold text-base hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg"
                >
-                  <MessageSquare size={28} /> WhatsApp Agora
+                  <MessageSquare size={18} /> WhatsApp Agora
                </a>
-               <a 
+               <a
                 href="tel:+554130827282"
-                className="bg-black/10 text-black px-10 py-5 rounded-2xl font-bold text-2xl hover:bg-black/20 border border-black/10 transition-all flex items-center justify-center gap-3"
+                className="bg-black/10 text-black px-7 py-3.5 rounded-xl font-bold text-base hover:bg-black/20 border border-black/10 transition-all flex items-center justify-center gap-2"
                >
-                  <Phone size={28} /> (41) 3082-7282
+                  <Phone size={18} /> (41) 3082-7282
                </a>
             </div>
          </div>

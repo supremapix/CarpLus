@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';
+import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
@@ -59,7 +59,7 @@ export default function TireCatalog() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 md:pt-40">
+    <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
       <Navbar />
       
       {/* Hero Section */}

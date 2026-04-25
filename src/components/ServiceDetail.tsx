@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES } from '../data';
-import { ArrowLeft, MessageSquare, CheckCircle, Star, ChevronRight } from 'lucide-react';
+import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
@@ -18,7 +18,7 @@ export default function ServiceDetail() {
     <div className="bg-white min-h-screen">
       <Navbar />
       
-      <main className="pt-[140px] md:pt-[120px]">
+      <main className="pt-[100px] md:pt-[90px]">
         {/* Hero */}
         <section className="relative py-24 bg-dark text-white overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
@@ -89,26 +89,26 @@ export default function ServiceDetail() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-primary text-black">
+        <section className="py-20 bg-primary text-black">
            <div className="max-w-7xl mx-auto px-4 text-center">
-              <h2 className="text-4xl lg:text-7xl mb-8 leading-none italic uppercase">Resolva o Problema <br/> do seu Carro Hoje</h2>
-              <p className="text-xl mb-12 max-w-2xl mx-auto opacity-70">Não deixe para depois. Pequenas manutenções evitam gastos altos no futuro. Peça seu orçamento pelo WhatsApp.</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                 <motion.a 
-                   whileHover={{ scale: 1.05 }}
-                   whileTap={{ scale: 0.95 }}
+              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase">Resolva o Problema <br/> do seu Carro Hoje</h2>
+              <p className="text-base mb-8 max-w-2xl mx-auto opacity-70">Não deixe para depois. Pequenas manutenções evitam gastos altos no futuro.</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
+                 <motion.a
+                   whileHover={{ scale: 1.03 }}
+                   whileTap={{ scale: 0.97 }}
                    href="https://wa.me/554130827282"
-                   className="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-900 transition-all flex items-center justify-center gap-3 shadow-2xl uppercase tracking-tighter"
+                   className="bg-black text-white px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
                  >
-                    <MessageSquare size={20} /> Chamar no WhatsApp
+                    <MessageSquare size={16} /> Chamar no WhatsApp
                  </motion.a>
-                 <motion.a 
-                   whileHover={{ scale: 1.05 }}
-                   whileTap={{ scale: 0.95 }}
+                 <motion.a
+                   whileHover={{ scale: 1.03 }}
+                   whileTap={{ scale: 0.97 }}
                    href="tel:+554130827282"
-                   className="bg-black/10 border border-black/20 text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-black/20 transition-all flex items-center justify-center gap-3 uppercase tracking-tighter"
+                   className="bg-black/10 border border-black/20 text-black px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-black/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
                  >
-                    <LucideIcons.Phone size={20} /> (41) 3082-7282
+                    <LucideIcons.Phone size={16} /> (41) 3082-7282
                  </motion.a>
               </div>
            </div>

@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
-      <main className="pt-[160px] pb-24 max-w-4xl mx-auto px-4">
+      <main className="pt-[100px] pb-24 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl mb-8">Política de Privacidade</h1>
         <div className="prose prose-lg text-gray-600 space-y-6">
           <p>Na Carplus Auto Center, a sua privacidade é uma prioridade. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você visita nosso site ou utiliza nossos serviços em nossa loja no Portão, Curitiba.</p>

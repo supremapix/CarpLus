@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MessageSquare, Phone, Navigation, ChevronRight, CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront } from 'lucide-react';
+import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront } from 'lucide-react';
 import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -50,7 +50,7 @@ export default function TireDetail() {
 
   if (!tire) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6 pt-32 md:pt-40">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6 pt-24 md:pt-28">
         <Navbar />
         <div className="text-center">
             <h1 className="text-4xl font-bold uppercase mb-4">Pneu não encontrado</h1>
@@ -67,7 +67,7 @@ export default function TireDetail() {
   const whatsappMsg = `Olá! Vi no site o pneu *${tire.nome}* (Medida: ${tire.medida}). Gostaria de consultar o preço e disponibilidade para meu carro.`;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 md:pt-40">
+    <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
