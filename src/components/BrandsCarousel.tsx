@@ -145,6 +145,27 @@ export default function BrandsCarousel() {
           <div className="hidden md:block" />
         </div>
       </div>
+
+      {/* Brand Ticker */}
+      <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
+        <div className="flex gap-12 whitespace-nowrap animate-brands-scroll">
+          {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE']).flat().map((brand, i) => (
+            <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
+              {brand}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes brands-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .animate-brands-scroll {
+          animation: brands-scroll 40s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
