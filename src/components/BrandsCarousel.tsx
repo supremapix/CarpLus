@@ -5,7 +5,7 @@ import { MessageSquare, Star, ShieldCheck, Phone, Clock } from 'lucide-react';
 
 export default function BrandsCarousel() {
   return (
-    <section className="bg-dark pt-16 md:pt-0 md:pb-0 overflow-hidden relative border-b border-white/10" id="especialista">
+    <section className="bg-dark pt-16 md:pt-0 md:pb-0 overflow-hidden relative border-b border-white/10 [overflow-clip-margin:0]" id="especialista">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none z-0" />
@@ -123,8 +123,8 @@ export default function BrandsCarousel() {
           </div>
 
           {/* COLUNA DIREITA: Foto no Mobile / Vazia no Desktop */}
-          <div className="w-full relative order-2 flex justify-center md:hidden">
-             <div className="relative w-full h-[520px] overflow-visible">
+          <div className="w-full relative order-2 flex justify-center md:hidden overflow-hidden">
+             <div className="relative w-full h-[520px]">
                 {/* Tag "Online Agora" - Mobile only */}
                 <div className="absolute top-6 left-0 z-30 flex items-center gap-2 bg-dark/90 backdrop-blur-md border border-white/10 rounded-full px-5 py-2.5 font-display font-bold text-[11px] tracking-[0.15em] text-white">
                   <span className="w-2 h-2 rounded-full bg-[#00C853] shadow-[0_0_8px_#00C853] animate-pulse" />
