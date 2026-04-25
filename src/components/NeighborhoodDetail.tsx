@@ -84,7 +84,7 @@ export default function NeighborhoodDetail() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/50 to-dark/20" />
            </div>
 
-           <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-32 pb-16">
+           <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-32 pb-24">
               <Link to="/#bairros" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:gap-4 transition-all">
                  <ArrowLeft size={16} /> Voltar para lista
               </Link>
