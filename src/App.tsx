@@ -11,6 +11,7 @@ import ReturnPolicy from './components/Institutional/ReturnPolicy';
 import AboutUs from './components/Institutional/AboutUs';
 import Contact from './components/Institutional/Contact';
 import Sitemap from './components/Sitemap';
+import NotFound from './components/NotFound';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ export default function App() {
       <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
       <Route path="/trocas-e-devolucoes" element={<ReturnPolicy />} />
       <Route path="/sitemap" element={<Sitemap />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

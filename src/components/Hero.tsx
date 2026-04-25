@@ -1,6 +1,6 @@
 
 import { motion } from 'motion/react';
-import { Star, MapPin, CreditCard, Wrench, MessageSquare, Navigation, Phone } from 'lucide-react';
+import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -22,12 +22,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-4 py-1.5 rounded-full mb-6 font-medium text-sm">
-            <Star size={14} fill="currentColor" />
-            <span>4,9/5 · 312+ Avaliações Google</span>
-          </div>
-
           <h1 className="text-6xl md:text-8xl text-white mb-2 leading-[0.9] font-bold">
             PNEUS <br />
             <span className="text-primary">EM CURITIBA</span>
@@ -41,14 +35,6 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="https://wa.me/554130827282"
-              className="bg-primary hover:bg-yellow-600 text-black px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-lg shadow-primary/30"
-            >
-              <MessageSquare size={17} /> Orçamento no WhatsApp
-            </motion.a>
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

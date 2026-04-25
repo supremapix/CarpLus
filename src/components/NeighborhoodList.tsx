@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function NeighborhoodList() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState<'all' | 'sul' | 'centro' | 'metro'>('all');
+  const [filter, setFilter] = useState<'all' | 'sul' | 'centro'>('all');
 
   const filtered = NEIGHBORHOODS.filter(b => {
     const matchesSearch = b.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -73,7 +73,6 @@ export default function NeighborhoodList() {
                 { id: 'all', label: 'Todos' },
                 { id: 'sul', label: 'Zona Sul' },
                 { id: 'centro', label: 'Central' },
-                { id: 'metro', label: 'Região Metro' },
               ].map(f => (
                 <button
                   key={f.id}

@@ -242,7 +242,7 @@ export default function Reviews() {
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
-            <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS – 312+ AVALIAÇÕES</span>
+            <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS – 208+ AVALIAÇÕES</span>
           </div>
           <h2 className="text-dark text-5xl mb-4 leading-none">O Que Nossos Clientes <span className="text-primary italic">Dizem</span></h2>
           <p className="text-gray-500 text-xl font-light">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
