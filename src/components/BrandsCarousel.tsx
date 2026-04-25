@@ -5,15 +5,14 @@ import { MessageSquare, Star, ShieldCheck, Phone, Clock } from 'lucide-react';
 
 export default function BrandsCarousel() {
   return (
-    <section className="bg-dark pt-0 md:pt-0 md:pb-0 overflow-hidden relative border-b border-white/10 min-h-[520px] md:min-h-0" id="especialista">
+    <section className="bg-dark pt-16 md:pt-0 md:pb-0 overflow-hidden relative border-b border-white/10" id="especialista">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none z-0" />
 
-      {/* Background Image - Maurício (mobile + desktop) */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 via-50% to-dark/20 z-10 md:block" />
-        <div className="absolute inset-0 md:hidden bg-gradient-to-b from-dark/30 via-dark/50 to-dark z-10" />
+      {/* Desktop Background Image - Maurício */}
+      <div className="hidden md:block absolute inset-0 z-0 select-none pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 via-50% to-dark/20 z-10" />
         <img
           src="https://portao.carpluspneuseoficina.com.br/imagens/vendedor-telas-maiores.webp"
           alt=""
@@ -21,7 +20,7 @@ export default function BrandsCarousel() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10 py-24 md:py-32 lg:py-48">
+      <div className="max-w-7xl mx-auto px-4 relative z-10 py-16 md:py-32 lg:py-48">
         
         {/* Desktop Badge */}
         <div className="hidden md:flex items-center justify-center gap-3 bg-white/5 border border-primary/30 text-primary px-6 py-2 rounded-full mb-16 font-display font-bold text-[12px] uppercase tracking-[0.25em] w-fit mx-auto backdrop-blur-sm">
@@ -123,6 +122,25 @@ export default function BrandsCarousel() {
             </div>
           </div>
 
+          {/* COLUNA DIREITA: Foto no Mobile / Vazia no Desktop */}
+          <div className="w-full relative order-2 flex justify-center md:hidden">
+             <div className="relative w-full h-[520px] overflow-visible">
+                {/* Tag "Online Agora" - Mobile only */}
+                <div className="absolute top-6 left-0 z-30 flex items-center gap-2 bg-dark/90 backdrop-blur-md border border-white/10 rounded-full px-5 py-2.5 font-display font-bold text-[11px] tracking-[0.15em] text-white">
+                  <span className="w-2 h-2 rounded-full bg-[#00C853] shadow-[0_0_8px_#00C853] animate-pulse" />
+                  ONLINE AGORA
+                </div>
+
+                {/* Foto do especialista Mobile */}
+                <picture className="contents">
+                    <img
+                        src="https://portao.carpluspneuseoficina.com.br/imagens/carplus-vendedor-mobile.webp"
+                        alt="Maurício – Especialista em Pneus Carplus Curitiba"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto max-w-none z-20 object-contain object-bottom drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
+                    />
+                </picture>
+             </div>
+          </div>
         </div>
       </div>
 
