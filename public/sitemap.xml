@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ============================== -->
+  <!-- PÁGINAS INSTITUCIONAIS         -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneus</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/quem-somos</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/contato</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/politica-de-privacidade</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/trocas-e-devolucoes</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- SERVIÇOS                       -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/loja-de-pneus</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/alinhamento-3d</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/troca-de-oleo</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/scanner-automotivo</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/suspensao-e-freios</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/ar-condicionado</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/manutencao-motor</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/conserto-de-rodas</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/servico/correia-dentada</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – PIRELLI                -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r13-p400-evo-82t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-pirelli-p400-evo-600x600.webp</image:loc>
+      <image:title>Pirelli 175/70R13 P400 Evo 82T – Loja de Pneus Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r13-p400-evo-82t-chevrolet-celta</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-pirelli-p400-evo-600x600.webp</image:loc>
+      <image:title>Pirelli P400 Evo para Chevrolet Celta – Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r13-p400-evo-82t-chevrolet-classic</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r13-p400-evo-82t-fiat-uno</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r14-p400-evo-84t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-pirelli-p400-evo-600x600.webp</image:loc>
+      <image:title>Pirelli 175/70R14 P400 Evo 84T – Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r14-p400-evo-84t-chevrolet-celta</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-70r14-p400-evo-84t-honda-fit</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-175-80r14-w-cita-88t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-185-55r15-p7-all-season-82h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-185-60r15-p7-88h-xl</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-185-60r14-p400-evo-82h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-185-65r14-p400-evo-86t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-pirelli-p400-evo-600x600.webp</image:loc>
+      <image:title>Pirelli 185/65R14 P400 Evo 86T – Medida mais popular do Brasil</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-195-55r15-p400-evo-85h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-195-60r15-p400-evo-88h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-pirelli-p400-evo-600x600.webp</image:loc>
+      <image:title>Pirelli 195/60R15 P400 Evo 88H – Loja Curitiba Portão</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-195-60r15-p400-evo-88h-chevrolet-cruze</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-195-60r15-p400-evo-88h-chevrolet-onix</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-195-60r15-p400-evo-88h-fiat-argo</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-pirelli-205-45r17-p-zero-84v-run-flat</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/07/pneu-205-45r17-pirelli-pzero.webp</image:loc>
+      <image:title>Pirelli P Zero Run Flat 205/45R17 – Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – MICHELIN               -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-185-65r15-energy-xm2-88h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-205-55r16-primacy-4-91v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-225-45r17-pilot-sport-4-94y</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-215-50r17-primacy-4-95v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-235-60r18-primacy-suv-103v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-michelin-245-45r18-pilot-sport-4-100y</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – GOODYEAR               -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-goodyear-185-65r15-direction-touring-88h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-goodyear-205-55r16-efficientgrip-performance-91v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-goodyear-175-65r14-direction-touring-82t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-goodyear-225-65r17-efficientgrip-suv-102h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-goodyear-265-70r16-wrangler-at-silenttrac-112t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – CONTINENTAL            -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-continental-195-65r15-conticomfortcontact-cc6-91h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-continental-205-55r16-contipowercontact-2-91v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-continental-225-50r17-contisportcontact-5-94y</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-continental-235-55r19-contisportcontact-5-suv-101v</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – FIRESTONE / BRIDGESTONE-->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-firestone-175-70r13-f600-82t</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/pneu/pneu-bridgestone-185-65r15-ecopia-ep150-88h</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- BAIRROS – ZONA SUL             -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/portao</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/agua-verde</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/campo-comprido</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/guaira</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/fazendinha</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/cic</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/parolin</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/novo-mundo</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/capao-raso</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/pinheirinho</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/sitio-cercado</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/tatuquara</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/umbara</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- BAIRROS – CENTRO               -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/batel</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/centro</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/reboucas</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/centro-civico</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/merces</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/bigorrilho</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/ahu</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/cabral</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/juveve</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/alto-da-gloria</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/alto-da-rua-xv</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/cristo-rei</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/jardim-botanico</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- BAIRROS – NORTE / LESTE        -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/santa-felicidade</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/santa-candida</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/boa-vista</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/bacacheri</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/bairro-alto</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/cajuru</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/uberaba</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/tingui</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/atuba</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/barreirinha</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/pilarzinho</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://carpluscwb.com.br/bairro/sao-lourenco</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

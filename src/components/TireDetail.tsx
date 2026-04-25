@@ -5,48 +5,67 @@ import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useEffect } from 'react';
+import { useSEO } from '../hooks/useSEO';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
   const tire = TIRES.find(t => t.slug === slug);
 
-  useEffect(() => {
-    if (tire) {
-      document.title = `${tire.nome} | Carplus – Curitiba, Portão`;
-      
-      // Update meta description
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', `Compre ${tire.nome} em Curitiba. Loja de pneus no Portão com montagem inclusa, parcelamento em até 10x. Consulte preço: (41) 3082-7282 | Carplus Auto Center.`);
-      }
-
-      // Add Schema.org
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": tire.nome,
-        "image": tire.imagemGrande,
-        "description": tire.descricao,
-        "brand": { "@type": "Brand", "name": tire.marca },
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "AutoPartsStore",
-            "name": "Carplus Auto Center",
-            "address": "Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR"
-          }
+  useSEO(
+    tire
+      ? {
+          title: `${tire.nome} em Curitiba | Carplus Auto Center – Portão`,
+          description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros, garantia de fábrica. Ligue: (41) 3082-7282.`,
+          canonical: `https://carpluscwb.com.br/pneu/${tire.slug}`,
+          ogImage: tire.imagemGrande,
+          ogType: 'product',
+          schemaJSON: [
+            {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": tire.nome,
+              "image": [tire.imagemGrande, tire.imagem],
+              "description": tire.descricao,
+              "sku": tire.slug,
+              "brand": { "@type": "Brand", "name": tire.marca },
+              "category": `Pneus / ${tire.categoria}`,
+              "offers": {
+                "@type": "Offer",
+                "url": `https://carpluscwb.com.br/pneu/${tire.slug}`,
+                "priceCurrency": "BRL",
+                "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "seller": {
+                  "@type": "AutoPartsStore",
+                  "name": "Carplus Auto Center",
+                  "telephone": "+55-41-3082-7282",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
+                    "addressLocality": "Curitiba",
+                    "addressRegion": "PR",
+                    "postalCode": "81070-010",
+                    "addressCountry": "BR"
+                  }
+                }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://carpluscwb.com.br/pneus" },
+                { "@type": "ListItem", "position": 3, "name": tire.marca, "item": `https://carpluscwb.com.br/pneus?marca=${tire.marca.toLowerCase()}` },
+                { "@type": "ListItem", "position": 4, "name": tire.nome, "item": `https://carpluscwb.com.br/pneu/${tire.slug}` }
+              ]
+            }
+          ]
         }
-      });
-      document.head.appendChild(script);
+      : { title: 'Pneu não encontrado | Carplus', description: 'Pneu não encontrado.' }
+  );
 
-      return () => {
-        document.head.removeChild(script);
-      };
-    }
-  }, [tire]);
+  useEffect(() => {}, []);
 
   if (!tire) {
     return (

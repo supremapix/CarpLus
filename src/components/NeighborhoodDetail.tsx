@@ -8,10 +8,61 @@ import { motion } from 'motion/react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useSEO } from '../hooks/useSEO';
 
 export default function NeighborhoodDetail() {
   const { slug } = useParams();
-  const bairro = NEIGHBORHOODS.find(n => n.name.toLowerCase().replace(/\s+/g, '-') === slug);
+  const bairro = NEIGHBORHOODS.find(n =>
+    n.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-') === slug
+    || n.name.toLowerCase().replace(/\s+/g, '-') === slug
+  );
+
+  const slugForUrl = bairro
+    ? bairro.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')
+    : slug;
+
+  useSEO(
+    bairro
+      ? {
+          title: `Loja de Pneus e Oficina para ${bairro.name} – Curitiba | Carplus Auto Center`,
+          description: `Moradores do ${bairro.name} encontram na Carplus os melhores pneus Pirelli, Michelin e Goodyear. A apenas ${bairro.tempo} de você, no Portão. Ligue: (41) 3082-7282.`,
+          canonical: `https://carpluscwb.com.br/bairro/${slugForUrl}`,
+          ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp',
+          schemaJSON: [
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Carplus Auto Center",
+              "description": `Loja de pneus e oficina em Curitiba, próxima ao ${bairro.name}. Pneus Pirelli, Michelin, Goodyear. Alinhamento 3D, troca de óleo e revisão completa.`,
+              "url": `https://carpluscwb.com.br/bairro/${slugForUrl}`,
+              "telephone": "+55-41-3082-7282",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
+                "addressLocality": "Curitiba",
+                "addressRegion": "PR",
+                "postalCode": "81070-010",
+                "addressCountry": "BR"
+              },
+              "geo": { "@type": "GeoCoordinates", "latitude": -25.4770, "longitude": -49.2845 },
+              "areaServed": [
+                { "@type": "City", "name": "Curitiba" },
+                { "@type": "Neighborhood", "name": bairro.name }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Bairros", "item": "https://carpluscwb.com.br/#bairros" },
+                { "@type": "ListItem", "position": 3, "name": bairro.name, "item": `https://carpluscwb.com.br/bairro/${slugForUrl}` }
+              ]
+            }
+          ]
+        }
+      : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.' }
+  );
 
   if (!bairro) return <div>Bairro não encontrado</div>;
 

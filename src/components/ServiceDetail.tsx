@@ -5,10 +5,55 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import * as LucideIcons from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
   const service = SERVICES.find(s => s.slug === slug);
+
+  useSEO(
+    service
+      ? {
+          title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
+          description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
+          canonical: `https://carpluscwb.com.br/servico/${service?.slug}`,
+          ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp',
+          schemaJSON: [
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": service.title,
+              "description": service.description,
+              "provider": {
+                "@type": "AutoPartsStore",
+                "name": "Carplus Auto Center",
+                "telephone": "+55-41-3082-7282",
+                "url": "https://carpluscwb.com.br/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
+                  "addressLocality": "Curitiba",
+                  "addressRegion": "PR",
+                  "postalCode": "81070-010",
+                  "addressCountry": "BR"
+                }
+              },
+              "areaServed": { "@type": "City", "name": "Curitiba" },
+              "url": `https://carpluscwb.com.br/servico/${service.slug}`
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://carpluscwb.com.br/#servicos" },
+                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://carpluscwb.com.br/servico/${service.slug}` }
+              ]
+            }
+          ]
+        }
+      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.' }
+  );
 
   if (!service) return <div>Serviço não encontrado</div>;
 
