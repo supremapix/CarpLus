@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, Circle as HelpCircle } from 'lucide-react';
 
 const FAQS = [
   { q: "Quanto custa trocar pneu na Carplus?", a: "Os preços variam de acordo com a marca (Pirelli, Michelin, Goodyear, etc) e o tamanho do aro do seu veículo. Oferecemos o melhor preço de Curitiba com parcelamento em até 10x sem juros. Peça seu orçamento pelo WhatsApp!" },
@@ -27,7 +27,7 @@ function FAQItem({ q, a }: FAQItemProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex justify-between items-center text-left group"
       >
-        <span className={`text-xl font-bold transition-colors ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
+        <span className={`text-base md:text-xl font-bold transition-colors pr-4 ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           className={`p-2 rounded-full ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}
@@ -54,7 +54,7 @@ function FAQItem({ q, a }: FAQItemProps) {
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center gap-4 mb-10 text-primary uppercase font-bold tracking-[0.3em] text-xs">
            <div className="w-12 h-px bg-primary" />
@@ -63,7 +63,7 @@ export default function FAQ() {
         
         <h2 className="text-5xl mb-12">Perguntas <span className="text-primary italic">Comuns</span></h2>
 
-        <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl shadow-gray-200/50">
+        <div className="bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-xl shadow-gray-200/50 overflow-hidden">
            {FAQS.map((faq, i) => <FAQItem key={i} q={faq.q} a={faq.a} />)}
         </div>
       </div>

@@ -1,11 +1,12 @@
 
 import { useState } from 'react';
-import { Search, MapPin, Navigation, ArrowRight } from 'lucide-react';
+import { Search, MapPin, Navigation, ArrowRight, ChevronDown } from 'lucide-react';
 import { NEIGHBORHOODS } from '../data';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 
 export default function NeighborhoodList() {
+  const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState<'all' | 'sul' | 'centro' | 'metro'>('all');
 
@@ -16,10 +17,39 @@ export default function NeighborhoodList() {
   });
 
   return (
-    <section id="bairros" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="bairros" className="bg-gray-50 border-t border-gray-100">
+      {/* Aba / Toggle */}
+      <button
+        onClick={() => setIsOpen(v => !v)}
+        className="w-full flex items-center justify-between px-6 py-6 md:px-12 hover:bg-gray-100 transition-colors group"
+        aria-expanded={isOpen}
+      >
+        <div className="flex items-center gap-3">
+          <MapPin size={20} className="text-primary flex-shrink-0" />
+          <span className="text-xl md:text-2xl font-bold text-dark group-hover:text-primary transition-colors">
+            Atendemos Seu Bairro
+          </span>
+          <span className="hidden md:inline-flex items-center gap-1 ml-2 bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+            {NEIGHBORHOODS.length} bairros e cidades
+          </span>
+        </div>
+        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.25 }}>
+          <ChevronDown size={24} className="text-gray-400 group-hover:text-primary transition-colors" />
+        </motion.div>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+      <div className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-           <h2 className="text-5xl mb-4">Atendemos Seu Bairro</h2>
            <p className="text-xl text-gray-500 font-light max-w-xl mx-auto">
              Moradores de toda Curitiba e RM escolhem a Carplus pela transparência e preço justo no Portão.
            </p>
@@ -111,7 +141,11 @@ export default function NeighborhoodList() {
             ))}
            </AnimatePresence>
         </div>
+        </div>
       </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
