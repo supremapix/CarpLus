@@ -72,19 +72,19 @@ export default function NeighborhoodDetail() {
     <div className="bg-white min-h-screen">
       <Navbar />
       
-      <main className="pt-[100px] md:pt-[90px]">
+      <main>
         {/* Sub-Hero */}
-        <section className="relative py-24 bg-dark text-white overflow-hidden">
-           <div className="absolute inset-0 opacity-20">
-              <img 
-                src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp" 
+        <section className="relative min-h-[520px] flex flex-col justify-end bg-dark text-white overflow-hidden">
+           <div className="absolute inset-0">
+              <img
+                src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
                 className="w-full h-full object-cover"
                 alt="Curitiba"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/50 to-dark/20" />
            </div>
 
-           <div className="max-w-7xl mx-auto px-4 relative z-10">
+           <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-32 pb-16">
               <Link to="/#bairros" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:gap-4 transition-all">
                  <ArrowLeft size={16} /> Voltar para lista
               </Link>
