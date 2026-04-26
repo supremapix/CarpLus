@@ -12,6 +12,9 @@ import AboutUs from './components/Institutional/AboutUs';
 import Contact from './components/Institutional/Contact';
 import Sitemap from './components/Sitemap';
 import NotFound from './components/NotFound';
+import ServicosPage from './components/ServicosPage';
+import ComoChegar from './components/ComoChegar';
+import BairrosPage from './components/BairrosPage';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -33,6 +36,9 @@ export default function App() {
       <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
       <Route path="/trocas-e-devolucoes" element={<ReturnPolicy />} />
       <Route path="/sitemap" element={<Sitemap />} />
+      <Route path="/servicos" element={<ServicosPage />} />
+      <Route path="/como-chegar" element={<ComoChegar />} />
+      <Route path="/bairros" element={<BairrosPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

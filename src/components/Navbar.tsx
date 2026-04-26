@@ -32,9 +32,9 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Início', href: '/#inicio' },
     { name: 'Catálogo', href: '/pneus' },
-    { name: 'Serviços', href: '/#servicos' },
-    { name: 'Como Chegar', href: '/#mapa' },
-    { name: 'Bairros', href: '/#bairros' },
+    { name: 'Serviços', href: '/servicos' },
+    { name: 'Como Chegar', href: '/como-chegar' },
+    { name: 'Bairros', href: '/bairros' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
