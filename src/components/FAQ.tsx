@@ -23,7 +23,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex justify-between items-center text-left group"
       >
-        <span className={`text-base md:text-xl font-bold transition-colors pr-4 ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
+        <span className={`text-sm md:text-xl font-bold transition-colors pr-4 break-words ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           className={`p-2 rounded-full flex-shrink-0 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}
@@ -59,7 +59,7 @@ export default function FAQ() {
 
         <h2 className="text-5xl mb-12">Perguntas <span className="text-primary italic">Comuns</span></h2>
 
-        <div className="bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-xl shadow-gray-200/50 overflow-hidden">
+        <div className="bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-xl shadow-gray-200/50">
           {FAQS.map((faq, i) => <FAQItem key={i} q={faq.q} a={faq.a} />)}
         </div>
       </div>

@@ -228,7 +228,7 @@ export default function BairrosPage() {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                 >
-                  <span className="font-bold text-white text-sm">{item.q}</span>
+                  <span className="font-bold text-white text-sm break-words">{item.q}</span>
                   {openFaq === i ? <ChevronUp size={16} className="text-primary shrink-0" /> : <ChevronDown size={16} className="text-white/40 shrink-0" />}
                 </button>
                 {openFaq === i && (

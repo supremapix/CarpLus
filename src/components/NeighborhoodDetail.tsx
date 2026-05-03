@@ -20,7 +20,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-5 px-6 flex justify-between items-center text-left group"
       >
-        <span className={`text-base font-bold transition-colors pr-4 ${isOpen ? 'text-primary' : 'text-dark'}`}>{q}</span>
+        <span className={`text-sm md:text-base font-bold transition-colors pr-4 break-words ${isOpen ? 'text-primary' : 'text-dark'}`}>{q}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           className={`p-1.5 rounded-full flex-shrink-0 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
