@@ -130,15 +130,20 @@ export default function Footer() {
             <p className="text-xs">CNPJ 22.345.678/0001-90 · Todos os direitos reservados</p>
          </div>
          
-         <div className="flex flex-col items-center md:items-end gap-2">
-            <p className="text-white/35 text-xs flex items-center gap-1">
-              Desenvolvido com <Heart size={11} className="text-red-500 animate-heartbeat" /> por
-              <a href="https://supremasite.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition ml-1 inline-flex items-center gap-1 font-bold">
-                Suprema Sites Express
-                <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" className="h-3.5 inline" />
-              </a>
-            </p>
-         </div>
+         <a 
+            href="https://supremasite.com.br" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-full px-5 py-2.5 transition-all duration-300"
+         >
+            <span className="text-white/50 text-xs font-medium">Desenvolvido com</span>
+            <Heart size={12} className="text-red-500 animate-pulse" fill="currentColor" />
+            <span className="text-white/50 text-xs font-medium">por</span>
+            <span className="text-white group-hover:text-primary font-bold text-xs transition-colors flex items-center gap-2">
+              Suprema Sites Express
+              <img src="https://img.supremamidia.com/suprema-img.png" alt="Suprema" className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+            </span>
+         </a>
       </div>
     </footer>
 
