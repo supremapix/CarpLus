@@ -523,6 +523,308 @@ export const TIRES: Tire[] = [
     descricao: "Versão SUV do aclamado SportContact 5. Máxima performance para utilitários esportivos de luxo.",
     carros: ["Volvo XC60", "Audi Q5", "Mercedes GLC"],
     destaque: false, novoModelo: false
+  },
+
+  // ══════════════════════════════════════
+  // YOKOHAMA – Linha C.Drive 2
+  // ══════════════════════════════════════
+  {
+    id: 36,
+    slug: "pneu-yokohama-c-drive-2-zps-235-50r18-97v-runflat",
+    nome: "Yokohama C.Drive 2 Z.P.S 235/50R18 97V (RUNFLAT)",
+    marca: "Yokohama", linha: "C.Drive 2", aro: 18, medida: "235/50R18",
+    largura: 235, perfil: 50, indiceVelocidade: "V (240km/h)", indiceCarga: "97 (730kg)",
+    categoria: "Conforto Premium", tipoVeiculo: ["SUV Premium", "Sedan Premium"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-c-drive.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-c-drive.webp",
+    descricao: "O Pneu Yokohama C.Drive 2 Z.P.S é um modelo de alta performance desenvolvido para veículos premium, como o Mercedes-Benz GLA e BMW X1. Ele equilibra segurança avançada com conforto de condução, utilizando a tecnologia Z.P.S (Zero Pressure System - Run Flat) da Yokohama, que permite rodar até 80 km a 80 km/h mesmo sem pressão nos pneus.",
+    carros: ["Mercedes-Benz GLA", "BMW X1", "Audi Q3"],
+    destaque: true, novoModelo: true
+  },
+
+  // ══════════════════════════════════════
+  // YOKOHAMA – Linha ADVAN dB V551
+  // ══════════════════════════════════════
+  {
+    id: 37,
+    slug: "pneu-yokohama-advan-db-v551-215-50r17-91v",
+    nome: "Yokohama ADVAN dB V551 215/50R17 91V",
+    marca: "Yokohama", linha: "ADVAN dB V551", aro: 17, medida: "215/50R17",
+    largura: 215, perfil: 50, indiceVelocidade: "V (240km/h)", indiceCarga: "91 (615kg)",
+    categoria: "Conforto Premium", tipoVeiculo: ["Sedan Premium", "Híbrido"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-db.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-db.webp",
+    descricao: "O pneu Yokohama ADVAN dB Decibel V551, desenvolvido para veículos de alto padrão com exigência de baixíssimo nível de ruído combinado a Alta Performance, é Equipamento Original do Honda Civic Híbrido. Tecnologia silenciosa para máximo conforto acústico.",
+    carros: ["Honda Civic Híbrido", "Toyota Prius", "Lexus CT200h"],
+    destaque: true, novoModelo: true
+  },
+
+  // ══════════════════════════════════════
+  // YOKOHAMA – Linha ADVAN Sport V103 (RUNFLAT)
+  // ══════════════════════════════════════
+  {
+    id: 38,
+    slug: "pneu-yokohama-v103-zps-225-50rf17-94y-runflat",
+    nome: "Yokohama V103 Z.P.S 225/50 RF17 94Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 17, medida: "225/50R17",
+    largura: 225, perfil: 50, indiceVelocidade: "Y (300km/h)", indiceCarga: "94 (670kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW Série 3", "Mercedes Classe C", "Audi A4"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 39,
+    slug: "pneu-yokohama-v103-zps-205-45rf17-84v-runflat",
+    nome: "Yokohama V103 Z.P.S 205/45 RF17 84V (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 17, medida: "205/45R17",
+    largura: 205, perfil: 45, indiceVelocidade: "V (240km/h)", indiceCarga: "84 (500kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Hatch Esportivo"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW Série 1", "Mini Cooper", "Mercedes A-Class"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 40,
+    slug: "pneu-yokohama-v103-zps-245-50rf18-100w-runflat",
+    nome: "Yokohama V103 Z.P.S 245/50 RF18 100W (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 18, medida: "245/50R18",
+    largura: 245, perfil: 50, indiceVelocidade: "W (270km/h)", indiceCarga: "100 (800kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "SUV Premium"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW Série 5", "Mercedes Classe E", "Audi A6"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 41,
+    slug: "pneu-yokohama-v103-zps-225-40rf18-88y-runflat",
+    nome: "Yokohama V103 Z.P.S 225/40 RF18 88Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 18, medida: "225/40R18",
+    largura: 225, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "88 (560kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW Série 3", "Mercedes C-Class Coupe", "Audi A5"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 42,
+    slug: "pneu-yokohama-v103-zps-245-40rf18-93y-runflat",
+    nome: "Yokohama V103 Z.P.S 245/40 RF18 93Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 18, medida: "245/40R18",
+    largura: 245, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "93 (650kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW Série 4", "Mercedes CLA", "Audi S4"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 43,
+    slug: "pneu-yokohama-v103-zps-255-35rf18-90y-runflat",
+    nome: "Yokohama V103 Z.P.S 255/35 RF18 90Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 18, medida: "255/35R18",
+    largura: 255, perfil: 35, indiceVelocidade: "Y (300km/h)", indiceCarga: "90 (600kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW M3", "Mercedes AMG C63", "Audi RS4"],
+    destaque: true, novoModelo: true
+  },
+  {
+    id: 44,
+    slug: "pneu-yokohama-v103-zps-275-35rf18-95y-runflat",
+    nome: "Yokohama V103 Z.P.S 275/35 RF18 95Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V103", aro: 18, medida: "275/35R18",
+    largura: 275, perfil: 35, indiceVelocidade: "Y (300km/h)", indiceCarga: "95 (690kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v103-runflat.webp",
+    descricao: "O Yokohama ADVAN Sport V103 Z.P.S é um pneu de ultra alta performance (UHP) projetado para sedãs e cupês premium, como os da BMW, Mercedes-Benz e Audi. Ele combina um comportamento esportivo com a segurança da tecnologia de rodagem sem pressão.",
+    carros: ["BMW M4", "Mercedes AMG GT", "Audi RS5"],
+    destaque: true, novoModelo: true
+  },
+
+  // ══════════════════════════════════════
+  // YOKOHAMA – Linha ADVAN Sport V105 (RUNFLAT)
+  // ══════════════════════════════════════
+  {
+    id: 45,
+    slug: "pneu-yokohama-v105-zps-225-55rf17-97y-runflat",
+    nome: "Yokohama V105 Z.P.S. 225/55RF17 97Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 17, medida: "225/55R17",
+    largura: 225, perfil: 55, indiceVelocidade: "Y (300km/h)", indiceCarga: "97 (730kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "SUV Premium"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW X3", "Mercedes GLC", "Audi Q5"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 46,
+    slug: "pneu-yokohama-v105-zps-205-50rf17-89w-runflat",
+    nome: "Yokohama V105 Z.P.S. 205/50RF17 89W (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 17, medida: "205/50R17",
+    largura: 205, perfil: 50, indiceVelocidade: "W (270km/h)", indiceCarga: "89 (580kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Hatch Esportivo"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 1", "Mini Cooper S", "Mercedes A-Class"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 47,
+    slug: "pneu-yokohama-v105-zps-225-45rf18-91y-runflat",
+    nome: "Yokohama V105 Z.P.S. 225/45RF18 91Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 18, medida: "225/45R18",
+    largura: 225, perfil: 45, indiceVelocidade: "Y (300km/h)", indiceCarga: "91 (615kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 3", "Mercedes C-Class", "Audi A4"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 48,
+    slug: "pneu-yokohama-v105-zps-245-45rf18-96y-runflat",
+    nome: "Yokohama V105 Z.P.S. 245/45RF18 96Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 18, medida: "245/45R18",
+    largura: 245, perfil: 45, indiceVelocidade: "Y (300km/h)", indiceCarga: "96 (710kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "SUV Premium"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 5", "Mercedes E-Class", "Audi A6"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 49,
+    slug: "pneu-yokohama-v105-zps-245-40rf18-93y-runflat",
+    nome: "Yokohama V105 Z.P.S. 245/40RF18 93Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 18, medida: "245/40R18",
+    largura: 245, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "93 (650kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 4", "Mercedes CLA", "Audi A5"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 50,
+    slug: "pneu-yokohama-v105-zps-255-40rf18-95y-runflat",
+    nome: "Yokohama V105 Z.P.S. 255/40RF18 95Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 18, medida: "255/40R18",
+    largura: 255, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "95 (690kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW M2", "Mercedes AMG CLA 45", "Audi S5"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 51,
+    slug: "pneu-yokohama-v105-zps-275-40rf18-99y-runflat",
+    nome: "Yokohama V105 Z.P.S. 275/40RF18 99Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 18, medida: "275/40R18",
+    largura: 275, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "99 (775kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW M3", "Mercedes AMG C63", "Audi RS4"],
+    destaque: true, novoModelo: true
+  },
+  {
+    id: 52,
+    slug: "pneu-yokohama-v105-zps-225-40rf19-93y-runflat",
+    nome: "Yokohama V105 Z.P.S. 225/40RF19 93Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 19, medida: "225/40R19",
+    largura: 225, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "93 (650kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 3 M Sport", "Mercedes C-Class AMG Line", "Audi S4"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 53,
+    slug: "pneu-yokohama-v105-zps-245-40rf19-94y-runflat",
+    nome: "Yokohama V105 Z.P.S. 245/40RF19 94Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 19, medida: "245/40R19",
+    largura: 245, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "94 (670kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW Série 5 M Sport", "Mercedes E-Class AMG Line", "Audi A6 S-Line"],
+    destaque: false, novoModelo: true
+  },
+  {
+    id: 54,
+    slug: "pneu-yokohama-v105-zps-255-35rf19-96y-runflat",
+    nome: "Yokohama V105 Z.P.S. 255/35RF19 96Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 19, medida: "255/35R19",
+    largura: 255, perfil: 35, indiceVelocidade: "Y (300km/h)", indiceCarga: "96 (710kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW M4", "Mercedes AMG C63 Coupe", "Audi RS5"],
+    destaque: true, novoModelo: true
+  },
+  {
+    id: 55,
+    slug: "pneu-yokohama-v105-zps-275-35rf19-96y-runflat",
+    nome: "Yokohama V105 Z.P.S. 275/35RF19 96Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 19, medida: "275/35R19",
+    largura: 275, perfil: 35, indiceVelocidade: "Y (300km/h)", indiceCarga: "96 (710kg)",
+    categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Coupe"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW M5", "Mercedes AMG E63", "Audi RS6"],
+    destaque: true, novoModelo: true
+  },
+  {
+    id: 56,
+    slug: "pneu-yokohama-v105-zps-275-40rf20-102y-runflat",
+    nome: "Yokohama V105 Z.P.S. 275/40RF20 102Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 20, medida: "275/40R20",
+    largura: 275, perfil: 40, indiceVelocidade: "Y (300km/h)", indiceCarga: "102 (850kg)",
+    categoria: "SUV Premium", tipoVeiculo: ["SUV Premium", "SUV Esportivo"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW X5 M", "Mercedes GLE AMG", "Audi SQ7"],
+    destaque: true, novoModelo: true
+  },
+  {
+    id: 57,
+    slug: "pneu-yokohama-v105-zps-245-45rf20-99y-runflat",
+    nome: "Yokohama V105 Z.P.S. 245/45RF20 99Y (RUNFLAT)",
+    marca: "Yokohama", linha: "ADVAN Sport V105", aro: 20, medida: "245/45R20",
+    largura: 245, perfil: 45, indiceVelocidade: "Y (300km/h)", indiceCarga: "99 (775kg)",
+    categoria: "SUV Premium", tipoVeiculo: ["SUV Premium", "Sedan Premium"],
+    imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-yokohama-advan-sport-v105.webp",
+    descricao: "O pneu Yokohama Advan Sport V105 Z.P.S é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas. Tecnologia Run Flat para continuar rodando mesmo sem pressão.",
+    carros: ["BMW X3 M40i", "Mercedes GLC 43 AMG", "Audi SQ5"],
+    destaque: true, novoModelo: true
   }
 ];
 
