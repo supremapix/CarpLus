@@ -1,7 +1,7 @@
 {
   "name": "carplus-woo-importer",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
