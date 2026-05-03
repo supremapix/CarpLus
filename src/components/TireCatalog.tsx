@@ -7,10 +7,10 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
 
-const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone"];
+const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
-const CATEGORIES = ["Econômico", "Conforto", "Performance", "Esportivo", "SUV", "All Season"];
-const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo"];
+const CATEGORIES = ["Econômico", "Conforto", "Conforto Premium", "Performance", "Esportivo", "SUV", "SUV Premium", "All Season"];
+const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Premium", "SUV Premium", "Coupe", "Hatch Esportivo", "Híbrido", "SUV Esportivo"];
 
 export default function TireCatalog() {
   const [search, setSearch] = useState("");
@@ -92,7 +92,7 @@ export default function TireCatalog() {
         {/* Brand Ticker — rente ao final do hero */}
         <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
           <div className="flex gap-12 whitespace-nowrap animate-tire-scroll">
-            {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE']).flat().map((brand, i) => (
+            {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA']).flat().map((brand, i) => (
               <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
                 {brand}
               </span>
