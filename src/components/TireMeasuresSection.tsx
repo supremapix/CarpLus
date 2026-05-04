@@ -26,7 +26,7 @@ export default function TireMeasuresSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden py-12 px-4 md:py-16 md:px-8 text-center"
+      className="relative w-full overflow-hidden pt-12 pb-0 px-4 md:pt-16 md:px-8 text-center"
       style={{
         backgroundColor: '#1a1a1a',
         backgroundImage: `
