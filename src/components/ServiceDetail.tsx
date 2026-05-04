@@ -1,162 +1,326 @@
 import { useParams, Link } from 'react-router-dom';
-import { SERVICES } from '../data';
-import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight } from 'lucide-react';
+import { getServiceBySlug } from '../servicesData';
+import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, AlertTriangle, ChevronDown, Phone, MapPin, Clock, Star } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import * as LucideIcons from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+import { useState } from 'react';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
-  const service = SERVICES.find(s => s.slug === slug);
+  const service = getServiceBySlug(slug || '');
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useSEO(
     service
       ? {
-          title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
-          description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
-          canonical: `https://carpluscwb.com.br/servico/${service?.slug}`,
+          title: service.metaTitle,
+          description: service.metaDescription,
+          canonical: `https://carpluscwb.com.br/servico/${service.slug}`,
           ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": service.title,
-              "description": service.description,
+              "description": service.metaDescription,
               "provider": {
-                "@type": "AutoPartsStore",
-                "name": "Carplus Auto Center",
+                "@type": "AutoRepair",
+                "name": "Carplus Pneus e Oficina",
                 "telephone": "+55-41-3082-7282",
                 "url": "https://carpluscwb.com.br/",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
+                  "streetAddress": "Av. Presid. Arthur da Silva Bernardes, 1323",
                   "addressLocality": "Curitiba",
                   "addressRegion": "PR",
                   "postalCode": "81070-010",
                   "addressCountry": "BR"
-                }
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": -25.4770,
+                  "longitude": -49.2845
+                },
+                "openingHoursSpecification": [
+                  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
+                  { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+                ]
               },
               "areaServed": { "@type": "City", "name": "Curitiba" },
               "url": `https://carpluscwb.com.br/servico/${service.slug}`
             },
             {
               "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": service.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            },
+            {
+              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://carpluscwb.com.br/#servicos" },
+                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://carpluscwb.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Servicos", "item": "https://carpluscwb.com.br/servicos" },
                 { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://carpluscwb.com.br/servico/${service.slug}` }
               ]
             }
           ]
         }
-      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.' }
+      : { title: 'Servico nao encontrado | Carplus', description: 'Servico nao encontrado.' }
   );
 
-  if (!service) return <div>Serviço não encontrado</div>;
+  if (!service) {
+    return (
+      <div className="bg-[#111] min-h-screen text-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Servico nao encontrado</h1>
+          <Link to="/servicos" className="text-primary hover:underline">Voltar para servicos</Link>
+        </div>
+      </div>
+    );
+  }
 
   const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Wrench;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#111] min-h-screen">
       <Navbar />
       
-      <main className="pt-[100px] md:pt-[90px]">
-        {/* Hero */}
-        <section className="relative py-24 bg-dark text-white overflow-hidden">
-           <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-              <Link to="/#servicos" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:transform hover:translate-x-[-4px] transition-all">
-                 <ArrowLeft size={16} /> Voltar para serviços
-              </Link>
-              
-              <div className="w-24 h-24 bg-primary text-black rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-primary/40">
-                 <Icon size={48} />
-              </div>
+      <main className="pt-[72px]">
+        {/* Breadcrumb */}
+        <div className="bg-[#0a0a0a] border-b border-[#222] py-3">
+          <div className="max-w-6xl mx-auto px-4">
+            <nav className="flex items-center gap-2 text-sm text-gray-400">
+              <Link to="/" className="hover:text-primary transition-colors">Inicio</Link>
+              <span>/</span>
+              <Link to="/servicos" className="hover:text-primary transition-colors">Servicos</Link>
+              <span>/</span>
+              <span className="text-white">{service.title}</span>
+            </nav>
+          </div>
+        </div>
 
-              <h1 className="text-5xl md:text-8xl mb-8 italic uppercase tracking-tighter">{service.title}</h1>
-              <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
-                A Carplus Auto Center é especialista em <span className="text-white font-bold">{service.title}</span> no Portão, utilizando tecnologia de diagnóstico de ponta.
+        {/* Hero Section */}
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+          <div className="max-w-6xl mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="w-20 h-20 bg-primary/10 border border-primary/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Icon className="w-10 h-10 text-primary" />
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                {service.title} <span className="text-primary">em Curitiba</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                {service.heroDescription}
               </p>
 
-              <div className="flex justify-center gap-4">
-                 <motion.a 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={`https://wa.me/554130827282?text=Olá! Preciso de orçamento para ${service.title}`}
-                  className="bg-primary text-black px-7 py-3 rounded-full font-bold flex items-center gap-3 text-sm hover:bg-yellow-600 transition-all shadow-xl uppercase tracking-tight"
-                 >
-                    <MessageSquare size={20} /> Agendar Serviço
-                 </motion.a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a
+                  href={`https://wa.me/554130827282?text=Ola! Preciso de orcamento para ${service.title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-amber-600 text-black font-bold px-8 py-4 rounded-xl transition-colors text-lg"
+                >
+                  <MessageSquare size={22} />
+                  Solicitar Orcamento
+                </a>
+                <a
+                  href="tel:+554130827282"
+                  className="inline-flex items-center justify-center gap-2 bg-[#1a1a1a] hover:bg-[#222] text-white font-semibold px-8 py-4 rounded-xl border border-[#333] transition-colors text-lg"
+                >
+                  <Phone size={22} />
+                  (41) 3082-7282
+                </a>
               </div>
-           </div>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <Clock size={18} className="text-primary" />
+                  <span>Tempo medio: {service.averageTime}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star size={18} className="text-primary" />
+                  <span>Garantia: {service.warranty}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin size={18} className="text-primary" />
+                  <span>Portao, Curitiba</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
-        {/* Content */}
-        <section className="py-24 max-w-7xl mx-auto px-4">
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                 <h2 className="text-4xl mb-6 leading-tight">Por que fazer {service.title} na Carplus?</h2>
-                 <p className="text-lg text-gray-500 leading-relaxed">
-                   Investimos constantemente em novos equipamentos para garantir que o seu veículo receba o melhor tratamento possível. Nosso {service.title} segue rigorosos padrões de segurança e qualidade.
-                 </p>
-                 
-                 <div className="space-y-4">
-                    {[
-                      'Diagnóstico computadorizado preciso',
-                      'Técnicos treinados pelas montadoras',
-                      'Peças originais com garantia',
-                      'Transparência total no orçamento',
-                      'Entrega no prazo combinado'
-                    ].map(item => (
-                       <div key={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                          <CheckCircle className="text-primary" size={20} />
-                          <span className="font-bold text-gray-800">{item}</span>
-                       </div>
-                    ))}
-                 </div>
+        {/* Full Description */}
+        <section className="py-16 bg-[#0a0a0a]">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-primary rounded-full" />
+              Sobre o Servico
+            </h2>
+            <div className="space-y-6">
+              {service.fullDescription.map((paragraph, index) => (
+                <p key={index} className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits & Included Items */}
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Benefits */}
+              <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-[#2a2a2a]">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <CheckCircle className="text-primary" size={28} />
+                  Diferenciais do Servico
+                </h3>
+                <ul className="space-y-4">
+                  {service.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3 text-gray-300 text-lg">
+                      <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="relative group">
-                 <img 
-                    src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp" 
-                    className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
-                    alt={service.title} 
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent rounded-[40px]" />
-                 <div className="absolute bottom-8 left-8 right-8 text-white">
-                    <p className="font-accent text-3xl mb-1 uppercase italic tracking-tighter">10+ Anos</p>
-                    <p className="text-sm opacity-80 uppercase tracking-widest font-bold">Cuidando de Curitiba</p>
-                 </div>
+              {/* Included Items */}
+              <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-[#2a2a2a]">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <CheckCircle className="text-primary" size={28} />
+                  O Que Esta Incluso
+                </h3>
+                <ul className="space-y-4">
+                  {service.includedItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-gray-300 text-lg">
+                      <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-           </div>
+            </div>
+          </div>
+        </section>
+
+        {/* When You Need */}
+        <section className="py-16 bg-[#0a0a0a]">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-primary rounded-full" />
+              Quando Voce Precisa Deste Servico
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {service.whenYouNeed.map((item, index) => (
+                <div key={index} className="flex items-start gap-3 bg-[#1a1a1a] p-4 rounded-xl border border-[#2a2a2a]">
+                  <AlertTriangle className="text-amber-500 flex-shrink-0 mt-0.5" size={20} />
+                  <span className="text-gray-300 text-lg">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-primary rounded-full" />
+              Perguntas Frequentes sobre {service.title}
+            </h2>
+            <div className="space-y-4">
+              {service.faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-[#222] transition-colors"
+                  >
+                    <span className="text-lg font-semibold text-white pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`text-primary flex-shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
+                      size={24}
+                    />
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-5 pb-5 text-gray-300 text-lg leading-relaxed border-t border-[#2a2a2a] pt-4">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary text-black">
-           <div className="max-w-7xl mx-auto px-4 text-center">
-              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase">Resolva o Problema <br/> do seu Carro Hoje</h2>
-              <p className="text-base mb-8 max-w-2xl mx-auto opacity-70">Não deixe para depois. Pequenas manutenções evitam gastos altos no futuro.</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
-                 <motion.a
-                   whileHover={{ scale: 1.03 }}
-                   whileTap={{ scale: 0.97 }}
-                   href="https://wa.me/554130827282"
-                   className="bg-black text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-gray-900 transition-all flex items-center justify-center gap-2 shadow-lg uppercase tracking-tight"
-                 >
-                    <MessageSquare size={16} /> Chamar no WhatsApp
-                 </motion.a>
-                 <motion.a
-                   whileHover={{ scale: 1.03 }}
-                   whileTap={{ scale: 0.97 }}
-                   href="tel:+554130827282"
-                   className="bg-black/10 border border-black/20 text-black px-7 py-3 rounded-full font-bold text-sm hover:bg-black/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
-                 >
-                    <LucideIcons.Phone size={16} /> (41) 3082-7282
-                 </motion.a>
-              </div>
-           </div>
+        <section className="py-16 bg-primary">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-black mb-4">
+              Agende seu {service.title} Agora
+            </h2>
+            <p className="text-black/70 text-lg mb-8">
+              Av. Presid. Arthur da Silva Bernardes, 1323 - Portao, Curitiba<br />
+              Segunda a Sexta: 8h-18h | Sabado: 8h-13h
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/554130827282"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-black text-primary font-bold px-8 py-4 rounded-xl hover:bg-gray-900 transition-colors text-lg"
+              >
+                <MessageSquare size={22} />
+                WhatsApp
+              </a>
+              <Link
+                to="/como-chegar"
+                className="inline-flex items-center justify-center gap-2 bg-black/10 text-black font-semibold px-8 py-4 rounded-xl border border-black/20 hover:bg-black/20 transition-colors text-lg"
+              >
+                <MapPin size={22} />
+                Como Chegar
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="py-16 bg-[#0a0a0a]">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+              Outros Servicos da Carplus
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/servicos" className="inline-flex items-center gap-2 bg-[#1a1a1a] hover:bg-[#222] text-white px-6 py-3 rounded-xl border border-[#2a2a2a] transition-colors">
+                Ver todos os servicos
+                <ArrowLeft className="rotate-180" size={18} />
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
 
