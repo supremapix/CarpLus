@@ -1,128 +1,104 @@
+'use client';
+
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { 
-  MessageCircle, 
-  Star, 
-  ShieldCheck, 
-  CreditCard, 
-  Trophy,
-  ChevronRight,
-  Gauge,
-  Droplets,
-  Settings2,
-  Wrench,
-  Wind,
-  Circle
+  Disc, Target, Droplets, Cpu, ShieldAlert, Snowflake, Wrench, Hammer, Link as LinkIcon,
+  Phone, MapPin, Clock, ChevronRight, ArrowLeft
 } from 'lucide-react';
+import { SERVICES } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { Badge } from './ui/badge';
-import { SERVICES_DATA } from '../servicesData';
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  Gauge,
-  Droplets,
-  Settings2,
-  Wrench,
-  Wind,
-  Circle,
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Disc, Target, Droplets, Cpu, ShieldAlert, Snowflake, Wrench, Hammer, Link: LinkIcon
 };
 
-const TRUST_ITEMS = [
-  { icon: <Star size={28} className="text-amber-500" />, val: '4,9/5', label: '312+ avaliações Google' },
-  { icon: <Trophy size={28} className="text-amber-500" />, val: '10 Anos', label: 'de experiência' },
-  { icon: <ShieldCheck size={28} className="text-amber-500" />, val: 'Garantia', label: 'em todos os serviços' },
-  { icon: <CreditCard size={28} className="text-amber-500" />, val: '10x', label: 'sem juros nos pneus' },
-];
-
 export default function ServicosPage() {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen bg-[#0d0d0d] text-white">
       <Navbar />
-
+      
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 bg-[#111111] text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-1 h-full bg-amber-500" />
-        <div className="max-w-3xl mx-auto">
-          <nav className="text-xs text-white/40 mb-6 flex items-center justify-center gap-2">
-            <Link to="/" className="hover:text-white/70 transition-colors">Inicio</Link>
-            <span className="text-white/20">/</span>
-            <span className="text-white/60">Servicos</span>
-          </nav>
-          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white leading-none mb-4">
+      <section className="relative pt-24 pb-16 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-amber-500 mb-6 transition-colors"
+          >
+            <ArrowLeft size={18} />
+            Voltar ao inicio
+          </Link>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-black uppercase mb-4"
+          >
             Nossos <span className="text-amber-500">Servicos</span>
-          </h1>
-          <p className="text-base text-[#888888] max-w-xl mx-auto leading-relaxed">
-            Oficina completa no Portao, Curitiba. Agendamento pelo WhatsApp.
-          </p>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-400 text-lg max-w-2xl"
+          >
+            Mais de 10 anos de experiencia em pneus e mecanica automotiva. 
+            Atendemos Curitiba e Regiao Metropolitana com qualidade e garantia.
+          </motion.p>
         </div>
       </section>
 
-      {/* Trust bar */}
-      <section className="bg-black/30 border-y border-white/5 py-8 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {TRUST_ITEMS.map((t, i) => (
-            <div key={i} className="flex flex-col items-center gap-1 text-center py-2">
-              {t.icon}
-              <strong className="text-2xl text-white font-bold">{t.val}</strong>
-              <span className="text-xs text-white/45 uppercase tracking-wide">{t.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Services grid */}
-      <section className="py-20 px-4 bg-[#111111]">
-        <div className="max-w-7xl mx-auto">
+      {/* Services Grid */}
+      <section className="px-4 pb-16">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES_DATA.map((service, i) => {
-              const IconComponent = ICON_MAP[service.icon] || Circle;
+            {SERVICES.map((service, index) => {
+              const IconComponent = iconMap[service.icon] || Disc;
+              const isHovered = hoveredId === service.id;
               
               return (
                 <motion.div
-                  key={service.slug}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="bg-[#1e1e1e] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-4 hover:border-amber-500 transition-all duration-200 group h-full"
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  onMouseEnter={() => setHoveredId(service.id)}
+                  onMouseLeave={() => setHoveredId(null)}
                 >
-                  {/* Icon */}
-                  <div className="w-12 h-12 rounded-lg bg-[#2a2a2a] flex items-center justify-center group-hover:bg-amber-500/10 transition-colors">
-                    <IconComponent className="w-6 h-6 text-amber-500" />
-                  </div>
-
-                  {/* Badge */}
-                  {service.badge && (
-                    <Badge 
-                      variant="outline" 
-                      className={`w-fit text-xs ${
-                        service.badgeColor === 'red' 
-                          ? 'border-amber-500 text-amber-400' 
-                          : 'border-[#888888] text-[#888888]'
-                      }`}
-                    >
-                      {service.badge}
-                    </Badge>
-                  )}
-
-                  {/* Title */}
-                  <h3 className="text-white font-bold text-lg leading-tight">
-                    {service.title}
-                  </h3>
-
-                  {/* Short description */}
-                  <p className="text-[#888888] text-sm leading-relaxed flex-1">
-                    {service.shortDesc}
-                  </p>
-
-                  {/* Button */}
                   <Link
                     to={`/servico/${service.slug}`}
-                    className="mt-auto w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-1 transition-colors"
+                    className={`block h-full p-6 rounded-2xl border transition-all duration-300 ${
+                      isHovered 
+                        ? 'bg-[#1a1a1a] border-amber-500/50 shadow-lg shadow-amber-500/10' 
+                        : 'bg-[#111] border-[#222] hover:border-[#333]'
+                    }`}
                   >
-                    Ver detalhes
-                    <ChevronRight className="w-4 h-4" />
+                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-colors ${
+                      isHovered ? 'bg-amber-500/20' : 'bg-[#1a1a1a]'
+                    }`}>
+                      <IconComponent className={`w-7 h-7 transition-colors ${
+                        isHovered ? 'text-amber-500' : 'text-gray-400'
+                      }`} />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold mb-2 text-white">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <div className={`inline-flex items-center gap-1 text-sm font-medium transition-colors ${
+                      isHovered ? 'text-amber-500' : 'text-gray-500'
+                    }`}>
+                      Saiba mais
+                      <ChevronRight size={16} className={`transition-transform ${isHovered ? 'translate-x-1' : ''}`} />
+                    </div>
                   </Link>
                 </motion.div>
               );
@@ -131,19 +107,69 @@ export default function ServicosPage() {
         </div>
       </section>
 
+      {/* Info Section */}
+      <section className="px-4 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-[#111] border border-[#222] rounded-2xl p-8 md:p-12">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-amber-500" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Telefone</h4>
+                  <p className="text-gray-400">(41) 3082-7282</p>
+                  <p className="text-gray-400">(41) 99653-3877</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-amber-500" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Endereco</h4>
+                  <p className="text-gray-400">Av. Presid. Arthur da Silva Bernardes, 1323</p>
+                  <p className="text-gray-400">Portao - Curitiba/PR</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-amber-500" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Horario</h4>
+                  <p className="text-gray-400">Seg a Sex: 8h as 18h</p>
+                  <p className="text-gray-400">Sabado: 8h as 13h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="bg-amber-500 py-10 text-center px-4">
-        <p className="text-black text-xl font-bold mb-2">Quer um orcamento?</p>
-        <p className="text-black/70 text-sm mb-6">Atendemos Curitiba e Regiao Metropolitana. Seg-Sex 8h-18h | Sab 8h-13h</p>
-        <a
-          href="https://wa.me/554130827282"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-black text-amber-500 font-bold px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"
-        >
-          <MessageCircle className="w-4 h-4" />
-          Orcamento pelo WhatsApp
-        </a>
+      <section className="px-4 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-amber-500 rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-black text-black mb-4">
+              Precisa de um orcamento?
+            </h2>
+            <p className="text-black/70 mb-6 max-w-xl mx-auto">
+              Entre em contato pelo WhatsApp e receba atendimento rapido e personalizado.
+            </p>
+            <a
+              href="https://wa.me/554130827282"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-black text-amber-500 font-bold px-8 py-4 rounded-xl hover:bg-gray-900 transition-colors"
+            >
+              <Phone size={20} />
+              Chamar no WhatsApp
+            </a>
+          </div>
+        </div>
       </section>
 
       <Footer />
