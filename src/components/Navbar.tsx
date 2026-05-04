@@ -31,6 +31,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Início', href: '/#inicio' },
+    { name: 'Quem Somos', href: '/quem-somos' },
     { name: 'Catálogo', href: '/pneus' },
     { name: 'Serviços', href: '/servicos' },
     { name: 'Como Chegar', href: '/como-chegar' },
@@ -170,13 +171,6 @@ export default function Navbar() {
                   </Link>
                 ))}
                 {/* Links institucionais */}
-                <Link
-                  to="/quem-somos"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-display text-4xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
-                >
-                  Quem Somos
-                </Link>
                 <Link
                   to="/contato"
                   onClick={() => setIsMobileMenuOpen(false)}
