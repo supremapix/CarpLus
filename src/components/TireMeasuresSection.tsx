@@ -45,15 +45,22 @@ export default function TireMeasuresSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 md:mb-10"
-        style={{ 
-          fontSize: 'clamp(1.1rem, 4vw, 1.75rem)',
-        }}
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-5"
       >
         <span className="text-white">Como entender as </span>
         <span className="text-amber-500">medidas</span>
         <span className="text-white"> do meu pneu?</span>
       </motion.h2>
+
+      {/* Description */}
+      <motion.p
+        initial={{ opacity: 0, y: -10 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
+      >
+        Entenda o significado dos numeros na lateral do seu pneu e escolha o modelo certo para o seu veiculo.
+      </motion.p>
 
       {/* Infographic Image */}
       <motion.div
