@@ -1,90 +1,90 @@
 
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MessageSquare, Clock, Star, ShieldCheck, CreditCard, Trophy } from 'lucide-react';
+import { MessageSquare, Clock, Star, ShieldCheck, CreditCard, Trophy, Gauge, Circle, Wrench, OctagonX, Cpu, Link2, Snowflake, Disc, Settings, type LucideIcon } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const SERVICOS = [
+const SERVICOS: { id: string; icon: LucideIcon; titulo: string; descricao: string; beneficios: string[]; tempo: string; slug: string }[] = [
   {
     id: 'alinhamento-balanceamento',
-    icon: '📐',
+    icon: Gauge,
     titulo: 'Alinhamento e Balanceamento',
     descricao: 'Alinhamento computadorizado 3D com equipamento de alta precisão. Evita desgaste irregular de pneus, melhora estabilidade em curvas e reduz consumo de combustível.',
-    beneficios: ['Equipamento 3D computadorizado', 'Resultado em 30–40 minutos', 'Todos os modelos de veículos', 'Sem necessidade de agendamento'],
-    tempo: '30–40 min',
+    beneficios: ['Equipamento 3D computadorizado', 'Resultado em 30-40 minutos', 'Todos os modelos de veículos', 'Sem necessidade de agendamento'],
+    tempo: '30-40 min',
     slug: 'alinhamento-e-balanceamento',
   },
   {
     id: 'troca-pneus',
-    icon: '🛞',
+    icon: Circle,
     titulo: 'Troca de Pneus',
     descricao: 'Venda e montagem de pneus das melhores marcas: Pirelli, Michelin, Goodyear, Continental, Firestone e Bridgestone. Todos os aros do 13 ao 22.',
     beneficios: ['Pirelli, Michelin, Goodyear, Continental', 'Todos os aros (13 ao 22)', 'Montagem e balanceamento inclusos', 'Parcelamento em até 10x sem juros'],
-    tempo: '45–60 min',
+    tempo: '45-60 min',
     slug: 'troca-de-pneus',
   },
   {
     id: 'revisao',
-    icon: '🔩',
+    icon: Wrench,
     titulo: 'Revisão de Carros',
     descricao: 'Revisão preventiva e corretiva completa: troca de óleo e filtros, fluidos, velas, correias e verificação geral. Indicado para revisões de fábrica de todos os modelos.',
     beneficios: ['Revisão de fábrica e preventiva', 'Todos os modelos nacionais e importados', 'Peças de qualidade com NF', 'Laudo técnico detalhado'],
-    tempo: '2–4 horas',
+    tempo: '2-4 horas',
     slug: 'revisao-de-carros',
   },
   {
     id: 'suspensao-freios',
-    icon: '🛑',
+    icon: OctagonX,
     titulo: 'Suspensão e Freios',
     descricao: 'Reparo e substituição de amortecedores, molas, buchas, pastilhas, discos e cilindros. Diagnóstico completo do sistema de freios e suspensão com garantia.',
     beneficios: ['Amortecedores e molas', 'Pastilhas e discos de freio', 'Cilindros e pinças', 'Diagnóstico antes do orçamento'],
-    tempo: '1–3 horas',
+    tempo: '1-3 horas',
     slug: 'suspensao-e-freios',
   },
   {
     id: 'scanner',
-    icon: '💻',
+    icon: Cpu,
     titulo: 'Diagnóstico Eletrônico',
     descricao: 'Leitura de códigos de falha DTC, diagnóstico de motor, injeção eletrônica, ABS, airbag e reset de luzes de painel. Compatível com todas as marcas.',
     beneficios: ['Scanner multiprotocolo', 'Nacionais e importados', 'Reset de todas as luzes', 'Relatório de diagnóstico'],
-    tempo: '30–60 min',
+    tempo: '30-60 min',
     slug: 'scanner-automotivo',
   },
   {
     id: 'correia-dentada',
-    icon: '⛓️',
+    icon: Link2,
     titulo: 'Troca de Correia Dentada',
     descricao: 'Substituição preventiva com peças originais ou de primeira linha. Evita danos graves ao motor. Verificação completa do tensor e bomba d\'água.',
     beneficios: ['Peças com procedência garantida', 'Kit completo (correia + tensor)', 'Verificação da bomba d\'água', 'Garantia do serviço'],
-    tempo: '3–5 horas',
+    tempo: '3-5 horas',
     slug: 'troca-de-correia-dentada',
   },
   {
     id: 'ar-condicionado',
-    icon: '❄️',
+    icon: Snowflake,
     titulo: 'Ar-Condicionado Automotivo',
     descricao: 'Higienização do sistema, carga de gás, reparo de compressor, limpeza de evaporador e manutenção completa do ar-condicionado.',
     beneficios: ['Higienização e carga de gás', 'Reparo de compressor', 'Limpeza de evaporador', 'Odores eliminados'],
-    tempo: '1–3 horas',
+    tempo: '1-3 horas',
     slug: 'ar-condicionado',
   },
   {
     id: 'retifica-discos',
-    icon: '⚙️',
+    icon: Disc,
     titulo: 'Retífica de Discos de Freio',
     descricao: 'Retífica e usinagem de discos com equipamento especializado. Restaura a superfície eliminando vibrações e ranhuras. Solução econômica antes da troca.',
     beneficios: ['Elimina vibrações no freio', 'Equipamento de usinagem próprio', 'Mais econômico que a troca', 'Resultado imediato'],
-    tempo: '1–2 horas',
+    tempo: '1-2 horas',
     slug: 'retifica-de-discos',
   },
   {
     id: 'conserto-rodas',
-    icon: '🔧',
+    icon: Settings,
     titulo: 'Conserto de Rodas',
     descricao: 'Reparo de rodas amassadas, trincadas ou deformadas. Recuperação da geometria original com equipamento especializado para todos os tipos.',
     beneficios: ['Rodas de aço e liga leve', 'Todos os aros', 'Recuperação da geometria', 'Sem precisar trocar a roda'],
-    tempo: '1–2 horas',
+    tempo: '1-2 horas',
     slug: 'conserto-de-rodas',
   },
 ];
@@ -146,7 +146,9 @@ export default function ServicosPage() {
                 className="bg-[#1e1e1e] border border-white/07 rounded-2xl p-7 flex flex-col gap-5 hover:border-primary/40 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-3xl">{s.icon}</span>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
+                    <s.icon className="w-6 h-6 text-primary" />
+                  </div>
                   <h2 className="font-display text-xl font-black uppercase tracking-tight text-white leading-tight">{s.titulo}</h2>
                 </div>
                 <p className="text-sm text-white/55 leading-relaxed">{s.descricao}</p>
