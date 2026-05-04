@@ -929,6 +929,21 @@ export const NEIGHBORHOODS = [
   { name: "Vila Fanny", lat: -25.4870, lng: -49.2720, tempo: "8 min", zona: "sul", via: "Rua Nicola Pellanda" },
   { name: "Vila Torres", lat: -25.4480, lng: -49.2620, tempo: "12 min", zona: "centro", via: "Av. das Torres" },
   { name: "Vila Oficinas", lat: -25.4450, lng: -49.2200, tempo: "18 min", zona: "leste", via: "Av. das Torres" },
+  
+  // NOVAS VILAS E REGIÕES
+  { name: "Vila Sandra", lat: -25.5000, lng: -49.3200, tempo: "15 min", zona: "sul", via: "Rua João Dembinski" },
+  { name: "Neoville", lat: -25.4600, lng: -49.3050, tempo: "12 min", zona: "oeste", via: "Rua Pedro Gusso" },
+  { name: "Vila Verde", lat: -25.4700, lng: -49.3150, tempo: "15 min", zona: "oeste", via: "Ecoville" },
+  { name: "Vila Nossa Senhora da Luz", lat: -25.5100, lng: -49.3000, tempo: "15 min", zona: "sul", via: "Linha Verde" },
+  { name: "Vila Pantanal", lat: -25.4950, lng: -49.2200, tempo: "18 min", zona: "leste", via: "Linha Verde" },
+  { name: "Vitória Régia", lat: -25.5000, lng: -49.3300, tempo: "20 min", zona: "sul", via: "Rua João Bettega" },
+  { name: "Sabará", lat: -25.5150, lng: -49.2950, tempo: "20 min", zona: "sul", via: "Rua Kennedy" },
+  { name: "Santa Felicidade Norte", lat: -25.3750, lng: -49.3300, tempo: "20 min", zona: "norte", via: "Av. Manoel Ribas" },
+  
+  // REGIÃO METROPOLITANA
+  { name: "Piraquara", lat: -25.4428, lng: -49.0620, tempo: "35 min", zona: "metro", via: "Rodovia João Leopoldo Jacomel" },
+  { name: "Quatro Barras", lat: -25.3644, lng: -49.0769, tempo: "30 min", zona: "metro", via: "BR-116" },
+  { name: "Campina Grande do Sul", lat: -25.3050, lng: -49.0550, tempo: "35 min", zona: "metro", via: "BR-116" },
 ];
 
 export const POPULAR_REGIONS = [

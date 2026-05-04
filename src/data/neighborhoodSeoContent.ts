@@ -3314,6 +3314,423 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Atendimento'
     ],
     localBenefits: 'Moradores da Vila Oficinas são bem-vindos na Carplus!'
+  },
+
+  // ══════════════════════════════════════
+  // NOVAS VILAS E REGIÕES POPULARES
+  // ══════════════════════════════════════
+  'vila-sandra': {
+    slug: 'vila-sandra',
+    name: 'Vila Sandra',
+    metaTitle: 'Pneus Vila Sandra Curitiba | Carplus - 15 min',
+    metaDescription: 'Loja de pneus Vila Sandra, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços a 15 min.',
+    h1: 'Pneus e Oficina para Vila Sandra',
+    heroSubtitle: 'Vila Sandra: pneus de qualidade',
+    introText: 'A Vila Sandra é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo para moradores.',
+    localContext: 'A Vila Sandra tem acesso fácil ao Portão. A Carplus atende moradores com qualidade e preços competitivos.',
+    servicesHighlight: [
+      'Pneus das melhores marcas',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Suspensão e freios'
+    ],
+    searchPhrases: [
+      'pneus Vila Sandra Curitiba',
+      'oficina Vila Sandra',
+      'alinhamento Vila Sandra',
+      'borracharia Vila Sandra'
+    ],
+    nearbyLandmarks: [
+      'CIC',
+      'Fazendinha',
+      'Portão'
+    ],
+    trafficTips: 'Da Vila Sandra, siga em direção ao Portão pela Av. República Argentina.',
+    testimonialContext: 'moradores da Vila Sandra',
+    whyChooseUs: [
+      'Preços acessíveis',
+      'Qualidade garantida',
+      'Parcelamento'
+    ],
+    localBenefits: 'Moradores da Vila Sandra são bem-vindos na Carplus!'
+  },
+
+  'neoville': {
+    slug: 'neoville',
+    name: 'Neoville',
+    metaTitle: 'Pneus Neoville Curitiba | Carplus Auto Center - 12 min',
+    metaDescription: 'Loja de pneus Neoville, Curitiba. Pirelli, Michelin, Goodyear, Continental. Alinhamento 3D para veículos de alto padrão.',
+    h1: 'Pneus e Oficina para Neoville',
+    heroSubtitle: 'Neoville: pneus premium para seu veículo',
+    introText: 'O Neoville é um empreendimento de alto padrão em Curitiba. A Carplus Auto Center oferece pneus premium e serviços de excelência para moradores exigentes.',
+    localContext: 'O Neoville reúne moradores que valorizam qualidade. A Carplus atende com pneus para veículos de alto padrão e serviços profissionais.',
+    servicesHighlight: [
+      'Pneus premium para SUVs e sedans executivos',
+      'Alinhamento 3D Hunter de precisão',
+      'Balanceamento computadorizado',
+      'Troca de óleo sintético premium',
+      'Diagnóstico eletrônico completo'
+    ],
+    searchPhrases: [
+      'pneus Neoville Curitiba',
+      'oficina Neoville',
+      'alinhamento Neoville',
+      'pneus premium Neoville'
+    ],
+    nearbyLandmarks: [
+      'Ecoville',
+      'Campo Comprido',
+      'Mossunguê'
+    ],
+    trafficTips: 'Do Neoville, siga pela Av. República Argentina em direção ao Portão.',
+    testimonialContext: 'moradores do Neoville',
+    whyChooseUs: [
+      'Especialistas em pneus premium',
+      'Atendimento VIP',
+      'Pneus para importados'
+    ],
+    localBenefits: 'O Neoville merece qualidade premium - visite a Carplus!'
+  },
+
+  'vila-verde': {
+    slug: 'vila-verde',
+    name: 'Vila Verde',
+    metaTitle: 'Pneus Vila Verde Curitiba | Carplus - 15 min',
+    metaDescription: 'Loja de pneus Vila Verde, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
+    h1: 'Pneus e Oficina para Vila Verde',
+    heroSubtitle: 'Vila Verde: pneus de qualidade',
+    introText: 'A Vila Verde é uma região residencial de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    localContext: 'A Vila Verde está bem localizada com acesso ao Portão. A Carplus atende moradores com qualidade e atendimento profissional.',
+    servicesHighlight: [
+      'Pneus Pirelli, Michelin, Goodyear',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Revisão completa'
+    ],
+    searchPhrases: [
+      'pneus Vila Verde Curitiba',
+      'oficina Vila Verde',
+      'alinhamento Vila Verde',
+      'troca de pneu Vila Verde'
+    ],
+    nearbyLandmarks: [
+      'CIC',
+      'Campo Comprido',
+      'Santa Quitéria'
+    ],
+    trafficTips: 'Da Vila Verde, siga em direção ao Portão pelas principais vias.',
+    testimonialContext: 'moradores da Vila Verde',
+    whyChooseUs: [
+      'Preços competitivos',
+      'Qualidade',
+      'Atendimento rápido'
+    ],
+    localBenefits: 'Moradores da Vila Verde são bem-vindos na Carplus!'
+  },
+
+  'vila-nossa-senhora-da-luz': {
+    slug: 'vila-nossa-senhora-da-luz',
+    name: 'Vila Nossa Senhora da Luz',
+    metaTitle: 'Pneus Vila Nossa Senhora da Luz | Carplus Curitiba - 15 min',
+    metaDescription: 'Loja de pneus Vila Nossa Senhora da Luz, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 15 min.',
+    h1: 'Pneus e Oficina para Vila Nossa Senhora da Luz',
+    heroSubtitle: 'Vila Nossa Senhora da Luz: pneus de qualidade',
+    introText: 'A Vila Nossa Senhora da Luz é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível.',
+    localContext: 'A Vila Nossa Senhora da Luz tem acesso ao Portão pelas principais vias. A Carplus atende moradores com os melhores preços.',
+    servicesHighlight: [
+      'Pneus econômicos e intermediários',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Suspensão'
+    ],
+    searchPhrases: [
+      'pneus Vila Nossa Senhora da Luz',
+      'oficina Vila Nossa Senhora da Luz Curitiba',
+      'alinhamento Vila Nossa Senhora da Luz',
+      'borracharia Vila Nossa Senhora da Luz'
+    ],
+    nearbyLandmarks: [
+      'CIC',
+      'Pinheirinho',
+      'Capão Raso'
+    ],
+    trafficTips: 'Da Vila Nossa Senhora da Luz, siga em direção ao Portão.',
+    testimonialContext: 'moradores da Vila Nossa Senhora da Luz',
+    whyChooseUs: [
+      'Preços acessíveis',
+      'Qualidade',
+      'Parcelamento'
+    ],
+    localBenefits: 'Moradores da Vila Nossa Senhora da Luz economizam na Carplus!'
+  },
+
+  'vila-pantanal': {
+    slug: 'vila-pantanal',
+    name: 'Vila Pantanal',
+    metaTitle: 'Pneus Vila Pantanal Curitiba | Carplus - 18 min',
+    metaDescription: 'Loja de pneus Vila Pantanal, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
+    h1: 'Pneus e Oficina para Vila Pantanal',
+    heroSubtitle: 'Vila Pantanal: pneus de qualidade',
+    introText: 'A Vila Pantanal é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo para moradores.',
+    localContext: 'A Vila Pantanal está conectada às principais vias de Curitiba. A Carplus atende moradores com qualidade.',
+    servicesHighlight: [
+      'Pneus das melhores marcas',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Suspensão e freios'
+    ],
+    searchPhrases: [
+      'pneus Vila Pantanal Curitiba',
+      'oficina Vila Pantanal',
+      'alinhamento Vila Pantanal',
+      'borracharia Vila Pantanal'
+    ],
+    nearbyLandmarks: [
+      'Alto Boqueirão',
+      'Uberaba',
+      'Cajuru'
+    ],
+    trafficTips: 'Da Vila Pantanal, siga pela Linha Verde em direção ao Portão.',
+    testimonialContext: 'moradores da Vila Pantanal',
+    whyChooseUs: [
+      'Preços justos',
+      'Qualidade',
+      'Atendimento profissional'
+    ],
+    localBenefits: 'Moradores da Vila Pantanal são bem-vindos na Carplus!'
+  },
+
+  'vitoria-regia': {
+    slug: 'vitoria-regia',
+    name: 'Vitória Régia',
+    metaTitle: 'Pneus Vitória Régia Curitiba | Carplus - 20 min',
+    metaDescription: 'Loja de pneus Vitória Régia, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
+    h1: 'Pneus e Oficina para Vitória Régia',
+    heroSubtitle: 'Vitória Régia: pneus de qualidade',
+    introText: 'Vitória Régia é uma região de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível para moradores.',
+    localContext: 'Vitória Régia tem acesso ao Portão pelas principais vias. A Carplus atende moradores com os melhores preços.',
+    servicesHighlight: [
+      'Pneus econômicos',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Revisão geral'
+    ],
+    searchPhrases: [
+      'pneus Vitória Régia Curitiba',
+      'oficina Vitória Régia',
+      'alinhamento Vitória Régia',
+      'borracharia Vitória Régia'
+    ],
+    nearbyLandmarks: [
+      'CIC',
+      'Tatuquara',
+      'Campo Comprido'
+    ],
+    trafficTips: 'De Vitória Régia, siga em direção ao Portão pelas principais vias.',
+    testimonialContext: 'moradores de Vitória Régia',
+    whyChooseUs: [
+      'Preços acessíveis',
+      'Qualidade',
+      'Parcelamento'
+    ],
+    localBenefits: 'Moradores de Vitória Régia são bem-vindos na Carplus!'
+  },
+
+  'sabara': {
+    slug: 'sabara',
+    name: 'Sabará',
+    metaTitle: 'Pneus Sabará Curitiba | Carplus - 20 min',
+    metaDescription: 'Loja de pneus Sabará, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
+    h1: 'Pneus e Oficina para Sabará',
+    heroSubtitle: 'Sabará: pneus de qualidade',
+    introText: 'Sabará é um bairro de Curitiba na região do Pinheirinho. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    localContext: 'Sabará está bem localizado com acesso ao Portão. A Carplus atende moradores com qualidade e atendimento profissional.',
+    servicesHighlight: [
+      'Pneus Pirelli, Michelin, Goodyear',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Suspensão e freios'
+    ],
+    searchPhrases: [
+      'pneus Sabará Curitiba',
+      'oficina Sabará',
+      'alinhamento Sabará',
+      'troca de pneu Sabará'
+    ],
+    nearbyLandmarks: [
+      'Pinheirinho',
+      'Capão Raso',
+      'Tatuquara'
+    ],
+    trafficTips: 'De Sabará, siga em direção ao Portão pela Rua Kennedy ou pela Linha Verde.',
+    testimonialContext: 'moradores de Sabará',
+    whyChooseUs: [
+      'Preços competitivos',
+      'Qualidade',
+      'Atendimento rápido'
+    ],
+    localBenefits: 'Moradores de Sabará são bem-vindos na Carplus!'
+  },
+
+  'santa-felicidade-norte': {
+    slug: 'santa-felicidade-norte',
+    name: 'Santa Felicidade Norte',
+    metaTitle: 'Pneus Santa Felicidade Norte | Carplus Curitiba - 20 min',
+    metaDescription: 'Loja de pneus Santa Felicidade Norte, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
+    h1: 'Pneus e Oficina para Santa Felicidade Norte',
+    heroSubtitle: 'Santa Felicidade Norte: pneus de qualidade',
+    introText: 'Santa Felicidade Norte é uma região tradicional de Curitiba, conhecida pela gastronomia italiana. A Carplus Auto Center oferece pneus de qualidade.',
+    localContext: 'Santa Felicidade Norte fica na região noroeste de Curitiba, com acesso pela Av. Manoel Ribas. A Carplus atende moradores com qualidade.',
+    servicesHighlight: [
+      'Pneus para carros e SUVs',
+      'Alinhamento 3D Hunter',
+      'Balanceamento',
+      'Troca de óleo',
+      'Revisão completa'
+    ],
+    searchPhrases: [
+      'pneus Santa Felicidade Norte',
+      'oficina Santa Felicidade Norte Curitiba',
+      'alinhamento Santa Felicidade Norte',
+      'troca de pneu Santa Felicidade Norte'
+    ],
+    nearbyLandmarks: [
+      'Santa Felicidade',
+      'Butiatuvinha',
+      'São Braz'
+    ],
+    trafficTips: 'De Santa Felicidade Norte, siga pela Av. Manoel Ribas em direção ao centro.',
+    testimonialContext: 'moradores de Santa Felicidade Norte',
+    whyChooseUs: [
+      'Qualidade',
+      'Preços justos',
+      'Atendimento profissional'
+    ],
+    localBenefits: 'Moradores de Santa Felicidade Norte são bem-vindos na Carplus!'
+  },
+
+  // ══════════════════════════════════════
+  // REGIÃO METROPOLITANA - NOVOS
+  // ══════════════════════════════════════
+  'piraquara': {
+    slug: 'piraquara',
+    name: 'Piraquara',
+    metaTitle: 'Pneus Piraquara PR | Carplus Curitiba - 35 min',
+    metaDescription: 'Loja de pneus para Piraquara, PR. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços. A 35 min pela BR-116.',
+    h1: 'Pneus e Oficina para Piraquara',
+    heroSubtitle: 'De Piraquara à Carplus em 35 minutos',
+    introText: 'Piraquara é uma cidade da região metropolitana de Curitiba, conhecida pelos mananciais. Moradores encontram na Carplus pneus de qualidade e preços que compensam o deslocamento.',
+    localContext: 'Com acesso pela BR-116 e pela Rodovia João Leopoldo Jacomel, Piraquara está a 35 minutos da Carplus. O trajeto vale pela economia e qualidade.',
+    servicesHighlight: [
+      'Pneus Pirelli, Michelin, Goodyear e Yokohama',
+      'Alinhamento computadorizado 3D',
+      'Balanceamento de rodas',
+      'Troca de óleo sintético e mineral',
+      'Revisão de suspensão e freios'
+    ],
+    searchPhrases: [
+      'pneus Piraquara PR',
+      'loja de pneus Piraquara',
+      'oficina Piraquara',
+      'alinhamento Piraquara',
+      'borracharia Piraquara'
+    ],
+    nearbyLandmarks: [
+      'Centro de Piraquara',
+      'Pinhais',
+      'Quatro Barras'
+    ],
+    trafficTips: 'De Piraquara, siga pela BR-116 ou pela Rodovia João Leopoldo Jacomel em direção a Curitiba.',
+    testimonialContext: 'moradores de Piraquara',
+    whyChooseUs: [
+      'Preços de atacado',
+      'Variedade de pneus',
+      'Atendimento profissional',
+      'Parcelamento em até 10x'
+    ],
+    localBenefits: 'Muitos clientes de Piraquara são clientes fiéis da Carplus. Venha conhecer!'
+  },
+
+  'quatro-barras': {
+    slug: 'quatro-barras',
+    name: 'Quatro Barras',
+    metaTitle: 'Pneus Quatro Barras PR | Carplus Curitiba - 30 min',
+    metaDescription: 'Loja de pneus para Quatro Barras, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 30 min pela BR-116.',
+    h1: 'Pneus e Oficina para Quatro Barras',
+    heroSubtitle: 'De Quatro Barras à Carplus em 30 minutos',
+    introText: 'Quatro Barras é uma cidade da região metropolitana de Curitiba, próxima à Serra do Mar. Moradores encontram na Carplus pneus de qualidade e excelente atendimento.',
+    localContext: 'Com acesso pela BR-116, Quatro Barras está a 30 minutos da Carplus. A viagem vale pela economia em pneus e serviços de qualidade.',
+    servicesHighlight: [
+      'Pneus para carros e SUVs',
+      'Alinhamento 3D Hunter',
+      'Balanceamento computadorizado',
+      'Troca de óleo',
+      'Revisão completa'
+    ],
+    searchPhrases: [
+      'pneus Quatro Barras PR',
+      'loja de pneus Quatro Barras',
+      'oficina Quatro Barras',
+      'alinhamento Quatro Barras',
+      'borracharia Quatro Barras'
+    ],
+    nearbyLandmarks: [
+      'Centro de Quatro Barras',
+      'Campina Grande do Sul',
+      'Piraquara'
+    ],
+    trafficTips: 'De Quatro Barras, siga pela BR-116 em direção a Curitiba.',
+    testimonialContext: 'moradores de Quatro Barras',
+    whyChooseUs: [
+      'Preços justos',
+      'Qualidade premium',
+      'Atendimento especializado'
+    ],
+    localBenefits: 'Moradores de Quatro Barras são bem-vindos na Carplus!'
+  },
+
+  'campina-grande-do-sul': {
+    slug: 'campina-grande-do-sul',
+    name: 'Campina Grande do Sul',
+    metaTitle: 'Pneus Campina Grande do Sul PR | Carplus Curitiba - 35 min',
+    metaDescription: 'Loja de pneus para Campina Grande do Sul, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 35 min pela BR-116.',
+    h1: 'Pneus e Oficina para Campina Grande do Sul',
+    heroSubtitle: 'De Campina Grande do Sul à Carplus em 35 minutos',
+    introText: 'Campina Grande do Sul é uma cidade da região metropolitana de Curitiba. Moradores encontram na Carplus pneus de qualidade e preços que compensam o deslocamento.',
+    localContext: 'Com acesso pela BR-116, Campina Grande do Sul está a 35 minutos da Carplus. A economia em pneus vale a viagem.',
+    servicesHighlight: [
+      'Pneus das melhores marcas',
+      'Alinhamento 3D',
+      'Balanceamento',
+      'Troca de óleo',
+      'Suspensão e freios'
+    ],
+    searchPhrases: [
+      'pneus Campina Grande do Sul PR',
+      'loja de pneus Campina Grande do Sul',
+      'oficina Campina Grande do Sul',
+      'alinhamento Campina Grande do Sul',
+      'borracharia Campina Grande do Sul'
+    ],
+    nearbyLandmarks: [
+      'Centro de Campina Grande do Sul',
+      'Quatro Barras',
+      'Bocaiúva do Sul'
+    ],
+    trafficTips: 'De Campina Grande do Sul, siga pela BR-116 em direção a Curitiba.',
+    testimonialContext: 'moradores de Campina Grande do Sul',
+    whyChooseUs: [
+      'Preços de atacado',
+      'Qualidade garantida',
+      'Parcelamento facilitado'
+    ],
+    localBenefits: 'Moradores de Campina Grande do Sul são bem-vindos na Carplus!'
   }
 };
 
