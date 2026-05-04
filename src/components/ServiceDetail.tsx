@@ -93,7 +93,7 @@ export default function ServiceDetail() {
       <div className="min-h-screen bg-[#111111] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-white text-2xl font-bold mb-4">Servico nao encontrado</h1>
-          <Link to="/servicos" className="text-red-500 hover:text-red-400">
+          <Link to="/servicos" className="text-amber-500 hover:text-amber-400">
             Voltar para servicos
           </Link>
         </div>
@@ -124,8 +124,8 @@ export default function ServiceDetail() {
         animate={{ opacity: 1, y: 0 }}
         className="bg-[#1a1a1a] border-b border-[#2a2a2a] py-14 px-6 text-center"
       >
-        <div className="w-16 h-16 rounded-xl bg-red-600/10 border border-red-600/30 flex items-center justify-center mx-auto mb-6">
-          <IconComponent className="w-8 h-8 text-red-500" />
+        <div className="w-16 h-16 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto mb-6">
+          <IconComponent className="w-8 h-8 text-amber-500" />
         </div>
         <h1 className="text-white text-3xl md:text-4xl font-bold mb-4">{service.title}</h1>
         <p className="text-[#888888] text-base max-w-xl mx-auto">
@@ -135,7 +135,7 @@ export default function ServiceDetail() {
           href={`https://wa.me/554130827282?text=Ola! Gostaria de agendar ${service.title}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-6 bg-[#CC0000] hover:bg-[#A00000] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 mt-6 bg-amber-500 hover:bg-amber-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           Agendar pelo WhatsApp
@@ -151,7 +151,7 @@ export default function ServiceDetail() {
           viewport={{ once: true }}
         >
           <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-1 h-7 bg-[#CC0000] rounded-full inline-block" />
+            <span className="w-1 h-7 bg-amber-500 rounded-full inline-block" />
             Sobre o servico
           </h2>
           {service.description.split('\n\n').map((p, i) => (
@@ -166,13 +166,13 @@ export default function ServiceDetail() {
           viewport={{ once: true }}
         >
           <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-1 h-7 bg-[#CC0000] rounded-full inline-block" />
+            <span className="w-1 h-7 bg-amber-500 rounded-full inline-block" />
             O que esta incluso
           </h2>
           <ul className="space-y-3">
             {service.includes.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-[#cccccc]">
-                <CheckCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                 {item}
               </li>
             ))}
@@ -186,7 +186,7 @@ export default function ServiceDetail() {
           viewport={{ once: true }}
         >
           <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-1 h-7 bg-[#CC0000] rounded-full inline-block" />
+            <span className="w-1 h-7 bg-amber-500 rounded-full inline-block" />
             Quando voce precisa deste servico
           </h2>
           <ul className="space-y-3">
@@ -206,7 +206,7 @@ export default function ServiceDetail() {
           viewport={{ once: true }}
         >
           <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-1 h-7 bg-[#CC0000] rounded-full inline-block" />
+            <span className="w-1 h-7 bg-amber-500 rounded-full inline-block" />
             Perguntas frequentes
           </h2>
           <Accordion type="single" collapsible className="space-y-2">
@@ -216,7 +216,7 @@ export default function ServiceDetail() {
                 value={`faq-${i}`}
                 className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-4"
               >
-                <AccordionTrigger className="text-white font-medium text-left hover:text-red-400 hover:no-underline">
+                <AccordionTrigger className="text-white font-medium text-left hover:text-amber-400 hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-[#999999] leading-relaxed">
@@ -230,22 +230,22 @@ export default function ServiceDetail() {
       </div>
 
       {/* CTA final */}
-      <div className="bg-[#CC0000] py-12 text-center px-6">
-        <h3 className="text-white text-2xl font-bold mb-2">Pronto para agendar?</h3>
-        <p className="text-white/80 mb-6">Av. Presid. Arthur da Silva Bernardes, 1323 - Portao, Curitiba</p>
+      <div className="bg-amber-500 py-12 text-center px-6">
+        <h3 className="text-black text-2xl font-bold mb-2">Pronto para agendar?</h3>
+        <p className="text-black/70 mb-6">Av. Presid. Arthur da Silva Bernardes, 1323 - Portao, Curitiba</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://wa.me/554130827282"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white text-[#CC0000] font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-black text-amber-500 font-bold px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"
           >
             <MessageCircle className="w-4 h-4" />
             WhatsApp (41) 3082-7282
           </a>
           <Link
             to="/como-chegar"
-            className="inline-flex items-center justify-center gap-2 border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 border border-black text-black font-semibold px-6 py-3 rounded-lg hover:bg-black/10 transition-colors"
           >
             <MapPin className="w-4 h-4" />
             Ver no mapa
