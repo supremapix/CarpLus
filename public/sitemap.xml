@@ -9,23 +9,23 @@
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/pneus</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/quem-somos</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -50,117 +50,70 @@
   </url>
 
   <!-- ============================== -->
-  <!-- PÁGINA DE SERVIÇOS             -->
-  <!-- ============================== -->
-
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servicos</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ============================== -->
-  <!-- SERVIÇOS INDIVIDUAIS - FULL    -->
+  <!-- SERVIÇOS                       -->
   <!-- ============================== -->
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/loja-de-pneus</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp</image:loc>
-      <image:title>Loja de Pneus em Curitiba - Carplus Portao</image:title>
-    </image:image>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/alinhamento-3d</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/alinhamento-3d-curitiba.webp</image:loc>
-      <image:title>Alinhamento 3D Computadorizado em Curitiba - Carplus</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/troca-de-oleo</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/troca-de-oleo-curitiba.webp</image:loc>
-      <image:title>Troca de Oleo em Curitiba - Carplus Portao</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/scanner-automotivo</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/scanner-automotivo-curitiba.webp</image:loc>
-      <image:title>Scanner Automotivo Diagnostico Eletronico Curitiba</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/suspensao-e-freios</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/suspensao-freios-curitiba.webp</image:loc>
-      <image:title>Suspensao e Freios em Curitiba - Carplus</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/ar-condicionado</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/ar-condicionado-automotivo-curitiba.webp</image:loc>
-      <image:title>Ar Condicionado Automotivo Curitiba - Carplus</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/manutencao-motor</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/mecanica-motor-curitiba.webp</image:loc>
-      <image:title>Mecanica de Motor Curitiba - Carplus Oficina</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/conserto-de-rodas</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/conserto-rodas-curitiba.webp</image:loc>
-      <image:title>Conserto de Rodas Liga Leve Curitiba</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/correia-dentada</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2025/11/correia-dentada-curitiba.webp</image:loc>
-      <image:title>Troca Correia Dentada Curitiba - Carplus</image:title>
-    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- ============================== -->
