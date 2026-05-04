@@ -280,7 +280,7 @@ export default function NeighborhoodDetail() {
                     <Car className="text-primary" /> Marcas Disponíveis
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
-                    {['Pirelli', 'Michelin', 'Goodyear', 'Continental', 'Firestone', 'Bridgestone'].map((marca) => (
+                    {['Pirelli', 'Michelin', 'Goodyear', 'Continental', 'Firestone', 'Bridgestone', 'Yokohama'].map((marca) => (
                       <div key={marca} className="flex items-center gap-2 bg-white rounded-xl p-3 border border-gray-100">
                         <div className="w-2 h-2 bg-primary rounded-full" />
                         <span className="font-medium text-dark">{marca}</span>

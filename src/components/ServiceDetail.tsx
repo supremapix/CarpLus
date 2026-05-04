@@ -15,7 +15,7 @@ const SEO_CONTENT: Record<string, {
   keywords: string[];
 }> = {
   'loja-de-pneus': {
-    intro: 'A Carplus Pneus é a loja de pneus mais completa do bairro Portão em Curitiba. Trabalhamos com as melhores marcas de pneus do mercado: Pirelli, Michelin, Goodyear, Continental, Bridgestone e Firestone. Nossa loja oferece pneus para todos os tipos de veículos, desde carros populares até SUVs e caminhonetes, com medidas do aro 13 ao aro 22.',
+    intro: 'A Carplus Pneus é a loja de pneus mais completa do bairro Portão em Curitiba. Trabalhamos com as melhores marcas de pneus do mercado: Pirelli, Michelin, Goodyear, Continental, Bridgestone, Firestone e Yokohama. Nossa loja oferece pneus para todos os tipos de veículos, desde carros populares até SUVs e caminhonetes, com medidas do aro 13 ao aro 22.',
     detalhes: [
       'Pneus novos das melhores marcas com garantia de fábrica e nota fiscal',
       'Parcelamento em até 10x sem juros nos cartões de crédito',
