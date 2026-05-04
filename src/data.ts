@@ -829,15 +829,12 @@ export const TIRES: Tire[] = [
 ];
 
 export const SERVICES = [
-  { id: 1, slug: 'loja-de-pneus', title: 'Loja de Pneus', icon: 'Disc', description: 'Pneus Pirelli, Michelin, Goodyear e mais. Em até 10x sem juros.' },
-  { id: 2, slug: 'alinhamento-3d', title: 'Alinhamento 3D', icon: 'Target', description: 'Alinhamento computadorizado 3D de alta precisão para sua segurança.' },
-  { id: 3, slug: 'troca-de-oleo', title: 'Troca de Óleo', icon: 'Droplets', description: 'Filtros e lubrificantes de primeira linha para todos os modelos.' },
-  { id: 4, slug: 'scanner-automotivo', title: 'Scanner Automotivo', icon: 'Cpu', description: 'Diagnóstico eletrônico completo e reset de falhas do sistema.' },
-  { id: 5, slug: 'suspensao-e-freios', title: 'Suspensão e Freios', icon: 'ShieldAlert', description: 'Revisão completa de amortecedores, pastilhas e discos.' },
-  { id: 6, slug: 'ar-condicionado', title: 'Ar-Condicionado', icon: 'Snowflake', description: 'Higienização e carga de gás para o máximo conforto térmico.' },
-  { id: 7, slug: 'manutencao-motor', title: 'Manutenção Motor', icon: 'Wrench', description: 'Reparos mecânicos preventivos e corretivos especializados.' },
-  { id: 8, slug: 'conserto-de-rodas', title: 'Conserto de Rodas', icon: 'Hammer', description: 'Recuperação e retífica de rodas de liga leve em Curitiba.' },
-  { id: 9, slug: 'correia-dentada', title: 'Correia Dentada', icon: 'Link', description: 'Troca preventiva de correia dentada com peças originais e garantia.' },
+  { id: 1, slug: 'alinhamento-e-balanceamento', title: 'Alinhamento e Balanceamento', icon: 'Gauge', description: 'Alinhamento computadorizado 3D e balanceamento de rodas com equipamento de alta precisão.' },
+  { id: 2, slug: 'troca-de-oleo', title: 'Troca de Óleo e Filtros', icon: 'Droplets', description: 'Troca de óleo lubrificante, filtros e fluidos com peças originais e garantia.' },
+  { id: 3, slug: 'suspensao-e-freios', title: 'Suspensão e Freios', icon: 'Settings2', description: 'Amortecedores, molas, pastilhas, discos, cilindros mestre e linha completa de freios.' },
+  { id: 4, slug: 'mecanica-geral', title: 'Mecânica Geral', icon: 'Wrench', description: 'Manutenção preventiva e corretiva, revisão de fábrica, injeção eletrônica e diagnóstico computadorizado.' },
+  { id: 5, slug: 'ar-condicionado', title: 'Ar Condicionado', icon: 'Wind', description: 'Higienização, carga de gás, reparo de compressor e manutenção completa do sistema.' },
+  { id: 6, slug: 'pneus', title: 'Pneus', icon: 'Circle', description: 'Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama. Parcelamento em até 10x.' },
 ];
 
 export const NEIGHBORHOODS = [
