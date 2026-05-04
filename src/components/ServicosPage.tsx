@@ -19,7 +19,7 @@ const SERVICOS: { id: string; icon: LucideIcon; titulo: string; descricao: strin
     id: 'troca-pneus',
     icon: Circle,
     titulo: 'Troca de Pneus',
-    descricao: 'Venda e montagem de pneus das melhores marcas: Pirelli, Michelin, Goodyear, Continental, Firestone e Bridgestone. Todos os aros do 13 ao 22.',
+    descricao: 'Venda e montagem de pneus das melhores marcas: Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama. Todos os aros do 13 ao 22.',
     beneficios: ['Pirelli, Michelin, Goodyear, Continental', 'Todos os aros (13 ao 22)', 'Montagem e balanceamento inclusos', 'Parcelamento em até 10x sem juros'],
     tempo: '45-60 min',
     slug: 'troca-de-pneus',

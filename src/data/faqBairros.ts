@@ -7,7 +7,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
   return [
     {
       question: `Tem loja de pneus perto do ${nome}?`,
-      answer: `Sim! A Carplus Auto Center fica a apenas ${tempo} de carro do ${nome}, na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Vendemos pneus Pirelli, Michelin, Goodyear, Continental, Firestone e Bridgestone com montagem e balanceamento inclusos no preço.`,
+      answer: `Sim! A Carplus Auto Center fica a apenas ${tempo} de carro do ${nome}, na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Vendemos pneus Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama com montagem e balanceamento inclusos no preço.`,
     },
     {
       question: `Como chegar do ${nome} até a Carplus no Portão?`,
@@ -35,7 +35,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Quais marcas de pneus a Carplus tem para moradores do ${nome}?`,
-      answer: `Trabalhamos com as principais marcas do mercado: Pirelli (P400 Evo, P7, P Zero, Scorpion), Michelin (Energy XM2, Primacy 4, Pilot Sport), Goodyear (Direction, EfficientGrip), Continental (ComfortContact, SportContact), Firestone e Bridgestone. Todas com garantia de fábrica e instalação profissional inclusa.`,
+      answer: `Trabalhamos com as principais marcas do mercado: Pirelli (P400 Evo, P7, P Zero, Scorpion), Michelin (Energy XM2, Primacy 4, Pilot Sport), Goodyear (Direction, EfficientGrip), Continental (ComfortContact, SportContact), Firestone, Bridgestone e Yokohama. Todas com garantia de fábrica e instalação profissional inclusa.`,
     },
     {
       question: `A Carplus aceita cartão e parcela para clientes do ${nome}?`,

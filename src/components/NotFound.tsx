@@ -9,7 +9,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Quais pneus a Carplus vende?',
-    a: 'Trabalhamos com Pirelli, Michelin, Goodyear, Continental, Firestone e Bridgestone. Todos os aros, do 13 ao 22. Parcelamos em até 10x sem juros.',
+    a: 'Trabalhamos com Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama. Todos os aros, do 13 ao 22. Parcelamos em até 10x sem juros.',
   },
   {
     q: 'Qual o horário de funcionamento?',
