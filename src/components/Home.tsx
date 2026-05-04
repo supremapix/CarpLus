@@ -3,6 +3,7 @@ import Hero from './Hero';
 import BrandsCarousel from './BrandsCarousel';
 import TireGallery from './TireGallery';
 import TireMeasuresSection from './TireMeasuresSection';
+import StoreSection from './StoreSection';
 import ServicesGrid from './ServicesGrid';
 import NeighborhoodMap from './NeighborhoodMap';
 import NeighborhoodList from './NeighborhoodList';
@@ -29,6 +30,8 @@ export default function Home() {
         </motion.div>
 
         <TireMeasuresSection />
+
+        <StoreSection />
 
         <ServicesGrid />
 
