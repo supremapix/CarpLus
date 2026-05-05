@@ -940,8 +940,15 @@ export const NEIGHBORHOODS = [
   { name: "Sabará", lat: -25.5150, lng: -49.2950, tempo: "20 min", zona: "sul", via: "Rua Kennedy" },
   { name: "Santa Felicidade Norte", lat: -25.3750, lng: -49.3300, tempo: "20 min", zona: "norte", via: "Av. Manoel Ribas" },
   
-  // REGIÃO METROPOLITANA
-  { name: "Piraquara", lat: -25.4428, lng: -49.0620, tempo: "35 min", zona: "metro", via: "Rodovia João Leopoldo Jacomel" },
+  // REGIAO METROPOLITANA (RMC) - Cidades com paginas completas
+  { name: "Sao Jose dos Pinhais", lat: -25.5346, lng: -49.2070, tempo: "30 min", zona: "metro", via: "Av. das Torres" },
+  { name: "Pinhais", lat: -25.4441, lng: -49.1919, tempo: "22 min", zona: "metro", via: "Rod. Deputado Joao Leopoldo Jacomel" },
+  { name: "Colombo", lat: -25.2915, lng: -49.2239, tempo: "30 min", zona: "metro", via: "PR-417" },
+  { name: "Araucaria", lat: -25.5925, lng: -49.4005, tempo: "30 min", zona: "metro", via: "Rodovia do Xisto" },
+  { name: "Almirante Tamandare", lat: -25.3243, lng: -49.3039, tempo: "25 min", zona: "metro", via: "Rodovia dos Minerios" },
+  { name: "Campo Largo", lat: -25.4590, lng: -49.5278, tempo: "35 min", zona: "metro", via: "BR-277" },
+  { name: "Fazenda Rio Grande", lat: -25.6600, lng: -49.3060, tempo: "35 min", zona: "metro", via: "BR-116" },
+  { name: "Piraquara", lat: -25.4428, lng: -49.0620, tempo: "35 min", zona: "metro", via: "Rodovia Joao Leopoldo Jacomel" },
   { name: "Quatro Barras", lat: -25.3644, lng: -49.0769, tempo: "30 min", zona: "metro", via: "BR-116" },
   { name: "Campina Grande do Sul", lat: -25.3050, lng: -49.0550, tempo: "35 min", zona: "metro", via: "BR-116" },
 ];

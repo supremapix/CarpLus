@@ -55,19 +55,29 @@ export default function Sitemap() {
                   ))}
                </div>
                
-               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Regiões Populares e Vilas</h3>
+               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Regioes Populares e Vilas</h3>
                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm text-gray-500">
                   {POPULAR_REGIONS.map(r => (
-                     <span key={r.name} className="flex items-center gap-1">
+                     <Link 
+                       key={`${r.name}-${r.via}`} 
+                       to={`/bairro/${r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} 
+                       className="flex items-center gap-1 hover:text-primary transition-colors"
+                     >
                         <ChevronRight size={10} className="text-primary" /> {r.name}
-                     </span>
+                     </Link>
                   ))}
                </div>
 
-               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Região Metropolitana (RMC)</h3>
-               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm text-gray-500">
+               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Regiao Metropolitana (RMC)</h3>
+               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
                   {CITIES.map(c => (
-                     <span key={c.name} className="font-bold text-gray-700">{c.name}</span>
+                     <Link 
+                       key={c.name} 
+                       to={`/bairro/${c.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
+                       className="font-bold text-gray-700 hover:text-primary transition-colors"
+                     >
+                       {c.name}
+                     </Link>
                   ))}
                </div>
             </div>
