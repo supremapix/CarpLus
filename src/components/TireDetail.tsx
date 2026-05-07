@@ -4,6 +4,7 @@ import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCir
 import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import TireFAQ from './TireFAQ';
 import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
 
@@ -300,6 +301,9 @@ export default function TireDetail() {
                 </motion.div>
             </div>
         </section>
+
+        {/* FAQ Section */}
+        <TireFAQ tire={tire} />
 
         {/* Related Products */}
         {relatedTires.length > 0 && (
