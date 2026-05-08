@@ -8,7 +8,7 @@ export default function Sitemap() {
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
-      <main className="pt-[100px] pb-24">
+      <main className="pt-32 md:pt-36 pb-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-16 text-center">
             <h1 className="text-6xl mb-4 italic uppercase tracking-tighter">Sitemap <span className="text-primary italic">Carplus</span></h1>
