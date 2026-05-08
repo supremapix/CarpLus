@@ -5,6 +5,7 @@ import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireFAQ from './TireFAQ';
+import TireTips from './TireTips';
 import { useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
 
@@ -301,6 +302,9 @@ export default function TireDetail() {
                 </motion.div>
             </div>
         </section>
+
+        {/* Tips Section */}
+        <TireTips tireName={tire.nome} categoria={tire.categoria} />
 
         {/* FAQ Section */}
         <TireFAQ tire={tire} />
