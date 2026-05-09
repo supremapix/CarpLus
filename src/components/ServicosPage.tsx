@@ -179,6 +179,130 @@ export default function ServicosPage() {
         </div>
       </section>
 
+      {/* Wheel Repair Showcase Section */}
+      <section id="conserto-de-rodas" className="py-20 px-4 bg-[#0a0a0a]" aria-labelledby="wheel-repair-heading">
+        <div className="max-w-7xl mx-auto">
+          {/* Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="relative rounded-3xl overflow-hidden">
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recupera%C3%A7%C3%A3o%20de%20rodas-vddjT0XANzM3FbBUv2iHt0OjhN3OLZ.png" 
+                alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+
+          {/* Header */}
+          <header className="text-center mb-12">
+            <span className="inline-block bg-primary/20 border border-primary/40 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+              Serviço Especializado
+            </span>
+            <h2 id="wheel-repair-heading" className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4 italic">
+              Conserto e <span className="text-primary">Recuperação de Rodas</span>
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
+              Restauramos rodas amassadas, trincadas, riscadas ou com corrosão. Equipamento de última geração para recuperar a geometria original e o acabamento perfeito da sua roda.
+            </p>
+          </header>
+
+          {/* Benefits Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {[
+              { icon: <ShieldCheck className="w-6 h-6" />, title: 'Garantia', desc: 'Em todos os reparos' },
+              { icon: <Settings className="w-6 h-6" />, title: 'Equipamento', desc: 'De última geração' },
+              { icon: <Clock className="w-6 h-6" />, title: 'Rapidez', desc: 'Entrega em 1-2h' },
+              { icon: <Star className="w-6 h-6" />, title: 'Qualidade', desc: 'Acabamento perfeito' },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-5 text-center"
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary">
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-white text-sm uppercase tracking-tight">{item.title}</h3>
+                <p className="text-white/50 text-xs mt-1">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {[
+              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%282%29-i6IAEitR6cNYoN4U3J9uFMvgrTDWIv.jpg", alt: "Roda de liga leve polida após conserto na Carplus Curitiba" },
+              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%284%29-hYzJ5iqfOVYrsf96wwC8Jg9GPLETVN.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama" },
+              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%283%29-Pl9PoU2rqazLnV0TTvSLv7D1OuHGMS.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center" },
+              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%285%29-VqCUBsrJKFvmM1iy4SXtGC1pwPx7DG.jpg", alt: "Veículo com rodas consertadas estacionado na Carplus Pneus Curitiba" },
+            ].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative rounded-2xl overflow-hidden aspect-square group"
+              >
+                <img 
+                  src={img.src} 
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Services List */}
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl p-8 md:p-10">
+            <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-6">
+              Tipos de Consertos que Realizamos
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" role="list">
+              {[
+                'Rodas amassadas por impacto',
+                'Rodas trincadas ou com fissuras',
+                'Rodas com corrosão ou oxidação',
+                'Rodas riscadas ou arranhadas',
+                'Rodas com empenamento',
+                'Rodas de liga leve e alumínio',
+                'Rodas de aço (ferro)',
+                'Rodas cromadas ou diamantadas',
+                'Restauração de acabamento original',
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-white/80">
+                  <span className="w-2 h-2 bg-primary rounded-full shrink-0" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 text-center">
+            <a
+              href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Conserto de Rodas. Pode me dar mais informações?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/30"
+            >
+              <MessageSquare size={18} /> Solicitar Orçamento via WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-4 bg-primary">
         <div className="max-w-3xl mx-auto text-center">
