@@ -76,7 +76,7 @@ const SEO_CONTENT: Record<string, {
       'Diagnóstico de injeção eletrônica, ignição e sensores'
     ],
     perguntas: [
-      { pergunta: 'O que significa a luz de injeção acesa no painel?', resposta: 'A luz de injeção (check engine) indica que o sistema de gerenciamento do motor detectou uma falha. Pode ser desde algo simples como tampa do tanque mal fechada até problemas mais sérios. O scanner lê o código exato e indica o componente com defeito.' },
+      { pergunta: 'O que significa a luz de injeção acesa no painel?', resposta: 'A luz de injeção (check engine) indica que o sistema de gerenciamento do motor detectou uma falha. Pode ser desde algo simples como tampa do tanque mal fechada at�� problemas mais sérios. O scanner lê o código exato e indica o componente com defeito.' },
       { pergunta: 'O scanner resolve todos os problemas do carro?', resposta: 'O scanner é uma ferramenta de diagnóstico que identifica a causa do problema. Após a leitura, nossa equipe analisa os códigos e propõe a solução. Em muitos casos, como reset de luz de óleo ou adaptação de peças novas, o próprio scanner resolve.' },
       { pergunta: 'Vocês fazem diagnóstico de carros importados?', resposta: 'Sim! Temos scanners específicos para BMW, Mercedes, Audi, VW, Volvo, Land Rover, Jeep e outras marcas premium. Conseguimos acessar módulos que scanners genéricos não alcançam.' }
     ],
@@ -418,6 +418,132 @@ export default function ServiceDetail() {
               <div className="sr-only">
                 <p>Palavras-chave relacionadas: {SEO_CONTENT[slug || ''].keywords.join(', ')}</p>
                 <p>Carplus Auto Center - {service.title} no bairro Portão em Curitiba, Paraná. Atendemos toda a região metropolitana incluindo São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Wheel Repair Showcase - Exclusive for conserto-de-rodas */}
+        {slug === 'conserto-de-rodas' && (
+          <section className="py-20 bg-[#0a0a0a]" aria-labelledby="wheel-repair-gallery">
+            <div className="max-w-7xl mx-auto px-4">
+              {/* Banner Promocional */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-16"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recupera%C3%A7%C3%A3o%20de%20rodas-vddjT0XANzM3FbBUv2iHt0OjhN3OLZ.png" 
+                    alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Header da Galeria */}
+              <header className="text-center mb-12">
+                <span className="inline-block bg-primary/20 border border-primary/40 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                  Trabalhos Realizados
+                </span>
+                <h2 id="wheel-repair-gallery" className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-4 italic">
+                  Rodas <span className="text-primary">Recuperadas</span>
+                </h2>
+                <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
+                  Confira alguns dos nossos trabalhos de recuperacao e restauracao de rodas. Transformamos rodas danificadas em rodas perfeitas novamente.
+                </p>
+              </header>
+
+              {/* Grid de Benefícios */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                {[
+                  { icon: <Shield className="w-6 h-6" />, title: 'Garantia', desc: 'Em todos os reparos' },
+                  { icon: <LucideIcons.Settings className="w-6 h-6" />, title: 'Equipamento', desc: 'De ultima geracao' },
+                  { icon: <Clock className="w-6 h-6" />, title: 'Rapidez', desc: 'Entrega em 1-2h' },
+                  { icon: <Star className="w-6 h-6" />, title: 'Qualidade', desc: 'Acabamento perfeito' },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-5 text-center"
+                  >
+                    <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-bold text-white text-sm uppercase tracking-tight">{item.title}</h3>
+                    <p className="text-white/50 text-xs mt-1">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Galeria de Imagens */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                {[
+                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%282%29-i6IAEitR6cNYoN4U3J9uFMvgrTDWIv.jpg", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
+                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%284%29-hYzJ5iqfOVYrsf96wwC8Jg9GPLETVN.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
+                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%283%29-Pl9PoU2rqazLnV0TTvSLv7D1OuHGMS.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
+                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%285%29-VqCUBsrJKFvmM1iy4SXtGC1pwPx7DG.jpg", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
+                ].map((img, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="relative rounded-2xl overflow-hidden aspect-square group"
+                  >
+                    <img 
+                      src={img.src} 
+                      alt={img.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Lista de Serviços */}
+              <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl p-8 md:p-10 mb-10">
+                <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-6">
+                  Tipos de Consertos de Rodas que Realizamos
+                </h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" role="list">
+                  {[
+                    'Rodas amassadas por impacto em buracos',
+                    'Rodas trincadas ou com fissuras',
+                    'Rodas com corrosao ou oxidacao',
+                    'Rodas riscadas ou arranhadas em guias',
+                    'Rodas com empenamento lateral',
+                    'Rodas de liga leve e aluminio',
+                    'Rodas de aco (ferro)',
+                    'Rodas cromadas ou diamantadas',
+                    'Restauracao de acabamento original',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-white/80">
+                      <span className="w-2 h-2 bg-primary rounded-full shrink-0" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CTA WhatsApp */}
+              <div className="text-center">
+                <a
+                  href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Conserto de Rodas. Pode me dar mais informações e orçamento?"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/30"
+                >
+                  <MessageSquare size={18} /> Solicitar Orcamento via WhatsApp
+                </a>
               </div>
             </div>
           </section>
