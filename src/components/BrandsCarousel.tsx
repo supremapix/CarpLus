@@ -132,7 +132,7 @@ export default function BrandsCarousel() {
       {/* Brand Ticker */}
       <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
         <div className="flex gap-12 whitespace-nowrap animate-brands-scroll">
-          {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA', 'PRINX']).flat().map((brand, i) => (
+          {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA', 'PRINX', 'DELINTE']).flat().map((brand, i) => (
             <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
               {brand}
             </span>
