@@ -51,7 +51,7 @@ export default function StoreSection() {
             </p>
             
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               Loja de Pneus em Curitiba
             </h2>
             

@@ -45,7 +45,7 @@ export default function TireMeasuresSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4"
       >
         <span className="text-white">Como entender as </span>
         <span className="text-amber-500">medidas</span>
@@ -57,7 +57,7 @@ export default function TireMeasuresSection() {
         initial={{ opacity: 0, y: -10 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
+        className="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
       >
         Entenda o significado dos numeros na lateral do seu pneu e escolha o modelo certo.
       </motion.p>

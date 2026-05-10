@@ -26,8 +26,8 @@ export default function ServicesGrid() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-5xl mb-4 leading-none">Serviços <span className="text-primary italic">Full Service</span></h2>
-            <p className="text-xl text-gray-600 font-light italic">Oficina mecânica completa para todas as marcas nacionais e importadas.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-none">Serviços <span className="text-primary italic">Full Service</span></h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light italic">Oficina mecânica completa para todas as marcas nacionais e importadas.</p>
           </div>
           <div className="hidden md:block h-px bg-gray-200 flex-grow mx-12 mb-4" />
           <div className="flex items-center gap-4 bg-primary text-white p-4 rounded-xl shadow-lg shadow-primary/20">
