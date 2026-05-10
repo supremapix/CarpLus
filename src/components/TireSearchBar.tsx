@@ -74,10 +74,13 @@ export default function TireSearchBar() {
           {/* Search Bar Container */}
           <div className={`${isExpanded ? 'block' : 'hidden'} md:block`}>
             {/* Header */}
-            <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic">
+            <div className="text-center mb-4 md:mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight">
                 Pesquise seu <span className="text-primary">pneu pelo aro</span>
               </h2>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                Selecione o aro do seu veículo e encontre os melhores modelos
+              </p>
             </div>
 
             {/* Search Fields */}
