@@ -41,12 +41,11 @@ export default function TireGallery() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
           >
-            <h2 className="text-6xl md:text-8xl mb-4 italic font-black leading-none uppercase tracking-tighter">
-              Buscador de<br />
-              <span className="text-primary pr-2">PNEUS</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 italic font-bold leading-none uppercase tracking-tight">
+              Buscador de <span className="text-primary">Pneus</span>
             </h2>
-            <p className="text-2xl text-gray-800 max-w-2xl mx-auto font-medium leading-tight">
-              Selecione o aro do seu veículo e encontre os <br className="hidden md:block"/> melhores modelos em estoque.
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-xl mx-auto font-medium leading-relaxed">
+              Selecione o aro do seu veículo e encontre os melhores modelos em estoque.
             </p>
           </motion.div>
         </div>

@@ -57,7 +57,7 @@ export default function FAQ() {
           <HelpCircle size={16} /> Dúvidas Frequentes
         </div>
 
-        <h2 className="text-5xl mb-12">Perguntas <span className="text-primary italic">Comuns</span></h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12">Perguntas <span className="text-primary italic">Comuns</span></h2>
 
         <div className="bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-xl shadow-gray-200/50">
           {FAQS.map((faq, i) => <FAQItem key={i} q={faq.q} a={faq.a} />)}

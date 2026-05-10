@@ -53,11 +53,11 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter">
                    FALE COM UM<br/>
                    <span className="text-primary not-italic">ESPECIALISTA</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed">
+                <p className="text-xl sm:text-2xl md:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>
             </motion.div>
@@ -132,7 +132,7 @@ export default function BrandsCarousel() {
       {/* Brand Ticker */}
       <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
         <div className="flex gap-12 whitespace-nowrap animate-brands-scroll">
-          {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE']).flat().map((brand, i) => (
+          {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA', 'PRINX']).flat().map((brand, i) => (
             <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
               {brand}
             </span>
