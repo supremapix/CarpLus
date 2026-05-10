@@ -76,7 +76,7 @@ export default function TireSearchBar() {
             {/* Header */}
             <div className="text-center mb-3 md:mb-4">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-gray-800">
-                Buscador de <span className="text-primary">Pneus</span>
+                Pesquise <span className="text-primary">Pneus</span> por tamanho!
               </h2>
               <p className="text-sm sm:text-base text-gray-500 mt-1">
                 Selecione o aro e encontre os melhores modelos
