@@ -1,25 +1,39 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
 
-const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama"];
+const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
 const CATEGORIES = ["Econômico", "Conforto", "Conforto Premium", "Performance", "Esportivo", "SUV", "SUV Premium", "All Season"];
 const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Premium", "SUV Premium", "Coupe", "Hatch Esportivo", "Híbrido", "SUV Esportivo"];
 
 export default function TireCatalog() {
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedRims, setSelectedRims] = useState<number[]>([]);
+  const [selectedLargura, setSelectedLargura] = useState<number | null>(null);
+  const [selectedAltura, setSelectedAltura] = useState<number | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<string[]>([]);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
+
+  // Read URL params on mount
+  useEffect(() => {
+    const aro = searchParams.get('aro');
+    const largura = searchParams.get('largura');
+    const altura = searchParams.get('altura');
+    
+    if (aro) setSelectedRims([parseInt(aro)]);
+    if (largura) setSelectedLargura(parseInt(largura));
+    if (altura) setSelectedAltura(parseInt(altura));
+  }, [searchParams]);
 
   const filteredTires = useMemo(() => {
     return TIRES.filter(tire => {
@@ -30,17 +44,19 @@ export default function TireCatalog() {
       
       const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(tire.marca);
       const matchesRim = selectedRims.length === 0 || selectedRims.includes(tire.aro);
+      const matchesLargura = !selectedLargura || tire.largura === selectedLargura;
+      const matchesAltura = !selectedAltura || tire.perfil === selectedAltura;
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(tire.categoria);
       const matchesVehicle = selectedVehicleTypes.length === 0 || tire.tipoVeiculo.some(v => selectedVehicleTypes.includes(v));
 
-      return matchesSearch && matchesBrand && matchesRim && matchesCategory && matchesVehicle;
+      return matchesSearch && matchesBrand && matchesRim && matchesLargura && matchesAltura && matchesCategory && matchesVehicle;
     }).sort((a, b) => {
       if (sortBy === "rim-asc") return a.aro - b.aro;
       if (sortBy === "rim-desc") return b.aro - a.aro;
       if (sortBy === "brand") return a.marca.localeCompare(b.marca);
       return 0; // Default relevance
     });
-  }, [search, selectedBrands, selectedRims, selectedCategories, selectedVehicleTypes, sortBy]);
+  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
 
   const toggleFilter = (list: any[], setList: Function, value: any) => {
     if (list.includes(value)) {
@@ -53,6 +69,8 @@ export default function TireCatalog() {
   const clearFilters = () => {
     setSelectedBrands([]);
     setSelectedRims([]);
+    setSelectedLargura(null);
+    setSelectedAltura(null);
     setSelectedCategories([]);
     setSelectedVehicleTypes([]);
     setSearch("");
@@ -92,7 +110,7 @@ export default function TireCatalog() {
         {/* Brand Ticker — rente ao final do hero */}
         <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
           <div className="flex gap-12 whitespace-nowrap animate-tire-scroll">
-            {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA']).flat().map((brand, i) => (
+            {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA', 'PRINX']).flat().map((brand, i) => (
               <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
                 {brand}
               </span>

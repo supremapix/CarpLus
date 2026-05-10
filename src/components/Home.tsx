@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Hero from './Hero';
+import TireSearchBar from './TireSearchBar';
 import BrandsCarousel from './BrandsCarousel';
 import TireGallery from './TireGallery';
 import TireMeasuresSection from './TireMeasuresSection';
@@ -20,6 +21,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        
+        <TireSearchBar />
         
         <motion.div
            initial={{ opacity: 0 }}
