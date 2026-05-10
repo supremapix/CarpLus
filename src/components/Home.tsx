@@ -24,6 +24,8 @@ export default function Home() {
         
         <TireSearchBar />
         
+        <TireMeasuresSection />
+
         <motion.div
            initial={{ opacity: 0 }}
            whileInView={{ opacity: 1 }}
@@ -31,8 +33,6 @@ export default function Home() {
         >
           <TireGallery />
         </motion.div>
-
-        <TireMeasuresSection />
 
         <StoreSection />
 
