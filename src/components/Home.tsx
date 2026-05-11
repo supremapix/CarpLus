@@ -4,6 +4,7 @@ import TireSearchBar from './TireSearchBar';
 import BrandsCarousel from './BrandsCarousel';
 import TireGallery from './TireGallery';
 import TireMeasuresSection from './TireMeasuresSection';
+import PneusCuritibaPromo from './PneusCuritibaPromo';
 import StoreSection from './StoreSection';
 import ServicesGrid from './ServicesGrid';
 import NeighborhoodMap from './NeighborhoodMap';
@@ -25,6 +26,8 @@ export default function Home() {
         <TireSearchBar />
         
         <TireMeasuresSection />
+
+        <PneusCuritibaPromo />
 
         <motion.div
            initial={{ opacity: 0 }}
