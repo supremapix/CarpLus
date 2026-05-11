@@ -9,8 +9,8 @@ import TireCard from './TireCard';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
-const CATEGORIES = ["Econômico", "Conforto", "Conforto Premium", "Performance", "Esportivo", "SUV", "SUV Premium", "All Season"];
-const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Premium", "SUV Premium", "Coupe", "Hatch Esportivo", "Híbrido", "SUV Esportivo"];
+const CATEGORIES = ["Econômico", "Conforto", "Conforto Premium", "Performance", "Esportivo", "SUV", "SUV Premium", "All Season", "Carga", "Moto"];
+const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Premium", "SUV Premium", "Coupe", "Hatch Esportivo", "Híbrido", "SUV Esportivo", "Van", "Furgão", "Utilitário", "Moto Esportiva", "Moto Touring", "Crossover"];
 
 export default function TireCatalog() {
   const [searchParams] = useSearchParams();

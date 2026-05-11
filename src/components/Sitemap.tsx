@@ -1,8 +1,16 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES } from '../data';
+import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
 import { Link } from 'react-router-dom';
-import { MapPin, Wrench, Globe, ChevronRight } from 'lucide-react';
+import { MapPin, Wrench, Globe, ChevronRight, Disc } from 'lucide-react';
+
+const BRANDS_WITH_COUNT = () => {
+  const brands: Record<string, number> = {};
+  TIRES.forEach(tire => {
+    brands[tire.marca] = (brands[tire.marca] || 0) + 1;
+  });
+  return Object.entries(brands).sort((a, b) => b[1] - a[1]);
+};
 
 export default function Sitemap() {
   return (
@@ -38,6 +46,24 @@ export default function Sitemap() {
                <ul className="space-y-3 font-medium text-gray-600">
                   {SERVICES.map(s => (
                      <li key={s.slug}><Link to={`/servico/${s.slug}`} className="hover:text-primary transition-colors">{s.title}</Link></li>
+                  ))}
+               </ul>
+            </div>
+
+            {/* Pneus por Marca */}
+            <div className="space-y-6">
+               <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2">
+                 <Disc size={24} className="text-primary" /> Pneus por Marca
+               </h2>
+               <ul className="space-y-3 font-medium text-gray-600">
+                  <li><Link to="/pneus" className="hover:text-primary transition-colors font-bold">Ver Catalogo Completo ({TIRES.length} pneus)</Link></li>
+                  {BRANDS_WITH_COUNT().map(([marca, count]) => (
+                     <li key={marca}>
+                       <Link to={`/pneus?marca=${marca.toLowerCase()}`} className="hover:text-primary transition-colors flex items-center justify-between">
+                         <span>{marca}</span>
+                         <span className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-500">{count}</span>
+                       </Link>
+                     </li>
                   ))}
                </ul>
             </div>
