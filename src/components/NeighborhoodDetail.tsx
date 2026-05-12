@@ -587,7 +587,7 @@ export default function NeighborhoodDetail() {
               </a>
             </div>
             <p className="text-black/60 text-sm mt-8">
-              Seg a Sex: 8h às 18h | Sábado: 8h às 13h
+              Seg a Sex: 8h às 18h | Sábado: 8h às 12h
             </p>
           </div>
         </section>

@@ -66,7 +66,7 @@ const ROTAS = [
 const FAQ_ITEMS = [
   { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Auto Center fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300. Referência: próximo ao Shopping Palladium e ao Parque do Barigüi.' },
   { q: 'Tem estacionamento na Carplus?', a: 'Sim! A Carplus tem estacionamento próprio gratuito. Você pode deixar o carro enquanto realizamos o serviço sem preocupação com rotativo ou tempo limitado.' },
-  { q: 'Qual o horário de funcionamento da Carplus?', a: 'Atendemos de Segunda a Sexta das 8h às 18h e aos Sábados das 8h às 13h. Domingos e feriados fechado.' },
+  { q: 'Qual o horário de funcionamento da Carplus?', a: 'Atendemos de Segunda a Sexta das 8h às 18h e aos Sábados das 8h às 12h. Domingos e feriados fechado.' },
   { q: 'Como chegar na Carplus vindo do Shopping Palladium?', a: 'Do Shopping Palladium são apenas 3 minutos de carro. Saia pelo acesso Sul, siga pela Av. Vereador Toaldo Túlio, cruze a Av. República Argentina e chegue na Av. Arthur da Silva Bernardes, 1323.' },
   { q: 'A Carplus fica perto do Terminal do Portão?', a: 'O Terminal do Portão fica a aproximadamente 950m da Carplus (cerca de 12 minutos a pé ou 3 minutos de carro).' },
 ];
@@ -124,7 +124,7 @@ export default function ComoChegar() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               { icon: <Clock size={20} className="text-primary" />, title: 'Seg–Sex', sub: '8h às 18h' },
-              { icon: <Clock size={20} className="text-primary" />, title: 'Sábado', sub: '8h às 13h' },
+              { icon: <Clock size={20} className="text-primary" />, title: 'Sábado', sub: '8h às 12h' },
               { icon: <Phone size={20} className="text-primary" />, title: 'Telefone', sub: '(41) 3082-7282', href: 'tel:+554130827282' },
               { icon: <Star size={20} className="text-primary" />, title: '4,9/5', sub: '312+ avaliações' },
             ].map((item, i) => (

@@ -7,10 +7,8 @@ import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
 import StoreSection from './StoreSection';
 import ServicesGrid from './ServicesGrid';
-import NeighborhoodMap from './NeighborhoodMap';
-import NeighborhoodList from './NeighborhoodList';
 import Reviews from './Reviews';
-import FAQ from './FAQ';
+import FAQInfiniteScroll from './FAQInfiniteScroll';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
@@ -41,11 +39,9 @@ export default function Home() {
 
         <ServicesGrid />
 
-        <NeighborhoodMap />
-        <NeighborhoodList />
-        
         <Reviews />
-        <FAQ />
+
+        <FAQInfiniteScroll />
         
         <BrandsCarousel />
       </main>

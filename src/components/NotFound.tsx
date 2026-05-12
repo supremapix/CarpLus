@@ -13,7 +13,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Qual o horário de funcionamento?',
-    a: 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 13h. Domingos e feriados: fechado.',
+    a: 'Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h. Domingos e feriados: fechado.',
   },
   {
     q: 'A Carplus faz alinhamento e balanceamento?',
@@ -86,7 +86,7 @@ export default function NotFound() {
           {[
             { icon: Phone, label: 'Telefone / WhatsApp', value: '(41) 3082-7282', href: 'tel:+554130827282', color: 'bg-[#25D366]' },
             { icon: MapPin, label: 'Endereço', value: 'Portão, Curitiba – PR', href: 'https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7', color: 'bg-[#1565C0]' },
-            { icon: Clock, label: 'Horário', value: 'Seg–Sex 8h–18h | Sáb 8h–13h', href: null, color: 'bg-surface' },
+            { icon: Clock, label: 'Horário', value: 'Seg–Sex 8h–18h | Sáb 8h–12h', href: null, color: 'bg-surface' },
           ].map((c, i) => (
             <a
               key={i}

@@ -87,7 +87,7 @@ export default function Footer() {
                   </div>
                   <div className="text-xl font-bold">
                      <p>Segunda a Sexta: 08:00 – 18:00</p>
-                     <p>Sábado: 08:00 – 13:00</p>
+                     <p>Sábado: 08:00 – 12:00</p>
                   </div>
                </li>
             </ul>

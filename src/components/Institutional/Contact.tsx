@@ -46,7 +46,7 @@ export default function Contact() {
                        <div>
                           <p className="font-bold text-xl italic uppercase">Horário de Funcionamento</p>
                           <p className="text-white/50">Segunda a Sexta: 08:00 às 18:00</p>
-                          <p className="text-white/50">Sábado: 08:00 às 13:00</p>
+                          <p className="text-white/50">Sábado: 08:00 às 12:00</p>
                        </div>
                     </li>
                  </ul>

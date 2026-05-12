@@ -13,7 +13,7 @@ function useBusinessStatus() {
 
   const isOpen =
     (day >= 1 && day <= 5 && time >= 8 && time < 18) ||
-    (day === 6 && time >= 8 && time < 13);
+    (day === 6 && time >= 8 && time < 12);
 
   return isOpen;
 }
@@ -35,7 +35,7 @@ export default function Navbar() {
     { name: 'Catálogo', href: '/pneus' },
     { name: 'Serviços', href: '/servicos' },
     { name: 'Como Chegar', href: '/como-chegar' },
-    { name: 'Bairros', href: '/bairros' },
+    { name: 'FAQ', href: '/faq' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -58,24 +58,24 @@ export default function Navbar() {
             <span className="flex items-center gap-1"><Phone size={12} /> (41) 3082-7282</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden sm:flex items-center gap-1"><Clock size={12} /> Seg-Sex 8h-18h | Sáb 8h-13h</span>
+            <span className="hidden sm:flex items-center gap-1"><Clock size={12} /> Seg-Sex 8h-18h | Sáb 8h-12h</span>
 
             {/* Badge Aberto/Fechado */}
             <motion.div
               animate={{ scale: [1, 1.04, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-bold text-[10px] border ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full font-black text-[11px] uppercase tracking-wider border-2 shadow-lg ${
                 isOpen
-                  ? 'bg-[#00C853]/20 border-[#00C853]/50 text-[#00C853]'
-                  : 'bg-red-600/20 border-red-500/50 text-red-300'
+                  ? 'bg-[#00C853] border-[#00C853] text-white shadow-[#00C853]/40'
+                  : 'bg-red-600 border-red-600 text-white shadow-red-600/40'
               }`}
             >
               <span
-                className={`w-1.5 h-1.5 rounded-full ${isOpen ? 'bg-[#00C853]' : 'bg-red-400'}`}
+                className={`w-2 h-2 rounded-full ${isOpen ? 'bg-white' : 'bg-white'}`}
                 style={{
                   boxShadow: isOpen
-                    ? '0 0 6px #00C853'
-                    : '0 0 6px rgba(239,68,68,0.8)',
+                    ? '0 0 8px rgba(255,255,255,0.8)'
+                    : '0 0 8px rgba(255,255,255,0.8)',
                   animation: 'pulse 1.5s ease-in-out infinite',
                 }}
               />
