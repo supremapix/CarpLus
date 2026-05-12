@@ -230,8 +230,8 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-b from-dark to-background overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative pt-32 pb-16 bg-[#0f0f0f] overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
@@ -265,7 +265,7 @@ export default function FAQPage() {
                 placeholder="Buscar pergunta ou palavra-chave..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-lg"
+                className="w-full pl-12 pr-4 py-4 bg-[#1a1a1a] border border-white/20 rounded-2xl text-white placeholder-white/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-lg shadow-xl"
               />
               {searchTerm && (
                 <button
