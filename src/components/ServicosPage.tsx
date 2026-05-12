@@ -499,7 +499,7 @@ export default function ServicosPage() {
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black mb-4 italic leading-tight">
             Pronto para agendar?
           </h2>
-          <p className="text-black/70 text-base mb-8">Atendemos de Seg–Sex 8h–18h e Sábados 8h–13h. Sem agendamento para a maioria dos serviços.</p>
+          <p className="text-black/70 text-base mb-8">Atendemos de Seg–Sex 8h–18h e Sábados 8h–12h. Sem agendamento para a maioria dos serviços.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="https://wa.me/554130827282"

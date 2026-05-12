@@ -11,7 +11,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Como chegar do ${nome} até a Carplus no Portão?`,
-      answer: `Do ${nome} até a Carplus são aproximadamente ${tempo} de carro via ${via}. Não precisa agendar, pode vir direto! Horário de funcionamento: Segunda a Sexta das 8h às 18h e Sábados das 8h às 13h. Estacionamento próprio gratuito.`,
+      answer: `Do ${nome} até a Carplus são aproximadamente ${tempo} de carro via ${via}. Não precisa agendar, pode vir direto! Horário de funcionamento: Segunda a Sexta das 8h às 18h e Sábados das 8h às 12h. Estacionamento próprio gratuito.`,
     },
     {
       question: `A Carplus atende moradores do ${nome}?`,
@@ -43,7 +43,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Preciso agendar para ir do ${nome} à Carplus?`,
-      answer: `Não é necessário agendar! Trabalhamos com atendimento por ordem de chegada. No entanto, se preferir garantir prioridade, pode agendar pelo WhatsApp (41) 3082-7282. Horário: Seg-Sex 8h às 18h, Sábado 8h às 13h. O trajeto do ${nome} é de aproximadamente ${tempo}.`,
+      answer: `Não é necessário agendar! Trabalhamos com atendimento por ordem de chegada. No entanto, se preferir garantir prioridade, pode agendar pelo WhatsApp (41) 3082-7282. Horário: Seg-Sex 8h às 18h, Sábado 8h às 12h. O trajeto do ${nome} é de aproximadamente ${tempo}.`,
     },
   ];
 }

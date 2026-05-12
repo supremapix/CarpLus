@@ -103,7 +103,7 @@ export default function BrandsCarousel() {
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Horário de atendimento</span>
-                            <strong className="text-primary font-display font-black text-lg tracking-wide">Seg–Sex 8h–18h | Sáb 8h–13h</strong>
+                            <strong className="text-primary font-display font-black text-lg tracking-wide">Seg–Sex 8h–18h | Sáb 8h–12h</strong>
                         </div>
                     </div>
                 </div>
