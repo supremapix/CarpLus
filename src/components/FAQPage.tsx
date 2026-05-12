@@ -216,7 +216,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0f0f0f]">
       <Navbar />
       
       {/* Schema Markup for SEO */}
@@ -288,7 +288,7 @@ export default function FAQPage() {
       </section>
 
       {/* Categories */}
-      <section className="sticky top-[108px] z-30 bg-background/95 backdrop-blur-sm border-b border-white/10 py-4">
+      <section className="sticky top-[108px] z-30 bg-[#0f0f0f]/98 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {categorias.map((cat) => (
@@ -298,7 +298,7 @@ export default function FAQPage() {
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                   selectedCategory === cat
                     ? 'bg-primary text-black'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
+                    : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white border border-white/10'
                 }`}
               >
                 {cat !== 'Todos' && categoryIcons[cat]}
@@ -310,7 +310,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ List */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 bg-[#0f0f0f]">
         <div className="max-w-4xl mx-auto">
           {filteredFaqs.length === 0 ? (
             <div className="text-center py-16">
