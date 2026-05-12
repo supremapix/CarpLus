@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MessageSquare, Clock, Star, ShieldCheck, CreditCard, Trophy, Gauge, Circle, Wrench, OctagonX, Cpu, Link2, Snowflake, Disc, Settings, type LucideIcon } from 'lucide-react';
+import { MessageSquare, Clock, Star, ShieldCheck, CreditCard, Trophy, Gauge, Circle, Wrench, OctagonX, Cpu, Link2, Snowflake, Disc, Settings, FlaskConical, Play, type LucideIcon } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -86,6 +86,15 @@ const SERVICOS: { id: string; icon: LucideIcon; titulo: string; descricao: strin
     beneficios: ['Rodas de aço e liga leve', 'Todos os aros', 'Recuperação da geometria', 'Sem precisar trocar a roda'],
     tempo: '1-2 horas',
     slug: 'conserto-de-rodas',
+  },
+  {
+    id: 'troca-fluido-freio',
+    icon: FlaskConical,
+    titulo: 'Troca de Fluido de Freio',
+    descricao: 'Substituição do fluido de freio DOT3/DOT4 para garantir máxima segurança na frenagem. O fluido absorve umidade com o tempo e perde eficiência, comprometendo a resposta dos freios.',
+    beneficios: ['Fluido DOT3 e DOT4', 'Sangria completa do sistema', 'Verificação de vazamentos', 'Maior segurança na frenagem'],
+    tempo: '30-60 min',
+    slug: 'troca-de-fluido-de-freio',
   },
 ];
 
@@ -175,6 +184,154 @@ export default function ServicosPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Video Section - Troca de Fluido de Freio */}
+      <section id="troca-fluido-freio-destaque" className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-dark via-[#0d0d0d] to-[#0a0a0a]">
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/20 to-yellow-500/20 border border-primary/40 text-primary px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-primary/10">
+              <Play size={12} fill="currentColor" />
+              Destaque Premium
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+              Troca de <span className="text-primary">Fluido de Freio</span>
+            </h2>
+            <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Serviço essencial para sua seguranca. Veja como realizamos a troca completa do fluido de freio com equipamentos profissionais.
+            </p>
+          </motion.div>
+
+          {/* Video + Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            {/* Premium Video Container */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative mx-auto w-full max-w-[380px] lg:max-w-[420px]"
+            >
+              {/* Glow Effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-yellow-500/20 to-primary/30 rounded-[3rem] blur-2xl opacity-50" />
+              
+              {/* Video Frame */}
+              <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/50 border-4 border-white/10">
+                {/* YouTube Shorts Embed */}
+                <iframe
+                  src="https://www.youtube.com/embed/qTmIkTltrYk?autoplay=1&mute=1&loop=1&playlist=qTmIkTltrYk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                  title="CarPlus - Troca de Fluido de Freio"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                
+                {/* Top Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+                
+                {/* Premium Badge */}
+                <div className="absolute top-5 left-5 z-10">
+                  <div className="bg-gradient-to-r from-primary to-yellow-400 text-black px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl shadow-primary/40">
+                    <FlaskConical size={12} />
+                    Servico Profissional
+                  </div>
+                </div>
+                
+                {/* Bottom Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                  <p className="text-white/60 text-sm">Freios com maximo desempenho</p>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-[50px]" />
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="space-y-8"
+            >
+              {/* Info Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: <ShieldCheck className="w-6 h-6" />, title: 'Seguranca', desc: 'Frenagem eficiente' },
+                  { icon: <Clock className="w-6 h-6" />, title: '30-60 min', desc: 'Servico rapido' },
+                  { icon: <Star className="w-6 h-6" />, title: 'DOT3/DOT4', desc: 'Fluidos premium' },
+                  { icon: <Trophy className="w-6 h-6" />, title: 'Garantia', desc: 'No servico' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-primary/30 transition-colors group">
+                    <div className="w-11 h-11 bg-primary/15 rounded-xl flex items-center justify-center mb-3 text-primary group-hover:bg-primary/25 transition-colors">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-bold text-white text-sm uppercase tracking-tight">{item.title}</h3>
+                    <p className="text-white/40 text-xs mt-0.5">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Feature List */}
+              <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8">
+                <h3 className="text-xl font-black text-white uppercase tracking-tight mb-5 flex items-center gap-3">
+                  <FlaskConical className="text-primary" size={24} />
+                  Por que trocar o fluido?
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    'Fluido absorve umidade e perde eficiencia com o tempo',
+                    'Evita falhas no sistema de freios',
+                    'Recomendado a cada 2 anos ou 40.000 km',
+                    'Melhora a resposta e sensibilidade do pedal',
+                    'Previne corrosao interna do sistema',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Troca de Fluido de Freio. Pode me dar mais informações?"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-gradient-to-r from-primary to-yellow-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                >
+                  <MessageSquare size={18} /> Agendar Agora
+                </a>
+                <a
+                  href="tel:+554130827282"
+                  className="bg-white/5 border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+                >
+                  (41) 3082-7282
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
