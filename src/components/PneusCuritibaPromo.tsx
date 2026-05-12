@@ -1,12 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import { MapPin, Tag, Phone, ChevronRight, Play, Pause } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { MapPin, Tag, Phone, ChevronRight, ChevronLeft, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+const VIDEOS = [
+  {
+    id: 'xlwso3EmUog',
+    title: 'CarPlus Pneus',
+    subtitle: 'Sua loja de pneus no Portão',
+  },
+  {
+    id: 'v72kI13VyAU',
+    title: 'Promoções CarPlus',
+    subtitle: 'Ofertas imperdíveis para você',
+  },
+];
 
 export default function PneusCuritibaPromo() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +38,16 @@ export default function PneusCuritibaPromo() {
 
     return () => observer.disconnect();
   }, []);
+
+  const nextVideo = () => {
+    setActiveVideoIndex((prev) => (prev + 1) % VIDEOS.length);
+  };
+
+  const prevVideo = () => {
+    setActiveVideoIndex((prev) => (prev - 1 + VIDEOS.length) % VIDEOS.length);
+  };
+
+  const activeVideo = VIDEOS[activeVideoIndex];
 
   return (
     <section
@@ -55,22 +78,49 @@ export default function PneusCuritibaPromo() {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* Video Premium 9:16 */}
+          {/* Video Gallery 9:16 */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px]"
           >
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevVideo}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-dark hover:bg-primary hover:text-black transition-colors"
+              aria-label="Vídeo anterior"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextVideo}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-dark hover:bg-primary hover:text-black transition-colors"
+              aria-label="Próximo vídeo"
+            >
+              <ChevronRight size={20} />
+            </button>
+
             <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-dark/10">
               {/* YouTube Shorts Embed */}
-              <iframe
-                src={`https://www.youtube.com/embed/xlwso3EmUog?autoplay=1&mute=0&loop=1&playlist=xlwso3EmUog&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
-                title="CarPlus - Pneus em Curitiba"
-                className="absolute inset-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeVideo.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0"
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&mute=0&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                    title={`CarPlus - ${activeVideo.title}`}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </motion.div>
+              </AnimatePresence>
               
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-dark/20 pointer-events-none" />
@@ -85,9 +135,25 @@ export default function PneusCuritibaPromo() {
               
               {/* Bottom Info */}
               <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
-                <p className="text-white font-bold text-lg mb-1">CarPlus Pneus</p>
-                <p className="text-white/70 text-sm">Sua loja de pneus no Portão</p>
+                <p className="text-white font-bold text-lg mb-1">{activeVideo.title}</p>
+                <p className="text-white/70 text-sm">{activeVideo.subtitle}</p>
               </div>
+            </div>
+
+            {/* Video Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {VIDEOS.map((video, index) => (
+                <button
+                  key={video.id}
+                  onClick={() => setActiveVideoIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === activeVideoIndex
+                      ? 'bg-primary w-8'
+                      : 'bg-dark/30 hover:bg-dark/50'
+                  }`}
+                  aria-label={`Ver vídeo ${index + 1}`}
+                />
+              ))}
             </div>
             
             {/* Decorative Elements */}
