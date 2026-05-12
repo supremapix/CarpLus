@@ -15,6 +15,7 @@ import NotFound from './components/NotFound';
 import ServicosPage from './components/ServicosPage';
 import ComoChegar from './components/ComoChegar';
 import BairrosPage from './components/BairrosPage';
+import FAQPage from './components/FAQPage';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ export default function App() {
       <Route path="/servicos" element={<ServicosPage />} />
       <Route path="/como-chegar" element={<ComoChegar />} />
       <Route path="/bairros" element={<BairrosPage />} />
+      <Route path="/faq" element={<FAQPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
