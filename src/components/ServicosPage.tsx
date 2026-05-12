@@ -206,15 +206,15 @@ export default function ServicosPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/20 to-yellow-500/20 border border-primary/40 text-primary px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-primary/10">
-              <Play size={12} fill="currentColor" />
-              Destaque Premium
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/20 to-primary/20 border border-red-500/40 text-red-400 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-red-500/10">
+              <OctagonX size={12} />
+              Destaque Maximo Premium
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
               Troca de <span className="text-primary">Fluido de Freio</span>
             </h2>
-            <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Serviço essencial para sua seguranca. Veja como realizamos a troca completa do fluido de freio com equipamentos profissionais.
+            <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Servico essencial para sua seguranca. Veja como realizamos a troca completa e entenda os <span className="text-red-400 font-bold">perigos de nao fazer a manutencao</span>.
             </p>
           </motion.div>
 
@@ -230,14 +230,14 @@ export default function ServicosPage() {
               className="relative mx-auto w-full max-w-[380px] lg:max-w-[420px]"
             >
               {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-yellow-500/20 to-primary/30 rounded-[3rem] blur-2xl opacity-50" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-red-500/30 via-primary/20 to-red-500/30 rounded-[3rem] blur-2xl opacity-60" />
               
               {/* Video Frame */}
-              <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/50 border-4 border-white/10">
+              <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                 {/* YouTube Shorts Embed */}
                 <iframe
-                  src="https://www.youtube.com/embed/qTmIkTltrYk?autoplay=1&mute=1&loop=1&playlist=qTmIkTltrYk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-                  title="CarPlus - Troca de Fluido de Freio"
+                  src="https://www.youtube.com/embed/xlwso3EmUog?autoplay=1&mute=1&loop=1&playlist=xlwso3EmUog&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                  title="CarPlus - Troca de Fluido de Freio - Como e feito e perigos"
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -248,21 +248,29 @@ export default function ServicosPage() {
                 
                 {/* Premium Badge */}
                 <div className="absolute top-5 left-5 z-10">
-                  <div className="bg-gradient-to-r from-primary to-yellow-400 text-black px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl shadow-primary/40">
-                    <FlaskConical size={12} />
-                    Servico Profissional
+                  <div className="bg-gradient-to-r from-red-500 to-primary text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl shadow-red-500/40">
+                    <Play size={12} fill="currentColor" />
+                    Video Explicativo
+                  </div>
+                </div>
+
+                {/* Danger Badge */}
+                <div className="absolute top-5 right-5 z-10">
+                  <div className="bg-red-500/90 text-white px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5 animate-pulse">
+                    <OctagonX size={10} />
+                    Importante
                   </div>
                 </div>
                 
                 {/* Bottom Info */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
                   <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
-                  <p className="text-white/60 text-sm">Freios com maximo desempenho</p>
+                  <p className="text-red-400/80 text-sm font-medium">Sua seguranca em primeiro lugar</p>
                 </div>
               </div>
               
               {/* Decorative Elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-red-500/20 rounded-full blur-3xl" />
               <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-[50px]" />
             </motion.div>
 
@@ -292,19 +300,44 @@ export default function ServicosPage() {
                 ))}
               </div>
 
+              {/* Danger Warning Box */}
+              <div className="bg-gradient-to-br from-red-500/10 to-red-900/10 border-2 border-red-500/40 rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-2xl" />
+                <h3 className="text-xl font-black text-red-400 uppercase tracking-tight mb-5 flex items-center gap-3 relative z-10">
+                  <OctagonX className="text-red-500" size={24} />
+                  Perigos de NAO Trocar
+                </h3>
+                <ul className="space-y-3 relative z-10">
+                  {[
+                    'Perda total da capacidade de frenagem em emergencias',
+                    'Fluido velho ferve em altas temperaturas (fading)',
+                    'Corrosao interna danifica cilindros e pinças',
+                    'Pedal de freio fica "esponjoso" e sem resposta',
+                    'Risco de acidentes graves por falha nos freios',
+                    'Custo de reparo aumenta drasticamente',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/80 text-sm">
+                      <span className="w-2 h-2 bg-red-500 rounded-full mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               {/* Feature List */}
               <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8">
                 <h3 className="text-xl font-black text-white uppercase tracking-tight mb-5 flex items-center gap-3">
                   <FlaskConical className="text-primary" size={24} />
-                  Por que trocar o fluido?
+                  Como Fazemos a Troca
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    'Fluido absorve umidade e perde eficiencia com o tempo',
-                    'Evita falhas no sistema de freios',
-                    'Recomendado a cada 2 anos ou 40.000 km',
-                    'Melhora a resposta e sensibilidade do pedal',
-                    'Previne corrosao interna do sistema',
+                    'Analise do nivel e condicao atual do fluido',
+                    'Sangria completa de todo o sistema de freios',
+                    'Substituicao por fluido DOT3 ou DOT4 premium',
+                    'Verificacao de vazamentos em todas as conexoes',
+                    'Teste de pressao e resposta do pedal',
+                    'Garantia total no servico realizado',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
