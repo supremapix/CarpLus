@@ -492,8 +492,8 @@ export const TIRES: Tire[] = [
     marca: "Continental", linha: "ContiPowerContact", aro: 16, medida: "205/55R16",
     largura: 205, perfil: 55, indiceVelocidade: "V (240km/h)", indiceCarga: "91 (615kg)",
     categoria: "Performance", tipoVeiculo: ["Sedan", "Hatch"],
-    imagem: "https://www.pensepneus.com.br/media/catalog/product/cache/e5c188f9fa76550a763b93b91095e130/p/n/pneu_continental_aro_16_205-55_r16_91v_powercontact_2.webp",
-    imagemGrande: "https://www.pensepneus.com.br/media/catalog/product/cache/e5c188f9fa76550a763b93b91095e130/p/n/pneu_continental_aro_16_205-55_r16_91v_powercontact_2.webp",
+    imagem: "https://www.acheipneus.com.br/media/catalog/product/p/n/pneu-20555r16-continental-powercontact-2-91v-1.png?width=1200&height=1200&optimize=low",
+    imagemGrande: "https://www.acheipneus.com.br/media/catalog/product/p/n/pneu-20555r16-continental-powercontact-2-91v-1.png?width=1200&height=1200&optimize=low",
     descricao: "ContiPowerContact 2 – durabilidade extrema e economia de combustível com segurança alemã.",
     carros: ["VW Golf", "Toyota Corolla", "Hyundai HB20S"],
     destaque: true, novoModelo: false
@@ -959,7 +959,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // BRIDGESTONE – Tecnologia Japonesa Premium
-  // ═════════���════════════════════════════
+  // ═════════�����════════════════════════════
   { id: 176, slug: "pneu-17570r14-bridgestone-dueler-at-revo2-88h", nome: "Bridgestone 175/70R14 Dueler A/T Revo2 88H", marca: "Bridgestone", linha: "Dueler AT Revo2", aro: 14, medida: "175/70R14", largura: 175, perfil: 70, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)", categoria: "SUV", tipoVeiculo: ["SUV", "Picape"], imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-revo.webp", imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-revo.webp", descricao: "O Bridgestone Dueler A/T Revo 2 é um pneu de uso misto (50% on-road e 50% off-road) projetado para caminhonetes e SUVs que buscam versatilidade. Ele equilibra a robustez necessária para terrenos irregulares com o conforto e silêncio exigidos no asfalto.", carros: ["Fiat Strada", "VW Saveiro", "Chevrolet Montana"], destaque: true, novoModelo: true },
   { id: 177, slug: "pneu-17565r15-bridgestone-b250-84t-yt", nome: "Bridgestone 175/65R15 B250 84T YT", marca: "Bridgestone", linha: "B250", aro: 15, medida: "175/65R15", largura: 175, perfil: 65, indiceVelocidade: "T (190km/h)", indiceCarga: "84 (500kg)", categoria: "Econômico", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-b250.webp", imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-b250.webp", descricao: "O PNEU 175/65R15 BRIDGESTONE B250 84T YT é um pneu premium com tecnologia japonesa Bridgestone, projetado para oferecer segurança, conforto e durabilidade em uso urbano.", carros: ["Toyota Etios", "Honda Fit", "Hyundai HB20"], destaque: false, novoModelo: true },
   { id: 178, slug: "pneu-18560r15-bridgestone-ecopia-ep150-84h-oe", nome: "Bridgestone 185/60R15 Ecopia EP150 84H OE", marca: "Bridgestone", linha: "Ecopia EP150", aro: 15, medida: "185/60R15", largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Econômico", tipoVeiculo: ["Hatch", "Sedan"], imagem: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-ecopia.webp", imagemGrande: "https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-bridgestone-ecopia.webp", descricao: "O PNEU 185/60R15 BRIDGESTONE ECOPIA EP150 84H OE e um pneu Ecopia eficiente em combustivel com baixo impacto ambiental da Bridgestone, projetado para oferecer seguranca, conforto e durabilidade.", carros: ["Toyota Corolla", "Honda Civic", "VW Golf"], destaque: true, novoModelo: true },

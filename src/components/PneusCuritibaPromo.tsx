@@ -65,7 +65,7 @@ export default function PneusCuritibaPromo() {
             <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-dark/10">
               {/* YouTube Shorts Embed */}
               <iframe
-                src={`https://www.youtube.com/embed/xlwso3EmUog?autoplay=1&mute=1&loop=1&playlist=xlwso3EmUog&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                src={`https://www.youtube.com/embed/xlwso3EmUog?autoplay=1&mute=0&loop=1&playlist=xlwso3EmUog&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
                 title="CarPlus - Pneus em Curitiba"
                 className="absolute inset-0 w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
