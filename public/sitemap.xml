@@ -116,6 +116,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/servico/troca-de-fluido-de-freio</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ============================== -->
   <!-- PNEUS – PIRELLI                -->
   <!-- ============================== -->
@@ -403,6 +410,235 @@
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!-- PNEUS – FIRESTONE              -->
+  <!-- ============================== -->
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-16570r14-firestone-multihawk-81t-yt</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-multihawk.webp</image:loc>
+      <image:title>Firestone Multihawk 165/70R14 81T – Loja de Pneus Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-17565r14-firestone-f-700-82t</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-17565r15-firestone-f-700-84h-yt</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-17570r14-firestone-f-700-88t-oe</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 175/70R14 88T OE – Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-18560r15-firestone-f-700-84h</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 185/60R15 84H – Loja Curitiba Portão</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-18565r15-firestone-f-700-88h</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 185/65R15 88H – Medida popular Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-19560r15-firestone-f-700-88h</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 195/60R15 88H – Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-19565r15-firestone-f-700-91h</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 195/65R15 91H – Loja Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-20555r16-firestone-f-700-91v</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-f700.webp</image:loc>
+      <image:title>Firestone F-700 205/55R16 91V – Curitiba Portão</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-20560r16-firestone-destination-le3-92h</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-le3.webp</image:loc>
+      <image:title>Firestone Destination LE3 205/60R16 92H – SUV Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-21565r16-firestone-destination-atx-102t-xl</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-atx.webp</image:loc>
+      <image:title>Firestone Destination ATX 215/65R16 – All-Terrain Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-22560r17-firestone-destination-le3-103h-xl</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-le3.webp</image:loc>
+      <image:title>Firestone Destination LE3 225/60R17 – SUV Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-22565r17-firestone-destination-le3-106h-xl</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-23570r16-firestone-destination-atx-106t</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-atx.webp</image:loc>
+      <image:title>Firestone Destination ATX 235/70R16 – Picape SUV Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-23575r15-firestone-destination-atx-109t-xl</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-24570r16-firestone-destination-atx-111t-lt</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-26565r17-firestone-destination-atx-112t</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-atx.webp</image:loc>
+      <image:title>Firestone Destination ATX 265/65R17 – Hilux Ranger Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-26570r16-firestone-destination-atx-112t</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-atx.webp</image:loc>
+      <image:title>Firestone Destination ATX 265/70R16 – Picape Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-26575r16lt-firestone-destination-atx-123120s</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-23575r15lt-firestone-destination-mt-104q</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-mt.webp</image:loc>
+      <image:title>Firestone Destination MT 235/75R15 – Off-Road Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-26575r16lt-firestone-destination-mt23-112109q</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-mt.webp</image:loc>
+      <image:title>Firestone Destination MT23 265/75R16 – Mud Terrain Curitiba</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-31x105r15lt-firestone-destination-atx-109s</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-31x105r15lt-firestone-destination-mt23-109q</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://carpluscwb.com.br/wp-content/uploads/2026/02/pneu-firestone-mt.webp</image:loc>
+      <image:title>Firestone Destination MT23 31X10.5R15 – Off-Road Curitiba</image:title>
+    </image:image>
   </url>
 
   <!-- ============================== -->
