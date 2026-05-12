@@ -664,6 +664,211 @@ export default function ServiceDetail() {
           </section>
         )}
 
+        {/* Premium Video Section - Exclusive for suspensao-e-freios */}
+        {slug === 'suspensao-e-freios' && (
+          <section className="relative py-24 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] overflow-hidden">
+            {/* Background Effects */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-[100px]" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
+              {/* Header */}
+              <motion.header
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/20 to-orange-500/20 border border-primary/40 text-primary px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-primary/10">
+                  <Play size={12} fill="currentColor" />
+                  Video Premium Exclusivo
+                </div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+                  Suspensao e Freios <span className="text-primary">em Acao</span>
+                </h2>
+                <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                  Assista ao nosso video e entenda a importancia de manter a <span className="text-primary font-bold">suspensao e freios</span> do seu veiculo em perfeito estado.
+                </p>
+              </motion.header>
+
+              {/* Video + Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                {/* Premium Video Container */}
+                <motion.figure
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="relative mx-auto w-full max-w-[380px] lg:max-w-[420px]"
+                >
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-orange-500/20 to-primary/30 rounded-[3rem] blur-2xl opacity-60" />
+                  
+                  {/* Video Frame */}
+                  <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-4 border-primary/30">
+                    {/* YouTube Shorts Embed */}
+                    <iframe
+                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=0&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      title="Carplus Auto Center - Servico de Suspensao e Freios em Curitiba"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    
+                    {/* Top Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+                    
+                    {/* Premium Badge */}
+                    <div className="absolute top-5 left-5 z-10">
+                      <div className="bg-gradient-to-r from-primary to-orange-500 text-black px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl shadow-primary/40">
+                        <Play size={12} fill="currentColor" />
+                        Video Exclusivo
+                      </div>
+                    </div>
+
+                    {/* Service Badge */}
+                    <div className="absolute top-5 right-5 z-10">
+                      <div className="bg-white/90 text-black px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5">
+                        <Shield size={10} />
+                        Seguranca
+                      </div>
+                    </div>
+                    
+                    {/* Bottom Info */}
+                    <figcaption className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                      <p className="text-primary/80 text-sm font-medium">Especialistas em Suspensao e Freios</p>
+                    </figcaption>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+                  <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-orange-500/10 rounded-full blur-[50px]" />
+                </motion.figure>
+
+                {/* Content */}
+                <motion.article
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="space-y-8"
+                >
+                  {/* Info Cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { icon: <Shield className="w-6 h-6" />, title: 'Seguranca', desc: 'Frenagem precisa' },
+                      { icon: <Clock className="w-6 h-6" />, title: '1-3 horas', desc: 'Servico completo' },
+                      { icon: <Star className="w-6 h-6" />, title: 'Pecas Premium', desc: 'Cofap, Monroe' },
+                      { icon: <Trophy className="w-6 h-6" />, title: 'Garantia', desc: 'Total no servico' },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-primary/30 transition-colors group">
+                        <div className="w-11 h-11 bg-primary/15 rounded-xl flex items-center justify-center mb-3 text-primary group-hover:bg-primary/25 transition-colors">
+                          {item.icon}
+                        </div>
+                        <h3 className="font-bold text-white text-sm uppercase tracking-tight">{item.title}</h3>
+                        <p className="text-white/40 text-xs mt-0.5">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Warning Box */}
+                  <div className="bg-gradient-to-br from-orange-500/10 to-red-900/10 border-2 border-orange-500/40 rounded-3xl p-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl" />
+                    <h3 className="text-xl font-black text-orange-400 uppercase tracking-tight mb-5 flex items-center gap-3 relative z-10">
+                      <AlertTriangle className="text-orange-500" size={24} />
+                      Sinais de Problema
+                    </h3>
+                    <ul className="space-y-3 relative z-10">
+                      {[
+                        'Carro balancando muito em lombadas e buracos',
+                        'Ruidos ao passar em irregularidades na pista',
+                        'Vibracao no volante durante a frenagem',
+                        'Aumento da distancia para frear o veiculo',
+                        'Pneus com desgaste irregular nas bordas',
+                        'Carro puxando para um lado ao frear',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-white/80 text-sm">
+                          <span className="w-2 h-2 bg-orange-500 rounded-full mt-1.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Service List */}
+                  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8">
+                    <h3 className="text-xl font-black text-white uppercase tracking-tight mb-5 flex items-center gap-3">
+                      <LucideIcons.Wrench className="text-primary" size={24} />
+                      Nossos Servicos
+                    </h3>
+                    <ul className="space-y-3">
+                      {[
+                        'Troca de amortecedores dianteiros e traseiros',
+                        'Substituicao de pastilhas e discos de freio',
+                        'Reparo de pivos, bandejas e bieletas',
+                        'Troca de buchas e batentes de suspensao',
+                        'Sangria e troca de fluido de freio DOT4',
+                        'Diagnostico completo com laudo tecnico',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                          <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Suspensão e Freios. Pode me dar mais informações?"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gradient-to-r from-primary to-orange-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                    >
+                      <MessageSquare size={18} /> Agendar Agora
+                    </a>
+                    <a
+                      href="tel:+554130827282"
+                      className="bg-white/5 border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+                    >
+                      (41) 3082-7282
+                    </a>
+                  </div>
+                </motion.article>
+              </div>
+
+              {/* Additional Info Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"
+              >
+                {[
+                  { icon: <Award size={28} />, title: 'Pecas de Qualidade', desc: 'Trabalhamos com as melhores marcas: Cofap, Monroe, Kayaba, Bosch e pecas originais.', color: 'primary' },
+                  { icon: <Shield size={28} />, title: 'Garantia Total', desc: 'Todos os servicos de suspensao e freios tem garantia de 6 meses ou 10.000 km.', color: 'primary' },
+                  { icon: <MapPin size={28} />, title: 'Facil Acesso', desc: 'Estamos no Portao, Curitiba. Atendemos toda a regiao metropolitana com qualidade.', color: 'primary' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-primary/30 transition-colors">
+                    <div className="w-14 h-14 bg-primary/20 text-primary rounded-2xl flex items-center justify-center mb-4">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-black text-white text-lg uppercase tracking-tight mb-2">{item.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         {/* Wheel Repair Showcase - Exclusive for conserto-de-rodas */}
         {slug === 'conserto-de-rodas' && (
           <section className="py-20 bg-[#0a0a0a]" aria-labelledby="wheel-repair-gallery">
