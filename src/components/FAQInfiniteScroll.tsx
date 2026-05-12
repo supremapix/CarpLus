@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Disc, Car, Settings, Wrench } from 'lucide-react';
 
 const column1Questions = [
   "Qual a melhor marca de pneu para meu carro?",
@@ -277,8 +278,13 @@ function FAQColumn({ questions, duration, columnIndex }: FAQColumnProps) {
   const columnRef = useRef<HTMLDivElement>(null);
   const duplicatedQuestions = [...questions, ...questions];
   
-  const icons = ['🔧', '🚗', '🛞', '⚙️'];
-  const icon = icons[columnIndex % icons.length];
+  const iconComponents = [
+    <Disc key="disc" size={14} className="text-primary shrink-0" />,
+    <Car key="car" size={14} className="text-primary shrink-0" />,
+    <Settings key="settings" size={14} className="text-primary shrink-0" />,
+    <Wrench key="wrench" size={14} className="text-primary shrink-0" />
+  ];
+  const icon = iconComponents[columnIndex % iconComponents.length];
 
   return (
     <div
@@ -299,7 +305,7 @@ function FAQColumn({ questions, duration, columnIndex }: FAQColumnProps) {
           key={`${columnIndex}-${index}`}
           className="bg-[#1c1c1c] border border-primary/40 rounded-full px-4 py-2.5 text-white text-sm font-medium flex items-center gap-2 hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all cursor-default whitespace-nowrap"
         >
-          <span className="text-xs">{icon}</span>
+          {icon}
           <span className="truncate">{question}</span>
         </div>
       ))}
