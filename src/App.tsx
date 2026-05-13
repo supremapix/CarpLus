@@ -17,6 +17,7 @@ import ServicosPage from './components/ServicosPage';
 import ComoChegar from './components/ComoChegar';
 import BairrosPage from './components/BairrosPage';
 import FAQPage from './components/FAQPage';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -27,7 +28,9 @@ export default function App() {
   }, [pathname]);
 
   return (
-    <Routes>
+    <>
+      <BackToTop />
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/pneus" element={<TireCatalog />} />
       <Route path="/pneu/:slug" element={<TireDetail />} />
@@ -43,7 +46,8 @@ export default function App() {
       <Route path="/como-chegar" element={<ComoChegar />} />
       <Route path="/bairros" element={<BairrosPage />} />
       <Route path="/faq" element={<FAQPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
