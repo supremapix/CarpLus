@@ -29,10 +29,16 @@ export default function TireCatalog() {
     const aro = searchParams.get('aro');
     const largura = searchParams.get('largura');
     const altura = searchParams.get('altura');
+    const marca = searchParams.get('marca');
     
     if (aro) setSelectedRims([parseInt(aro)]);
     if (largura) setSelectedLargura(parseInt(largura));
     if (altura) setSelectedAltura(parseInt(altura));
+    if (marca) {
+      // Find exact brand match (case-insensitive)
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === marca.toLowerCase());
+      if (matchedBrand) setSelectedBrands([matchedBrand]);
+    }
   }, [searchParams]);
 
   const filteredTires = useMemo(() => {

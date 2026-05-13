@@ -6,6 +6,7 @@ import NeighborhoodDetail from './components/NeighborhoodDetail';
 import ServiceDetail from './components/ServiceDetail';
 import TireCatalog from './components/TireCatalog';
 import TireDetail from './components/TireDetail';
+import TireMeasureDetail from './components/TireMeasureDetail';
 import PrivacyPolicy from './components/Institutional/PrivacyPolicy';
 import ReturnPolicy from './components/Institutional/ReturnPolicy';
 import AboutUs from './components/Institutional/AboutUs';
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/pneus" element={<TireCatalog />} />
       <Route path="/pneu/:slug" element={<TireDetail />} />
+      <Route path="/pneu-medida/:medida" element={<TireMeasureDetail />} />
       <Route path="/bairro/:slug" element={<NeighborhoodDetail />} />
       <Route path="/servico/:slug" element={<ServiceDetail />} />
       <Route path="/quem-somos" element={<AboutUs />} />
