@@ -24,7 +24,7 @@ export default function TireDetail() {
     }
   };
 
-  const shareUrl = `https://carpluscwb.com.br/pneu/${slug}`;
+  const shareUrl = `https://www.carpluspneuseoficina.com.br/pneu/${slug}`;
 
   const handleCopyLink = async () => {
     try {
@@ -66,7 +66,7 @@ export default function TireDetail() {
       ? {
           title: `${tire.nome} em Curitiba | Carplus Auto Center – Portão`,
           description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros, garantia de fábrica. Ligue: (41) 3082-7282.`,
-          canonical: `https://carpluscwb.com.br/pneu/${tire.slug}`,
+          canonical: `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
           ogImage: tire.imagemGrande,
           ogType: 'product',
           schemaJSON: [
@@ -81,7 +81,7 @@ export default function TireDetail() {
               "category": `Pneus / ${tire.categoria}`,
               "offers": {
                 "@type": "Offer",
-                "url": `https://carpluscwb.com.br/pneu/${tire.slug}`,
+                "url": `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
                 "priceCurrency": "BRL",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -178,12 +178,12 @@ export default function TireDetail() {
                   </button>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   <a
                     href={`https://wa.me/?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus: ${shareUrl}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-[#25D366] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-green-600 transition-colors"
+                    className="bg-[#25D366] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-green-600 transition-colors"
                   >
                     WhatsApp
                   </a>
@@ -191,9 +191,25 @@ export default function TireDetail() {
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-[#1877F2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors"
+                    className="bg-[#1877F2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors"
                   >
                     Facebook
+                  </a>
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus Auto Center!`)}&url=${encodeURIComponent(shareUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-gray-800 transition-colors"
+                  >
+                    X / Twitter
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0A66C2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-800 transition-colors"
+                  >
+                    LinkedIn
                   </a>
                 </div>
 
