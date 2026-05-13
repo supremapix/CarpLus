@@ -1,8 +1,11 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES } from '../data';
+import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
 import { Link } from 'react-router-dom';
-import { MapPin, Wrench, Globe, ChevronRight } from 'lucide-react';
+import { MapPin, Wrench, Globe, ChevronRight, Circle } from 'lucide-react';
+
+// Get unique brands from TIRES
+const TIRE_BRANDS = [...new Set(TIRES.map(t => t.marca))].sort();
 
 export default function Sitemap() {
   return (
@@ -22,18 +25,19 @@ export default function Sitemap() {
                  <Globe size={24} className="text-primary" /> Institucional
                </h2>
                <ul className="space-y-3 font-medium text-gray-600">
-                  <li><Link to="/" className="hover:text-primary transition-colors">Página Inicial</Link></li>
+                  <li><Link to="/" className="hover:text-primary transition-colors">Pagina Inicial</Link></li>
                   <li><Link to="/quem-somos" className="hover:text-primary transition-colors">Quem Somos</Link></li>
                   <li><Link to="/contato" className="hover:text-primary transition-colors">Contato</Link></li>
-                  <li><Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">Política de Privacidade</Link></li>
-                  <li><Link to="/trocas-e-devolucoes" className="hover:text-primary transition-colors">Trocas e Devoluções</Link></li>
+                  <li><Link to="/faq" className="hover:text-primary transition-colors">Perguntas Frequentes (FAQ)</Link></li>
+                  <li><Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">Politica de Privacidade</Link></li>
+                  <li><Link to="/trocas-e-devolucoes" className="hover:text-primary transition-colors">Trocas e Devolucoes</Link></li>
                </ul>
             </div>
 
             {/* Serviços */}
             <div className="space-y-6">
                <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2">
-                 <Wrench size={24} className="text-primary" /> Nossos Serviços
+                 <Wrench size={24} className="text-primary" /> Nossos Servicos
                </h2>
                <ul className="space-y-3 font-medium text-gray-600">
                   {SERVICES.map(s => (
@@ -42,44 +46,82 @@ export default function Sitemap() {
                </ul>
             </div>
 
+            {/* Pneus por Marca */}
+            <div className="space-y-6">
+               <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2">
+                 <Circle size={24} className="text-primary" /> Pneus por Marca
+               </h2>
+               <ul className="space-y-3 font-medium text-gray-600">
+                  <li><Link to="/pneus" className="hover:text-primary transition-colors font-bold">Ver Todos os Pneus</Link></li>
+                  {TIRE_BRANDS.map(brand => (
+                     <li key={brand}>
+                        <Link 
+                           to={`/pneus?marca=${brand.toLowerCase()}`} 
+                           className="hover:text-primary transition-colors flex items-center gap-2"
+                        >
+                           <ChevronRight size={12} className="text-primary" />
+                           Pneus {brand}
+                        </Link>
+                     </li>
+                  ))}
+               </ul>
+            </div>
+
             {/* Bairros Oficiais */}
-            <div className="space-y-6 lg:col-span-2">
+            <div className="space-y-6">
                <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2">
                  <MapPin size={24} className="text-primary" /> Bairros Atendidos
                </h2>
-               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm text-gray-500">
-                  {NEIGHBORHOODS.map(n => (
+               <div className="grid grid-cols-1 gap-y-2 text-sm text-gray-500 max-h-[400px] overflow-y-auto pr-2">
+                  {NEIGHBORHOODS.slice(0, 20).map(n => (
                      <Link key={n.name} to={`/bairro/${n.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} className="hover:text-primary truncate">
                         {n.name}
                      </Link>
                   ))}
+                  <Link to="/bairros" className="text-primary font-bold mt-2">Ver todos os bairros...</Link>
                </div>
-               
-               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Regioes Populares e Vilas</h3>
-               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm text-gray-500">
-                  {POPULAR_REGIONS.map(r => (
-                     <Link 
-                       key={`${r.name}-${r.via}`} 
-                       to={`/bairro/${r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} 
-                       className="flex items-center gap-1 hover:text-primary transition-colors"
-                     >
-                        <ChevronRight size={10} className="text-primary" /> {r.name}
-                     </Link>
-                  ))}
-               </div>
+            </div>
+          </div>
 
-               <h3 className="text-lg font-bold mt-8 uppercase tracking-widest text-gray-400">Regiao Metropolitana (RMC)</h3>
-               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
-                  {CITIES.map(c => (
-                     <Link 
-                       key={c.name} 
-                       to={`/bairro/${c.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
-                       className="font-bold text-gray-700 hover:text-primary transition-colors"
-                     >
-                       {c.name}
-                     </Link>
-                  ))}
-               </div>
+          {/* Full Bairros Section */}
+          <div className="mt-16 pt-12 border-t border-gray-100">
+            <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2 mb-8">
+              <MapPin size={24} className="text-primary" /> Todos os Bairros e Regioes Atendidas
+            </h2>
+            
+            <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 mb-4">Bairros de Curitiba</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm text-gray-500 mb-8">
+               {NEIGHBORHOODS.map(n => (
+                  <Link key={n.name} to={`/bairro/${n.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} className="hover:text-primary truncate">
+                     {n.name}
+                  </Link>
+               ))}
+            </div>
+            
+            <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 mb-4">Regioes Populares e Vilas</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm text-gray-500 mb-8">
+               {POPULAR_REGIONS.map(r => (
+                  <Link 
+                    key={`${r.name}-${r.via}`} 
+                    to={`/bairro/${r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} 
+                    className="flex items-center gap-1 hover:text-primary transition-colors"
+                  >
+                     <ChevronRight size={10} className="text-primary" /> {r.name}
+                  </Link>
+               ))}
+            </div>
+
+            <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 mb-4">Regiao Metropolitana (RMC)</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-2 text-sm">
+               {CITIES.map(c => (
+                  <Link 
+                    key={c.name} 
+                    to={`/bairro/${c.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
+                    className="font-bold text-gray-700 hover:text-primary transition-colors"
+                  >
+                    {c.name}
+                  </Link>
+               ))}
             </div>
           </div>
         </div>

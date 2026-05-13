@@ -1,17 +1,65 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront } from 'lucide-react';
+import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront, Share2, Copy, Check } from 'lucide-react';
 import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireFAQ from './TireFAQ';
 import TireTips from './TireTips';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const tire = TIRES.find(t => t.slug === slug);
+  const [copied, setCopied] = useState(false);
+  const [showShareMenu, setShowShareMenu] = useState(false);
+
+  const handleBack = () => {
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/pneus');
+    }
+  };
+
+  const shareUrl = `https://carpluscwb.com.br/pneu/${slug}`;
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = shareUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleShare = async () => {
+    if (navigator.share && tire) {
+      try {
+        await navigator.share({
+          title: tire.nome,
+          text: `Confira o pneu ${tire.nome} na Carplus Auto Center em Curitiba!`,
+          url: shareUrl,
+        });
+      } catch (err) {
+        // User cancelled or error
+        setShowShareMenu(true);
+      }
+    } else {
+      setShowShareMenu(!showShareMenu);
+    }
+  };
 
   useSEO(
     tire
@@ -92,6 +140,74 @@ export default function TireDetail() {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
+        {/* Back & Share Buttons */}
+        <div className="flex items-center justify-between mb-6">
+          <button
+            onClick={handleBack}
+            className="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors group"
+          >
+            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="uppercase tracking-widest text-xs">Voltar</span>
+          </button>
+
+          <div className="relative">
+            <button
+              onClick={handleShare}
+              className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
+            >
+              <Share2 size={16} />
+              <span className="hidden sm:inline">Compartilhar</span>
+            </button>
+
+            {showShareMenu && (
+              <div className="absolute right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 z-50 min-w-[280px]">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Compartilhar este pneu</p>
+                
+                <div className="flex items-center gap-2 bg-gray-50 rounded-xl p-3 mb-3">
+                  <input 
+                    type="text" 
+                    value={shareUrl} 
+                    readOnly 
+                    className="flex-1 bg-transparent text-xs text-gray-600 outline-none truncate"
+                  />
+                  <button
+                    onClick={handleCopyLink}
+                    className={`p-2 rounded-lg transition-all ${copied ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'}`}
+                  >
+                    {copied ? <Check size={14} /> : <Copy size={14} />}
+                  </button>
+                </div>
+
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus: ${shareUrl}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#25D366] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-green-600 transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#1877F2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors"
+                  >
+                    Facebook
+                  </a>
+                </div>
+
+                <button
+                  onClick={() => setShowShareMenu(false)}
+                  className="w-full mt-3 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  Fechar
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 overflow-x-auto whitespace-nowrap pb-2">
             <Link to="/" className="hover:text-black">Home</Link>
