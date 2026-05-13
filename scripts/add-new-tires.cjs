@@ -415,13 +415,17 @@ async function main() {
   if (newTires.length > 0) {
     console.log('\n--- ADICIONANDO NOVOS PNEUS ---');
     
-    // Encontrar a posição para inserir (antes do último "]")
-    const insertPosition = dataContent.lastIndexOf('];');
+    // Encontrar a posição correta do array TIRES (não o último ]; do arquivo)
+    // Procura o padrão "];\n\nexport const SERVICES" ou "];\n\nexport const"
+    const tiresEndRegex = /\];\s*\n\s*\n\s*export const SERVICES/;
+    const tiresEndMatch = dataContent.match(tiresEndRegex);
     
-    if (insertPosition === -1) {
+    if (!tiresEndMatch) {
       console.error('Erro: Não foi possível encontrar o final do array TIRES.');
       process.exit(1);
     }
+    
+    const insertPosition = dataContent.indexOf(tiresEndMatch[0]);
     
     // Gerar código para os novos pneus
     let newTiresCode = '';
