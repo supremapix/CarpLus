@@ -1,4 +1,4 @@
-// Catálogo de Pneus - 869 pneus cadastrados
+// Catálogo de Pneus - 712 pneus cadastrados
 // Última atualização: 2026-05-13
 
 export interface Tire {
@@ -792,7 +792,7 @@ export const TIRES: Tire[] = [
     destaque: true, novoModelo: true
   },
 
-  // ══════════════════════════════════════
+  // ═══════════════════════════════��══════
   // YOKOHAMA NEOVA AD09 – Ultra High Performance
   // ══════════════════════════════════════
   { id: 58, slug: "pneu-yokohama-neova-ad09-225-40r18-92w", nome: "Yokohama NEOVA AD09 225/40R18 92W", marca: "Yokohama", linha: "NEOVA AD09", aro: 18, medida: "225/40R18", largura: 225, perfil: 40, indiceVelocidade: "W (270km/h)", indiceCarga: "92 (630kg)", categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Hatch Esportivo", "Sedan Premium"], imagem: "/images/pneus/pneu-yokohama-ad09.webp", imagemGrande: "/images/pneus/pneu-yokohama-ad09.webp", descricao: "O Pneu Yokohama NEOVA AD09 é um pneu esportivo de ultra alta performance (UHP) desenvolvido para dirigibilidade extrema em pistas e uso nas ruas. Com composto de borracha assimétrico de nova geração, oferece máxima aderência, resposta precisa na direção e excelente frenagem em piso seco.", carros: ["VW Golf GTI", "Audi A3", "BMW Série 1", "Mercedes A250", "Honda Civic Si"], destaque: true, novoModelo: true },
@@ -3597,7 +3597,7 @@ export const TIRES: Tire[] = [
     imagemGrande: "/images/pneus/pneu-pirelli-p-zero.webp",
     emEstoque: true,
     destaque: false,
-    descricao: "Pneu Pirelli P Zero medida 245/40R18 desenvolvido para veículos de alta performance. Máxima aderência em pista seca e molhada com tecnologia de ponta. Versão XL (Extra Load) com capacidade de carga reforçada.",
+    descricao: "Pneu Pirelli P Zero medida 245/40R18 desenvolvido para veículos de alta performance. Máxima aderência em pista seca e molhada com tecnologia de ponta. Versão XL (Extra Load) com capacidade de carga refor��ada.",
     carrosCompativeis: []
   },
   {
