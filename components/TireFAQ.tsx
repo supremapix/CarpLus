@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
-import type { Tire } from '../data';
+import type { Tire } from '@/lib/data';
 
 interface TireFAQProps {
   tire: Tire;

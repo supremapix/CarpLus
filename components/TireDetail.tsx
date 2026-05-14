@@ -62,59 +62,7 @@ export default function TireDetail({ slug }: { slug: string }) {
     }
   };
 
-  useSEO(
-    tire
-      ? {
-          title: `${tire.nome} em Curitiba | Carplus Auto Center – Portão`,
-          description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros, garantia de fábrica. Ligue: (41) 3082-7282.`,
-          canonical: `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
-          ogImage: tire.imagemGrande,
-          ogType: 'product',
-          schemaJSON: [
-            {
-              "@context": "https://schema.org",
-              "@type": "Product",
-              "name": tire.nome,
-              "image": [tire.imagemGrande, tire.imagem],
-              "description": tire.descricao,
-              "sku": tire.slug,
-              "brand": { "@type": "Brand", "name": tire.marca },
-              "category": `Pneus / ${tire.categoria}`,
-              "offers": {
-                "@type": "Offer",
-                "url": `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
-                "priceCurrency": "BRL",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                  "@type": "AutoPartsStore",
-                  "name": "Carplus Auto Center",
-                  "telephone": "+55-41-3082-7282",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
-                    "addressLocality": "Curitiba",
-                    "addressRegion": "PR",
-                    "postalCode": "81070-010",
-                    "addressCountry": "BR"
-                  }
-                }
-              }
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://carpluscwb.com.br/pneus" },
-                { "@type": "ListItem", "position": 3, "name": tire.marca, "item": `https://carpluscwb.com.br/pneus?marca=${tire.marca.toLowerCase()}` },
-                { "@type": "ListItem", "position": 4, "name": tire.nome, "item": `https://carpluscwb.com.br/pneu/${tire.slug}` }
-              ]
-            }
-          ]
-        }
-      : { title: 'Pneu não encontrado | Carplus', description: 'Pneu não encontrado.' }
-  );
+  // SEO é gerenciado no lado do servidor via generateMetadata em app/pneu/[slug]/page.tsx
 
   useEffect(() => {}, []);
 
