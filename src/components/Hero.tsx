@@ -10,7 +10,7 @@ export default function Hero() {
         <img 
           src="/images/hero-pneus.png" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
-          className="w-full h-full object-cover object-[75%_center] md:object-right"
+          className="w-full h-full object-cover object-[85%_center] md:object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/70 to-transparent" />
       </div>
