@@ -15,7 +15,7 @@ const CATEGORIES = ["Econômico", "Conforto", "Conforto Premium", "Performance",
 const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Premium", "SUV Premium", "Coupe", "Hatch Esportivo", "Híbrido", "SUV Esportivo"];
 
 export default function TireCatalog() {
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedRims, setSelectedRims] = useState<number[]>([]);
