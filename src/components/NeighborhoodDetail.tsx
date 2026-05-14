@@ -65,15 +65,15 @@ export default function NeighborhoodDetail() {
       ? {
           title: seoContent.metaTitle,
           description: seoContent.metaDescription,
-          canonical: `https://carpluscwb.com.br/bairro/${slugForUrl}`,
-          ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp',
+          canonical: `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
+          ogImage: 'https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Carplus Auto Center",
               "description": seoContent.metaDescription,
-              "url": `https://carpluscwb.com.br/bairro/${slugForUrl}`,
+              "url": `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
               "telephone": "+55-41-3082-7282",
               "address": {
                 "@type": "PostalAddress",
@@ -101,9 +101,9 @@ export default function NeighborhoodDetail() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Bairros Atendidos", "item": "https://carpluscwb.com.br/bairros" },
-                { "@type": "ListItem", "position": 3, "name": bairro.name, "item": `https://carpluscwb.com.br/bairro/${slugForUrl}` }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Bairros Atendidos", "item": "https://www.carpluspneuseoficina.com.br/bairros" },
+                { "@type": "ListItem", "position": 3, "name": bairro.name, "item": `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}` }
               ]
             },
             {
@@ -143,7 +143,7 @@ export default function NeighborhoodDetail() {
         <section className="relative min-h-[580px] flex flex-col justify-end bg-dark text-white overflow-hidden">
            <div className="absolute inset-0">
               <img
-                src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
+                src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
                 className="w-full h-full object-cover"
                 alt={`Loja de pneus para ${bairro.name} - Carplus Auto Center Curitiba`}
               />

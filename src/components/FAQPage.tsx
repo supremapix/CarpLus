@@ -167,7 +167,7 @@ export default function FAQPage() {
     "@type": "FAQPage",
     "name": "Perguntas Frequentes - Carplus Auto Center Curitiba",
     "description": "Encontre respostas para as duvidas mais comuns sobre pneus, alinhamento, balanceamento, freios, suspensao e servicos automotivos em Curitiba.",
-    "url": "https://carpluscwb.com.br/faq",
+    "url": "https://www.carpluspneuseoficina.com.br/faq",
     "mainEntity": faqData.map(faq => ({
       "@type": "Question",
       "name": faq.pergunta,
@@ -182,7 +182,7 @@ export default function FAQPage() {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Carplus Auto Center",
-    "image": "https://carpluscwb.com.br/logo.png",
+    "image": "https://www.carpluspneuseoficina.com.br/logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Padre Anchieta, 2285",
@@ -196,7 +196,7 @@ export default function FAQPage() {
       "latitude": -25.4567,
       "longitude": -49.2892
     },
-    "url": "https://carpluscwb.com.br",
+    "url": "https://www.carpluspneuseoficina.com.br",
     "telephone": "+554130827282",
     "openingHoursSpecification": [
       {

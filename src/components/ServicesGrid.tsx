@@ -6,9 +6,9 @@ import * as LucideIcons from 'lucide-react';
 import { SERVICES } from '../data';
 
 const STUDIO_IMAGES = [
-  "https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus.webp",
-  "https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp",
-  "https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
+  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus.webp",
+  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp",
+  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
 ];
 
 export default function ServicesGrid() {

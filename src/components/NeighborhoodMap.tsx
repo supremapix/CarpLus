@@ -47,7 +47,7 @@ const carplusIcon = L.divIcon({
         cursor: pointer;
       ">
         <img 
-          src="https://carpluscwb.com.br/wp-content/uploads/2025/06/logo.webp"
+          src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/06/logo.webp"
           style="width: 90px; height: auto; display: block; margin: 0 auto 4px;"
           alt="Carplus"
         />
@@ -443,7 +443,7 @@ export default function NeighborhoodMap() {
                         <Marker position={carplusPos} icon={carplusIcon}>
                           <Popup>
                             <div className="text-center p-3">
-                              <img src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg" className="h-8 mx-auto mb-3" alt="Carplus Logo" />
+                              <img src="https://lp.www.carpluspneuseoficina.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg" className="h-8 mx-auto mb-3" alt="Carplus Logo" />
                               <b className="text-lg block mb-1">Carplus Auto Center</b>
                               <span className="text-xs text-gray-500 block mb-3">Av. Arthur da Silva Bernardes, 1323<br/>Portao, Curitiba - PR</span>
                               

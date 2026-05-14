@@ -46,7 +46,7 @@ export const TIRES: Tire[] = [
     carros: ["Chevrolet Celta", "Chevrolet Classic", "Fiat Uno", "VW Gol G4", "Fiat Palio"],
     destaque: false,
     novoModelo: false,
-    url_original: "https://carpluscwb.com.br/pneu-pirelli-175-70r13-p400-evo-82t/"
+    url_original: "https://www.carpluspneuseoficina.com.br/pneu-pirelli-175-70r13-p400-evo-82t/"
   },
   {
     id: 2,
@@ -870,7 +870,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // PRINX HH1 – Uso Urbano e Rodoviário
-  // ═══════════════════════��══════════════
+  // ═══════════════════════���══════════════
   { id: 132, slug: "pneu-prinx-hh1-175-65r15-84h", nome: "Prinx HH1 175/65R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "175/65R15", largura: 175, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["VW Gol", "Fiat Argo", "Chevrolet Onix", "Hyundai HB20"], destaque: false, novoModelo: true },
   { id: 133, slug: "pneu-prinx-hh1-185-60r15-84h", nome: "Prinx HH1 185/60R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "185/60R15", largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["Honda Fit", "Toyota Etios", "Nissan March", "Ford Ka"], destaque: false, novoModelo: true },
   { id: 134, slug: "pneu-prinx-hh1-195-60r15-88h", nome: "Prinx HH1 195/60R15 88H", marca: "Prinx", linha: "HH1", aro: 15, medida: "195/60R15", largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["Toyota Corolla", "Honda Civic", "VW Virtus", "Chevrolet Cruze"], destaque: false, novoModelo: true },
@@ -922,7 +922,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // BRIDGESTONE – Tecnologia Japonesa Premium
-  // ═════════������══����═════════════════════════
+  // ═════════�������══����═════════════════════════
   { id: 176, slug: "pneu-17570r14-bridgestone-dueler-at-revo2-88h", nome: "Bridgestone 175/70R14 Dueler A/T Revo2 88H", marca: "Bridgestone", linha: "Dueler AT Revo2", aro: 14, medida: "175/70R14", largura: 175, perfil: 70, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)", categoria: "SUV", tipoVeiculo: ["SUV", "Picape"], imagem: "/images/pneus/pneu-bridgestone-revo.webp", imagemGrande: "/images/pneus/pneu-bridgestone-revo.webp", descricao: "O Bridgestone Dueler A/T Revo 2 é um pneu de uso misto (50% on-road e 50% off-road) projetado para caminhonetes e SUVs que buscam versatilidade. Ele equilibra a robustez necessária para terrenos irregulares com o conforto e silêncio exigidos no asfalto.", carros: ["Fiat Strada", "VW Saveiro", "Chevrolet Montana"], destaque: true, novoModelo: true },
   { id: 177, slug: "pneu-17565r15-bridgestone-b250-84t-yt", nome: "Bridgestone 175/65R15 B250 84T YT", marca: "Bridgestone", linha: "B250", aro: 15, medida: "175/65R15", largura: 175, perfil: 65, indiceVelocidade: "T (190km/h)", indiceCarga: "84 (500kg)", categoria: "Econômico", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-bridgestone-b250.webp", imagemGrande: "/images/pneus/pneu-bridgestone-b250.webp", descricao: "O PNEU 175/65R15 BRIDGESTONE B250 84T YT é um pneu premium com tecnologia japonesa Bridgestone, projetado para oferecer segurança, conforto e durabilidade em uso urbano.", carros: ["Toyota Etios", "Honda Fit", "Hyundai HB20"], destaque: false, novoModelo: true },
   { id: 178, slug: "pneu-18560r15-bridgestone-ecopia-ep150-84h-oe", nome: "Bridgestone 185/60R15 Ecopia EP150 84H OE", marca: "Bridgestone", linha: "Ecopia EP150", aro: 15, medida: "185/60R15", largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Econômico", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/pneu-bridgestone-ecopia.webp", imagemGrande: "/images/pneus/pneu-bridgestone-ecopia.webp", descricao: "O PNEU 185/60R15 BRIDGESTONE ECOPIA EP150 84H OE e um pneu Ecopia eficiente em combustivel com baixo impacto ambiental da Bridgestone, projetado para oferecer seguranca, conforto e durabilidade.", carros: ["Toyota Corolla", "Honda Civic", "VW Golf"], destaque: true, novoModelo: true },
@@ -1690,7 +1690,7 @@ export const SERVICES = [
   { id: 7, slug: 'manutencao-motor', title: 'Manutenção Motor', icon: 'Wrench', description: 'Reparos mecânicos preventivos e corretivos especializados.' },
   { id: 8, slug: 'conserto-de-rodas', title: 'Conserto de Rodas', icon: 'Hammer', description: 'Recuperação e retífica de rodas de liga leve em Curitiba.' },
   { id: 9, slug: 'correia-dentada', title: 'Correia Dentada', icon: 'Link', description: 'Troca preventiva de correia dentada com peças originais e garantia.' },
-  { id: 10, slug: 'troca-de-fluido-de-freio', title: 'Troca de Fluido de Freio', icon: 'FlaskConical', description: 'Substituição do fluido de freio DOT3/DOT4 para máxima segurança na frenagem.' },
+  { id: 10, slug: 'troca-de-fluido-de-freio', title: 'Troca de Fluido de Freio', icon: 'FlaskConical', description: 'Substituição do fluido de freio DOT3/DOT4 para máxima seguran��a na frenagem.' },
 ];
 
 export const NEIGHBORHOODS = [

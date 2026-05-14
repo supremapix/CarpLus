@@ -199,8 +199,8 @@ export default function ServiceDetail() {
       ? {
           title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
           description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
-          canonical: `https://carpluscwb.com.br/servico/${service?.slug}`,
-          ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp',
+          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service?.slug}`,
+          ogImage: 'https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -211,7 +211,7 @@ export default function ServiceDetail() {
                 "@type": "AutoPartsStore",
                 "name": "Carplus Auto Center",
                 "telephone": "+55-41-3082-7282",
-                "url": "https://carpluscwb.com.br/",
+                "url": "https://www.carpluspneuseoficina.com.br/",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
@@ -222,15 +222,15 @@ export default function ServiceDetail() {
                 }
               },
               "areaServed": { "@type": "City", "name": "Curitiba" },
-              "url": `https://carpluscwb.com.br/servico/${service.slug}`
+              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`
             },
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://carpluscwb.com.br/#servicos" },
-                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://carpluscwb.com.br/servico/${service.slug}` }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/#servicos" },
+                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}` }
               ]
             },
             // FAQPage Schema para Rich Snippets no Google
@@ -316,7 +316,7 @@ export default function ServiceDetail() {
 
               <div className="relative group">
                  <img 
-                    src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp" 
+                    src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={service.title} 
                  />
