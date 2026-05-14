@@ -85,16 +85,33 @@ export default function ServicesGrid() {
         {/* Diagnostic Banner */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
            <div className="bg-dark text-white p-12 rounded-[40px] flex flex-col justify-center">
+              <div className="inline-block bg-primary/20 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-primary mb-6 rounded self-start">
+                 Scanner Automotivo Profissional
+              </div>
               <h3 className="text-4xl mb-6 leading-none">Diagnóstico <br/> <span className="text-primary italic">Computadorizado</span></h3>
-              <p className="text-lg text-white/60 mb-8 max-w-sm">Tecnologia avançada para leitura de códigos de falha e manutenção preventiva rigorosa.</p>
-              <div className="space-y-4">
-                 {['Leitura de Injeção Eletrônica', 'Reset de Mensagens no Painel', 'Análise de Sensores e Atuadores'].map(item => (
+              <p className="text-lg text-white/70 mb-8">Utilizamos equipamentos de última geração para identificar com precisão qualquer problema no sistema eletrônico do seu veículo, garantindo reparos assertivos e economia de tempo.</p>
+              <div className="space-y-4 mb-8">
+                 {[
+                   'Leitura de Injeção Eletrônica',
+                   'Reset de Mensagens no Painel', 
+                   'Análise de Sensores e Atuadores',
+                   'Diagnóstico de Módulos ABS e Airbag',
+                   'Verificação de Sistema de Arrefecimento'
+                 ].map(item => (
                    <div key={item} className="flex items-center gap-3">
-                      <LucideIcons.ChevronRight className="text-primary" />
-                      <span className="font-medium">{item}</span>
+                      <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <LucideIcons.Check className="text-primary" size={14} />
+                      </div>
+                      <span className="font-medium text-white/90">{item}</span>
                    </div>
                  ))}
               </div>
+              <Link 
+                to="/servico/diagnostico-computadorizado"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-widest text-xs px-6 py-4 rounded-xl transition-all self-start"
+              >
+                Agendar Diagnóstico <LucideIcons.ArrowRight size={14} />
+              </Link>
            </div>
            
            <div className="relative rounded-[40px] overflow-hidden flex flex-col bg-white border border-gray-100 shadow-xl">
