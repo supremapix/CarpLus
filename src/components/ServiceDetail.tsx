@@ -217,7 +217,7 @@ export default function ServiceDetail() {
                   "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
                   "addressLocality": "Curitiba",
                   "addressRegion": "PR",
-                  "postalCode": "81070-010",
+                  "postalCode": "80320-300",
                   "addressCountry": "BR"
                 }
               },
