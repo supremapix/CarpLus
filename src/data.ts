@@ -1690,7 +1690,7 @@ export const SERVICES = [
   { id: 7, slug: 'manutencao-motor', title: 'Manutenção Motor', icon: 'Wrench', description: 'Reparos mecânicos preventivos e corretivos especializados.' },
   { id: 8, slug: 'conserto-de-rodas', title: 'Conserto de Rodas', icon: 'Hammer', description: 'Recuperação e retífica de rodas de liga leve em Curitiba.' },
   { id: 9, slug: 'correia-dentada', title: 'Correia Dentada', icon: 'Link', description: 'Troca preventiva de correia dentada com peças originais e garantia.' },
-  { id: 10, slug: 'troca-de-fluido-de-freio', title: 'Troca de Fluido de Freio', icon: 'FlaskConical', description: 'Substituição do fluido de freio DOT3/DOT4 para máxima seguran��a na frenagem.' },
+  { id: 10, slug: 'troca-de-fluido-de-freio', title: 'Troca de Fluido de Freio', icon: 'FlaskConical', description: 'Substituição do fluido de freio DOT3/DOT4 para máxima segurança na frenagem.' },
 ];
 
 export const NEIGHBORHOODS = [
