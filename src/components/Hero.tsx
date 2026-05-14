@@ -12,7 +12,7 @@ export default function Hero() {
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
           className="w-full h-full object-cover object-[50%_center] md:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/90 md:via-dark/70 to-dark/60 md:to-transparent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
