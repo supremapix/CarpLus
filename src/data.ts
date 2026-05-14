@@ -1,4 +1,5 @@
-// Catalogo de Pneus Carplus - Atualizado 2026-05-14
+// Catalogo de Pneus Carplus - Cache busted v2
+// Atualizado 2026-05-14 - 857+ pneus
 
 export interface Tire {
   id: number;
@@ -871,7 +872,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // PRINX HH1 – Uso Urbano e Rodoviário
-  // ═══════════════════════���══════════════
+  // ═════��═════════════════���══════════════
   { id: 132, slug: "pneu-prinx-hh1-175-65r15-84h", nome: "Prinx HH1 175/65R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "175/65R15", largura: 175, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["VW Gol", "Fiat Argo", "Chevrolet Onix", "Hyundai HB20"], destaque: false, novoModelo: true },
   { id: 133, slug: "pneu-prinx-hh1-185-60r15-84h", nome: "Prinx HH1 185/60R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "185/60R15", largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["Honda Fit", "Toyota Etios", "Nissan March", "Ford Ka"], destaque: false, novoModelo: true },
   { id: 134, slug: "pneu-prinx-hh1-195-60r15-88h", nome: "Prinx HH1 195/60R15 88H", marca: "Prinx", linha: "HH1", aro: 15, medida: "195/60R15", largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["Toyota Corolla", "Honda Civic", "VW Virtus", "Chevrolet Cruze"], destaque: false, novoModelo: true },
