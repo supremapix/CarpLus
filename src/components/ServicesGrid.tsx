@@ -1,14 +1,15 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import * as LucideIcons from 'lucide-react';
 import { SERVICES } from '../data';
 
 const STUDIO_IMAGES = [
-  "/images/loja/loja-de-pneus-curitiba.webp",
+  "/images/loja/loja-de-pneus.webp",
   "/images/loja/loja-de-pneus-pirelli.webp",
-  "/images/loja/loja-de-pneus-em-curitiba.webp"
+  "/images/loja/loja-de-pneus-em-curitiba.webp",
+  "/images/loja/loja-de-pneus-curitiba.webp"
 ];
 
 export default function ServicesGrid() {
@@ -98,18 +99,21 @@ export default function ServicesGrid() {
            
            <div className="relative rounded-[40px] overflow-hidden flex flex-col bg-white border border-gray-100 shadow-xl">
               <div className="relative aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
-                <AnimatePresence mode="wait">
+                {/* All images stacked, only current one visible */}
+                {STUDIO_IMAGES.map((src, i) => (
                   <motion.img 
-                    key={STUDIO_IMAGES[currentImageIndex]}
-                    src={STUDIO_IMAGES[currentImageIndex]} 
-                    alt="Oficina Mecânica" 
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.7 }}
-                    className="w-full h-full object-cover"
+                    key={src}
+                    src={src} 
+                    alt="Oficina Mecânica Carplus" 
+                    initial={false}
+                    animate={{ 
+                      opacity: i === currentImageIndex ? 1 : 0,
+                      scale: i === currentImageIndex ? 1 : 1.05
+                    }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-                </AnimatePresence>
+                ))}
                 
                 {/* Navigation Dots */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
