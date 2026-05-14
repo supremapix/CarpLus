@@ -127,7 +127,7 @@ export default function HomePage() {
             </p>
             <a 
               href="tel:+554130827282"
-              className="inline-block bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-900 transition-all"
+              className="inline-block bg-dark text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-900 transition-all"
             >
               Ligar: (41) 3082-7282
             </a>

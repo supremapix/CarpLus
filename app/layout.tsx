@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
+// Force refresh
+
 export const metadata: Metadata = {
   title: {
     default: 'Carplus Auto Center | Pneus em Curitiba - Portão',

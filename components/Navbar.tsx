@@ -131,7 +131,7 @@ export default function Navbar() {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[60] bg-dark text-white p-6 flex flex-col"
           >
-            <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
+            <div className="flex justify-between items-center mb-8 bg-dark/30 p-4 rounded-3xl border border-white/5">
               <img
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
                 alt="Carplus Auto Center"
