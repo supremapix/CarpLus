@@ -66,7 +66,7 @@ export default function NeighborhoodDetail() {
           title: seoContent.metaTitle,
           description: seoContent.metaDescription,
           canonical: `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
-          ogImage: 'https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp',
+          ogImage: '/images/loja/carplus-oficina-portao.png',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -143,7 +143,7 @@ export default function NeighborhoodDetail() {
         <section className="relative min-h-[580px] flex flex-col justify-end bg-dark text-white overflow-hidden">
            <div className="absolute inset-0">
               <img
-                src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
+                src="/images/loja/carplus-oficina-portao.png"
                 className="w-full h-full object-cover"
                 alt={`Loja de pneus para ${bairro.name} - Carplus Auto Center Curitiba`}
               />

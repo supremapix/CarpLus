@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus.webp" 
+          src="/images/loja/carplus-oficina-portao.png" 
           alt="Loja de Pneus" 
           className="w-full h-full object-cover"
         />

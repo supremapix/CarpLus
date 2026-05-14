@@ -480,7 +480,7 @@ export default function TireMeasureDetail() {
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <img 
-              src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp"
+              src="/images/loja/carplus-oficina-portao.png"
               className="w-full h-full object-cover grayscale"
               alt="Pirelli Loja"
             />

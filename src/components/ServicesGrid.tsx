@@ -6,9 +6,9 @@ import * as LucideIcons from 'lucide-react';
 import { SERVICES } from '../data';
 
 const STUDIO_IMAGES = [
-  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus.webp",
-  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp",
-  "https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/11/loja-de-pneus-em-curitiba.webp"
+  "/images/loja/carplus-oficina-portao.png",
+  "/images/loja/proposito-carplus.png",
+  "/images/loja/vendedor-telas-maiores.webp"
 ];
 
 export default function ServicesGrid() {
