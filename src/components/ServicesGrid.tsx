@@ -98,7 +98,7 @@ export default function ServicesGrid() {
            </div>
            
            <div className="relative rounded-[40px] overflow-hidden flex flex-col bg-white border border-gray-100 shadow-xl">
-              <div className="relative aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 rounded-t-[40px]">
                 {/* All images stacked, only current one visible */}
                 {STUDIO_IMAGES.map((src, i) => (
                   <motion.img 
@@ -111,7 +111,7 @@ export default function ServicesGrid() {
                       scale: i === currentImageIndex ? 1 : 1.05
                     }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
                 ))}
                 
