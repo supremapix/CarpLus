@@ -11,9 +11,9 @@ import { Link } from 'react-router-dom';
 // Marker Icon Fix
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconRetinaUrl: '/images/leaflet/marker-icon-2x.png',
+  iconUrl: '/images/leaflet/marker-icon.png',
+  shadowUrl: '/images/leaflet/marker-shadow.png',
 });
 
 // Tabs definition
@@ -47,7 +47,7 @@ const carplusIcon = L.divIcon({
         cursor: pointer;
       ">
         <img 
-          src="https://www.carpluspneuseoficina.com.br/wp-content/uploads/2025/06/logo.webp"
+          src="/images/logos/logo.webp"
           style="width: 90px; height: auto; display: block; margin: 0 auto 4px;"
           alt="Carplus"
         />
@@ -443,7 +443,7 @@ export default function NeighborhoodMap() {
                         <Marker position={carplusPos} icon={carplusIcon}>
                           <Popup>
                             <div className="text-center p-3">
-                              <img src="https://lp.www.carpluspneuseoficina.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg" className="h-8 mx-auto mb-3" alt="Carplus Logo" />
+                              <img src="/images/logos/logo-horizontal.svg" className="h-8 mx-auto mb-3" alt="Carplus Logo" />
                               <b className="text-lg block mb-1">Carplus Auto Center</b>
                               <span className="text-xs text-gray-500 block mb-3">Av. Arthur da Silva Bernardes, 1323<br/>Portao, Curitiba - PR</span>
                               
