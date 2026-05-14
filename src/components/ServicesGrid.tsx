@@ -6,9 +6,9 @@ import * as LucideIcons from 'lucide-react';
 import { SERVICES } from '../data';
 
 const STUDIO_IMAGES = [
-  "/images/loja/carplus-oficina-portao.png",
-  "/images/loja/proposito-carplus.png",
-  "/images/loja/vendedor-telas-maiores.webp"
+  "/images/loja/loja-de-pneus-curitiba.webp",
+  "/images/loja/loja-de-pneus-pirelli.webp",
+  "/images/loja/loja-de-pneus-em-curitiba.webp"
 ];
 
 export default function ServicesGrid() {

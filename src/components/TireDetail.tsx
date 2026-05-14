@@ -393,7 +393,7 @@ export default function TireDetail() {
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <img 
-                    src="/images/loja/carplus-oficina-portao.png"
+                    src="/images/loja/loja-de-pneus-pirelli.webp"
                     className="w-full h-full object-cover grayscale"
                     alt="Pirelli Loja"
                 />

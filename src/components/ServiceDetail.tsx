@@ -200,7 +200,7 @@ export default function ServiceDetail() {
           title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
           description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
           canonical: `https://www.carpluspneuseoficina.com.br/servico/${service?.slug}`,
-          ogImage: '/images/loja/carplus-oficina-portao.png',
+          ogImage: '/images/loja/loja-de-pneus-curitiba.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -316,7 +316,7 @@ export default function ServiceDetail() {
 
               <div className="relative group">
                  <img 
-                    src="/images/loja/carplus-oficina-portao.png" 
+                    src="/images/loja/loja-de-pneus-curitiba.webp" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={service.title} 
                  />
