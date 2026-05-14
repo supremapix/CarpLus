@@ -1,4 +1,3 @@
-'use client';
 
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, MapPin, Clock, MessageSquare, Menu, X } from 'lucide-react';
@@ -7,7 +6,7 @@ import Link from 'next/link';
 
 function useBusinessStatus() {
   const now = new Date();
-  const day = now.getDay();
+  const day = now.getDay(); // 0=Sun, 6=Sat
   const hour = now.getHours();
   const minute = now.getMinutes();
   const time = hour + minute / 60;
@@ -31,13 +30,23 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Início', href: '/' },
+    { name: 'Início', href: '/#inicio' },
     { name: 'Quem Somos', href: '/quem-somos' },
     { name: 'Catálogo', href: '/pneus' },
     { name: 'Serviços', href: '/servicos' },
     { name: 'Como Chegar', href: '/como-chegar' },
     { name: 'FAQ', href: '/faq' },
   ];
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#') && window.location.pathname === '/') {
+      e.preventDefault();
+      const id = href.replace('/#', '');
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -51,6 +60,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <span className="hidden sm:flex items-center gap-1"><Clock size={12} /> Seg-Sex 8h-18h | Sáb 8h-12h</span>
 
+            {/* Badge Aberto/Fechado */}
             <motion.div
               animate={{ scale: [1, 1.04, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -61,9 +71,11 @@ export default function Navbar() {
               }`}
             >
               <span
-                className={`w-2 h-2 rounded-full bg-white`}
+                className={`w-2 h-2 rounded-full ${isOpen ? 'bg-white' : 'bg-white'}`}
                 style={{
-                  boxShadow: '0 0 8px rgba(255,255,255,0.8)',
+                  boxShadow: isOpen
+                    ? '0 0 8px rgba(255,255,255,0.8)'
+                    : '0 0 8px rgba(255,255,255,0.8)',
                   animation: 'pulse 1.5s ease-in-out infinite',
                 }}
               />
@@ -77,6 +89,7 @@ export default function Navbar() {
       <nav className={`transition-all duration-300 px-4 ${isScrolled ? 'bg-dark shadow-xl py-2' : 'bg-dark py-3'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="flex-shrink-1">
+            {/* Desktop: logo externa / Mobile: SVG local */}
             <img
               src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
               alt="Carplus Auto Center"
@@ -95,6 +108,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e: any) => handleLinkClick(e, link.href)}
                 className="font-display text-lg uppercase tracking-tight hover:text-primary transition-colors text-white"
               >
                 {link.name}
@@ -131,7 +145,8 @@ export default function Navbar() {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[60] bg-dark text-white p-6 flex flex-col"
           >
-            <div className="flex justify-between items-center mb-8 bg-dark/30 p-4 rounded-3xl border border-white/5">
+            {/* Header do drawer com logo local */}
+            <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
               <img
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
                 alt="Carplus Auto Center"
@@ -149,12 +164,13 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e: any) => handleLinkClick(e, link.href)}
                     className="font-display text-4xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
                   >
                     {link.name}
                   </Link>
                 ))}
+                {/* Links institucionais */}
                 <Link
                   href="/contato"
                   onClick={() => setIsMobileMenuOpen(false)}
