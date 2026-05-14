@@ -1,5 +1,5 @@
-// Catalogo de Pneus Carplus - Cache busted v2
-// Atualizado 2026-05-14 - 857+ pneus
+// Catalogo de Pneus Carplus - v3 fix
+// 857+ pneus cadastrados - Curitiba/PR
 
 export interface Tire {
   id: number;
@@ -922,7 +922,7 @@ export const TIRES: Tire[] = [
   { id: 174, slug: "pneu-delinte-205-65r15-94h-ds2", nome: "Delinte DS2 205/65R15 94H", marca: "Delinte", linha: "DS2", aro: 15, medida: "205/65R15", largura: 205, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "94 (670kg)", categoria: "Passeio", tipoVeiculo: ["Sedan", "SUV Compacto"], imagem: "/images/pneus/pneu-delinte-ds2.webp", imagemGrande: "/images/pneus/pneu-delinte-ds2.webp", descricao: "O Delinte DS2 é um pneu de alta performance projetado para oferecer equilíbrio entre conforto e segurança.", carros: ["Jeep Renegade", "Fiat Toro", "Honda HR-V", "Nissan Kicks"], destaque: false, novoModelo: true },
   { id: 175, slug: "pneu-delinte-205-65r15-99h-xl-dx-10-at-bandit", nome: "Delinte DX-10 A/T BANDIT 205/65R15 99H XL", marca: "Delinte", linha: "DX-10 A/T BANDIT", aro: 15, medida: "205/65R15", largura: 205, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "99 (775kg)", categoria: "SUV", tipoVeiculo: ["SUV", "Crossover"], imagem: "/images/pneus/pneu-delinte-dx10.webp", imagemGrande: "/images/pneus/pneu-delinte-dx10.webp", descricao: "O Delinte DX-10 A/T BANDIT é um pneu all-terrain projetado para SUVs e crossovers que buscam desempenho em terrenos variados.", carros: ["Jeep Compass", "Honda CR-V", "Toyota RAV4", "Hyundai Tucson"], destaque: true, novoModelo: true },
 
-  // ══════════════════════════════════════
+  // ═════════════════════════════════════��
   // BRIDGESTONE – Tecnologia Japonesa Premium
   // ═════════�������══����═════════════════════════
   { id: 176, slug: "pneu-17570r14-bridgestone-dueler-at-revo2-88h", nome: "Bridgestone 175/70R14 Dueler A/T Revo2 88H", marca: "Bridgestone", linha: "Dueler AT Revo2", aro: 14, medida: "175/70R14", largura: 175, perfil: 70, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)", categoria: "SUV", tipoVeiculo: ["SUV", "Picape"], imagem: "/images/pneus/pneu-bridgestone-revo.webp", imagemGrande: "/images/pneus/pneu-bridgestone-revo.webp", descricao: "O Bridgestone Dueler A/T Revo 2 é um pneu de uso misto (50% on-road e 50% off-road) projetado para caminhonetes e SUVs que buscam versatilidade. Ele equilibra a robustez necessária para terrenos irregulares com o conforto e silêncio exigidos no asfalto.", carros: ["Fiat Strada", "VW Saveiro", "Chevrolet Montana"], destaque: true, novoModelo: true },
