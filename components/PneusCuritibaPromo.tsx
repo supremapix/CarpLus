@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Tag, Phone, ChevronRight, ChevronLeft, Play } from 'lucide-react';

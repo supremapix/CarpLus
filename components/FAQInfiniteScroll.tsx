@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { Disc, Car, Settings, Wrench, X, ChevronLeft, ChevronRight, MessageCircleQuestion, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';

@@ -1,3 +1,4 @@
+"use client";
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';

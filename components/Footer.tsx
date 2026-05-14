@@ -1,3 +1,4 @@
+"use client";
 
 import { Mail, Phone, MapPin, Instagram, Facebook, MessageSquare, Clock, ShieldCheck, Star, Heart, ChevronRight } from 'lucide-react';
 import Link from 'next/link';

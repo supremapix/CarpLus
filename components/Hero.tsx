@@ -1,3 +1,4 @@
+"use client";
 
 import { motion } from 'motion/react';
 import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';

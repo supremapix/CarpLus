@@ -1,3 +1,4 @@
+"use client";
 
 import { Star, CircleCheck as CheckCircle } from 'lucide-react';
 

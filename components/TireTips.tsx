@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { Lightbulb, ChevronRight, Shield, Gauge, ThermometerSun, AlertTriangle, Wrench, Car } from 'lucide-react';
 
