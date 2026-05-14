@@ -70,7 +70,7 @@ export default function TireMeasuresSection() {
         className="w-full max-w-[900px] mx-auto"
       >
         <img
-          src="https://carpluscwb.com.br/wp-content/uploads/2025/06/pneus-medidas.webp"
+          src="/images/pneus/pneus-medidas.webp"
           alt="Infográfico mostrando as medidas de um pneu: Largura em milímetros, Altura em relação à largura e Aro em polegadas, com exemplo 225/55 R18"
           className="w-full h-auto"
           loading="lazy"

@@ -91,7 +91,7 @@ export default function Navbar() {
           <Link to="/" className="flex-shrink-1">
             {/* Desktop: logo externa / Mobile: SVG local */}
             <img
-              src="https://lp.carpluscwb.com.br/wp-content/uploads/2025/08/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
+              src="/images/logos/logo-horizontal.svg"
               alt="Carplus Auto Center"
               className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />

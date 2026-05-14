@@ -96,7 +96,7 @@ export default function AboutUs() {
           >
             <div className="absolute inset-0 bg-amber-500/10 rounded-3xl blur-3xl" />
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/proposito-carplu-portao-cwb-Wzj0cpgwNtpiKAxK8fO9KjMGoaGUcB.png"
+              src="/images/loja/proposito-carplus.png"
               alt="Proposito e Valores da Carplus Pneus - Valorizacao de Pessoas, Honestidade, Respeito e Colaboracao, Transparencia, Excelencia, Compromisso"
               className="relative w-full h-auto rounded-2xl md:rounded-3xl shadow-2xl border border-[#2a2a2a]"
             />

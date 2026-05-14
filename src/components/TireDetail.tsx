@@ -104,10 +104,10 @@ export default function TireDetail() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://carpluscwb.com.br/pneus" },
-                { "@type": "ListItem", "position": 3, "name": tire.marca, "item": `https://carpluscwb.com.br/pneus?marca=${tire.marca.toLowerCase()}` },
-                { "@type": "ListItem", "position": 4, "name": tire.nome, "item": `https://carpluscwb.com.br/pneu/${tire.slug}` }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://www.carpluspneuseoficina.com.br/pneus" },
+                { "@type": "ListItem", "position": 3, "name": tire.marca, "item": `https://www.carpluspneuseoficina.com.br/pneus?marca=${tire.marca.toLowerCase()}` },
+                { "@type": "ListItem", "position": 4, "name": tire.nome, "item": `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}` }
               ]
             }
           ]
@@ -393,7 +393,7 @@ export default function TireDetail() {
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <img 
-                    src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp"
+                    src="/images/loja/loja-de-pneus-pirelli.webp"
                     className="w-full h-full object-cover grayscale"
                     alt="Pirelli Loja"
                 />

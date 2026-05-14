@@ -8,11 +8,11 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus.webp" 
-          alt="Loja de Pneus" 
-          className="w-full h-full object-cover"
+          src="/images/hero-pneus.png" 
+          alt="Carplus Pneus - Loja de Pneus em Curitiba" 
+          className="w-full h-full object-cover object-[50%_center] md:object-[65%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/70 to-primary/20" />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/90 md:via-dark/70 to-dark/60 md:to-transparent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">

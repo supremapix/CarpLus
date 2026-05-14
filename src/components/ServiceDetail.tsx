@@ -199,8 +199,8 @@ export default function ServiceDetail() {
       ? {
           title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
           description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
-          canonical: `https://carpluscwb.com.br/servico/${service?.slug}`,
-          ogImage: 'https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp',
+          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service?.slug}`,
+          ogImage: '/images/loja/loja-de-pneus-curitiba.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -211,7 +211,7 @@ export default function ServiceDetail() {
                 "@type": "AutoPartsStore",
                 "name": "Carplus Auto Center",
                 "telephone": "+55-41-3082-7282",
-                "url": "https://carpluscwb.com.br/",
+                "url": "https://www.carpluspneuseoficina.com.br/",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
@@ -222,15 +222,15 @@ export default function ServiceDetail() {
                 }
               },
               "areaServed": { "@type": "City", "name": "Curitiba" },
-              "url": `https://carpluscwb.com.br/servico/${service.slug}`
+              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`
             },
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://carpluscwb.com.br/#servicos" },
-                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://carpluscwb.com.br/servico/${service.slug}` }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/#servicos" },
+                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}` }
               ]
             },
             // FAQPage Schema para Rich Snippets no Google
@@ -316,7 +316,7 @@ export default function ServiceDetail() {
 
               <div className="relative group">
                  <img 
-                    src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-curitiba.webp" 
+                    src="/images/loja/loja-de-pneus-curitiba.webp" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={service.title} 
                  />
@@ -882,7 +882,7 @@ export default function ServiceDetail() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recupera%C3%A7%C3%A3o%20de%20rodas-vddjT0XANzM3FbBUv2iHt0OjhN3OLZ.png" 
+                    src="/images/rodas/recuperacao-rodas.png" 
                     alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
                     className="w-full h-auto object-cover"
                     loading="lazy"
@@ -931,10 +931,10 @@ export default function ServiceDetail() {
               {/* Galeria de Imagens */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 {[
-                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%282%29-i6IAEitR6cNYoN4U3J9uFMvgrTDWIv.jpg", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
-                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%284%29-hYzJ5iqfOVYrsf96wwC8Jg9GPLETVN.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
-                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%283%29-Pl9PoU2rqazLnV0TTvSLv7D1OuHGMS.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
-                  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%285%29-VqCUBsrJKFvmM1iy4SXtGC1pwPx7DG.jpg", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
+                  { src: "/images/rodas/roda-polida-1.jpg", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
+                  { src: "/images/rodas/roda-volvo-yokohama.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
+                  { src: "/images/rodas/volvo-xc60-rodas.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
+                  { src: "/images/rodas/veiculo-rodas-consertadas.jpg", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
                 ].map((img, i) => (
                   <motion.div
                     key={i}

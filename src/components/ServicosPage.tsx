@@ -381,7 +381,7 @@ export default function ServicosPage() {
           >
             <div className="relative rounded-3xl overflow-hidden">
               <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recupera%C3%A7%C3%A3o%20de%20rodas-vddjT0XANzM3FbBUv2iHt0OjhN3OLZ.png" 
+                src="/images/rodas/recuperacao-rodas.png" 
                 alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas"
                 className="w-full h-auto object-cover"
                 loading="lazy"
@@ -430,10 +430,10 @@ export default function ServicosPage() {
           {/* Gallery */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%282%29-i6IAEitR6cNYoN4U3J9uFMvgrTDWIv.jpg", alt: "Roda de liga leve polida após conserto na Carplus Curitiba" },
-              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%284%29-hYzJ5iqfOVYrsf96wwC8Jg9GPLETVN.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama" },
-              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%283%29-Pl9PoU2rqazLnV0TTvSLv7D1OuHGMS.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center" },
-              { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carplus-rodas-reparos%20%285%29-VqCUBsrJKFvmM1iy4SXtGC1pwPx7DG.jpg", alt: "Veículo com rodas consertadas estacionado na Carplus Pneus Curitiba" },
+              { src: "/images/rodas/roda-polida-1.jpg", alt: "Roda de liga leve polida após conserto na Carplus Curitiba" },
+              { src: "/images/rodas/roda-volvo-yokohama.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama" },
+              { src: "/images/rodas/volvo-xc60-rodas.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center" },
+              { src: "/images/rodas/veiculo-rodas-consertadas.jpg", alt: "Veículo com rodas consertadas estacionado na Carplus Pneus Curitiba" },
             ].map((img, i) => (
               <motion.div
                 key={i}

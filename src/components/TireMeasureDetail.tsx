@@ -64,7 +64,7 @@ export default function TireMeasureDetail() {
       ? {
           title: `Pneu ${normalizedMedida} em Curitiba | Carplus Auto Center – Todas as Marcas`,
           description: `Compare e compre pneu ${normalizedMedida} na Carplus em Curitiba. Várias marcas: Pirelli, Firestone, Continental. Montagem inclusa, parcelamento em até 10x sem juros. Ligue: (41) 3082-7282.`,
-          canonical: `https://carpluscwb.com.br/pneu-medida/${medida}`,
+          canonical: `https://www.carpluspneuseoficina.com.br/pneu-medida/${medida}`,
           ogImage: tire.imagemGrande,
           ogType: 'product',
           schemaJSON: [
@@ -82,7 +82,7 @@ export default function TireMeasureDetail() {
                   "name": t.nome,
                   "image": t.imagemGrande,
                   "brand": { "@type": "Brand", "name": t.marca },
-                  "url": `https://carpluscwb.com.br/pneu/${t.slug}`
+                  "url": `https://www.carpluspneuseoficina.com.br/pneu/${t.slug}`
                 }
               }))
             },
@@ -90,9 +90,9 @@ export default function TireMeasureDetail() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluscwb.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://carpluscwb.com.br/pneus" },
-                { "@type": "ListItem", "position": 3, "name": `Medida ${normalizedMedida}`, "item": `https://carpluscwb.com.br/pneu-medida/${medida}` }
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://www.carpluspneuseoficina.com.br/pneus" },
+                { "@type": "ListItem", "position": 3, "name": `Medida ${normalizedMedida}`, "item": `https://www.carpluspneuseoficina.com.br/pneu-medida/${medida}` }
               ]
             }
           ]
@@ -480,7 +480,7 @@ export default function TireMeasureDetail() {
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <img 
-              src="https://carpluscwb.com.br/wp-content/uploads/2025/11/loja-de-pneus-pirelli.webp"
+              src="/images/loja/loja-de-pneus-pirelli.webp"
               className="w-full h-full object-cover grayscale"
               alt="Pirelli Loja"
             />
