@@ -18,9 +18,9 @@ export default function BrandsCarousel() {
         <div className="md:hidden absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/60 to-transparent z-10" />
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent z-10" />
         <img
-          src="/images/loja/vendedor-telas-maiores.webp"
+          src="/images/loja/oficina-carplus-pneus.png"
           alt=""
-          className="w-full h-full object-cover object-[85%_center] md:object-right opacity-70"
+          className="w-full h-full object-cover object-center opacity-70"
         />
       </div>
 
@@ -36,11 +36,6 @@ export default function BrandsCarousel() {
 
           {/* COLUNA: Conteúdo (Left on PC) */}
           <div className="w-full space-y-8 md:space-y-10 order-1 text-center md:text-left relative">
-            {/* Desktop Only Floating Tag */}
-            <div className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 font-display font-bold text-[10px] tracking-[0.15em] text-white w-fit mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00C853] shadow-[0_0_8px_#00C853] animate-pulse" />
-                ONLINE AGORA
-            </div>
             
             {/* Mobile Badge */}
             <div className="md:hidden inline-flex items-center gap-2 bg-white/5 border border-white/10 text-primary px-4 py-1.5 rounded-full mb-6 font-display font-bold text-[10px] uppercase tracking-widest">
