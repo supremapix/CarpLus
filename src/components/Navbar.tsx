@@ -4,24 +4,9 @@ import { Phone, MapPin, Clock, MessageSquare, Menu, X } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function useBusinessStatus() {
-  const now = new Date();
-  const day = now.getDay(); // 0=Sun, 6=Sat
-  const hour = now.getHours();
-  const minute = now.getMinutes();
-  const time = hour + minute / 60;
-
-  const isOpen =
-    (day >= 1 && day <= 5 && time >= 8 && time < 18) ||
-    (day === 6 && time >= 8 && time < 12);
-
-  return isOpen;
-}
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isOpen = useBusinessStatus();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -59,28 +44,6 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden sm:flex items-center gap-1"><Clock size={12} /> Seg-Sex 8h-18h | Sáb 8h-12h</span>
-
-            {/* Badge Aberto/Fechado */}
-            <motion.div
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-full font-black text-[11px] uppercase tracking-wider border-2 shadow-lg ${
-                isOpen
-                  ? 'bg-[#00C853] border-[#00C853] text-white shadow-[#00C853]/40'
-                  : 'bg-red-600 border-red-600 text-white shadow-red-600/40'
-              }`}
-            >
-              <span
-                className={`w-2 h-2 rounded-full ${isOpen ? 'bg-white' : 'bg-white'}`}
-                style={{
-                  boxShadow: isOpen
-                    ? '0 0 8px rgba(255,255,255,0.8)'
-                    : '0 0 8px rgba(255,255,255,0.8)',
-                  animation: 'pulse 1.5s ease-in-out infinite',
-                }}
-              />
-              {isOpen ? 'ABERTO' : 'FECHADO'}
-            </motion.div>
           </div>
         </div>
       </div>
