@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -22,7 +22,7 @@ interface TireCardProps {
   key?: string | number;
 }
 
-export default function TireCard({ tire, index }: TireCardProps) {
+const TireCard = memo(function TireCard({ tire, index }: TireCardProps) {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -40,7 +40,7 @@ export default function TireCard({ tire, index }: TireCardProps) {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
+      transition={{ duration: 0.2 }}
       className="group bg-white rounded-[2.5rem] p-6 shadow-sm border border-gray-100 relative flex flex-col justify-between hover:shadow-2xl hover:border-primary/20 transition-all overflow-hidden"
     >
       <div className="absolute top-6 left-6 flex flex-col gap-2 z-20">
@@ -126,4 +126,6 @@ export default function TireCard({ tire, index }: TireCardProps) {
       </div>
     </motion.div>
   );
-}
+});
+
+export default TireCard;
