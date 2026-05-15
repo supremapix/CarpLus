@@ -49,10 +49,10 @@ export default function Footer() {
             <h4 className="font-accent text-lg uppercase tracking-widest mb-6 text-primary font-black">Nossos Serviços</h4>
             <ul className="space-y-3 text-sm font-medium max-h-64 overflow-y-auto pr-2 scrollbar-thin">
                {SERVICES.map(service => (
-                 <li key={service.id}>
-                    <Link to={`/servico/${service.slug}`} className="hover:text-primary transition-colors flex items-center justify-center md:justify-start gap-2">
+                 <li key={service.id} className="text-white/80">
+                    <Link to={`/servico/${service.slug}`} className="text-white/80 hover:text-primary transition-colors flex items-center justify-center md:justify-start gap-2">
                         <ChevronRight className="text-primary/40 flex-shrink-0" size={14} />
-                        <span className="line-clamp-1 text-white/80">{service.title}</span>
+                        {service.title}
                     </Link>
                  </li>
                ))}
