@@ -455,8 +455,8 @@ export const TIRES: Tire[] = [
     marca: "Continental", linha: "ContiPowerContact", aro: 16, medida: "205/55R16",
     largura: 205, perfil: 55, indiceVelocidade: "V (240km/h)", indiceCarga: "91 (615kg)",
     categoria: "Performance", tipoVeiculo: ["Sedan", "Hatch"],
-    imagem: "/images/pneus/pneu-20555r16-continental-powercontact-2-91v-1.png",
-    imagemGrande: "/images/pneus/pneu-20555r16-continental-powercontact-2-91v-1.png",
+    imagem: "/images/pneus/pneu-continental-powercontact.webp",
+    imagemGrande: "/images/pneus/pneu-continental-powercontact.webp",
     descricao: "ContiPowerContact 2 – durabilidade extrema e economia de combustível com segurança alemã.",
     carros: ["VW Golf", "Toyota Corolla", "Hyundai HB20S"],
     destaque: true, novoModelo: false
@@ -468,8 +468,8 @@ export const TIRES: Tire[] = [
     marca: "Continental", linha: "ContiSportContact", aro: 17, medida: "225/50R17",
     largura: 225, perfil: 50, indiceVelocidade: "Y (300km/h)", indiceCarga: "94 (670kg)",
     categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Sedan Premium"],
-    imagem: "/images/pneus/pneu-22550r17-continental-contisportcontact-5-98y-1.jpg",
-    imagemGrande: "/images/pneus/pneu-22550r17-continental-contisportcontact-5-98y-1.jpg",
+    imagem: "/images/pneus/pneu-continental-sportcontact.webp",
+    imagemGrande: "/images/pneus/pneu-continental-sportcontact.webp",
     descricao: "SportContact 5 – controle excepcional e curta distância de frenagem sob todas as condições.",
     carros: ["BMW Série 3", "Audi A4", "Mercedes Classe C"],
     destaque: false, novoModelo: false
@@ -481,8 +481,8 @@ export const TIRES: Tire[] = [
     marca: "Continental", linha: "ContiSportContact", aro: 19, medida: "235/55R19",
     largura: 235, perfil: 55, indiceVelocidade: "V (240km/h)", indiceCarga: "101 (825kg)",
     categoria: "SUV Premium", tipoVeiculo: ["SUV"],
-    imagem: "/images/pneus/pneu-23555r19-continental-contisportcontact-5-suv-101w-1.jpg",
-    imagemGrande: "/images/pneus/pneu-23555r19-continental-contisportcontact-5-suv-101w-1.jpg",
+    imagem: "/images/pneus/pneu-continental-sportcontact.webp",
+    imagemGrande: "/images/pneus/pneu-continental-sportcontact.webp",
     descricao: "Versão SUV do aclamado SportContact 5. Máxima performance para utilitários esportivos de luxo.",
     carros: ["Volvo XC60", "Audi Q5", "Mercedes GLC"],
     destaque: false, novoModelo: false
