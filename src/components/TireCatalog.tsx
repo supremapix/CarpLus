@@ -84,11 +84,11 @@ export default function TireCatalog() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-dark pb-0 pt-12 md:pt-20 text-white relative overflow-hidden">
+      <section className="bg-dark pt-32 md:pt-40 pb-0 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
             src="/images/loja/loja-de-pneus-curitiba.webp"
