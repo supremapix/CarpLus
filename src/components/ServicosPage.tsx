@@ -8,12 +8,12 @@ import {
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category } from '../data/services';
+import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category, type Service } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
 
 // Helper para pegar icone do Lucide
 const getIcon = (iconName: string) => {
-  const Icon = (LucideIcons as Record<string, React.ComponentType<{ className?: string; size?: number }>>)[iconName];
+  const Icon = (LucideIcons as any)[iconName];
   return Icon || LucideIcons.Circle;
 };
 
@@ -45,7 +45,7 @@ function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: strin
 }
 
 // Card de Servico
-function ServiceCard({ service, categoryId }: { service: typeof SERVICE_CATEGORIES[0]['services'][0]; categoryId: string }) {
+function ServiceCard({ service, categoryId }: { service: Service; categoryId: string }) {
   const Icon = getIcon(service.icon);
   
   return (
