@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { MessageSquare, ChevronRight, CircleCheck as CheckCircle2, Search, ListFilter as Filter, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TIRES } from '../data';
@@ -93,23 +93,21 @@ export default function TireGallery() {
 
         {/* Tire Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredTires.length > 0 ? (
-              filteredTires.map((tire: any, index: number) => (
-                <TireCard key={tire.id} tire={tire} index={index} />
-              ))
-            ) : (
-              <div className="col-span-full py-20 text-center">
-                 <p className="text-gray-400 text-xl font-light italic">Nenhum pneu encontrado para sua busca...</p>
-                 <button 
-                  onClick={() => {setSearchTerm(''); setSelectedRim(null);}}
-                  className="mt-4 text-primary font-bold underline"
-                 >
-                   Limpar Filtros
-                 </button>
-              </div>
-            )}
-          </AnimatePresence>
+          {filteredTires.length > 0 ? (
+            filteredTires.map((tire: any, index: number) => (
+              <TireCard key={tire.id} tire={tire} index={index} />
+            ))
+          ) : (
+            <div className="col-span-full py-20 text-center">
+               <p className="text-gray-400 text-xl font-light italic">Nenhum pneu encontrado para sua busca...</p>
+               <button 
+                onClick={() => {setSearchTerm(''); setSelectedRim(null);}}
+                className="mt-4 text-primary font-bold underline"
+               >
+                 Limpar Filtros
+               </button>
+            </div>
+          )}
         </div>
 
         {/* View All Button */}
