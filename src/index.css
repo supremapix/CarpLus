@@ -64,17 +64,17 @@ button, a {
   scrollbar-width: thin;
 }
 .scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 .scrollbar-thin::-webkit-scrollbar-track {
-  @apply bg-transparent;
+  @apply bg-white/5 rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-full;
+  @apply bg-primary/30 rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/70;
+  @apply bg-primary/50;
 }
 
 /* Leaflet fix for react */
