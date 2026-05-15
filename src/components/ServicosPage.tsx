@@ -81,15 +81,23 @@ function ServiceCard({ service, categoryId }: { service: Service; categoryId: st
         ) : (
           <span className="text-xs text-white/40">—</span>
         )}
-        <a
-          href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(`Olá! Gostaria de agendar: ${service.name}`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Agendar ${service.name} via WhatsApp`}
-          className="bg-primary text-black px-4 py-2 rounded-full font-bold text-xs uppercase tracking-tight flex items-center gap-1.5 hover:bg-yellow-400 transition-colors group-hover:shadow-md group-hover:shadow-primary/20"
-        >
-          Agendar <ChevronRight size={12} />
-        </a>
+        <div className="flex items-center gap-2">
+          <Link
+            to={`/servico/${service.slug}`}
+            className="text-primary text-xs font-bold uppercase tracking-tight hover:underline flex items-center gap-1"
+          >
+            Detalhes <ChevronRight size={12} />
+          </Link>
+          <a
+            href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(`Olá! Gostaria de agendar: ${service.name}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Agendar ${service.name} via WhatsApp`}
+            className="bg-primary text-black px-3 py-2 rounded-full font-bold text-xs uppercase tracking-tight flex items-center gap-1.5 hover:bg-yellow-400 transition-colors group-hover:shadow-md group-hover:shadow-primary/20"
+          >
+            <MessageSquare size={12} />
+          </a>
+        </div>
       </div>
     </motion.div>
   );
@@ -297,32 +305,54 @@ export default function ServicosPage() {
         className="sticky top-0 z-50 bg-[#111] border-b border-primary/30 shadow-lg shadow-black/20"
       >
         <div className="max-w-7xl mx-auto px-4">
-          <nav className="flex items-center gap-2 py-3 overflow-x-auto scrollbar-hide" aria-label="Filtros de categoria">
-            <button
-              onClick={() => scrollToCategory('todos')}
-              className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-tight transition-all ${
-                activeCategory === 'todos'
-                  ? 'bg-primary text-black'
-                  : 'bg-white/5 text-white/70 hover:bg-white/10'
-              }`}
+          {/* Scrollable nav with touch support */}
+          <div className="relative">
+            <nav 
+              className="flex items-center gap-3 py-4 overflow-x-auto scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-transparent pb-3 cursor-grab active:cursor-grabbing touch-pan-x"
+              style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'thin' }}
+              aria-label="Filtros de categoria"
             >
-              Todos
-            </button>
-            {SERVICE_CATEGORIES.map(cat => (
               <button
-                key={cat.id}
-                onClick={() => scrollToCategory(cat.id)}
-                className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-tight transition-all flex items-center gap-1.5 ${
-                  activeCategory === cat.id
-                    ? 'bg-primary text-black'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10'
+                onClick={() => scrollToCategory('todos')}
+                className={`shrink-0 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-tight transition-all flex items-center gap-2 ${
+                  activeCategory === 'todos'
+                    ? 'bg-primary text-black shadow-lg shadow-primary/30'
+                    : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
                 }`}
               >
-                <span>{cat.emoji}</span>
-                <span className="hidden sm:inline">{cat.name}</span>
+                <LucideIcons.LayoutGrid size={16} />
+                <span>Todos</span>
               </button>
-            ))}
-          </nav>
+              {SERVICE_CATEGORIES.map(cat => {
+                const CatIcon = getIcon(cat.icon);
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => scrollToCategory(cat.id)}
+                    className={`shrink-0 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-tight transition-all flex items-center gap-2 whitespace-nowrap ${
+                      activeCategory === cat.id
+                        ? 'bg-primary text-black shadow-lg shadow-primary/30'
+                        : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
+                    }`}
+                  >
+                    <CatIcon size={16} />
+                    <span>{cat.name}</span>
+                  </button>
+                );
+              })}
+            </nav>
+            {/* Scroll indicator gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#111] to-transparent pointer-events-none" />
+          </div>
+          {/* Progress bar showing scroll position */}
+          <div className="h-0.5 bg-white/10 -mt-1">
+            <div 
+              className="h-full bg-primary transition-all duration-300"
+              style={{ 
+                width: `${((SERVICE_CATEGORIES.findIndex(c => c.id === activeCategory) + 1) / SERVICE_CATEGORIES.length) * 100}%` 
+              }}
+            />
+          </div>
         </div>
       </div>
 

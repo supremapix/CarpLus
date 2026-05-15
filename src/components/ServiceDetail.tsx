@@ -1,11 +1,24 @@
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES } from '../data';
+import { SERVICE_CATEGORIES } from '../data/services';
 import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import * as LucideIcons from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+
+// Flatten all services from new categories
+const ALL_NEW_SERVICES = SERVICE_CATEGORIES.flatMap(cat => 
+  cat.services.map(s => ({ 
+    ...s, 
+    categoryName: cat.name, 
+    categoryIcon: cat.icon,
+    // Map to old format for compatibility
+    title: s.name,
+    description: s.shortDescription,
+  }))
+);
 
 // Conteúdo SEO detalhado para cada serviço - otimizado para Google e Bing
 const SEO_CONTENT: Record<string, {
@@ -192,7 +205,25 @@ const SEO_CONTENT: Record<string, {
 
 export default function ServiceDetail() {
   const { slug } = useParams();
-  const service = SERVICES.find(s => s.slug === slug);
+  // Try to find in old SERVICES first, then in new ALL_NEW_SERVICES
+  const oldService = SERVICES.find(s => s.slug === slug);
+  const newService = ALL_NEW_SERVICES.find(s => s.slug === slug);
+  const service = oldService || (newService ? { 
+    ...newService, 
+    id: newService.id,
+    slug: newService.slug,
+    title: newService.name,
+    icon: newService.icon,
+    description: newService.shortDescription
+  } : null);
+
+  // Get additional SEO content if available, or generate from new service data
+  const seoContent = service && SEO_CONTENT[service.slug] ? SEO_CONTENT[service.slug] : (newService ? {
+    intro: newService.fullDescription,
+    detalhes: newService.highlights,
+    perguntas: [],
+    keywords: [`${newService.name.toLowerCase()} curitiba`, `${newService.name.toLowerCase()} portão`]
+  } : null);
 
   useSEO(
     service
@@ -234,10 +265,10 @@ export default function ServiceDetail() {
               ]
             },
             // FAQPage Schema para Rich Snippets no Google
-            ...(SEO_CONTENT[service.slug] ? [{
+            ...(seoContent && seoContent.perguntas.length > 0 ? [{
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": SEO_CONTENT[service.slug].perguntas.map(faq => ({
+              "mainEntity": seoContent.perguntas.map(faq => ({
                 "@type": "Question",
                 "name": faq.pergunta,
                 "acceptedAnswer": {
@@ -330,7 +361,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* SEO Content Section - Conteúdo otimizado para Google e Bing */}
-        {SEO_CONTENT[slug || ''] && (
+        {seoContent && (
           <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4">
               {/* Introdução SEO */}
@@ -344,7 +375,7 @@ export default function ServiceDetail() {
                   {service.title} em <span className="text-primary">Curitiba</span> - Portão
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-center">
-                  {SEO_CONTENT[slug || ''].intro}
+                  {seoContent.intro}
                 </p>
               </motion.div>
 
@@ -362,7 +393,7 @@ export default function ServiceDetail() {
                     O Que Oferecemos
                   </h3>
                   <ul className="space-y-4">
-                    {SEO_CONTENT[slug || ''].detalhes.map((detalhe, idx) => (
+                    {seoContent.detalhes.map((detalhe, idx) => (
                       <li key={idx} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
                         <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
                         <span className="text-gray-700">{detalhe}</span>
@@ -408,36 +439,38 @@ export default function ServiceDetail() {
               </div>
 
               {/* FAQ Section - Schema.org FAQPage */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="max-w-4xl mx-auto"
-              >
-                <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
-                  Perguntas Frequentes sobre {service.title}
-                </h3>
-                <div className="space-y-4">
-                  {SEO_CONTENT[slug || ''].perguntas.map((faq, idx) => (
-                    <details
-                      key={idx}
-                      className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
-                    >
-                      <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                        <h4 className="font-bold text-gray-900 pr-4">{faq.pergunta}</h4>
-                        <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
-                      </summary>
-                      <div className="px-5 pb-5 pt-0">
-                        <p className="text-gray-600 leading-relaxed">{faq.resposta}</p>
-                      </div>
-                    </details>
-                  ))}
-                </div>
-              </motion.div>
+              {seoContent.perguntas.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="max-w-4xl mx-auto"
+                >
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
+                    Perguntas Frequentes sobre {service.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {seoContent.perguntas.map((faq, idx) => (
+                      <details
+                        key={idx}
+                        className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
+                      >
+                        <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
+                          <h4 className="font-bold text-gray-900 pr-4">{faq.pergunta}</h4>
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
+                        </summary>
+                        <div className="px-5 pb-5 pt-0">
+                          <p className="text-gray-600 leading-relaxed">{faq.resposta}</p>
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Keywords para SEO (hidden but crawlable) */}
               <div className="sr-only">
-                <p>Palavras-chave relacionadas: {SEO_CONTENT[slug || ''].keywords.join(', ')}</p>
+                <p>Palavras-chave relacionadas: {seoContent.keywords.join(', ')}</p>
                 <p>Carplus Auto Center - {service.title} no bairro Portão em Curitiba, Paraná. Atendemos toda a região metropolitana incluindo São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
               </div>
             </div>
