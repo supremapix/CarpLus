@@ -2,6 +2,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { motion } from 'motion/react';
 import { Calendar, Users, Award, Wrench, MapPin, Phone } from 'lucide-react';
+import AboutGallery from './AboutGallery';
 
 export default function AboutUs() {
   return (
@@ -27,6 +28,9 @@ export default function AboutUs() {
             Conheca a historia da Carplus Pneus, referencia em servicos automotivos em Curitiba desde 2014.
           </motion.p>
         </section>
+
+        {/* Gallery Section */}
+        <AboutGallery />
 
         {/* Stats Bar */}
         <section className="bg-[#1a1a1a] border-y border-[#2a2a2a] py-8 mb-12 md:mb-16">
