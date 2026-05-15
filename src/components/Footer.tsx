@@ -46,20 +46,23 @@ export default function Footer() {
 
          {/* Links & Services */}
          <div className="w-full">
-            <h4 className="font-accent text-2xl uppercase tracking-widest mb-10 text-primary font-black">Nossos Serviços</h4>
-            <ul className="space-y-6 text-white/80 text-xl font-medium">
+            <h4 className="font-accent text-lg uppercase tracking-widest mb-6 text-primary font-black">Nossos Serviços</h4>
+            <ul className="space-y-3 text-sm font-medium max-h-64 overflow-y-auto pr-2 scrollbar-thin">
                {SERVICES.map(service => (
                  <li key={service.id}>
-                    <Link to={`/servico/${service.slug}`} className="hover:text-primary transition-colors flex items-center justify-center md:justify-start gap-3">
-                        <ChevronRight className="text-primary/40" size={20} />
-                        {service.title}
+                    <Link 
+                      to={`/servico/${service.slug}`} 
+                      className="footer-service-link transition-colors flex items-center justify-center md:justify-start gap-2"
+                    >
+                        <ChevronRight className="text-primary/40 flex-shrink-0" size={14} />
+                        <span>{service.title}</span>
                     </Link>
                  </li>
                ))}
-               <li className="pt-8 border-t border-white/10">
-                  <Link to="/pneus" className="font-black text-primary hover:text-white transition-colors text-2xl uppercase tracking-tighter italic underline decoration-2 underline-offset-8">Ver Todos os Pneus</Link>
-               </li>
             </ul>
+            <div className="pt-4 mt-4 border-t border-white/10">
+               <Link to="/pneus" className="font-bold text-primary hover:text-white transition-colors text-sm uppercase tracking-tight">Ver Todos os Pneus</Link>
+            </div>
          </div>
 
          {/* Contact Info */}

@@ -40,6 +40,17 @@ button, a {
   @apply whitespace-nowrap overflow-hidden text-ellipsis;
 }
 
+/* Footer service links - override global a styles */
+.footer-service-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+.footer-service-link:hover {
+  color: var(--color-primary) !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -62,19 +73,20 @@ button, a {
 
 .scrollbar-thin {
   scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) rgba(255, 255, 255, 0.1);
 }
 .scrollbar-thin::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 .scrollbar-thin::-webkit-scrollbar-track {
-  @apply bg-transparent;
+  @apply bg-white/10 rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-full;
+  @apply bg-primary rounded-full;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/70;
+  @apply bg-primary/80;
 }
 
 /* Leaflet fix for react */

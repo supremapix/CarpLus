@@ -1,8 +1,8 @@
 import Navbar from './Navbar';
 import Hero from './Hero';
 import TireSearchBar from './TireSearchBar';
+import TiresByBrand from './TiresByBrand';
 import BrandsCarousel from './BrandsCarousel';
-import TireGallery from './TireGallery';
 import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
 import StoreSection from './StoreSection';
@@ -12,7 +12,6 @@ import FAQInfiniteScroll from './FAQInfiniteScroll';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -32,7 +31,7 @@ export default function Home() {
            whileInView={{ opacity: 1 }}
            viewport={{ once: true }}
         >
-          <TireGallery />
+          <TiresByBrand />
         </motion.div>
 
         <StoreSection />

@@ -1189,7 +1189,7 @@ export const TIRES: Tire[] = [
 
   // ═══���═════════���════════════════════════
   // PIRELLI – Linha P400 Evo
-  // ══════════════════════════════════════
+  // ═��════════════════════════════════════
   { id: 383, slug: "pneu-pirelli-17565r14-p400-evo-82h", nome: "Pirelli 175/65R14 P400 Evo 82H", marca: "Pirelli", linha: "P400 Evo", aro: 14, medida: "175/65R14", largura: 175, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "82 (475kg)", categoria: "Conforto", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/P400Evo_visorePDP_cake.png", imagemGrande: "/images/pneus/P400Evo_visorePDP_cake.png", descricao: "Pneu Pirelli P400 Evo 175/65R14 82H, excelente custo-benefício para carros populares.", carros: ["CAOA Chery New QQ", "CAOA Chery QQ", "Chevrolet Celta", "Chevrolet Classic", "Chevrolet Corsa", "Chevrolet Prisma", "Fiat Argo", "Fiat Cronos", "Fiat Grand Siena", "Fiat Mille", "Fiat Mobi", "Fiat Novo Palio", "Fiat Palio", "Fiat Palio Fire", "Fiat Siena", "Fiat Strada", "Fiat Uno", "Ford Fiesta", "Ford Ka", "Ford Ka+", "Ford Novo Ka", "Honda Fit", "Peugeot 206", "Peugeot 207", "Renault Clio", "Renault Kangoo", "Renault Symbol", "Toyota Etios", "Volks Fox", "Volks Gol G4", "Volks Polo"], destaque: true, novoModelo: true },
   { id: 384, slug: "pneu-pirelli-17570r14-p400-evo-84t-ks", nome: "Pirelli 175/70R14 P400 Evo 84T (KS)", marca: "Pirelli", linha: "P400 Evo", aro: 14, medida: "175/70R14", largura: 175, perfil: 70, indiceVelocidade: "T (190km/h)", indiceCarga: "84 (500kg)", categoria: "Conforto", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/P400Evo_visorePDP_cake.png", imagemGrande: "/images/pneus/P400Evo_visorePDP_cake.png", descricao: "Pneu Pirelli P400 Evo 175/70R14 84T (KS) para uso urbano.", carros: ["Chevrolet Meriva", "Fiat Idea", "Fiat Palio Weekend", "Fiat Uno", "Hyundai HB20", "Volkswagen Fox", "Volks Gol G5", "Volks G6", "Volks UP!", "Volks Voyage"], destaque: false, novoModelo: true },
   { id: 385, slug: "pneu-pirelli-18565r14-p400-evo-86t-ks", nome: "Pirelli 185/65R14 P400 Evo 86T (KS)", marca: "Pirelli", linha: "P400 Evo", aro: 14, medida: "185/65R14", largura: 185, perfil: 65, indiceVelocidade: "T (190km/h)", indiceCarga: "86 (530kg)", categoria: "Conforto", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/P400Evo_visorePDP_cake.png", imagemGrande: "/images/pneus/P400Evo_visorePDP_cake.png", descricao: "Pneu Pirelli P400 Evo 185/65R14 86T (KS), medida popular com ótimo custo-benefício.", carros: ["Fiat Grand Siena", "Fiat Palio Weekend", "Fiat Siena", "Peugeot 206", "Peugeot 207", "Renault Kangoo", "Volks Gol G6", "Volks Saveiro", "Volks Voyage"], destaque: true, novoModelo: true },
@@ -10556,7 +10556,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Sedan Esportivo"],
     imagem: "/images/pneus/pneu-continental.jpg",
     imagemGrande: "/images/pneus/pneu-continental.jpg",
-    descricao: "O Pneu Continental 255/50R19 XL ContiSportContact 5 SUV SSR * 107W é um pneu SportContact esportivo da Continental, desenvolvido com tecnologia alemã para oferecer segurança, conforto e durabilidade.",
+    descricao: "O Pneu Continental 255/50R19 XL ContiSportContact 5 SUV SSR * 107W é um pneu SportContact esportivo da Continental, desenvolvido com tecnologia alemã para oferecer seguran��a, conforto e durabilidade.",
     carros: [],
     destaque: false,
     novoModelo: true,
@@ -12194,7 +12194,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Sedan Esportivo"],
     imagem: "/images/pneus/pneu-continental.jpg",
     imagemGrande: "/images/pneus/pneu-continental.jpg",
-    descricao: "O Pneu Continental 245/40R20 XL FR ContiSportContact 5P MO 99Y é um pneu SportContact esportivo da Continental, desenvolvido com tecnologia alemã para oferecer segurança, conforto e durabilidade.",
+    descricao: "O Pneu Continental 245/40R20 XL FR ContiSportContact 5P MO 99Y �� um pneu SportContact esportivo da Continental, desenvolvido com tecnologia alemã para oferecer segurança, conforto e durabilidade.",
     carros: [],
     destaque: false,
     novoModelo: true,
@@ -25097,7 +25097,7 @@ export const TIRES: Tire[] = [
   {
     id: "3499",
     marca: "Yokohama",
-    nome: "O pneu Yokohama Geolandar X-CV G057 é um pneu crossover para SUVs modernos com alto desempenho em piso seco e molhado, oferecendo conforto e precisão na direção.",
+    nome: "O pneu Yokohama Geolandar X-CV G057 é um pneu crossover para SUVs modernos com alto desempenho em piso seco e molhado, oferecendo conforto e precisão na direç��o.",
     slug: "o-pneu-yokohama-geolandar-x-cv-g057-e-um-pneu-crossover-para-suvs-modernos-com-alto-desempenho-em-piso-seco-e-molhado-oferecendo-conforto-e-precisao-na-direcao",
     imagem: "/images/pneus/pneu-yokohama-ad09.webp",
     medida: "",
@@ -26504,7 +26504,7 @@ export const TIRES: Tire[] = [
   {
     id: "3566",
     marca: "Yokohama",
-    nome: "O pneu Yokohama Geolandar X-AT G016 é um pneu all-terrain extremo para caminhonetes e SUVs off-road. Combina desempenho agressivo em terrenos difíceis com conforto razoável em rodovias.",
+    nome: "O pneu Yokohama Geolandar X-AT G016 é um pneu all-terrain extremo para caminhonetes e SUVs off-road. Combina desempenho agressivo em terrenos dif��ceis com conforto razoável em rodovias.",
     slug: "o-pneu-yokohama-geolandar-x-at-g016-e-um-pneu-all-terrain-extremo-para-caminhonetes-e-suvs-off-road-combina-desempenho-agressivo-em-terrenos-dificeis-com-conforto-razoavel-em-rodovias",
     imagem: "/images/pneus/pneu-yokohama-ad09.webp",
     medida: "",
@@ -28487,7 +28487,9 @@ export const SERVICES = [
   { id: 8, slug: 'conserto-de-rodas', title: 'Conserto de Rodas', icon: 'Hammer', description: 'Recuperação e retífica de rodas de liga leve em Curitiba.' },
   { id: 9, slug: 'correia-dentada', title: 'Correia Dentada', icon: 'Link', description: 'Troca preventiva de correia dentada com peças originais e garantia.' },
   { id: 10, slug: 'troca-de-fluido-de-freio', title: 'Troca de Fluido de Freio', icon: 'FlaskConical', description: 'Substituição do fluido de freio DOT3/DOT4 para máxima segurança na frenagem.' },
-,
+];
+
+export const PNEUS_YOKOHAMA = [
   { id: "3000", marca: "Yokohama", nome: "C.Drive 2 Z.P.S 235/50R18 97V (RUNFLAT)", slug: "yokohama-23550r18-c-drive-2", imagem: "/images/pneus/pneu-yokohama-c-drive.webp", medida: "235/50R18", aro: 18, linha: "C.Drive 2", categoria: "Economico" },
   { id: "3001", marca: "Yokohama", nome: "ADVAN dB V551 215/50R17 91V", slug: "yokohama-21550r17-advan-db-v551", imagem: "/images/pneus/pneu-yokohama-advan-db.webp", medida: "215/50R17", aro: 17, linha: "ADVAN dB V551", categoria: "Passeio" },
   { id: "3002", marca: "Yokohama", nome: "NEOVA AD09 225/40R18 92W", slug: "yokohama-22540r18-neova-ad09", imagem: "/images/pneus/pneu-yokohama-ad09.webp", medida: "225/40R18", aro: 18, linha: "NEOVA AD09", categoria: "Ultra Performance", novoModelo: true, destaque: true },
