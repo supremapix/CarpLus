@@ -80,7 +80,7 @@ export default function NeighborhoodDetail() {
                 "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
                 "addressLocality": "Curitiba",
                 "addressRegion": "PR",
-                "postalCode": "81070-010",
+                "postalCode": "80320-300",
                 "addressCountry": "BR"
               },
               "geo": { "@type": "GeoCoordinates", "latitude": -25.4770, "longitude": -49.2845 },
@@ -337,7 +337,7 @@ export default function NeighborhoodDetail() {
                           </div>
                           <div>
                              <p className="font-bold text-lg mb-1 text-dark">Endereço Completo</p>
-                             <p className="text-gray-500">Av. Arthur da Silva Bernardes, 1323 - Portão, Curitiba - PR, 81070-010</p>
+                             <p className="text-gray-500">Av. Presidente Arthur da Silva Bernardes, 1323 - Portão, Curitiba - PR, 80320-300</p>
                           </div>
                        </div>
                     </div>
