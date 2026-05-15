@@ -52,11 +52,10 @@ export default function Footer() {
                  <li key={service.id}>
                     <Link 
                       to={`/servico/${service.slug}`} 
-                      className="hover:text-primary transition-colors flex items-center justify-center md:justify-start gap-2"
-                      style={{ color: 'rgba(255, 255, 255, 0.8)' }}
+                      className="footer-service-link transition-colors flex items-center justify-center md:justify-start gap-2"
                     >
                         <ChevronRight className="text-primary/40 flex-shrink-0" size={14} />
-                        <span style={{ color: 'inherit' }}>{service.title}</span>
+                        <span>{service.title}</span>
                     </Link>
                  </li>
                ))}

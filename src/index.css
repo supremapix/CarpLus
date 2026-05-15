@@ -40,6 +40,17 @@ button, a {
   @apply whitespace-nowrap overflow-hidden text-ellipsis;
 }
 
+/* Footer service links - override global a styles */
+.footer-service-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+.footer-service-link:hover {
+  color: var(--color-primary) !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
