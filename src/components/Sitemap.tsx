@@ -3,11 +3,39 @@ import Footer from './Footer';
 import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
 import { Link } from 'react-router-dom';
 import { MapPin, Wrench, Globe, ChevronRight, Circle } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 // Get unique brands from TIRES
 const TIRE_BRANDS = [...new Set(TIRES.map(t => t.marca))].sort();
 
+// Get popular/featured tires (first 50 of each brand)
+const FEATURED_TIRES = TIRE_BRANDS.flatMap(brand => 
+  TIRES.filter(t => t.marca === brand).slice(0, 30)
+);
+
 export default function Sitemap() {
+  useSEO({
+    title: 'Mapa do Site | Carplus Auto Center - Pneus e Servicos em Curitiba',
+    description: 'Navegue por todas as paginas do site Carplus Auto Center. Encontre pneus por marca, servicos automotivos, bairros atendidos em Curitiba e regiao metropolitana.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/sitemap',
+    schemaJSON: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Mapa do Site - Carplus Auto Center",
+      "description": "Indice completo de todas as paginas do site Carplus Auto Center",
+      "url": "https://www.carpluspneuseoficina.com.br/sitemap",
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": TIRES.length + SERVICES.length + NEIGHBORHOODS.length,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Catalogo de Pneus", "url": "https://www.carpluspneuseoficina.com.br/pneus" },
+          { "@type": "ListItem", "position": 2, "name": "Servicos", "url": "https://www.carpluspneuseoficina.com.br/servicos" },
+          { "@type": "ListItem", "position": 3, "name": "Bairros Atendidos", "url": "https://www.carpluspneuseoficina.com.br/bairros" }
+        ]
+      }
+    }
+  });
+
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
@@ -123,6 +151,36 @@ export default function Sitemap() {
                   </Link>
                ))}
             </div>
+          </div>
+
+          {/* All Tires Section - For SEO crawling */}
+          <div className="mt-16 pt-12 border-t border-gray-100">
+            <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2 mb-8">
+              <Circle size={24} className="text-primary" /> Catalogo Completo de Pneus ({TIRES.length} produtos)
+            </h2>
+            
+            {TIRE_BRANDS.map(brand => {
+              const brandTires = TIRES.filter(t => t.marca === brand);
+              return (
+                <div key={brand} className="mb-8">
+                  <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 mb-4">
+                    Pneus {brand} ({brandTires.length} modelos)
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 text-xs text-gray-500 max-h-[300px] overflow-y-auto">
+                    {brandTires.map(tire => (
+                      <Link 
+                        key={tire.slug} 
+                        to={`/pneu/${tire.slug}`}
+                        className="hover:text-primary truncate"
+                        title={tire.nome}
+                      >
+                        {tire.nome}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </main>
