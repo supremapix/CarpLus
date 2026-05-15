@@ -7,6 +7,11 @@ Allow: /
 # Sitemap
 Sitemap: https://www.carpluspneuseoficina.com.br/sitemap.xml
 
+# LLMs.txt for AI assistants
+# https://llmstxt.org/
+# llms.txt: https://www.carpluspneuseoficina.com.br/llms.txt
+# llms-full.txt: https://www.carpluspneuseoficina.com.br/llms-full.txt
+
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 

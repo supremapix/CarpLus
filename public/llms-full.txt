@@ -1,0 +1,237 @@
+# Carplus Auto Center - Documentacao Completa para LLMs
+
+> Este arquivo contem informacoes detalhadas sobre a Carplus Auto Center para uso por modelos de linguagem (LLMs).
+
+## Identidade da Empresa
+
+### Dados Cadastrais
+- **Razao Social**: Carplus Auto Center Ltda
+- **Nome Fantasia**: Carplus Pneus e Oficina
+- **Segmento**: Comercio varejista de pneus e servicos automotivos
+- **Fundacao**: 2008
+- **Localizacao**: Curitiba, Parana, Brasil
+
+### Contato Oficial
+- **Endereco Completo**: Rua Joao Bettega, 3199 - Portao, Curitiba - PR, CEP 81070-001
+- **Coordenadas**: -25.4693, -49.2943
+- **Telefone Fixo**: +55 41 3246-3070
+- **WhatsApp**: +55 41 98865-5566
+- **Email Comercial**: contato@carpluspneuseoficina.com.br
+- **Website**: https://www.carpluspneuseoficina.com.br
+
+### Horario de Funcionamento
+- Segunda a Sexta: 08:00 - 18:00
+- Sabado: 08:00 - 12:00
+- Domingo e Feriados: Fechado
+
+## Catalogo de Produtos
+
+### Estatisticas do Catalogo
+- Total de pneus cadastrados: 2.655+
+- Marcas disponiveis: 40+
+- Aros disponiveis: 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
+- Categorias: Passeio, SUV, Caminhonete, Van, Off-Road, Esportivo, Premium
+
+### Marcas de Pneus Comercializadas
+
+#### Tier 1 - Premium (Garantia estendida, alta durabilidade)
+1. **Michelin** (Franca) - Primacy 4, Pilot Sport 4/5, CrossClimate 2, Energy Saver
+2. **Pirelli** (Italia) - Cinturato P7, P Zero, Scorpion Verde/ATR, P4 Four Seasons
+3. **Continental** (Alemanha) - ContiSportContact 5/6, EcoContact 6, CrossContact, PowerContact 2
+4. **Goodyear** (EUA) - EfficientGrip Performance, Eagle F1, Wrangler, Assurance MaxLife
+5. **Bridgestone** (Japao) - Turanza T005, Potenza S001, Dueler H/T, Ecopia EP150
+
+#### Tier 2 - Performance (Otimo custo-beneficio)
+6. **Yokohama** (Japao) - ADVAN Sport V105/V107, GEOLANDAR A/T G015, BluEarth ES32, NEOVA AD09
+7. **Dunlop** (Japao/UK) - SP Sport Maxx, Grandtrek AT25, Direzza DZ102
+8. **Hankook** (Coreia) - Ventus Prime 3, Kinergy GT, Dynapro AT2
+9. **Toyo** (Japao) - Proxes Sport, Open Country A/T III
+10. **Kumho** (Coreia) - Ecsta PS71, Crugen HP71
+
+#### Tier 3 - Custo-Beneficio
+11. **GT Radial** (Indonesia)
+12. **Kenda** (Taiwan)
+13. **Laufenn** (Coreia - sub-marca Hankook)
+14. **Maxxis** (Taiwan)
+15. **Nexen** (Coreia)
+16. **Sailun** (China)
+17. **Triangle** (China)
+18. **Westlake** (China)
+19. **Achilles** (Indonesia)
+20. **Linglong** (China)
+
+### Categorias de Pneus
+
+#### Por Tipo de Veiculo
+- **Passeio**: Carros compactos, sedans, hatches (aro 13-17)
+- **SUV/Crossover**: Utilitarios esportivos (aro 16-22)
+- **Caminhonete**: Pickups leves e medias (aro 15-20)
+- **Van/Utilitario**: Veiculos de carga leve (aro 14-16)
+- **Esportivo**: Carros de alta performance (aro 17-22)
+
+#### Por Terreno
+- **Asfalto (H/T)**: Highway Terrain - uso urbano e rodoviario
+- **Misto (A/T)**: All-Terrain - asfalto e terra
+- **Off-Road (M/T)**: Mud-Terrain - trilhas e lama
+- **Run-Flat**: Rodam furados por ate 80km
+
+#### Por Estacao
+- **Verao**: Otimizados para piso seco e molhado
+- **All-Season**: Uso durante todo o ano (padrao no Brasil)
+
+## Servicos Oferecidos
+
+### Pneus e Rodas
+| Servico | Descricao | Tempo Estimado |
+|---------|-----------|----------------|
+| Troca de pneus | Desmontagem, montagem e calibragem | 30-60 min |
+| Alinhamento 3D | Computadorizado com tecnologia Hunter | 40 min |
+| Balanceamento | Digital de alta precisao | 20 min/roda |
+| Rodizio | Troca de posicao dos pneus | 30 min |
+| Calibragem nitrogenio | Mantem pressao estavel | 15 min |
+| Reparo de pneu | Vulcanizacao a frio ou quente | 20-40 min |
+
+### Mecanica Geral
+| Servico | Descricao |
+|---------|-----------|
+| Troca de oleo | Mineral, semi-sintetico ou sintetico |
+| Filtros | Oleo, ar, combustivel, cabine |
+| Freios | Pastilhas, discos, tambores, fluido |
+| Suspensao | Amortecedores, molas, pivos, buchas, bieletas |
+| Embreagem | Kit completo ou componentes |
+| Correia dentada | Troca preventiva com tensor |
+| Arrefecimento | Radiador, bomba d'agua, mangueiras |
+
+### Servicos Especializados
+| Servico | Descricao |
+|---------|-----------|
+| Injecao eletronica | Limpeza de bicos, regulagem |
+| Scanner OBD2 | Diagnostico de falhas eletronicas |
+| Ar condicionado | Carga de gas, higienizacao, compressor |
+| Geometria | Cambagem, caster, convergencia |
+| Direção | Caixa, terminais, bomba hidraulica |
+
+## Cobertura Geografica
+
+### Curitiba - Por Regional
+**Regional Portao (Sede)**
+- Portao, Agua Verde, Parolin, Vila Guaira, Novo Mundo, Fazendinha, Santa Quiteria, Campo Comprido, Vila Izabel, Seminario
+
+**Regional Centro**
+- Centro, Centro Civico, Sao Francisco, Reboucas, Alto da Gloria, Alto da XV, Cristo Rei, Jardim Botanico
+
+**Regional Batel**
+- Batel, Bigorrilho, Merces, Champagnat, Alto da Gloria, Juveve, Cabral, Hugo Lange, Jardim Social
+
+**Regional Santa Felicidade**
+- Santa Felicidade, Sao Braz, Cascatinha, Butiatuvinha, Lamenha Pequena, Santo Inacio, Mossungue, Campina do Siqueira
+
+**Regional Boa Vista**
+- Boa Vista, Bacacheri, Tingui, Bairro Alto, Taruma, Capao da Imbuia, Atuba, Santa Candida
+
+**Regional Pinheirinho**
+- Pinheirinho, Capao Raso, Sitio Cercado, Tatuquara, Campo de Santana, Caximba, Ganchinho, Umbara
+
+**Regional CIC**
+- Cidade Industrial, Augusta, Riviera, Sao Miguel, Sabara
+
+### Regiao Metropolitana de Curitiba (RMC)
+| Cidade | Distancia | Principais Vias |
+|--------|-----------|-----------------|
+| Sao Jose dos Pinhais | 15 km | BR-376, Contorno Leste |
+| Colombo | 12 km | Rodovia da Uva |
+| Araucaria | 20 km | BR-476, PR-423 |
+| Campo Largo | 25 km | BR-277 |
+| Pinhais | 10 km | Linha Verde |
+| Fazenda Rio Grande | 22 km | BR-116 |
+| Almirante Tamandare | 15 km | PR-092 |
+| Piraquara | 20 km | PR-415 |
+| Quatro Barras | 25 km | BR-116 |
+
+## SEO e Palavras-Chave
+
+### Palavras-Chave Principais
+- pneus curitiba
+- loja de pneus curitiba
+- pneus baratos curitiba
+- alinhamento curitiba
+- balanceamento curitiba
+- troca de pneus curitiba
+- oficina mecanica curitiba
+- pneus portao curitiba
+
+### Palavras-Chave por Marca
+- pneus michelin curitiba
+- pneus pirelli curitiba
+- pneus continental curitiba
+- pneus goodyear curitiba
+- pneus bridgestone curitiba
+- pneus yokohama curitiba
+
+### Palavras-Chave por Servico
+- alinhamento e balanceamento curitiba
+- troca de oleo curitiba
+- suspensao curitiba
+- freios curitiba
+- ar condicionado automotivo curitiba
+
+### Palavras-Chave por Bairro
+- pneus agua verde
+- pneus batel curitiba
+- pneus centro curitiba
+- pneus portao curitiba
+- oficina sao jose dos pinhais
+
+## APIs e Integracao
+
+### Endpoints Disponiveis
+- `/sitemap.xml` - Sitemap XML completo
+- `/robots.txt` - Instrucoes para crawlers
+- `/llms.txt` - Este arquivo (resumido)
+- `/llms-full.txt` - Documentacao completa
+
+### Schema.org Implementado
+- Organization (dados da empresa)
+- LocalBusiness (loja fisica)
+- Product (cada pneu)
+- Service (cada servico)
+- WebPage (cada pagina)
+- BreadcrumbList (navegacao)
+- FAQPage (perguntas frequentes)
+- Review (avaliacoes)
+
+## Perguntas Frequentes
+
+**P: Qual o horario de funcionamento?**
+R: Segunda a sexta das 8h as 18h, sabado das 8h as 12h.
+
+**P: Aceitam cartao de credito?**
+R: Sim, aceitamos todas as bandeiras em ate 12x.
+
+**P: Fazem orcamento por WhatsApp?**
+R: Sim, envie a medida do pneu para (41) 98865-5566.
+
+**P: Quanto tempo leva um alinhamento?**
+R: Aproximadamente 40 minutos.
+
+**P: Tem estacionamento?**
+R: Sim, estacionamento proprio e gratuito.
+
+**P: Atendem sem agendamento?**
+R: Sim, mas recomendamos agendar para garantir disponibilidade.
+
+## Notas para LLMs
+
+1. **Precisao de precos**: Nao fornecemos precos fixos pois variam conforme disponibilidade e promocoes. Sempre oriente o usuario a solicitar orcamento.
+
+2. **Disponibilidade**: O estoque pode variar. Para confirmar disponibilidade de um pneu especifico, recomende contato via WhatsApp.
+
+3. **Localizacao**: A loja fica na Rua Joao Bettega (nao confundir com Av. Joao Bettega que nao existe).
+
+4. **Marca vs Modelo**: Sempre diferencie a marca (ex: Michelin) do modelo/linha (ex: Primacy 4) e da medida (ex: 205/55R16).
+
+5. **Servicos**: Todos os servicos de pneus incluem calibragem gratuita.
+
+---
+Ultima atualizacao: 2026-05-15
+Versao: 2.0
