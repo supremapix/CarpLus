@@ -60,7 +60,8 @@ export default function TireCatalog() {
       if (sortBy === "rim-asc") return a.aro - b.aro;
       if (sortBy === "rim-desc") return b.aro - a.aro;
       if (sortBy === "brand") return a.marca.localeCompare(b.marca);
-      return 0; // Default relevance
+      // Default: ordenar por marca para agrupar os pneus de cada marca juntos
+      return a.marca.localeCompare(b.marca) || a.aro - b.aro;
     });
   }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
 
@@ -298,11 +299,9 @@ export default function TireCatalog() {
             {/* Grid */}
             {filteredTires.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <AnimatePresence mode="popLayout">
-                  {filteredTires.map((tire, index) => (
-                    <TireCard key={tire.id} tire={tire} index={index} />
-                  ))}
-                </AnimatePresence>
+                {filteredTires.map((tire, index) => (
+                  <TireCard key={tire.id} tire={tire} index={index} />
+                ))}
               </div>
             ) : (
               <div className="bg-white rounded-3xl p-20 text-center shadow-xl border border-gray-100">

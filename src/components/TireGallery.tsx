@@ -1,16 +1,9 @@
 
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { MessageSquare, ChevronRight, CircleCheck as CheckCircle2, Search, ListFilter as Filter, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TIRES } from '../data';
-
-function useBusinessOpen() {
-  const now = new Date();
-  const day = now.getDay();
-  const h = now.getHours() + now.getMinutes() / 60;
-  return (day >= 1 && day <= 5 && h >= 8 && h < 18) || (day === 6 && h >= 8 && h < 13);
-}
 import TireCard from './TireCard';
 
 const RIM_SIZES = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -18,7 +11,6 @@ const RIM_SIZES = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
 export default function TireGallery() {
   const [selectedRim, setSelectedRim] = useState<number | null>(15);
   const [searchTerm, setSearchTerm] = useState('');
-  const isOpen = useBusinessOpen();
 
   const filteredTires = useMemo(() => {
     return TIRES.filter(tire => {
@@ -101,23 +93,21 @@ export default function TireGallery() {
 
         {/* Tire Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredTires.length > 0 ? (
-              filteredTires.map((tire: any, index: number) => (
-                <TireCard key={tire.id} tire={tire} index={index} />
-              ))
-            ) : (
-              <div className="col-span-full py-20 text-center">
-                 <p className="text-gray-400 text-xl font-light italic">Nenhum pneu encontrado para sua busca...</p>
-                 <button 
-                  onClick={() => {setSearchTerm(''); setSelectedRim(null);}}
-                  className="mt-4 text-primary font-bold underline"
-                 >
-                   Limpar Filtros
-                 </button>
-              </div>
-            )}
-          </AnimatePresence>
+          {filteredTires.length > 0 ? (
+            filteredTires.map((tire: any, index: number) => (
+              <TireCard key={tire.id} tire={tire} index={index} />
+            ))
+          ) : (
+            <div className="col-span-full py-20 text-center">
+               <p className="text-gray-400 text-xl font-light italic">Nenhum pneu encontrado para sua busca...</p>
+               <button 
+                onClick={() => {setSearchTerm(''); setSelectedRim(null);}}
+                className="mt-4 text-primary font-bold underline"
+               >
+                 Limpar Filtros
+               </button>
+            </div>
+          )}
         </div>
 
         {/* View All Button */}
@@ -145,7 +135,7 @@ export default function TireGallery() {
           {/* Background image */}
           <div className="absolute inset-0">
             <img
-              src="/carplus-oficina-de-pneus-portao-em-curitba-cwb.png"
+              src="/images/loja/estoque-pneus-carplus.png"
               alt="Loja de pneus Carplus"
               className="w-full h-full object-cover object-center"
             />
@@ -162,28 +152,9 @@ export default function TireGallery() {
               <h3 className="text-4xl md:text-6xl font-black mb-4 text-white leading-tight uppercase italic tracking-tighter">
                 Dúvida sobre o<br className="hidden md:block" /> pneu ideal?
               </h3>
-              <p className="text-base md:text-lg font-medium text-white/65 max-w-sm mb-3">
+              <p className="text-base md:text-lg font-medium text-white/65 max-w-sm">
                 Fale com o Maurício e receba uma consultoria técnica gratuita.
               </p>
-              {/* Online/Offline badge */}
-              <motion.div
-                animate={{ scale: [1, 1.04, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold border ${
-                  isOpen
-                    ? 'bg-[#00C853]/15 border-[#00C853]/40 text-[#00C853]'
-                    : 'bg-red-600/15 border-red-500/40 text-red-400'
-                }`}
-              >
-                <span
-                  className={`w-2 h-2 rounded-full ${isOpen ? 'bg-[#00C853]' : 'bg-red-400'}`}
-                  style={{
-                    boxShadow: isOpen ? '0 0 8px #00C853' : '0 0 8px rgba(239,68,68,0.8)',
-                    animation: 'pulse 1.5s ease-in-out infinite',
-                  }}
-                />
-                {isOpen ? 'ONLINE AGORA — resposta imediata' : 'OFFLINE — respondemos em breve'}
-              </motion.div>
             </div>
             <div className="flex flex-col gap-4 w-full lg:w-auto shrink-0 lg:min-w-[280px]">
               <motion.a
