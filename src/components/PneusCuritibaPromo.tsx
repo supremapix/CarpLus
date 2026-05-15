@@ -221,7 +221,7 @@ export default function PneusCuritibaPromo() {
               </div>
               <div>
                 <p className="font-bold text-dark">Portão, Curitiba - PR</p>
-                <p className="text-gray-500 text-sm">Av. Arthur de Holanda, 54 - Atendimento de Seg a Sáb</p>
+                <p className="text-gray-500 text-sm">Av. Presidente Arthur da Silva Bernardes, 1323 - Atendimento de Seg a Sáb</p>
               </div>
             </div>
           </motion.div>
