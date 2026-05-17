@@ -313,7 +313,8 @@ const ALL_REVIEWS = [
     name: 'Israel Souza', 
     text: 'Excelente atendimento preço justo e com garantia! O atendimento do senhor Matheus foi de qualidade, fica aqui o meu muitíssimo obrigado a todos.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKp1MVd0dWogjPMziPKQqhZYlO8En6-zbrIyvMnaIOrDbE9D5kq=w36-h36-p-rp-mo-br100'
+    avatar: null,
+    avatarColorIdx: 6
   },
   { 
     name: 'Andre Lüis', 
@@ -600,6 +601,8 @@ const AVATAR_COLORS = [
   { bg: '#34a853', text: '#fff' }, // verde Google
   { bg: '#fbbc04', text: '#fff' }, // amarelo Google
   { bg: '#0f9d58', text: '#fff' }, // verde escuro
+  { bg: '#7b1fa2', text: '#fff' }, // roxo
+  { bg: '#795548', text: '#fff' }, // marrom Google Maps
   { bg: '#4285f4', text: '#fff' }, // azul claro
 ];
 
@@ -615,7 +618,8 @@ function GoogleLogo() {
 }
 
 function ReviewCard({ review, colorIdx, reviewIdx }: { review: typeof ALL_REVIEWS[0]; colorIdx: number; reviewIdx: number }) {
-  const avatar = AVATAR_COLORS[colorIdx % AVATAR_COLORS.length];
+  const avatarIdx = review.avatarColorIdx !== undefined ? review.avatarColorIdx : colorIdx;
+  const avatar = AVATAR_COLORS[avatarIdx % AVATAR_COLORS.length];
   return (
     <div className="bg-white p-4 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-shadow flex-shrink-0 w-full border border-gray-100">
       {/* Header estilo Google Maps */}
