@@ -6,572 +6,667 @@ const ALL_REVIEWS = [
     name: 'Isaac Coelho', 
     text: 'Fui muito bem atendido na loja. Iniciei meu atendimento após uma pesquisa na internet e foi tudo pelo WhatsApp. O Vinicius foi muito profissional no atendimento e interessado em ajudar e fechar o negócio. A loja tem água, café, banheiros limpos e até uma área kids. Recomendo a loja sem medo de arrependimento.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXH7o9djHNOpGuiD0lDabNj69e_3HTPQljvoCvaj4vNoerFoWI=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXH7o9djHNOpGuiD0lDabNj69e_3HTPQljvoCvaj4vNoerFoWI=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 semana atrás'
   },
   { 
     name: 'Adriana Rocha', 
     text: 'Fui muito bem atendida, muito bem recepcionada. Pessoal atencioso e tudo bem explicado. A forma como somos atendidos, com toda certeza faz toda diferença. Vinicíos super atencioso, enviando vídeos e me deixando muito a par de todos os detalhes. Com toda certeza ganharam uma cliente.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXY90QN7H_RuaMWR7-JY3coGcZZeO_vyW3_XP4GXotTMMc-9bPA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXY90QN7H_RuaMWR7-JY3coGcZZeO_vyW3_XP4GXotTMMc-9bPA=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 semana atrás'
   },
   { 
     name: 'Luiz Gustavo Vaz', 
     text: 'Ótimo atendimento, desde o fechamento da proposta até o pagamento do serviço. Local muito limpo e organizado.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjX28m0Qm4YFz8ciRA2LZ1aSdnSrndOchXhvYC4qLzg7_lL9SpzQGA=w36-h36-p-rp-mo-ba2-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjX28m0Qm4YFz8ciRA2LZ1aSdnSrndOchXhvYC4qLzg7_lL9SpzQGA=w36-h36-p-rp-mo-ba2-br100',
+    timeAgo: '2 semanas atrás'
   },
   { 
     name: 'Wellinton felipe gomes', 
     text: 'Ótimo profissionais. Sou cliente deles desde o tempo que trabalhavam com a marca da GoodYear. Agora com a Pirelli mantendo sua qualidade nos serviços.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXq3z6FnpWBJHqdT2oZV1GtNX4l4huDkhjeAnOUPkZUwQzYouva=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXq3z6FnpWBJHqdT2oZV1GtNX4l4huDkhjeAnOUPkZUwQzYouva=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 semanas atrás'
   },
   { 
     name: 'Bernardo', 
     text: 'Atendimento nota 10. Matheus muito solicito e atencioso. Melhores preços!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIINvhCkLTC9zAnE6gkBM1feUSyxMxnKX_3EM7adLO1hOd3SA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIINvhCkLTC9zAnE6gkBM1feUSyxMxnKX_3EM7adLO1hOd3SA=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 semanas atrás'
   },
   { 
     name: 'odair afonso rein', 
     text: 'Ótimo atendimento, estou muito satisfeito. Com certeza indico.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLlRIhaLUTaqDpYWJRKBGYDWTMO8xzCxZd5GbzHMr7H308ZCw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLlRIhaLUTaqDpYWJRKBGYDWTMO8xzCxZd5GbzHMr7H308ZCw=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 semanas atrás'
   },
   { 
     name: 'Caio', 
     text: 'Além de amigo e irmão em Cristo. Quero deixar meus parabéns pelo profissionalismo em serviço e atendimento. Também qualidade na mercadoria. Sai muito satisfeito e seguro!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjU6CGCJrh70basZUXXNX5smwj_tPnmd5Z0b-Fzn9lONOrCVgyx_=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjU6CGCJrh70basZUXXNX5smwj_tPnmd5Z0b-Fzn9lONOrCVgyx_=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Marcelo Ribeiro', 
     text: 'Ótimo atendimento e preço justo. Sou cliente a muitos anos.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKz-nw3I9uy0zwWlEm5UGla4yIeMYhP01wj5S4Lq4WXIhkY-Q=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKz-nw3I9uy0zwWlEm5UGla4yIeMYhP01wj5S4Lq4WXIhkY-Q=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Thiago Knop', 
     text: 'Atendimento nota 10, equipe prestativa atenciosa e rápida, preço justo. Parabéns.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVH0Foj3ZG7Ub7l4vjBYygj0NsUfK-PTFUcf3y1eeUGAlnuHjge5w=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVH0Foj3ZG7Ub7l4vjBYygj0NsUfK-PTFUcf3y1eeUGAlnuHjge5w=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Anderson Collini', 
     text: 'Muito bom o atendimento! Em todos os aspectos e serviços. Obrigado!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIuDlY_4_95PgA72fGKJS6_1GGxJzSPhGJOaQcu9A51_H5mLw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIuDlY_4_95PgA72fGKJS6_1GGxJzSPhGJOaQcu9A51_H5mLw=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Jeferson Camilo', 
     text: 'Mateus cara muito atencioso, a loja top demais. Certo que voltarei novamente, e indicarei para amigos e familiares.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVXl9ybHvhHXYLgEFwtPWccauU1BtkQ50z10CneVkkYEU1IrASh=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVXl9ybHvhHXYLgEFwtPWccauU1BtkQ50z10CneVkkYEU1IrASh=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Edson Lara', 
     text: 'Loja com atendimento honesto e excelente. Sem rodeios ou invenção de defeitos.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVi-cU5DwYKifB8XR4R9HuVvSOVVFG3FwYtONdv4tFH9nLRJTJndA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVi-cU5DwYKifB8XR4R9HuVvSOVVFG3FwYtONdv4tFH9nLRJTJndA=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Rogerio Lima Pinho', 
     text: 'Atendimento bastante profissional, fiquei muito satisfeito com o trabalho realizado. Indico com certeza. Nota 100!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUtYvPa9A-T8ZCVxELxxtnsFzjzUD9EbEJOIK_bnWGEG8JpVEc=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUtYvPa9A-T8ZCVxELxxtnsFzjzUD9EbEJOIK_bnWGEG8JpVEc=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Haiko Abrahams', 
     text: 'Ótimo atendimento. Serviço de qualidade e de confiança. Preço justo. Recomendo!!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXKD7Dvj_xyw2oq590qJ92ut9FzzZXpfG2uwPKRY91HV-Y1IYku=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXKD7Dvj_xyw2oq590qJ92ut9FzzZXpfG2uwPKRY91HV-Y1IYku=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Guilherme Salim', 
     text: 'Ótimo atendimento e profissionalismo, honestidade e transparência com cliente.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJzTqtLzdtxiVk-fE5jYvpvNKSnQc9KuG2-jE2ZbSsNlaLnSA=w36-h36-p-rp-mo-ba4-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJzTqtLzdtxiVk-fE5jYvpvNKSnQc9KuG2-jE2ZbSsNlaLnSA=w36-h36-p-rp-mo-ba4-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Alexandre Quelhante', 
     text: 'Atendimento impecável do inicio ao fim! Equipe muito atenciosa e prestativa.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV04pEaPhQJaG267HEfDNNcyMwlJNee0fPqCUNAKPx7LvqaN-I=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV04pEaPhQJaG267HEfDNNcyMwlJNee0fPqCUNAKPx7LvqaN-I=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Viviane Prado', 
     text: 'Ótimo atendimento, profissionais capacitados e preço justo.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV-_HvTiPLYEnY8_SloD0JhucKq8Tu0Lbh4YnAYkF6-bBhxuLNLDQ=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV-_HvTiPLYEnY8_SloD0JhucKq8Tu0Lbh4YnAYkF6-bBhxuLNLDQ=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Edson Medeiros Junior', 
     text: 'Atendimento e técnicos excelentes. Sempre muito corretos e prestativos.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVd9HbVfqIH0KDpxIJcfdy9wR7Id1GPCc7f76KR68P_8Zmbba8aIA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVd9HbVfqIH0KDpxIJcfdy9wR7Id1GPCc7f76KR68P_8Zmbba8aIA=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Elias M.E. Brasil', 
     text: 'Bons profissionais, recepção ótima desde o início até a entrega. Parabéns a toda equipe.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW6kR285W_dm948LG_WRG-1SEclrU1odJIGe_WyjS45p-B4e4Y-Zg=w36-h36-p-rp-mo-ba3-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW6kR285W_dm948LG_WRG-1SEclrU1odJIGe_WyjS45p-B4e4Y-Zg=w36-h36-p-rp-mo-ba3-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Eliane Malhadas', 
     text: 'Gentileza e rapidez no atendimento. Preço compatível com os serviços prestados.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJxNj2BiN1hqe8rCmP16BJU-4-bGyO5e9xIVorD6rFiM_7BCg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJxNj2BiN1hqe8rCmP16BJU-4-bGyO5e9xIVorD6rFiM_7BCg=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Anderson Oliveira', 
     text: 'Muito bom ótimo atendimento serviço de qualidade.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJpf49GARzluMlxHRgxCIUkNAL9n9O99sdfzADEqLQtXBO-nQ=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJpf49GARzluMlxHRgxCIUkNAL9n9O99sdfzADEqLQtXBO-nQ=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Jacir Junior', 
     text: 'Atendimento muito bom, Rápido e preciso. Recomendo com tranquilidade.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocI8qpOkKtfdNg_8j2HsZszBVwddc-M-wyw7Tdo7yJdh0LBe7Q=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocI8qpOkKtfdNg_8j2HsZszBVwddc-M-wyw7Tdo7yJdh0LBe7Q=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Gabriel Fernando', 
     text: 'Profissionais qualificados, loja limpa organizada nota 10.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWMJd3eh6mGkAiEs3-b2oTujhlb7T2RjEPyYJsEml2omhTyAag=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWMJd3eh6mGkAiEs3-b2oTujhlb7T2RjEPyYJsEml2omhTyAag=w36-h36-p-rp-mo-br100',
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'wanderson Farias', 
     text: 'Um excelente atendimento, com qualidade em geral. Parabéns à todos!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUy2hd-9NBA3jKfxjkQw61TqYaY7J4sHLSbjHhS_LdphybVJ9sXLw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUy2hd-9NBA3jKfxjkQw61TqYaY7J4sHLSbjHhS_LdphybVJ9sXLw=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Rafael Marmol', 
     text: 'Serviço e atendimento muito bom!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocL_M--t8WC8EZaUjOrqRvf82ExsOO4-IaLvO6JbcRwBYaeQKw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocL_M--t8WC8EZaUjOrqRvf82ExsOO4-IaLvO6JbcRwBYaeQKw=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'CLAUDENIR ALMEIDA', 
     text: 'Ótimo atendimento, preço honesto, e serviços de primeira.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIu49iK-ZR1VbOugmaqoD4ShbIE3Uym0xsNRTrQV-E4M9a3WA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIu49iK-ZR1VbOugmaqoD4ShbIE3Uym0xsNRTrQV-E4M9a3WA=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Roseli Ney', 
     text: 'Super recomendado, Rafael arrumou meu carro, ficou impecável, super indico!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKf46351CAYpLarJ7r3jZqNscH7ld0XnTe2Q7FmwXyhxO4Vxg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKf46351CAYpLarJ7r3jZqNscH7ld0XnTe2Q7FmwXyhxO4Vxg=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Otaviano Mocellin', 
     text: 'Serviço espetacular. Atendimento top do Matheus e equipe!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKTtkKUmyd1Vd6nMEw8mZkRKwlpDzBr50T5JpfZ-nDrvCZOD_g=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKTtkKUmyd1Vd6nMEw8mZkRKwlpDzBr50T5JpfZ-nDrvCZOD_g=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Leandro Rodrigues Pinto', 
     text: 'Bom atendimento! Tudo que foi feito no carro foi bem explicado! Recomendo.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUHY5y8WYLBVOYDEMj3KJQNtb17kMfeBFV8A839FElbDXF_cWM=w36-h36-p-rp-mo-ba2-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUHY5y8WYLBVOYDEMj3KJQNtb17kMfeBFV8A839FElbDXF_cWM=w36-h36-p-rp-mo-ba2-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'diane taise', 
     text: 'Ótimos profissionais, excelente atendimento. Conserto de rodas excelente, melhor serviço da região.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjU5X-l4SSNnyPHW898BwAB4HueLsdy-tOOFVDAkxfOr-9_kzD-Lfg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjU5X-l4SSNnyPHW898BwAB4HueLsdy-tOOFVDAkxfOr-9_kzD-Lfg=w36-h36-p-rp-mo-br100',
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Contas Casa', 
     text: 'Lugar excelente!! São muito ágeis e o preço justo!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjURORwg94W_e44Rrz3M2E2jtfAVqm7lE6NnCQmpsC9qWXH-aag=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjURORwg94W_e44Rrz3M2E2jtfAVqm7lE6NnCQmpsC9qWXH-aag=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Yonel Adelson', 
     text: 'Atendimento super atencioso e simpática!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKkDCq1WPgDzIKI0I7X6778ZsaliRmRiriQgVlgzrGpwjrLhg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKkDCq1WPgDzIKI0I7X6778ZsaliRmRiriQgVlgzrGpwjrLhg=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Hiago Rennee', 
     text: 'Atendentes muito atenciosos e preço justo.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWWODxJ-raqz99uz2ofEo32HOSys_ngOncoUa0zV-DFT-DFtQ=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWWODxJ-raqz99uz2ofEo32HOSys_ngOncoUa0zV-DFT-DFtQ=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Elaine Navarro', 
     text: 'Profissionais qualificados e ótimos preços. Obrigada Josimar pelo profissionalismo e dedicação.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLDAv63-GnU_SeDAZ4-xInjxoQ_XXpgKF9QIkivWE_ws6295A=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLDAv63-GnU_SeDAZ4-xInjxoQ_XXpgKF9QIkivWE_ws6295A=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'emerson costa', 
     text: 'Excelente atendimento e serviços!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKgskvHeA1SHz0HGhT5xzDsyQK5eMs6EBiM-jt5RUz1bmWSug=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKgskvHeA1SHz0HGhT5xzDsyQK5eMs6EBiM-jt5RUz1bmWSug=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Vilson Lencim', 
     text: 'Excelente ótimo atendimento. Recomendo principalmente o funcionário Jocimar.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJqc2U7Ju4GWHm38nvUkNOzR_TdyWPoJsqM9osfLSKEP_-GKw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJqc2U7Ju4GWHm38nvUkNOzR_TdyWPoJsqM9osfLSKEP_-GKw=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Jose Faria', 
     text: 'Ótimo. Josimar um ótimo profissional. Parabéns pelo seu trabalho...', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIvsa973vkBleuJxiNO39_Rr2ib9hB6H-dc8RWEblHOqHx2Tw=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIvsa973vkBleuJxiNO39_Rr2ib9hB6H-dc8RWEblHOqHx2Tw=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Liane Borges', 
     text: 'Ótimo atendimento. Completo e com agilidade. Super recomendo.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJEqWhbEd_y5CCYiVPKT6kjP5cjzp7MSmtTtW6svRX7V7pTrg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJEqWhbEd_y5CCYiVPKT6kjP5cjzp7MSmtTtW6svRX7V7pTrg=w36-h36-p-rp-mo-br100',
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Gustavoh Hosty', 
     text: 'Excelente atendimento, profissionais qualificados e preço justo!', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWCaRGF_DK1wb1-9e1KGJcvecLsivE0pK5Zl9qobXGgfwKSwPOg=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWCaRGF_DK1wb1-9e1KGJcvecLsivE0pK5Zl9qobXGgfwKSwPOg=w36-h36-p-rp-mo-br100',
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Caroline Silva', 
     text: 'Bom atendimento e serviço excelente.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIBko4DmHyqxBZ974cbysZAAlwqUrs5VQ8OkMIESOeCqEwGtA=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIBko4DmHyqxBZ974cbysZAAlwqUrs5VQ8OkMIESOeCqEwGtA=w36-h36-p-rp-mo-br100',
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'jamel abdo', 
     text: 'Atendimento cordial, agilidade nos serviços e bons preços.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLB1QQnPz7zENSGcFhh4MMcZSh65GS9fCEMOphzjy-4T6ss6g=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLB1QQnPz7zENSGcFhh4MMcZSh65GS9fCEMOphzjy-4T6ss6g=w36-h36-p-rp-mo-br100',
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Kiko Macarini', 
     text: 'Excelente atendimento, serviço e valores.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUzdxtOs8yyjTqvhYKn-LksumRSGPhJ4LXorwX2bi6p3z1_yzPiiQ=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUzdxtOs8yyjTqvhYKn-LksumRSGPhJ4LXorwX2bi6p3z1_yzPiiQ=w36-h36-p-rp-mo-br100',
+    timeAgo: '1 semana atrás'
   },
   { 
     name: 'Magistall Corretora', 
     text: 'Ótimo atendimento do Matheus! Serviço também, com parcelamento. Recomendo.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUP_vHHfZHL-85JJ5U2r9ucFlWKlU-2wjXYWS_1grZhRLJY0yUi=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUP_vHHfZHL-85JJ5U2r9ucFlWKlU-2wjXYWS_1grZhRLJY0yUi=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 semanas atrás'
   },
   { 
     name: 'João Pedro Schmitz', 
     text: 'Um ótimo atendimento em especial pelo Vinicius.', 
     stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW_RspDeOrBWy2_5zsLqURCGXqoeoFguGR7PXgs32Icr0f3csuD=w36-h36-p-rp-mo-br100'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW_RspDeOrBWy2_5zsLqURCGXqoeoFguGR7PXgs32Icr0f3csuD=w36-h36-p-rp-mo-br100',
+    timeAgo: '2 semanas atrás'
   },
   { 
     name: 'Gabriel Cavalcanti de Albuquerque', 
     text: 'Fiz um contato inicial por telefone e já me passaram orçamento para a troca dos pneus por whatsapp mesmo. Além do valor ter sido o melhor dentro da pesquisa que fiz, ainda me ofereceram uma espécie de revisão a cada 10.000 km rodados ou pelo prazo de 6 meses. Foram ágeis no atendimento e ainda pude pagar parcelado sem juros. Com certeza voltarei outras vezes.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 semanas atrás'
   },
   { 
     name: 'eliane Cristina. Pereira de Souza', 
     text: 'Ótimo atendimento. Gostei bastante da receptividade e qualidade na solução do problema. A Jaqueline do caixa foi muito atenciosa. Parabéns!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 semanas atrás'
   },
   // Reviews com textos mais longos da planilha
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento. Vinícius e Matheus representam um dos mais altos níveis de atendimento ao cliente, com informações precisas, comunicação eficiente e rápida resposta. Estão de Parabéns. Recomendo!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Foi muito boa, já sou cliente tem alguns anos. Hoje fui atendido muito bem pelo colaborador Matheus, muito atencioso, educado e muito bom profissional.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento preço justo e com garantia! O atendimento do senhor Matheus foi de qualidade, fica aqui o meu muitíssimo obrigado a todos.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Fui atendido pelo Matheus. Super atencioso e simpático. Super prestativo. Todas as minhas dúvidas ele respondeu com uma simpatia inigualável. Toda a equipe super atenciosa e prestativa. Super recomendo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'A minha primeira experiência com eles foi bem positiva, o atendimento via WhatsApp foi rápido. O atendimento ocorreu conforme o agendado e fui muito bem atendido. Indico.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'A empresa tem uma estrutura adequada para a execução dos trabalhos, com profissionais muito qualificados. Fui muito bem atendido. A sala de espera é muito agradável, com café e chá para os clientes, enquanto aguardamos o serviço. As negociações são realizadas com total transparência, honestidade e respeito.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Sempre atendido com excelência. Serviço muito bom e rápido, sempre se comunicando sobre possíveis contratempos com clareza. Qualidade e excelência em todas as etapas.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Como sempre excelente, atendimento e serviços de qualidade, com toda atenção necessária.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento super 10, desde o atendimento inicial até o diagnóstico final, em especial ao Matheus que mostrou exato o problema no meu carro, desde então serviço bem executado por ele e os demais colaboradores, super recomendo. Amplo espaço de espera e equipamentos de ponta.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento do funcionário Vinicius, muito atencioso e prestativo, muito obrigado pelo excelente serviço prestado.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Bom dia, recomendo a todos. Excelente atendimento pelo Matheus, saboroso cafezinho. Serviço rápido bem feito, te apontam o que tem de errado a ser corrigido.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Bom dia! Recomendo a todos. Sou cliente há mais de 10 anos, sempre satisfeito. Super bem atendido pelo Vinicius.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Ótimo atendimento de todos, em atenção do Vinicius, um ótimo profissional que nos atendeu e ajudou no que precisei, voltarei sempre que precisar!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Fui muito bem atendida e recebida. Pelo whatsapp foram ágeis, claros, e receptivos. Ambiente aconchegante. Nos deixam a vontade, com água, café e wifi, num ambiente agradável. São honestos. Preço justo e transparentes. Vale a pena.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Devidas as recomendações do Google eu fui na loja. E minhas expectativas foram muito bem atendidas. O Jucemar, na troca dos pneus, e o Rafael em verificar a mecânica e o Vinicius em atender super bem. Recomendo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento, com apontamento de todas as necessidades extras que o veículo precisa, além de outros serviços de recuperação e pintura das rodas. Parabéns.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente espaço, especialista explicou o problema com uma solução assertiva. Me passando total confiança e credibilidade.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'A minha experiência foi a mais positiva possível. O serviço de troca dos pneus foi realizado de forma muito eficiente e profissional. Parabéns a toda equipe.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Ótimos profissionais, em especial o Jocimar foi muito atencioso, sai satisfeita com o serviço. Super recomendo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Oficina muito boa, atendentes e mecânicos muito atenciosos, me emprestaram até carregador pra esperar lá! Vinícius resolveu meu problema bem e explicou certinho o que aconteceu!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Super recomendo! Fomos muito bem atendidos pelo Jocimar! Produtos de qualidade! Ótimos preços!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento na Carplus Pneus e Oficina Mecânica. Equipe profissional, organizada e muito atenciosa. Destaque especial para a Jaqueline, do caixa, que me atendeu com muita educação, simpatia e eficiência, esclarecendo todas as dúvidas e tornando a experiência ainda melhor. Recomendo!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento Excelente pelo técnico Vinícius, que demonstra ter alto conhecimento técnico, sempre esclarecendo as dúvidas, ambiente limpo e confortável.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Janeterribas Ribas', 
     text: 'Atendimento excelente! O gerente Emerson muito atencioso! O Vinícius excelente profissional! Recomendo!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento do Vinícius, rapaz bem prestativo, super educado!! Com certeza voltarei mais vezes!! E o serviço dos mecânicos nota 10!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento, dedicação e preço justo, o capricho no ambiente e na organização da loja diz muito sobre o trabalho aplicado no carro. Trago meu carro aqui e fico tranquilo que está em boas mãos com profissionais exigentes e dedicados.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Gostei muito! Atendimento nota 1000 do mecânico Dolair, muito atencioso! Já tinha levado em outros lugares e não tive resultado satisfatório, mas dessa me mostraram e resolveram o problema, tive um ótimo resultado! Além do ótimo preço.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Lugar com atendimento excelente! Agradeço ao profissional Jocimar pelo ótimo trabalho, serviço de qualidade, rápido e eficiente. Jocimar trabalha muito bem, é caprichoso e atencioso. Recomendo de olhos fechados.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Levei meu carro e fui bem atendida, vendedor atencioso e o mecânico descreveu o problema com clareza. Consegui um orçamento ótimo que facilitou o pagamento. Muito feliz com a experiência!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Quero elogiar o excelente atendimento da loja. Sempre sou atendido pelo Matheus que se destaca pela transparência, proatividade e agilidade, sempre explicando tudo de forma clara e segura.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Além do custo beneficio ter sido muito bom, tive um ótimo atendimento com vendedor Vinicius.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 semana atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Melhor loja da região, preços acessíveis e com produto de qualidade, o atendimento do Matheus é excelente, muito simpático e prestativo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 semanas atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Boa noite deixei as rodas do meu carro para realizar a reforma me surpreendi pela qualidade do serviço que foi realizado, obrigado Josimar pela indicação e atenção que todos vocês tem pelos os clientes.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 semanas atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Boa tarde! Fui atendido excepcionalmente bem pelo Sr. Vinícius. Apesar de não nos conhecermos, tratamos de uma compra de pneus muito importante para mim. Tive dois pneus danificados e o Sr. Vinícius não mediu esforços para que os referidos pneus me fossem entregues. Agradeço ao Sr. Vinícius e a empresa Carplus pelo excelente atendimento.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Lugar com ótimo atendimento. Agradeço o profissional Jocimar que fez a reforma de rodas do meu carro com qualidade e eficiência. Super recomendo!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '1 mês atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento ótimo, agradeço o gerente Emerson e sua equipe, prestaram serviço com muita simpatia e honestidade, pneus Pirelli com melhor preço de Curitiba, recomendo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento excelente! Levei meu carro para revisão e fui muito bem atendido desde o primeiro contato. A equipe é profissional, honesta e transparente sobre os serviços e valores. Entregaram o carro no prazo combinado e o serviço ficou impecável. Super recomendo a oficina para quem busca qualidade e confiança!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '2 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Em todas vezes que estive na CarPlus da Arthur Bernardes, fui muito bem atendido pelo vendedor Matheus e a moça que atende no caixa, de um modo geral todos lá lhe atendem bem. O local é muito bem localizado e de fácil acesso, além de limpo.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Excelente atendimento! Atendente Vinícius, excelente pessoa e extremamente atencioso! Obrigada à Carplus pelo serviço de excelência!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '3 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Ótimo serviço com atendente exemplar, fez o serviço conforme orçado, recomendo!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento excelente. O consultor Matheus foi muito atencioso. Acompanhei o serviço de manutenção de freios, e gostei da forma com que o mecânico caprichou na limpeza, lubrificação e até pintou as partes da panela de freios traseiros. Quando a prestação de serviços realiza um serviço como se estivesse fazendo pra si mesmo, mostra a excelência no serviço. Parabéns para a Carplus da Arthur Bernardes.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '4 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Recomendo! Precisei trocar os pneus e o Matheus me atendeu muito bem, transparência e agilidade no serviço.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Empresa muito top. Honestidade e transparência na relação comercial para este segmento é fundamental. Estão de parabéns.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Loja top, atendimento maravilhoso, atenciosos demais, muito satisfeita com o trabalho deles.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Atendimento impecável, desde o primeiro contato com o Consultor Matheus, Mecânicos qualificados, limpeza e organização nota 10.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '5 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Serviço nota 1000 do Jocimar, da Carplus Pneus! Fez um excelente trabalho nas rodas do meu carro, capricho, atenção e muito profissionalismo! Recomendo demais!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Levei meu carro com problemas e o mecânico Dollair é sem palavras, atencioso, educado e deixou meu carro impecável. Recomendo sempre.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'Fiz um serviço de reforma nas minhas rodas com o Jocemar, ficou muito top, ótimo profissional.', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
   { 
     name: 'Cliente Verificado', 
     text: 'O mecânico Rafael Henrique, ótimo profissional, educado, faz um excelente trabalho e o melhor orçamento, super acessível. SUPER RECOMENDO!', 
     stars: 5,
-    avatar: null
+    avatar: null,
+    timeAgo: '6 meses atrás'
   },
 ];
 
@@ -620,7 +715,7 @@ function ReviewCard({ review, colorIdx }: { review: typeof ALL_REVIEWS[0]; color
           )}
           <div className="min-w-0">
             <h4 className="text-[#202124] font-medium text-sm truncate leading-tight">{review.name}</h4>
-            <p className="text-[#70757a] text-[11px] truncate leading-tight">Avaliador Local</p>
+            <p className="text-[#70757a] text-[11px] truncate leading-tight">{review.timeAgo}</p>
           </div>
         </div>
         <GoogleLogo />
