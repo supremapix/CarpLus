@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
-import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
@@ -76,7 +76,10 @@ const SEO_CONTENT: Record<string, {
       { pergunta: 'Qual óleo é melhor: mineral, semi-sintético ou sintético?', resposta: 'O sintético oferece melhor proteção, especialmente em partidas a frio (comum em Curitiba). Porém, o manual do veículo indica a especificação mínima. Carros mais novos geralmente exigem sintético. Nossa equipe consulta a especificação correta para seu modelo.' },
       { pergunta: 'Vocês trocam óleo de câmbio automático?', resposta: 'Sim! Realizamos troca de óleo de câmbio automático e CVT com fluidos específicos para cada marca. É um serviço especializado que muitas oficinas não fazem. Recomendado a cada 60.000 km.' }
     ],
-    keywords: ['troca de óleo curitiba', 'óleo sintético curitiba', 'troca óleo portão', 'mobil curitiba', 'shell helix curitiba', 'castrol curitiba']
+    keywords: ['troca de óleo curitiba', 'óleo sintético curitiba', 'troca óleo portão', 'mobil curitiba', 'shell helix curitiba', 'castrol curitiba'],
+    temVideo: true,
+    videoUrl: 'TY8qfETXlJQ',
+    videoBadge: 'Video Explicativo Premium'
   },
   'scanner-automotivo': {
     intro: 'O diagnóstico por scanner automotivo é fundamental para identificar problemas eletrônicos no seu veículo. Na Carplus Auto Center, utilizamos scanners multiprotocolo de última geração que leem todos os módulos do carro: motor, câmbio, ABS, airbag, direção elétrica e muito mais. Atendemos todas as marcas nacionais e importadas.',
@@ -686,6 +689,202 @@ export default function ServiceDetail() {
                 ].map((item, i) => (
                   <div key={i} className={`bg-[#1a1a1a] border ${item.color === 'red' ? 'border-red-500/30' : 'border-white/10'} rounded-3xl p-8 hover:border-primary/30 transition-colors`}>
                     <div className={`w-14 h-14 ${item.color === 'red' ? 'bg-red-500/20 text-red-400' : 'bg-primary/20 text-primary'} rounded-2xl flex items-center justify-center mb-4`}>
+                      {item.icon}
+                    </div>
+                    <h3 className="font-black text-white text-lg uppercase tracking-tight mb-2">{item.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Premium Video Section - Exclusive for troca-de-oleo */}
+        {slug === 'troca-de-oleo' && (
+          <section className="relative py-24 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] overflow-hidden">
+            {/* Background Effects */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px]" />
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
+              {/* Header */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-primary/20 border border-amber-500/40 text-amber-400 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-amber-500/10">
+                  <Play size={12} fill="currentColor" />
+                  Video Explicativo Premium
+                </div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+                  Troca de <span className="text-primary">Oleo e Filtros</span>
+                </h2>
+                <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                  Assista ao video e entenda a importancia da troca de oleo regular para a <span className="text-amber-400 font-bold">saude do motor</span> do seu veiculo.
+                </p>
+              </motion.div>
+
+              {/* Video + Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                {/* Premium Video Container */}
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="relative mx-auto w-full max-w-[380px] lg:max-w-[420px]"
+                >
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/30 via-primary/20 to-amber-500/30 rounded-[3rem] blur-2xl opacity-60" />
+                  
+                  {/* Video Frame */}
+                  <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-amber-500/20 border-4 border-amber-500/30">
+                    {/* YouTube Shorts Embed */}
+                    <iframe
+                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=0&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      title="CarPlus - Troca de Oleo e Filtros"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    
+                    {/* Top Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+                    
+                    {/* Premium Badge */}
+                    <div className="absolute top-5 left-5 z-10">
+                      <div className="bg-gradient-to-r from-amber-500 to-primary text-black px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-xl shadow-amber-500/40">
+                        <Play size={12} fill="currentColor" />
+                        Video Explicativo
+                      </div>
+                    </div>
+
+                    {/* Motor Badge */}
+                    <div className="absolute top-5 right-5 z-10">
+                      <div className="bg-amber-500/90 text-black px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest flex items-center gap-1.5">
+                        <Droplet size={10} />
+                        Motor
+                      </div>
+                    </div>
+                    
+                    {/* Bottom Info */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
+                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                      <p className="text-amber-400/80 text-sm font-medium">Cuidando do seu motor</p>
+                    </div>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl" />
+                  <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-[50px]" />
+                </motion.div>
+
+                {/* Content Side */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="space-y-8"
+                >
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { value: '5.000km', label: 'Intervalo Mineral', icon: <Droplet size={20} /> },
+                      { value: '10.000km', label: 'Intervalo Sintetico', icon: <Shield size={20} /> },
+                      { value: '100%', label: 'Filtragem', icon: <CheckCircle size={20} /> },
+                      { value: '+Vida', label: 'Util do Motor', icon: <Star size={20} /> },
+                    ].map((stat, i) => (
+                      <div key={i} className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-5 text-center hover:border-amber-500/30 transition-colors">
+                        <div className="w-10 h-10 mx-auto mb-3 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center">
+                          {stat.icon}
+                        </div>
+                        <p className="text-2xl font-black text-white">{stat.value}</p>
+                        <p className="text-white/50 text-xs uppercase tracking-wider">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Feature List */}
+                  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8">
+                    <h3 className="text-xl font-black text-white uppercase tracking-tight mb-5 flex items-center gap-3">
+                      <Droplet className="text-primary" size={24} />
+                      Como Fazemos a Troca
+                    </h3>
+                    <ul className="space-y-3">
+                      {[
+                        'Drenar completamente o oleo antigo do carter',
+                        'Substituir o filtro de oleo por um novo',
+                        'Abastecer com oleo de alta qualidade',
+                        'Verificar nivel de todos os fluidos',
+                        'Colar etiqueta de proxima troca',
+                        'Garantia total no servico realizado',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                          <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Troca de Óleo e Filtros. Pode me dar mais informações?"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gradient-to-r from-primary to-yellow-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                    >
+                      <MessageSquare size={18} /> Agendar Agora
+                    </a>
+                    <a
+                      href="tel:+554130827282"
+                      className="bg-white/5 border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+                    >
+                      (41) 3082-7282
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Additional Info Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"
+              >
+                {[
+                  { 
+                    icon: <Droplet className="w-8 h-8" />, 
+                    title: 'Tipos de Oleo', 
+                    desc: 'Trabalhamos com oleos minerais, semi-sinteticos e 100% sinteticos das melhores marcas: Mobil, Shell, Castrol e Petronas.',
+                    color: 'amber'
+                  },
+                  { 
+                    icon: <Timer className="w-8 h-8" />, 
+                    title: 'Quando Trocar?', 
+                    desc: 'Mineral: 5.000km. Semi-sintetico: 7.500km. Sintetico: 10.000km. Sempre prevalece o que ocorrer primeiro.',
+                    color: 'primary'
+                  },
+                  { 
+                    icon: <Shield className="w-8 h-8" />, 
+                    title: 'Garantia Total', 
+                    desc: 'Servico realizado com nota fiscal, oleos de primeira linha e garantia completa. Descarte ecologico do oleo usado.',
+                    color: 'primary'
+                  },
+                ].map((item, i) => (
+                  <div key={i} className={`bg-[#1a1a1a] border ${item.color === 'amber' ? 'border-amber-500/30' : 'border-white/10'} rounded-3xl p-8 hover:border-primary/30 transition-colors`}>
+                    <div className={`w-14 h-14 ${item.color === 'amber' ? 'bg-amber-500/20 text-amber-400' : 'bg-primary/20 text-primary'} rounded-2xl flex items-center justify-center mb-4`}>
                       {item.icon}
                     </div>
                     <h3 className="font-black text-white text-lg uppercase tracking-tight mb-2">{item.title}</h3>

@@ -14,6 +14,11 @@ const VIDEOS = [
     title: 'Promoções CarPlus',
     subtitle: 'Ofertas imperdíveis para você',
   },
+  {
+    id: 'TY8qfETXlJQ',
+    title: 'Troca de Óleo e Filtros',
+    subtitle: 'Manutenção completa do motor',
+  },
 ];
 
 export default function PneusCuritibaPromo() {
