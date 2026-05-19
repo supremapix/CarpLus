@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
+import { getServiceFaqs } from '../data/serviceFaqs';
 import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -327,11 +328,11 @@ export default function ServiceDetail() {
                 { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/` }
               ]
             },
-            // FAQPage Schema para Rich Snippets no Google
-            ...(seoContent && seoContent.perguntas.length > 0 ? [{
+            // FAQPage Schema para Rich Snippets no Google - 12 perguntas por servico
+            ...(service && getServiceFaqs(service.slug).length > 0 ? [{
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": seoContent.perguntas.map(faq => ({
+              "mainEntity": getServiceFaqs(service.slug).map(faq => ({
                 "@type": "Question",
                 "name": faq.pergunta,
                 "acceptedAnswer": {
@@ -502,25 +503,28 @@ export default function ServiceDetail() {
                 </motion.div>
               </div>
 
-              {/* FAQ Section - Schema.org FAQPage */}
-              {seoContent.perguntas.length > 0 && (
+              {/* FAQ Section - Schema.org FAQPage - 12 perguntas otimizadas para SEO */}
+              {service && getServiceFaqs(service.slug).length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="max-w-4xl mx-auto"
                 >
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
-                    Perguntas Frequentes sobre {service.title}
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-center">
+                    Perguntas Frequentes sobre {service.title} em Curitiba
                   </h3>
-                  <div className="space-y-4">
-                    {seoContent.perguntas.map((faq, idx) => (
+                  <p className="text-gray-500 text-center mb-8">
+                    Tire suas duvidas sobre {service.title} na Carplus Auto Center, bairro Portao.
+                  </p>
+                  <div className="space-y-3">
+                    {getServiceFaqs(service.slug).map((faq, idx) => (
                       <details
                         key={idx}
                         className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
                       >
                         <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                          <h4 className="font-bold text-gray-900 pr-4">{faq.pergunta}</h4>
+                          <h4 className="font-bold text-gray-900 pr-4 text-left">{faq.pergunta}</h4>
                           <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
                         </summary>
                         <div className="px-5 pb-5 pt-0">
