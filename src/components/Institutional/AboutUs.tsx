@@ -354,21 +354,42 @@ export default function AboutUs() {
               </p>
             </motion.div>
 
-            {/* TODO: inserir fotos reais do antes e depois (Matheus) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {/* Slot 1 */}
+              {/* Slot 1 - Oxidacao severa */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a]"
+                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
               >
-                <div className="aspect-square bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <Cog className="w-16 h-16 text-amber-500/30 mx-auto mb-4" />
-                    <p className="text-gray-500 text-sm">Foto em breve</p>
-                  </div>
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-cwb-16miznXTQvGgb8xEYvznZ93yyBHsif.png" 
+                    alt="Pintura de rodas profissional na Carplus Curitiba - Tecnico especializado realizando pintura eletrostatica em roda de liga leve"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-white font-medium">Oxidacao severa → pintura eletrostatica</p>
+                  <p className="text-amber-500 text-sm">Acabamento profissional de fabrica</p>
+                </div>
+              </motion.div>
+
+              {/* Slot 2 - Roda amassada */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
+              >
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Roda%20amassada%20%E2%86%92%20restaurada%20em%202h-dFTVy6dSoaU0u7xdkPprLwtEJhSajO.png" 
+                    alt="Rodas restauradas na Carplus Curitiba - Jogo de rodas pretas brilhantes recuperadas com acabamento impecavel"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-4 text-center">
                   <p className="text-white font-medium">Roda amassada → restaurada em 2h</p>
@@ -376,39 +397,20 @@ export default function AboutUs() {
                 </div>
               </motion.div>
 
-              {/* Slot 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a]"
-              >
-                <div className="aspect-square bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <Cog className="w-16 h-16 text-amber-500/30 mx-auto mb-4" />
-                    <p className="text-gray-500 text-sm">Foto em breve</p>
-                  </div>
-                </div>
-                <div className="p-4 text-center">
-                  <p className="text-white font-medium">Oxidacao severa → pintura eletrostatica</p>
-                  <p className="text-amber-500 text-sm">Como nova</p>
-                </div>
-              </motion.div>
-
-              {/* Slot 3 */}
+              {/* Slot 3 - Risco profundo */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a]"
+                className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
               >
-                <div className="aspect-square bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <Cog className="w-16 h-16 text-amber-500/30 mx-auto mb-4" />
-                    <p className="text-gray-500 text-sm">Foto em breve</p>
-                  </div>
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-portao-wjgRWhvRazrVWJekgeewZ6mGE0tjjV.png" 
+                    alt="Troca de pneus na Carplus Curitiba Portao - Cliente satisfeito com roda restaurada e pneu novo"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-4 text-center">
                   <p className="text-white font-medium">Risco profundo → recuperacao total</p>
