@@ -1,6 +1,7 @@
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Home from './components/Home';
 import NeighborhoodDetail from './components/NeighborhoodDetail';
 import ServiceDetail from './components/ServiceDetail';
@@ -18,6 +19,10 @@ import ComoChegar from './components/ComoChegar';
 import BairrosPage from './components/BairrosPage';
 import FAQPage from './components/FAQPage';
 import BackToTop from './components/BackToTop';
+import { generateLocalBusinessSchema } from './lib/schema';
+
+// Schema de LocalBusiness global para todas as paginas
+const localBusinessSchema = generateLocalBusinessSchema();
 
 export default function App() {
   const { pathname } = useLocation();
@@ -29,6 +34,13 @@ export default function App() {
 
   return (
     <>
+      {/* Schema LocalBusiness global injetado em todas as paginas */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+      </Helmet>
+      
       <BackToTop />
       <Routes>
       <Route path="/" element={<Home />} />

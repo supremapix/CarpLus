@@ -8,11 +8,12 @@ import TireFAQ from './TireFAQ';
 import TireTips from './TireTips';
 import { useEffect, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const tire = TIRES.find(t => t.slug === slug);
+  const tire = TIRES.find(t => t && t.slug === slug);
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
@@ -61,58 +62,46 @@ export default function TireDetail() {
     }
   };
 
+  const BASE_URL = "https://www.carpluspneuseoficina.com.br";
+  
+  // Gera schema de produto otimizado para Rich Snippets
+  const productSchema = tire
+    ? generateProductSchema({
+        name: tire.nome,
+        description: tire.descricao,
+        image: [
+          `${BASE_URL}${tire.imagemGrande}`,
+          `${BASE_URL}${tire.imagem}`,
+        ],
+        sku: tire.slug,
+        brand: tire.marca,
+        availability: "InStock",
+        url: `${BASE_URL}/pneu/${tire.slug}`,
+        // ratingValue e reviewCount podem ser adicionados quando houver dados reais
+      })
+    : null;
+
+  // Gera schema de breadcrumb
+  const breadcrumbSchema = tire
+    ? generateBreadcrumbSchema([
+        { name: "Home", url: BASE_URL },
+        { name: "Pneus", url: `${BASE_URL}/pneus` },
+        { name: tire.marca, url: `${BASE_URL}/pneus?marca=${tire.marca.toLowerCase()}` },
+        { name: tire.nome, url: `${BASE_URL}/pneu/${tire.slug}` },
+      ])
+    : null;
+
   useSEO(
     tire
       ? {
-          title: `${tire.nome} em Curitiba | Carplus Auto Center – Portão`,
-          description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros, garantia de fábrica. Ligue: (41) 3082-7282.`,
-          canonical: `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
+          title: `${tire.nome} em Curitiba | Carplus Auto Center – Portao`,
+          description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em ate 10x sem juros, garantia de fabrica. Ligue: (41) 3082-7282.`,
+          canonical: `${BASE_URL}/pneu/${tire.slug}`,
           ogImage: tire.imagemGrande,
           ogType: 'product',
-          schemaJSON: [
-            {
-              "@context": "https://schema.org",
-              "@type": "Product",
-              "name": tire.nome,
-              "image": [tire.imagemGrande, tire.imagem],
-              "description": tire.descricao,
-              "sku": tire.slug,
-              "brand": { "@type": "Brand", "name": tire.marca },
-              "category": `Pneus / ${tire.categoria}`,
-              "offers": {
-                "@type": "Offer",
-                "url": `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}`,
-                "priceCurrency": "BRL",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                  "@type": "AutoPartsStore",
-                  "name": "Carplus Auto Center",
-                  "telephone": "+55-41-3082-7282",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
-                    "addressLocality": "Curitiba",
-                    "addressRegion": "PR",
-                    "postalCode": "80320-300",
-                    "addressCountry": "BR"
-                  }
-                }
-              }
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Pneus", "item": "https://www.carpluspneuseoficina.com.br/pneus" },
-                { "@type": "ListItem", "position": 3, "name": tire.marca, "item": `https://www.carpluspneuseoficina.com.br/pneus?marca=${tire.marca.toLowerCase()}` },
-                { "@type": "ListItem", "position": 4, "name": tire.nome, "item": `https://www.carpluspneuseoficina.com.br/pneu/${tire.slug}` }
-              ]
-            }
-          ]
+          schemaJSON: [productSchema, breadcrumbSchema].filter(Boolean),
         }
-      : { title: 'Pneu não encontrado | Carplus', description: 'Pneu não encontrado.' }
+      : { title: 'Pneu nao encontrado | Carplus', description: 'Pneu nao encontrado.' }
   );
 
   useEffect(() => {}, []);
@@ -131,7 +120,7 @@ export default function TireDetail() {
     );
   }
 
-  const relatedTires = TIRES.filter(t => t.aro === tire.aro && t.id !== tire.id).slice(0, 4);
+  const relatedTires = TIRES.filter(t => t && t.aro === tire.aro && t.id !== tire.id).slice(0, 4);
 
   const whatsappMsg = `Olá! Vi no site o pneu *${tire.nome}* (Medida: ${tire.medida}). Gostaria de consultar o preço e disponibilidade para meu carro.`;
 

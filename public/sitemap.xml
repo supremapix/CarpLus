@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneus</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/catalogo</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -45,16 +45,6 @@
     <loc>https://www.carpluspneuseoficina.com.br/politica-de-privacidade</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/trocas-e-devolucoes</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/sitemap</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/troca-de-pneus</loc>
@@ -123,236 +113,6 @@
   </url>
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/servico/revisao-completa</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/alinhamento-3d</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/balanceamento-computadorizado</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/calibragem-nitrogenio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/rodizio-pneus</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/inspecao-pneus</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/reparo-pneu-furado</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/desempeno-rodas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/polimento-rodas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/pintura-rodas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/caster</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/pastilhas-freio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/discos-freio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/fluido-freio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/freio-mao</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/abs-sensor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/amortecedores</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/molas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/buchas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/bieletas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/pivos</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/terminais-direcao</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/troca-oleo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/filtro-oleo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/filtro-ar</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/filtro-combustivel</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/filtro-cabine</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/correia-dentada</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/velas-ignicao</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/bateria</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/alternador</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/motor-partida</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/farol-lanterna</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/som-automotivo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/central-multimidia</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/sensor-estacionamento</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/camera-re</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/higienizacao-ar</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/vitrificacao</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/polimento-farol</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/insulfilm</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/envelopamento</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/preparacao-track-day</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/upgrade-performance</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/inspecao-pre-compra</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/socorro-guincho</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/servico/revisao-viagem</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -682,6 +442,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.carpluspneuseoficina.com.br/bairro/cidade-industrial</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.carpluspneuseoficina.com.br/bairro/augusta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -712,252 +477,1487 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/175-70-13</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-70-13</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/175-80-14</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-80-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/185-55-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-55-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/185-60-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-60-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/185-60-14</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-60-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/185-65-14</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-65-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/195-55-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-55-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/195-60-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-60-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/205-45-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/185-65-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-65-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/205-55-16</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-55-16</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-45-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/195-65-15</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-65-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/215-50-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-50-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/235-60-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-60-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-45-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-45-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/175-65-14</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-65-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-65-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-65-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/265-70-16</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-70-16</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-50-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-50-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/235-55-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-55-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/235-50-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-50-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-50-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-50-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-40-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-40-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-40-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-40-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/255-35-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-35-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-35-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-35-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-55-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-55-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/205-50-17</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-50-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-45-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-45-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/255-40-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-40-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-40-18</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-40-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-40-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-40-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-40-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/255-35-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-35-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-35-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-35-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/255-50-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-40-20</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-45-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-45-20</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-55-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-50-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/235-45-18</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-50-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-45-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-50-16</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/265-50-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-45-16</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-55-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-45-16</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/285-45-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/235-40-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/245-35-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/255-30-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-45-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/275-30-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-40-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/285-30-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-40-17</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu-medida/225-35-19</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-40-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-45-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-40-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-40-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-40-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-35-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-35-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-35-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-30-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-30-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-40-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-40-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-40-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-35-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-35-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-35-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-35-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/305-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/325-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/305-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/305-30-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/325-30-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-35-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-65-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-60-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-60-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-60-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-50-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-65-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-55-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-55-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-70-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-70-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-70-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-55-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/165-50-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-65-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-65-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-60-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-60-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-50-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-60-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-60-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-60-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-55-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-55-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-55-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-60-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-55-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-50-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-50-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-45-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-45-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-45-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-50-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-45-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-55-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-50-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-40-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-55-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-55-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-45-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-55-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-50-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-55-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-45-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-40-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-55-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-50-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/315-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-45-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-45-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/305-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/315-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-45-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-35-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/325-35-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-50-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-55-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-50-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/315-35-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-55-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-0-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-0-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-45-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-45-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-70-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-70-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-0-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-65-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/165-70-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-70-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-80-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-65-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-55-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/165-70-13</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-45-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/185-0-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-75-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/31-10-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/165-80-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/5-0-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/5-0-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/7-0-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/6-0-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-75-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-55-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-35-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-35-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-50-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-75-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-30-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-30-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-30-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-30-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-75-14</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/155-60-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-70-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/135-80-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-60-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/0-0-0</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-70-15</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-70-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-45-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-80-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/145-90-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-90-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/215-55-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-55-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-85-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-80-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-60-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-45-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/135-80-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/135-90-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/155-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/115-95-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-80-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-40-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-70-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-55-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-45-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/235-65-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/225-50-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-70-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/135-80-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/145-85-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/155-90-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/195-60-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-65-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-70-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-70-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-65-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-45-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/155-80-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/125-70-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/175-80-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-65-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/205-55-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-55-19</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-45-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-50-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/145-60-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-40-20</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-45-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-35-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-50-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-40-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-35-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-35-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-30-21</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-40-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/295-40-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/255-40-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-45-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/315-35-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/315-30-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-35-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-35-23</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/285-65-17</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-75-16</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-35-22</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/265-45-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/275-45-18</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneus/245-55-19</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1673,6 +2673,571 @@
   </url>
   <url>
     <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-185-60r14-86h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-18555r16-83h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19555r16-87v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-20570r15-96h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-17570r14-84t</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19570r14-91t</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-17565r14-82t</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-18565r14-86h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-18565r15-88h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19565r15-91h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-18560r15-84h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19560r15-88h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-17555r15-77h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-18555r15-82v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19555r15-85v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-16550r15-72v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19550r15-86v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-20570r16-97h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-22570r16-103h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-20565r16-95h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21565r16-98h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-22560r16-98v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23560r16-100h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-19550r16-84v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21565r17-99h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-22565r17-102h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23565r17-108v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21560r17-100h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-22560r17-99v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23560r17-102v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21555r17-94v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-20550r17-93v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21550r17-95v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23560r18-103v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-24560r18-105v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-21555r18-95v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23555r18-100v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23550r18-97v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh2-23540r19-96v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz2-23550r18-101y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz2-27540r18-103y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz2-24535r19-93y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh3-20560r15-91h</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh3-20555r17-91v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh3-20565r16-95v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22545r17-94w-runflat</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22545r18-95w-runflat</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24550r19-105w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25550r20-109w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26545r21-108y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24545r19-102y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25545r19-104w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24545r20-103y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25540r20-101w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23545r18-98y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-22545r18-95w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25545r20-105w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23550r20-104w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23545r20-96v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-22555r18-102v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23545r19-99w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23550r19-99v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23555r19-101v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-28540r22-110y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-22555r19-99t</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-22545r19-96w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27540r19-105y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27535r19-100y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23555r20-102w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27545r21-110y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-28540r21-109y-silenteck</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23535r20-92y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23555r18-104v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27555r19-111w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25550r19-107v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24540r19-98y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25555r20-110y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27545r20-110y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26540r22-106y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-21555r18-99v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25555r19-111v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-29540r20-110w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26535r20-99y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-29530r20-101w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24550r20-105w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24540r20-99y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26540r21-105y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-31540r21-111y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-28545r22-114y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26545r20-108y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27540r20-106y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-30540r20-112y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-31535r20-110y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27530r20-97y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25545r21-106w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25540r21-102y-silenteck</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-29535r21-107y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-32535r22-114y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-24535r20-95y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27550r20-113w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27555r20-117v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-23550r18-101v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-27535r20-102y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-26535r19-98y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25540r19-100y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-21550r18-96v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-25540r18-99y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xnex-sport-ev-31535r21-111y</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-22550r17-98v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-24545r18-100w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-21550r17-95w</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-22565r17-106v</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-23560r18-103t</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-xlab-comfort-ev-17555r16-80h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -8207,2207 +9772,427 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-yokohama-neova-ad09-e-um-pneu-esportivo-de-ultra-alta-performance-uhp-desenvolvido-para-dirigibilidade-extrema-em-pistas-e-uso-nas-ruas-com-composto-de-borracha-assimetrico-de-nova-geracao-oferece-maxima-aderencia-resposta-precisa-na-direcao-e-excelente-frenagem-em-piso-seco</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-17565r15-84h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-sport-v105-z-p-s-e-um-modelo-de-ultra-alta-performance-uhp-que-combina-caracteristicas-esportivas-com-tecnologias-de-seguranca-avancadas-incluindo-tecnologia-run-flat-z-p-s-para-mobilidade-mesmo-apos-perda-de-pressao</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-18560r15-84h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-avid-gt-s35a-e-um-pneu-de-turismo-de-alto-desempenho-que-oferece-excelente-equilibrio-entre-conforto-durabilidade-e-performance-ideal-para-sedas-e-hatches-com-baixo-nivel-de-ruido-e-boa-dirigibilidade-no-dia-a-dia</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-19560r15-88h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-fleva-v701-e-um-pneu-esportivo-de-ultra-alta-performance-que-oferece-aderencia-excepcional-em-piso-seco-e-molhado-desenvolvido-com-tecnologia-de-composto-de-borracha-avancada-para-maxima-precisao-na-direcao</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-19560r16-89h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-bluearth-es32-e-um-pneu-ecologico-de-turismo-que-combina-baixa-resistencia-ao-rolamento-com-excelente-aderencia-em-piso-molhado-ideal-para-uso-urbano-com-economia-de-combustivel-e-durabilidade-superior</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-20560r16-92h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-sport-v107-e-um-pneu-de-ultra-alta-performance-uhp-desenvolvido-para-veiculos-premium-de-alto-desempenho-oferece-excelente-aderencia-em-curvas-frenagem-precisa-e-conforto-superior</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-21560r16-95h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-bluearth-gt-ae51-e-um-pneu-de-turismo-premium-que-oferece-alto-nivel-de-conforto-baixo-ruido-e-eficiencia-no-consumo-de-combustivel-ideal-para-sedas-e-suvs-que-priorizam-conforto</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-18555r15-82v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-v61-e-um-pneu-de-alta-performance-para-veiculos-de-passeio-que-oferece-excelente-aderencia-precisao-na-direcao-e-conforto-de-conducao-desenvolvido-para-sedas-e-hatches-esportivos</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-19555r15-85h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-db-v552-e-a-evolucao-do-classico-v551-com-tecnologia-de-absorcao-de-ruido-de-ultima-geracao-para-maximo-conforto-acustico-e-alta-performance</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-20555r16-91v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-v35-e-um-pneu-de-alta-performance-para-veiculos-de-passeio-premium-com-excelente-aderencia-em-curvas-precisao-na-direcao-e-otimo-desempenho-em-piso-molhado</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-20550r16-87v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-apex-v601a-combina-tecnologia-de-pista-com-conforto-para-uso-diario-oferece-maxima-aderencia-e-precisao-para-conducao-esportiva</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-18565r15-88h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-g91av-e-um-pneu-all-season-para-suvs-e-caminhonetes-com-excelente-tracao-em-piso-molhado-e-seco-combina-conforto-de-conducao-com-durabilidade-superior-para-uso-urbano-e-estradas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-19565r15-91h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-g095a-e-um-pneu-highway-terrain-h-t-para-suvs-e-pickups-com-excelente-conforto-em-rodovias-e-boa-tracao-em-terra-batida-ideal-para-versatilidade-e-durabilidade</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-20565r15-94h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-yokohama-advan-sport-v103-z-p-s-e-um-pneu-de-ultra-alta-performance-uhp-projetado-para-sedas-e-cupes-premium-como-os-da-bmw-mercedes-benz-e-audi-ele-combina-comportamento-esportivo-com-a-seguranca-da-tecnologia-run-flat-z-p-s-da-yokohama</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-19550r15-82v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-g056-h-t-e-um-pneu-highway-terrain-para-suvs-e-caminhonetes-que-proporciona-suavidade-em-rodovias-e-conforto-para-uso-diario-com-boa-tracao-em-superficies-variadas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hh1-18560r14-86h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-a-t-g015-e-um-pneu-all-terrain-para-suvs-e-caminhonetes-com-excelente-tracao-em-off-road-e-conforto-em-rodovias-ideal-para-aventureiros-que-transitam-entre-asfalto-e-trilhas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-23570r16-106t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-g94-a-t-e-um-pneu-all-terrain-para-suvs-e-caminhonetes-com-boa-tracao-em-terrenos-variados-combinando-desempenho-off-road-com-conforto-nas-estradas-pavimentadas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-21565r16-102h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-m-t-g003-e-um-pneu-mud-terrain-extremo-para-caminhonetes-e-suvs-off-road-com-design-agressivo-de-banda-de-rodagem-oferece-tracao-maxima-em-lama-pedras-e-terrenos-extremos</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-22565r17-102h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-x-cv-g057-e-um-pneu-crossover-para-suvs-modernos-com-alto-desempenho-em-piso-seco-e-molhado-oferecendo-conforto-e-precisao-na-direcao</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-23565r17-104h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-x-mt-g005-e-um-pneu-mud-terrain-de-alta-performance-para-caminhonetes-e-suvs-com-maxima-tracao-off-road-design-agressivo-com-blocos-robustos-para-terrenos-extremos</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-20560r16-92h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-cv-g058-e-um-pneu-para-suvs-urbanos-com-excelente-desempenho-em-piso-molhado-e-seco-combinando-baixo-ruido-com-durabilidade-e-tracao-superior-para-uso-diario</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-21560r17-96h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-x-at-g016-e-um-pneu-all-terrain-extremo-para-caminhonetes-e-suvs-off-road-combina-desempenho-agressivo-em-terrenos-dificeis-com-conforto-razoavel-em-rodovias</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-22560r17-99h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-a-t-g018-e-um-pneu-all-terrain-versatil-para-suvs-e-caminhonetes-com-excelente-tracao-em-off-road-e-conforto-em-rodovias-tecnologia-avancada-para-maxima-versatilidade</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-21555r18-99v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-cv-g058-e-um-pneu-para-suvs-urbanos-com-excelente-desempenho-em-piso-molhado-e-seco-e-baixo-ruido</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-23555r17-99v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-x-at-g016-e-um-pneu-all-terrain-extremo-para-caminhonetes-e-suvs-off-road</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-23550r18-101v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-geolandar-a-t-g018-e-um-pneu-all-terrain-versatil-para-suvs-com-excelente-tracao-em-off-road-e-conforto-em-rodovias</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-26560r18-110t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-advan-a052-e-um-pneu-semi-slick-de-ultra-alta-performance-desenvolvido-para-uso-em-pistas-e-ruas-com-composto-de-borracha-de-nivel-competitivo-oferece-aderencia-extrema-em-piso-seco-tornando-o-ideal-para-track-days-automobilismo-amador-e-veiculos-esportivos-de-alto-desempenho</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-22560r18-100v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/o-pneu-yokohama-bluearth-van-ry55-e-um-pneu-de-carga-para-vans-e-utilitarios-comerciais-que-combina-eficiencia-no-consumo-de-combustivel-com-excelente-capacidade-de-carga-desenvolvido-com-tecnologia-bluearth-para-baixo-rolling-resistance-oferece-durabilidade-superior-e-seguranca-no-transporte-de-cargas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ht1-22555r18-98v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/loja-de-pneus</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-23570r16-106t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/alinhamento-3d</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-24570r16-107t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/troca-de-oleo</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-26570r16-112t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/scanner-automotivo</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-26570r17-115t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/suspensao-e-freios</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-24565r17-107t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/ar-condicionado</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-26565r17-112t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/manutencao-motor</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-28565r17-116t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/conserto-de-rodas</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-24560r18-105t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/correia-dentada</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-23575r15-109t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/troca-de-fluido-de-freio</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-26575r16-116t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r18-c-drive-2</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-24575r16-111t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21550r17-advan-db-v551</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-20570r15-96t</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-20560r16-92h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18555r15-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-20560r15-91h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19555r15-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-21565r16-98h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19550r15-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-ha1-26560r18-110h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20550r15-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-22565r17-102h</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20555r16-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-23545r17-97w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r16-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-25555r18-109v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20545r16-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-25545r18-103w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r16-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-25550r19-107v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20550r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-28545r19-111v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-27540r20-106v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-24535r20-95w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-26535r22-102w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-22550r18-99w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-26545r18-104w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-27545r18-107w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21540r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-31535r20-110v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-29530r20-101w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-25555r19-111w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r17-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-24555r19-103w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-23555r20-102v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-25550r20-109y</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-26550r20-111v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-27545r20-110v</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hp1-22555r19-99w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-20555r16-94w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-21555r16-97w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-21555r17-94w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-20550r17-93w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-21550r17-95w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hu1-20545r17-88w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22555r16-99w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22555r17-101w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28530r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22550r17-94w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29530r18-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22545r17-94w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22555r18-98w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-25545r19-104y</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-26540r20-104w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-24540r17-95w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-24540r18-97w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-23550r17-100w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23535r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-25540r18-99w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-23550r19-103w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r19-neova-ad09</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22545r19-96w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28535r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26530r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27530r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29530r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30530r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-32530r19-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30530r20-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30530r21-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-32530r21-neova-ad09</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28535r18-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r21-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26545r20-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r21-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24550r19-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r21-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31540r21-advan-sport-v105</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r20-avid-gt-s35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30540r20-avid-gt-s35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r21-avid-gt-s35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r21-avid-gt-s35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20555r16-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r16-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21555r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20550r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21550r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20545r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22540r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22535r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23535r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25530r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26530r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22535r20-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25530r20-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19545r16-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r16-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19545r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19540r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r20-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20555r17-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r19-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r20-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r18-advan-fleva</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17570r13-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-16570r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17570r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18570r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19570r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-15565r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17565r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18565r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19565r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-16560r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18560r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19560r14-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-14565r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17565r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18565r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19565r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20565r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-15560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-16560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20560r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17555r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18555r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19555r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19550r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20565r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-17560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18555r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19555r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20555r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21555r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22555r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19550r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-19545r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20545r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21555r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21550r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20545r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20540r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21540r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r19-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25555r19-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25550r19-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25555r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25550r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r22-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r22-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30535r23-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24550r19-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r18-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r18-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r22-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r22-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r20-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31530r23-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r23-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r24-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29540r22-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31540r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r21-advan-sport-v107</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21545r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20555r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22555r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22535r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22535r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24535r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20550r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21565r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24550r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23560r19-advan-v61</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r20-advan-v61</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r21-advan-db-v552</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27535r21-advan-db-v552</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r21-advan-db-v552</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r22-advan-v35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r22-advan-v35</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23540r18-advan-apex-v601</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23575r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26575r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26570r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20570r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23580r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25570r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26570r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26565r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27565r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-32560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23560r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28575r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21585r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20580r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21570r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22570r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22555r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25555r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21560r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23555r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21570r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31570r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26560r18-geolandar-suv-g94</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21575r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24575r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26575r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29575r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31570r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31580r15-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-18585r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23585r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22575r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24575r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31565r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31560r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25555r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27555r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25550r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26550r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26545r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27545r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29540r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29540r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27550r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28545r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31540r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24545r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28540r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25545r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31535r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25550r21-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30540r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28535r22-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-34575r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-34585r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22565r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22560r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23560r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25560r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23565r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21550r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22555r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24555r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21555r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23550r19-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-34555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-30570r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28575r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31575r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24575r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27565r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28565r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28560r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-28555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29555r20-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20550r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22550r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22545r16-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r17-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-24540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-25535r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-26535r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29535r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-29530r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-31530r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-27540r18-yokohama</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-20575r16-bluearth-van-ry55</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22575r16-bluearth-van-ry55</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-22565r16-bluearth-van-ry55</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-23565r16-bluearth-van-ry55</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.carpluspneuseoficina.com.br/pneu/yokohama-21565r16-bluearth-van-ry55</loc>
+    <loc>https://www.carpluspneuseoficina.com.br/pneu/pneu-prinx-hz1-22540r18-92w</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

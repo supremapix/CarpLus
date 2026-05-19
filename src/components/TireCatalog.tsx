@@ -6,6 +6,8 @@ import { TIRES, Tire } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
+import { useSEO } from '../hooks/useSEO';
+import { generateProductListSchema, generateBreadcrumbSchema } from '../lib/schema';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -23,6 +25,33 @@ export default function TireCatalog() {
   const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<string[]>([]);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
+
+  const BASE_URL = "https://www.carpluspneuseoficina.com.br";
+
+  // Schema ItemList para catalogo de produtos
+  const productListSchema = generateProductListSchema(
+    TIRES.slice(0, 50).map((tire, index) => ({
+      name: tire.nome,
+      url: `${BASE_URL}/pneu/${tire.slug}`,
+      image: `${BASE_URL}${tire.imagemGrande}`,
+      position: index + 1,
+    }))
+  );
+
+  // Schema Breadcrumb para pagina de catalogo
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: BASE_URL },
+    { name: "Pneus", url: `${BASE_URL}/pneus` },
+  ]);
+
+  // SEO para pagina de catalogo
+  useSEO({
+    title: "Catalogo de Pneus em Curitiba | Carplus Auto Center – Portao",
+    description: "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem gratuita, ate 10x sem juros.",
+    canonical: `${BASE_URL}/pneus`,
+    ogType: "website",
+    schemaJSON: [productListSchema, breadcrumbSchema],
+  });
 
   // Read URL params on mount
   useEffect(() => {
@@ -43,6 +72,7 @@ export default function TireCatalog() {
 
   const filteredTires = useMemo(() => {
     return TIRES.filter(tire => {
+      if (!tire) return false;
       const matchesSearch = 
         tire.nome.toLowerCase().includes(search.toLowerCase()) ||
         tire.medida.toLowerCase().includes(search.toLowerCase()) ||

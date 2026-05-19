@@ -6,11 +6,11 @@ import { MapPin, Wrench, Globe, ChevronRight, Circle } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
 // Get unique brands from TIRES
-const TIRE_BRANDS = [...new Set(TIRES.map(t => t.marca))].sort();
+const TIRE_BRANDS = [...new Set(TIRES.filter(t => t && t.marca).map(t => t.marca))].sort();
 
 // Get popular/featured tires (first 50 of each brand)
 const FEATURED_TIRES = TIRE_BRANDS.flatMap(brand => 
-  TIRES.filter(t => t.marca === brand).slice(0, 30)
+  TIRES.filter(t => t && t.marca === brand).slice(0, 30)
 );
 
 export default function Sitemap() {
@@ -160,7 +160,7 @@ export default function Sitemap() {
             </h2>
             
             {TIRE_BRANDS.map(brand => {
-              const brandTires = TIRES.filter(t => t.marca === brand);
+              const brandTires = TIRES.filter(t => t && t.marca === brand);
               return (
                 <div key={brand} className="mb-8">
                   <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 mb-4">

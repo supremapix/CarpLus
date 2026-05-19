@@ -14,6 +14,7 @@ export default function TireGallery() {
 
   const filteredTires = useMemo(() => {
     return TIRES.filter(tire => {
+      if (!tire) return false;
       const matchesRim = selectedRim ? tire.aro === selectedRim : true;
       const matchesSearch = searchTerm === '' || 
         tire.marca.toLowerCase().includes(searchTerm.toLowerCase()) ||
