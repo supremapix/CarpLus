@@ -84,25 +84,25 @@ export default function TireCatalog() {
   });
 
   const filteredTires = useMemo(() => {
-    // Use URL params directly for filtering to avoid race conditions with state
+    // Always prioritize URL params for filtering
     let effectiveBrands = selectedBrands;
-    if (urlMarca && selectedBrands.length === 0) {
+    if (urlMarca) {
       const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
       if (matchedBrand) effectiveBrands = [matchedBrand];
     }
     
     let effectiveRims = selectedRims;
-    if (urlAro && selectedRims.length === 0) {
+    if (urlAro) {
       effectiveRims = [parseInt(urlAro)];
     }
     
     let effectiveLargura = selectedLargura;
-    if (urlLargura && !selectedLargura) {
+    if (urlLargura) {
       effectiveLargura = parseInt(urlLargura);
     }
     
     let effectiveAltura = selectedAltura;
-    if (urlAltura && !selectedAltura) {
+    if (urlAltura) {
       effectiveAltura = parseInt(urlAltura);
     }
     
