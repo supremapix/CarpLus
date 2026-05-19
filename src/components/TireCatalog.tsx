@@ -17,48 +17,44 @@ const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Pr
 export default function TireCatalog() {
   const [searchParams] = useSearchParams();
   
-  // Parse URL params immediately (not in useEffect)
-  const initialBrand = useMemo(() => {
-    const marca = searchParams.get('marca');
-    if (marca) {
-      const matchedBrand = BRANDS.find(b => b.toLowerCase() === marca.toLowerCase());
+  // Get URL params directly
+  const urlMarca = searchParams.get('marca');
+  const urlAro = searchParams.get('aro');
+  const urlLargura = searchParams.get('largura');
+  const urlAltura = searchParams.get('altura');
+  
+  const [search, setSearch] = useState("");
+  const [selectedBrands, setSelectedBrands] = useState<string[]>(() => {
+    if (urlMarca) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
       return matchedBrand ? [matchedBrand] : [];
     }
     return [];
-  }, [searchParams]);
-  
-  const initialRim = useMemo(() => {
-    const aro = searchParams.get('aro');
-    return aro ? [parseInt(aro)] : [];
-  }, [searchParams]);
-  
-  const initialLargura = useMemo(() => {
-    const largura = searchParams.get('largura');
-    return largura ? parseInt(largura) : null;
-  }, [searchParams]);
-  
-  const initialAltura = useMemo(() => {
-    const altura = searchParams.get('altura');
-    return altura ? parseInt(altura) : null;
-  }, [searchParams]);
-  
-  const [search, setSearch] = useState("");
-  const [selectedBrands, setSelectedBrands] = useState<string[]>(initialBrand);
-  const [selectedRims, setSelectedRims] = useState<number[]>(initialRim);
-  const [selectedLargura, setSelectedLargura] = useState<number | null>(initialLargura);
-  const [selectedAltura, setSelectedAltura] = useState<number | null>(initialAltura);
+  });
+  const [selectedRims, setSelectedRims] = useState<number[]>(() => {
+    return urlAro ? [parseInt(urlAro)] : [];
+  });
+  const [selectedLargura, setSelectedLargura] = useState<number | null>(() => {
+    return urlLargura ? parseInt(urlLargura) : null;
+  });
+  const [selectedAltura, setSelectedAltura] = useState<number | null>(() => {
+    return urlAltura ? parseInt(urlAltura) : null;
+  });
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<string[]>([]);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
 
-  // Sync state when URL params change
+  // Sync state when URL params change (for navigation within the app)
   useEffect(() => {
-    setSelectedBrands(initialBrand);
-    setSelectedRims(initialRim);
-    setSelectedLargura(initialLargura);
-    setSelectedAltura(initialAltura);
-  }, [initialBrand, initialRim, initialLargura, initialAltura]);
+    if (urlMarca) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
+      if (matchedBrand) setSelectedBrands([matchedBrand]);
+    }
+    if (urlAro) setSelectedRims([parseInt(urlAro)]);
+    if (urlLargura) setSelectedLargura(parseInt(urlLargura));
+    if (urlAltura) setSelectedAltura(parseInt(urlAltura));
+  }, [urlMarca, urlAro, urlLargura, urlAltura]);
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
