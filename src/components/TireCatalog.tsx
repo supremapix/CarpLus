@@ -84,27 +84,29 @@ export default function TireCatalog() {
   });
 
   const filteredTires = useMemo(() => {
-    // Always prioritize URL params for filtering
+    // Use URL params OR state for filtering
     let effectiveBrands = selectedBrands;
-    if (urlMarca) {
+    if (urlMarca && selectedBrands.length === 0) {
       const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
       if (matchedBrand) effectiveBrands = [matchedBrand];
     }
     
     let effectiveRims = selectedRims;
-    if (urlAro) {
+    if (urlAro && selectedRims.length === 0) {
       effectiveRims = [parseInt(urlAro)];
     }
     
     let effectiveLargura = selectedLargura;
-    if (urlLargura) {
+    if (urlLargura && !selectedLargura) {
       effectiveLargura = parseInt(urlLargura);
     }
     
     let effectiveAltura = selectedAltura;
-    if (urlAltura) {
+    if (urlAltura && !selectedAltura) {
       effectiveAltura = parseInt(urlAltura);
     }
+    
+    console.log("[v0] effectiveBrands:", effectiveBrands, "selectedBrands:", selectedBrands);
     
     const result = TIRES.filter(tire => {
       if (!tire) return false;
@@ -128,6 +130,8 @@ export default function TireCatalog() {
       // Default: ordenar por marca para agrupar os pneus de cada marca juntos
       return a.marca.localeCompare(b.marca) || a.aro - b.aro;
     });
+    
+    console.log("[v0] filteredTires count:", result.length, "first 3:", result.slice(0, 3).map(t => ({ nome: t.nome, marca: t.marca })));
     
     return result;
   }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy, urlMarca, urlAro, urlLargura, urlAltura]);
