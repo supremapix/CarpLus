@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -17,40 +17,34 @@ const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Pr
 export default function TireCatalog() {
   const [searchParams] = useSearchParams();
   
-  // Initialize state from URL params synchronously to avoid race condition
-  const getInitialBrand = () => {
-    const marca = searchParams.get('marca');
-    if (marca) {
-      const matchedBrand = BRANDS.find(b => b.toLowerCase() === marca.toLowerCase());
-      if (matchedBrand) return [matchedBrand];
-    }
-    return [];
-  };
-  
-  const getInitialRim = () => {
-    const aro = searchParams.get('aro');
-    return aro ? [parseInt(aro)] : [];
-  };
-  
-  const getInitialLargura = () => {
-    const largura = searchParams.get('largura');
-    return largura ? parseInt(largura) : null;
-  };
-  
-  const getInitialAltura = () => {
-    const altura = searchParams.get('altura');
-    return altura ? parseInt(altura) : null;
-  };
-  
   const [search, setSearch] = useState("");
-  const [selectedBrands, setSelectedBrands] = useState<string[]>(getInitialBrand);
-  const [selectedRims, setSelectedRims] = useState<number[]>(getInitialRim);
-  const [selectedLargura, setSelectedLargura] = useState<number | null>(getInitialLargura);
-  const [selectedAltura, setSelectedAltura] = useState<number | null>(getInitialAltura);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedRims, setSelectedRims] = useState<number[]>([]);
+  const [selectedLargura, setSelectedLargura] = useState<number | null>(null);
+  const [selectedAltura, setSelectedAltura] = useState<number | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<string[]>([]);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Sync state with URL params
+  useEffect(() => {
+    const marca = searchParams.get('marca');
+    const aro = searchParams.get('aro');
+    const largura = searchParams.get('largura');
+    const altura = searchParams.get('altura');
+    
+    if (marca) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === marca.toLowerCase());
+      if (matchedBrand) setSelectedBrands([matchedBrand]);
+    }
+    if (aro) setSelectedRims([parseInt(aro)]);
+    if (largura) setSelectedLargura(parseInt(largura));
+    if (altura) setSelectedAltura(parseInt(altura));
+    
+    setIsInitialized(true);
+  }, [searchParams]);
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
@@ -80,6 +74,9 @@ export default function TireCatalog() {
   });
 
   const filteredTires = useMemo(() => {
+    // Wait for URL params to be applied before filtering
+    if (!isInitialized) return [];
+    
     const result = TIRES.filter(tire => {
       if (!tire) return false;
       const matchesSearch = 
@@ -104,7 +101,7 @@ export default function TireCatalog() {
     });
     
     return result;
-  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
+  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy, isInitialized]);
 
   const toggleFilter = (list: any[], setList: Function, value: any) => {
     if (list.includes(value)) {
