@@ -70,29 +70,31 @@ const services = [
   'revisao-completa',
 ];
 
-// Neighborhoods
-const neighborhoods = [
-  'portao', 'agua-verde', 'fazendinha', 'santa-quiteria', 'vila-izabel',
-  'novo-mundo', 'capao-raso', 'sitio-cercado', 'xaxim', 'pinheirinho',
-  'cidade-industrial', 'tatuquara', 'boqueirao', 'hauer', 'fanny',
-  'lindoia', 'parolin', 'guaira', 'jardim-botanico', 'alto-da-gloria',
-  'centro', 'reboucas', 'prado-velho', 'cristo-rei', 'cajuru',
-  'uberaba', 'jardim-das-americas', 'guabirotuba', 'alto-da-xv', 'hugo-lange',
-  'juveve', 'cabral', 'ahu', 'bom-retiro', 'centro-civico',
-  'sao-francisco', 'merces', 'bigorrilho', 'champagnat', 'batel',
-  'seminario', 'campo-comprido', 'mossungue', 'santo-inacio', 'cascatinha',
-  'sao-joao', 'vista-alegre', 'pilarzinho', 'sao-lourenco', 'boa-vista',
-  'bacacheri', 'tingui', 'atuba', 'bairro-alto', 'taruma',
-  'santa-candida', 'cachoeira', 'barreirinha', 'abranches', 'taboao',
-  'lamenha-pequena', 'santa-felicidade', 'butiatuvinha', 'orleans', 'sao-braz',
-  'cidade-industrial', 'augusta', 'riviera', 'campo-de-santana', 'caximba',
-  'ganchinho', 'umbara',
-];
+// Extract neighborhoods from NEIGHBORHOODS array
+function extractNeighborhoods(content) {
+  const neighborhoods = [];
+  // Match name property in NEIGHBORHOODS array
+  const neighborhoodsMatch = content.match(/export const NEIGHBORHOODS[^=]*=\s*\[([\s\S]*?)\];/);
+  if (neighborhoodsMatch) {
+    const nameRegex = /name:\s*["']([^"']+)["']/g;
+    let match;
+    while ((match = nameRegex.exec(neighborhoodsMatch[1])) !== null) {
+      const slug = match[1]
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, '-');
+      neighborhoods.push(slug);
+    }
+  }
+  return [...new Set(neighborhoods)];
+}
 
 // Generate sitemap
 function generateSitemap() {
   const tireSlugs = extractTireSlugs(dataContent);
   const tireMeasures = extractTireMeasures(dataContent);
+  const neighborhoods = extractNeighborhoods(dataContent);
   
   console.log(`Found ${tireSlugs.length} tire slugs`);
   console.log(`Found ${tireMeasures.length} tire measures`);
