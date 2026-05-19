@@ -204,7 +204,7 @@ const SEO_CONTENT: Record<string, {
     ],
     keywords: ['troca fluido de freio curitiba', 'fluido de freio curitiba', 'sangria freio curitiba', 'DOT4 curitiba', 'fluido freio portão', 'manutencao freio curitiba'],
     temVideo: true,
-    videoUrl: 'qTmIkTltrYk',
+    videoUrl: '-7jfKxcDlTs',
     videoBadge: 'Video Explicativo Premium'
   }
 };
@@ -683,7 +683,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/qTmIkTltrYk?autoplay=1&mute=0&loop=1&playlist=qTmIkTltrYk&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=0&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Fluido de Freio"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
