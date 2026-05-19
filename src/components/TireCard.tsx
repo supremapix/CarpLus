@@ -36,7 +36,6 @@ const TireCard = memo(function TireCard({ tire, index }: TireCardProps) {
   return (
     <motion.div
       layout
-      key={tire.id}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
