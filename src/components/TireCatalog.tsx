@@ -84,6 +84,28 @@ export default function TireCatalog() {
   });
 
   const filteredTires = useMemo(() => {
+    // Use URL params directly for filtering to avoid race conditions with state
+    let effectiveBrands = selectedBrands;
+    if (urlMarca && selectedBrands.length === 0) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
+      if (matchedBrand) effectiveBrands = [matchedBrand];
+    }
+    
+    let effectiveRims = selectedRims;
+    if (urlAro && selectedRims.length === 0) {
+      effectiveRims = [parseInt(urlAro)];
+    }
+    
+    let effectiveLargura = selectedLargura;
+    if (urlLargura && !selectedLargura) {
+      effectiveLargura = parseInt(urlLargura);
+    }
+    
+    let effectiveAltura = selectedAltura;
+    if (urlAltura && !selectedAltura) {
+      effectiveAltura = parseInt(urlAltura);
+    }
+    
     const result = TIRES.filter(tire => {
       if (!tire) return false;
       const matchesSearch = 
@@ -91,10 +113,10 @@ export default function TireCatalog() {
         tire.medida.toLowerCase().includes(search.toLowerCase()) ||
         tire.carros.some(c => c.toLowerCase().includes(search.toLowerCase()));
       
-      const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(tire.marca);
-      const matchesRim = selectedRims.length === 0 || selectedRims.includes(tire.aro);
-      const matchesLargura = !selectedLargura || tire.largura === selectedLargura;
-      const matchesAltura = !selectedAltura || tire.perfil === selectedAltura;
+      const matchesBrand = effectiveBrands.length === 0 || effectiveBrands.includes(tire.marca);
+      const matchesRim = effectiveRims.length === 0 || effectiveRims.includes(tire.aro);
+      const matchesLargura = !effectiveLargura || tire.largura === effectiveLargura;
+      const matchesAltura = !effectiveAltura || tire.perfil === effectiveAltura;
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(tire.categoria);
       const matchesVehicle = selectedVehicleTypes.length === 0 || tire.tipoVeiculo.some(v => selectedVehicleTypes.includes(v));
 
@@ -108,7 +130,7 @@ export default function TireCatalog() {
     });
     
     return result;
-  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
+  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy, urlMarca, urlAro, urlLargura, urlAltura]);
 
   const toggleFilter = (list: any[], setList: Function, value: any) => {
     if (list.includes(value)) {
