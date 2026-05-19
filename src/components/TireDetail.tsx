@@ -13,7 +13,7 @@ import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const tire = TIRES.find(t => t.slug === slug);
+  const tire = TIRES.find(t => t && t.slug === slug);
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
@@ -120,7 +120,7 @@ export default function TireDetail() {
     );
   }
 
-  const relatedTires = TIRES.filter(t => t.aro === tire.aro && t.id !== tire.id).slice(0, 4);
+  const relatedTires = TIRES.filter(t => t && t.aro === tire.aro && t.id !== tire.id).slice(0, 4);
 
   const whatsappMsg = `Olá! Vi no site o pneu *${tire.nome}* (Medida: ${tire.medida}). Gostaria de consultar o preço e disponibilidade para meu carro.`;
 

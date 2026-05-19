@@ -13,22 +13,22 @@ export default function TireSearchBar() {
 
   // Get unique values from TIRES data
   const aros = useMemo(() => {
-    const unique = [...new Set(TIRES.map(t => t.aro))].sort((a, b) => a - b);
+    const unique = [...new Set(TIRES.filter(t => t && t.aro).map(t => t.aro))].sort((a, b) => a - b);
     return unique;
   }, []);
 
   const larguras = useMemo(() => {
-    let tires = TIRES;
+    let tires = TIRES.filter(t => t);
     if (aro) tires = tires.filter(t => t.aro === aro);
-    const unique = [...new Set(tires.map(t => t.largura))].sort((a, b) => a - b);
+    const unique = [...new Set(tires.filter(t => t.largura).map(t => t.largura))].sort((a, b) => a - b);
     return unique;
   }, [aro]);
 
   const alturas = useMemo(() => {
-    let tires = TIRES;
+    let tires = TIRES.filter(t => t);
     if (aro) tires = tires.filter(t => t.aro === aro);
     if (largura) tires = tires.filter(t => t.largura === largura);
-    const unique = [...new Set(tires.map(t => t.perfil))].sort((a, b) => a - b);
+    const unique = [...new Set(tires.filter(t => t.perfil).map(t => t.perfil))].sort((a, b) => a - b);
     return unique;
   }, [aro, largura]);
 

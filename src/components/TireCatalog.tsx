@@ -72,6 +72,7 @@ export default function TireCatalog() {
 
   const filteredTires = useMemo(() => {
     return TIRES.filter(tire => {
+      if (!tire) return false;
       const matchesSearch = 
         tire.nome.toLowerCase().includes(search.toLowerCase()) ||
         tire.medida.toLowerCase().includes(search.toLowerCase()) ||

@@ -24,7 +24,7 @@ export default function TireMeasureDetail() {
   // Encontra todos os pneus com essa medida
   const tiresWithMeasure = useMemo(() => {
     return TIRES.filter(t => 
-      t.medida.toUpperCase().replace(/\s/g, '') === normalizedMedida.replace(/\s/g, '')
+      t && t.medida && t.medida.toUpperCase().replace(/\s/g, '') === normalizedMedida.replace(/\s/g, '')
     );
   }, [normalizedMedida]);
 
@@ -123,7 +123,7 @@ export default function TireMeasureDetail() {
     return Array.from(cars).sort();
   }, [tiresWithMeasure]);
 
-  const relatedTires = TIRES.filter(t => t.aro === tire.aro && !tiresWithMeasure.some(tw => tw.id === t.id)).slice(0, 4);
+  const relatedTires = TIRES.filter(t => t && t.aro === tire.aro && !tiresWithMeasure.some(tw => tw.id === t.id)).slice(0, 4);
 
   const whatsappMsg = `Olá! Vi no site os pneus na medida *${normalizedMedida}*. Gostaria de consultar preços e disponibilidade das opções disponíveis.`;
 
