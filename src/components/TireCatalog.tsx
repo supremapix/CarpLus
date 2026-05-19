@@ -85,24 +85,24 @@ export default function TireCatalog() {
 
   const filteredTires = useMemo(() => {
     // Use URL params OR state for filtering
-    let effectiveBrands = selectedBrands;
-    if (urlMarca && selectedBrands.length === 0) {
+    let effectiveBrands = [...selectedBrands];
+    if (urlMarca && effectiveBrands.length === 0) {
       const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
       if (matchedBrand) effectiveBrands = [matchedBrand];
     }
     
-    let effectiveRims = selectedRims;
-    if (urlAro && selectedRims.length === 0) {
+    let effectiveRims = [...selectedRims];
+    if (urlAro && effectiveRims.length === 0) {
       effectiveRims = [parseInt(urlAro)];
     }
     
     let effectiveLargura = selectedLargura;
-    if (urlLargura && !selectedLargura) {
+    if (urlLargura && !effectiveLargura) {
       effectiveLargura = parseInt(urlLargura);
     }
     
     let effectiveAltura = selectedAltura;
-    if (urlAltura && !selectedAltura) {
+    if (urlAltura && !effectiveAltura) {
       effectiveAltura = parseInt(urlAltura);
     }
     
@@ -367,7 +367,7 @@ export default function TireCatalog() {
             {filteredTires.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredTires.map((tire, index) => (
-                  <TireCard key={tire.id} tire={tire} index={index} />
+                  <TireCard key={`${tire.id}-${tire.marca}`} tire={tire} index={index} />
                 ))}
               </div>
             ) : (
