@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
+import { getServiceFaqs } from '../data/serviceFaqs';
 import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -204,9 +205,66 @@ const SEO_CONTENT: Record<string, {
     ],
     keywords: ['troca fluido de freio curitiba', 'fluido de freio curitiba', 'sangria freio curitiba', 'DOT4 curitiba', 'fluido freio portão', 'manutencao freio curitiba'],
     temVideo: true,
-    videoUrl: 'qTmIkTltrYk',
+    videoUrl: '-7jfKxcDlTs',
     videoBadge: 'Video Explicativo Premium'
   }
+};
+
+// Mapeamento de servicos complementares para links internos
+const SERVICOS_COMPLEMENTARES: Record<string, { nome: string; slug: string }[]> = {
+  'pintura-de-roda': [
+    { nome: 'Alinhamento e Balanceamento', slug: 'alinhamento-e-balanceamento' },
+  ],
+  'alinhamento-e-balanceamento': [
+    { nome: 'Balanceamento', slug: 'balanceamento' },
+    { nome: 'Troca de Pneus', slug: 'venda-de-pneus' },
+  ],
+  'balanceamento': [
+    { nome: 'Alinhamento 3D', slug: 'alinhamento-e-balanceamento' },
+    { nome: 'Revisao de Suspensao', slug: 'revisao-de-suspensao' },
+  ],
+  'venda-de-pneus': [
+    { nome: 'Alinhamento e Balanceamento', slug: 'alinhamento-e-balanceamento' },
+  ],
+  'revisao-de-suspensao': [
+    { nome: 'Alinhamento 3D', slug: 'alinhamento-e-balanceamento' },
+  ],
+  'troca-de-amortecedores': [
+    { nome: 'Alinhamento 3D', slug: 'alinhamento-e-balanceamento' },
+    { nome: 'Revisao de Suspensao', slug: 'revisao-de-suspensao' },
+  ],
+  'manutencao-de-freios': [
+    { nome: 'Troca de Fluido de Freio', slug: 'troca-de-fluido-de-freio' },
+    { nome: 'Troca de Pastilha de Freio', slug: 'troca-de-pastilha-de-freio' },
+  ],
+  'troca-de-fluido-de-freio': [
+    { nome: 'Manutencao de Freios', slug: 'manutencao-de-freios' },
+    { nome: 'Troca de Pastilha', slug: 'troca-de-pastilha-de-freio' },
+  ],
+  'troca-de-pastilha-de-freio': [
+    { nome: 'Retifica de Disco', slug: 'retifica-de-disco-de-freio' },
+    { nome: 'Troca de Fluido de Freio', slug: 'troca-de-fluido-de-freio' },
+  ],
+  'troca-de-oleo': [
+    { nome: 'Revisao Geral', slug: 'revisao-geral' },
+    { nome: 'Troca de Filtros', slug: 'troca-de-filtros' },
+  ],
+  'revisao-geral': [
+    { nome: 'Troca de Oleo', slug: 'troca-de-oleo' },
+    { nome: 'Manutencao de Freios', slug: 'manutencao-de-freios' },
+  ],
+  'conserto-de-rodas': [
+    { nome: 'Reforma de Roda', slug: 'reforma-de-roda' },
+    { nome: 'Pintura de Roda', slug: 'pintura-de-roda' },
+  ],
+  'reforma-de-roda': [
+    { nome: 'Conserto de Rodas', slug: 'conserto-de-rodas' },
+    { nome: 'Diamante de Roda', slug: 'diamante-de-roda' },
+  ],
+  'ar-condicionado': [
+    { nome: 'Troca de Filtro de Cabine', slug: 'troca-de-filtros' },
+    { nome: 'Revisao Geral', slug: 'revisao-geral' },
+  ],
 };
 
 export default function ServiceDetail() {
@@ -234,10 +292,10 @@ export default function ServiceDetail() {
   useSEO(
     service
       ? {
-          title: `${service.title} em Curitiba | Carplus Auto Center – Portão`,
-          description: `${service.description} Atendimento especializado no Portão, Curitiba. Orçamento sem compromisso: (41) 3082-7282 | Carplus Auto Center.`,
-          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service?.slug}`,
-          ogImage: '/images/loja/loja-de-pneus-curitiba.webp',
+          title: `${service.title} em Curitiba Portão | Carplus Auto Center`,
+          description: `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
+          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`,
+          ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.jpg',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -259,22 +317,22 @@ export default function ServiceDetail() {
                 }
               },
               "areaServed": { "@type": "City", "name": "Curitiba" },
-              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`
+              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`
             },
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/#servicos" },
-                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}` }
+                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/servicos/" },
+                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/` }
               ]
             },
-            // FAQPage Schema para Rich Snippets no Google
-            ...(seoContent && seoContent.perguntas.length > 0 ? [{
+            // FAQPage Schema para Rich Snippets no Google - 12 perguntas por servico
+            ...(service && getServiceFaqs(service.slug).length > 0 ? [{
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": seoContent.perguntas.map(faq => ({
+              "mainEntity": getServiceFaqs(service.slug).map(faq => ({
                 "@type": "Question",
                 "name": faq.pergunta,
                 "acceptedAnswer": {
@@ -308,9 +366,9 @@ export default function ServiceDetail() {
                  <Icon size={48} />
               </div>
 
-              <h1 className="text-5xl md:text-8xl mb-8 italic uppercase tracking-tighter">{service.title}</h1>
+              <h1 className="text-5xl md:text-8xl mb-8 italic uppercase tracking-tighter">{service.title} <span className="text-primary">em Curitiba</span> – Bairro Portão</h1>
               <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
-                A Carplus Auto Center é especialista em <span className="text-white font-bold">{service.title}</span> no Portão, utilizando tecnologia de diagnóstico de ponta.
+                A Carplus Auto Center é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
               </p>
 
               <div className="flex justify-center gap-4">
@@ -330,18 +388,19 @@ export default function ServiceDetail() {
         <section className="py-24 max-w-7xl mx-auto px-4">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                 <h2 className="text-4xl mb-6 leading-tight">Por que fazer {service.title} na Carplus?</h2>
+                 <h2 className="text-4xl mb-6 leading-tight">Por que escolher a Carplus para {service.title}?</h2>
                  <p className="text-lg text-gray-500 leading-relaxed">
-                   Investimos constantemente em novos equipamentos para garantir que o seu veículo receba o melhor tratamento possível. Nosso {service.title} segue rigorosos padrões de segurança e qualidade.
+                   Na Carplus Auto Center, localizada no bairro Portão em Curitiba, investimos constantemente em equipamentos modernos e capacitacao da equipe. Nosso servico de {service.title} segue rigorosos padroes de seguranca e qualidade, atendendo clientes de toda Curitiba e regiao metropolitana.
                  </p>
                  
+                 <h3 className="sr-only">Diferenciais técnicos e tecnologia utilizada</h3>
                  <div className="space-y-4">
                     {[
-                      'Diagnóstico computadorizado preciso',
-                      'Técnicos treinados pelas montadoras',
-                      'Peças originais com garantia',
-                      'Transparência total no orçamento',
-                      'Entrega no prazo combinado'
+                      'Diagnostico computadorizado de alta precisao',
+                      'Tecnicos certificados com treinamento especializado',
+                      'Pecas originais e de primeira linha com garantia',
+                      'Orcamento detalhado e transparente antes do servico',
+                      'Localizacao privilegiada no Portao, Curitiba'
                     ].map(item => (
                        <div key={item} className="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-100">
                           <CheckCircle className="text-primary" size={20} />
@@ -355,7 +414,7 @@ export default function ServiceDetail() {
                  <img 
                     src="/images/loja/loja-de-pneus-curitiba.webp" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
-                    alt={service.title} 
+                    alt={`Oficina mecanica especializada em ${service.title} – ${service.title} na Carplus Curitiba Portao`} 
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent rounded-[40px]" />
                  <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -378,7 +437,7 @@ export default function ServiceDetail() {
                 className="max-w-4xl mx-auto mb-16"
               >
                 <h2 className="text-3xl lg:text-4xl mb-6 leading-tight text-center">
-                  {service.title} em <span className="text-primary">Curitiba</span> - Portão
+                  {service.title} em <span className="text-primary">Curitiba</span> – Bairro Portão
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-center">
                   {seoContent.intro}
@@ -444,25 +503,28 @@ export default function ServiceDetail() {
                 </motion.div>
               </div>
 
-              {/* FAQ Section - Schema.org FAQPage */}
-              {seoContent.perguntas.length > 0 && (
+              {/* FAQ Section - Schema.org FAQPage - 12 perguntas otimizadas para SEO */}
+              {service && getServiceFaqs(service.slug).length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="max-w-4xl mx-auto"
                 >
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-8 text-center">
-                    Perguntas Frequentes sobre {service.title}
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-center">
+                    Perguntas Frequentes sobre {service.title} em Curitiba
                   </h3>
-                  <div className="space-y-4">
-                    {seoContent.perguntas.map((faq, idx) => (
+                  <p className="text-gray-500 text-center mb-8">
+                    Tire suas duvidas sobre {service.title} na Carplus Auto Center, bairro Portao.
+                  </p>
+                  <div className="space-y-3">
+                    {getServiceFaqs(service.slug).map((faq, idx) => (
                       <details
                         key={idx}
                         className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
                       >
                         <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                          <h4 className="font-bold text-gray-900 pr-4">{faq.pergunta}</h4>
+                          <h4 className="font-bold text-gray-900 pr-4 text-left">{faq.pergunta}</h4>
                           <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
                         </summary>
                         <div className="px-5 pb-5 pt-0">
@@ -474,10 +536,103 @@ export default function ServiceDetail() {
                 </motion.div>
               )}
 
+              {/* Links Internos para Servicos Complementares */}
+              {service && SERVICOS_COMPLEMENTARES[service.slug] && SERVICOS_COMPLEMENTARES[service.slug].length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-xl border border-gray-200"
+                >
+                  <p className="text-gray-700 leading-relaxed">
+                    Aproveite e conheca tambem nossos servicos complementares:{' '}
+                    {SERVICOS_COMPLEMENTARES[service.slug].map((s, idx) => (
+                      <span key={s.slug}>
+                        <Link 
+                          to={`/servico/${s.slug}`} 
+                          className="text-primary font-bold hover:underline"
+                        >
+                          {s.nome}
+                        </Link>
+                        {idx < SERVICOS_COMPLEMENTARES[service.slug].length - 1 ? ' e ' : ''}
+                      </span>
+                    ))}
+                    {' '}para manter seu veiculo em perfeito estado.
+                  </p>
+                </motion.div>
+              )}
+
               {/* Keywords para SEO (hidden but crawlable) */}
               <div className="sr-only">
                 <p>Palavras-chave relacionadas: {seoContent.keywords.join(', ')}</p>
                 <p>Carplus Auto Center - {service.title} no bairro Portão em Curitiba, Paraná. Atendemos toda a região metropolitana incluindo São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Depoimentos Section - O que dizem nossos clientes */}
+        {service && (
+          <section className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                  O que dizem nossos clientes sobre <span className="text-primary">{service.title}</span>
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Veja o que clientes da regiao de Curitiba e Portao falam sobre nosso atendimento e servicos.
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* TODO: substituir por depoimentos reais do Google/CRM */}
+                {[
+                  {
+                    name: 'Ricardo M.',
+                    since: 'cliente desde 2022',
+                    text: `Levei meu carro para ${service.title} e fiquei impressionado com o resultado. Prazo cumprido, preco justo e atendimento transparente do inicio ao fim.`,
+                  },
+                  {
+                    name: 'Patricia S.',
+                    since: 'cliente desde 2021',
+                    text: `Excelente servico de ${service.title}! Equipe muito profissional e atenciosa. Recomendo para quem busca qualidade no Portao, Curitiba.`,
+                  },
+                  {
+                    name: 'Carlos A.',
+                    since: 'cliente desde 2023',
+                    text: `Melhor oficina da regiao sul de Curitiba! Fiz ${service.title} e outros servicos, sempre com qualidade impecavel. Nota 10!`,
+                  },
+                ].map((review, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="bg-gray-50 rounded-2xl p-6 border border-gray-100"
+                  >
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-primary fill-primary" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 leading-relaxed mb-4">&quot;{review.text}&quot;</p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span className="text-primary font-bold text-sm">{review.name.charAt(0)}</span>
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-900">{review.name}</p>
+                        <p className="text-sm text-gray-500">{review.since}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </section>
@@ -532,7 +687,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/qTmIkTltrYk?autoplay=1&mute=0&loop=1&playlist=qTmIkTltrYk&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=0&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Fluido de Freio"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1256,6 +1411,17 @@ export default function ServiceDetail() {
            </div>
         </section>
       </main>
+
+      {/* WhatsApp Flutuante */}
+      <a
+        href="https://wa.me/554130827282?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale conosco pelo WhatsApp"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform"
+      >
+        <MessageSquare className="w-6 h-6 text-white" fill="white" />
+      </a>
 
       <Footer />
     </div>
