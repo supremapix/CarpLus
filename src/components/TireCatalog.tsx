@@ -71,7 +71,7 @@ export default function TireCatalog() {
   }, [searchParams]);
 
   const filteredTires = useMemo(() => {
-    return TIRES.filter(tire => {
+    const result = TIRES.filter(tire => {
       if (!tire) return false;
       const matchesSearch = 
         tire.nome.toLowerCase().includes(search.toLowerCase()) ||
@@ -93,6 +93,14 @@ export default function TireCatalog() {
       // Default: ordenar por marca para agrupar os pneus de cada marca juntos
       return a.marca.localeCompare(b.marca) || a.aro - b.aro;
     });
+    
+    // Debug: log first 5 tires when brand filter is active
+    if (selectedBrands.length > 0) {
+      console.log("[v0] Selected brands:", selectedBrands);
+      console.log("[v0] First 5 filtered tires:", result.slice(0, 5).map(t => ({ id: t.id, nome: t.nome, marca: t.marca })));
+    }
+    
+    return result;
   }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
 
   const toggleFilter = (list: any[], setList: Function, value: any) => {
