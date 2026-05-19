@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, Star, Tag, CarFront } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -17,40 +17,44 @@ const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Pr
 export default function TireCatalog() {
   const [searchParams] = useSearchParams();
   
-  // Initialize state from URL params synchronously to avoid race condition
-  const getInitialBrand = () => {
-    const marca = searchParams.get('marca');
-    if (marca) {
-      const matchedBrand = BRANDS.find(b => b.toLowerCase() === marca.toLowerCase());
-      if (matchedBrand) return [matchedBrand];
-    }
-    return [];
-  };
-  
-  const getInitialRim = () => {
-    const aro = searchParams.get('aro');
-    return aro ? [parseInt(aro)] : [];
-  };
-  
-  const getInitialLargura = () => {
-    const largura = searchParams.get('largura');
-    return largura ? parseInt(largura) : null;
-  };
-  
-  const getInitialAltura = () => {
-    const altura = searchParams.get('altura');
-    return altura ? parseInt(altura) : null;
-  };
+  // Get URL params directly
+  const urlMarca = searchParams.get('marca');
+  const urlAro = searchParams.get('aro');
+  const urlLargura = searchParams.get('largura');
+  const urlAltura = searchParams.get('altura');
   
   const [search, setSearch] = useState("");
-  const [selectedBrands, setSelectedBrands] = useState<string[]>(getInitialBrand);
-  const [selectedRims, setSelectedRims] = useState<number[]>(getInitialRim);
-  const [selectedLargura, setSelectedLargura] = useState<number | null>(getInitialLargura);
-  const [selectedAltura, setSelectedAltura] = useState<number | null>(getInitialAltura);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>(() => {
+    if (urlMarca) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
+      return matchedBrand ? [matchedBrand] : [];
+    }
+    return [];
+  });
+  const [selectedRims, setSelectedRims] = useState<number[]>(() => {
+    return urlAro ? [parseInt(urlAro)] : [];
+  });
+  const [selectedLargura, setSelectedLargura] = useState<number | null>(() => {
+    return urlLargura ? parseInt(urlLargura) : null;
+  });
+  const [selectedAltura, setSelectedAltura] = useState<number | null>(() => {
+    return urlAltura ? parseInt(urlAltura) : null;
+  });
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<string[]>([]);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortBy, setSortBy] = useState("relevance");
+
+  // Sync state when URL params change (for navigation within the app)
+  useEffect(() => {
+    if (urlMarca) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
+      if (matchedBrand) setSelectedBrands([matchedBrand]);
+    }
+    if (urlAro) setSelectedRims([parseInt(urlAro)]);
+    if (urlLargura) setSelectedLargura(parseInt(urlLargura));
+    if (urlAltura) setSelectedAltura(parseInt(urlAltura));
+  }, [urlMarca, urlAro, urlLargura, urlAltura]);
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
@@ -80,6 +84,28 @@ export default function TireCatalog() {
   });
 
   const filteredTires = useMemo(() => {
+    // Use URL params OR state for filtering
+    let effectiveBrands = [...selectedBrands];
+    if (urlMarca && effectiveBrands.length === 0) {
+      const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
+      if (matchedBrand) effectiveBrands = [matchedBrand];
+    }
+    
+    let effectiveRims = [...selectedRims];
+    if (urlAro && effectiveRims.length === 0) {
+      effectiveRims = [parseInt(urlAro)];
+    }
+    
+    let effectiveLargura = selectedLargura;
+    if (urlLargura && !effectiveLargura) {
+      effectiveLargura = parseInt(urlLargura);
+    }
+    
+    let effectiveAltura = selectedAltura;
+    if (urlAltura && !effectiveAltura) {
+      effectiveAltura = parseInt(urlAltura);
+    }
+    
     const result = TIRES.filter(tire => {
       if (!tire) return false;
       const matchesSearch = 
@@ -87,10 +113,10 @@ export default function TireCatalog() {
         tire.medida.toLowerCase().includes(search.toLowerCase()) ||
         tire.carros.some(c => c.toLowerCase().includes(search.toLowerCase()));
       
-      const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(tire.marca);
-      const matchesRim = selectedRims.length === 0 || selectedRims.includes(tire.aro);
-      const matchesLargura = !selectedLargura || tire.largura === selectedLargura;
-      const matchesAltura = !selectedAltura || tire.perfil === selectedAltura;
+      const matchesBrand = effectiveBrands.length === 0 || effectiveBrands.includes(tire.marca);
+      const matchesRim = effectiveRims.length === 0 || effectiveRims.includes(tire.aro);
+      const matchesLargura = !effectiveLargura || tire.largura === effectiveLargura;
+      const matchesAltura = !effectiveAltura || tire.perfil === effectiveAltura;
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(tire.categoria);
       const matchesVehicle = selectedVehicleTypes.length === 0 || tire.tipoVeiculo.some(v => selectedVehicleTypes.includes(v));
 
@@ -104,7 +130,7 @@ export default function TireCatalog() {
     });
     
     return result;
-  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy]);
+  }, [search, selectedBrands, selectedRims, selectedLargura, selectedAltura, selectedCategories, selectedVehicleTypes, sortBy, urlMarca, urlAro, urlLargura, urlAltura]);
 
   const toggleFilter = (list: any[], setList: Function, value: any) => {
     if (list.includes(value)) {
@@ -341,7 +367,7 @@ export default function TireCatalog() {
             {filteredTires.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredTires.map((tire, index) => (
-                  <TireCard key={tire.id} tire={tire} index={index} />
+                  <TireCard key={`${tire.id}-${tire.marca}`} tire={tire} index={index} />
                 ))}
               </div>
             ) : (
