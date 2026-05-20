@@ -72,7 +72,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.href}
                 onClick={(e: any) => handleLinkClick(e, link.href)}
-                className="font-display text-lg uppercase tracking-tight hover:text-primary transition-colors text-white"
+                className="font-display text-sm uppercase tracking-tight hover:text-primary transition-colors text-white"
               >
                 {link.name}
               </Link>
@@ -128,7 +128,7 @@ export default function Navbar() {
                     key={link.name}
                     to={link.href}
                     onClick={(e: any) => handleLinkClick(e, link.href)}
-                    className="font-display text-4xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
+                    className="font-display text-2xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
                   >
                     {link.name}
                   </Link>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 <Link
                   to="/contato"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-display text-4xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
+                  className="font-display text-2xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
                 >
                   Contato
                 </Link>

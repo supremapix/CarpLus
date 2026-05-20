@@ -139,10 +139,10 @@ export default function ServicesGrid() {
     <section id="servicos" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
+          <div className="max-w-2xl text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 leading-none font-bold">
-              Serviços <span className="text-primary italic">Full Service</span>
+              Serviços <br className="md:hidden" /><span className="text-primary italic">Full Service</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light">
               Oficina mecânica completa para todas as marcas nacionais e importadas.
@@ -259,13 +259,13 @@ export default function ServicesGrid() {
 
         {/* Diagnostic Banner */}
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-           <div className="bg-dark text-white p-8 md:p-12 rounded-3xl md:rounded-[40px] flex flex-col justify-center">
-              <div className="inline-block bg-primary/20 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-primary mb-6 rounded self-start">
+           <div className="bg-dark text-white p-8 md:p-12 rounded-3xl md:rounded-[40px] flex flex-col justify-center items-center text-center">
+              <div className="inline-block bg-primary/20 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-primary mb-6 rounded">
                  Scanner Automotivo Profissional
               </div>
-              <h3 className="text-3xl md:text-4xl mb-4 md:mb-6 leading-none font-bold">Diagnóstico <br/> <span className="text-primary italic">Computadorizado</span></h3>
-              <p className="text-base md:text-lg text-white/70 mb-6 md:mb-8">Utilizamos equipamentos de última geração para identificar com precisão qualquer problema no sistema eletrônico do seu veículo.</p>
-              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6 leading-none font-bold">Diagnóstico <br/> <span className="text-primary italic">Computadorizado</span></h3>
+              <p className="text-sm sm:text-base md:text-lg text-white/70 mb-6 md:mb-8 max-w-md">Utilizamos equipamentos de última geração para identificar com precisão qualquer problema no sistema eletrônico do seu veículo.</p>
+              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8 text-left">
                  {[
                    'Leitura de Injeção Eletrônica',
                    'Reset de Mensagens no Painel', 
@@ -282,7 +282,7 @@ export default function ServicesGrid() {
               </div>
               <Link 
                 to="/servico/scanner-automotivo"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black font-bold uppercase tracking-widest text-xs px-6 py-4 rounded-xl transition-all self-start"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black font-bold uppercase tracking-widest text-xs px-6 py-4 rounded-xl transition-all"
               >
                 Agendar Diagnóstico <LucideIcons.ArrowRight size={14} />
               </Link>

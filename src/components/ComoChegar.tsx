@@ -69,10 +69,10 @@ export default function ComoChegar() {
             <span className="text-white/20">›</span>
             <span className="text-white/60">Como Chegar</span>
           </nav>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic text-center">
             Como <span className="text-primary">Chegar</span>
           </h1>
-          <p className="text-lg text-white/55 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-white/55 max-w-xl mx-auto leading-relaxed text-center">
             Estamos no coração do Portão, de fácil acesso de toda Curitiba e região metropolitana.
           </p>
         </div>
@@ -141,7 +141,7 @@ export default function ComoChegar() {
       {/* Routes */}
       <section className="py-16 px-4 bg-[#242424]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-display text-4xl font-black uppercase tracking-tighter text-white text-center mb-12 italic">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter text-white text-center mb-12 italic">
             Como Chegar de <span className="text-primary">Carro</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -197,7 +197,7 @@ export default function ComoChegar() {
       {/* FAQ */}
       <section className="py-16 px-4 bg-[#242424]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl font-black uppercase tracking-tighter text-white text-center mb-10 italic">
+          <h2 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tighter text-white text-center mb-10 italic">
             Dúvidas sobre <span className="text-primary">Localização</span>
           </h2>
           <div className="space-y-3">

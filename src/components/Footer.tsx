@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 mb-20 relative z-10">
          <div className="bg-primary p-10 md:p-14 rounded-[32px] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl shadow-primary/30">
             <div className="text-center lg:text-left">
-               <h2 className="text-4xl lg:text-5xl mb-3 leading-tight text-black">Precisa de Pneus <br /> ou Oficina?</h2>
+               <h2 className="text-4xl lg:text-5xl mb-3 leading-tight text-black font-black">Precisa de Pneus <br /> ou Oficina?</h2>
                <p className="text-black/70 text-base font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
@@ -46,7 +46,7 @@ export default function Footer() {
 
          {/* Links & Services */}
          <div className="w-full">
-            <h4 className="font-accent text-lg uppercase tracking-widest mb-6 text-primary font-black">Nossos Serviços</h4>
+            <h4 className="font-display text-lg uppercase tracking-widest mb-6 text-primary font-black">Nossos Serviços</h4>
             <ul className="space-y-3 text-sm font-medium max-h-80 overflow-y-auto pr-2 scrollbar-thin">
                {SERVICE_CATEGORIES.flatMap(category => 
                  category.services.map(service => (
@@ -69,7 +69,7 @@ export default function Footer() {
 
          {/* Contact Info */}
          <div className="w-full">
-            <h4 className="font-accent text-2xl uppercase tracking-widest mb-10 text-primary font-black">Onde Estamos</h4>
+            <h4 className="font-display text-2xl uppercase tracking-widest mb-10 text-primary font-black">Onde Estamos</h4>
             <ul className="space-y-10 text-white/80">
                <li className="flex flex-col md:flex-row items-center md:items-start gap-6">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 border border-primary/20">
@@ -100,7 +100,7 @@ export default function Footer() {
 
          {/* Trust & Social */}
          <div className="space-y-8 w-full">
-            <h4 className="font-accent text-xl uppercase tracking-widest mb-8 text-primary font-bold">Siga-nos</h4>
+            <h4 className="font-display text-xl uppercase tracking-widest mb-8 text-primary font-bold">Siga-nos</h4>
             <div className="flex justify-center md:justify-start gap-6 mb-8">
                <a href="https://www.instagram.com/carpluscwb/" target="_blank" className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all shadow-lg">
                   <Instagram size={32} />

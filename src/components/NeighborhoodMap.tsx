@@ -205,7 +205,7 @@ export default function NeighborhoodMap() {
             <MapPin size={28} className="text-primary" />
           </div>
           <div className="text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-black group-hover:text-primary transition-colors">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-black group-hover:text-primary transition-colors text-center md:text-left">
               Estamos no Centro de Tudo
             </h2>
             <p className="text-white/50 text-base sm:text-lg md:text-xl font-light hidden md:block">

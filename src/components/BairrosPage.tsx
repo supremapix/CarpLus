@@ -95,10 +95,10 @@ export default function BairrosPage() {
             <span className="text-white/20">›</span>
             <span className="text-white/60">Bairros Atendidos</span>
           </nav>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic text-center">
             Bairros <span className="text-primary">Atendidos</span>
           </h1>
-          <p className="text-lg text-white/55 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-white/55 max-w-xl mx-auto leading-relaxed text-center">
             Atendemos {BAIRROS.length}+ bairros de Curitiba e toda a região metropolitana
           </p>
         </div>
@@ -218,7 +218,7 @@ export default function BairrosPage() {
       {/* FAQ */}
       <section className="py-16 px-4 bg-[#242424]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl font-black uppercase tracking-tighter text-white text-center mb-10 italic">
+          <h2 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tighter text-white text-center mb-10 italic">
             Dúvidas sobre <span className="text-primary">Atendimento</span>
           </h2>
           <div className="space-y-3">
