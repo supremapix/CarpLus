@@ -267,7 +267,7 @@ export default function TireDetail() {
                             <span className="bg-gray-100 text-gray-500 px-3 py-1 rounded-lg text-xs font-bold uppercase italic tracking-tighter">{tire.categoria}</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase tracking-tighter italic leading-none">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase tracking-tight italic leading-tight">
                             {tire.nome}
                         </h1>
 
@@ -333,7 +333,7 @@ export default function TireDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {/* Specs Table */}
             <div className="lg:col-span-2 bg-white rounded-[2rem] p-8 md:p-12 shadow-xl">
-                 <h2 className="text-3xl font-bold mb-8 uppercase italic tracking-tighter flex items-center gap-3">
+                 <h2 className="text-2xl md:text-3xl font-semibold mb-8 uppercase italic tracking-tight leading-snug flex items-center gap-3">
                     <Award className="text-primary" size={32} /> Especificações Técnicas
                  </h2>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
@@ -361,7 +361,7 @@ export default function TireDetail() {
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                     <CarFront size={120} />
                 </div>
-                <h2 className="text-3xl font-bold mb-8 uppercase italic tracking-tighter relative z-10">Carros <br/> Compatíveis</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-8 uppercase italic tracking-tight leading-snug relative z-10">Carros <br/> Compatíveis</h2>
                 <div className="space-y-3 relative z-10">
                     {tire.carros.map((car, i) => (
                         <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/10 transition-all cursor-default group">
@@ -388,7 +388,7 @@ export default function TireDetail() {
                 />
             </div>
             <div className="max-w-4xl mx-auto text-center relative z-10">
-                <h2 className="text-4xl md:text-7xl font-bold mb-8 uppercase tracking-tighter italic leading-none text-black">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 uppercase tracking-normal italic leading-snug text-black">
                    Por que comprar na Carplus Portão?
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -434,7 +434,7 @@ export default function TireDetail() {
         {relatedTires.length > 0 && (
             <section className="mb-20 px-4">
                 <div className="flex items-center justify-between mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter italic leading-none">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight italic leading-snug">
                         Outras Opções <span className="text-primary italic">Aro {tire.aro}</span>
                     </h2>
                     <Link to="/pneus" className="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2">

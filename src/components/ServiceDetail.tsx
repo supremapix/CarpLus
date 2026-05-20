@@ -366,7 +366,7 @@ export default function ServiceDetail() {
                  <Icon size={48} />
               </div>
 
-              <h1 className="text-5xl md:text-8xl mb-8 italic uppercase tracking-tighter">{service.title} <span className="text-primary">em Curitiba</span> – Bairro Portão</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 italic uppercase tracking-tight font-bold leading-tight">{service.title} <span className="text-primary">em Curitiba</span> – Bairro Portão</h1>
               <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
                 A Carplus Auto Center é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
               </p>
@@ -388,7 +388,7 @@ export default function ServiceDetail() {
         <section className="py-24 max-w-7xl mx-auto px-4">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                 <h2 className="text-4xl mb-6 leading-tight">Por que escolher a Carplus para {service.title}?</h2>
+                 <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-semibold tracking-tight">Por que escolher a Carplus para {service.title}?</h2>
                  <p className="text-lg text-gray-500 leading-relaxed">
                    Na Carplus Auto Center, localizada no bairro Portão em Curitiba, investimos constantemente em equipamentos modernos e capacitacao da equipe. Nosso servico de {service.title} segue rigorosos padroes de seguranca e qualidade, atendendo clientes de toda Curitiba e regiao metropolitana.
                  </p>
@@ -436,7 +436,7 @@ export default function ServiceDetail() {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto mb-16"
               >
-                <h2 className="text-3xl lg:text-4xl mb-6 leading-tight text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-semibold tracking-tight text-center">
                   {service.title} em <span className="text-primary">Curitiba</span> – Bairro Portão
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-center">
@@ -661,7 +661,7 @@ export default function ServiceDetail() {
                   <Play size={12} fill="currentColor" />
                   Video Explicativo Premium
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-normal text-white mb-6 italic leading-snug">
                   Veja <span className="text-primary">Como Funciona</span>
                 </h2>
                 <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -881,7 +881,7 @@ export default function ServiceDetail() {
                   <Play size={12} fill="currentColor" />
                   Video Explicativo Premium
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-normal text-white mb-6 italic leading-snug">
                   Troca de <span className="text-primary">Oleo e Filtros</span>
                 </h2>
                 <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -1077,7 +1077,7 @@ export default function ServiceDetail() {
                   <Play size={12} fill="currentColor" />
                   Video Premium Exclusivo
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white mb-6 italic leading-[0.9]">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-normal text-white mb-6 italic leading-snug">
                   Suspensao e Freios <span className="text-primary">em Acao</span>
                 </h2>
                 <p className="text-white/50 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">

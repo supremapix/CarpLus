@@ -163,7 +163,7 @@ export default function NeighborhoodDetail() {
               </Link>
               
               {/* H1 Principal - SEO */}
-              <h1 className="text-4xl md:text-7xl lg:text-8xl mb-4 leading-none font-black">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight font-bold">
                 {seoContent.h1.split(bairro.name)[0]}
                 <span className="text-primary italic">{bairro.name}</span>
               </h1>
@@ -211,7 +211,7 @@ export default function NeighborhoodDetail() {
                   <div className="w-12 h-1 bg-primary" />
                   <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Sobre o atendimento</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-black mb-6 text-dark">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-snug tracking-tight text-dark">
                   Loja de Pneus e Oficina para <span className="text-primary">{bairro.name}</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
@@ -301,7 +301,7 @@ export default function NeighborhoodDetail() {
                       <div className="w-12 h-1 bg-primary" />
                       <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Localização</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-black mb-6 text-dark">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-snug tracking-tight text-dark">
                       Como Chegar do <span className="text-primary">{bairro.name}</span>
                     </h2>
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">
