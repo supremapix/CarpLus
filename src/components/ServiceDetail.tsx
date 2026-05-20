@@ -351,12 +351,12 @@ export default function ServiceDetail() {
   const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Wrench;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-dark min-h-screen">
       <Navbar />
       
-      <main className="pt-[100px] md:pt-[90px]">
+      <main>
         {/* Hero */}
-        <section className="relative py-24 bg-dark text-white overflow-hidden">
+        <section className="relative pt-[140px] md:pt-[130px] pb-24 bg-dark text-white overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
               <Link to="/#servicos" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:transform hover:translate-x-[-4px] transition-all">
                  <ArrowLeft size={16} /> Voltar para serviços
