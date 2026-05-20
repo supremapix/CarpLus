@@ -53,7 +53,7 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 mt-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 mt-10 md:mt-6">
             {[
               { icon: Star, text: 'Referência em Curitiba' },
               { icon: MapPin, text: 'Portão – Curitiba' },
