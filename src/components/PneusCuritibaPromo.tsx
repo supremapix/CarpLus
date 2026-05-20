@@ -195,14 +195,14 @@ export default function PneusCuritibaPromo() {
             {/* Highlight Box */}
             <div className="bg-dark text-white p-8 rounded-3xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-              <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 uppercase italic tracking-tight">
-                  Promoção <span className="text-primary">Relâmpago</span>
+              <div className="relative z-10 text-center">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 uppercase italic tracking-tight">
+                  Promoção <br /><span className="text-primary">Relâmpago</span>
                 </h3>
-                <p className="text-white/70 mb-6 text-lg">
+                <p className="text-white/70 mb-6 text-base sm:text-lg">
                   Troque 4 pneus e ganhe alinhamento 3D + balanceamento. Válido para todas as marcas em estoque.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     to="/pneus"
                     className="bg-primary text-black px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/30"
