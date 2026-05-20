@@ -351,12 +351,12 @@ export default function ServiceDetail() {
   const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Wrench;
 
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="min-h-screen bg-dark">
       <Navbar />
       
-      <main>
+      <main className="bg-white">
         {/* Hero */}
-        <section className="relative pt-[140px] md:pt-[130px] pb-24 bg-dark text-white overflow-hidden">
+        <section className="relative pt-[120px] md:pt-[108px] pb-24 bg-dark text-white overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
               <Link to="/#servicos" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:transform hover:translate-x-[-4px] transition-all">
                  <ArrowLeft size={16} /> Voltar para serviços
@@ -388,7 +388,7 @@ export default function ServiceDetail() {
         <section className="py-24 max-w-7xl mx-auto px-4">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                 <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-semibold tracking-tight">Por que escolher a Carplus para {service.title}?</h2>
+                 <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-bold tracking-tight">Por que escolher a Carplus para {service.title}?</h2>
                  <p className="text-lg text-gray-500 leading-relaxed">
                    Na Carplus Auto Center, localizada no bairro Portão em Curitiba, investimos constantemente em equipamentos modernos e capacitacao da equipe. Nosso servico de {service.title} segue rigorosos padroes de seguranca e qualidade, atendendo clientes de toda Curitiba e regiao metropolitana.
                  </p>
