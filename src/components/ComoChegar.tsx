@@ -2,27 +2,9 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import { MapPin, Phone, Clock, Star, Navigation, ChevronDown, ChevronUp } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-
-// Fix leaflet default icon
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: '/images/leaflet/marker-icon-2x.png',
-  iconUrl: '/images/leaflet/marker-icon.png',
-  shadowUrl: '/images/leaflet/marker-shadow.png',
-});
-
-const carplusIcon = L.divIcon({
-  className: '',
-  html: `<div style="background:#1A1A1A;border:2px solid #FFD600;border-radius:10px;padding:6px 10px;white-space:nowrap;font-family:sans-serif;font-size:11px;font-weight:900;color:#FFD600;box-shadow:0 4px 20px rgba(0,0,0,0.5);">📍 CARPLUS</div>`,
-  iconAnchor: [50, 36],
-  popupAnchor: [0, -36],
-});
 
 const ROTAS = [
   {
@@ -144,19 +126,15 @@ export default function ComoChegar() {
       {/* Map */}
       <section className="py-8 px-4 bg-[#1a1a1a]">
         <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ height: 420 }}>
-          <MapContainer center={[-25.477, -49.2845]} zoom={15} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
-            <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-              attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-            />
-            <Marker position={[-25.477, -49.2845]} icon={carplusIcon}>
-              <Popup>
-                <strong>Carplus Auto Center</strong><br />
-                Av. Arthur da Silva Bernardes, 1323<br />
-                Portão – Curitiba
-              </Popup>
-            </Marker>
-          </MapContainer>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.240580658666!2d-49.30287292373215!3d-25.46364093422533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce31ec1ad6641%3A0xa51067e0d7b484af!2sCarplus%20Pneus%20e%20Oficina%20Mec%C3%A2nica!5e0!3m2!1spt-BR!2sbr!4v1779235735934!5m2!1spt-BR!2sbr"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
 

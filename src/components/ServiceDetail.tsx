@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { SERVICES } from '../data';
+import { SERVICES, TIRES, NEIGHBORHOODS } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
 import { getServiceFaqs } from '../data/serviceFaqs';
 import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer } from 'lucide-react';
@@ -425,7 +425,7 @@ export default function ServiceDetail() {
            </div>
         </section>
 
-        {/* SEO Content Section - Conteúdo otimizado para Google e Bing */}
+        {/* SEO Content Section - Conte��do otimizado para Google e Bing */}
         {seoContent && (
           <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4">
@@ -1409,6 +1409,95 @@ export default function ServiceDetail() {
                  </motion.a>
               </div>
            </div>
+        </section>
+
+        {/* Seção de Pneus em Destaque - SEO Internal Linking */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-1 bg-primary" />
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Pneus</span>
+                <div className="w-12 h-1 bg-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-dark">
+                Pneus em <span className="text-primary italic">Destaque</span>
+              </h2>
+              <p className="text-gray-500 mt-4">Aproveite para conhecer nossos pneus das melhores marcas</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {TIRES.filter(t => t && t.destaque).slice(0, 6).map((tire) => (
+                <Link 
+                  key={tire.id} 
+                  to={`/pneu/${tire.slug}`}
+                  className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/30 transition-all group"
+                >
+                  <div className="aspect-square mb-3 overflow-hidden rounded-xl bg-gray-50">
+                    <img 
+                      src={tire.imagem} 
+                      alt={tire.nome}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase">{tire.marca}</p>
+                  <p className="text-sm font-bold text-dark truncate">{tire.medida}</p>
+                  <p className="text-xs text-gray-500 truncate">{tire.linha}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link 
+                to="/pneus"
+                className="inline-flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full font-bold uppercase tracking-tight hover:bg-yellow-400 transition-all shadow-lg"
+              >
+                Ver Todos os Pneus <ChevronRight size={20} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Bairros e Cidades Atendidas - SEO Internal Linking */}
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-1 bg-primary" />
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Cobertura</span>
+                <div className="w-12 h-1 bg-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-dark">
+                Atendemos <span className="text-primary italic">Toda Curitiba</span>
+              </h2>
+              <p className="text-gray-500 mt-4">{service.title} para moradores de todos os bairros e cidades da regiao</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {NEIGHBORHOODS.slice(0, 18).map((neighborhood) => {
+                const neighborhoodSlug = neighborhood.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+                return (
+                  <Link 
+                    key={neighborhood.name}
+                    to={`/bairro/${neighborhoodSlug}`}
+                    className="bg-gray-50 hover:bg-primary/10 border border-gray-100 hover:border-primary/30 rounded-xl p-3 transition-all group text-center"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <MapPin size={14} className="text-primary flex-shrink-0" />
+                      <span className="text-sm font-medium text-dark group-hover:text-primary transition-colors truncate">{neighborhood.name}</span>
+                    </div>
+                    <span className="text-[10px] text-gray-400">{neighborhood.tempo}</span>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <Link 
+                to="/como-chegar"
+                className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+              >
+                Ver todos os bairros atendidos <ChevronRight size={16} />
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
 
