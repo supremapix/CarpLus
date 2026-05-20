@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { NEIGHBORHOODS } from '../data';
-import { Navigation, ArrowLeft, Clock, MapPin, MessageSquare, Star, ChevronDown, Phone, CheckCircle, Wrench, Car, Shield, CreditCard, Award } from 'lucide-react';
+import { NEIGHBORHOODS, TIRES } from '../data';
+import { Navigation, ArrowLeft, Clock, MapPin, MessageSquare, Star, ChevronDown, Phone, CheckCircle, Wrench, Car, Shield, CreditCard, Award, ChevronRight } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion, AnimatePresence } from 'motion/react';
@@ -561,6 +561,52 @@ export default function NeighborhoodDetail() {
             <p className="text-center text-gray-400 text-sm mt-8">
               A Carplus Auto Center atende {bairro.name} e toda Curitiba com pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e mais.
             </p>
+          </div>
+        </section>
+
+        {/* Seção de Pneus em Destaque - SEO Internal Linking */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-1 bg-primary" />
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Pneus</span>
+                <div className="w-12 h-1 bg-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-dark">
+                Pneus Disponíveis para <span className="text-primary italic">{bairro.name}</span>
+              </h2>
+              <p className="text-gray-500 mt-4">Entrega e montagem para moradores do {bairro.name} e região</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {TIRES.filter(t => t && t.destaque).slice(0, 12).map((tire) => (
+                <Link 
+                  key={tire.id} 
+                  to={`/pneu/${tire.slug}`}
+                  className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/30 transition-all group"
+                >
+                  <div className="aspect-square mb-3 overflow-hidden rounded-xl bg-gray-50">
+                    <img 
+                      src={tire.imagem} 
+                      alt={`${tire.nome} para ${bairro.name}`}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase">{tire.marca}</p>
+                  <p className="text-sm font-bold text-dark truncate">{tire.medida}</p>
+                  <p className="text-xs text-gray-500 truncate">{tire.linha}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link 
+                to="/pneus"
+                className="inline-flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full font-bold uppercase tracking-tight hover:bg-yellow-400 transition-all shadow-lg"
+              >
+                Ver Todos os Pneus <ChevronRight size={20} />
+              </Link>
+            </div>
           </div>
         </section>
 

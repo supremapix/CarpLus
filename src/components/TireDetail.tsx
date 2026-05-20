@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront, Share2, Copy, Check } from 'lucide-react';
-import { TIRES, Tire } from '../data';
+import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront, Share2, Copy, Check, MapPin } from 'lucide-react';
+import { TIRES, Tire, NEIGHBORHOODS } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireFAQ from './TireFAQ';
@@ -468,6 +468,47 @@ export default function TireDetail() {
                 </div>
             </section>
         )}
+
+        {/* Bairros e Cidades Atendidas - SEO Internal Linking */}
+        <section className="mb-20 px-4">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-1 bg-primary" />
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Entrega</span>
+              <div className="w-12 h-1 bg-primary" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-dark">
+              Entregamos <span className="text-primary italic">{tire.nome}</span> em Toda Curitiba
+            </h2>
+            <p className="text-gray-500 mt-4">Atendemos todos os bairros e cidades da região metropolitana</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {NEIGHBORHOODS.slice(0, 24).map((neighborhood) => {
+              const neighborhoodSlug = neighborhood.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+              return (
+                <Link 
+                  key={neighborhood.name}
+                  to={`/bairro/${neighborhoodSlug}`}
+                  className="bg-gray-50 hover:bg-primary/10 border border-gray-100 hover:border-primary/30 rounded-xl p-3 transition-all group text-center"
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <MapPin size={14} className="text-primary flex-shrink-0" />
+                    <span className="text-sm font-medium text-dark group-hover:text-primary transition-colors truncate">{neighborhood.name}</span>
+                  </div>
+                  <span className="text-[10px] text-gray-400">{neighborhood.tempo}</span>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="text-center mt-8">
+            <Link 
+              to="/como-chegar"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+            >
+              Ver todos os bairros atendidos <ChevronRight size={16} />
+            </Link>
+          </div>
+        </section>
       </main>
 
       <Footer />
