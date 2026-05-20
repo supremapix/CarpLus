@@ -49,8 +49,21 @@ export default function TireSearchBar() {
   const hasFilters = aro || largura || altura;
 
   return (
-    <section className="bg-white border-b border-gray-100 relative z-30 py-10 md:py-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative z-30 py-10 md:py-20 overflow-hidden">
+      {/* Texture overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+      
+      {/* Diagonal stripes accent */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)`,
+      }} />
+      
+      {/* Primary color accent glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/20 blur-[120px] rounded-full" />
+      
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,9 +72,9 @@ export default function TireSearchBar() {
           {/* Mobile Toggle Button */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="md:hidden w-full bg-gray-50 border-2 border-gray-200 rounded-2xl px-5 py-4 flex items-center justify-between mb-4"
+            className="md:hidden w-full bg-white/10 border-2 border-white/20 rounded-2xl px-5 py-4 flex items-center justify-between mb-4"
           >
-            <span className="flex items-center gap-3 text-gray-600 font-bold">
+            <span className="flex items-center gap-3 text-white font-bold">
               <SlidersHorizontal size={20} className="text-primary" />
               Pesquise seu pneu pelo aro
             </span>
@@ -75,21 +88,21 @@ export default function TireSearchBar() {
           <div className={`${isExpanded ? 'block' : 'hidden'} md:block`}>
             {/* Header */}
             <div className="text-center mb-3 md:mb-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-gray-800">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-white">
                 Pesquise <span className="text-primary">Pneus</span> por tamanho!
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-500 mt-2">
+              <p className="text-base sm:text-lg md:text-xl text-white/60 mt-2">
                 Selecione o aro e encontre os melhores modelos
               </p>
             </div>
 
             {/* Search Fields */}
-            <div className="bg-gray-50 border-2 border-gray-100 rounded-3xl p-4 md:p-6">
+            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/10 rounded-3xl p-4 md:p-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 items-end">
                 
                 {/* ARO Select */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-gray-500 ml-1">
+                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
                     Aro
                   </label>
                   <div className="relative">
@@ -113,7 +126,7 @@ export default function TireSearchBar() {
 
                 {/* LARGURA Select */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-gray-500 ml-1">
+                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
                     Largura
                   </label>
                   <div className="relative">
@@ -137,7 +150,7 @@ export default function TireSearchBar() {
 
                 {/* ALTURA Select */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-gray-500 ml-1">
+                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
                     Altura
                   </label>
                   <div className="relative">
@@ -184,8 +197,8 @@ export default function TireSearchBar() {
 
               {/* Quick Tip */}
               <div className="mt-4 text-center">
-                <p className="text-xs text-gray-400">
-                  Exemplo: <span className="font-bold text-gray-600">195/65R15</span> = Largura 195, Altura 65, Aro 15
+                <p className="text-xs text-white/40">
+                  Exemplo: <span className="font-bold text-white/70">195/65R15</span> = Largura 195, Altura 65, Aro 15
                 </p>
               </div>
             </div>
