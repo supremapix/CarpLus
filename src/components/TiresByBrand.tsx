@@ -138,7 +138,7 @@ export default function TiresByBrand() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 font-black leading-none uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 font-bold leading-tight uppercase tracking-tight">
               Pneus por <span className="text-primary italic">Marca</span>
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -201,7 +201,7 @@ export default function TiresByBrand() {
                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 Consultoria Técnica Gratuita
               </div>
-              <h3 className="text-4xl md:text-6xl font-black mb-4 text-white leading-tight uppercase italic tracking-tighter">
+              <h3 className="text-4xl md:text-6xl font-bold mb-4 text-white leading-tight uppercase italic tracking-tight">
                 Dúvida sobre o<br className="hidden md:block" /> pneu ideal?
               </h3>
               <p className="text-base md:text-lg font-medium text-white/65 max-w-sm">

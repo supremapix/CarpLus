@@ -171,7 +171,7 @@ export default function TireCatalog() {
             <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
               Revendedor Multimarcas
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tighter italic text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight italic text-center">
               Catálogo de Pneus <br />
               em Curitiba
             </h1>
@@ -344,7 +344,7 @@ export default function TireCatalog() {
                   <option value="relevance">Mais Relevante</option>
                   <option value="rim-asc">Aro Crescente</option>
                   <option value="rim-desc">Aro Decrescente</option>
-                  <option value="brand">Marca A–Z</option>
+                  <option value="brand">Marca A���Z</option>
                 </select>
 
                 <button 

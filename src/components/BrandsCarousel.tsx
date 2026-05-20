@@ -48,7 +48,7 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter text-center md:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold leading-snug uppercase italic tracking-normal text-center md:text-left">
                    FALE COM UM<br/>
                    <span className="text-primary not-italic">ESPECIALISTA</span>
                 </h2>
