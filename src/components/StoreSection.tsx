@@ -43,20 +43,20 @@ export default function StoreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2 text-center lg:text-left"
           >
             {/* Eyebrow */}
-            <p className="text-amber-500 font-bold text-sm md:text-base tracking-wider uppercase mb-2">
+            <p className="text-amber-500 font-bold text-xs sm:text-sm md:text-base tracking-wider uppercase mb-2">
               Carplus Pneus e Oficina
             </p>
             
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
               Loja de Pneus em Curitiba
             </h2>
             
             {/* Paragraphs */}
-            <div className="space-y-5 text-gray-300 text-base md:text-lg leading-relaxed">
+            <div className="space-y-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center lg:text-left">
               <p>
                 Bem-vindo a <span className="text-white font-semibold">Carplus Pneus</span>, sua referencia absoluta em pneus e servicos automotivos em Curitiba e Regiao Metropolitana. Somos especialistas em oferecer a linha completa de pneus de alta performance, unindo a conveniencia de um catalogo digital robusto com a seguranca do atendimento personalizado via WhatsApp.
               </p>
@@ -71,17 +71,19 @@ export default function StoreSection() {
             </div>
             
             {/* CTA Button */}
-            <motion.a
-              href="https://wa.me/554130827282?text=Ola! Gostaria de saber mais sobre pneus disponiveis na Carplus."
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 mt-8 bg-amber-500 hover:bg-amber-600 text-black font-bold text-lg px-8 py-4 rounded-lg transition-colors shadow-lg"
-            >
-              Fale pelo WhatsApp
-              <MessageSquare size={22} />
-            </motion.a>
+            <div className="flex justify-center lg:justify-start">
+              <motion.a
+                href="https://wa.me/554130827282?text=Ola! Gostaria de saber mais sobre pneus disponiveis na Carplus."
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 mt-8 bg-amber-500 hover:bg-amber-600 text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors shadow-lg"
+              >
+                Fale pelo WhatsApp
+                <MessageSquare size={22} />
+              </motion.a>
+            </div>
           </motion.div>
           
         </div>
