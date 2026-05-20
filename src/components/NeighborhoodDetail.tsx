@@ -5,9 +5,6 @@ import { Navigation, ArrowLeft, Clock, MapPin, MessageSquare, Star, ChevronDown,
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import { useSEO } from '../hooks/useSEO';
 import { getFaqCompleto } from '../data/faqBairros';
 import { getNeighborhoodSeoContent, generateGenericSeoContent, NeighborhoodSeoContent } from '../data/neighborhoodSeoContent';
@@ -131,7 +128,6 @@ export default function NeighborhoodDetail() {
 
   if (!bairro || !seoContent) return <div className="min-h-screen bg-white flex items-center justify-center">Bairro não encontrado</div>;
 
-  const carplusPos: [number, number] = [-25.4770, -49.2845];
   const faqItems = getFaqCompleto(bairro.name, slugForUrl || '', bairro.tempo, bairro.via);
 
   return (
@@ -357,13 +353,18 @@ export default function NeighborhoodDetail() {
                     )}
                  </div>
 
-                 {/* Mini Map */}
+                 {/* Mini Map - Google Maps Embed */}
                  <div className="h-[550px] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative">
-                    <MapContainer center={carplusPos} zoom={12} className="h-full w-full">
-                       <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
-                       <Marker position={carplusPos} icon={L.divIcon({ html: `<div style="background:#FAB115;color:black;padding:6px 12px;border-radius:8px;font-weight:bold;font-size:11px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.2);">CARPLUS AUTO CENTER</div>`, className: '' })} />
-                       <Marker position={[bairro.lat, bairro.lng]} icon={L.divIcon({ html: `<div style="background:#00C853;color:white;padding:6px 12px;border-radius:8px;font-weight:bold;font-size:11px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.2);">${bairro.name.toUpperCase()}</div>`, className: '' })} />
-                    </MapContainer>
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.577!2d-49.2892537!3d-25.4769819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce46b2c4cfc6d%3A0x9e44e3a957e3e9d7!2sCarplus%20Auto%20Center!5e0!3m2!1spt-BR!2sbr!4v1704067200000!5m2!1spt-BR!2sbr"
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full"
+                    />
                     <div className="absolute bottom-6 left-6 right-6 z-[1000] bg-white p-5 rounded-2xl shadow-xl">
                        <div className="flex items-center justify-between">
                          <div>
@@ -371,7 +372,7 @@ export default function NeighborhoodDetail() {
                            <p className="text-sm text-gray-500">Portão, Curitiba - PR</p>
                          </div>
                          <a
-                           href={`https://www.google.com/maps/dir/${encodeURIComponent(bairro.name + ', Curitiba, PR')}/Carplus+Auto+Center+Portão+Curitiba`}
+                           href="https://maps.app.goo.gl/LzV4SnjtW4vffrrC8"
                            target="_blank"
                            rel="noopener noreferrer"
                            className="bg-primary text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition-all"
