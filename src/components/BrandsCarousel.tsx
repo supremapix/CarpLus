@@ -48,7 +48,7 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter">
                    FALE COM UM<br/>
                    <span className="text-primary not-italic">ESPECIALISTA</span>
                 </h2>
@@ -89,7 +89,7 @@ export default function BrandsCarousel() {
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Ligue ou chame agora</span>
-                            <strong className="text-primary font-display font-black text-xl tracking-wide">(41) 3082-7282</strong>
+                            <strong className="text-primary font-display font-black text-lg tracking-wide">(41) 3082-7282</strong>
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -98,7 +98,7 @@ export default function BrandsCarousel() {
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Horário de atendimento</span>
-                            <strong className="text-primary font-display font-black text-lg tracking-wide">Seg–Sex 8h–18h | Sáb 8h–12h</strong>
+                            <strong className="text-primary font-display font-black text-base tracking-wide">Seg–Sex 8h–18h | Sáb 8h–12h</strong>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ export default function BrandsCarousel() {
       <div className="bg-dark/50 backdrop-blur-md py-4 overflow-hidden border-t border-white/5">
         <div className="flex gap-12 whitespace-nowrap animate-brands-scroll">
           {Array(4).fill(['PIRELLI', 'MICHELIN', 'GOODYEAR', 'CONTINENTAL', 'FIRESTONE', 'BRIDGESTONE', 'YOKOHAMA', 'PRINX', 'DELINTE']).flat().map((brand, i) => (
-            <span key={i} className="text-white/30 font-display text-4xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
+            <span key={i} className="text-white/30 font-display text-2xl md:text-3xl font-bold tracking-tighter opacity-50 px-2 select-none italic">
               {brand}
             </span>
           ))}
