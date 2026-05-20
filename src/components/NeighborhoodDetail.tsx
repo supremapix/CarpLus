@@ -356,7 +356,7 @@ export default function NeighborhoodDetail() {
                  {/* Mini Map - Google Maps Embed */}
                  <div className="h-[550px] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.577!2d-49.2892537!3d-25.4769819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce46b2c4cfc6d%3A0x9e44e3a957e3e9d7!2sCarplus%20Auto%20Center!5e0!3m2!1spt-BR!2sbr!4v1704067200000!5m2!1spt-BR!2sbr"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.240580658666!2d-49.30287292373215!3d-25.46364093422533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce31ec1ad6641%3A0xa51067e0d7b484af!2sCarplus%20Pneus%20e%20Oficina%20Mec%C3%A2nica!5e0!3m2!1spt-BR!2sbr!4v1779235735934!5m2!1spt-BR!2sbr"
                       width="100%" 
                       height="100%" 
                       style={{ border: 0 }} 
