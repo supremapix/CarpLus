@@ -71,7 +71,7 @@ export default function PneusCuritibaPromo() {
             <Tag size={14} />
             Ofertas Exclusivas
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-normal">
             <span className="text-dark">Pneus em Curitiba e </span>
             <span className="text-primary italic">Promoção!</span>
           </h2>

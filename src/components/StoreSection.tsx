@@ -51,7 +51,7 @@ export default function StoreSection() {
             </p>
             
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-snug tracking-normal">
               Loja de Pneus <br />em Curitiba
             </h2>
             
