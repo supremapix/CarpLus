@@ -55,9 +55,9 @@ export default function Contact() {
 
             <div className="h-full">
                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.1!2d-49.28695!3d-25.47699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI4JzM3LjIiUyA0OcKwMTcnMDQuMiJX!5e0!3m2!1spt!2sbr!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.5776651123445!2d-49.28925372374957!3d-25.47698193776907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3f8a2b3c4d1%3A0x1234567890abcdef!2sCarplus%20Auto%20Center!5e0!3m2!1spt-BR!2sbr!4v1704067200000!5m2!1spt-BR!2sbr"
                 width="100%" height="100%" style={{ border:0, borderRadius: '40px', minHeight: '500px' }} 
-                allowFullScreen loading="lazy">
+                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
           </div>
