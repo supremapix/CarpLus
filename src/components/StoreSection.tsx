@@ -46,13 +46,13 @@ export default function StoreSection() {
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
             {/* Eyebrow */}
-            <p className="text-amber-500 font-bold text-xs sm:text-sm md:text-base tracking-wider uppercase mb-2">
+            <p className="text-amber-500 font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase mb-2">
               Carplus Pneus e Oficina
             </p>
             
             {/* Title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-              Loja de Pneus em Curitiba
+              Loja de Pneus <br />em Curitiba
             </h2>
             
             {/* Paragraphs */}
