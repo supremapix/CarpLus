@@ -269,7 +269,7 @@ export default function ServicosPage() {
             <span className="text-primary">Serviços</span>
           </nav>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic text-center">
             Nossos <span className="text-primary">Serviços</span>
           </h1>
           <p className="text-base md:text-lg text-white/55 max-w-xl mx-auto leading-relaxed">
@@ -368,7 +368,7 @@ export default function ServicosPage() {
       {/* CTA Final */}
       <section className="py-16 px-4 bg-primary">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-black mb-4 italic leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter text-black mb-4 italic leading-tight text-center">
             Pronto para agendar?
           </h2>
           <p className="text-black/70 text-base mb-8">

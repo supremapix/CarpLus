@@ -48,11 +48,11 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-display font-black leading-[0.95] uppercase italic tracking-tighter text-center md:text-left">
                    FALE COM UM<br/>
                    <span className="text-primary not-italic">ESPECIALISTA</span>
                 </h2>
-                <p className="text-xl sm:text-2xl md:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed text-center md:text-left">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>
             </motion.div>

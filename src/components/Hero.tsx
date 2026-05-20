@@ -22,19 +22,19 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <h1 className="text-6xl md:text-8xl text-white mb-2 leading-[0.9] font-bold">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl text-white mb-2 leading-[0.9] font-bold text-center md:text-left">
             PNEUS <br />
             <span className="text-primary">EM CURITIBA</span>
           </h1>
-          <h2 className="text-xl md:text-4xl text-white font-display font-bold uppercase tracking-tight mb-8">
+          <h2 className="text-base sm:text-lg md:text-4xl text-white font-display font-bold uppercase tracking-tight mb-8 text-center md:text-left">
             OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
           </h2>
           
-          <p className="text-lg text-white/80 mb-10 max-w-xl font-medium">
+          <p className="text-sm sm:text-base md:text-lg text-white/80 mb-10 max-w-xl font-medium text-center md:text-left mx-auto md:mx-0">
             Pneus das melhores marcas a partir de R$ 269,00 à vista! Parcelamento em até 10x sem juros. Atendemos toda Curitiba e Região.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-3 mb-10 justify-center md:justify-start">
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

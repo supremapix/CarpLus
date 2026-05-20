@@ -171,11 +171,11 @@ export default function TireCatalog() {
             <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
               Revendedor Multimarcas
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tighter italic">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tighter italic text-center">
               Catálogo de Pneus <br />
               em Curitiba
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto font-medium">
+            <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto font-medium text-center">
               Encontre o pneu ideal para seu carro com filtros avançados por medida, aro, categoria e modelo de veículo. Montagem técnica gratuita no Portão.
             </p>
           </motion.div>
