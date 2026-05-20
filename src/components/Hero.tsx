@@ -22,9 +22,8 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-8xl text-white mb-2 leading-[0.9] font-bold text-center">
-            PNEUS <br />
-            <span className="text-primary">EM CURITIBA</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-2 leading-[0.9] font-bold text-center">
+            PNEUS <span className="text-primary">EM CURITIBA</span>
           </h1>
           <h2 className="text-base sm:text-lg md:text-4xl text-white font-display font-bold uppercase tracking-tight mb-8 text-center md:text-left">
             OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
