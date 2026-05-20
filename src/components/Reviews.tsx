@@ -703,7 +703,7 @@ export default function Reviews() {
             </div>
             <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
           </div>
-          <h2 className="text-dark text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-none">O Que Nossos Clientes <span className="text-primary italic">Dizem</span></h2>
+          <h2 className="text-dark text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-none font-black">O Que Nossos Clientes <span className="text-primary italic">Dizem</span></h2>
           <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
         </div>
 
