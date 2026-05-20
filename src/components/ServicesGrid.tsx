@@ -139,10 +139,10 @@ export default function ServicesGrid() {
     <section id="servicos" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
+          <div className="max-w-2xl text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 leading-none font-bold">
-              Serviços <span className="text-primary italic">Full Service</span>
+              Serviços <br className="md:hidden" /><span className="text-primary italic">Full Service</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light">
               Oficina mecânica completa para todas as marcas nacionais e importadas.
