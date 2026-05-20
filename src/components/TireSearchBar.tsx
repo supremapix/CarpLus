@@ -49,12 +49,12 @@ export default function TireSearchBar() {
   const hasFilters = aro || largura || altura;
 
   return (
-    <section className="bg-white border-b border-gray-100 relative z-30">
+    <section className="bg-white border-b border-gray-100 relative z-30 py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="py-6 md:py-8"
+          className="py-4 md:py-6"
         >
           {/* Mobile Toggle Button */}
           <button
