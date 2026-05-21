@@ -436,7 +436,7 @@ export default function ServiceDetail() {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto mb-16"
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-semibold tracking-tight text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-bold tracking-tight text-center">
                   {service.title} em <span className="text-primary">Curitiba</span> – Bairro Portão
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-center">

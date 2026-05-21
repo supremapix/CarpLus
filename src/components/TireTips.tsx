@@ -181,7 +181,7 @@ export default function TireTips({ tireName, categoria }: TireTipsProps) {
                   {tip.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-white mb-1 group-hover:text-[#F7941D] transition-colors">
+                  <h3 className="font-bold text-white mb-1 group-hover:text-[#F7941D] transition-colors">
                     {tip.title}
                   </h3>
                   <p className="text-sm text-zinc-400">
