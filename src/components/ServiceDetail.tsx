@@ -687,7 +687,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=0&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=1&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Fluido de Freio"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -907,7 +907,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-amber-500/20 border-4 border-amber-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=0&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=1&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Oleo e Filtros"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1103,7 +1103,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-4 border-primary/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=0&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=1&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="Carplus Auto Center - Servico de Suspensao e Freios em Curitiba"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

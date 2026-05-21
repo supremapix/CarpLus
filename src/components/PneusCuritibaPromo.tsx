@@ -118,7 +118,7 @@ export default function PneusCuritibaPromo() {
                   className="absolute inset-0"
                 >
                   <iframe
-                    src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&mute=0&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                    src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&mute=1&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
                     title={`CarPlus - ${activeVideo.title}`}
                     className="absolute inset-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
