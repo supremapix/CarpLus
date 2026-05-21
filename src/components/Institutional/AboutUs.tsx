@@ -366,7 +366,7 @@ export default function AboutUs() {
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-cwb-16miznXTQvGgb8xEYvznZ93yyBHsif.png" 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-x6lyP8nFMo2iNxOXrTbBQR8kGcHI9t.png" 
                     alt="Pintura de rodas profissional na Carplus Curitiba - Tecnico especializado realizando pintura eletrostatica em roda de liga leve"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -408,7 +408,7 @@ export default function AboutUs() {
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-portao-wjgRWhvRazrVWJekgeewZ6mGE0tjjV.png" 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-U6WANiatYVSBrd9DVnwKajZ3hiA3mk.png" 
                     alt="Troca de pneus na Carplus Curitiba Portao - Cliente satisfeito com roda restaurada e pneu novo"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
