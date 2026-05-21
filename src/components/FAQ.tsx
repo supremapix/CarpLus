@@ -21,12 +21,12 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-gray-100 last:border-none">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex justify-between items-center text-left group"
+        className="w-full py-6 flex justify-between items-start text-left group"
       >
-        <span className={`text-sm md:text-xl font-bold transition-colors pr-4 break-words ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
+        <span className={`text-sm md:text-xl font-bold transition-colors pr-4 whitespace-normal break-words overflow-wrap-anywhere flex-1 ${isOpen ? 'text-primary' : 'text-dark hover:text-primary/70'}`}>{q}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          className={`p-2 rounded-full flex-shrink-0 ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}
+          className={`p-2 rounded-full flex-shrink-0 self-start ${isOpen ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'}`}
         >
           <ChevronDown size={20} />
         </motion.div>

@@ -326,21 +326,21 @@ export default function FAQPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.02 }}
-                  className="bg-[#1a1a1a] border border-white/10 rounded-xl overflow-hidden"
+                  className="bg-[#1a1a1a] border border-white/10 rounded-xl"
                   itemScope
                   itemProp="mainEntity"
                   itemType="https://schema.org/Question"
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors"
+                    className="w-full flex items-start justify-between p-5 text-left hover:bg-white/5 transition-colors"
                   >
-                    <div className="flex items-center gap-3 flex-1">
-                      <span className="text-primary">
+                    <div className="flex items-start gap-3 flex-1">
+                      <span className="text-primary flex-shrink-0 mt-0.5">
                         {categoryIcons[faq.categoria] || <MessageCircleQuestion size={16} />}
                       </span>
                       <h2 
-                        className="text-white font-medium text-base sm:text-lg pr-4"
+                        className="text-white font-medium text-base sm:text-lg pr-4 whitespace-normal break-words overflow-wrap-anywhere flex-1"
                         itemProp="name"
                       >
                         {faq.pergunta}
@@ -349,7 +349,7 @@ export default function FAQPage() {
                     <motion.div
                       animate={{ rotate: openIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className="text-primary shrink-0"
+                      className="text-primary shrink-0 self-start"
                     >
                       <ChevronDown size={20} />
                     </motion.div>

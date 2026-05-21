@@ -110,10 +110,10 @@ export default function TireFAQ({ tire }: TireFAQProps) {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex items-center justify-between p-5 md:p-6 text-left group"
+              className="w-full flex items-start justify-between p-5 md:p-6 text-left group"
               aria-expanded={openIndex === index}
             >
-              <h3 className={`font-bold text-base md:text-lg pr-4 transition-colors ${
+              <h3 className={`font-bold text-base md:text-lg pr-4 transition-colors whitespace-normal break-words overflow-wrap-anywhere flex-1 ${
                 openIndex === index ? 'text-black' : 'text-gray-700 group-hover:text-black'
               }`}>
                 {item.question}
@@ -121,7 +121,7 @@ export default function TireFAQ({ tire }: TireFAQProps) {
               <motion.div
                 animate={{ rotate: openIndex === index ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
-                className={`flex-shrink-0 p-2 rounded-xl transition-colors ${
+                className={`flex-shrink-0 self-start p-2 rounded-xl transition-colors ${
                   openIndex === index 
                     ? 'bg-primary text-black' 
                     : 'bg-gray-100 text-gray-500 group-hover:bg-gray-200'

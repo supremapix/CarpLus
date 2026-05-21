@@ -521,11 +521,11 @@ export default function ServiceDetail() {
                     {getServiceFaqs(service.slug).map((faq, idx) => (
                       <details
                         key={idx}
-                        className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
+                        className="group bg-white rounded-xl border border-gray-200"
                       >
-                        <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                          <h4 className="font-bold text-gray-900 pr-4 text-left">{faq.pergunta}</h4>
-                          <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
+                        <summary className="flex items-start justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors list-none [&::-webkit-details-marker]:hidden">
+                          <h4 className="font-bold text-gray-900 pr-4 text-left whitespace-normal break-words flex-1">{faq.pergunta}</h4>
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0 self-start mt-0.5" />
                         </summary>
                         <div className="px-5 pb-5 pt-0">
                           <p className="text-gray-600 leading-relaxed">{faq.resposta}</p>
