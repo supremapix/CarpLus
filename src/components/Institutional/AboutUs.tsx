@@ -133,7 +133,8 @@ export default function AboutUs() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
-                Por que a Carplus e diferente de qualquer outra oficina?
+                Por que a Carplus e diferente<br />
+                <span className="text-primary italic">de qualquer outra oficina?</span>
               </h2>
               <p className="text-xl md:text-2xl text-amber-500 font-medium">
                 A unica oficina onde voce entra preocupado e sai aliviado.
@@ -347,7 +348,8 @@ export default function AboutUs() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
-                Transformacao Carplus — Recuperacao de Rodas
+                Transformacao Carplus<br />
+                <span className="text-primary italic">Recuperacao de Rodas</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                 Roda amassada ou riscada nao e sinonimo de troca. Veja o que fazemos por voce.
@@ -365,7 +367,7 @@ export default function AboutUs() {
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-cwb-16miznXTQvGgb8xEYvznZ93yyBHsif.png" 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-x6lyP8nFMo2iNxOXrTbBQR8kGcHI9t.png" 
                     alt="Pintura de rodas profissional na Carplus Curitiba - Tecnico especializado realizando pintura eletrostatica em roda de liga leve"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -407,7 +409,7 @@ export default function AboutUs() {
               >
                 <div className="aspect-[3/4] overflow-hidden">
                   <img 
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-portao-wjgRWhvRazrVWJekgeewZ6mGE0tjjV.png" 
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-U6WANiatYVSBrd9DVnwKajZ3hiA3mk.png" 
                     alt="Troca de pneus na Carplus Curitiba Portao - Cliente satisfeito com roda restaurada e pneu novo"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
