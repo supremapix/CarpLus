@@ -52,7 +52,7 @@ export default function StoreSection() {
             </p>
             
             {/* Title */}
-            <SectionTitle prefix="LOJA DE PNEUS EM" highlight="CURITIBA" darkBg className="lg:text-left" />
+            <SectionTitle prefix="LOJA DE PNEUS EM" highlight="CURITIBA" className="lg:text-left" />
             
             {/* Paragraphs */}
             <div className="space-y-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center lg:text-left">
