@@ -48,7 +48,7 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <SectionTitle prefix="FALE COM UM" highlight="ESPECIALISTA" className="md:text-left" />
+                <SectionTitle prefix="FALE COM UM" highlight="ESPECIALISTA" darkBg className="md:text-left" />
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed text-center md:text-left">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>
