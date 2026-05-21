@@ -133,7 +133,8 @@ export default function AboutUs() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
-                Por que a Carplus e diferente de qualquer outra oficina?
+                Por que a Carplus e diferente<br />
+                <span className="text-primary italic">de qualquer outra oficina?</span>
               </h2>
               <p className="text-xl md:text-2xl text-amber-500 font-medium">
                 A unica oficina onde voce entra preocupado e sai aliviado.
