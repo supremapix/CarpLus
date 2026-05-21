@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 
 export default function StoreSection() {
   return (
@@ -46,14 +47,12 @@ export default function StoreSection() {
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
             {/* Eyebrow */}
-            <p className="text-amber-500 font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase mb-2">
+            <p className="text-amber-500 font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase mb-2 text-center lg:text-left">
               Carplus Pneus e Oficina
             </p>
             
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-snug tracking-normal">
-              Loja de Pneus <br />em Curitiba
-            </h2>
+            <SectionTitle prefix="LOJA DE PNEUS EM" highlight="CURITIBA" darkBg className="lg:text-left" />
             
             {/* Paragraphs */}
             <div className="space-y-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center lg:text-left">

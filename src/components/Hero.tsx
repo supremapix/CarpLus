@@ -41,7 +41,7 @@ export default function Hero() {
               target="_blank"
               className="bg-white hover:bg-gray-100 text-dark px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-md"
             >
-              <Navigation size={16} /> Ir até o Portão
+              <Navigation size={16} /> Ir até a Carplus
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.02 }}
@@ -53,7 +53,7 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 md:gap-y-6 mt-14 md:mt-6 mb-8 md:mb-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 md:gap-y-6 mt-8 mb-2 md:mt-6 md:mb-0">
             {[
               { icon: Star, text: 'Referência em Curitiba' },
               { icon: MapPin, text: 'Portão – Curitiba' },

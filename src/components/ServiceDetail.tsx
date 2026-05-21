@@ -436,7 +436,7 @@ export default function ServiceDetail() {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto mb-16"
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-semibold tracking-tight text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-bold tracking-tight text-center">
                   {service.title} em <span className="text-primary">Curitiba</span> – Bairro Portão
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-center">
@@ -521,11 +521,11 @@ export default function ServiceDetail() {
                     {getServiceFaqs(service.slug).map((faq, idx) => (
                       <details
                         key={idx}
-                        className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
+                        className="group bg-white rounded-xl border border-gray-200"
                       >
-                        <summary className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                          <h4 className="font-bold text-gray-900 pr-4 text-left">{faq.pergunta}</h4>
-                          <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0" />
+                        <summary className="flex items-start justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors list-none [&::-webkit-details-marker]:hidden">
+                          <h4 className="font-bold text-gray-900 pr-4 text-left whitespace-normal break-words flex-1">{faq.pergunta}</h4>
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform shrink-0 self-start mt-0.5" />
                         </summary>
                         <div className="px-5 pb-5 pt-0">
                           <p className="text-gray-600 leading-relaxed">{faq.resposta}</p>
@@ -687,7 +687,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=0&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=1&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Fluido de Freio"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -907,7 +907,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-amber-500/20 border-4 border-amber-500/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=0&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=1&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="CarPlus - Troca de Oleo e Filtros"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1103,7 +1103,7 @@ export default function ServiceDetail() {
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-4 border-primary/30">
                     {/* YouTube Shorts Embed */}
                     <iframe
-                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=0&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=1&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                       title="Carplus Auto Center - Servico de Suspensao e Freios em Curitiba"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1388,7 +1388,7 @@ export default function ServiceDetail() {
         {/* CTA Section */}
         <section className="py-20 bg-primary text-black">
            <div className="max-w-7xl mx-auto px-4 text-center">
-              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase">Resolva o Problema <br/> do seu Carro Hoje</h2>
+              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase font-bold">Resolva o Problema <br/> do seu Carro Hoje</h2>
               <p className="text-base mb-8 max-w-2xl mx-auto opacity-70">Não deixe para depois. Pequenas manutenções evitam gastos altos no futuro.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-3">
                  <motion.a

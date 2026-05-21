@@ -1,5 +1,6 @@
 
 import { Star } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 
 // Função para gerar tempo aleatório entre 1 dia e 3 meses
 const TIME_OPTIONS = [
@@ -694,7 +695,7 @@ export default function Reviews() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-14">
+        <div className="text-left max-w-[640px] mb-14">
           {/* Badge estilo Google */}
           <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm px-5 py-2.5 rounded-full mb-6">
             <GoogleLogo />
@@ -703,8 +704,8 @@ export default function Reviews() {
             </div>
             <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
           </div>
-          <h2 className="text-dark text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-none font-black">O Que Nossos Clientes <span className="text-primary italic">Dizem</span></h2>
-          <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
+          <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
+          <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light text-left">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
         </div>
 
         {/* Colunas de scroll infinito */}

@@ -1,7 +1,7 @@
 
 import { motion } from 'motion/react';
-
 import { MessageSquare, Star, ShieldCheck, Phone, Clock } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 
 export default function BrandsCarousel() {
   return (
@@ -48,10 +48,7 @@ export default function BrandsCarousel() {
                 viewport={{ once: true }}
                 className="space-y-6"
             >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold leading-snug uppercase italic tracking-normal text-center md:text-left">
-                   FALE COM UM<br/>
-                   <span className="text-primary not-italic">ESPECIALISTA</span>
-                </h2>
+                <SectionTitle prefix="FALE COM UM" highlight="ESPECIALISTA" darkBg className="md:text-left" />
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed text-center md:text-left">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>

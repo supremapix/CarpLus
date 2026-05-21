@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 mb-20 relative z-10">
          <div className="bg-primary p-10 md:p-14 rounded-[32px] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl shadow-primary/30">
             <div className="text-center lg:text-left">
-               <h2 className="text-4xl lg:text-5xl mb-3 leading-tight text-black font-black">Precisa de Pneus <br /> ou Oficina?</h2>
+               <h2 className="text-4xl lg:text-5xl mb-3 leading-tight font-black"><span className="text-white">Precisa de Pneus</span> <br /> <span className="text-black italic">ou Oficina?</span></h2>
                <p className="text-black/70 text-base font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">

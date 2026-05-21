@@ -333,7 +333,7 @@ export default function TireDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {/* Specs Table */}
             <div className="lg:col-span-2 bg-white rounded-[2rem] p-8 md:p-12 shadow-xl">
-                 <h2 className="text-2xl md:text-3xl font-semibold mb-8 uppercase italic tracking-tight leading-snug flex items-center gap-3">
+                 <h2 className="text-2xl md:text-3xl font-bold mb-8 uppercase italic tracking-tight leading-snug flex items-center gap-3">
                     <Award className="text-primary" size={32} /> Especificações Técnicas
                  </h2>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
@@ -361,7 +361,7 @@ export default function TireDetail() {
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                     <CarFront size={120} />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-semibold mb-8 uppercase italic tracking-tight leading-snug relative z-10">Carros <br/> Compatíveis</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-8 uppercase italic tracking-tight leading-snug relative z-10">Carros <br/> Compatíveis</h2>
                 <div className="space-y-3 relative z-10">
                     {tire.carros.map((car, i) => (
                         <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/10 transition-all cursor-default group">
