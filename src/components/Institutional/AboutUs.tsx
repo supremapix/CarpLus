@@ -347,7 +347,8 @@ export default function AboutUs() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
-                Transformacao Carplus — Recuperacao de Rodas
+                Transformacao Carplus<br />
+                <span className="text-primary italic">Recuperacao de Rodas</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                 Roda amassada ou riscada nao e sinonimo de troca. Veja o que fazemos por voce.
