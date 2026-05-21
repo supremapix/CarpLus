@@ -1388,7 +1388,7 @@ export default function ServiceDetail() {
         {/* CTA Section */}
         <section className="py-20 bg-primary text-black">
            <div className="max-w-7xl mx-auto px-4 text-center">
-              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase">Resolva o Problema <br/> do seu Carro Hoje</h2>
+              <h2 className="text-3xl lg:text-5xl mb-4 leading-tight italic uppercase font-bold">Resolva o Problema <br/> do seu Carro Hoje</h2>
               <p className="text-base mb-8 max-w-2xl mx-auto opacity-70">Não deixe para depois. Pequenas manutenções evitam gastos altos no futuro.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-3">
                  <motion.a
