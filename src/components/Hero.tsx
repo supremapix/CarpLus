@@ -8,11 +8,11 @@ export default function Hero() {
       {/* Background Image - Mobile */}
       <div className="absolute inset-0 md:hidden">
         <img 
-          src="/images/hero-pneus.png" 
+          src="/images/hero-mobile.png" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
-          className="w-full h-full object-cover object-[50%_center]"
+          className="w-full h-full object-cover object-[30%_top]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/90 to-dark/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
       </div>
       
       {/* Background Image - Desktop */}
