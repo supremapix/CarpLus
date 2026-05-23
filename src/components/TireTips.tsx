@@ -160,7 +160,7 @@ export default function TireTips({ tireName, categoria }: TireTipsProps) {
         </div>
 
         {/* Tips Grid */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
           {filteredTips.map((tip) => (
             <div
               key={tip.id}
@@ -170,26 +170,26 @@ export default function TireTips({ tireName, categoria }: TireTipsProps) {
             >
               <button
                 onClick={() => toggleTip(tip.id)}
-                className="w-full p-5 text-left flex items-start gap-4"
+                className="w-full p-4 md:p-5 text-left flex items-start gap-3 md:gap-4"
                 aria-expanded={expandedTip === tip.id}
               >
-                <div className={`p-2.5 rounded-lg transition-colors duration-300 ${
+                <div className={`p-2 md:p-2.5 rounded-lg transition-colors duration-300 flex-shrink-0 ${
                   expandedTip === tip.id 
                     ? 'bg-[#F7941D] text-white' 
                     : 'bg-zinc-700/50 text-[#F7941D] group-hover:bg-[#F7941D]/20'
                 }`}>
                   {tip.icon}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-white mb-1 group-hover:text-[#F7941D] transition-colors">
+                <div className="flex-1 min-w-0 overflow-hidden">
+                  <h3 className="font-bold text-white text-sm md:text-base mb-1 group-hover:text-[#F7941D] transition-colors truncate">
                     {tip.title}
                   </h3>
-                  <p className="text-sm text-zinc-400">
+                  <p className="text-xs md:text-sm text-zinc-400 line-clamp-2">
                     {tip.shortDesc}
                   </p>
                 </div>
                 <ChevronRight 
-                  className={`w-5 h-5 text-zinc-500 transition-transform duration-300 flex-shrink-0 mt-1 ${
+                  className={`w-4 h-4 md:w-5 md:h-5 text-zinc-500 transition-transform duration-300 flex-shrink-0 mt-0.5 ${
                     expandedTip === tip.id ? 'rotate-90 text-[#F7941D]' : 'group-hover:text-[#F7941D]'
                   }`} 
                 />
@@ -199,14 +199,14 @@ export default function TireTips({ tireName, categoria }: TireTipsProps) {
               <div className={`overflow-hidden transition-all duration-300 ${
                 expandedTip === tip.id ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
               }`}>
-                <div className="px-5 pb-5 pt-0">
-                  <div className="h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent mb-4" />
-                  <p className="text-zinc-300 text-sm leading-relaxed">
+                <div className="px-4 md:px-5 pb-4 md:pb-5 pt-0">
+                  <div className="h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent mb-3 md:mb-4" />
+                  <p className="text-zinc-300 text-xs md:text-sm leading-relaxed">
                     {tip.fullDesc}
                   </p>
                   {tip.category === 'esportivo' && (
-                    <span className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 bg-[#F7941D]/10 text-[#F7941D] text-xs font-medium rounded-full">
-                      <Gauge className="w-3.5 h-3.5" />
+                    <span className="inline-flex items-center gap-1.5 mt-3 px-2.5 md:px-3 py-1 bg-[#F7941D]/10 text-[#F7941D] text-xs font-medium rounded-full">
+                      <Gauge className="w-3 h-3 md:w-3.5 md:h-3.5" />
                       Dica para Alta Performance
                     </span>
                   )}
