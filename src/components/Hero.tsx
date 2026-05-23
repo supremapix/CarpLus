@@ -5,14 +5,24 @@ import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-reac
 export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-dark">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+      {/* Background Image - Mobile */}
+      <div className="absolute inset-0 md:hidden">
         <img 
           src="/images/hero-pneus.png" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
-          className="w-full h-full object-cover object-[50%_center] md:object-[65%_center]"
+          className="w-full h-full object-cover object-[50%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/90 md:via-dark/70 to-dark/60 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/90 to-dark/60" />
+      </div>
+      
+      {/* Background Image - Desktop */}
+      <div className="absolute inset-0 hidden md:block">
+        <img 
+          src="/images/hero-desktop.png" 
+          alt="Carplus Pneus - Oficina de Pneus em Curitiba" 
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
