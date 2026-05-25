@@ -146,7 +146,7 @@ export default function Footer() {
             <span className="text-white/50 text-xs font-medium">por</span>
             <span className="text-white group-hover:text-primary font-bold text-xs transition-colors flex items-center gap-2">
               Suprema Sites Express
-              <img src="/images/logos/suprema.png" alt="Suprema" className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <img src="/images/logos/suprema.webp" alt="Suprema" className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
             </span>
          </a>
       </div>

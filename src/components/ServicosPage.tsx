@@ -138,7 +138,7 @@ export default function ServicosPage() {
     title: 'Serviços de Oficina e Pneus em Curitiba Portão | Carplus Auto Center',
     description: 'Alinhamento 3D, troca de pneus, óleo, suspensão e freios em Curitiba. Carplus Auto Center no Portão – agende pelo (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/servicos/',
-    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.jpg',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
   });
 
   // Total de servicos

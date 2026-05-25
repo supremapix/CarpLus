@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image - Mobile */}
       <div className="absolute inset-0 md:hidden">
         <img 
-          src="/images/hero-mobile.png" 
+          src="/images/hero-mobile.webp" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
           className="w-full h-full object-cover object-[30%_top]"
         />
@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Background Image - Desktop */}
       <div className="absolute inset-0 hidden md:block">
         <img 
-          src="/images/hero-desktop.png" 
+          src="/images/hero-desktop.webp" 
           alt="Carplus Pneus - Oficina de Pneus em Curitiba" 
           className="w-full h-full object-cover object-center"
         />
