@@ -25,8 +25,7 @@
     "react-helmet-async": "^3.0.0",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.14.2",
-    "vite": "^6.2.0",
-    "vite-plugin-prerender": "^1.0.8"
+    "vite": "^6.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
