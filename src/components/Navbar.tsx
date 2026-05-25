@@ -1,17 +1,35 @@
 
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, MapPin, Clock, MessageSquare, Menu, X } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import GlobalSearch from './GlobalSearch';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Atalho de teclado Cmd/Ctrl + K
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+      if (e.key === 'Escape') {
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const navLinks = [
@@ -66,7 +84,19 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
+            {/* Botao de busca */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full px-4 py-2 transition-all group"
+            >
+              <Search size={14} className="text-white/40 group-hover:text-primary transition-colors" />
+              <span className="text-white/40 text-xs">Buscar...</span>
+              <kbd className="flex items-center gap-0.5 text-[10px] text-white/30 bg-white/5 px-1.5 py-0.5 rounded ml-2">
+                <span>⌘</span>K
+              </kbd>
+            </button>
+            
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -88,13 +118,22 @@ export default function Navbar() {
             </motion.a>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(true)}
-          >
-            <Menu className="text-white" />
-          </button>
+          {/* Mobile toggle + search */}
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="text-white p-2 bg-white/5 rounded-full"
+              aria-label="Buscar"
+            >
+              <Search size={20} />
+            </button>
+            <button
+              className="text-white p-2"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu className="text-white" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -186,6 +225,9 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global Search Modal */}
+      <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }

@@ -1,0 +1,412 @@
+# Carplus Auto Center - Netlify Configuration
+# Redirects 301 para URLs antigas .html → /bairro/
+
+# Bairros de Curitiba
+[[redirects]]
+  from = "/taboao.html"
+  to = "/bairro/taboao"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agua-verde.html"
+  to = "/bairro/agua-verde"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/alto-da-rua-xv.html"
+  to = "/bairro/alto-da-rua-xv"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bacacheri.html"
+  to = "/bairro/bacacheri"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/batel.html"
+  to = "/bairro/batel"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/boqueirao.html"
+  to = "/bairro/boqueirao"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/caiua.html"
+  to = "/bairro/caiua"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/campo-comprido.html"
+  to = "/bairro/campo-comprido"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/campo-de-santana.html"
+  to = "/bairro/campo-de-santana"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/capao-raso.html"
+  to = "/bairro/capao-raso"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cascatinha.html"
+  to = "/bairro/cascatinha"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/caximba.html"
+  to = "/bairro/caximba"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/centro.html"
+  to = "/bairro/centro"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cic.html"
+  to = "/bairro/cic"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/conquista.html"
+  to = "/bairro/conquista"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cristo-rei.html"
+  to = "/bairro/cristo-rei"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fazendinha.html"
+  to = "/bairro/fazendinha"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ganchinho.html"
+  to = "/bairro/ganchinho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guaira.html"
+  to = "/bairro/guaira"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hauer.html"
+  to = "/bairro/hauer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hugo-lange.html"
+  to = "/bairro/hugo-lange"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-botanico.html"
+  to = "/bairro/jardim-botanico"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-das-americas.html"
+  to = "/bairro/jardim-das-americas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-gabineto.html"
+  to = "/bairro/jardim-gabineto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-da-ordem.html"
+  to = "/bairro/jardim-da-ordem"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-itatiaia.html"
+  to = "/bairro/jardim-itatiaia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jardim-social.html"
+  to = "/bairro/jardim-social"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/juveve.html"
+  to = "/bairro/juveve"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lamenha-pequena.html"
+  to = "/bairro/lamenha-pequena"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lindoia.html"
+  to = "/bairro/lindoia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/merces.html"
+  to = "/bairro/merces"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/neoville.html"
+  to = "/bairro/neoville"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/novo-mundo.html"
+  to = "/bairro/novo-mundo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/orleans.html"
+  to = "/bairro/orleans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/parolin.html"
+  to = "/bairro/parolin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pilarzinho.html"
+  to = "/bairro/pilarzinho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prado-velho.html"
+  to = "/bairro/prado-velho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reboucas.html"
+  to = "/bairro/reboucas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/santa-candida.html"
+  to = "/bairro/santa-candida"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/santa-felicidade.html"
+  to = "/bairro/santa-felicidade"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/santo-inacio.html"
+  to = "/bairro/santo-inacio"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sao-braz.html"
+  to = "/bairro/sao-braz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sao-lourenco.html"
+  to = "/bairro/sao-lourenco"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sao-miguel.html"
+  to = "/bairro/sao-miguel"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/taruma.html"
+  to = "/bairro/taruma"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/uberaba.html"
+  to = "/bairro/uberaba"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/umbara.html"
+  to = "/bairro/umbara"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vila-nossa-senhora-da-luz.html"
+  to = "/bairro/vila-nossa-senhora-da-luz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vila-oficinas.html"
+  to = "/bairro/vila-oficinas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vila-sandra.html"
+  to = "/bairro/vila-sandra"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vila-sao-pedro.html"
+  to = "/bairro/vila-sao-pedro"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vista-alegre.html"
+  to = "/bairro/vista-alegre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vitoria-regia.html"
+  to = "/bairro/vitoria-regia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ahu.html"
+  to = "/bairro/ahu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/atenas.html"
+  to = "/bairro/atenas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bairro-alto.html"
+  to = "/bairro/bairro-alto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bigorrilho.html"
+  to = "/bairro/bigorrilho"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/butiatuvinha.html"
+  to = "/bairro/butiatuvinha"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cajuru.html"
+  to = "/bairro/cajuru"
+  status = 301
+  force = true
+
+# Cidades da RMC
+[[redirects]]
+  from = "/sao-jose-dos-pinhais.html"
+  to = "/bairro/sao-jose-dos-pinhais"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/colombo.html"
+  to = "/bairro/colombo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/araucaria.html"
+  to = "/bairro/araucaria"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pinhais.html"
+  to = "/bairro/pinhais"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/campo-largo.html"
+  to = "/bairro/campo-largo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/almirante-tamandare.html"
+  to = "/bairro/almirante-tamandare"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fazenda-rio-grande.html"
+  to = "/bairro/fazenda-rio-grande"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contenda.html"
+  to = "/bairro/contenda"
+  status = 301
+  force = true
+
+# SPA catch-all — SEMPRE POR ULTIMO
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -18,7 +18,7 @@ export default function BrandsCarousel() {
         <div className="md:hidden absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/60 to-transparent z-10" />
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent z-10" />
         <img
-          src="/images/loja/oficina-carplus-pneus.png"
+          src="/images/loja/oficina-carplus-pneus.webp"
           alt=""
           className="w-full h-full object-cover object-center opacity-70"
         />

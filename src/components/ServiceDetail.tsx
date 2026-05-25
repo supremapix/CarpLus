@@ -323,7 +323,7 @@ export default function ServiceDetail() {
           title: `${service.title} em Curitiba Portão | Carplus Auto Center`,
           description: `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`,
-          ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.jpg',
+          ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
           schemaJSON: [
             {
               "@context": "https://schema.org",
@@ -1323,7 +1323,7 @@ export default function ServiceDetail() {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/images/rodas/recuperacao-rodas.png" 
+                    src="/images/rodas/recuperacao-rodas.webp" 
                     alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
                     className="w-full h-auto object-cover"
                     loading="lazy"
@@ -1372,10 +1372,10 @@ export default function ServiceDetail() {
               {/* Galeria de Imagens */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 {[
-                  { src: "/images/rodas/roda-polida-1.jpg", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
-                  { src: "/images/rodas/roda-volvo-yokohama.jpg", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
-                  { src: "/images/rodas/volvo-xc60-rodas.jpg", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
-                  { src: "/images/rodas/veiculo-rodas-consertadas.jpg", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
+                  { src: "/images/rodas/roda-polida-1.webp", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
+                  { src: "/images/rodas/roda-volvo-yokohama.webp", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
+                  { src: "/images/rodas/volvo-xc60-rodas.webp", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
+                  { src: "/images/rodas/veiculo-rodas-consertadas.webp", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
                 ].map((img, i) => (
                   <motion.div
                     key={i}
