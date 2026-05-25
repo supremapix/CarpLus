@@ -187,6 +187,29 @@ const SEO_CONTENT: Record<string, {
     ],
     keywords: ['correia dentada curitiba', 'troca correia dentada curitiba', 'kit correia dentada curitiba', 'correia gates curitiba', 'tensor correia curitiba']
   },
+  'retifica-de-disco-de-freio': {
+    intro: 'A retífica de disco de freio é um serviço especializado que restaura a superfície dos discos, eliminando ranhuras, irregularidades e vibrações no pedal. Na Carplus Auto Center, localizada no bairro Portão em Curitiba, somos referência em retífica de disco de freio para toda a região sul da cidade. Se você mora no Portão, Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso ou arredores, a Carplus é a sua melhor opção para este serviço premium com o melhor preço da região.',
+    detalhes: [
+      'Equipamento de usinagem próprio com precisão milimétrica',
+      'Atendimento para moradores do Portão e toda região sul de Curitiba',
+      'Melhor preço da região com qualidade garantida',
+      'Medição de espessura antes e depois do serviço com laudo técnico',
+      'Discos ventilados, sólidos e perfurados de todas as marcas',
+      'Diagnóstico completo do sistema de freios incluso',
+      'Garantia total no serviço de usinagem',
+      'Localização estratégica na Av. Presidente Arthur da Silva Bernardes'
+    ],
+    perguntas: [
+      { pergunta: 'Qual o preço da retífica de disco de freio no Portão?', resposta: 'Na Carplus Auto Center oferecemos o melhor preço de retífica de disco de freio da região do Portão em Curitiba. O valor varia conforme o tamanho do disco, mas garantimos preço competitivo com qualidade superior. Consulte orçamento pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'A Carplus fica perto do Portão em Curitiba?', resposta: 'Sim! A Carplus está localizada na Av. Presidente Arthur da Silva Bernardes, 1323, no coração do bairro Portão. Fácil acesso para quem vem da Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso e toda região sul de Curitiba.' },
+      { pergunta: 'Por que escolher a Carplus para retífica de disco no Portão?', resposta: 'Somos especialistas em freios com mais de 10 anos de experiência. Temos equipamento de usinagem próprio, oferecemos o melhor preço da região do Portão e garantia total no serviço. Além disso, fazemos diagnóstico completo do sistema de freios.' }
+    ],
+    keywords: ['retifica disco freio portao', 'retifica disco curitiba portao', 'retificar disco freio portao curitiba', 'disco freio portao', 'oficina freio portao curitiba', 'melhor preço retifica disco portao'],
+    temImagem: true,
+    imagemDestaque: '/images/servicos/retifica-disco-freio-portao-curitiba.webp',
+    imagemAlt: 'Retífica de Disco de Freio no bairro Portão em Curitiba - Carplus Auto Center - Serviço Premium com Melhor Preço da Região Sul',
+    imagemTitle: 'Retífica de Disco de Freio Portão Curitiba - Carplus Pneus e Oficina Mecânica'
+  },
   'troca-de-fluido-de-freio': {
     intro: 'A troca de fluido de freio é um serviço de segurança essencial que muitos motoristas negligenciam. O fluido de freio é higroscópico, ou seja, absorve umidade do ar com o tempo. Essa contaminação reduz o ponto de ebulição do fluido, podendo causar "fading" (perda de frenagem) em situações de uso intenso. Na Carplus Auto Center em Curitiba, realizamos a troca completa com sangria de todo o sistema, utilizando fluidos DOT3 e DOT4 de alta qualidade.',
     detalhes: [
@@ -243,6 +266,11 @@ const SERVICOS_COMPLEMENTARES: Record<string, { nome: string; slug: string }[]> 
   ],
   'troca-de-pastilha-de-freio': [
     { nome: 'Retifica de Disco', slug: 'retifica-de-disco-de-freio' },
+    { nome: 'Troca de Fluido de Freio', slug: 'troca-de-fluido-de-freio' },
+  ],
+  'retifica-de-disco-de-freio': [
+    { nome: 'Troca de Pastilha de Freio', slug: 'troca-de-pastilha-de-freio' },
+    { nome: 'Manutencao de Freios', slug: 'manutencao-de-freios' },
     { nome: 'Troca de Fluido de Freio', slug: 'troca-de-fluido-de-freio' },
   ],
   'troca-de-oleo': [
@@ -443,6 +471,29 @@ export default function ServiceDetail() {
                   {seoContent.intro}
                 </p>
               </motion.div>
+
+              {/* Imagem em Destaque para SEO */}
+              {seoContent.temImagem && seoContent.imagemDestaque && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="max-w-4xl mx-auto mb-16"
+                >
+                  <figure className="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={seoContent.imagemDestaque} 
+                      alt={seoContent.imagemAlt || `${service.title} no bairro Portão em Curitiba - Carplus Auto Center`}
+                      title={seoContent.imagemTitle || `${service.title} Curitiba Portão`}
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="sr-only">
+                      {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Auto Center no bairro Portão, região sul de Curitiba. Atendimento especializado com melhor preço da região.`}
+                    </figcaption>
+                  </figure>
+                </motion.div>
+              )}
 
               {/* Grid de Detalhes */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">

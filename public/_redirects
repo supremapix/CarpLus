@@ -1,1 +1,13 @@
-/* /index.html 200
+# Carplus Pneus - Netlify Redirects para SPA
+# Serve arquivos pre-renderizados quando existem, senão fallback para index.html
+
+# Sitemap e robots
+/sitemap.xml    /sitemap.xml    200
+/robots.txt     /robots.txt     200
+
+# Assets estáticos
+/images/*       /images/:splat  200
+/fonts/*        /fonts/:splat   200
+
+# SPA fallback - todas as outras rotas vão para index.html
+/*              /index.html     200
