@@ -9,6 +9,7 @@ import StoreSection from './StoreSection';
 import ServicesGrid from './ServicesGrid';
 import Reviews from './Reviews';
 import FAQInfiniteScroll from './FAQInfiniteScroll';
+import CentroAutomotivoCTA from './CentroAutomotivoCTA';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
@@ -37,6 +38,8 @@ export default function Home() {
         <StoreSection />
 
         <ServicesGrid />
+
+        <CentroAutomotivoCTA />
 
         <Reviews />
 

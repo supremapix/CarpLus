@@ -18,6 +18,7 @@ import ServicosPage from './components/ServicosPage';
 import ComoChegar from './components/ComoChegar';
 import BairrosPage from './components/BairrosPage';
 import FAQPage from './components/FAQPage';
+import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
 import BackToTop from './components/BackToTop';
 import { generateLocalBusinessSchema } from './lib/schema';
 
@@ -58,6 +59,7 @@ export default function App() {
       <Route path="/como-chegar" element={<ComoChegar />} />
       <Route path="/bairros" element={<BairrosPage />} />
       <Route path="/faq" element={<FAQPage />} />
+      <Route path="/centro-automotivo-portao" element={<CentroAutomotivoPortao />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
