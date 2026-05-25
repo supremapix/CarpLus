@@ -7,7 +7,8 @@ import Footer from './Footer';
 import { 
   MapPin, Phone, Clock, Star, Shield, Wrench, Car, 
   ChevronDown, ChevronRight, ExternalLink, CheckCircle2,
-  Award, Users, Calendar, Newspaper, X
+  Award, Users, Calendar, Newspaper, X, CircleDot, Target,
+  Scale, Droplets, CircleStop, Settings, Snowflake, BarChart3
 } from 'lucide-react';
 
 // Galeria de imagens do centro automotivo
@@ -62,14 +63,14 @@ const FAQ_ITEMS = [
 
 // Serviços oferecidos
 const SERVICOS = [
-  { nome: 'Pneus', descricao: 'Venda e troca de pneus das melhores marcas', icone: '🛞', link: '/pneus' },
-  { nome: 'Alinhamento', descricao: 'Alinhamento 3D computadorizado', icone: '🎯', link: '/servico/alinhamento' },
-  { nome: 'Balanceamento', descricao: 'Balanceamento de rodas preciso', icone: '⚖️', link: '/servico/balanceamento' },
-  { nome: 'Troca de Óleo', descricao: 'Óleos sintéticos e semi-sintéticos', icone: '🛢️', link: '/servico/troca-de-oleo' },
-  { nome: 'Freios', descricao: 'Pastilhas, discos e fluido de freio', icone: '🛑', link: '/servico/troca-de-pastilha-de-freio' },
-  { nome: 'Suspensão', descricao: 'Amortecedores, molas e buchas', icone: '🔧', link: '/servico/troca-de-amortecedor' },
-  { nome: 'Arrefecimento', descricao: 'Radiador, mangueiras e fluido', icone: '❄️', link: '/servico/troca-de-fluido-de-arrefecimento' },
-  { nome: 'Diagnóstico', descricao: 'Scanner eletrônico completo', icone: '📊', link: '/servico/injecao-eletronica' },
+  { nome: 'Pneus', descricao: 'Venda e troca de pneus das melhores marcas', Icone: CircleDot, link: '/pneus' },
+  { nome: 'Alinhamento', descricao: 'Alinhamento 3D computadorizado', Icone: Target, link: '/servico/alinhamento' },
+  { nome: 'Balanceamento', descricao: 'Balanceamento de rodas preciso', Icone: Scale, link: '/servico/balanceamento' },
+  { nome: 'Troca de Óleo', descricao: 'Óleos sintéticos e semi-sintéticos', Icone: Droplets, link: '/servico/troca-de-oleo' },
+  { nome: 'Freios', descricao: 'Pastilhas, discos e fluido de freio', Icone: CircleStop, link: '/servico/troca-de-pastilha-de-freio' },
+  { nome: 'Suspensão', descricao: 'Amortecedores, molas e buchas', Icone: Settings, link: '/servico/troca-de-amortecedor' },
+  { nome: 'Arrefecimento', descricao: 'Radiador, mangueiras e fluido', Icone: Snowflake, link: '/servico/troca-de-fluido-de-arrefecimento' },
+  { nome: 'Diagnóstico', descricao: 'Scanner eletrônico completo', Icone: BarChart3, link: '/servico/injecao-eletronica' },
 ];
 
 // Diferenciais
@@ -366,7 +367,9 @@ export default function CentroAutomotivoPortao() {
                   to={servico.link}
                   className="block bg-neutral-900 rounded-2xl p-6 border border-neutral-800 hover:border-amber-500/50 transition-all group h-full"
                 >
-                  <span className="text-4xl mb-4 block">{servico.icone}</span>
+                  <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+                    <servico.Icone className="w-6 h-6 text-amber-500" />
+                  </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">
                     {servico.nome}
                   </h3>
