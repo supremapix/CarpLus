@@ -19,6 +19,7 @@ import ComoChegar from './components/ComoChegar';
 import BairrosPage from './components/BairrosPage';
 import FAQPage from './components/FAQPage';
 import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
+import BorrachariaPortao from './components/BorrachariaPortao';
 import BackToTop from './components/BackToTop';
 import { generateLocalBusinessSchema } from './lib/schema';
 
@@ -60,6 +61,7 @@ export default function App() {
       <Route path="/bairros" element={<BairrosPage />} />
       <Route path="/faq" element={<FAQPage />} />
       <Route path="/centro-automotivo-portao" element={<CentroAutomotivoPortao />} />
+      <Route path="/borracharia-portao" element={<BorrachariaPortao />} />
         
         {/* Redirects bairros .html → /bairro/ */}
         <Route path="/taboao.html" element={<Navigate to="/bairro/taboao" replace />} />

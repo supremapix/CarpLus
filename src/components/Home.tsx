@@ -10,6 +10,7 @@ import ServicesGrid from './ServicesGrid';
 import Reviews from './Reviews';
 import FAQInfiniteScroll from './FAQInfiniteScroll';
 import CentroAutomotivoCTA from './CentroAutomotivoCTA';
+import OfertasExclusivas from './OfertasExclusivas';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
@@ -40,6 +41,8 @@ export default function Home() {
         <ServicesGrid />
 
         <CentroAutomotivoCTA />
+
+        <OfertasExclusivas />
 
         <Reviews />
 

@@ -230,6 +230,28 @@ const SEO_CONTENT: Record<string, {
     temVideo: true,
     videoUrl: '-7jfKxcDlTs',
     videoBadge: 'Video Explicativo Premium'
+  },
+  'rodizio-de-pneus': {
+    intro: 'O rodizio de pneus e um servico essencial para prolongar a vida util dos seus pneus e garantir desgaste uniforme. Na Carplus Auto Center no bairro Portao em Curitiba, somos especialistas em rodizio de pneus para todos os tipos de veiculos. Realizamos o servico com agilidade e precisao, seguindo as recomendacoes tecnicas de cada fabricante, garantindo que seu veiculo rode com seguranca e economia.',
+    detalhes: [
+      'Rodizio tecnico seguindo padrao X, diagonal ou dianteiro-traseiro conforme veiculo',
+      'Inspecao visual completa de todos os pneus durante o servico',
+      'Verificacao do desgaste e indicacao de troca quando necessario',
+      'Calibragem com pressao recomendada pelo fabricante inclusa',
+      'Reaperto dos parafusos de roda com torquimetro',
+      'Servico rapido em aproximadamente 30 minutos',
+      'Atendimento para carros nacionais, importados, SUVs e picapes'
+    ],
+    perguntas: [
+      { pergunta: 'Com que frequencia devo fazer rodizio de pneus?', resposta: 'Recomendamos fazer o rodizio a cada 10.000 km ou a cada 6 meses, o que ocorrer primeiro. Em veiculos com tracao dianteira, o desgaste dos pneus dianteiros e maior, tornando o rodizio ainda mais importante para equilibrar o desgaste.' },
+      { pergunta: 'Qual o preco do rodizio de pneus na Carplus?', resposta: 'O rodizio de pneus na Carplus tem o melhor custo-beneficio da regiao do Portao. O servico inclui inspecao dos pneus e calibragem. Para clientes que compram pneus conosco, oferecemos condicoes especiais. Consulte valores pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'O rodizio de pneus melhora o consumo de combustivel?', resposta: 'Sim! Pneus com desgaste uniforme rolam melhor e geram menos resistencia, contribuindo para economia de combustivel. Alem disso, evita vibracoes e ruidos que indicam desgaste irregular, melhorando o conforto na direcao.' },
+      { pergunta: 'Posso fazer rodizio em pneus de medidas diferentes?', resposta: 'Quando os pneus dianteiros e traseiros tem medidas diferentes (comum em carros esportivos), o rodizio so pode ser feito entre pneus do mesmo eixo (direito-esquerdo). Nossa equipe avalia seu veiculo e indica o melhor procedimento.' }
+    ],
+    keywords: ['rodizio de pneus curitiba', 'rodizio pneus portao', 'trocar posicao pneus curitiba', 'rodizio pneu curitiba preco', 'borracharia rodizio curitiba'],
+    temVideo: true,
+    videoUrl: '4FpPSM5vYE8',
+    videoBadge: 'Servico em Destaque'
   }
 };
 
