@@ -197,23 +197,23 @@ export default function PneusCuritibaPromo() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
               <div className="relative z-10 text-center">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 uppercase italic tracking-tight">
-                  Promoção <br /><span className="text-primary">Relâmpago</span>
+                  Check-up <br /><span className="text-primary">Automotivo</span>
                 </h3>
                 <p className="text-white/70 mb-6 text-base sm:text-lg">
-                  Troque 4 pneus e ganhe alinhamento 3D + balanceamento. Válido para todas as marcas em estoque.
+                  Garanta sua segurança com nossa revisão completa. Verificação de freios, suspensão, fluidos e sistema elétrico para uma viagem tranquila.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
-                    to="/pneus"
+                    to="/centro-automotivo-portao"
                     className="bg-primary text-black px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/30"
                   >
-                    Ver Pneus <ChevronRight size={16} />
+                    Ver Serviços <ChevronRight size={16} />
                   </Link>
                   <a
-                    href="https://wa.me/554130827282?text=Olá! Vi a promoção de pneus no site e gostaria de saber mais!"
+                    href="https://wa.me/554130827282?text=Olá! Gostaria de agendar um Check-up Automotivo completo para meu veículo!"
                     className="bg-white/10 border border-white/30 text-white px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/20 transition-colors"
                   >
-                    <Phone size={16} /> WhatsApp
+                    <Phone size={16} /> Agendar Agora
                   </a>
                 </div>
               </div>
