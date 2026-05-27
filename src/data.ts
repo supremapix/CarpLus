@@ -386,8 +386,8 @@ export const TIRES: Tire[] = [
     marca: "Michelin", linha: "Primacy SUV", aro: 18, medida: "235/60R18",
     largura: 235, perfil: 60, indiceVelocidade: "V (240km/h)", indiceCarga: "103 (875kg)",
     categoria: "SUV", tipoVeiculo: ["SUV", "Picape"],
-    imagem: "/images/pneus/pneu_michelin_aro_18_primacy_suv_235_60r18_103v_1115_1_3e1c199ea05fe29d80b69fa9e4d8ab2a.webp",
-    imagemGrande: "/images/pneus/pneu_michelin_aro_18_primacy_suv_235_60r18_103v_1115_1_3e1c199ea05fe29d80b69fa9e4d8ab2a.webp",
+    imagem: "/images/pneus/michelin-primacy-suv.webp",
+    imagemGrande: "/images/pneus/michelin-primacy-suv.webp",
     descricao: "Desenvolvido especificamente para SUVs grandes, oferece estabilidade e frenagem superior em molhado.",
     carros: ["Volvo XC60", "Audi Q5", "Land Rover Freelander"],
     destaque: true, novoModelo: false
