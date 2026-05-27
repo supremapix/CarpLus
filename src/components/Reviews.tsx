@@ -1,5 +1,7 @@
 
-import { Star } from 'lucide-react';
+import { Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import SectionTitle from './SectionTitle';
 
 // Função para gerar tempo aleatório entre 1 dia e 3 meses
@@ -316,288 +318,11 @@ const ALL_REVIEWS = [
     stars: 5,
     avatar: null,
     avatarColorIdx: 6
-  },
-  { 
-    name: 'Andre Lüis', 
-    text: 'Fui atendido pelo Matheus. Super atencioso e simpático. Super prestativo. Todas as minhas dúvidas ele respondeu com uma simpatia inigualável. Toda a equipe super atenciosa e prestativa. Super recomendo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXwO6dg-3_X3sZzHFsd7lBz_xiKT6_KW9W6vrCIBDtkq1AjVsMSdA=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Luiz Tapias', 
-    text: 'A minha primeira experiência com eles foi bem positiva, o atendimento via WhatsApp foi rápido. O atendimento ocorreu conforme o agendado e fui muito bem atendido. Indico.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVeH7YRPFTpC-FfYLudFSFxtc8QwusfG-gXrbNA_LEOWHLaFgB6kg=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Hamilton Keller', 
-    text: 'A empresa tem uma estrutura adequada para a execução dos trabalhos, com profissionais muito qualificados. Fui muito bem atendido. A sala de espera é muito agradável, com café e chá para os clientes, enquanto aguardamos o serviço. As negociações são realizadas com total transparência, honestidade e respeito.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJGx4m7i7_qCphWm6fg4I2lghWaMLYBcRkd9x-n2n5U5OtTAg=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Brian Goncalves', 
-    text: 'Sempre atendido com excelência. Serviço muito bom e rápido, sempre se comunicando sobre possíveis contratempos com clareza. Qualidade e excelência em todas as etapas.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUAM7oDtVQNCzgEcmcyUZBFiXTlA-FA-79IFApoDu0_m-PrqdZ0=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Silvanir Silva', 
-    text: 'Como sempre excelente, atendimento e serviços de qualidade, com toda atenção necessária.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVYiQjwVbNQEpyAoNFwaofGxFbk3nBRASwEtS1TVY8bBfsKjL5m=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'luiz fernando nascimento', 
-    text: 'Atendimento super 10, desde o atendimento inicial até o diagnóstico final, em especial ao Matheus que mostrou exato o problema no meu carro, desde então serviço bem executado por ele e os demais colaboradores, super recomendo. Amplo espaço de espera e equipamentos de ponta.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVVtIONTttO7P1KJqmCVrTKKhpmLrGQAe2Ul3ouVzROIlFv3tuW=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Sergio Epifanio', 
-    text: 'Excelente atendimento do funcionário Vinicius, muito atencioso e prestativo, muito obrigado pelo excelente serviço prestado.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocK-dtCBG_5fTZIOeoBkVpVxKR91rstUZQstdWrKthWUCkRMXA=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Aldebaran Mendes', 
-    text: 'Bom dia, recomendo a todos. Excelente atendimento pelo Matheus, saboroso cafezinho. Serviço rápido bem feito, te apontam o que tem de errado a ser corrigido.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJtdHuQCWkQPaQxFwd9XW1dCPo6rAg0lcv00htAQ-IQ0nL-1Q=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Airton Alba', 
-    text: 'Bom dia! Recomendo a todos. Sou cliente há mais de 10 anos, sempre satisfeito. Super bem atendido pelo Vinicius.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWroeUqFnxvndGiaeZ-_R6pxH2L6X3Br_4IynMKz4vsHa-kLIyg=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Leonardo Baziuk', 
-    text: 'Ótimo atendimento de todos, em atenção do Vinicius, um ótimo profissional que nos atendeu e ajudou no que precisei, voltarei sempre que precisar!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKHQscErEEkyFzITVaqtDX_MjQ79ncuwbXAGfvAgf3VxXFtbw=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Jessica Fernanda Lima', 
-    text: 'Fui muito bem atendida e recebida. Pelo whatsapp foram ágeis, claros, e receptivos. Ambiente aconchegante. Nos deixam a vontade, com água, café e wifi, num ambiente agradável. São honestos. Preço justo e transparentes. Vale a pena.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWZVJb2smtcJeeaVtAL4UeWrE4_q2ECnnATq6FwqTc5ZSiRuVms=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Daniel Dias Januário', 
-    text: 'Devidas as recomendações do Google eu fui na loja. E minhas expectativas foram muito bem atendidas. O Jucemar, na troca dos pneus, e o Rafael em verificar a mecânica e o Vinicius em atender super bem. Recomendo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXi5W-_npKTYZheLxfqHLDQxgWbJd0ZrQBb3E9gG6cOv-WRwIhgRw=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'JULIANO JORIO', 
-    text: 'Excelente atendimento, com apontamento de todas as necessidades extras que o veículo precisa, além de outros serviços de recuperação e pintura das rodas. Parabéns.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVSEPWMxmzjyk0TmTc_AA1KYFqJ5xZt6KpCiQAxVh0A8w5wrk8=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Kaio Machowski', 
-    text: 'Excelente espaço, especialista explicou o problema com uma solução assertiva. Me passando total confiança e credibilidade.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW9Zi8fLiSon_MZkKa-eEi_CCb8MwoSQtztmKr-KoW8cXOJrWLa=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'gelson Dalvi', 
-    text: 'A minha experiência foi a mais positiva possível. O serviço de troca dos pneus foi realizado de forma muito eficiente e profissional. Parabéns a toda equipe.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocI4_flISsmHFkqO29q8nXFcCOLTi81Ux--QUpleTQctBXux2g=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Eliane Nazario', 
-    text: 'Ótimos profissionais, em especial o Jocimar foi muito atencioso, sai satisfeita com o serviço. Super recomendo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWHZ_P-JVUJA4b4g4q7m9RclzTISOYxLOVKVg3pqeclEl4h3uxj=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Pedro Ayres', 
-    text: 'Oficina muito boa, atendentes e mecânicos muito atenciosos, me emprestaram até carregador pra esperar lá! Vinícius resolveu meu problema bem e explicou certinho o que aconteceu!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUXkLB2D5YyLZw8HhUVYN_ZP14CYAJuUHphmSFmxJfyg1O3pBgg=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Dione Sampaio', 
-    text: 'Super recomendo! Fomos muito bem atendidos pelo Jocimar! Produtos de qualidade! Ótimos preços!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJnZUn2ehcCc4oUmjDSrq7fBEL-Ntk0puqf80RMkdgvvhvsNA=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Ellen Amanda', 
-    text: 'Excelente atendimento na Carplus Pneus e Oficina Mecânica. Equipe profissional, organizada e muito atenciosa. Destaque especial para a Jaqueline, do caixa, que me atendeu com muita educação, simpatia e eficiência, esclarecendo todas as dúvidas e tornando a experiência ainda melhor. Recomendo!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXMS6yPaR9TxmYcy_ystYGuuN-Alm3K9p7Sd_ArnXzqjEYSdoerpw=w36-h36-p-rp-mo-ba2-br100'
-  },
-  { 
-    name: 'Fernanda Paula', 
-    text: 'Atendimento Excelente pelo técnico Vinícius, que demonstra ter alto conhecimento técnico, sempre esclarecendo as dúvidas, ambiente limpo e confortável.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUfmtyLlOMNgw-0ccWKBTyxEhqCvG0NOIB8OvsvNXENusrlJfyt=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Janeterribas Ribas', 
-    text: 'Atendimento excelente! O gerente Emerson muito atencioso! O Vinícius excelente profissional! Recomendo!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVVCR5YG73AyJyyWQt9FcSEAUi9tN-Egq2qWA1_-Jfuoa31PkkMWg=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Marcio Santos', 
-    text: 'Excelente atendimento do Vinícius, rapaz bem prestativo, super educado!! Com certeza voltarei mais vezes!! E o serviço dos mecânicos nota 10!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV96fiRVsqXNCXsSISRs23hycbTL4Wpipae-ZaNOALh4D0Ue0pQ=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'eduardo alves dos santos', 
-    text: 'Atendimento, dedicação e preço justo, o capricho no ambiente e na organização da loja diz muito sobre o trabalho aplicado no carro. Trago meu carro aqui e fico tranquilo que está em boas mãos com profissionais exigentes e dedicados.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVFQ6JtswZYA7Y5uZud68HGTlQKibKqGryC6w5xF-mmuNEZ_5Fi=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Maria Cristina', 
-    text: 'Gostei muito! Atendimento nota 1000 do mecânico Dolair, muito atencioso! Já tinha levado em outros lugares e não tive resultado satisfatório, mas dessa me mostraram e resolveram o problema, tive um ótimo resultado! Além do ótimo preço.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW0y2_gq2NBrgAXDMkmAaEa5IZn-TL6-8_WBu-hL-Ao-ocf7bLm=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Rosangela Dias', 
-    text: 'Lugar com atendimento excelente! Agradeço ao profissional Jocimar pelo ótimo trabalho, serviço de qualidade, rápido e eficiente. Jocimar trabalha muito bem, é caprichoso e atencioso. Recomendo de olhos fechados.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXPyxaIOThmNr_Dzy-Px08RvRp4Db8ofeFMo0MCsjBba-zbmkZZxw=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Isabel Schmidt', 
-    text: 'Levei meu carro e fui bem atendida, vendedor atencioso e o mecânico descreveu o problema com clareza. Consegui um orçamento ótimo que facilitou o pagamento. Muito feliz com a experiência!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKNZO-Fz4hhL7x5hjBJSA8SqZ3Fqs3jurmXh3Z0cknURq1mqg=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Eduardo Seiti', 
-    text: 'Quero elogiar o excelente atendimento da loja. Sempre sou atendido pelo Matheus que se destaca pela transparência, proatividade e agilidade, sempre explicando tudo de forma clara e segura.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocK0SaZzjpysRzAj0qkCbCwfRKf_lMlu7Fcfvw9j1Ll4EGcu_w=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Hellen Zampronio', 
-    text: 'Além do custo beneficio ter sido muito bom, tive um ótimo atendimento com vendedor Vinicius.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKoJU8iyhsGHMGzPTiZQXG4ss4izvOsakdSKF0r0xXkSMJagQ=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Juliane Freitas', 
-    text: 'Melhor loja da região, preços acessíveis e com produto de qualidade, o atendimento do Matheus é excelente, muito simpático e prestativo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXF3uplODIBfzQN7DmXsa2tSYUkIWYVbrOIFDFPpAi2LQVOP-AsqA=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Cesar Felix', 
-    text: 'Boa noite deixei as rodas do meu carro para realizar a reforma me surpreendi pela qualidade do serviço que foi realizado, obrigado Josimar pela indicação e atenção que todos vocês tem pelos os clientes.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocI78LG6WfuwWKHC-2dxhzpa-u9BDqMuo0yV_glr7PGEDTEA6w=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Robson Maciel', 
-    text: 'Boa tarde! Fui atendido excepcionalmente bem pelo Sr. Vinícius. Apesar de não nos conhecermos, tratamos de uma compra de pneus muito importante para mim. Tive dois pneus danificados e o Sr. Vinícius não mediu esforços para que os referidos pneus me fossem entregues. Agradeço ao Sr. Vinícius e a empresa Carplus pelo excelente atendimento.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIdOnKCURY5LRDPqBdAZGATHTa19Hh1IFwXq-XdHG6G-QH7IA=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Quédima Motta', 
-    text: 'Lugar com ótimo atendimento. Agradeço o profissional Jocimar que fez a reforma de rodas do meu carro com qualidade e eficiência. Super recomendo!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVl9DkB0z0aGjuAputMIuqbGgZh8I_n6Yl6IYU0OcdtsNcR1zA=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Janderson Brasil', 
-    text: 'Atendimento ótimo, agradeço o gerente Emerson e sua equipe, prestaram serviço com muita simpatia e honestidade, pneus Pirelli com melhor preço de Curitiba, recomendo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKhmjrbRV86rHprKIJAv6hTIogs0fjQpjGTAsWeb4E5UsQuVw=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'DANIEL NEUMANN', 
-    text: 'Atendimento excelente! Levei meu carro para revisão e fui muito bem atendido desde o primeiro contato. A equipe é profissional, honesta e transparente sobre os serviços e valores. Entregaram o carro no prazo combinado e o serviço ficou impecável. Super recomendo a oficina para quem busca qualidade e confiança!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVqWmo69zgXzWvv8gcR3P7zO3VuO_SbLee2iCPqsIZNCyWDFl0g2w=w36-h36-p-rp-mo-ba4-br100'
-  },
-  { 
-    name: 'Fabio Souza', 
-    text: 'Em todas vezes que estive na CarPlus da Arthur Bernardes, fui muito bem atendido pelo vendedor Matheus e a moça que atende no caixa, de um modo geral todos lá lhe atendem bem. O local é muito bem localizado e de fácil acesso, além de limpo.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVum3rAufjeU49_0OFZx2q5vAOXHLewsXFLGwzzrSkgbU6lKMrO=w36-h36-p-rp-mo-ba2-br100'
-  },
-  { 
-    name: 'Flávia Motta', 
-    text: 'Excelente atendimento! Atendente Vinícius, excelente pessoa e extremamente atencioso! Obrigada à Carplus pelo serviço de excelência!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUj-R_k0VQx5c2nLVll8gCu_yt-B_wlbVCAPdwmmsOhPmFCF_62=w36-h36-p-rp-mo-ba2-br100'
-  },
-  { 
-    name: 'Emerson Siqueira', 
-    text: 'Ótimo serviço com atendente exemplar, fez o serviço conforme orçado, recomendo!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWIbfyGy91PtgnziCKlgMrKkE-gqhOEvlF5F5LbRpFzYRmEjJZe=w36-h36-p-rp-mo-ba2-br100'
-  },
-  { 
-    name: 'Salvador Luiz Zoreck', 
-    text: 'Atendimento excelente. O consultor Matheus foi muito atencioso. Acompanhei o serviço de manutenção de freios, e gostei da forma com que o mecânico caprichou na limpeza, lubrificação e até pintou as partes da panela de freios traseiros. Quando a prestação de serviços realiza um serviço como se estivesse fazendo pra si mesmo, mostra a excelência no serviço. Parabéns para a Carplus da Arthur Bernardes.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLQ-V7Y-CDQ9hmvAaIWdc1RLuToJiYoQj7sSAWN6WXeQ762UQ=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Jose Pereira', 
-    text: 'Recomendo! Precisei trocar os pneus e o Matheus me atendeu muito bem, transparência e agilidade no serviço.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLYaHC8aTLs_NV2hsliR9jymTDXB-MTArUQLBpaZDp5iPglOQ=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Edenilson Maia da Silva', 
-    text: 'Empresa muito top. Honestidade e transparência na relação comercial para este segmento é fundamental. Estão de parabéns.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWYXXGxoX2srCJ2w6yDBHYi1EQzilDqBbARhcGjEK2-dLr2yLxw=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Elaine Cristina', 
-    text: 'Loja top, atendimento maravilhoso, atenciosos demais, muito satisfeita com o trabalho deles.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWf8vm_YEb9ac4TsCyIRwbLRUB5HoEgzPDv4DbXRa4CMJUyTh4g=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Robert', 
-    text: 'Atendimento impecável, desde o primeiro contato com o Consultor Matheus, Mecânicos qualificados, limpeza e organização nota 10.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLj76KhbOpuqsSSTzq7fzfLYZXTMklSFV2iJZpLV3mtcLr2DQ=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Germano Rutz', 
-    text: 'Serviço nota 1000 do Jocimar, da Carplus Pneus! Fez um excelente trabalho nas rodas do meu carro, capricho, atenção e muito profissionalismo! Recomendo demais!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjX6Yt9abFRiZuI94S-Q8EycKMs9ev4xv28x3c2XsTGEBmA8VBUL=w36-h36-p-rp-mo-ba5-br100'
-  },
-  { 
-    name: 'McTG', 
-    text: 'Levei meu carro com problemas e o mecânico Dollair é sem palavras, atencioso, educado e deixou meu carro impecável. Recomendo sempre.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWtMOcjCHOSASTDdIzq_hQHf0Md8Eilqr72CIk0vLLVPsgbNZwT=w36-h36-p-rp-mo-br100'
-  },
-  { 
-    name: 'Hiago Henrique', 
-    text: 'Fiz um serviço de reforma nas minhas rodas com o Jocemar, ficou muito top, ótimo profissional.', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKH2qenI52QCmNEDTl2f76pDhaeoeg8QzWFO6UQ-qQ2kDMsNAI=w36-h36-p-rp-mo-ba3-br100'
-  },
-  { 
-    name: 'Ingrid Rigamonte', 
-    text: 'O mecânico Rafael Henrique, ótimo profissional, educado, faz um excelente trabalho e o melhor orçamento, super acessível. SUPER RECOMENDO!', 
-    stars: 5,
-    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIgWKBXqDVmljxnJFs9_XAQl373YJjjP0D05T2VcBU-TV3xuw=w36-h36-p-rp-mo-br100'
-  },
+  }
 ];
 
-// Paleta de avatares igual ao Google
 const AVATAR_COLORS = [
-  { bg: '#1a73e8', text: '#fff' }, // azul Google
+  { bg: '#4285f4', text: '#fff' }, // azul Google
   { bg: '#ea4335', text: '#fff' }, // vermelho Google
   { bg: '#34a853', text: '#fff' }, // verde Google
   { bg: '#fbbc04', text: '#fff' }, // amarelo Google
@@ -618,11 +343,14 @@ function GoogleLogo() {
   );
 }
 
-function ReviewCard({ review, colorIdx, reviewIdx }: { review: typeof ALL_REVIEWS[0]; colorIdx: number; reviewIdx: number }) {
+function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof ALL_REVIEWS[0]; colorIdx: number; reviewIdx: number; onClick: () => void }) {
   const avatarIdx = review.avatarColorIdx !== undefined ? review.avatarColorIdx : colorIdx;
   const avatar = AVATAR_COLORS[avatarIdx % AVATAR_COLORS.length];
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-shadow flex-shrink-0 w-full border border-gray-100">
+    <div 
+      onClick={onClick}
+      className="bg-white p-4 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-shadow flex-shrink-0 w-full border border-gray-100 cursor-pointer"
+    >
       {/* Header estilo Google Maps */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2.5">
@@ -660,12 +388,12 @@ function ReviewCard({ review, colorIdx, reviewIdx }: { review: typeof ALL_REVIEW
       </div>
 
       {/* Texto */}
-      <p className="text-[#3c4043] text-[13px] leading-relaxed">{review.text}</p>
+      <p className="text-[#3c4043] text-[13px] leading-relaxed line-clamp-3">{review.text}</p>
     </div>
   );
 }
 
-function ReviewColumn({ reviews, duration, delay = 0, offset = 0 }: { reviews: typeof ALL_REVIEWS; duration: number; delay?: number; offset?: number }) {
+function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick }: { reviews: typeof ALL_REVIEWS; duration: number; delay?: number; offset?: number; onReviewClick: (review: typeof ALL_REVIEWS[0], index: number) => void }) {
   const doubled = [...reviews, ...reviews];
   return (
     <div className="flex flex-col gap-3 overflow-hidden" style={{ maxHeight: '680px' }}>
@@ -673,7 +401,15 @@ function ReviewColumn({ reviews, duration, delay = 0, offset = 0 }: { reviews: t
         className="flex flex-col gap-3 will-change-transform"
         style={{ animation: `scrollUp ${duration}s linear ${delay}s infinite` }}
       >
-        {doubled.map((r, i) => <ReviewCard key={i} review={r} colorIdx={(i + offset) % 6} reviewIdx={i} />)}
+        {doubled.map((r, i) => (
+          <ReviewCard 
+            key={i} 
+            review={r} 
+            colorIdx={(i + offset) % 6} 
+            reviewIdx={i} 
+            onClick={() => onReviewClick(r, i % reviews.length)}
+          />
+        ))}
       </div>
     </div>
   );
@@ -685,6 +421,42 @@ const COL3 = ALL_REVIEWS.slice(48, 72);
 const COL4 = ALL_REVIEWS.slice(72);
 
 export default function Reviews() {
+  const [selectedReview, setSelectedReview] = useState<{ review: typeof ALL_REVIEWS[0], index: number } | null>(null);
+
+  const openReview = (review: typeof ALL_REVIEWS[0], index: number) => {
+    setSelectedReview({ review, index });
+  };
+
+  const closeReview = () => {
+    setSelectedReview(null);
+  };
+
+  const nextReview = useCallback(() => {
+    if (selectedReview) {
+      const nextIdx = (selectedReview.index + 1) % ALL_REVIEWS.length;
+      setSelectedReview({ review: ALL_REVIEWS[nextIdx], index: nextIdx });
+    }
+  }, [selectedReview]);
+
+  const prevReview = useCallback(() => {
+    if (selectedReview) {
+      const prevIdx = (selectedReview.index - 1 + ALL_REVIEWS.length) % ALL_REVIEWS.length;
+      setSelectedReview({ review: ALL_REVIEWS[prevIdx], index: prevIdx });
+    }
+  }, [selectedReview]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedReview) {
+        if (e.key === 'ArrowRight') nextReview();
+        if (e.key === 'ArrowLeft') prevReview();
+        if (e.key === 'Escape') closeReview();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedReview, nextReview, prevReview]);
+
   return (
     <section className="py-24 bg-[#f8f9fa] relative overflow-hidden">
       <style>{`
@@ -695,28 +467,30 @@ export default function Reviews() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-left max-w-[640px] mb-14">
+        <div className="text-center md:text-left max-w-[640px] mb-14 mx-auto md:mx-0">
           {/* Badge estilo Google */}
-          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm px-5 py-2.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm px-5 py-2.5 rounded-full mb-6 mx-auto md:mx-0">
             <GoogleLogo />
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
             <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
           </div>
-          <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
-          <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light text-left">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
+          <div className="flex flex-col items-center md:items-start">
+            <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
+            <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light text-center md:text-left">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
+          </div>
         </div>
 
         {/* Colunas de scroll infinito */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 [mask-image:linear-gradient(to_bottom,transparent,black_8%,black_92%,transparent)]">
-          <ReviewColumn reviews={COL1} duration={60} delay={0} offset={0} />
-          <ReviewColumn reviews={COL2} duration={55} delay={-15} offset={2} />
+          <ReviewColumn reviews={COL1} duration={60} delay={0} offset={0} onReviewClick={openReview} />
+          <ReviewColumn reviews={COL2} duration={55} delay={-15} offset={2} onReviewClick={openReview} />
           <div className="hidden lg:block">
-            <ReviewColumn reviews={COL3} duration={65} delay={-30} offset={4} />
+            <ReviewColumn reviews={COL3} duration={65} delay={-30} offset={4} onReviewClick={openReview} />
           </div>
           <div className="hidden lg:block">
-            <ReviewColumn reviews={COL4} duration={50} delay={-10} offset={1} />
+            <ReviewColumn reviews={COL4} duration={50} delay={-10} offset={1} onReviewClick={openReview} />
           </div>
         </div>
 
@@ -730,6 +504,100 @@ export default function Reviews() {
           </a>
         </div>
       </div>
+
+      {/* Modal de Review Ampliado */}
+      <AnimatePresence>
+        {selectedReview && (
+          <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeReview}
+              className="absolute inset-0 bg-dark/60 backdrop-blur-sm"
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white w-full max-w-2xl rounded-[2rem] shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Botão Fechar */}
+              <button 
+                onClick={closeReview}
+                className="absolute top-6 right-6 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors z-20"
+              >
+                <X size={20} className="text-gray-600" />
+              </button>
+
+              {/* Conteúdo do Modal */}
+              <div className="p-8 sm:p-12">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    {selectedReview.review.avatar ? (
+                      <img
+                        src={selectedReview.review.avatar}
+                        alt={selectedReview.review.name}
+                        className="w-16 h-16 rounded-full object-cover shadow-md"
+                        crossOrigin="anonymous"
+                      />
+                    ) : (
+                      <div
+                        className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl uppercase shadow-md"
+                        style={{ 
+                          backgroundColor: AVATAR_COLORS[selectedReview.review.avatarColorIdx || 0].bg, 
+                          color: AVATAR_COLORS[selectedReview.review.avatarColorIdx || 0].text 
+                        }}
+                      >
+                        {selectedReview.review.name[0]}
+                      </div>
+                    )}
+                    <div>
+                      <h4 className="text-xl font-bold text-dark">{selectedReview.review.name}</h4>
+                      <p className="text-gray-500 text-sm flex items-center gap-2">
+                        <GoogleLogo /> Local Guide • {getTimeAgo(selectedReview.index)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-1 mb-6">
+                  {[...Array(selectedReview.review.stars)].map((_, j) => (
+                    <Star key={j} size={24} fill="#fbbc04" color="#fbbc04" />
+                  ))}
+                </div>
+
+                <p className="text-gray-700 text-lg sm:text-xl leading-relaxed italic font-medium">
+                  "{selectedReview.review.text}"
+                </p>
+
+                {/* Navegação */}
+                <div className="flex items-center justify-between mt-12 pt-8 border-t border-gray-100">
+                  <button 
+                    onClick={prevReview}
+                    className="flex items-center gap-2 text-gray-500 hover:text-primary font-bold transition-colors group"
+                  >
+                    <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+                    Anterior
+                  </button>
+                  <div className="text-gray-300 font-mono text-sm">
+                    {selectedReview.index + 1} / {ALL_REVIEWS.length}
+                  </div>
+                  <button 
+                    onClick={nextReview}
+                    className="flex items-center gap-2 text-gray-500 hover:text-primary font-bold transition-colors group"
+                  >
+                    Próximo
+                    <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
