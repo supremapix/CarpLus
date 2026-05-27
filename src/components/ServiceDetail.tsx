@@ -462,7 +462,7 @@ export default function ServiceDetail() {
 
               <div className="relative group">
                  <img 
-                    src="/images/loja/loja-de-pneus-curitiba.webp" 
+                    src="/images/loja/loja-de-pneus-curitiba.jpg" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={`Oficina mecanica especializada em ${service.title} – ${service.title} na Carplus Curitiba Portao`} 
                  />

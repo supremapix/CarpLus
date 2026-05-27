@@ -40,8 +40,8 @@ export const TIRES: Tire[] = [
     indiceCarga: "82 (475kg)",
     categoria: "Econômico",
     tipoVeiculo: ["Passeio", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "Com estrutura reforçada, o pneu 175/70R13 P400 Evo oferece desempenho seguro e bom custo-benefício para uso diário em vias urbanas. Ideal para quem busca economia sem abrir mão da segurança.",
     carros: ["Chevrolet Celta", "Chevrolet Classic", "Fiat Uno", "VW Gol G4", "Fiat Palio"],
     destaque: false,
@@ -62,8 +62,8 @@ export const TIRES: Tire[] = [
     indiceCarga: "82 (475kg)",
     categoria: "Econômico",
     tipoVeiculo: ["Passeio", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "Pneu Pirelli P400 Evo medida 175/70R13 82T, indicado para Chevrolet Celta. Ótimo desempenho em pista seca e molhada com baixo ruído interno.",
     carros: ["Chevrolet Celta"],
     destaque: false,
@@ -78,8 +78,8 @@ export const TIRES: Tire[] = [
     aro: 13, medida: "175/70R13", largura: 175, perfil: 70,
     indiceVelocidade: "T (190km/h)", indiceCarga: "82 (475kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Sedan"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo medida 175/70R13 específico para Chevrolet Classic. Excelente aderência e durabilidade para uso urbano intenso.",
     carros: ["Chevrolet Classic"], destaque: false, novoModelo: false
   },
@@ -90,8 +90,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 13, medida: "175/70R13",
     largura: 175, perfil: 70, indiceVelocidade: "T (190km/h)", indiceCarga: "82 (475kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "Pneu Pirelli P400 Evo para Fiat Uno. Conforto no dia a dia com segurança garantida pela tecnologia Pirelli.",
     carros: ["Fiat Uno"], destaque: false, novoModelo: false
   },
@@ -149,8 +149,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 14, medida: "185/60R14",
     largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "82 (475kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Hatch", "Sedan"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo 185/60R14 para uso urbano com índice H (210km/h). Boa estabilidade em pista molhada e baixo custo operacional.",
     carros: ["Fiat Stilo", "VW Polo", "Chevrolet Prisma antigo"],
     destaque: false, novoModelo: false
@@ -162,8 +162,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 14, medida: "185/65R14",
     largura: 185, perfil: 65, indiceVelocidade: "T (190km/h)", indiceCarga: "86 (530kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Sedan", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo 185/65R14 – uma das medidas mais populares do Brasil. Equilíbrio perfeito entre custo, durabilidade e desempenho.",
     carros: ["VW Gol G5/G6", "Chevrolet Onix 1.0", "Fiat Palio", "Renault Logan"],
     destaque: true, novoModelo: false
@@ -175,8 +175,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 15, medida: "195/55R15",
     largura: 195, perfil: 55, indiceVelocidade: "H (210km/h)", indiceCarga: "85 (515kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo aro 15 perfil baixo. Visual esportivo com economia para o bolso. Ótimo para quem tem rodas esportivas.",
     carros: ["VW Golf", "Peugeot 206/207", "Fiat Bravo", "Seat Ibiza"],
     destaque: false, novoModelo: false
@@ -188,8 +188,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 15, medida: "195/60R15",
     largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Sedan", "Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo 195/60R15 – medida muito solicitada. Durabilidade e segurança para uso urbano diário.",
     carros: ["Chevrolet Cruze", "Chevrolet Onix Plus", "Fiat Argo 1.3", "Honda City", "VW Virtus"],
     destaque: true, novoModelo: false
@@ -201,8 +201,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 15, medida: "195/60R15",
     largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)",
     categoria: "Econômico", tipoVeiculo: ["Sedan"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "Pneu P400 Evo 195/60R15 homologado para Chevrolet Cruze. Direção precisa e frenagem eficiente.",
     carros: ["Chevrolet Cruze"], destaque: false, novoModelo: false
   },
@@ -213,8 +213,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 15, medida: "195/60R15",
     largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)",
     categoria: "Econômico", tipoVeiculo: ["Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "P400 Evo específico para Chevrolet Onix – o carro mais vendido do Brasil. Tecnologia Pirelli para o carro da família.",
     carros: ["Chevrolet Onix", "Chevrolet Onix Plus"],
     destaque: false, novoModelo: false
@@ -226,8 +226,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P400 Evo", aro: 15, medida: "195/60R15",
     largura: 195, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "88 (560kg)",
     categoria: "Econômico", tipoVeiculo: ["Hatch"],
-    imagem: "/images/pneus/pneu-pirelli-p400-evo.webp",
-    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo-600x600.webp",
+    imagem: "/images/pneus/pneu-pirelli-p400-evo.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-p400-evo.jpg",
     descricao: "Pneu Pirelli para Fiat Argo 195/60R15. Resposta ágil à direção e conforto no dia a dia urbano.",
     carros: ["Fiat Argo"], destaque: false, novoModelo: false
   },
@@ -242,8 +242,8 @@ export const TIRES: Tire[] = [
     marca: "Pirelli", linha: "P Zero", aro: 17, medida: "205/45R17",
     largura: 205, perfil: 45, indiceVelocidade: "V (240km/h)", indiceCarga: "84 (500kg)",
     categoria: "Esportivo", tipoVeiculo: ["Esportivo", "Sedan Premium", "Coupe"],
-    imagem: "/images/pneus/pneu-205-45r17-pirelli-pzero.webp",
-    imagemGrande: "/images/pneus/pneu-205-45r17-pirelli-pzero.webp",
+    imagem: "/images/pneus/pneu-pirelli-pzero.jpg",
+    imagemGrande: "/images/pneus/pneu-pirelli-pzero.jpg",
     descricao: "O P Zero Run Flat permite rodar até 80km a 80km/h mesmo sem pressão. Tecnologia de ponta para carros esportivos e premium. Máxima aderência em pista seca.",
     carros: ["BMW Série 1", "BMW Série 3", "Mini Cooper", "Audi A3"],
     destaque: true, novoModelo: true
@@ -869,7 +869,7 @@ export const TIRES: Tire[] = [
   { id: 131, slug: "pneu-yokohama-advan-sport-v105-225-45zr17-94y", nome: "Yokohama ADVAN Sport V105 225/45ZR17 94Y", marca: "Yokohama", linha: "ADVAN Sport V105", aro: 17, medida: "225/45R17", largura: 225, perfil: 45, indiceVelocidade: "Y (300km/h)", indiceCarga: "94 (670kg)", categoria: "Esportivo", tipoVeiculo: ["Sedan Premium", "Hatch Esportivo"], imagem: "/images/pneus/pneu-yokohama-advan-sport-v105.webp", imagemGrande: "/images/pneus/pneu-yokohama-v105.webp", descricao: "O pneu Yokohama ADVAN Sport V105 é um modelo de ultra-alta performance (UHP) que combina características esportivas com tecnologias de segurança avançadas, incluindo tecnologia Run Flat Z.P.S para mobilidade mesmo após perda de pressão.", carros: ["BMW Série 1", "Mercedes A-Class", "Audi A3", "VW Golf R"], destaque: true, novoModelo: true },
 
   // ══════════════════════════════════════
-  // PRINX HH1 – Uso Urbano e Rodoviário
+  // PRINX HH1 ��� Uso Urbano e Rodoviário
   // ════════���══════════════���══════════════
   { id: 132, slug: "pneu-prinx-hh1-175-65r15-84h", nome: "Prinx HH1 175/65R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "175/65R15", largura: 175, perfil: 65, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["VW Gol", "Fiat Argo", "Chevrolet Onix", "Hyundai HB20"], destaque: false, novoModelo: true },
   { id: 133, slug: "pneu-prinx-hh1-185-60r15-84h", nome: "Prinx HH1 185/60R15 84H", marca: "Prinx", linha: "HH1", aro: 15, medida: "185/60R15", largura: 185, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "84 (500kg)", categoria: "Passeio", tipoVeiculo: ["Hatch", "Sedan Compacto"], imagem: "/images/pneus/pneu-prinx-hh1.webp", imagemGrande: "/images/pneus/pneu-prinx-hh1.webp", descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Oferece excelente custo-benefício, baixo ruído e ótima durabilidade.", carros: ["Honda Fit", "Toyota Etios", "Nissan March", "Ford Ka"], destaque: false, novoModelo: true },
@@ -3527,7 +3527,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // PIRELLI – Linha Cinturato P7
-  // ══════════════════════════════════════
+  // ═══════════���══════════════════════════
   { id: 338, slug: "pneu-pirelli-19555r15-cinturato-p7-85h", nome: "Pirelli 195/55R15 Cinturato P7 85H", marca: "Pirelli", linha: "Cinturato P7", aro: 15, medida: "195/55R15", largura: 195, perfil: 55, indiceVelocidade: "H (210km/h)", indiceCarga: "85 (515kg)", categoria: "Performance", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/p7cint.webp", imagemGrande: "/images/pneus/p7cint.webp", descricao: "Pneu Pirelli Cinturato P7 195/55R15, tecnologia premium para sedãs.", carros: ["Alfa Romeo 145", "Alfa Romeo 155", "Fiat Tempra", "Ford Ka", "Ford Ka+", "Ford New Fiesta", "Ford Novo Ka", "Honda Civic", "Mercedes Classe A", "Peugeot 206", "Peugeot 306", "Volks Fox", "Volks Gol G4", "Volks Gol G5", "Volks Gol G6", "Volks Parati G4", "Volks Polo", "Volks Polo Sedan", "Volks Saveiro", "Volks SpaceFox", "Volks Voyage"], destaque: false, novoModelo: true },
   { id: 339, slug: "pneu-pirelli-20560r15-cinturato-p7-91h", nome: "Pirelli 205/60R15 Cinturato P7 91H", marca: "Pirelli", linha: "Cinturato P7", aro: 15, medida: "205/60R15", largura: 205, perfil: 60, indiceVelocidade: "H (210km/h)", indiceCarga: "91 (615kg)", categoria: "Performance", tipoVeiculo: ["Sedan", "Hatch Premium"], imagem: "/images/pneus/p7cint.webp", imagemGrande: "/images/pneus/p7cint.webp", descricao: "Pneu Pirelli Cinturato P7 205/60R15, alta performance para sedãs premium.", carros: ["Alfa Romeo 156", "Alfa Romeo 157", "Audi 80", "Audi A3", "Audi A4", "Audi A6", "BMW Serie 3", "Chevrolet Omega", "Chevrolet Suprema", "Citroen Xantia", "Honda CL", "Hyundai Sonata", "Kia Magentis", "Mercedes Classe C 230", "Mitsubishi Galant", "Nissan Sentra", "Peugeot 406", "Peugeot 605", "Volks Cross Fox", "Volks Golf", "Volks Passat", "Volks Saveiro"], destaque: true, novoModelo: true },
   { id: 340, slug: "pneu-pirelli-19550r16-cinturato-p7-84v", nome: "Pirelli 195/50R16 Cinturato P7 84V", marca: "Pirelli", linha: "Cinturato P7", aro: 16, medida: "195/50R16", largura: 195, perfil: 50, indiceVelocidade: "V (240km/h)", indiceCarga: "84 (500kg)", categoria: "Performance", tipoVeiculo: ["Hatch", "Sedan"], imagem: "/images/pneus/p7cint.webp", imagemGrande: "/images/pneus/p7cint.webp", descricao: "Pneu Pirelli Cinturato P7 195/50R16, perfil baixo para carros esportivos.", carros: ["Chevrolet Agile", "Fiat Idea", "Ford New Fiesta", "Suzuki Swift", "Volks Fox", "Volks Gol G5", "Volks G6", "Volks Parati G4", "Volks Space Fox", "Volks Voyage"], destaque: false, novoModelo: true },
@@ -3540,7 +3540,7 @@ export const TIRES: Tire[] = [
 
   // ══════════════════════════════════════
   // PIRELLI – Linha Cinturato P1 Runflat
-  // ═════════════════════════════��════════
+  // ══���══════════════════════════��════════
   { id: 343, slug: "pneu-pirelli-19555r16-cinturato-p1-runflat-87v", nome: "Pirelli 195/55R16 Cinturato P1 Runflat 87V", marca: "Pirelli", linha: "Cinturato P1 RFT", aro: 16, medida: "195/55R16", largura: 195, perfil: 55, indiceVelocidade: "V (240km/h)", indiceCarga: "87 (545kg)", categoria: "Performance", tipoVeiculo: ["Hatch Premium", "Sedan Premium"], imagem: "/images/pneus/p1cint.webp", imagemGrande: "/images/pneus/p1cint.webp", descricao: "Pneu Pirelli Cinturato P1 Runflat 195/55R16, permite rodar até 80km sem pressão.", carros: [], destaque: false, novoModelo: true },
 
   // ══════════════════════════════════════
@@ -25370,7 +25370,7 @@ export const TIRES: Tire[] = [
   {
     id: "3397",
     marca: "Yokohama",
-    nome: "O pneu Yokohama Geolandar A/T G015 é um pneu all-terrain para SUVs e caminhonetes com excelente tração em off-road e conforto em rodovias. Ideal para aventureiros que transitam entre asfalto e trilhas.",
+    nome: "O pneu Yokohama Geolandar A/T G015 é um pneu all-terrain para SUVs e caminhonetes com excelente traç��o em off-road e conforto em rodovias. Ideal para aventureiros que transitam entre asfalto e trilhas.",
     slug: "o-pneu-yokohama-geolandar-a-t-g015-e-um-pneu-all-terrain-para-suvs-e-caminhonetes-com-excelente-tracao-em-off-road-e-conforto-em-rodovias-ideal-para-aventureiros-que-transitam-entre-asfalto-e-trilhas",
     imagem: "/images/pneus/pneu-yokohama-ad09.webp",
     medida: "",

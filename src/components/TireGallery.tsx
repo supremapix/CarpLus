@@ -136,7 +136,7 @@ export default function TireGallery() {
           {/* Background image */}
           <div className="absolute inset-0">
             <img
-              src="/images/loja/estoque-pneus-carplus.webp"
+              src="/images/loja/estoque-pneus-carplus.jpg"
               alt="Loja de pneus Carplus"
               className="w-full h-full object-cover object-center"
             />

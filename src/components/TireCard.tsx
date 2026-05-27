@@ -24,6 +24,12 @@ interface TireCardProps {
 function TireCard({ tire, index }: TireCardProps) {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  const [imgSrc, setImgSrc] = useState(tire.imagem);
+
+  const handleImageError = () => {
+    // Fallback para imagem genérica quando a original não carregar
+    setImgSrc('/images/pneus/pneu-generic.jpg');
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -61,8 +67,9 @@ function TireCard({ tire, index }: TireCardProps) {
         onMouseMove={handleMouseMove}
       >
         <img 
-          src={tire.imagem} 
+          src={imgSrc} 
           alt={tire.nome} 
+          onError={handleImageError}
           className={`w-full h-full object-contain transition-all duration-500 transform ${isHovered ? 'scale-105 opacity-0' : 'scale-100 opacity-100'} [mix-blend-mode:multiply]`} 
         />
         
@@ -71,7 +78,7 @@ function TireCard({ tire, index }: TireCardProps) {
           <div 
             className="absolute inset-0 z-10 w-full h-full pointer-events-none [mix-blend-mode:multiply] transition-all duration-300"
             style={{
-              backgroundImage: `url(${tire.imagem})`,
+              backgroundImage: `url(${imgSrc})`,
               backgroundPosition: `${mousePos.x}% ${mousePos.y}%`,
               backgroundSize: '250%',
               backgroundRepeat: 'no-repeat'

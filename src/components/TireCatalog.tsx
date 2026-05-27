@@ -158,7 +158,7 @@ export default function TireCatalog() {
       <section className="bg-dark pt-32 md:pt-40 pb-0 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="/images/loja/loja-de-pneus-curitiba.webp"
+            src="/images/loja/loja-de-pneus-curitiba.jpg"
             className="w-full h-full object-cover"
             alt="Fundo"
           />

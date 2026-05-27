@@ -18,10 +18,10 @@ const ALL_SERVICES = SERVICE_CATEGORIES.flatMap(cat =>
 );
 
 const STUDIO_IMAGES = [
-  "/images/loja/loja-de-pneus.webp",
-  "/images/loja/loja-de-pneus-pirelli.webp",
-  "/images/loja/loja-de-pneus-em-curitiba.webp",
-  "/images/loja/loja-de-pneus-curitiba.webp"
+  "/images/loja/loja-de-pneus.jpg",
+  "/images/loja/loja-de-pneus-pirelli.jpg",
+  "/images/loja/loja-de-pneus-em-curitiba.jpg",
+  "/images/loja/loja-de-pneus-curitiba.jpg"
 ];
 
 // Service Card para o carrossel
