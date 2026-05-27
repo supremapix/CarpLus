@@ -415,10 +415,16 @@ function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick 
   );
 }
 
-const COL1 = ALL_REVIEWS.slice(0, 24);
-const COL2 = ALL_REVIEWS.slice(24, 48);
-const COL3 = ALL_REVIEWS.slice(48, 72);
-const COL4 = ALL_REVIEWS.slice(72);
+// Dividir reviews dinamicamente em 4 colunas para desktop
+const getColumns = () => {
+  const cols: (typeof ALL_REVIEWS)[] = [[], [], [], []];
+  ALL_REVIEWS.forEach((review, idx) => {
+    cols[idx % 4].push(review);
+  });
+  return cols;
+};
+
+const [COL1, COL2, COL3, COL4] = getColumns();
 
 export default function Reviews() {
   const [selectedReview, setSelectedReview] = useState<{ review: typeof ALL_REVIEWS[0], index: number } | null>(null);
