@@ -414,8 +414,8 @@ export const TIRES: Tire[] = [
     marca: "Goodyear", linha: "Direction Touring", aro: 14, medida: "175/65R14",
     largura: 175, perfil: 65, indiceVelocidade: "T (190km/h)", indiceCarga: "82 (475kg)",
     categoria: "Econômico", tipoVeiculo: ["Passeio", "Hatch"],
-    imagem: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pneu-17565r14-goodyear-kelly-edge-touring-2-86h-1-MKBZyypY30iYQpYcAH9h00N7PmPDek.webp",
-    imagemGrande: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pneu-17565r14-goodyear-kelly-edge-touring-2-86h-1-MKBZyypY30iYQpYcAH9h00N7PmPDek.webp",
+    imagem: "/images/pneus/pneu-17565r14-goodyear-kelly-edge-touring-2-86h-1-MKBZyypY30iYQpYcAH9h00N7PmPDek.webp",
+    imagemGrande: "/images/pneus/pneu-17565r14-goodyear-kelly-edge-touring-2-86h-1-MKBZyypY30iYQpYcAH9h00N7PmPDek.webp",
     descricao: "Segmento econômico com durabilidade e segurança Goodyear. Ótimo para frotas e uso severo.",
     carros: ["Fiat Palio", "VW Gol", "Ford Ka antigo"],
     destaque: false, novoModelo: false
