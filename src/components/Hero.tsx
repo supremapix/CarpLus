@@ -32,38 +32,38 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-2 leading-[1.0] font-bold text-center md:text-left">
-            PNEUS <span className="text-primary">EM CURITIBA</span>
+          <h1 className="text-[3.2rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-3 leading-[0.95] font-bold text-center md:text-left tracking-tighter">
+            PNEUS <br className="md:hidden" /><span className="text-primary">EM CURITIBA</span>
           </h1>
-          <h2 className="text-sm sm:text-base md:text-3xl text-white font-display font-bold uppercase tracking-tight mb-8 text-center md:text-left">
+          <h2 className="text-base sm:text-lg md:text-3xl text-white font-display font-bold uppercase tracking-tight mb-6 text-center md:text-left">
             OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
           </h2>
           
-          <p className="text-sm sm:text-base md:text-lg text-white/80 mb-10 max-w-xl font-medium text-center md:text-left mx-auto md:mx-0">
+          <p className="text-[0.95rem] sm:text-base md:text-lg text-white/80 mb-8 max-w-xl font-medium text-center md:text-left mx-auto md:mx-0 leading-relaxed">
             Pneus das melhores marcas a partir de R$ 269,00 à vista! Parcelamento em até 10x sem juros. Atendemos toda Curitiba e Região.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10 justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row gap-3 mb-12 justify-center md:justify-start px-4 sm:px-0">
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
               target="_blank"
-              className="bg-white hover:bg-gray-100 text-dark px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight shadow-md"
+              className="bg-white hover:bg-gray-100 text-dark px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all uppercase tracking-tight shadow-lg"
             >
-              <Navigation size={16} /> Ir até a Carplus
+              <Navigation size={18} /> Ir até a Carplus
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href="tel:+554130827282"
-              className="bg-surface hover:bg-gray-700 text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all uppercase tracking-tight border border-white/10"
+              className="bg-surface/40 backdrop-blur-sm hover:bg-gray-700 text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all uppercase tracking-tight border border-white/20"
             >
-              <Phone size={16} /> Ligar
+              <Phone size={18} /> Ligar agora
             </motion.a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 md:gap-y-6 mt-8 mb-2 md:mt-6 md:mb-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 md:gap-y-6 mt-4 md:mt-6">
             {[
               { icon: Star, text: 'Referência em Curitiba' },
               { icon: MapPin, text: 'Portão – Curitiba' },
