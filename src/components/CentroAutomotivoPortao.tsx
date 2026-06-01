@@ -85,78 +85,7 @@ export default function CentroAutomotivoPortao() {
   const [imagemAberta, setImagemAberta] = useState<number | null>(null);
   const [faqAberto, setFaqAberto] = useState<number | null>(null);
 
-  // Schema JSON-LD para SEO
-  const schemaLocalBusiness = {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "Carplus Auto Center - Centro Automotivo no Portão",
-    "alternateName": "Carplus Pneus e Oficina Mecânica",
-    "description": "Centro Automotivo completo no bairro Portão em Curitiba. Pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e diagnóstico eletrônico. Pirelli Performance Center certificado.",
-    "url": "https://carpluspneuseoficina.com.br/centro-automotivo-portao",
-    "telephone": "+55-41-3082-7282",
-    "email": "contato@carpluspneuseoficina.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
-      "addressLocality": "Curitiba",
-      "addressRegion": "PR",
-      "postalCode": "81020-010",
-      "addressCountry": "BR",
-      "neighborhood": "Portão"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -25.4634,
-      "longitude": -49.2912
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "13:00"
-      }
-    ],
-    "priceRange": "$$",
-    "paymentAccepted": "Cash, Credit Card, Debit Card, PIX",
-    "currenciesAccepted": "BRL",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "847",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Curitiba" },
-      { "@type": "Neighborhood", "name": "Portão" },
-      { "@type": "Neighborhood", "name": "Água Verde" },
-      { "@type": "Neighborhood", "name": "Santa Quitéria" },
-      { "@type": "Neighborhood", "name": "Fazendinha" },
-      { "@type": "Neighborhood", "name": "Novo Mundo" },
-      { "@type": "Neighborhood", "name": "Capão Raso" }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços Automotivos",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de Pneus" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alinhamento Computadorizado" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Balanceamento de Rodas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de Óleo" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revisão de Freios" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensão e Amortecedores" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico Eletrônico" } }
-      ]
-    }
-  };
-
+  // Schema JSON-LD para SEO (LocalBusiness vive como fonte unica no index.html)
   const schemaFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -174,8 +103,8 @@ export default function CentroAutomotivoPortao() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carpluspneuseoficina.com.br" },
-      { "@type": "ListItem", "position": 2, "name": "Centro Automotivo Portão", "item": "https://carpluspneuseoficina.com.br/centro-automotivo-portao" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Centro Automotivo Portão", "item": "https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" }
     ]
   };
 
@@ -188,12 +117,12 @@ export default function CentroAutomotivoPortao() {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="geo.region" content="BR-PR" />
         <meta name="geo.placename" content="Portão, Curitiba" />
-        <link rel="canonical" href="https://carpluspneuseoficina.com.br/centro-automotivo-portao" />
+        <link rel="canonical" href="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Centro Automotivo no Portão Curitiba | Carplus Auto Center" />
         <meta property="og:description" content="Centro Automotivo completo no bairro Portão. Pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e diagnóstico. Pirelli Performance Center certificado." />
-        <meta property="og:url" content="https://carpluspneuseoficina.com.br/centro-automotivo-portao" />
+        <meta property="og:url" content="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
         <meta property="og:type" content="business.business" />
         <meta property="og:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/oficina-elevadores.webp" />
         <meta property="og:locale" content="pt_BR" />
@@ -209,8 +138,7 @@ export default function CentroAutomotivoPortao() {
         <meta name="twitter:description" content="Centro Automotivo completo no Portão. Pneus, mecânica, alinhamento, balanceamento. Pirelli Performance Center." />
         <meta name="twitter:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/oficina-elevadores.webp" />
 
-        {/* Schema.org */}
-        <script type="application/ld+json">{JSON.stringify(schemaLocalBusiness)}</script>
+        {/* Schema.org - LocalBusiness vem da fonte unica (index.html). Aqui apenas FAQ + Breadcrumb. */}
         <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
         <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
       </Helmet>

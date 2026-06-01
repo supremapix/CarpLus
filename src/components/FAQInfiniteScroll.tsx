@@ -589,8 +589,6 @@ function FAQModal({ isOpen, onClose, currentIndex, onNavigate }: FAQModalProps) 
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#1a1a1a] border border-primary/30 rounded-2xl shadow-2xl"
-            itemScope
-            itemType="https://schema.org/FAQPage"
           >
             {/* Header */}
             <header className="sticky top-0 z-10 flex items-center justify-between p-4 sm:p-6 border-b border-white/10 bg-[#1a1a1a]/95 backdrop-blur-sm">
@@ -612,28 +610,13 @@ function FAQModal({ isOpen, onClose, currentIndex, onNavigate }: FAQModalProps) 
             </header>
 
             {/* Content */}
-            <div 
-              className="p-6 sm:p-8"
-              itemScope
-              itemProp="mainEntity"
-              itemType="https://schema.org/Question"
-            >
-              <h2 
-                className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 leading-tight"
-                itemProp="name"
-              >
+            <div className="p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
                 {currentFaq.pergunta}
               </h2>
               
-              <div 
-                itemScope 
-                itemProp="acceptedAnswer" 
-                itemType="https://schema.org/Answer"
-              >
-                <p 
-                  className="text-base sm:text-lg text-white/80 leading-relaxed"
-                  itemProp="text"
-                >
+              <div>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed">
                   {currentFaq.resposta}
                 </p>
               </div>
@@ -774,10 +757,8 @@ export default function FAQInfiniteScroll() {
     <section
       aria-label="Duvidas Frequentes"
       className="relative py-16 bg-[#0f0f0f] overflow-hidden"
-      itemScope
-      itemType="https://schema.org/FAQPage"
     >
-      {/* Structured Data for SEO */}
+      {/* Structured Data for SEO - UNICO FAQPage da pagina (apenas JSON-LD, sem microdata duplicada) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

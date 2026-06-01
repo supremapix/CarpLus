@@ -1,7 +1,6 @@
 
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Home from './components/Home';
 import NeighborhoodDetail from './components/NeighborhoodDetail';
 import ServiceDetail from './components/ServiceDetail';
@@ -34,10 +33,6 @@ import {
   VEHICLE_PAGES,
   LOCAL_COMBO_PAGES,
 } from './data/seoLanding';
-import { generateLocalBusinessSchema } from './lib/schema';
-
-// Schema de LocalBusiness global para todas as paginas
-const localBusinessSchema = generateLocalBusinessSchema();
 
 export default function App() {
   const { pathname } = useLocation();
@@ -49,13 +44,8 @@ export default function App() {
 
   return (
     <>
-      {/* Schema LocalBusiness global injetado em todas as paginas */}
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-      </Helmet>
-      
+      {/* LocalBusiness/Organization/WebSite vivem como fonte UNICA no index.html.
+          Nao injetar schema global aqui para evitar duplicacao no Search Console. */}
       <BackToTop />
       <Routes>
       <Route path="/" element={<Home />} />
