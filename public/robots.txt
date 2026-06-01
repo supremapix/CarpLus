@@ -29,6 +29,10 @@ Allow: /servicos
 Allow: /bairro/
 Allow: /bairros
 Allow: /pneu-medida/
+Allow: /pneus-curitiba
+Allow: /pneu-aro-
+Allow: /pneu-para-
+Allow: /loja-de-pneus-
 Allow: /quem-somos
 Allow: /contato
 Allow: /faq

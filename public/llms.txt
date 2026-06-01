@@ -94,7 +94,12 @@ Sao Jose dos Pinhais, Colombo, Araucaria, Campo Largo, Pinhais, Fazenda Rio Gran
 
 - `/` - Pagina inicial
 - `/pneus` - Catalogo completo de pneus com filtros
+- `/pneus-curitiba` - Central de pneus em Curitiba (hub por aro, marca, veiculo e bairro)
 - `/pneu/[slug]` - Pagina individual de cada pneu
+- `/pneu-aro-[13..20]-curitiba` - Pneus por aro em Curitiba (ex: /pneu-aro-15-curitiba)
+- `/pneu-[marca]-curitiba` - Pneus por marca (pirelli, michelin, goodyear, continental, yokohama)
+- `/pneu-para-[veiculo]-curitiba` - Pneus por veiculo (hb20, onix, corolla, civic, compass, renegade, t-cross, creta, argo, kwid)
+- `/pneu-medida/[medida]` - Pneus por medida (ex: /pneu-medida/175-65-14)
 - `/servicos` - Lista de todos os servicos
 - `/servico/[slug]` - Pagina individual de cada servico
 - `/bairros` - Bairros e cidades atendidas

@@ -14,6 +14,13 @@ const uniqueTireSlugs = [...new Set(tireSlugs)];
 
 console.log(`Found ${uniqueTireSlugs.length} unique tire slugs`);
 
+// Extract SEO landing page slugs from seoLanding.ts
+const seoLandingPath = path.join(process.cwd(), 'src/data/seoLanding.ts');
+const seoLandingContent = fs.readFileSync(seoLandingPath, 'utf-8');
+const seoSlugMatches = seoLandingContent.matchAll(/slug:\s*["']([^"']+)["']/g);
+const seoLandingSlugs = [...new Set([...seoSlugMatches].map(m => m[1]).filter(Boolean))];
+console.log(`Found ${seoLandingSlugs.length} SEO landing page slugs`);
+
 // Base URL
 const baseUrl = 'https://www.carpluspneuseoficina.com.br';
 
@@ -21,6 +28,7 @@ const baseUrl = 'https://www.carpluspneuseoficina.com.br';
 const staticPages = [
   { url: '/', changefreq: 'daily', priority: '1.0' },
   { url: '/pneus', changefreq: 'daily', priority: '0.9' },
+  { url: '/pneus-curitiba', changefreq: 'weekly', priority: '0.9' },
   { url: '/servicos', changefreq: 'weekly', priority: '0.9' },
   { url: '/quem-somos', changefreq: 'monthly', priority: '0.8' },
   { url: '/contato', changefreq: 'monthly', priority: '0.8' },
@@ -132,6 +140,16 @@ for (const measure of popularMeasures) {
 `;
 }
 
+// Add SEO landing pages (aro, marca, veiculo, combos locais)
+for (const slug of seoLandingSlugs) {
+  sitemap += `  <url>
+    <loc>${baseUrl}/${slug}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+}
+
 // Add ALL individual tires
 console.log(`Adding ${uniqueTireSlugs.length} individual tires to sitemap...`);
 for (const slug of uniqueTireSlugs) {
@@ -154,6 +172,7 @@ console.log(`- ${staticPages.length} static pages`);
 console.log(`- ${uniqueServices.length} services`);
 console.log(`- ${bairros.length} neighborhoods`);
 console.log(`- ${popularMeasures.length} tire measures`);
+console.log(`- ${seoLandingSlugs.length} SEO landing pages`);
 console.log(`- ${uniqueTireSlugs.length} individual tires`);
-console.log(`Total URLs: ${staticPages.length + uniqueServices.length + bairros.length + popularMeasures.length + uniqueTireSlugs.length}`);
+console.log(`Total URLs: ${staticPages.length + uniqueServices.length + bairros.length + popularMeasures.length + seoLandingSlugs.length + uniqueTireSlugs.length}`);
 console.log(`Sitemap saved to: ${sitemapPath}`);

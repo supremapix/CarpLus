@@ -566,6 +566,41 @@ export default function TireMeasureDetail() {
             </div>
           </section>
         )}
+
+        {/* Internal linking SEO */}
+        <section className="mb-20 px-4">
+          <div className="bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-100">
+            <h2 className="text-2xl font-bold uppercase tracking-tighter italic mb-2">
+              Explore mais pneus em Curitiba
+            </h2>
+            <p className="text-gray-500 text-sm font-medium mb-8">
+              Navegue por aro, marca ou veículo e encontre o pneu ideal com instalação inclusa no Portão.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to={`/pneu-aro-${tire.aro}-curitiba`}
+                className="bg-primary text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:bg-black hover:text-primary transition-all"
+              >
+                Pneu Aro {tire.aro}
+              </Link>
+              {[['pirelli','Pirelli'],['michelin','Michelin'],['goodyear','Goodyear'],['continental','Continental'],['yokohama','Yokohama']].map(([slug,name]) => (
+                <Link
+                  key={slug}
+                  to={`/pneu-${slug}-curitiba`}
+                  className="bg-white border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all"
+                >
+                  {name}
+                </Link>
+              ))}
+              <Link
+                to="/pneus-curitiba"
+                className="bg-white border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+              >
+                Central de Pneus <ChevronRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -134,6 +134,24 @@ export function generateProductListSchema(
   };
 }
 
+// Schema de FAQPage (Rich Snippet de Perguntas Frequentes)
+export function generateFaqSchema(
+  faqs: Array<{ question: string; answer: string }>
+): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+}
+
 // Schema de BreadcrumbList
 export function generateBreadcrumbSchema(
   items: Array<{ name: string; url: string }>
