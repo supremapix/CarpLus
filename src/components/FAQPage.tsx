@@ -150,6 +150,27 @@ export default function FAQPage() {
 
   useEffect(() => {
     document.title = 'FAQ - Perguntas Frequentes | Carplus Auto Center Curitiba';
+
+    // Meta description
+    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!desc) {
+      desc = document.createElement('meta');
+      desc.setAttribute('name', 'description');
+      document.head.appendChild(desc);
+    }
+    desc.setAttribute(
+      'content',
+      'Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Auto Center no Portão, Curitiba.'
+    );
+
+    // Canonical (host unico com www)
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.carpluspneuseoficina.com.br/faq';
   }, []);
 
   const filteredFaqs = useMemo(() => {
@@ -178,55 +199,14 @@ export default function FAQPage() {
     }))
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "Carplus Auto Center",
-    "image": "https://www.carpluspneuseoficina.com.br/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Padre Anchieta, 2285",
-      "addressLocality": "Curitiba",
-      "addressRegion": "PR",
-      "postalCode": "81020-015",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -25.4567,
-      "longitude": -49.2892
-    },
-    "url": "https://www.carpluspneuseoficina.com.br",
-    "telephone": "+554130827282",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "12:00"
-      }
-    ],
-    "priceRange": "$$"
-  };
-
   return (
     <div className="min-h-screen bg-[#0f0f0f]">
       <Navbar />
       
-      {/* Schema Markup for SEO */}
+      {/* Schema Markup for SEO - apenas FAQPage. LocalBusiness vem da fonte unica (index.html). */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
       {/* Hero Section */}

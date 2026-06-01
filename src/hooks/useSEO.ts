@@ -11,71 +11,7 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const BASE_URL = 'https://carpluspneuseoficina.com.br';
-
-// Schema.org base para LocalBusiness - sempre presente
-const LOCAL_BUSINESS_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'AutoRepair',
-  '@id': `${BASE_URL}/#organization`,
-  name: 'Carplus Pneus e Oficina Mecânica',
-  alternateName: 'Carplus Auto Center',
-  description: 'Loja de pneus e oficina mecânica completa no bairro Portão em Curitiba. Especializada em pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos.',
-  url: BASE_URL,
-  logo: `${BASE_URL}/images/logo-carplus.webp`,
-  image: `${BASE_URL}/images/fachada-carplus.webp`,
-  telephone: '+55-41-3082-7282',
-  email: 'contato@carpluspneuseoficina.com.br',
-  priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Av. Presidente Arthur da Silva Bernardes, 1323',
-    addressLocality: 'Curitiba',
-    addressRegion: 'PR',
-    postalCode: '81560-000',
-    addressCountry: 'BR',
-    neighborhood: 'Portão',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: -25.4619,
-    longitude: -49.2937,
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '08:00',
-      closes: '12:00',
-    },
-  ],
-  areaServed: {
-    '@type': 'City',
-    name: 'Curitiba',
-    containedInPlace: {
-      '@type': 'State',
-      name: 'Paraná',
-    },
-  },
-  sameAs: [
-    'https://www.facebook.com/carpluspneus',
-    'https://www.instagram.com/carpluspneus',
-    'https://wa.me/554130827282',
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '347',
-    bestRating: '5',
-    worstRating: '1',
-  },
-};
+const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 
 export function useSEO({ 
   title, 
@@ -172,13 +108,8 @@ export function useSEO({
     
     const injected: HTMLScriptElement[] = [];
 
-    // Adiciona LocalBusiness schema base
-    const localBusinessScript = document.createElement('script');
-    localBusinessScript.type = 'application/ld+json';
-    localBusinessScript.text = JSON.stringify(LOCAL_BUSINESS_SCHEMA);
-    localBusinessScript.setAttribute('data-dynamic-schema', 'true');
-    document.head.appendChild(localBusinessScript);
-    injected.push(localBusinessScript);
+    // IMPORTANTE: LocalBusiness/Organization/WebSite vivem como fonte UNICA no index.html.
+    // Nao injetamos LocalBusiness aqui para evitar duplicacao de schema no Search Console.
 
     // Adiciona schemas customizados
     const schemas = schemaJSON ? (Array.isArray(schemaJSON) ? schemaJSON : [schemaJSON]) : [];

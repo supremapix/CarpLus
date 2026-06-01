@@ -58,86 +58,108 @@
     <meta name="twitter:description" content="Pneus Pirelli, Michelin, Goodyear com montagem inclusa. Alinhamento 3D, oficina completa. Portão, Curitiba." />
     <meta name="twitter:image" content="https://www.carpluspneuseoficina.com.br/og-carplus.jpg" />
 
-    <!-- Schema.org: LocalBusiness -->
+    <!-- Schema.org global (fonte UNICA): Organization + WebSite + LocalBusiness em um unico @graph -->
+    <!-- Mantido apenas aqui no shell do SPA. Nao duplicar LocalBusiness/Organization/WebSite no React. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AutoPartsStore",
-      "@id": "https://www.carpluspneuseoficina.com.br/#organization",
-      "name": "Carplus Auto Center",
-      "alternateName": "Carplus Curitiba",
-      "description": "Loja de pneus e oficina mecânica em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental, Yokohama. Alinhamento 3D, troca de óleo, suspensão, freios e mais.",
-      "url": "https://www.carpluspneuseoficina.com.br/",
-      "telephone": "+55-41-3082-7282",
-      "email": "contato@www.carpluspneuseoficina.com.br",
-      "priceRange": "$$",
-      "image": "/images/loja/loja-de-pneus-curitiba.webp",
-      "logo": "/images/logos/logo.webp",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
-        "addressLocality": "Curitiba",
-        "addressRegion": "PR",
-        "postalCode": "80320-300",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -25.4770,
-        "longitude": -49.2845
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "@type": "Organization",
+          "@id": "https://www.carpluspneuseoficina.com.br/#organization",
+          "name": "Carplus Auto Center",
+          "alternateName": "Carplus Pneus e Oficina",
+          "url": "https://www.carpluspneuseoficina.com.br/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.carpluspneuseoficina.com.br/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
+          },
+          "image": "https://www.carpluspneuseoficina.com.br/og-carplus.webp",
+          "telephone": "+55-41-3082-7282",
+          "email": "contato@carpluspneuseoficina.com.br",
+          "sameAs": [
+            "https://www.instagram.com/carpluscwb",
+            "https://www.facebook.com/carpluscwb"
+          ]
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "13:00"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "320",
-        "bestRating": "5"
-      },
-      "hasMap": "https://maps.google.com/?q=Carplus+Auto+Center+Curitiba",
-      "sameAs": [
-        "https://www.instagram.com/carpluscwb",
-        "https://www.facebook.com/carpluscwb"
-      ],
-      "areaServed": {
-        "@type": "City",
-        "name": "Curitiba",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Paraná",
-          "addressCountry": "BR"
-        }
-      }
-    }
-    </script>
-
-    <!-- Schema.org: WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Carplus Auto Center",
-      "url": "https://www.carpluspneuseoficina.com.br/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.carpluspneuseoficina.com.br/pneus?q={search_term_string}"
+          "@type": "WebSite",
+          "@id": "https://www.carpluspneuseoficina.com.br/#website",
+          "url": "https://www.carpluspneuseoficina.com.br/",
+          "name": "Carplus Auto Center",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://www.carpluspneuseoficina.com.br/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.carpluspneuseoficina.com.br/pneus?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
-        "query-input": "required name=search_term_string"
-      }
+        {
+          "@type": ["AutoRepair", "TireShop", "LocalBusiness"],
+          "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
+          "name": "Carplus Auto Center",
+          "alternateName": "Carplus Curitiba",
+          "description": "Loja de pneus e oficina mecânica em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental, Yokohama. Alinhamento 3D, troca de óleo, suspensão, freios e mais.",
+          "url": "https://www.carpluspneuseoficina.com.br/",
+          "telephone": "+55-41-3082-7282",
+          "email": "contato@carpluspneuseoficina.com.br",
+          "priceRange": "$$",
+          "image": "https://www.carpluspneuseoficina.com.br/images/loja/loja-de-pneus-curitiba.webp",
+          "logo": "https://www.carpluspneuseoficina.com.br/carplus-pneus-oficina-mecanica-full-service-horizontal.svg",
+          "parentOrganization": { "@id": "https://www.carpluspneuseoficina.com.br/#organization" },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
+            "addressLocality": "Curitiba",
+            "addressRegion": "PR",
+            "postalCode": "80320-300",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -25.4770,
+            "longitude": -49.2845
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "08:00",
+              "closes": "13:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "320",
+            "bestRating": "5"
+          },
+          "hasMap": "https://maps.google.com/?q=Carplus+Auto+Center+Curitiba",
+          "sameAs": [
+            "https://www.instagram.com/carpluscwb",
+            "https://www.facebook.com/carpluscwb"
+          ],
+          "areaServed": {
+            "@type": "City",
+            "name": "Curitiba",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Paraná",
+              "addressCountry": "BR"
+            }
+          }
+        }
+      ]
     }
     </script>
   </head>

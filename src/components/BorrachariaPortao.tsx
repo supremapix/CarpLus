@@ -54,41 +54,7 @@ export default function BorrachariaPortao() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Schema.org para LocalBusiness + AutoRepair
-  const schemaLocalBusiness = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
-    "name": "Carplus Pneus - Borracharia no Portão",
-    "image": "https://carpluspneuseoficina.com.br/images/borracharia/proprietario-carplus.webp",
-    "description": "Borracharia completa no bairro Portão em Curitiba. Troca de pneus, conserto de furos, alinhamento 3D, balanceamento. Melhor preço da região com atendimento profissional.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
-      "addressLocality": "Curitiba",
-      "addressRegion": "PR",
-      "postalCode": "81560-000",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -25.4634,
-      "longitude": -49.2912
-    },
-    "telephone": "+554130827282",
-    "url": "https://carpluspneuseoficina.com.br/borracharia-portao",
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
-    ],
-    "priceRange": "$$",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "847"
-    },
-    "areaServed": BAIRROS_ATENDIDOS.map(b => ({ "@type": "City", "name": `${b}, Curitiba` }))
-  };
-
+  // Schema.org (LocalBusiness vive como fonte unica no index.html)
   const schemaFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -110,7 +76,7 @@ export default function BorrachariaPortao() {
         <meta property="og:description" content="Borracharia completa no Portão. Troca de pneus, conserto de furos, alinhamento e balanceamento. Melhor preço da região!" />
         <meta property="og:url" content="https://carpluspneuseoficina.com.br/borracharia-portao" />
         <meta property="og:type" content="business.business" />
-        <script type="application/ld+json">{JSON.stringify(schemaLocalBusiness)}</script>
+        {/* LocalBusiness vem da fonte unica (index.html). Aqui apenas FAQ. */}
         <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
       </Helmet>
 
