@@ -129,6 +129,52 @@ export default function Footer() {
          </div>
       </div>
 
+      {/* Internal linking SEO — Pneus em Curitiba */}
+      <div className="max-w-7xl mx-auto px-4 pt-12 border-t border-white/10 mb-12">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 text-left">
+            <div>
+               <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Pneus por Aro</h4>
+               <ul className="space-y-2 text-xs font-medium text-white/50">
+                  {['13','14','15','16','17','18'].map((aro) => (
+                    <li key={aro}>
+                      <Link to={`/pneu-aro-${aro}-curitiba`} className="hover:text-primary transition-colors">Pneu Aro {aro}</Link>
+                    </li>
+                  ))}
+               </ul>
+            </div>
+            <div>
+               <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Marcas</h4>
+               <ul className="space-y-2 text-xs font-medium text-white/50">
+                  {[['pirelli','Pirelli'],['michelin','Michelin'],['goodyear','Goodyear'],['continental','Continental'],['yokohama','Yokohama']].map(([slug,name]) => (
+                    <li key={slug}>
+                      <Link to={`/pneu-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneu {name}</Link>
+                    </li>
+                  ))}
+               </ul>
+            </div>
+            <div>
+               <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Por Veículo</h4>
+               <ul className="space-y-2 text-xs font-medium text-white/50">
+                  {[['hb20','HB20'],['onix','Onix'],['corolla','Corolla'],['compass','Compass'],['kwid','Kwid']].map(([slug,name]) => (
+                    <li key={slug}>
+                      <Link to={`/pneu-para-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneu para {name}</Link>
+                    </li>
+                  ))}
+               </ul>
+            </div>
+            <div>
+               <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Atendimento Local</h4>
+               <ul className="space-y-2 text-xs font-medium text-white/50">
+                  <li><Link to="/pneus-curitiba" className="hover:text-primary transition-colors font-bold text-primary/80">Central de Pneus</Link></li>
+                  <li><Link to="/loja-de-pneus-portao-curitiba" className="hover:text-primary transition-colors">Loja de Pneus Portão</Link></li>
+                  <li><Link to="/pneu-aro-15-portao-curitiba" className="hover:text-primary transition-colors">Pneu Aro 15 Portão</Link></li>
+                  <li><Link to="/pneu-aro-16-agua-verde-curitiba" className="hover:text-primary transition-colors">Pneu Aro 16 Água Verde</Link></li>
+                  <li><Link to="/bairros" className="hover:text-primary transition-colors">Bairros Atendidos</Link></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-white/40 text-sm">
          <div className="text-center md:text-left space-y-1">
             <p className="font-bold">Carplus Auto Center © 2025</p>

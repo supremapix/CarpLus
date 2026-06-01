@@ -75,6 +75,29 @@ export default function App() {
       <Route path="/faq" element={<FAQPage />} />
       <Route path="/centro-automotivo-portao" element={<CentroAutomotivoPortao />} />
       <Route path="/borracharia-portao" element={<BorrachariaPortao />} />
+
+      {/* ───── Hub SEO de Pneus ───── */}
+      <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
+
+      {/* Landing pages por Aro */}
+      {ARO_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<AroLandingPage slug={p.slug} />} />
+      ))}
+
+      {/* Landing pages por Marca */}
+      {BRAND_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<BrandLandingPage slug={p.slug} />} />
+      ))}
+
+      {/* Landing pages por Veículo */}
+      {VEHICLE_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<VehicleLandingPage slug={p.slug} />} />
+      ))}
+
+      {/* Landing pages SEO Local (combinações) */}
+      {LOCAL_COMBO_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<LocalComboLandingPage slug={p.slug} />} />
+      ))}
         
         {/* Redirects bairros .html → /bairro/ */}
         <Route path="/taboao.html" element={<Navigate to="/bairro/taboao" replace />} />

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Circle, Tag, Car, Ruler, MapPin, MessageSquare, Phone } from 'lucide-react';
 import Navbar from './Navbar';
@@ -46,7 +47,7 @@ function Section({
   icon: any;
   title: string;
   subtitle: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section className="mb-12">
