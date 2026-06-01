@@ -1,0 +1,1006 @@
+// ════════════════════════════════════════════════════════════════
+// BASE DE DADOS SEO — Páginas de intenção de compra (Curitiba)
+// Conteúdo 100% baseado no catálogo real da Carplus (src/data.ts)
+// Clusters: Aro · Medida · Marca · Veículo · SEO Local
+// ════════════════════════════════════════════════════════════════
+
+import { TIRES, Tire } from '../data';
+
+export const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
+export const WHATSAPP_NUMBER = '554130827282';
+export const PHONE_DISPLAY = '(41) 3082-7282';
+export const ADDRESS_FULL = 'Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR';
+export const OG_IMAGE = '/images/loja/loja-de-pneus-em-curitiba.webp';
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+// ─── Normalização ────────────────────────────────────────────────
+export function normalizeText(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+// ─── Filtros sobre o catálogo real ───────────────────────────────
+export function getTiresByAro(aro: number): Tire[] {
+  return TIRES.filter((t) => t && t.aro === aro);
+}
+
+export function getTiresByBrand(marca: string): Tire[] {
+  const target = marca.toLowerCase();
+  return TIRES.filter((t) => t && t.marca && t.marca.toLowerCase() === target);
+}
+
+export function getTiresByMeasure(medida: string): Tire[] {
+  const target = medida.toUpperCase().replace(/\s/g, '');
+  return TIRES.filter(
+    (t) => t && t.medida && t.medida.toUpperCase().replace(/\s/g, '') === target
+  );
+}
+
+export function getTiresByVehicle(termos: string[]): Tire[] {
+  const targets = termos.map((t) => t.toLowerCase());
+  return TIRES.filter(
+    (t) =>
+      t &&
+      Array.isArray(t.carros) &&
+      t.carros.some((carro) =>
+        targets.some((target) => carro.toLowerCase().includes(target))
+      )
+  );
+}
+
+export function getBrandsForTires(tires: Tire[]): string[] {
+  return [...new Set(tires.filter((t) => t && t.marca).map((t) => t.marca))].sort();
+}
+
+export function getMeasuresForTires(tires: Tire[]): string[] {
+  return [...new Set(tires.filter((t) => t && t.medida).map((t) => t.medida))].sort();
+}
+
+// ════════════════════════════════════════════════════════════════
+// FASE 2 — PÁGINAS POR ARO (13 ao 20)
+// ════════════════════════════════════════════════════════════════
+export interface AroPage {
+  aro: number;
+  slug: string; // /pneu-aro-15-curitiba
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  aplicacoes: string;
+  perfilTipico: string[];
+  faq: FaqItem[];
+}
+
+export const ARO_PAGES: AroPage[] = [
+  {
+    aro: 13,
+    slug: 'pneu-aro-13-curitiba',
+    h1: 'Pneu Aro 13 em Curitiba',
+    metaTitle: 'Pneu Aro 13 em Curitiba | Carplus Auto Center – Montagem Inclusa',
+    metaDescription:
+      'Pneu aro 13 em Curitiba na Carplus, bairro Portão. Marcas como Pirelli e Firestone para carros populares, montagem e balanceamento inclusos e até 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 13 é a medida clássica dos carros populares brasileiros. Na Carplus, no bairro Portão em Curitiba, você encontra pneus aro 13 das marcas que já trabalhamos, com montagem, balanceamento e calibragem inclusos no mesmo atendimento.',
+    aplicacoes:
+      'Os pneus aro 13 equipam veículos econômicos e compactos como Chevrolet Celta, Chevrolet Classic, Fiat Uno, VW Gol G4 e Fiat Palio. São pneus voltados ao uso urbano diário, priorizando economia, durabilidade e custo-benefício.',
+    perfilTipico: ['Carros populares', 'Uso urbano', 'Econômico', 'Custo-benefício'],
+    faq: [
+      {
+        question: 'Quanto custa um pneu aro 13 em Curitiba?',
+        answer:
+          'O preço do pneu aro 13 varia conforme a marca e a linha escolhida. Na Carplus, no Portão, o valor já inclui montagem, balanceamento e calibragem, com parcelamento em até 10x sem juros. Envie a medida exata (ex.: 175/70R13) pelo WhatsApp (41) 3082-7282 para um orçamento na hora.',
+      },
+      {
+        question: 'Quais carros usam pneu aro 13?',
+        answer:
+          'O aro 13 equipa modelos populares como Celta, Classic, Fiat Uno, Gol G4 e Palio. Confira a medida original na lateral do pneu atual ou no manual do proprietário antes de comprar.',
+      },
+      {
+        question: 'A troca do pneu aro 13 já inclui alinhamento e balanceamento?',
+        answer:
+          'O balanceamento está incluso na montagem. O alinhamento 3D é altamente recomendado a cada troca de pneus para evitar desgaste irregular e é feito na própria Carplus, sem necessidade de agendamento.',
+      },
+    ],
+  },
+  {
+    aro: 14,
+    slug: 'pneu-aro-14-curitiba',
+    h1: 'Pneu Aro 14 em Curitiba',
+    metaTitle: 'Pneu Aro 14 em Curitiba | Carplus Auto Center – Pirelli e mais',
+    metaDescription:
+      'Pneu aro 14 em Curitiba na Carplus Portão. Medidas como 175/65R14, 185/60R14 e 185/65R14 para hatch e sedan, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 14 é uma das medidas mais procuradas do Brasil, presente em grande parte dos hatchbacks e sedans compactos. A Carplus, no Portão em Curitiba, mantém pneus aro 14 com pronta entrega e instalação completa no mesmo dia.',
+    aplicacoes:
+      'Os pneus aro 14 equipam veículos como VW Gol G5/G6, Chevrolet Onix 1.0, Fiat Palio, Renault Logan e VW Polo. Medidas comuns incluem 175/65R14, 185/60R14 e 185/65R14, equilibrando conforto, economia e segurança no uso urbano.',
+    perfilTipico: ['Hatch compacto', 'Sedan de entrada', 'Uso urbano', 'Equilíbrio conforto/economia'],
+    faq: [
+      {
+        question: 'Qual a medida de pneu aro 14 mais comum?',
+        answer:
+          'As medidas aro 14 mais vendidas são 175/65R14, 185/60R14 e 185/65R14. Confirme a sua na lateral do pneu atual e consulte a disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Vale a pena trocar pneu aro 14 na Carplus do Portão?',
+        answer:
+          'Sim. Além do preço justo e do parcelamento em até 10x sem juros, a montagem, o balanceamento e a calibragem já estão inclusos, e o alinhamento 3D é feito na hora para prolongar a vida útil do conjunto.',
+      },
+      {
+        question: 'Vocês têm pneu aro 14 de marca premium?',
+        answer:
+          'Trabalhamos com marcas como Pirelli, Michelin e Goodyear no aro 14, além de opções econômicas. Informe seu carro e seu objetivo de uso que indicamos a melhor linha.',
+      },
+    ],
+  },
+  {
+    aro: 15,
+    slug: 'pneu-aro-15-curitiba',
+    h1: 'Pneu Aro 15 em Curitiba',
+    metaTitle: 'Pneu Aro 15 em Curitiba | Carplus Auto Center – Maior Estoque',
+    metaDescription:
+      'Pneu aro 15 em Curitiba na Carplus Portão. Maior variedade: 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O aro 15 é a medida com a maior variedade de modelos no estoque da Carplus. No bairro Portão, em Curitiba, oferecemos pneus aro 15 econômicos, de conforto e all season, sempre com montagem e balanceamento inclusos.',
+    aplicacoes:
+      'O aro 15 equipa um leque enorme de veículos: Chevrolet Onix Plus, Chevrolet Cruze, Fiat Argo, Honda City, VW Virtus, VW Golf e muitos outros. As medidas mais buscadas são 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15.',
+    perfilTipico: ['Hatch e sedan', 'Maior variedade de estoque', 'Conforto e economia', 'All season disponível'],
+    faq: [
+      {
+        question: 'Por que o aro 15 tem tantas opções?',
+        answer:
+          'O aro 15 é a transição entre os carros populares e os modelos de conforto, por isso atende a muitos veículos. Na Carplus temos a maior variedade de medidas e marcas nesse aro, do econômico ao premium.',
+      },
+      {
+        question: 'Qual pneu aro 15 dura mais?',
+        answer:
+          'A durabilidade depende da linha e do uso, mas pneus de conforto e all season tendem a oferecer maior quilometragem. Mantendo calibragem, alinhamento e rodízio em dia, a vida útil aumenta significativamente.',
+      },
+      {
+        question: 'Posso comprar pneu aro 15 e instalar no mesmo dia?',
+        answer:
+          'Sim. Com pronta entrega no Portão, a maioria das medidas aro 15 é instalada no mesmo dia, com balanceamento e calibragem inclusos. Agende pelo WhatsApp (41) 3082-7282.',
+      },
+    ],
+  },
+  {
+    aro: 16,
+    slug: 'pneu-aro-16-curitiba',
+    h1: 'Pneu Aro 16 em Curitiba',
+    metaTitle: 'Pneu Aro 16 em Curitiba | Carplus Auto Center – Sedan e SUV',
+    metaDescription:
+      'Pneu aro 16 em Curitiba na Carplus Portão. Medidas 205/55R16, 205/60R16, 215/65R16 e mais para sedans e SUVs. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 16 atende sedans médios, hatchbacks premium e SUVs compactos. A Carplus, no Portão em Curitiba, oferece pneus aro 16 de marcas como Michelin, Goodyear, Continental e Pirelli, com instalação completa.',
+    aplicacoes:
+      'O aro 16 equipa modelos como VW Jetta, Toyota Corolla, Honda Civic, Chevrolet Cruze LT e Hyundai HB20S. As medidas mais procuradas são 205/55R16, 205/60R16 e 215/65R16, ideais para quem quer conforto e estabilidade.',
+    perfilTipico: ['Sedan médio', 'Hatch premium', 'SUV compacto', 'Conforto e performance'],
+    faq: [
+      {
+        question: 'Quais carros usam pneu aro 16?',
+        answer:
+          'Sedans médios e SUVs compactos como Corolla, Civic, Jetta, Cruze e HB20S costumam usar aro 16, nas medidas 205/55R16 e 205/60R16. Confirme a medida original do seu veículo antes de comprar.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu aro 16?',
+        answer:
+          'Depende do uso. Para conforto, linhas Michelin Primacy e Goodyear EfficientGrip são excelentes; para custo-benefício, há opções equilibradas. Nossa equipe técnica indica a melhor escolha gratuitamente.',
+      },
+      {
+        question: 'O alinhamento é necessário ao trocar pneu aro 16?',
+        answer:
+          'Sim. Recomendamos sempre o alinhamento 3D e o balanceamento ao trocar os pneus, garantindo estabilidade, menor consumo e desgaste uniforme. Ambos são feitos na Carplus.',
+      },
+    ],
+  },
+  {
+    aro: 17,
+    slug: 'pneu-aro-17-curitiba',
+    h1: 'Pneu Aro 17 em Curitiba',
+    metaTitle: 'Pneu Aro 17 em Curitiba | Carplus Auto Center – Performance e SUV',
+    metaDescription:
+      'Pneu aro 17 em Curitiba na Carplus Portão. Medidas 215/50R17, 215/55R17, 225/45R17, 225/50R17, 225/65R17 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 17 é a escolha de quem busca esportividade e presença, equipando sedans premium, hatches esportivos e SUVs. Na Carplus, no Portão em Curitiba, temos ampla variedade de pneus aro 17 com instalação especializada.',
+    aplicacoes:
+      'O aro 17 equipa modelos como Jeep Compass, Toyota Corolla Cross, Honda HR-V, VW T-Cross, Audi A4 e BMW 320i. As medidas mais buscadas incluem 215/50R17, 215/55R17, 225/45R17, 225/50R17 e 225/65R17.',
+    perfilTipico: ['SUV', 'Sedan premium', 'Hatch esportivo', 'Performance'],
+    faq: [
+      {
+        question: 'Pneu aro 17 é mais caro que aro 15?',
+        answer:
+          'Em geral sim, pois são pneus de maior diâmetro e performance. Mas na Carplus você parcela em até 10x sem juros e a montagem e o balanceamento já estão inclusos no valor.',
+      },
+      {
+        question: 'Qual medida de pneu aro 17 para SUV?',
+        answer:
+          'SUVs como Compass, Corolla Cross, HR-V e T-Cross costumam usar 225/65R17, 225/50R17 ou 215/55R17. Confira a medida original e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Balanceamento é mais importante em aro 17?',
+        answer:
+          'Sim. Quanto maior o aro e menor o perfil, mais sensível o conjunto a desequilíbrios. Por isso fazemos balanceamento computadorizado preciso em todos os pneus aro 17 instalados.',
+      },
+    ],
+  },
+  {
+    aro: 18,
+    slug: 'pneu-aro-18-curitiba',
+    h1: 'Pneu Aro 18 em Curitiba',
+    metaTitle: 'Pneu Aro 18 em Curitiba | Carplus Auto Center – SUV e Premium',
+    metaDescription:
+      'Pneu aro 18 em Curitiba na Carplus Portão. Medidas 225/45R18, 235/55R18, 235/60R18, 245/40R18, 245/45R18 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 18 equipa SUVs médios e veículos premium que exigem estabilidade e desempenho. A Carplus, no Portão em Curitiba, oferece pneus aro 18 de marcas como Michelin, Continental e Pirelli com montagem profissional.',
+    aplicacoes:
+      'O aro 18 equipa modelos como Jeep Compass, Toyota RAV4, Honda CR-V, Audi Q3, Volvo XC40 e BMW X1. As medidas mais procuradas são 225/45R18, 235/55R18, 235/60R18, 245/40R18 e 245/45R18.',
+    perfilTipico: ['SUV médio', 'Premium', 'Alta performance', 'Estabilidade'],
+    faq: [
+      {
+        question: 'Quais SUVs usam pneu aro 18?',
+        answer:
+          'SUVs como Compass, RAV4, CR-V, Q3, XC40 e X1 usam aro 18, nas medidas 235/55R18, 235/60R18 ou 225/45R18. Confirme a medida original do seu veículo antes de comprar.',
+      },
+      {
+        question: 'Pneu aro 18 perde conforto?',
+        answer:
+          'Pneus de perfil mais baixo são mais firmes, mas linhas premium de conforto compensam com tecnologia de absorção de ruído e impacto. Indicamos a melhor linha conforme seu objetivo.',
+      },
+      {
+        question: 'Vocês instalam pneu aro 18 sem danificar a roda?',
+        answer:
+          'Sim. Usamos equipamento de montagem moderno que preserva o aro e o acabamento, essencial para rodas de liga leve comuns no aro 18.',
+      },
+    ],
+  },
+  {
+    aro: 19,
+    slug: 'pneu-aro-19-curitiba',
+    h1: 'Pneu Aro 19 em Curitiba',
+    metaTitle: 'Pneu Aro 19 em Curitiba | Carplus Auto Center – SUV e Esportivo',
+    metaDescription:
+      'Pneu aro 19 em Curitiba na Carplus Portão. Medidas 235/50R19, 235/55R19, 245/40R19, 245/45R19, 255/35R19 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 19 é destinado a SUVs premium e veículos esportivos de alta performance. A Carplus, no Portão em Curitiba, trabalha com pneus aro 19 e oferece montagem e balanceamento de alta precisão para esse tipo de conjunto.',
+    aplicacoes:
+      'O aro 19 equipa modelos premium como Audi Q5, BMW X3, Volvo XC60, Mercedes GLA e Jeep Compass topo de linha. As medidas mais buscadas são 235/50R19, 235/55R19, 245/40R19, 245/45R19 e 255/35R19.',
+    perfilTipico: ['SUV premium', 'Esportivo', 'Alta performance', 'Perfil baixo'],
+    faq: [
+      {
+        question: 'Pneu aro 19 precisa de balanceamento especial?',
+        answer:
+          'Pneus aro 19 têm perfil baixo e exigem balanceamento computadorizado preciso para eliminar qualquer vibração. Na Carplus, todos os pneus aro 19 recebem balanceamento de alta precisão.',
+      },
+      {
+        question: 'Quais carros usam pneu aro 19?',
+        answer:
+          'SUVs e sedans premium como Q5, X3, XC60 e GLA usam aro 19. Informe a medida exata (ex.: 235/55R19) pelo WhatsApp (41) 3082-7282 para verificarmos disponibilidade.',
+      },
+      {
+        question: 'Vale a pena alinhar ao trocar pneu aro 19?',
+        answer:
+          'Sim. Em pneus de alto custo como o aro 19, o alinhamento 3D protege o investimento, evitando desgaste irregular precoce. É um serviço essencial a cada troca.',
+      },
+    ],
+  },
+  {
+    aro: 20,
+    slug: 'pneu-aro-20-curitiba',
+    h1: 'Pneu Aro 20 em Curitiba',
+    metaTitle: 'Pneu Aro 20 em Curitiba | Carplus Auto Center – SUV e Picape',
+    metaDescription:
+      'Pneu aro 20 em Curitiba na Carplus Portão. Medidas 255/35R20, 245/40R20, 245/45R20 e mais para SUVs e picapes premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 20 equipa SUVs grandes, picapes premium e veículos esportivos de luxo. A Carplus, no Portão em Curitiba, oferece pneus aro 20 com montagem especializada e balanceamento de alta precisão.',
+    aplicacoes:
+      'O aro 20 equipa modelos como Ford Ranger, Chevrolet S10, Porsche Cayenne, BMW X3/X5 e SUVs premium. As medidas mais procuradas incluem 255/35R20, 245/40R20 e 245/45R20.',
+    perfilTipico: ['SUV grande', 'Picape premium', 'Esportivo de luxo', 'Perfil baixo'],
+    faq: [
+      {
+        question: 'Quais veículos usam pneu aro 20?',
+        answer:
+          'SUVs grandes e picapes premium como Ranger, S10, Cayenne e X5 usam aro 20. Confirme a medida original do seu veículo e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Pneu aro 20 é difícil de encontrar em Curitiba?',
+        answer:
+          'Na Carplus trabalhamos com medidas aro 20 das marcas que já atendemos. Caso a medida específica não esteja em estoque, fazemos a busca para você com agilidade.',
+      },
+      {
+        question: 'A montagem de pneu aro 20 tem cuidado especial?',
+        answer:
+          'Sim. Rodas aro 20, geralmente de liga leve e alto valor, são montadas com equipamento que preserva o acabamento, seguidas de balanceamento de precisão.',
+      },
+    ],
+  },
+];
+
+// ════════════════════════════════════════════════════════════════
+// FASE 4 — PÁGINAS POR MARCA (somente marcas presentes no catálogo)
+// ════════════════════════════════════════════════════════════════
+export interface BrandPage {
+  marca: string; // valor exato em TIRES.marca
+  slug: string; // /pneu-michelin-curitiba
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  linhas: string;
+  faq: FaqItem[];
+}
+
+export const BRAND_PAGES: BrandPage[] = [
+  {
+    marca: 'Pirelli',
+    slug: 'pneu-pirelli-curitiba',
+    h1: 'Pneu Pirelli em Curitiba',
+    metaTitle: 'Pneu Pirelli em Curitiba | Carplus Auto Center – Revenda no Portão',
+    metaDescription:
+      'Pneu Pirelli em Curitiba na Carplus Portão. Linhas P400 Evo, Cinturato P7 e P Zero com montagem, balanceamento e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Pirelli é uma das marcas mais tradicionais do mercado e está entre as mais vendidas na Carplus, no bairro Portão em Curitiba. Trabalhamos com diversas linhas Pirelli para uso urbano, conforto e alta performance.',
+    linhas:
+      'No catálogo Pirelli da Carplus você encontra a linha P400 Evo (econômica e urbana), a Cinturato P7 e P7 All Season (conforto e desempenho) e a P Zero (esportiva premium, inclusive Run Flat), cobrindo dos carros populares aos veículos premium.',
+    faq: [
+      {
+        question: 'A Carplus é revenda Pirelli em Curitiba?',
+        answer:
+          'A Carplus trabalha com pneus Pirelli e mantém as principais linhas em estoque no Portão, com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
+      },
+      {
+        question: 'Qual a melhor linha Pirelli para meu carro?',
+        answer:
+          'Para uso urbano e economia, a P400 Evo é ideal; para conforto e desempenho, a Cinturato P7; para esportividade, a P Zero. Informe seu veículo pelo WhatsApp (41) 3082-7282 que indicamos a melhor opção.',
+      },
+      {
+        question: 'O pneu Pirelli tem garantia na Carplus?',
+        answer:
+          'Sim. Todos os pneus Pirelli contam com garantia de fábrica contra defeitos de fabricação, e oferecemos suporte completo para acionamento na própria loja.',
+      },
+    ],
+  },
+  {
+    marca: 'Michelin',
+    slug: 'pneu-michelin-curitiba',
+    h1: 'Pneu Michelin em Curitiba',
+    metaTitle: 'Pneu Michelin em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Michelin em Curitiba na Carplus Portão. Linhas Energy XM2, Primacy 4 e Pilot Sport 4 com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Michelin é referência mundial em durabilidade e segurança. Na Carplus, no Portão em Curitiba, você encontra pneus Michelin para economia, conforto premium e alta performance, com instalação completa.',
+    linhas:
+      'No catálogo Michelin da Carplus estão linhas como Energy XM2 (eficiência e economia de combustível), Primacy 4 e Primacy SUV (conforto e segurança premium) e Pilot Sport 4 (esportiva de altíssima performance).',
+    faq: [
+      {
+        question: 'Por que o pneu Michelin dura mais?',
+        answer:
+          'A Michelin investe em tecnologia de composto e desenho que mantém o desempenho do primeiro ao último quilômetro, oferecendo frenagem segura mesmo com o pneu desgastado. Isso resulta em maior quilometragem útil.',
+      },
+      {
+        question: 'A Carplus tem pneu Michelin para SUV?',
+        answer:
+          'Sim. Trabalhamos com linhas Michelin para SUV, como a Primacy SUV e a Pilot Sport. Informe a medida do seu veículo pelo WhatsApp (41) 3082-7282 para verificar disponibilidade.',
+      },
+      {
+        question: 'Pneu Michelin é mais caro? Posso parcelar?',
+        answer:
+          'A Michelin é uma marca premium, mas a Carplus parcela em até 10x sem juros e já inclui montagem e balanceamento, tornando o investimento mais acessível.',
+      },
+    ],
+  },
+  {
+    marca: 'Goodyear',
+    slug: 'pneu-goodyear-curitiba',
+    h1: 'Pneu Goodyear em Curitiba',
+    metaTitle: 'Pneu Goodyear em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Goodyear em Curitiba na Carplus Portão. Linhas Direction Touring e EfficientGrip com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Goodyear é sinônimo de tecnologia e conforto para o dia a dia e viagens. Na Carplus, no Portão em Curitiba, oferecemos pneus Goodyear com instalação completa e preço justo.',
+    linhas:
+      'No catálogo Goodyear da Carplus você encontra linhas como a Direction Touring (conforto e estabilidade para viagens) e a EfficientGrip Performance (frenagem em molhado e baixa resistência ao rolamento).',
+    faq: [
+      {
+        question: 'O pneu Goodyear é bom para viagens?',
+        answer:
+          'Sim. A linha Direction Touring é desenvolvida para conforto e estabilidade em longas distâncias, com baixo ruído e boa aderência na chuva, ideal para quem viaja com frequência.',
+      },
+      {
+        question: 'A Carplus tem pneu Goodyear aro 15 e 16?',
+        answer:
+          'Sim, trabalhamos com Goodyear nos aros mais procurados, como 15 e 16. Consulte a medida exata do seu carro pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'A instalação do pneu Goodyear já está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, e o alinhamento 3D é feito na própria Carplus para prolongar a vida útil dos pneus.',
+      },
+    ],
+  },
+  {
+    marca: 'Continental',
+    slug: 'pneu-continental-curitiba',
+    h1: 'Pneu Continental em Curitiba',
+    metaTitle: 'Pneu Continental em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Continental traz a tecnologia alemã para conforto, segurança e baixo ruído. Na Carplus, no Portão em Curitiba, você encontra uma ampla variedade de pneus Continental para passeio, sedans e SUVs.',
+    linhas:
+      'No catálogo Continental da Carplus estão linhas voltadas ao conforto e à eficiência, como a ContiComfortContact, com foco em menor emissão de ruído e dirigibilidade refinada na cidade e na estrada.',
+    faq: [
+      {
+        question: 'Por que escolher pneu Continental?',
+        answer:
+          'A Continental é reconhecida pela tecnologia alemã que entrega conforto acústico, frenagem segura e dirigibilidade precisa. É uma excelente escolha para quem valoriza silêncio e estabilidade.',
+      },
+      {
+        question: 'A Carplus tem boa variedade de pneu Continental?',
+        answer:
+          'Sim. A Continental está entre as marcas com maior variedade de medidas no nosso estoque, cobrindo do aro 15 aos aros maiores para SUVs. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Pneu Continental é indicado para SUV?',
+        answer:
+          'Sim. Há linhas Continental específicas para SUVs, com reforço estrutural e estabilidade. Informe a medida do seu veículo que verificamos a melhor opção.',
+      },
+    ],
+  },
+  {
+    marca: 'Yokohama',
+    slug: 'pneu-yokohama-curitiba',
+    h1: 'Pneu Yokohama em Curitiba',
+    metaTitle: 'Pneu Yokohama em Curitiba | Carplus Auto Center – Maior Variedade',
+    metaDescription:
+      'Pneu Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Yokohama é a marca com a maior variedade de modelos no estoque da Carplus, no Portão em Curitiba. São opções para carros de passeio, SUVs e veículos de performance, com tecnologia japonesa.',
+    linhas:
+      'O catálogo Yokohama da Carplus cobre uma ampla gama de medidas e categorias, do uso urbano à alta performance, sendo uma das marcas com mais opções de aros e perfis disponíveis para pronta entrega.',
+    faq: [
+      {
+        question: 'A Carplus tem muitas opções de pneu Yokohama?',
+        answer:
+          'Sim. A Yokohama é a marca com a maior variedade de medidas no nosso catálogo, cobrindo de carros populares a SUVs e esportivos. Há grande chance de termos a sua medida em estoque.',
+      },
+      {
+        question: 'Pneu Yokohama é bom para performance?',
+        answer:
+          'A Yokohama é reconhecida mundialmente por linhas de performance e aderência. Informe seu veículo e estilo de uso pelo WhatsApp (41) 3082-7282 que indicamos a linha ideal.',
+      },
+      {
+        question: 'A montagem do pneu Yokohama está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na própria Carplus.',
+      },
+    ],
+  },
+];
+
+// ════════════════════════════════════════════════════════════════
+// FASE 5 — PÁGINAS POR VEÍCULO (clusters de modelos populares)
+// ════════════════════════════════════════════════════════════════
+export interface VehiclePage {
+  slug: string; // /pneu-para-hb20-curitiba
+  nome: string; // HB20
+  termos: string[]; // termos de busca em carros[]
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  medidasComuns: string;
+  faq: FaqItem[];
+}
+
+export const VEHICLE_PAGES: VehiclePage[] = [
+  {
+    slug: 'pneu-para-hb20-curitiba',
+    nome: 'Hyundai HB20',
+    termos: ['HB20'],
+    h1: 'Pneu para Hyundai HB20 em Curitiba',
+    metaTitle: 'Pneu para HB20 em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Hyundai HB20 em Curitiba na Carplus Portão. Medidas originais aro 14, 15 e 16, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Hyundai HB20 é um dos hatchbacks mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para o HB20 e o HB20S, com instalação completa no mesmo dia.',
+    medidasComuns:
+      'Dependendo da versão e do ano, o HB20 utiliza medidas como 175/70R14, 185/65R15 e 195/55R16. Versões com rodas maiores podem usar aro 16. Confirme sempre a medida na lateral do pneu atual.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do HB20?',
+        answer:
+          'As versões do HB20 usam medidas como 175/70R14, 185/65R15 e 195/55R16, conforme o acabamento e o ano. Verifique a medida na lateral do seu pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Quanto custa o jogo de pneus do HB20?',
+        answer:
+          'O valor depende da marca e da medida escolhidas. Na Carplus, você parcela em até 10x sem juros, com montagem, balanceamento e calibragem inclusos. Peça seu orçamento no WhatsApp.',
+      },
+      {
+        question: 'Preciso alinhar o HB20 ao trocar os pneus?',
+        answer:
+          'Sim. O alinhamento 3D e o balanceamento são recomendados a cada troca para evitar desgaste irregular e melhorar a estabilidade. Fazemos ambos na própria Carplus.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-onix-curitiba',
+    nome: 'Chevrolet Onix',
+    termos: ['Onix'],
+    h1: 'Pneu para Chevrolet Onix em Curitiba',
+    metaTitle: 'Pneu para Onix em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Chevrolet Onix e Onix Plus em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Chevrolet Onix é o carro mais vendido do Brasil. Na Carplus, no Portão em Curitiba, temos os pneus ideais para o Onix e o Onix Plus, com pronta entrega e instalação no mesmo dia.',
+    medidasComuns:
+      'O Onix 1.0 costuma usar 185/65R14 ou 185/65R15, enquanto versões mais equipadas e o Onix Plus utilizam 195/60R15 e até 195/55R16. Confirme a medida original do seu carro.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Onix?',
+        answer:
+          'O Onix usa medidas como 185/65R14, 185/65R15 e 195/60R15, dependendo da versão. O Onix Plus pode usar aro 16. Verifique na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Vocês têm pneu para Onix com pronta entrega?',
+        answer:
+          'Sim. As medidas do Onix estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+      },
+      {
+        question: 'A troca de pneus do Onix inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-corolla-curitiba',
+    nome: 'Toyota Corolla',
+    termos: ['Corolla'],
+    h1: 'Pneu para Toyota Corolla em Curitiba',
+    metaTitle: 'Pneu para Corolla em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Toyota Corolla e Corolla Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Toyota Corolla é referência em conforto e durabilidade entre os sedans. Na Carplus, no Portão em Curitiba, você encontra pneus para o Corolla e o Corolla Cross, com marcas premium e instalação especializada.',
+    medidasComuns:
+      'O Corolla sedan costuma usar 205/55R16 e 215/45R17, enquanto o Corolla Cross utiliza medidas aro 17 e 18, como 225/50R18. Confirme a medida original do seu veículo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Corolla?',
+        answer:
+          'O Corolla sedan usa 205/55R16 ou 215/45R17, conforme a versão; o Corolla Cross usa aro 17 ou 18. Verifique a medida na lateral do pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu para o Corolla?',
+        answer:
+          'Para conforto e durabilidade, linhas Michelin Primacy, Goodyear EfficientGrip e Continental são excelentes. Nossa equipe indica a melhor opção conforme seu uso.',
+      },
+      {
+        question: 'O Corolla Cross usa pneu diferente do sedan?',
+        answer:
+          'Sim. Por ser um SUV, o Corolla Cross usa aros maiores (17 ou 18) e perfis adequados ao peso e à altura do veículo. Confirme a medida correta com a gente.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-civic-curitiba',
+    nome: 'Honda Civic',
+    termos: ['Civic'],
+    h1: 'Pneu para Honda Civic em Curitiba',
+    metaTitle: 'Pneu para Civic em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Honda Civic em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, marcas premium, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Honda Civic combina esportividade e conforto, exigindo pneus à altura. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Civic de várias gerações, com marcas premium e instalação especializada.',
+    medidasComuns:
+      'Conforme a geração e a versão, o Civic usa medidas como 205/55R16, 215/55R16, 215/50R17 e 235/40R18 (versões esportivas). Confirme a medida original na lateral do pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Civic?',
+        answer:
+          'O Civic usa medidas como 205/55R16, 215/55R16, 215/50R17 e 235/40R18 nas versões esportivas. Verifique a medida no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual pneu deixa o Civic mais confortável?',
+        answer:
+          'Linhas de conforto premium, como Michelin Primacy e Continental, reduzem ruído e melhoram a absorção de impactos, mantendo a esportividade do Civic.',
+      },
+      {
+        question: 'Balanceamento é importante no Civic com aro grande?',
+        answer:
+          'Muito. Versões com aro 17 e 18 têm perfil baixo e exigem balanceamento computadorizado preciso, que fazemos em todos os pneus instalados na Carplus.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-compass-curitiba',
+    nome: 'Jeep Compass',
+    termos: ['Compass'],
+    h1: 'Pneu para Jeep Compass em Curitiba',
+    metaTitle: 'Pneu para Compass em Curitiba | Carplus Auto Center – SUV',
+    metaDescription:
+      'Pneu para Jeep Compass em Curitiba na Carplus Portão. Medidas aro 17, 18 e 19, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Jeep Compass é um dos SUVs mais populares do país. Na Carplus, no Portão em Curitiba, você encontra pneus para o Compass de todas as versões, com marcas adequadas ao peso e ao uso do SUV.',
+    medidasComuns:
+      'O Compass usa medidas como 225/65R17, 225/55R18 e 235/45R19, conforme a versão (Sport, Longitude, Limited e topo de linha). Confirme a medida original do seu Compass.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Compass?',
+        answer:
+          'O Compass usa 225/65R17, 225/55R18 ou 235/45R19, dependendo da versão. Verifique a medida na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual pneu é melhor para o Compass na cidade?',
+        answer:
+          'Para uso urbano e rodoviário, pneus de SUV com foco em conforto e baixo ruído são ideais. Indicamos a linha certa conforme seu estilo de uso.',
+      },
+      {
+        question: 'O Compass precisa de alinhamento ao trocar pneus?',
+        answer:
+          'Sim. Por ser um SUV mais pesado, o alinhamento 3D e o balanceamento são essenciais a cada troca para evitar desgaste irregular e trepidação.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-renegade-curitiba',
+    nome: 'Jeep Renegade',
+    termos: ['Renegade'],
+    h1: 'Pneu para Jeep Renegade em Curitiba',
+    metaTitle: 'Pneu para Renegade em Curitiba | Carplus Auto Center – SUV',
+    metaDescription:
+      'Pneu para Jeep Renegade em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Jeep Renegade é um SUV compacto versátil para cidade e estrada. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Renegade adequados ao uso urbano e leve off-road.',
+    medidasComuns:
+      'O Renegade usa medidas como 215/65R16, 215/60R17 e 235/55R18, conforme a versão. Confirme a medida original na lateral do seu pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Renegade?',
+        answer:
+          'O Renegade usa 215/65R16, 215/60R17 ou 235/55R18, conforme a versão. Verifique a medida no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Posso usar pneu de uso misto no Renegade?',
+        answer:
+          'Depende do seu uso. Para quem encara estradas de terra, há opções de uso misto; para cidade, pneus de asfalto oferecem mais conforto e economia. Orientamos a melhor escolha.',
+      },
+      {
+        question: 'A troca de pneus do Renegade inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-t-cross-curitiba',
+    nome: 'VW T-Cross',
+    termos: ['T-Cross'],
+    h1: 'Pneu para VW T-Cross em Curitiba',
+    metaTitle: 'Pneu para T-Cross em Curitiba | Carplus Auto Center – SUV',
+    metaDescription:
+      'Pneu para Volkswagen T-Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O VW T-Cross é um dos SUVs compactos mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra pneus para o T-Cross de todas as versões, com instalação completa.',
+    medidasComuns:
+      'O T-Cross usa medidas como 205/60R16, 215/55R17 e 235/45R18, conforme a versão (Sense, Comfortline e Highline). Confirme a medida original do seu T-Cross.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do T-Cross?',
+        answer:
+          'O T-Cross usa 205/60R16, 215/55R17 ou 235/45R18, dependendo da versão. Verifique a medida na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu para o T-Cross?',
+        answer:
+          'Para conforto e durabilidade no uso urbano, linhas premium de SUV das marcas que trabalhamos são ideais. Indicamos a melhor conforme seu perfil de uso.',
+      },
+      {
+        question: 'O T-Cross precisa de alinhamento ao trocar pneus?',
+        answer:
+          'Sim. O alinhamento 3D e o balanceamento garantem estabilidade e evitam desgaste irregular, sendo recomendados a cada troca de pneus.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-creta-curitiba',
+    nome: 'Hyundai Creta',
+    termos: ['Creta'],
+    h1: 'Pneu para Hyundai Creta em Curitiba',
+    metaTitle: 'Pneu para Creta em Curitiba | Carplus Auto Center – SUV',
+    metaDescription:
+      'Pneu para Hyundai Creta em Curitiba na Carplus Portão. Medidas aro 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Hyundai Creta é um SUV compacto que une conforto e robustez. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Creta com instalação completa e marcas adequadas ao SUV.',
+    medidasComuns:
+      'O Creta usa medidas como 205/65R16 e 215/60R17, conforme a versão. Confirme a medida original na lateral do seu pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Creta?',
+        answer:
+          'O Creta usa 205/65R16 ou 215/60R17, conforme a versão. Verifique a medida no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual pneu deixa o Creta mais silencioso?',
+        answer:
+          'Linhas de conforto com tecnologia de redução de ruído tornam o Creta mais silencioso. Indicamos a melhor opção conforme seu uso.',
+      },
+      {
+        question: 'A troca de pneus do Creta inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-argo-curitiba',
+    nome: 'Fiat Argo',
+    termos: ['Argo'],
+    h1: 'Pneu para Fiat Argo em Curitiba',
+    metaTitle: 'Pneu para Argo em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Fiat Argo em Curitiba na Carplus Portão. Medidas aro 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Fiat Argo é um hatch moderno e econômico. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para o Argo de todas as versões, com instalação no mesmo dia.',
+    medidasComuns:
+      'O Argo usa medidas como 185/65R15, 195/60R15 e 195/55R16 (versões mais equipadas, como o Argo Trekking). Confirme a medida original do seu Argo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Argo?',
+        answer:
+          'O Argo usa 185/65R15, 195/60R15 ou 195/55R16, conforme a versão. Verifique a medida na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Vocês têm pneu para Argo com pronta entrega?',
+        answer:
+          'Sim. As medidas do Argo são bastante comuns e costumam estar em estoque no Portão para instalação no mesmo dia.',
+      },
+      {
+        question: 'Preciso alinhar o Argo ao trocar os pneus?',
+        answer:
+          'Sim. O alinhamento 3D e o balanceamento evitam desgaste irregular e melhoram a estabilidade, sendo recomendados a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-kwid-curitiba',
+    nome: 'Renault Kwid',
+    termos: ['Kwid'],
+    h1: 'Pneu para Renault Kwid em Curitiba',
+    metaTitle: 'Pneu para Kwid em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Renault Kwid em Curitiba na Carplus Portão. Medidas aro 13 e 14, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Renault Kwid é um dos carros mais econômicos do Brasil. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Kwid com foco em economia, durabilidade e segurança no uso urbano.',
+    medidasComuns:
+      'O Kwid usa medidas como 165/70R14 e 175/65R14, conforme a versão. Confirme a medida original na lateral do seu pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Kwid?',
+        answer:
+          'O Kwid usa 165/70R14 ou 175/65R14, conforme a versão. Verifique a medida no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual pneu é mais econômico para o Kwid?',
+        answer:
+          'Pneus de baixa resistência ao rolamento ajudam a manter o baixo consumo do Kwid. Indicamos opções econômicas e seguras conforme sua necessidade.',
+      },
+      {
+        question: 'A troca de pneus do Kwid inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+];
+
+// ════════════════════════════════════════════════════════════════
+// FASE 3 — CONTEÚDO POR MEDIDA (reforça /pneu-medida/:medida)
+// ════════════════════════════════════════════════════════════════
+export interface MeasureSeoContent {
+  medida: string; // 195/65R15
+  resumo: string;
+  aplicacoes: string;
+}
+
+export const MEASURE_SEO: MeasureSeoContent[] = [
+  {
+    medida: '175/65R14',
+    resumo:
+      'A medida 175/65R14 é típica de carros compactos e econômicos, oferecendo bom custo-benefício e conforto para o uso urbano diário.',
+    aplicacoes: 'Comum em modelos como Renault Kwid, Hyundai HB20 de entrada e outros compactos.',
+  },
+  {
+    medida: '185/60R15',
+    resumo:
+      'A medida 185/60R15 equilibra conforto e estabilidade, sendo muito usada em hatches e sedans compactos com aro 15.',
+    aplicacoes: 'Presente em modelos como Fiat Argo, VW Polo e hatchbacks de porte médio.',
+  },
+  {
+    medida: '185/65R15',
+    resumo:
+      'A 185/65R15 é uma das medidas mais populares do Brasil, conhecida pelo conforto e pela ampla disponibilidade de marcas.',
+    aplicacoes: 'Equipa modelos como Onix, HB20, VW Polo, Toyota Yaris e Honda Fit.',
+  },
+  {
+    medida: '195/55R15',
+    resumo:
+      'A 195/55R15 traz visual mais esportivo com perfil mais baixo, mantendo o conforto adequado para o dia a dia.',
+    aplicacoes: 'Comum em modelos como VW Golf, Peugeot 206/207 e hatches esportivos.',
+  },
+  {
+    medida: '195/65R15',
+    resumo:
+      'A 195/65R15 é uma medida de conforto bastante procurada, oferecendo bom amortecimento e estabilidade em sedans e hatches.',
+    aplicacoes: 'Presente em modelos como Toyota Corolla antigo, Honda Civic e Renault Fluence.',
+  },
+  {
+    medida: '205/55R16',
+    resumo:
+      'A 205/55R16 é referência em sedans médios e hatches premium, combinando conforto, estabilidade e bom desempenho.',
+    aplicacoes: 'Equipa modelos como Corolla, Civic, Jetta, Cruze e HB20S.',
+  },
+  {
+    medida: '205/60R16',
+    resumo:
+      'A 205/60R16 entrega conforto e robustez, sendo usada em sedans e SUVs compactos que pedem perfil um pouco mais alto.',
+    aplicacoes: 'Comum em SUVs compactos como o VW T-Cross e sedans médios.',
+  },
+  {
+    medida: '215/55R17',
+    resumo:
+      'A 215/55R17 une esportividade e conforto, muito presente em SUVs compactos e sedans com aro 17.',
+    aplicacoes: 'Equipa modelos como VW T-Cross, Jeep Compass de entrada e sedans premium.',
+  },
+  {
+    medida: '225/45R17',
+    resumo:
+      'A 225/45R17 é uma medida esportiva de perfil baixo, oferecendo ótima aderência e resposta de direção.',
+    aplicacoes: 'Presente em modelos esportivos e premium como Audi A4, BMW 320i e VW Golf GTI.',
+  },
+];
+
+export const MEASURE_SLUGS = MEASURE_SEO.map((m) =>
+  m.medida.toLowerCase().replace('/', '-').replace('r', 'r')
+);
+
+export function getMeasureSeo(medida: string): MeasureSeoContent | undefined {
+  const target = medida.toUpperCase().replace(/\s/g, '');
+  return MEASURE_SEO.find((m) => m.medida.toUpperCase().replace(/\s/g, '') === target);
+}
+
+// ════════════════════════════════════════════════════════════════
+// FASE 6 — SEO LOCAL (combinações bairro + intenção)
+// ════════════════════════════════════════════════════════════════
+export interface LocalComboPage {
+  slug: string;
+  tipo: 'aro' | 'marca' | 'loja';
+  aro?: number;
+  marca?: string;
+  bairro: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  faq: FaqItem[];
+}
+
+export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
+  {
+    slug: 'pneu-aro-15-portao-curitiba',
+    tipo: 'aro',
+    aro: 15,
+    bairro: 'Portão',
+    h1: 'Pneu Aro 15 no Portão, Curitiba',
+    metaTitle: 'Pneu Aro 15 no Portão Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Pneu aro 15 no bairro Portão, em Curitiba, na Carplus. Maior variedade de medidas, montagem inclusa e 10x sem juros. Venha à Av. Arthur da Silva Bernardes, 1323. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Carplus fica no coração do bairro Portão, em Curitiba, e é referência em pneu aro 15 na região. Aqui você encontra a maior variedade de medidas aro 15, com montagem, balanceamento e alinhamento no mesmo lugar.',
+    faq: [
+      {
+        question: 'Onde comprar pneu aro 15 no Portão em Curitiba?',
+        answer:
+          'Na Carplus Auto Center, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão. Temos a maior variedade de pneus aro 15 com montagem inclusa e parcelamento em até 10x sem juros.',
+      },
+      {
+        question: 'A Carplus do Portão instala o pneu aro 15 na hora?',
+        answer:
+          'Sim. Com pronta entrega, a maioria das medidas aro 15 é instalada no mesmo dia, com balanceamento e calibragem inclusos. Agende pelo WhatsApp (41) 3082-7282.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-aro-16-agua-verde-curitiba',
+    tipo: 'aro',
+    aro: 16,
+    bairro: 'Água Verde',
+    h1: 'Pneu Aro 16 no Água Verde, Curitiba',
+    metaTitle: 'Pneu Aro 16 no Água Verde Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Pneu aro 16 para quem é do Água Verde, em Curitiba. A Carplus fica ao lado, no Portão, com medidas 205/55R16 e 205/60R16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Quem mora ou trabalha no Água Verde, em Curitiba, tem a Carplus pertinho, no bairro Portão. Somos especialistas em pneu aro 16 para sedans e SUVs, com instalação completa e atendimento rápido.',
+    faq: [
+      {
+        question: 'A Carplus atende a região do Água Verde?',
+        answer:
+          'Sim. A Carplus fica no Portão, bairro vizinho ao Água Verde, a poucos minutos de carro. Atendemos diariamente clientes da região com pneu aro 16 e serviços automotivos completos.',
+      },
+      {
+        question: 'Quais medidas de pneu aro 16 vocês têm?',
+        answer:
+          'Trabalhamos com as medidas aro 16 mais procuradas, como 205/55R16 e 205/60R16, ideais para sedans médios e SUVs compactos. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-michelin-seminario-curitiba',
+    tipo: 'marca',
+    marca: 'Michelin',
+    bairro: 'Seminário',
+    h1: 'Pneu Michelin no Seminário, Curitiba',
+    metaTitle: 'Pneu Michelin no Seminário Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Pneu Michelin para quem é do Seminário, em Curitiba. A Carplus fica no Portão, ao lado, com linhas Energy XM2, Primacy 4 e Pilot Sport 4. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Moradores do Seminário, em Curitiba, contam com a Carplus no bairro Portão, ao lado, para comprar pneu Michelin com instalação completa. Trabalhamos com as principais linhas Michelin para economia, conforto e performance.',
+    faq: [
+      {
+        question: 'Onde comprar pneu Michelin perto do Seminário?',
+        answer:
+          'Na Carplus Auto Center, no bairro Portão, vizinho ao Seminário em Curitiba. Trabalhamos com pneus Michelin com montagem inclusa e parcelamento em até 10x sem juros.',
+      },
+      {
+        question: 'Quais linhas Michelin a Carplus tem?',
+        answer:
+          'Trabalhamos com linhas como Energy XM2, Primacy 4 e Pilot Sport 4. Informe a medida do seu carro pelo WhatsApp (41) 3082-7282 para verificar disponibilidade.',
+      },
+    ],
+  },
+  {
+    slug: 'loja-de-pneus-portao-curitiba',
+    tipo: 'loja',
+    bairro: 'Portão',
+    h1: 'Loja de Pneus no Portão, Curitiba',
+    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Loja de pneus no Portão, em Curitiba: Carplus Auto Center. Pneus de várias marcas, oficina mecânica completa, alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Carplus Auto Center é a loja de pneus e oficina mecânica completa do bairro Portão, em Curitiba. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios, suspensão e troca de óleo no mesmo lugar.',
+    faq: [
+      {
+        question: 'Qual o endereço da loja de pneus no Portão?',
+        answer:
+          'A Carplus fica na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR. Atendemos de segunda a sexta das 8h às 18h e sábados das 8h às 12h.',
+      },
+      {
+        question: 'A loja de pneus do Portão também é oficina mecânica?',
+        answer:
+          'Sim. Além da venda e montagem de pneus, a Carplus é uma oficina mecânica full service, com alinhamento 3D, balanceamento, freios, suspensão, troca de óleo e muito mais.',
+      },
+    ],
+  },
+];
+
+// ─── Helpers de busca por slug ───────────────────────────────────
+export function getAroPage(slug: string): AroPage | undefined {
+  return ARO_PAGES.find((p) => p.slug === slug);
+}
+export function getBrandPage(slug: string): BrandPage | undefined {
+  return BRAND_PAGES.find((p) => p.slug === slug);
+}
+export function getVehiclePage(slug: string): VehiclePage | undefined {
+  return VEHICLE_PAGES.find((p) => p.slug === slug);
+}
+export function getLocalComboPage(slug: string): LocalComboPage | undefined {
+  return LOCAL_COMBO_PAGES.find((p) => p.slug === slug);
+}

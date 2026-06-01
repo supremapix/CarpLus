@@ -21,6 +21,19 @@ import FAQPage from './components/FAQPage';
 import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
 import BorrachariaPortao from './components/BorrachariaPortao';
 import BackToTop from './components/BackToTop';
+import PneusCuritibaHub from './components/PneusCuritibaHub';
+import {
+  AroLandingPage,
+  BrandLandingPage,
+  VehicleLandingPage,
+  LocalComboLandingPage,
+} from './components/SeoLandingPages';
+import {
+  ARO_PAGES,
+  BRAND_PAGES,
+  VEHICLE_PAGES,
+  LOCAL_COMBO_PAGES,
+} from './data/seoLanding';
 import { generateLocalBusinessSchema } from './lib/schema';
 
 // Schema de LocalBusiness global para todas as paginas
