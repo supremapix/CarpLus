@@ -1,8 +1,9 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
+import { ARO_PAGES, BRAND_PAGES, VEHICLE_PAGES, LOCAL_COMBO_PAGES } from '../data/seoLanding';
 import { Link } from 'react-router-dom';
-import { MapPin, Wrench, Globe, ChevronRight, Circle } from 'lucide-react';
+import { MapPin, Wrench, Globe, ChevronRight, Circle, Car, Tag, Navigation } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
 // Get unique brands from TIRES
@@ -108,6 +109,94 @@ export default function Sitemap() {
                   ))}
                   <Link to="/bairros" className="text-primary font-bold mt-2">Ver todos os bairros...</Link>
                </div>
+            </div>
+          </div>
+
+          {/* Páginas de Pneus (SEO Landing Pages) */}
+          <div className="mt-16 pt-12 border-t border-gray-100">
+            <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2 mb-8">
+              <Circle size={24} className="text-primary" /> Paginas de Pneus por Categoria
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {/* Por Aro */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                  <Circle size={18} className="text-primary" /> Pneus por Aro
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  {ARO_PAGES.map(p => (
+                    <li key={p.slug}>
+                      <Link to={`/${p.slug}`} className="hover:text-primary transition-colors flex items-center gap-1">
+                        <ChevronRight size={12} className="text-primary" /> Pneu Aro {p.aro}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Por Marca */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                  <Tag size={18} className="text-primary" /> Pneus por Marca
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  {BRAND_PAGES.map(p => (
+                    <li key={p.slug}>
+                      <Link to={`/${p.slug}`} className="hover:text-primary transition-colors flex items-center gap-1">
+                        <ChevronRight size={12} className="text-primary" /> Pneu {p.marca}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Por Veículo */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                  <Car size={18} className="text-primary" /> Pneus por Veiculo
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  {VEHICLE_PAGES.map(p => (
+                    <li key={p.slug}>
+                      <Link to={`/${p.slug}`} className="hover:text-primary transition-colors flex items-center gap-1">
+                        <ChevronRight size={12} className="text-primary" /> Pneu {p.nome}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Páginas Locais */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                  <Navigation size={18} className="text-primary" /> Paginas Locais
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>
+                    <Link to="/pneus-curitiba" className="hover:text-primary transition-colors flex items-center gap-1 font-bold">
+                      <ChevronRight size={12} className="text-primary" /> Pneus em Curitiba (Hub)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/loja-de-pneus-curitiba-perto-de-mim" className="hover:text-primary transition-colors flex items-center gap-1 font-bold">
+                      <ChevronRight size={12} className="text-primary" /> Loja de Pneus Perto de Mim
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/centro-automotivo-portao" className="hover:text-primary transition-colors flex items-center gap-1">
+                      <ChevronRight size={12} className="text-primary" /> Centro Automotivo Portao
+                    </Link>
+                  </li>
+                  {LOCAL_COMBO_PAGES.map(p => (
+                    <li key={p.slug}>
+                      <Link to={`/${p.slug}`} className="hover:text-primary transition-colors flex items-center gap-1">
+                        <ChevronRight size={12} className="text-primary" /> {p.h1}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
