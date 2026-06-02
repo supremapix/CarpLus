@@ -65,7 +65,7 @@ export function getMeasuresForTires(tires: Tire[]): string[] {
 }
 
 // ════════════════════════════════════════════════════════════════
-// FASE 2 — PÁGINAS POR ARO (13 ao 20)
+// FASE 2 — PÁGINAS POR ARO (13 ao 23)
 // ════════════════════════════════════════════════════════════════
 export interface AroPage {
   aro: number;
@@ -317,6 +317,96 @@ export const ARO_PAGES: AroPage[] = [
         question: 'A montagem de pneu aro 20 tem cuidado especial?',
         answer:
           'Sim. Rodas aro 20, geralmente de liga leve e alto valor, são montadas com equipamento que preserva o acabamento, seguidas de balanceamento de precisão.',
+      },
+    ],
+  },
+  {
+    aro: 21,
+    slug: 'pneu-aro-21-curitiba',
+    h1: 'Pneu Aro 21 em Curitiba',
+    metaTitle: 'Pneu Aro 21 em Curitiba | Carplus Auto Center – SUV Premium',
+    metaDescription:
+      'Pneu aro 21 em Curitiba na Carplus Portão. Medidas 245/40R21, 275/45R21, 285/45R21, 315/40R21 e mais para SUVs e esportivos premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 21 equipa SUVs premium de grande porte e esportivos de alto desempenho. A Carplus, no Portão em Curitiba, trabalha com pneus aro 21 de marcas como Yokohama, Continental, Bridgestone e Pirelli, com montagem especializada e balanceamento de alta precisão.',
+    aplicacoes:
+      'O aro 21 equipa modelos como BMW X5 e X6, Porsche Cayenne, Audi Q7 e Q8, Land Rover e Range Rover Sport. As medidas mais procuradas são 245/40R21, 275/45R21, 285/45R21, 285/40R21 e 315/40R21.',
+    perfilTipico: ['SUV premium', 'Esportivo de luxo', 'Alta performance', 'Perfil baixo'],
+    faq: [
+      {
+        question: 'Quais veículos usam pneu aro 21?',
+        answer:
+          'SUVs premium como BMW X5/X6, Porsche Cayenne, Audi Q7/Q8 e Range Rover Sport usam aro 21. Confirme a medida original (ex.: 275/45R21) e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'A Carplus tem pneu aro 21 em Curitiba?',
+        answer:
+          'Sim. Trabalhamos com medidas aro 21 de marcas como Yokohama, Continental, Bridgestone e Pirelli. Caso a medida específica não esteja em estoque, fazemos a busca para você com agilidade.',
+      },
+      {
+        question: 'O balanceamento de pneu aro 21 é diferente?',
+        answer:
+          'Sim. Quanto maior o aro e menor o perfil, mais sensível o conjunto a vibrações. Por isso usamos balanceamento computadorizado de alta precisão em todos os pneus aro 21.',
+      },
+    ],
+  },
+  {
+    aro: 22,
+    slug: 'pneu-aro-22-curitiba',
+    h1: 'Pneu Aro 22 em Curitiba',
+    metaTitle: 'Pneu Aro 22 em Curitiba | Carplus Auto Center – SUV de Luxo',
+    metaDescription:
+      'Pneu aro 22 em Curitiba na Carplus Portão. Medidas 265/40R22, 275/40R22, 285/40R22, 315/35R22 e mais para SUVs de luxo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 22 é destinado a SUVs de luxo e veículos premium de grande porte. A Carplus, no Portão em Curitiba, oferece pneus aro 22 das marcas que já atendemos, com montagem cuidadosa que preserva o acabamento das rodas e balanceamento de precisão.',
+    aplicacoes:
+      'O aro 22 equipa modelos como Range Rover, BMW X6 e X7, Mercedes GLE e GLS, Porsche Cayenne Turbo e picapes customizadas. As medidas mais buscadas são 265/40R22, 275/40R22, 285/40R22 e 315/35R22.',
+    perfilTipico: ['SUV de luxo', 'Premium grande porte', 'Customização', 'Perfil extrabaixo'],
+    faq: [
+      {
+        question: 'Quais carros usam pneu aro 22?',
+        answer:
+          'SUVs de luxo como Range Rover, BMW X7, Mercedes GLS e Porsche Cayenne, além de picapes customizadas, usam aro 22. Informe a medida exata pelo WhatsApp (41) 3082-7282 para verificarmos disponibilidade.',
+      },
+      {
+        question: 'A montagem de pneu aro 22 preserva a roda?',
+        answer:
+          'Sim. Rodas aro 22 são de alto valor e exigem cuidado. Usamos equipamento de montagem moderno que protege o acabamento, seguido de balanceamento computadorizado de precisão.',
+      },
+      {
+        question: 'A Carplus encontra pneu aro 22 sob encomenda?',
+        answer:
+          'Sim. Caso a medida aro 22 específica não esteja em estoque, fazemos a busca junto aos nossos fornecedores com agilidade para você.',
+      },
+    ],
+  },
+  {
+    aro: 23,
+    slug: 'pneu-aro-23-curitiba',
+    h1: 'Pneu Aro 23 em Curitiba',
+    metaTitle: 'Pneu Aro 23 em Curitiba | Carplus Auto Center – Alto Padrão',
+    metaDescription:
+      'Pneu aro 23 em Curitiba na Carplus Portão. Medidas 275/35R23, 305/35R23, 315/30R23 e mais para SUVs de alto padrão e customizações. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu aro 23 é uma medida de alto padrão, voltada a SUVs de luxo e projetos de customização. A Carplus, no Portão em Curitiba, trabalha com pneus aro 23 com montagem especializada e o máximo cuidado com rodas de alto valor.',
+    aplicacoes:
+      'O aro 23 equipa SUVs premium de grande porte e veículos customizados, como Range Rover e modelos com rodas esportivas de alto padrão. As medidas disponíveis incluem 275/35R23, 305/35R23 e 315/30R23.',
+    perfilTipico: ['SUV de luxo', 'Customização', 'Alto padrão', 'Perfil extrabaixo'],
+    faq: [
+      {
+        question: 'A Carplus trabalha com pneu aro 23?',
+        answer:
+          'Sim. Temos pneus aro 23 das marcas que atendemos, com destaque para a Yokohama. Informe a medida exata (ex.: 305/35R23) pelo WhatsApp (41) 3082-7282 para confirmar disponibilidade.',
+      },
+      {
+        question: 'Quais veículos usam pneu aro 23?',
+        answer:
+          'O aro 23 é usado em SUVs premium de grande porte e em projetos de customização com rodas esportivas. Por ser uma medida especial, recomendamos confirmar a disponibilidade antes da compra.',
+      },
+      {
+        question: 'A montagem de pneu aro 23 tem cuidado especial?',
+        answer:
+          'Sim. Rodas aro 23 são de altíssimo valor e exigem o máximo cuidado. A montagem é feita com equipamento que preserva o acabamento, seguida de balanceamento de alta precisão.',
       },
     ],
   },
@@ -911,6 +1001,246 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       },
       {
         question: 'A troca de pneus do Kwid inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-gol-curitiba',
+    nome: 'Volkswagen Gol',
+    termos: ['Gol'],
+    h1: 'Pneu para Volkswagen Gol em Curitiba',
+    metaTitle: 'Pneu para Gol em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Volkswagen Gol em Curitiba na Carplus Portão. Medidas aro 13, 14 e 15, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Volkswagen Gol é um dos carros mais populares da história do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para todas as gerações do Gol, com pronta entrega e instalação no mesmo dia.',
+    medidasComuns:
+      'Conforme a geração e a versão, o Gol usa medidas como 175/70R13, 175/65R14, 185/60R14 e 185/65R15. Confirme sempre a medida na lateral do pneu atual.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Gol?',
+        answer:
+          'O Gol usa medidas como 175/70R13, 175/65R14 e 185/65R15, conforme a geração e a versão. Verifique na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Vocês têm pneu para Gol com pronta entrega?',
+        answer:
+          'Sim. As medidas do Gol estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+      },
+      {
+        question: 'A troca de pneus do Gol inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-polo-curitiba',
+    nome: 'Volkswagen Polo',
+    termos: ['Polo'],
+    h1: 'Pneu para Volkswagen Polo em Curitiba',
+    metaTitle: 'Pneu para Polo em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Volkswagen Polo em Curitiba na Carplus Portão. Medidas aro 15, 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Volkswagen Polo é um dos hatchbacks mais vendidos do país. Na Carplus, no Portão em Curitiba, oferecemos os pneus ideais para o Polo, do econômico ao esportivo da versão GTS, com instalação completa.',
+    medidasComuns:
+      'Dependendo da versão, o Polo utiliza medidas como 185/65R15, 195/55R16 e 205/45R17 (GTS). Confirme a medida original do seu veículo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do Polo?',
+        answer:
+          'O Polo usa medidas como 185/65R15, 195/55R16 e 205/45R17 na versão GTS. Verifique a medida no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu para o Polo?',
+        answer:
+          'Depende do uso. Para conforto e durabilidade há ótimas linhas premium; para custo-benefício, opções equilibradas. Nossa equipe indica a melhor escolha gratuitamente.',
+      },
+      {
+        question: 'A troca de pneus do Polo inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-hrv-curitiba',
+    nome: 'Honda HR-V',
+    termos: ['HR-V'],
+    h1: 'Pneu para Honda HR-V em Curitiba',
+    metaTitle: 'Pneu para HR-V em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Honda HR-V em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O Honda HR-V é um dos SUVs compactos mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra pneus para o HR-V com marcas premium e instalação especializada no mesmo dia.',
+    medidasComuns:
+      'Conforme a versão e o ano, o HR-V usa medidas como 215/60R16, 215/55R17 e 225/50R18 (Touring). Confirme a medida original na lateral do pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu do HR-V?',
+        answer:
+          'O HR-V usa medidas como 215/60R16, 215/55R17 e 225/50R18, conforme a versão. Verifique a medida no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu para o HR-V?',
+        answer:
+          'Para conforto e baixo ruído, linhas premium são excelentes para o HR-V. Nossa equipe técnica indica a melhor opção conforme seu uso e orçamento.',
+      },
+      {
+        question: 'A troca de pneus do HR-V inclui alinhamento?',
+        answer:
+          'O balanceamento está incluso na montagem, e recomendamos o alinhamento 3D a cada troca para evitar desgaste irregular. Fazemos ambos na Carplus.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-ranger-curitiba',
+    nome: 'Ford Ranger',
+    termos: ['Ranger'],
+    h1: 'Pneu para Ford Ranger em Curitiba',
+    metaTitle: 'Pneu para Ranger em Curitiba | Carplus Auto Center – Picape',
+    metaDescription:
+      'Pneu para Ford Ranger em Curitiba na Carplus Portão. Medidas aro 16, 17, 18 e 20 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Ford Ranger é uma das picapes médias mais robustas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Ranger em uso urbano, estrada e trabalho, com instalação especializada para picapes.',
+    medidasComuns:
+      'Conforme a versão, a Ranger usa medidas como 255/70R16, 265/65R17, 265/60R18 e 255/55R20 (Limited). Confirme a medida original do seu veículo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu da Ranger?',
+        answer:
+          'A Ranger usa medidas como 255/70R16, 265/65R17, 265/60R18 e 255/55R20, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Tem pneu para Ranger com perfil para estrada e trabalho?',
+        answer:
+          'Sim. Trabalhamos com pneus de uso misto (HT) e mais robustos conforme a sua necessidade. Informe como usa a picape que indicamos o pneu ideal.',
+      },
+      {
+        question: 'A montagem de pneu da Ranger está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado para picapes a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-hilux-curitiba',
+    nome: 'Toyota Hilux',
+    termos: ['Hilux'],
+    h1: 'Pneu para Toyota Hilux em Curitiba',
+    metaTitle: 'Pneu para Hilux em Curitiba | Carplus Auto Center – Picape',
+    metaDescription:
+      'Pneu para Toyota Hilux em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Toyota Hilux é referência em durabilidade entre as picapes médias. Na Carplus, no Portão em Curitiba, você encontra pneus para a Hilux em uso urbano, estrada e trabalho pesado, com instalação especializada.',
+    medidasComuns:
+      'Conforme a versão, a Hilux usa medidas como 265/70R16, 255/65R17, 265/65R17 e 265/60R18. Confirme a medida original na lateral do pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu da Hilux?',
+        answer:
+          'A Hilux usa medidas como 265/70R16, 255/65R17, 265/65R17 e 265/60R18, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Tem pneu para Hilux de uso misto?',
+        answer:
+          'Sim. Trabalhamos com pneus HT (estrada) e opções mais robustas conforme o uso da picape. Informe sua necessidade que indicamos a melhor linha.',
+      },
+      {
+        question: 'A troca de pneus da Hilux inclui balanceamento?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca para picapes.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-s10-curitiba',
+    nome: 'Chevrolet S10',
+    termos: ['S10'],
+    h1: 'Pneu para Chevrolet S10 em Curitiba',
+    metaTitle: 'Pneu para S10 em Curitiba | Carplus Auto Center – Picape',
+    metaDescription:
+      'Pneu para Chevrolet S10 em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Chevrolet S10 é uma picape média robusta e versátil. Na Carplus, no Portão em Curitiba, oferecemos pneus para a S10 em uso urbano, estrada e trabalho, com montagem especializada para picapes.',
+    medidasComuns:
+      'Conforme a versão, a S10 usa medidas como 255/70R16, 255/65R17 e 265/60R18. Confirme a medida original do seu veículo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu da S10?',
+        answer:
+          'A S10 usa medidas como 255/70R16, 255/65R17 e 265/60R18, conforme a versão. Verifique no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Tem pneu para S10 com bom desempenho em estrada?',
+        answer:
+          'Sim. Trabalhamos com pneus HT de uso misto, ideais para quem roda muito em estrada, além de opções mais robustas. Indicamos conforme o seu uso.',
+      },
+      {
+        question: 'A montagem de pneu da S10 está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-strada-curitiba',
+    nome: 'Fiat Strada',
+    termos: ['Strada'],
+    h1: 'Pneu para Fiat Strada em Curitiba',
+    metaTitle: 'Pneu para Strada em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaDescription:
+      'Pneu para Fiat Strada em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Fiat Strada é a picape leve mais vendida do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus ideais para a Strada em trabalho e uso urbano, com pronta entrega e instalação no mesmo dia.',
+    medidasComuns:
+      'Conforme a versão e o ano, a Strada usa medidas como 175/70R14, 185/65R15 e 205/60R15. Confirme a medida original na lateral do pneu.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu da Strada?',
+        answer:
+          'A Strada usa medidas como 175/70R14, 185/65R15 e 205/60R15, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Vocês têm pneu para Strada com pronta entrega?',
+        answer:
+          'Sim. As medidas da Strada estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+      },
+      {
+        question: 'Tem pneu reforçado para a Strada que trabalha com carga?',
+        answer:
+          'Sim. Para uso com carga, indicamos pneus com índice de carga adequado. Informe como utiliza a picape que recomendamos o pneu correto.',
+      },
+    ],
+  },
+  {
+    slug: 'pneu-para-toro-curitiba',
+    nome: 'Fiat Toro',
+    termos: ['Toro'],
+    h1: 'Pneu para Fiat Toro em Curitiba',
+    metaTitle: 'Pneu para Toro em Curitiba | Carplus Auto Center – Picape',
+    metaDescription:
+      'Pneu para Fiat Toro em Curitiba na Carplus Portão. Medidas aro 17, 18 e 20, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Fiat Toro é uma das picapes intermediárias mais desejadas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Toro em uso urbano, estrada e trabalho leve, com instalação especializada.',
+    medidasComuns:
+      'Conforme a versão, a Toro usa medidas como 225/65R17, 235/60R18 e 245/45R20 (Ultra). Confirme a medida original do seu veículo.',
+    faq: [
+      {
+        question: 'Qual a medida de pneu da Toro?',
+        answer:
+          'A Toro usa medidas como 225/65R17, 235/60R18 e 245/45R20, conforme a versão. Verifique no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor marca de pneu para a Toro?',
+        answer:
+          'Depende do uso. Para conforto urbano e estrada há ótimas linhas premium e de uso misto. Nossa equipe indica a melhor escolha conforme sua necessidade.',
+      },
+      {
+        question: 'A montagem de pneu da Toro está inclusa?',
         answer:
           'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
       },
