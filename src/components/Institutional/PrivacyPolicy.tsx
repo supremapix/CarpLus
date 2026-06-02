@@ -1,7 +1,15 @@
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function PrivacyPolicy() {
+  useSEO({
+    title: 'Política de Privacidade | Carplus Pneus e Oficina Curitiba',
+    description: 'Saiba como a Carplus Auto Center coleta, usa e protege os dados dos clientes em Curitiba. Política de Privacidade da loja de pneus e oficina no Portão.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/politica-de-privacidade',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+  });
+
   return (
     <div className="bg-white min-h-screen">
       <Navbar />

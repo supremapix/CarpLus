@@ -14,8 +14,17 @@ import OfertasExclusivas from './OfertasExclusivas';
 import Footer from './Footer';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 export default function Home() {
+  useSEO({
+    title: 'Carplus Auto Center – Loja de Pneus e Oficina em Curitiba, Portão',
+    description: 'Loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+    keywords: ['loja de pneus Curitiba', 'pneus Portão Curitiba', 'oficina mecânica Portão', 'alinhamento 3D Curitiba', 'Carplus Auto Center'],
+  });
+
   return (
     <div className="relative">
       <Navbar />

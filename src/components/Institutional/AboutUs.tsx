@@ -4,8 +4,17 @@ import { motion } from 'motion/react';
 import { Calendar, Users, Award, Wrench, MapPin, Phone, Shield, Star, Heart, Cog, UsersRound, MessageSquare, ArrowRight } from 'lucide-react';
 import AboutGallery from './AboutGallery';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function AboutUs() {
+  useSEO({
+    title: 'Quem Somos | Carplus Pneus e Oficina em Curitiba desde 2014',
+    description: 'Conheça a Carplus Pneus: referência em pneus e serviços automotivos no Portão, Curitiba, desde 2014. Equipe especializada, estrutura moderna e atendimento transparente.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/quem-somos',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+    keywords: ['quem somos Carplus', 'oficina Curitiba Portão', 'centro automotivo Curitiba', 'história Carplus Pneus'],
+  });
+
   return (
     <div className="bg-dark min-h-screen">
       <Navbar />
