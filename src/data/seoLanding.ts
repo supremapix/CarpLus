@@ -10,7 +10,7 @@ export const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 export const WHATSAPP_NUMBER = '554130827282';
 export const PHONE_DISPLAY = '(41) 3082-7282';
 export const ADDRESS_FULL = 'Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR';
-export const OG_IMAGE = '/images/loja/loja-de-pneus-em-curitiba.webp';
+export const OG_IMAGE = '/images/loja/carplus-oficina-portao-fachada-curitiba.jpg';
 
 export interface FaqItem {
   question: string;

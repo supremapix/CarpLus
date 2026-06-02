@@ -69,7 +69,7 @@ export default function PneusCuritibaHub() {
     description:
       'Pneus em Curitiba na Carplus, bairro Portão. Encontre pneus por aro (13 ao 20), por marca (Pirelli, Michelin, Goodyear, Continental, Yokohama), por medida e por veículo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     canonical: `${BASE_URL}/pneus-curitiba`,
-    ogImage: '/images/loja/loja-de-pneus-em-curitiba.webp',
+    ogImage: '/images/loja/carplus-oficina-portao-fachada-curitiba.jpg',
     schemaJSON: [
       generateBreadcrumbSchema([
         { name: 'Home', url: `${BASE_URL}/` },
