@@ -21,6 +21,7 @@ import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
 import BorrachariaPortao from './components/BorrachariaPortao';
 import BackToTop from './components/BackToTop';
 import PneusCuritibaHub from './components/PneusCuritibaHub';
+import LojaDePneusPertoDeMim from './components/LojaDePneusPertoDeMim';
 import {
   AroLandingPage,
   BrandLandingPage,
@@ -68,6 +69,7 @@ export default function App() {
 
       {/* ───── Hub SEO de Pneus ───── */}
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
+      <Route path="/loja-de-pneus-curitiba-perto-de-mim" element={<LojaDePneusPertoDeMim />} />
 
       {/* Landing pages por Aro */}
       {ARO_PAGES.map((p) => (
