@@ -482,6 +482,122 @@ export const BRAND_PAGES: BrandPage[] = [
       },
     ],
   },
+  {
+    marca: 'Bridgestone',
+    slug: 'pneu-bridgestone-curitiba',
+    h1: 'Pneu Bridgestone em Curitiba',
+    metaTitle: 'Pneu Bridgestone em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Bridgestone em Curitiba na Carplus Portão. Linhas Turanza, Ecopia e Potenza com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Bridgestone é a maior fabricante de pneus do mundo e está entre as marcas com maior estoque na Carplus, no Portão em Curitiba. Trabalhamos com linhas Bridgestone para conforto, economia e alta performance, com instalação completa.',
+    linhas:
+      'No catálogo Bridgestone da Carplus você encontra linhas como a Turanza (conforto e silêncio para sedans), a Ecopia (baixa resistência ao rolamento e economia de combustível) e a Potenza (esportiva, com aderência e resposta de direção).',
+    faq: [
+      {
+        question: 'A Carplus tem boa variedade de pneu Bridgestone?',
+        answer:
+          'Sim. A Bridgestone é uma das marcas com maior estoque na Carplus, cobrindo do aro 14 aos aros maiores para SUVs e esportivos. Consulte a sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual a melhor linha Bridgestone para economia de combustível?',
+        answer:
+          'A linha Ecopia foi desenvolvida para reduzir a resistência ao rolamento, ajudando a economizar combustível sem abrir mão de segurança. É ideal para quem roda muito na cidade.',
+      },
+      {
+        question: 'O pneu Bridgestone tem garantia na Carplus?',
+        answer:
+          'Sim. Todos os pneus Bridgestone contam com garantia de fábrica contra defeitos de fabricação, com suporte completo para acionamento na própria loja.',
+      },
+    ],
+  },
+  {
+    marca: 'Firestone',
+    slug: 'pneu-firestone-curitiba',
+    h1: 'Pneu Firestone em Curitiba',
+    metaTitle: 'Pneu Firestone em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Firestone em Curitiba na Carplus Portão. Custo-benefício com qualidade Bridgestone, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Firestone une tradição e custo-benefício, com a confiabilidade do grupo Bridgestone. Na Carplus, no Portão em Curitiba, você encontra pneus Firestone para uso urbano e viagens, com instalação completa e preço justo.',
+    linhas:
+      'No catálogo Firestone da Carplus estão linhas voltadas ao dia a dia, como a F-700 e a Firehawk, equilibrando durabilidade, conforto e um preço acessível para carros de passeio e sedans.',
+    faq: [
+      {
+        question: 'Pneu Firestone é uma boa opção de custo-benefício?',
+        answer:
+          'Sim. A Firestone entrega qualidade do grupo Bridgestone a um preço mais acessível, sendo uma ótima escolha para quem busca durabilidade e segurança sem gastar com a linha premium.',
+      },
+      {
+        question: 'A Carplus tem pneu Firestone para o meu carro?',
+        answer:
+          'Trabalhamos com diversas medidas Firestone em estoque. Informe a medida do seu pneu atual pelo WhatsApp (41) 3082-7282 que verificamos a disponibilidade na hora.',
+      },
+      {
+        question: 'A instalação do pneu Firestone já está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na Carplus para prolongar a vida útil dos pneus.',
+      },
+    ],
+  },
+  {
+    marca: 'Prinx',
+    slug: 'pneu-prinx-curitiba',
+    h1: 'Pneu Prinx em Curitiba',
+    metaTitle: 'Pneu Prinx em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Prinx em Curitiba na Carplus Portão. Excelente custo-benefício para passeio e SUV, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Prinx é uma marca em forte crescimento, reconhecida pelo excelente custo-benefício. Na Carplus, no Portão em Curitiba, ela está entre as marcas com maior estoque, com opções para carros de passeio, sedans e SUVs.',
+    linhas:
+      'No catálogo Prinx da Carplus você encontra linhas para uso urbano e SUVs, com boa quilometragem, aderência em piso molhado e preço competitivo, cobrindo uma ampla gama de medidas e aros.',
+    faq: [
+      {
+        question: 'Pneu Prinx é bom?',
+        answer:
+          'Sim. A Prinx oferece ótimo custo-benefício, com bom desempenho em piso seco e molhado e durabilidade adequada para o uso diário. É uma das marcas mais procuradas por quem busca economia com qualidade.',
+      },
+      {
+        question: 'A Carplus tem bastante pneu Prinx em estoque?',
+        answer:
+          'Sim. A Prinx está entre as marcas com maior estoque na Carplus, com grande variedade de medidas para pronta entrega. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'O pneu Prinx tem garantia?',
+        answer:
+          'Sim. Os pneus Prinx contam com garantia de fábrica contra defeitos de fabricação, com suporte da Carplus para o acionamento.',
+      },
+    ],
+  },
+  {
+    marca: 'Delinte',
+    slug: 'pneu-delinte-curitiba',
+    h1: 'Pneu Delinte em Curitiba',
+    metaTitle: 'Pneu Delinte em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneu Delinte em Curitiba na Carplus Portão. Opções de performance e SUV com ótimo preço, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Delinte é uma marca voltada a desempenho e perfil esportivo com preço acessível. Na Carplus, no Portão em Curitiba, você encontra pneus Delinte para carros de perfil baixo, esportivos e SUVs, com instalação completa.',
+    linhas:
+      'No catálogo Delinte da Carplus há opções de perfil baixo e medidas para SUV, com foco em aderência e visual esportivo, atendendo quem busca performance sem pagar o preço das marcas premium.',
+    faq: [
+      {
+        question: 'Pneu Delinte é indicado para carro esportivo?',
+        answer:
+          'Sim. A Delinte tem linhas de perfil baixo e desenho esportivo, com boa aderência, sendo uma alternativa de custo acessível para carros rebaixados e esportivos.',
+      },
+      {
+        question: 'A Carplus trabalha com pneu Delinte para SUV?',
+        answer:
+          'Sim, temos medidas Delinte para SUVs e veículos de perfil baixo. Informe a medida do seu veículo pelo WhatsApp (41) 3082-7282 para confirmar disponibilidade.',
+      },
+      {
+        question: 'A montagem do pneu Delinte está inclusa?',
+        answer:
+          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na própria Carplus.',
+      },
+    ],
+  },
 ];
 
 // ════════════════════════════════════════════════════════════════
@@ -865,6 +981,96 @@ export const MEASURE_SEO: MeasureSeoContent[] = [
     resumo:
       'A 225/45R17 é uma medida esportiva de perfil baixo, oferecendo ótima aderência e resposta de direção.',
     aplicacoes: 'Presente em modelos esportivos e premium como Audi A4, BMW 320i e VW Golf GTI.',
+  },
+  {
+    medida: '175/70R14',
+    resumo:
+      'A 175/70R14 é uma medida econômica e de fácil reposição, valorizada pelo conforto e pelo baixo custo de manutenção em carros compactos.',
+    aplicacoes: 'Comum em modelos como Renault Sandero, Fiat Uno, Palio e outros hatches de entrada.',
+  },
+  {
+    medida: '195/60R15',
+    resumo:
+      'A 195/60R15 entrega conforto e estabilidade em hatches e sedans compactos, com boa absorção de irregularidades.',
+    aplicacoes: 'Presente em modelos como Honda City, Fiat Linea e sedans compactos.',
+  },
+  {
+    medida: '215/65R16',
+    resumo:
+      'A 215/65R16 é uma medida robusta de SUV compacto, com perfil mais alto que favorece conforto e segurança em pisos irregulares.',
+    aplicacoes: 'Equipa SUVs como Jeep Renegade, Hyundai Creta e Honda HR-V.',
+  },
+  {
+    medida: '205/50R17',
+    resumo:
+      'A 205/50R17 combina perfil baixo e aro 17, trazendo visual esportivo e boa estabilidade em curvas para hatches e sedans.',
+    aplicacoes: 'Comum em modelos como VW Golf, Hyundai HB20 esportivo e hatches premium.',
+  },
+  {
+    medida: '225/50R17',
+    resumo:
+      'A 225/50R17 equilibra esportividade e conforto, sendo bastante procurada em sedans médios e SUVs com aro 17.',
+    aplicacoes: 'Presente em modelos como Toyota Corolla, Honda Civic e Jeep Compass.',
+  },
+  {
+    medida: '225/65R17',
+    resumo:
+      'A 225/65R17 é uma medida de SUV com perfil alto, priorizando conforto, robustez e segurança no dia a dia e em estradas.',
+    aplicacoes: 'Equipa SUVs como Jeep Compass, Toyota RAV4 e Hyundai Tucson.',
+  },
+  {
+    medida: '245/45R17',
+    resumo:
+      'A 245/45R17 é uma medida esportiva larga, que entrega excelente aderência e estabilidade em sedans e esportivos premium.',
+    aplicacoes: 'Presente em modelos como BMW Série 3, Mercedes Classe C e sedans de performance.',
+  },
+  {
+    medida: '245/40R17',
+    resumo:
+      'A 245/40R17 traz perfil baixo e pegada larga, oferecendo resposta de direção precisa para carros esportivos.',
+    aplicacoes: 'Comum em esportivos e sedans premium rebaixados.',
+  },
+  {
+    medida: '245/40R18',
+    resumo:
+      'A 245/40R18 é uma das medidas de performance mais procuradas, unindo aro 18, perfil baixo e ampla área de contato.',
+    aplicacoes: 'Equipa modelos como Audi A4/A5, BMW Série 3 e sedans esportivos premium.',
+  },
+  {
+    medida: '245/45R18',
+    resumo:
+      'A 245/45R18 combina esportividade e conforto em aro 18, com boa estabilidade para sedans e cupês premium.',
+    aplicacoes: 'Presente em modelos como Mercedes Classe E, Audi A6 e sedans de luxo.',
+  },
+  {
+    medida: '225/45R18',
+    resumo:
+      'A 225/45R18 oferece visual esportivo com perfil baixo em aro 18, mantendo equilíbrio entre conforto e desempenho.',
+    aplicacoes: 'Comum em modelos como Honda Civic, Toyota Corolla GR-S e sedans premium.',
+  },
+  {
+    medida: '245/40R19',
+    resumo:
+      'A 245/40R19 é uma medida de alta performance em aro 19, com perfil baixo que privilegia precisão e aderência.',
+    aplicacoes: 'Equipa esportivos e sedans premium como Audi A5, BMW Série 4 e cupês.',
+  },
+  {
+    medida: '255/35R20',
+    resumo:
+      'A 255/35R20 é uma medida premium de aro 20 e perfil extrabaixo, voltada a SUVs esportivos e veículos de alto desempenho.',
+    aplicacoes: 'Presente em SUVs e esportivos de luxo como BMW X5, Porsche Cayenne e sedans top de linha.',
+  },
+  {
+    medida: '245/40R20',
+    resumo:
+      'A 245/40R20 combina aro 20 e perfil baixo, entregando presença visual e estabilidade em SUVs e sedans premium.',
+    aplicacoes: 'Comum em SUVs premium e sedans esportivos de grande porte.',
+  },
+  {
+    medida: '245/45R20',
+    resumo:
+      'A 245/45R20 oferece o porte do aro 20 com perfil um pouco mais alto, equilibrando conforto e esportividade em SUVs grandes.',
+    aplicacoes: 'Equipa SUVs premium como BMW X3/X5, Audi Q5 e veículos de luxo.',
   },
 ];
 

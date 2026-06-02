@@ -91,8 +91,13 @@ const popularMeasures = [
   '255-40-18', '275-40-18', '225-40-19', '245-40-19', '255-35-19',
   '275-35-19', '255-50-19', '275-45-19', '225-55-18', '235-45-18',
   '245-45-19', '265-50-19', '275-55-19', '285-45-19', '235-40-19',
-  '245-35-19', '255-30-19', '275-30-19', '285-30-19', '225-35-19'
+  '245-35-19', '255-30-19', '275-30-19', '285-30-19', '225-35-19',
+  '175-70-14', '215-65-16', '245-45-17', '245-40-17', '255-35-20',
+  '245-40-20', '245-45-20'
 ];
+
+// Data da última atualização (para <lastmod>)
+const lastmod = new Date().toISOString().split('T')[0];
 
 // Generate sitemap XML
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -104,6 +109,7 @@ let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 for (const page of staticPages) {
   sitemap += `  <url>
     <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>
@@ -114,6 +120,7 @@ for (const page of staticPages) {
 for (const service of uniqueServices) {
   sitemap += `  <url>
     <loc>${baseUrl}/servico/${service}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -124,6 +131,7 @@ for (const service of uniqueServices) {
 for (const bairro of bairros) {
   sitemap += `  <url>
     <loc>${baseUrl}/bairro/${bairro}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -134,6 +142,7 @@ for (const bairro of bairros) {
 for (const measure of popularMeasures) {
   sitemap += `  <url>
     <loc>${baseUrl}/pneu-medida/${measure}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -144,6 +153,7 @@ for (const measure of popularMeasures) {
 for (const slug of seoLandingSlugs) {
   sitemap += `  <url>
     <loc>${baseUrl}/${slug}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -155,6 +165,7 @@ console.log(`Adding ${uniqueTireSlugs.length} individual tires to sitemap...`);
 for (const slug of uniqueTireSlugs) {
   sitemap += `  <url>
     <loc>${baseUrl}/pneu/${slug}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
