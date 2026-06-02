@@ -20,8 +20,7 @@ const ALL_SERVICES = SERVICE_CATEGORIES.flatMap(cat =>
 const STUDIO_IMAGES = [
   "/images/loja/loja-de-pneus.webp",
   "/images/loja/carplus-oficina-portao-fachada-curitiba.jpg",
-  "/images/loja/oficina-mecanica-portao-curitiba.png",
-  "/images/loja/loja-de-pneus-curitiba.webp"
+  "/images/loja/oficina-mecanica-portao-curitiba.png"
 ];
 
 // Service Card para o carrossel
