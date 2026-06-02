@@ -321,9 +321,6 @@ const ALL_REVIEWS = [
   }
 ];
 
-// Total real de avaliações no Google (a lista exibe uma seleção das melhores)
-const TOTAL_REVIEWS = 215;
-
 const AVATAR_COLORS = [
   { bg: '#4285f4', text: '#fff' }, // azul Google
   { bg: '#ea4335', text: '#fff' }, // vermelho Google
@@ -403,12 +400,6 @@ function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick 
       <div
         className="flex flex-col gap-3 will-change-transform"
         style={{ animation: `scrollUp ${duration}s linear ${delay}s infinite` }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.animationPlayState = 'paused';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.animationPlayState = 'running';
-        }}
       >
         {doubled.map((r, i) => (
           <ReviewCard 
@@ -490,7 +481,6 @@ export default function Reviews() {
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
             <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
-            <span className="text-[#70757a] text-sm">• {TOTAL_REVIEWS} avaliações</span>
           </div>
           <div className="flex flex-col items-center md:items-start">
             <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
@@ -512,7 +502,7 @@ export default function Reviews() {
 
         <div className="mt-12 text-center">
           <a
-            href="https://www.google.com/search?q=carplus+pneus+e+oficina+mecanica+curitiba+avaliacoes"
+            href="https://www.google.com/search?q=carplus+auto+center+curitiba+avaliacoes"
             target="_blank"
             className="inline-flex items-center gap-2 text-[#1a73e8] hover:underline font-medium text-sm"
           >
@@ -599,7 +589,7 @@ export default function Reviews() {
                     Anterior
                   </button>
                   <div className="text-gray-300 font-mono text-sm">
-                    {selectedReview.index + 1} / {TOTAL_REVIEWS}
+                    {selectedReview.index + 1} / {ALL_REVIEWS.length}
                   </div>
                   <button 
                     onClick={nextReview}

@@ -62,32 +62,12 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="relative h-full min-h-[500px] rounded-[40px] overflow-hidden shadow-2xl">
-              <img
-                src="/images/fachada-carplus.webp"
-                alt="Fachada da Carplus Pneus e Oficina Mecânica no Portão, Curitiba"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                width={1200}
-                height={800}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <p className="text-2xl font-bold mb-1">Carplus Pneus e Oficina Mecânica</p>
-                <p className="text-white/80 mb-5 flex items-center gap-2">
-                  <MapPin size={18} className="text-primary" />
-                  Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba
-                </p>
-                <a
-                  href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-dark font-bold px-6 py-3 rounded-full hover:brightness-110 transition"
-                >
-                  <Navigation size={18} />
-                  Abrir no Google Maps
-                </a>
-              </div>
+            <div className="h-full">
+               <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.240580658666!2d-49.30287292373215!3d-25.46364093422533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce31ec1ad6641%3A0xa51067e0d7b484af!2sCarplus%20Pneus%20e%20Oficina%20Mec%C3%A2nica!5e0!3m2!1spt-BR!2sbr!4v1779235735934!5m2!1spt-BR!2sbr"
+                width="100%" height="100%" style={{ border:0, borderRadius: '40px', minHeight: '500px' }} 
+                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
           </div>
         </div>
