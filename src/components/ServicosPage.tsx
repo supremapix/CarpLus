@@ -135,8 +135,8 @@ export default function ServicosPage() {
 
   // SEO - Otimizado para SEO local com canonical correto
   useSEO({
-    title: 'Serviços de Oficina e Pneus em Curitiba Portão | Carplus Auto Center',
-    description: 'Alinhamento 3D, troca de pneus, óleo, suspensão e freios em Curitiba. Carplus Auto Center no Portão – agende pelo (41) 3082-7282.',
+    title: 'Serviços de Oficina e Pneus em Curitiba Portão | Carplus Pneus e Oficina Mecânica',
+    description: 'Alinhamento 3D, troca de pneus, óleo, suspensão e freios em Curitiba. Carplus Pneus e Oficina Mecânica no Portão – agende pelo (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/servicos/',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
   });
@@ -202,7 +202,7 @@ export default function ServicosPage() {
           {
             "@type": "AutoRepair",
             "@id": "https://www.carpluspneuseoficina.com.br/#business",
-            "name": "Carplus Auto Center",
+            "name": "Carplus Pneus e Oficina Mecânica",
             "alternateName": "Carplus Pneus e Oficina Mecânica",
             "url": "https://www.carpluspneuseoficina.com.br",
             "telephone": "+554130827282",

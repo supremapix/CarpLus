@@ -73,12 +73,12 @@ export default function Navbar() {
             {/* Desktop: logo externa / Mobile: SVG local */}
             <img
               src="/images/logos/logo-horizontal.svg"
-              alt="Carplus Auto Center"
+              alt="Carplus Pneus e Oficina Mecânica"
               className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
             <img
               src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
-              alt="Carplus Auto Center"
+              alt="Carplus Pneus e Oficina Mecânica"
               className={`lg:hidden transition-all duration-300 w-auto ${isScrolled ? 'h-9' : 'h-11'}`}
             />
           </Link>
@@ -151,7 +151,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
               <img
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
-                alt="Carplus Auto Center"
+                alt="Carplus Pneus e Oficina Mecânica"
                 className="h-10"
               />
               <button onClick={() => setIsMobileMenuOpen(false)} className="bg-white/10 p-2 rounded-xl">

@@ -444,7 +444,7 @@ export default function NeighborhoodMap() {
                           <Popup>
                             <div className="text-center p-3">
                               <img src="/images/logos/logo-horizontal.svg" className="h-8 mx-auto mb-3" alt="Carplus Logo" />
-                              <b className="text-lg block mb-1">Carplus Auto Center</b>
+                              <b className="text-lg block mb-1">Carplus Pneus e Oficina Mecânica</b>
                               <span className="text-xs text-gray-500 block mb-3">Av. Arthur da Silva Bernardes, 1323<br/>Portao, Curitiba - PR</span>
                               
                               <a 

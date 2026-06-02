@@ -1,10 +1,10 @@
-# Carplus Auto Center - Pneus e Oficina em Curitiba
+# Carplus Pneus e Oficina Mecânica - Pneus e Oficina em Curitiba
 
 > Loja de pneus e centro automotivo em Curitiba, Parana, Brasil. Especialistas em venda e instalacao de pneus, alinhamento, balanceamento e servicos automotivos.
 
 ## Informacoes da Empresa
 
-- **Nome**: Carplus Auto Center
+- **Nome**: Carplus Pneus e Oficina Mecânica
 - **Endereco**: R. Joao Bettega, 3199 - Portao, Curitiba - PR, 81070-001
 - **Telefone**: (41) 3246-3070
 - **WhatsApp**: (41) 98865-5566
@@ -14,7 +14,7 @@
 
 ## Sobre Nos
 
-Carplus Auto Center e uma loja de pneus e oficina mecanica localizada no bairro Portao em Curitiba. Com mais de 15 anos de experiencia, oferecemos:
+Carplus Pneus e Oficina Mecânica e uma loja de pneus e oficina mecanica localizada no bairro Portao em Curitiba. Com mais de 15 anos de experiencia, oferecemos:
 
 - Venda de pneus das principais marcas (Michelin, Pirelli, Continental, Goodyear, Bridgestone, Yokohama, Dunlop, Hankook, Kumho, Toyo, Nitto, BFGoodrich, Firestone, General Tire, GT Radial, Kenda, Laufenn, Maxxis, Nexen, Sailun, Triangle, Westlake, Achilles, Aptany, Delinte, Falken, Federal, Fuzion, Goodride, Haida, Hifly, Landsail, Linglong, Mazzini, Milestone, Nankang, Radar, Rotalla, Sunny, Torque, Vitour, Zeetex)
 - Servicos de alinhamento computadorizado 3D

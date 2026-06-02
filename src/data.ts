@@ -30909,7 +30909,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -30930,7 +30930,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -30951,7 +30951,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -30972,7 +30972,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -30993,7 +30993,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31014,7 +31014,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31035,7 +31035,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31056,7 +31056,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31077,7 +31077,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31098,7 +31098,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31119,7 +31119,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31140,7 +31140,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31161,7 +31161,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31182,7 +31182,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Fit","Toyota Etios","Hyundai HB20","VW Polo","Ford Ka","Chevrolet Onix"],
     destaque: false,
     novoModelo: true
@@ -31203,7 +31203,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Hatch","Sedan"],
     imagem: "/images/pneus/pneu-prinx-hh1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hh1.webp",
-    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Prinx HH1 é um pneu radial de alta performance projetado para carros de passeio (como hatchs, sedãs e SUVs compactos) que priorizam o uso diário em ambientes urbanos e rodoviários. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Fiat Uno","VW Gol","Chevrolet Onix","Renault Kwid"],
     destaque: false,
     novoModelo: true
@@ -31224,7 +31224,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31245,7 +31245,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31266,7 +31266,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31287,7 +31287,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31308,7 +31308,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -31329,7 +31329,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31350,7 +31350,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31371,7 +31371,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31392,7 +31392,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31413,7 +31413,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31434,7 +31434,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31455,7 +31455,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31476,7 +31476,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Crossover"],
     imagem: "/images/pneus/pneu-prinx-ht1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ht1.webp",
-    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HT1 é um pneu touring de alto desempenho para veículos de passeio da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31497,7 +31497,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31518,7 +31518,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31539,7 +31539,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31560,7 +31560,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31581,7 +31581,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31602,7 +31602,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31623,7 +31623,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31644,7 +31644,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31665,7 +31665,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31686,7 +31686,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31707,7 +31707,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31728,7 +31728,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31749,7 +31749,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31770,7 +31770,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31791,7 +31791,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31812,7 +31812,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["SUV","Pickup","4x4"],
     imagem: "/images/pneus/pneu-prinx-ha1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-ha1.webp",
-    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HA1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Toyota Hilux","Ford Ranger","Chevrolet S10","Mitsubishi L200","Nissan Frontier"],
     destaque: false,
     novoModelo: true
@@ -31833,7 +31833,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31854,7 +31854,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -31875,7 +31875,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31896,7 +31896,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -31917,7 +31917,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -31938,7 +31938,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -31959,7 +31959,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -31980,7 +31980,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32001,7 +32001,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Range Rover","BMW X5","Mercedes GLS","Audi Q7"],
     destaque: false,
     novoModelo: true
@@ -32022,7 +32022,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32043,7 +32043,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32064,7 +32064,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32085,7 +32085,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32106,7 +32106,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32127,7 +32127,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32148,7 +32148,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32169,7 +32169,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32190,7 +32190,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32211,7 +32211,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32232,7 +32232,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32253,7 +32253,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hp1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hp1.webp",
-    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HP1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32274,7 +32274,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -32295,7 +32295,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -32316,7 +32316,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32337,7 +32337,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32358,7 +32358,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32379,7 +32379,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Passeio","Esportivo"],
     imagem: "/images/pneus/pneu-prinx-hu1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hu1.webp",
-    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HU1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32400,7 +32400,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda Civic","Toyota Corolla","VW Jetta","Chevrolet Cruze","Fiat Toro","Jeep Renegade"],
     destaque: false,
     novoModelo: true
@@ -32421,7 +32421,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32442,7 +32442,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32463,7 +32463,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32484,7 +32484,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32505,7 +32505,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32526,7 +32526,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X3","Audi Q5","Porsche Cayenne","Land Rover Discovery"],
     destaque: false,
     novoModelo: true
@@ -32547,7 +32547,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32568,7 +32568,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32589,7 +32589,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Honda HR-V","Jeep Compass","VW T-Cross","Hyundai Creta","Toyota Corolla Cross"],
     destaque: false,
     novoModelo: true
@@ -32610,7 +32610,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true
@@ -32631,7 +32631,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32652,7 +32652,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["BMW X1","Audi Q3","Mercedes GLA","Volvo XC40"],
     destaque: false,
     novoModelo: true
@@ -32673,7 +32673,7 @@ export const TIRES: Tire[] = [
     tipoVeiculo: ["Esportivo","Performance"],
     imagem: "/images/pneus/pneu-prinx-hz1.webp",
     imagemGrande: "/images/pneus/pneu-prinx-hz1.webp",
-    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Auto Center em Curitiba com montagem inclusa e garantia de fábrica.",
+    descricao: "O Pneu Prinx HZ1 é um pneu de alta performance e ótimo custo-benefício da Prinx, projetado para oferecer segurança, conforto e durabilidade. Disponível na Carplus Pneus e Oficina Mecânica em Curitiba com montagem inclusa e garantia de fábrica.",
     carros: ["Jeep Compass","Toyota RAV4","Honda CR-V","VW Tiguan","Chevrolet Equinox"],
     destaque: false,
     novoModelo: true

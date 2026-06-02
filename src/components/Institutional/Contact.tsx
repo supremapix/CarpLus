@@ -6,7 +6,7 @@ import { useSEO } from '../../hooks/useSEO';
 export default function Contact() {
   useSEO({
     title: 'Contato – Carplus Pneus e Oficina no Portão, Curitiba',
-    description: 'Fale com a Carplus Auto Center: (41) 3082-7282, WhatsApp e endereço na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Orçamento de pneus e serviços.',
+    description: 'Fale com a Carplus Pneus e Oficina Mecânica: (41) 3082-7282, WhatsApp e endereço na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Orçamento de pneus e serviços.',
     canonical: 'https://www.carpluspneuseoficina.com.br/contato',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: ['contato Carplus', 'telefone oficina Curitiba', 'WhatsApp pneus Curitiba', 'orçamento pneus Portão'],

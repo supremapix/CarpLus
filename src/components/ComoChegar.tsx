@@ -47,7 +47,7 @@ const ROTAS = [
 ];
 
 const FAQ_ITEMS = [
-  { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Auto Center fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300. Referência: próximo ao Shopping Palladium e ao Parque do Barigüi.' },
+  { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Pneus e Oficina Mecânica fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300. Referência: próximo ao Shopping Palladium e ao Parque do Barigüi.' },
   { q: 'Tem estacionamento na Carplus?', a: 'Sim! A Carplus tem estacionamento próprio gratuito. Você pode deixar o carro enquanto realizamos o serviço sem preocupação com rotativo ou tempo limitado.' },
   { q: 'Qual o horário de funcionamento da Carplus?', a: 'Atendemos de Segunda a Sexta das 8h às 18h e aos Sábados das 8h às 12h. Domingos e feriados fechado.' },
   { q: 'Como chegar na Carplus vindo do Shopping Palladium?', a: 'Do Shopping Palladium são apenas 3 minutos de carro. Saia pelo acesso Sul, siga pela Av. Vereador Toaldo Túlio, cruze a Av. República Argentina e chegue na Av. Arthur da Silva Bernardes, 1323.' },
@@ -59,7 +59,7 @@ export default function ComoChegar() {
 
   useSEO({
     title: 'Como Chegar na Carplus – Pneus e Oficina no Portão, Curitiba',
-    description: 'Como chegar na Carplus Auto Center: Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Rotas, tempo e estacionamento próprio. (41) 3082-7282.',
+    description: 'Como chegar na Carplus Pneus e Oficina Mecânica: Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Rotas, tempo e estacionamento próprio. (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/como-chegar',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: ['como chegar Carplus', 'oficina Portão Curitiba', 'endereço Carplus Curitiba', 'pneus perto do Shopping Palladium'],

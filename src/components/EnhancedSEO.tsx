@@ -42,7 +42,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   '@type': 'AutoRepair',
   '@id': `${BASE_URL}/#organization`,
   name: 'Carplus Pneus e Oficina Mecânica',
-  alternateName: 'Carplus Auto Center',
+  alternateName: 'Carplus Pneus e Oficina Mecânica',
   description: 'Loja de pneus e oficina mecânica completa no bairro Portão em Curitiba. Especializada em pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos.',
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo-carplus.webp`,

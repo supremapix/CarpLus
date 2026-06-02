@@ -5,7 +5,7 @@ import { useSEO } from '../../hooks/useSEO';
 export default function PrivacyPolicy() {
   useSEO({
     title: 'Política de Privacidade | Carplus Pneus e Oficina Curitiba',
-    description: 'Saiba como a Carplus Auto Center coleta, usa e protege os dados dos clientes em Curitiba. Política de Privacidade da loja de pneus e oficina no Portão.',
+    description: 'Saiba como a Carplus Pneus e Oficina Mecânica coleta, usa e protege os dados dos clientes em Curitiba. Política de Privacidade da loja de pneus e oficina no Portão.',
     canonical: 'https://www.carpluspneuseoficina.com.br/politica-de-privacidade',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
   });
@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
       <main className="pt-32 md:pt-36 pb-24 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl mb-8">Política de Privacidade</h1>
         <div className="prose prose-lg text-gray-600 space-y-6">
-          <p>Na Carplus Auto Center, a sua privacidade é uma prioridade. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você visita nosso site ou utiliza nossos serviços em nossa loja no Portão, Curitiba.</p>
+          <p>Na Carplus Pneus e Oficina Mecânica, a sua privacidade é uma prioridade. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações quando você visita nosso site ou utiliza nossos serviços em nossa loja no Portão, Curitiba.</p>
           
           <h2 className="text-2xl font-bold text-dark">1. Coleta de Informações</h2>
           <p>Coletamos informações básicas de contato (como nome e telefone) através de formulários de orçamento ou via WhatsApp para prestar o melhor atendimento técnico possível.</p>

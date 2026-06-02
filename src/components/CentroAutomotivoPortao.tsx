@@ -120,7 +120,7 @@ export default function CentroAutomotivoPortao() {
         <link rel="canonical" href="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Centro Automotivo no Portão Curitiba | Carplus Auto Center" />
+        <meta property="og:title" content="Centro Automotivo no Portão Curitiba | Carplus Pneus e Oficina Mecânica" />
         <meta property="og:description" content="Centro Automotivo completo no bairro Portão. Pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e diagnóstico. Pirelli Performance Center certificado." />
         <meta property="og:url" content="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
         <meta property="og:type" content="business.business" />

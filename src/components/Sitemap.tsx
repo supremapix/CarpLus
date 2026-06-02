@@ -16,14 +16,14 @@ const FEATURED_TIRES = TIRE_BRANDS.flatMap(brand =>
 
 export default function Sitemap() {
   useSEO({
-    title: 'Mapa do Site | Carplus Auto Center - Pneus e Servicos em Curitiba',
-    description: 'Navegue por todas as paginas do site Carplus Auto Center. Encontre pneus por marca, servicos automotivos, bairros atendidos em Curitiba e regiao metropolitana.',
+    title: 'Mapa do Site | Carplus Pneus e Oficina Mecânica - Pneus e Servicos em Curitiba',
+    description: 'Navegue por todas as paginas do site Carplus Pneus e Oficina Mecânica. Encontre pneus por marca, servicos automotivos, bairros atendidos em Curitiba e regiao metropolitana.',
     canonical: 'https://www.carpluspneuseoficina.com.br/sitemap',
     schemaJSON: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Mapa do Site - Carplus Auto Center",
-      "description": "Indice completo de todas as paginas do site Carplus Auto Center",
+      "name": "Mapa do Site - Carplus Pneus e Oficina Mecânica",
+      "description": "Indice completo de todas as paginas do site Carplus Pneus e Oficina Mecânica",
       "url": "https://www.carpluspneuseoficina.com.br/sitemap",
       "mainEntity": {
         "@type": "ItemList",

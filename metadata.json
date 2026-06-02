@@ -1,6 +1,6 @@
 {
-  "name": "Carplus Auto Center",
-  "description": "Página oficial da Carplus Auto Center em Curitiba. Loja de pneus e oficina mecânica especializada no Portão.",
+  "name": "Carplus Pneus e Oficina Mecânica",
+  "description": "Página oficial da Carplus Pneus e Oficina Mecânica em Curitiba. Loja de pneus e oficina mecânica especializada no Portão.",
   "requestFramePermissions": ["geolocation"],
   "majorCapabilities": []
 }

@@ -21,7 +21,7 @@ function generateTireFAQ(tire: Tire): FAQItem[] {
   return [
     {
       question: `Qual o preço do pneu ${brand} ${model} ${measure} em Curitiba?`,
-      answer: `O preço do pneu ${brand} ${model} medida ${measure} varia conforme promoções e condições de pagamento. Na Carplus Auto Center, oferecemos parcelamento em até 10x sem juros e os melhores preços da região do Portão. Entre em contato pelo WhatsApp (41) 3082-7282 para obter um orçamento personalizado com montagem e balanceamento inclusos.`
+      answer: `O preço do pneu ${brand} ${model} medida ${measure} varia conforme promoções e condições de pagamento. Na Carplus Pneus e Oficina Mecânica, oferecemos parcelamento em até 10x sem juros e os melhores preços da região do Portão. Entre em contato pelo WhatsApp (41) 3082-7282 para obter um orçamento personalizado com montagem e balanceamento inclusos.`
     },
     {
       question: `O pneu ${brand} ${model} ${measure} é bom para qual tipo de carro?`,
@@ -37,7 +37,7 @@ function generateTireFAQ(tire: Tire): FAQItem[] {
     },
     {
       question: `Onde comprar pneu ${brand} ${model} ${measure} em Curitiba?`,
-      answer: `Você encontra o pneu ${brand} ${model} ${measure} com pronta entrega na Carplus Auto Center, localizada na Av. Arthur da Silva Bernardes, 1323 - Portão, Curitiba. Atendemos de segunda a sexta das 8h às 18h e sábados das 8h às 12h. Ligue (41) 3082-7282 ou envie mensagem no WhatsApp para verificar disponibilidade e agendar a instalação.`
+      answer: `Você encontra o pneu ${brand} ${model} ${measure} com pronta entrega na Carplus Pneus e Oficina Mecânica, localizada na Av. Arthur da Silva Bernardes, 1323 - Portão, Curitiba. Atendemos de segunda a sexta das 8h às 18h e sábados das 8h às 12h. Ligue (41) 3082-7282 ou envie mensagem no WhatsApp para verificar disponibilidade e agendar a instalação.`
     },
     {
       question: `Qual a diferença do pneu ${brand} ${model} para outros modelos?`,
@@ -45,7 +45,7 @@ function generateTireFAQ(tire: Tire): FAQItem[] {
     },
     {
       question: `Posso parcelar a compra do pneu ${brand} ${model}?`,
-      answer: `Sim! Na Carplus Auto Center você parcela em até 10x sem juros no cartão de crédito. Também aceitamos PIX, dinheiro e transferência bancária com condições especiais. A montagem, balanceamento e descarte do pneu antigo estão inclusos no preço. Consulte condições pelo (41) 3082-7282.`
+      answer: `Sim! Na Carplus Pneus e Oficina Mecânica você parcela em até 10x sem juros no cartão de crédito. Também aceitamos PIX, dinheiro e transferência bancária com condições especiais. A montagem, balanceamento e descarte do pneu antigo estão inclusos no preço. Consulte condições pelo (41) 3082-7282.`
     },
     {
       question: `O pneu ${brand} ${model} aro ${rim} serve no meu carro?`,

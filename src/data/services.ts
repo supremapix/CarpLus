@@ -1,4 +1,4 @@
-// Dados completos de serviços da Carplus Auto Center
+// Dados completos de serviços da Carplus Pneus e Oficina Mecânica
 // Organizados por categoria conforme especificação de SEO
 
 export interface Service {
@@ -21,7 +21,7 @@ export interface Category {
 }
 
 export const BUSINESS_INFO = {
-  name: "Carplus Auto Center",
+  name: "Carplus Pneus e Oficina Mecânica",
   fullName: "Carplus Pneus e Oficina Mecânica",
   tagline: "Oficina Mecânica Full Service",
   address: "Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, 80320-300",

@@ -14,7 +14,7 @@ interface SearchResult {
 
 // Paginas estaticas do site
 const STATIC_PAGES = [
-  { title: 'Inicio', description: 'Pagina inicial da Carplus Auto Center', url: '/', keywords: ['home', 'inicio', 'principal'] },
+  { title: 'Inicio', description: 'Pagina inicial da Carplus Pneus e Oficina Mecânica', url: '/', keywords: ['home', 'inicio', 'principal'] },
   { title: 'Quem Somos', description: 'Conheca a historia e equipe da Carplus', url: '/quem-somos', keywords: ['sobre', 'historia', 'equipe', 'empresa'] },
   { title: 'Catalogo de Pneus', description: 'Todos os pneus disponiveis na Carplus', url: '/pneus', keywords: ['pneus', 'catalogo', 'comprar', 'loja'] },
   { title: 'Servicos', description: 'Todos os servicos automotivos oferecidos', url: '/servicos', keywords: ['servicos', 'mecanica', 'oficina'] },

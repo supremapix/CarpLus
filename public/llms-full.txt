@@ -1,11 +1,11 @@
-# Carplus Auto Center - Documentacao Completa para LLMs
+# Carplus Pneus e Oficina Mecânica - Documentacao Completa para LLMs
 
-> Este arquivo contem informacoes detalhadas sobre a Carplus Auto Center para uso por modelos de linguagem (LLMs).
+> Este arquivo contem informacoes detalhadas sobre a Carplus Pneus e Oficina Mecânica para uso por modelos de linguagem (LLMs).
 
 ## Identidade da Empresa
 
 ### Dados Cadastrais
-- **Razao Social**: Carplus Auto Center Ltda
+- **Razao Social**: Carplus Pneus e Oficina Mecânica Ltda
 - **Nome Fantasia**: Carplus Pneus e Oficina
 - **Segmento**: Comercio varejista de pneus e servicos automotivos
 - **Fundacao**: 2008

@@ -7,7 +7,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
   return [
     {
       question: `Tem loja de pneus perto do ${nome}?`,
-      answer: `Sim! A Carplus Auto Center fica a apenas ${tempo} de carro do ${nome}, na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Vendemos pneus Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama com montagem e balanceamento inclusos no preço.`,
+      answer: `Sim! A Carplus Pneus e Oficina Mecânica fica a apenas ${tempo} de carro do ${nome}, na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Vendemos pneus Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama com montagem e balanceamento inclusos no preço.`,
     },
     {
       question: `Como chegar do ${nome} até a Carplus no Portão?`,
@@ -19,7 +19,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Qual oficina mecânica atende quem mora no ${nome}?`,
-      answer: `A Carplus Auto Center é a oficina full service mais recomendada para quem mora no ${nome}. Realizamos alinhamento 3D computadorizado, balanceamento de rodas, troca de óleo (sintético e mineral), revisão completa, suspensão, freios, ar-condicionado automotivo e diagnóstico eletrônico com scanner — tudo em um só lugar, a ${tempo} do ${nome}.`,
+      answer: `A Carplus Pneus e Oficina Mecânica é a oficina full service mais recomendada para quem mora no ${nome}. Realizamos alinhamento 3D computadorizado, balanceamento de rodas, troca de óleo (sintético e mineral), revisão completa, suspensão, freios, ar-condicionado automotivo e diagnóstico eletrônico com scanner — tudo em um só lugar, a ${tempo} do ${nome}.`,
     },
     {
       question: `Vale a pena sair do ${nome} para trocar pneu na Carplus?`,
@@ -57,7 +57,7 @@ const faqExtra: Record<string, FaqItem[]> = {
     },
     {
       question: 'Tem oficina perto do Shopping Palladium?',
-      answer: 'A Carplus Auto Center fica a apenas 3 minutos do Shopping Palladium! Você pode trazer o carro para revisão ou troca de pneus e aproveitar para fazer compras enquanto esperamos.',
+      answer: 'A Carplus Pneus e Oficina Mecânica fica a apenas 3 minutos do Shopping Palladium! Você pode trazer o carro para revisão ou troca de pneus e aproveitar para fazer compras enquanto esperamos.',
     },
   ],
   'agua-verde': [

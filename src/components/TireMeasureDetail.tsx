@@ -62,7 +62,7 @@ export default function TireMeasureDetail() {
   useSEO(
     tire
       ? {
-          title: `Pneu ${normalizedMedida} em Curitiba | Carplus Auto Center – Todas as Marcas`,
+          title: `Pneu ${normalizedMedida} em Curitiba | Carplus Pneus e Oficina Mecânica – Todas as Marcas`,
           description: `Compare e compre pneu ${normalizedMedida} na Carplus em Curitiba. Várias marcas: Pirelli, Firestone, Continental. Montagem inclusa, parcelamento em até 10x sem juros. Ligue: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/pneu-medida/${medida}`,
           ogImage: tire.imagemGrande,

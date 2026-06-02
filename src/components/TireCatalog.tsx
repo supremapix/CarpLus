@@ -76,7 +76,7 @@ export default function TireCatalog() {
 
   // SEO para pagina de catalogo
   useSEO({
-    title: "Catalogo de Pneus em Curitiba | Carplus Auto Center – Portao",
+    title: "Catalogo de Pneus em Curitiba | Carplus Pneus e Oficina Mecânica – Portao",
     description: "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem gratuita, ate 10x sem juros.",
     canonical: `${BASE_URL}/pneus`,
     ogType: "website",
