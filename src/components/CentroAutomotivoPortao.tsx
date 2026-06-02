@@ -20,7 +20,7 @@ const GALERIA_IMAGENS = [
   { src: '/images/centro-automotivo/roda-bmw.webp', alt: 'Roda BMW em manutenção no Centro Automotivo Portão', title: 'Atendemos Todas as Marcas' },
   { src: '/images/centro-automotivo/duster-elevador.webp', alt: 'Renault Duster no elevador - Oficina Mecânica Portão', title: 'SUVs e Utilitários' },
   { src: '/images/centro-automotivo/oleos-petronas.webp', alt: 'Óleos Petronas Syntium - Troca de Óleo Portão Curitiba', title: 'Óleos de Qualidade' },
-  { src: '/images/centro-automotivo/pirelli-performance-center.webp', alt: 'Pirelli Performance Center - Centro Automotivo Portão', title: 'Pirelli Performance Center' },
+  { src: '/images/centro-automotivo/carplus-oficina-portao-fachada.jpg', alt: 'Fachada do Centro Automotivo Carplus no Portão em Curitiba', title: 'Nossa Fachada no Portão' },
   { src: '/images/centro-automotivo/capa-banco-carplus.webp', alt: 'Capa de banco Carplus - Cuidado com seu veículo', title: 'Cuidado Total' },
   { src: '/images/centro-automotivo/atendimento-recepcao.webp', alt: 'Atendimento personalizado na recepção Carplus Portão', title: 'Atendimento Personalizado' },
 ];

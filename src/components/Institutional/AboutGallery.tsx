@@ -24,7 +24,7 @@ const GALLERY_IMAGES = [
   { src: '/images/galeria/fachada-logo.webp', alt: 'Fachada com logo Carplus Pneus' },
   { src: '/images/galeria/caminhonete.webp', alt: 'Caminhonete Carplus Pneus' },
   { src: '/images/galeria/oficina-elevadores.webp', alt: 'Oficina com elevadores' },
-  { src: '/images/galeria/pirelli-center.webp', alt: 'Pirelli Performance Center' },
+  { src: '/images/galeria/loja-de-pneus-portao-curitiba-pirelli.png', alt: 'Loja de pneus Carplus no Portão em Curitiba - mecânico em atendimento' },
 ];
 
 const AUTO_PLAY_INTERVAL = 4000;
