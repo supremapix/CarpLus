@@ -176,7 +176,7 @@ export default function SeoTireLanding({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
+    <div className="min-h-screen bg-gray-50 pt-24 md:pt-28 pb-20 md:pb-0">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
@@ -415,6 +415,26 @@ export default function SeoTireLanding({
       </main>
 
       <Footer />
+
+      {/* Barra de CTA fixa — somente mobile */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-gray-200 px-3 py-3 flex gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-full font-bold text-sm"
+          aria-label="Pedir orçamento no WhatsApp"
+        >
+          <MessageSquare size={18} /> Orçamento
+        </a>
+        <a
+          href={`tel:+${WHATSAPP_NUMBER}`}
+          className="flex items-center justify-center gap-2 bg-black text-white px-5 py-3 rounded-full font-bold text-sm"
+          aria-label={`Ligar para ${PHONE_DISPLAY}`}
+        >
+          <Phone size={18} /> Ligar
+        </a>
+      </div>
     </div>
   );
 }

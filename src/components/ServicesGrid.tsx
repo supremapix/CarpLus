@@ -19,8 +19,8 @@ const ALL_SERVICES = SERVICE_CATEGORIES.flatMap(cat =>
 
 const STUDIO_IMAGES = [
   "/images/loja/loja-de-pneus.webp",
-  "/images/loja/loja-de-pneus-pirelli.webp",
-  "/images/loja/loja-de-pneus-em-curitiba.webp",
+  "/images/loja/carplus-oficina-portao-fachada-curitiba.jpg",
+  "/images/loja/oficina-mecanica-portao-curitiba.png",
   "/images/loja/loja-de-pneus-curitiba.webp"
 ];
 

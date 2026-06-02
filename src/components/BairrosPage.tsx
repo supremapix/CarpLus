@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { ChevronDown, ChevronUp, Navigation } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const BAIRROS = [
   // Muito Próximo
@@ -70,6 +71,23 @@ export default function BairrosPage() {
   const [busca, setBusca] = useState('');
   const [zona, setZona] = useState('Todos');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useSEO({
+    title: 'Bairros Atendidos em Curitiba e Região | Carplus Pneus e Oficina',
+    description: 'A Carplus atende todos os bairros de Curitiba e a região metropolitana a partir do Portão. Veja tempo de deslocamento e rotas até a nossa loja.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/bairros',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+    keywords: ['pneus Curitiba bairros', 'oficina mecânica Curitiba', 'pneus região metropolitana Curitiba', 'Carplus Portão'],
+    schemaJSON: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQ_ITEMS.slice(0, 6).map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  });
 
   const filtrados = BAIRROS.filter(b => {
     const okBusca = b.nome.toLowerCase().includes(busca.toLowerCase());

@@ -62,7 +62,11 @@ function TireCard({ tire, index }: TireCardProps) {
       >
         <img 
           src={tire.imagem} 
-          alt={tire.nome} 
+          alt={`Pneu ${tire.marca} ${tire.nome} ${tire.medida} aro ${tire.aro}`}
+          loading={index < 4 ? 'eager' : 'lazy'}
+          decoding="async"
+          width={400}
+          height={400}
           className={`w-full h-full object-contain transition-all duration-500 transform ${isHovered ? 'scale-105 opacity-0' : 'scale-100 opacity-100'} [mix-blend-mode:multiply]`} 
         />
         

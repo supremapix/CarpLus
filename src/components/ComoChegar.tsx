@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock, Star, Navigation, ChevronDown, ChevronUp } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useSEO } from '../hooks/useSEO';
 
 const ROTAS = [
   {
@@ -55,6 +56,23 @@ const FAQ_ITEMS = [
 
 export default function ComoChegar() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useSEO({
+    title: 'Como Chegar na Carplus – Pneus e Oficina no Portão, Curitiba',
+    description: 'Como chegar na Carplus Auto Center: Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Rotas, tempo e estacionamento próprio. (41) 3082-7282.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/como-chegar',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+    keywords: ['como chegar Carplus', 'oficina Portão Curitiba', 'endereço Carplus Curitiba', 'pneus perto do Shopping Palladium'],
+    schemaJSON: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQ_ITEMS.slice(0, 6).map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  });
 
   return (
     <div className="min-h-screen bg-dark">

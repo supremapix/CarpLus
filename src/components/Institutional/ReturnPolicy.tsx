@@ -1,7 +1,15 @@
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function ReturnPolicy() {
+  useSEO({
+    title: 'Trocas, Devoluções e Garantia | Carplus Pneus Curitiba',
+    description: 'Política de trocas, devoluções e garantia da Carplus Auto Center: garantia de fábrica nos pneus e 90 dias nos serviços de oficina, conforme o CDC.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/trocas-e-devolucoes',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+  });
+
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
