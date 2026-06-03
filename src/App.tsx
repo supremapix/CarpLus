@@ -27,12 +27,14 @@ import {
   BrandLandingPage,
   VehicleLandingPage,
   LocalComboLandingPage,
+  IntentLandingPage,
 } from './components/SeoLandingPages';
 import {
   ARO_PAGES,
   BRAND_PAGES,
   VEHICLE_PAGES,
   LOCAL_COMBO_PAGES,
+  INTENT_PAGES,
 } from './data/seoLanding';
 
 export default function App() {
@@ -89,6 +91,11 @@ export default function App() {
       {/* Landing pages SEO Local (combinações) */}
       {LOCAL_COMBO_PAGES.map((p) => (
         <Route key={p.slug} path={`/${p.slug}`} element={<LocalComboLandingPage slug={p.slug} />} />
+      ))}
+
+      {/* Landing pages de Intenção de Compra */}
+      {INTENT_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<IntentLandingPage slug={p.slug} />} />
       ))}
         
         {/* Redirects bairros .html → /bairro/ */}
