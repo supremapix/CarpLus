@@ -1527,7 +1527,594 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
   },
 ];
 
+// ════════════════════════════════════════════════════════════════
+// FASE 7 — PÁGINAS DE INTENÇÃO DE COMPRA (Curitiba)
+// Termos de alta conversão que ainda não tinham página dedicada.
+// Não duplicam os clusters Aro/Marca/Bairro já existentes.
+// ════════════════════════════════════════════════════════════════
+export interface IntentPage {
+  slug: string;
+  badge: string;
+  h1: string;
+  highlight: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  tags: string[];
+  sections: { title: string; content: string }[];
+  faq: FaqItem[];
+  whatsappMsg: string;
+}
+
+export const INTENT_PAGES: IntentPage[] = [
+  {
+    slug: 'pneus-em-curitiba-melhor-preco',
+    badge: 'Melhor Preço · Curitiba',
+    h1: 'Pneus em Curitiba com o Melhor Preço',
+    highlight: 'Melhor Preço',
+    metaTitle: 'Pneus em Curitiba com o Melhor Preço | Carplus Auto Center',
+    metaDescription:
+      'Pneus em Curitiba com o melhor preço na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, várias marcas e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'Procurando pneus em Curitiba com o melhor preço? Na Carplus, no bairro Portão, você compara marcas e medidas com valor justo, montagem inclusa e parcelamento em até 10x sem juros — tudo no mesmo atendimento.',
+    tags: ['Preço justo', 'Montagem inclusa', '10x sem juros', 'Várias marcas'],
+    sections: [
+      {
+        title: 'Como conseguimos o melhor preço',
+        content:
+          'Trabalhamos com compra direta e giro alto de estoque, o que nos permite oferecer pneus com preço competitivo sem abrir mão da qualidade. O valor já inclui montagem, balanceamento e calibragem, sem surpresas no fechamento.',
+      },
+      {
+        title: 'Preço com serviço completo',
+        content:
+          'Na Carplus, o melhor preço vem acompanhado de garantia com nota fiscal, alinhamento 3D feito na hora e equipe técnica que indica a linha ideal para o seu carro e o seu bolso.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Como pedir o melhor preço de pneus em Curitiba?',
+        answer:
+          'Envie a medida do seu pneu (ex.: 195/55R15) pelo WhatsApp (41) 3082-7282 que enviamos um orçamento com o melhor preço, já incluindo montagem e balanceamento.',
+      },
+      {
+        question: 'O preço inclui montagem e balanceamento?',
+        answer:
+          'Sim. Na Carplus, o preço do pneu já inclui montagem, balanceamento e calibragem. O alinhamento 3D é recomendado a cada troca e feito na própria loja.',
+      },
+      {
+        question: 'Dá para parcelar a compra dos pneus?',
+        answer:
+          'Sim, parcelamos a compra dos pneus em até 10x sem juros no cartão de crédito, mantendo o melhor preço final.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero o melhor preço de pneus em Curitiba. Pode me passar um orçamento?',
+  },
+  {
+    slug: 'loja-de-pneus-curitiba',
+    badge: 'Loja de Pneus · Curitiba',
+    h1: 'Loja de Pneus em Curitiba',
+    highlight: 'Pneus',
+    metaTitle: 'Loja de Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Loja de pneus em Curitiba: Carplus Auto Center, no bairro Portão. Pneus de várias marcas, oficina mecânica completa, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Carplus é uma loja de pneus completa em Curitiba, no bairro Portão, que também é oficina mecânica full service. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios e troca de óleo no mesmo lugar.',
+    tags: ['Loja física', 'Oficina completa', 'Várias marcas', 'Portão · Curitiba'],
+    sections: [
+      {
+        title: 'Loja de pneus e oficina no mesmo lugar',
+        content:
+          'Diferente de uma loja comum, a Carplus une a venda de pneus a uma oficina mecânica completa. Você resolve pneu, alinhamento, suspensão, freios e revisão em uma única visita, no bairro Portão.',
+      },
+      {
+        title: 'Atendimento e estrutura',
+        content:
+          'Contamos com equipe técnica experiente, equipamentos modernos de montagem e balanceamento e alinhamento 3D computadorizado. Tudo com garantia e nota fiscal.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Onde fica a loja de pneus da Carplus em Curitiba?',
+        answer:
+          'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR. Atendemos de segunda a sexta das 8h às 18h e aos sábados das 8h às 12h.',
+      },
+      {
+        question: 'A loja de pneus também faz serviços de oficina?',
+        answer:
+          'Sim. Além de vender e montar pneus, a Carplus é uma oficina mecânica completa: alinhamento, balanceamento, freios, suspensão e troca de óleo.',
+      },
+      {
+        question: 'Preciso agendar para ir à loja?',
+        answer:
+          'Não é obrigatório, mas para a maioria das medidas você pode chamar antes pelo WhatsApp (41) 3082-7282 para confirmar disponibilidade e agilizar o atendimento.',
+      },
+    ],
+    whatsappMsg: 'Olá! Vi a página da loja de pneus em Curitiba e gostaria de um orçamento.',
+  },
+  {
+    slug: 'pneus-baratos-curitiba',
+    badge: 'Pneus Baratos · Curitiba',
+    h1: 'Pneus Baratos em Curitiba',
+    highlight: 'Baratos',
+    metaTitle: 'Pneus Baratos em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneus baratos em Curitiba com qualidade na Carplus, bairro Portão. Opções econômicas e premium, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pneu barato não precisa ser pneu ruim. Na Carplus, no bairro Portão em Curitiba, você encontra opções econômicas com boa procedência, além de linhas premium, sempre com montagem inclusa e parcelamento.',
+    tags: ['Econômico', 'Custo-benefício', 'Montagem inclusa', '10x sem juros'],
+    sections: [
+      {
+        title: 'Pneu barato com procedência',
+        content:
+          'Selecionamos linhas econômicas de marcas reconhecidas, que entregam segurança e durabilidade por um preço acessível. Você economiza sem comprometer a segurança do seu carro.',
+      },
+      {
+        title: 'Economia que continua depois da troca',
+        content:
+          'Calibragem correta, balanceamento e alinhamento 3D prolongam a vida útil do pneu e reduzem o consumo de combustível — economia que se mantém no dia a dia.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Pneu barato é seguro?',
+        answer:
+          'Sim, desde que tenha procedência. Na Carplus trabalhamos apenas com marcas reconhecidas, inclusive nas linhas econômicas, garantindo segurança e nota fiscal.',
+      },
+      {
+        question: 'Qual o pneu mais barato para o meu carro?',
+        answer:
+          'Depende da medida e do modelo. Envie a medida pelo WhatsApp (41) 3082-7282 que indicamos a opção mais econômica disponível para o seu veículo.',
+      },
+      {
+        question: 'Pneu barato também tem montagem inclusa?',
+        answer:
+          'Sim. Independente da linha escolhida, a montagem, o balanceamento e a calibragem já estão inclusos no valor.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero pneus baratos em Curitiba. Pode me passar as opções econômicas?',
+  },
+  {
+    slug: 'maior-estoque-de-pneus-curitiba',
+    badge: 'Maior Estoque · Curitiba',
+    h1: 'Maior Estoque de Pneus em Curitiba',
+    highlight: 'Estoque',
+    metaTitle: 'Maior Estoque de Pneus em Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Maior estoque de pneus em Curitiba na Carplus, bairro Portão. Aros 13 a 23, várias marcas e pronta entrega com montagem inclusa. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Na Carplus, no bairro Portão em Curitiba, você encontra um dos maiores estoques de pneus da região: do aro 13 ao 23, com diversas medidas e marcas em pronta entrega para instalação no mesmo dia.',
+    tags: ['Pronta entrega', 'Aros 13 a 23', 'Várias marcas', 'Instalação no dia'],
+    sections: [
+      {
+        title: 'Variedade do aro 13 ao 23',
+        content:
+          'Mantemos em estoque pneus para carros populares, hatches, sedans, SUVs e veículos premium. Isso significa menos espera e mais chance de instalar o pneu no mesmo dia.',
+      },
+      {
+        title: 'Pronta entrega e instalação rápida',
+        content:
+          'Com amplo estoque, a maioria das medidas é montada no mesmo dia, com balanceamento e calibragem inclusos. Caso a medida específica falte, fazemos a busca com agilidade.',
+      },
+    ],
+    faq: [
+      {
+        question: 'A Carplus tem a minha medida de pneu em estoque?',
+        answer:
+          'Com um dos maiores estoques de Curitiba, a chance é alta. Confirme a disponibilidade da sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Quais aros vocês têm em estoque?',
+        answer:
+          'Trabalhamos com pneus do aro 13 ao aro 23, atendendo de carros populares a SUVs e veículos premium.',
+      },
+      {
+        question: 'Consigo instalar o pneu no mesmo dia?',
+        answer:
+          'Sim. Por termos pronta entrega, a maioria das medidas é instalada no mesmo dia, com montagem e balanceamento inclusos.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber se vocês têm a minha medida no maior estoque de pneus de Curitiba.',
+  },
+  {
+    slug: 'onde-comprar-pneus-curitiba',
+    badge: 'Onde Comprar · Curitiba',
+    h1: 'Onde Comprar Pneus em Curitiba',
+    highlight: 'Comprar Pneus',
+    metaTitle: 'Onde Comprar Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Onde comprar pneus em Curitiba com segurança? Na Carplus, bairro Portão: várias marcas, montagem inclusa, garantia com nota fiscal e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Se você está em dúvida sobre onde comprar pneus em Curitiba, a Carplus, no bairro Portão, reúne tudo o que importa: variedade de marcas, preço justo, montagem inclusa e uma oficina mecânica completa no mesmo endereço.',
+    tags: ['Loja confiável', 'Garantia com NF', 'Montagem inclusa', 'Portão · Curitiba'],
+    sections: [
+      {
+        title: 'O que avaliar na hora de comprar',
+        content:
+          'Procedência das marcas, garantia com nota fiscal, montagem e balanceamento inclusos e a possibilidade de alinhar na hora. A Carplus reúne todos esses pontos em um só lugar.',
+      },
+      {
+        title: 'Comprar com instalação no mesmo lugar',
+        content:
+          'Além de comprar o pneu, você faz a montagem, o balanceamento e o alinhamento 3D na Carplus, evitando deslocamentos e garantindo que tudo fique perfeito.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Onde comprar pneus em Curitiba com garantia?',
+        answer:
+          'Na Carplus Auto Center, no bairro Portão. Todos os pneus têm garantia e nota fiscal, com montagem e balanceamento inclusos.',
+      },
+      {
+        question: 'Vale a pena comprar pneu em loja com oficina?',
+        answer:
+          'Sim. Comprar onde também se faz alinhamento, balanceamento e suspensão garante que o conjunto fique ajustado e dure mais, tudo em uma visita.',
+      },
+      {
+        question: 'Como faço para comprar?',
+        answer:
+          'Envie a medida do pneu pelo WhatsApp (41) 3082-7282 ou venha à loja na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber onde comprar pneus em Curitiba e pedir um orçamento.',
+  },
+  {
+    slug: 'promocao-de-pneus-curitiba',
+    badge: 'Promoção · Curitiba',
+    h1: 'Promoção de Pneus em Curitiba',
+    highlight: 'Promoção',
+    metaTitle: 'Promoção de Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Promoção de pneus em Curitiba na Carplus, bairro Portão. Condições especiais por medida, montagem inclusa e 10x sem juros. Consulte a promoção no WhatsApp: (41) 3082-7282.',
+    intro:
+      'Aproveite a promoção de pneus em Curitiba da Carplus, no bairro Portão. Temos condições especiais por medida e marca, sempre com montagem inclusa e parcelamento em até 10x sem juros.',
+    tags: ['Condições especiais', 'Montagem inclusa', '10x sem juros', 'Por medida'],
+    sections: [
+      {
+        title: 'Promoções que mudam conforme o estoque',
+        content:
+          'Nossas promoções variam por medida e marca conforme a disponibilidade. Por isso, consulte sempre a condição atual da sua medida antes de comprar — pode haver uma oferta especial para o seu carro.',
+      },
+      {
+        title: 'Promoção com serviço completo',
+        content:
+          'Mesmo nas promoções, mantemos montagem, balanceamento e calibragem inclusos, além de garantia com nota fiscal e alinhamento 3D disponível na hora.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Qual a promoção de pneus em Curitiba agora?',
+        answer:
+          'As promoções mudam conforme o estoque. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 para saber a condição especial disponível hoje.',
+      },
+      {
+        question: 'A promoção inclui montagem?',
+        answer:
+          'Sim. Mesmo nas promoções, a montagem, o balanceamento e a calibragem já estão inclusos no valor.',
+      },
+      {
+        question: 'Posso parcelar na promoção?',
+        answer:
+          'Sim, as promoções podem ser parceladas em até 10x sem juros no cartão de crédito.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber a promoção de pneus em Curitiba para a minha medida.',
+  },
+  {
+    slug: 'pneus-em-oferta-curitiba',
+    badge: 'Pneus em Oferta · Curitiba',
+    h1: 'Pneus em Oferta em Curitiba',
+    highlight: 'Oferta',
+    metaTitle: 'Pneus em Oferta em Curitiba | Carplus Auto Center – Portão',
+    metaDescription:
+      'Pneus em oferta em Curitiba na Carplus, bairro Portão. Ofertas por medida e marca, montagem inclusa e 10x sem juros. Consulte no WhatsApp: (41) 3082-7282.',
+    intro:
+      'Confira os pneus em oferta em Curitiba na Carplus, no bairro Portão. Reunimos ofertas em diversas medidas e marcas, com montagem inclusa e parcelamento, para você trocar os pneus pagando menos.',
+    tags: ['Ofertas por medida', 'Várias marcas', 'Montagem inclusa', '10x sem juros'],
+    sections: [
+      {
+        title: 'Ofertas em diversas medidas',
+        content:
+          'Temos ofertas que abrangem desde aros populares até medidas para SUV e premium. A condição varia conforme o estoque, então vale consultar a sua medida específica.',
+      },
+      {
+        title: 'Oferta com tudo incluso',
+        content:
+          'As ofertas da Carplus já consideram montagem, balanceamento e calibragem. Você ainda pode adicionar o alinhamento 3D, feito na própria loja no mesmo dia.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Quais pneus estão em oferta em Curitiba?',
+        answer:
+          'As ofertas variam por medida e marca conforme o estoque. Consulte a oferta da sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'A oferta vale para qualquer carro?',
+        answer:
+          'Temos ofertas para carros populares, hatches, sedans e SUVs. Informe seu veículo ou a medida do pneu para verificarmos a melhor oferta.',
+      },
+      {
+        question: 'A oferta inclui instalação?',
+        answer:
+          'Sim. Toda oferta já inclui montagem, balanceamento e calibragem no valor final.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero ver os pneus em oferta em Curitiba para a minha medida.',
+  },
+  {
+    slug: 'pneus-parcelados-curitiba',
+    badge: 'Pneus Parcelados · Curitiba',
+    h1: 'Pneus Parcelados em Curitiba',
+    highlight: 'Parcelados',
+    metaTitle: 'Pneus Parcelados em Curitiba | Carplus Auto Center – 10x sem juros',
+    metaDescription:
+      'Pneus parcelados em Curitiba na Carplus, bairro Portão. Até 10x sem juros no cartão, montagem inclusa e várias marcas. Orçamento no WhatsApp: (41) 3082-7282.',
+    intro:
+      'Precisa trocar os pneus mas quer dividir o pagamento? Na Carplus, no bairro Portão em Curitiba, você compra pneus parcelados em até 10x sem juros no cartão, com montagem inclusa e várias marcas.',
+    tags: ['10x sem juros', 'Cartão de crédito', 'Montagem inclusa', 'Várias marcas'],
+    sections: [
+      {
+        title: 'Parcelamento em até 10x sem juros',
+        content:
+          'Você troca os pneus agora e divide o valor em até 10 vezes sem juros no cartão de crédito, mantendo a segurança do carro sem pesar no orçamento do mês.',
+      },
+      {
+        title: 'Parcelar pneu e serviços juntos',
+        content:
+          'Além dos pneus, você pode incluir alinhamento, balanceamento e outros serviços de oficina no mesmo parcelamento, resolvendo tudo de uma vez.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Em quantas vezes posso parcelar os pneus?',
+        answer:
+          'Na Carplus você parcela os pneus em até 10x sem juros no cartão de crédito.',
+      },
+      {
+        question: 'O parcelamento tem juros?',
+        answer:
+          'Em até 10x no cartão de crédito o parcelamento é sem juros. Consulte condições para outras formas de pagamento.',
+      },
+      {
+        question: 'Posso parcelar pneus e serviços juntos?',
+        answer:
+          'Sim. Você pode incluir alinhamento, balanceamento e demais serviços no mesmo parcelamento. Fale com a gente pelo WhatsApp (41) 3082-7282.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero comprar pneus parcelados em até 10x sem juros em Curitiba.',
+  },
+  {
+    slug: 'melhor-loja-de-pneus-curitiba',
+    badge: 'Melhor Loja · Curitiba',
+    h1: 'Melhor Loja de Pneus em Curitiba',
+    highlight: 'Melhor Loja',
+    metaTitle: 'Melhor Loja de Pneus em Curitiba | Carplus Auto Center – 4,9 no Google',
+    metaDescription:
+      'Considerada uma das melhores lojas de pneus de Curitiba, a Carplus fica no Portão: 4,9 no Google, várias marcas, oficina completa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Carplus é reconhecida como uma das melhores lojas de pneus de Curitiba, no bairro Portão, com nota 4,9 no Google e mais de 300 avaliações. Aqui você encontra pneus de várias marcas e uma oficina mecânica completa.',
+    tags: ['4,9 no Google', '+300 avaliações', 'Oficina completa', 'Garantia com NF'],
+    sections: [
+      {
+        title: 'Por que somos referência em Curitiba',
+        content:
+          'Atendimento técnico honesto, marcas reconhecidas, montagem e balanceamento inclusos, alinhamento 3D na hora e garantia com nota fiscal. Esse conjunto fez da Carplus uma das lojas de pneus mais bem avaliadas da cidade.',
+      },
+      {
+        title: 'Avaliações reais de clientes',
+        content:
+          'Com mais de 300 avaliações e nota 4,9 no Google, a confiança dos clientes é o nosso melhor argumento. Venha conferir o atendimento que rende essa reputação.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Qual a melhor loja de pneus em Curitiba?',
+        answer:
+          'A Carplus Auto Center, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 300 avaliações de clientes.',
+      },
+      {
+        question: 'O que torna a Carplus a melhor opção?',
+        answer:
+          'A união entre loja de pneus e oficina mecânica completa, com montagem inclusa, alinhamento 3D, garantia com nota fiscal e parcelamento em até 10x sem juros.',
+      },
+      {
+        question: 'Onde fica a Carplus?',
+        answer:
+          'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR.',
+      },
+    ],
+    whatsappMsg: 'Olá! Vi que a Carplus é uma das melhores lojas de pneus de Curitiba. Quero um orçamento.',
+  },
+  {
+    slug: 'qual-o-melhor-pneu-curitiba',
+    badge: 'Qual o Melhor Pneu · Curitiba',
+    h1: 'Qual o Melhor Pneu em Curitiba',
+    highlight: 'Melhor Pneu',
+    metaTitle: 'Qual o Melhor Pneu para o seu Carro em Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Qual o melhor pneu para o seu carro? A Carplus, no Portão em Curitiba, ajuda a escolher entre economia, conforto e performance. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Não existe um único "melhor pneu" — existe o melhor pneu para o seu carro e o seu uso. Na Carplus, no bairro Portão em Curitiba, nossa equipe técnica ajuda você a escolher entre linhas econômicas, de conforto e de performance.',
+    tags: ['Consultoria técnica', 'Economia x conforto', 'Performance', 'Sob medida'],
+    sections: [
+      {
+        title: 'Como escolher o melhor pneu',
+        content:
+          'A escolha depende do seu perfil de uso: rodagem urbana, estrada, economia de combustível, conforto acústico ou esportividade. Avaliamos a medida original, o tipo de carro e a sua prioridade para indicar a linha ideal.',
+      },
+      {
+        title: 'Economia, conforto ou performance',
+        content:
+          'Linhas econômicas priorizam custo-benefício; linhas de conforto reduzem ruído e absorvem impactos; linhas de performance entregam aderência e dirigibilidade. Indicamos a melhor opção sem empurrar o que você não precisa.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Qual o melhor pneu para uso urbano?',
+        answer:
+          'Para cidade, linhas econômicas e de conforto costumam ser as melhores, equilibrando durabilidade, baixo ruído e bom custo. Informe seu carro pelo WhatsApp (41) 3082-7282 para uma indicação precisa.',
+      },
+      {
+        question: 'Pneu mais caro é sempre melhor?',
+        answer:
+          'Nem sempre. O melhor pneu é o mais adequado ao seu uso. Às vezes uma linha intermediária atende melhor que uma premium para o seu perfil de rodagem.',
+      },
+      {
+        question: 'Vocês ajudam a escolher o pneu certo?',
+        answer:
+          'Sim. Nossa equipe técnica faz essa consultoria gratuitamente, considerando seu carro, seu orçamento e seu estilo de direção.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber qual o melhor pneu para o meu carro. Pode me ajudar a escolher?',
+  },
+  {
+    slug: 'pneus-com-instalacao-curitiba',
+    badge: 'Pneus com Instalação · Curitiba',
+    h1: 'Pneus com Instalação em Curitiba',
+    highlight: 'Instalação',
+    metaTitle: 'Pneus com Instalação em Curitiba | Carplus Auto Center – Montagem Inclusa',
+    metaDescription:
+      'Pneus com instalação em Curitiba na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, alinhamento 3D na hora e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Na Carplus, no bairro Portão em Curitiba, você compra os pneus e já sai com tudo instalado. Montagem, balanceamento e calibragem estão inclusos, e o alinhamento 3D pode ser feito na mesma visita.',
+    tags: ['Montagem inclusa', 'Balanceamento incluso', 'Alinhamento na hora', 'No mesmo dia'],
+    sections: [
+      {
+        title: 'Instalação completa no mesmo lugar',
+        content:
+          'Você não precisa procurar outra borracharia: a Carplus faz a montagem com equipamento que preserva a roda, o balanceamento computadorizado e a calibragem, tudo incluso no valor do pneu.',
+      },
+      {
+        title: 'Alinhamento 3D na mesma visita',
+        content:
+          'Como somos também oficina mecânica, fazemos o alinhamento 3D na hora, garantindo estabilidade, segurança e maior durabilidade do conjunto recém-instalado.',
+      },
+    ],
+    faq: [
+      {
+        question: 'A instalação dos pneus está inclusa no preço?',
+        answer:
+          'Sim. A montagem, o balanceamento e a calibragem já estão inclusos no valor dos pneus na Carplus.',
+      },
+      {
+        question: 'Vocês fazem alinhamento na mesma hora?',
+        answer:
+          'Sim. O alinhamento 3D é feito na própria loja, na mesma visita, sem necessidade de agendar em outro lugar.',
+      },
+      {
+        question: 'Quanto tempo leva a instalação?',
+        answer:
+          'Na maioria dos casos, a montagem com balanceamento é rápida e feita no mesmo dia. Chame pelo WhatsApp (41) 3082-7282 para confirmar.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero comprar pneus com instalação inclusa em Curitiba.',
+  },
+  {
+    slug: 'pneus-com-alinhamento-e-balanceamento-curitiba',
+    badge: 'Pneus + Alinhamento · Curitiba',
+    h1: 'Pneus com Alinhamento e Balanceamento em Curitiba',
+    highlight: 'Alinhamento e Balanceamento',
+    metaTitle: 'Pneus com Alinhamento e Balanceamento em Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Pneus com alinhamento e balanceamento em Curitiba na Carplus, bairro Portão. Troca completa com alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pneu novo pede alinhamento e balanceamento. Na Carplus, no bairro Portão em Curitiba, você faz a troca completa: pneus com montagem inclusa, balanceamento computadorizado e alinhamento 3D no mesmo lugar.',
+    tags: ['Alinhamento 3D', 'Balanceamento computadorizado', 'Troca completa', 'Portão · Curitiba'],
+    sections: [
+      {
+        title: 'Por que alinhar e balancear ao trocar pneus',
+        content:
+          'O alinhamento 3D corrige a geometria das rodas, evitando desgaste irregular e reduzindo o consumo. O balanceamento elimina vibrações no volante. Juntos, prolongam a vida útil dos pneus e aumentam a segurança.',
+      },
+      {
+        title: 'Tudo na mesma visita',
+        content:
+          'Como a Carplus é loja de pneus e oficina mecânica, você resolve pneu, alinhamento e balanceamento de uma só vez, com equipamento computadorizado de precisão e garantia com nota fiscal.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Preciso alinhar e balancear ao trocar os pneus?',
+        answer:
+          'Sim, é altamente recomendado. O balanceamento já está incluso na montagem, e o alinhamento 3D garante que os pneus novos durem mais e o carro fique estável.',
+      },
+      {
+        question: 'Qual a diferença entre alinhamento e balanceamento?',
+        answer:
+          'O alinhamento ajusta a geometria das rodas em relação ao solo; o balanceamento distribui o peso da roda para eliminar vibrações. Os dois se complementam.',
+      },
+      {
+        question: 'Vocês fazem os dois no mesmo lugar dos pneus?',
+        answer:
+          'Sim. A Carplus faz pneus, alinhamento 3D e balanceamento computadorizado no mesmo endereço, no bairro Portão.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero trocar os pneus com alinhamento e balanceamento em Curitiba.',
+  },
+  {
+    slug: 'centro-automotivo-para-troca-de-pneus-curitiba',
+    badge: 'Centro Automotivo · Curitiba',
+    h1: 'Centro Automotivo para Troca de Pneus em Curitiba',
+    highlight: 'Troca de Pneus',
+    metaTitle: 'Centro Automotivo para Troca de Pneus em Curitiba | Carplus Auto Center',
+    metaDescription:
+      'Centro automotivo para troca de pneus em Curitiba: Carplus, no bairro Portão. Pneus, alinhamento, balanceamento, freios, suspensão e troca de óleo. WhatsApp: (41) 3082-7282.',
+    intro:
+      'A Carplus é o centro automotivo completo para troca de pneus em Curitiba, no bairro Portão. Além dos pneus, você faz alinhamento, balanceamento, freios, suspensão e troca de óleo em um único lugar.',
+    tags: ['Centro automotivo', 'Troca de pneus', 'Oficina completa', 'Tudo em um lugar'],
+    sections: [
+      {
+        title: 'Muito além da troca de pneus',
+        content:
+          'Como centro automotivo, a Carplus resolve a troca de pneus e ainda cuida de alinhamento, balanceamento, freios, suspensão e revisão. Você economiza tempo fazendo tudo em uma visita.',
+      },
+      {
+        title: 'Estrutura e equipe técnica',
+        content:
+          'Contamos com equipamentos modernos de montagem e balanceamento, alinhamento 3D computadorizado e mecânicos experientes, sempre com garantia e nota fiscal.',
+      },
+    ],
+    faq: [
+      {
+        question: 'O que é um centro automotivo para troca de pneus?',
+        answer:
+          'É um local que une a venda e a troca de pneus a uma oficina mecânica completa. Na Carplus, você troca os pneus e ainda faz alinhamento, balanceamento, freios e suspensão no mesmo lugar.',
+      },
+      {
+        question: 'A Carplus faz só pneus ou também serviços de oficina?',
+        answer:
+          'Faz os dois. Somos um centro automotivo completo: pneus, alinhamento, balanceamento, freios, suspensão, troca de óleo e mais.',
+      },
+      {
+        question: 'Onde fica o centro automotivo Carplus?',
+        answer:
+          'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR. WhatsApp: (41) 3082-7282.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero fazer a troca de pneus no centro automotivo Carplus em Curitiba.',
+  },
+];
+
+// Seleção representativa do catálogo para páginas de intenção genéricas
+export function getFeaturedTires(limit = 12): Tire[] {
+  const featured: Tire[] = [];
+  const seen = new Set<number>();
+  for (const aro of [14, 15, 16, 17, 18, 13]) {
+    for (const tire of getTiresByAro(aro)) {
+      if (tire && !seen.has(tire.id)) {
+        seen.add(tire.id);
+        featured.push(tire);
+      }
+      if (featured.length >= limit) return featured;
+    }
+  }
+  return featured;
+}
+
 // ─── Helpers de busca por slug ───────────────────────────────────
+export function getIntentPage(slug: string): IntentPage | undefined {
+  return INTENT_PAGES.find((p) => p.slug === slug);
+}
 export function getAroPage(slug: string): AroPage | undefined {
   return ARO_PAGES.find((p) => p.slug === slug);
 }

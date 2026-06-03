@@ -6,14 +6,17 @@ import {
   BRAND_PAGES,
   VEHICLE_PAGES,
   LOCAL_COMBO_PAGES,
+  INTENT_PAGES,
   getAroPage,
   getBrandPage,
   getVehiclePage,
   getLocalComboPage,
+  getIntentPage,
   getTiresByAro,
   getTiresByBrand,
   getTiresByVehicle,
   getMeasuresForTires,
+  getFeaturedTires,
   normalizeText,
 } from '../data/seoLanding';
 
@@ -158,6 +161,53 @@ export function VehicleLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Pneus para outros veículos"
       relatedLinks={relatedLinks}
       whatsappMsg={`Olá! Tenho um ${page.nome} e gostaria de um orçamento de pneus.`}
+    />
+  );
+}
+
+// ─── PÁGINA DE INTENÇÃO DE COMPRA ────────────────────────────────
+export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
+  const params = useParams();
+  const slug = slugProp || params.slug || '';
+  const page = getIntentPage(slug);
+  if (!page) return <NotFound />;
+
+  const tires = getFeaturedTires(12);
+
+  // Links internos exigidos: pneus, hub, serviços principais, contato + demais do cluster
+  const serviceLinks = [
+    { label: 'Catálogo de Pneus', to: '/pneus' },
+    { label: 'Pneus Curitiba', to: '/pneus-curitiba' },
+    { label: 'Alinhamento e Balanceamento', to: '/servico/alinhamento-e-balanceamento' },
+    { label: 'Troca de Óleo', to: '/servico/troca-de-oleo' },
+    { label: 'Revisão de Suspensão', to: '/servico/revisao-de-suspensao' },
+    { label: 'Manutenção de Freios', to: '/servico/manutencao-de-freios' },
+    { label: 'Contato', to: '/contato' },
+  ];
+  const clusterLinks = INTENT_PAGES.filter((p) => p.slug !== page.slug).map((p) => ({
+    label: p.h1,
+    to: `/${p.slug}`,
+  }));
+  const aroLinks = ARO_PAGES.slice(0, 5).map((a) => ({ label: `Aro ${a.aro}`, to: `/${a.slug}` }));
+  const relatedLinks = [...serviceLinks, ...clusterLinks, ...aroLinks];
+
+  return (
+    <SeoTireLanding
+      badge={page.badge}
+      h1={page.h1}
+      highlight={page.highlight}
+      metaTitle={page.metaTitle}
+      metaDescription={page.metaDescription}
+      canonicalPath={`/${page.slug}`}
+      intro={page.intro}
+      tags={page.tags}
+      sections={page.sections}
+      tires={tires}
+      faq={page.faq}
+      breadcrumb={[HOME_CRUMB, HUB_CRUMB, { name: page.h1, path: `/${page.slug}` }]}
+      relatedLinksTitle="Serviços e páginas relacionadas"
+      relatedLinks={relatedLinks}
+      whatsappMsg={page.whatsappMsg}
     />
   );
 }
