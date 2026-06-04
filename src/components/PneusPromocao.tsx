@@ -1,38 +1,10 @@
 import { motion, useInView } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
-import { Zap, MessageCircle } from 'lucide-react';
+import { useEffect, useRef, useState, type FC } from 'react';
+import { Link } from 'react-router-dom';
+import { Zap, MessageCircle, ArrowRight } from 'lucide-react';
+import { PROMO_TIRES, PromoTire } from '../data/promoTires';
 
-const WHATSAPP_URL = 'https://wa.me/554130827282';
-
-interface PromoTire {
-  marca: string;
-  nome: string;
-  preco: string;
-  imagem: string;
-}
-
-const TIRES: PromoTire[] = [
-  { marca: 'BRIDGESTONE', nome: '195/55/15 Ecopia EP150 85H', preco: 'R$ 489,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_bridgestone_aro_15_ecopia_ep150_19555r15_bl85_1_20260424103219_554d143d730b.jpg' },
-  { marca: 'COMFORSER', nome: '185/60/14 82H CF510', preco: 'R$ 239,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_18560r14_82h_cf510_comforser_1_20260317145707_26dca0dc6878.jpg' },
-  { marca: 'CONTINENTAL', nome: '175/65/14 ContiPowerContact 82T', preco: 'R$ 379,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17565r14_continental_contipowercontact_82t_1_20251222152416_f9cbacb94d08.jpg' },
-  { marca: 'DELINTE', nome: '185/60/15 DH2 84H', preco: 'R$ 329,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_775428-MLU76889830244_062024-F.webp' },
-  { marca: 'FIRESTONE', nome: '175/65/14 F700 82T', preco: 'R$ 379,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17565r14_firestone_f700_82t_1_20250911111043_865d44577d85.jpg' },
-  { marca: 'GOODYEAR', nome: '205/55/17 91V Wrangler Territory', preco: 'R$ 789,00', imagem: 'https://www.acheipneus.com.br/media/catalog/product/p/n/pneu-20555r17-goodyear-wrangler-territory-ht-91v-1.png' },
-  { marca: 'HIFLY', nome: '185/60/14 82H HF261', preco: 'R$ 269,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_18560r14_hifly_hf261_82h_1_20250912182338_fa8f9c5baa8e.jpg' },
-  { marca: 'JK TYRE', nome: '175/70/13 82T Turbo', preco: 'R$ 269,00', imagem: 'https://www.alvespneus.com.br/image/catalog/Jk-Tyre/pneu-aro-13-175-70r13-jk-tyre-82t-tl-turbo.png' },
-  { marca: 'LINGLONG', nome: '195/60/15 Green-Max HP010 88H', preco: 'R$ 289,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_958386-MLA99823472497_112025-F.webp' },
-  { marca: 'MAXTREK', nome: '185/65/15 88H Maximus M2', preco: 'R$ 299,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_maxtrek_aro_16_maximus_m2_20565r15_94h_sl_1_20260218135248_7d79f0f6def4.jpg' },
-  { marca: 'MICHELIN', nome: '215/50/17 95W Primacy 4 +', preco: 'R$ 749,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_967456-MLA79828137217_102024-F.webp' },
-  { marca: 'PIRELLI', nome: '175/65/14 82H P400 Evo', preco: 'R$ 379,00', imagem: 'https://www.pensepneus.com.br/media/catalog/product/cache/e5c188f9fa76550a763b93b91095e130/p/4/p400_evo_1.webp' },
-  { marca: 'PRINX', nome: '185/55/16 HH2 83H', preco: 'R$ 459,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_18555r16_prinx_hh2_hicity_83h_1_20250909002931_6e7b2d587166.jpg' },
-  { marca: 'PROVATO', nome: '265/60/18 Crosswind A/T 110T', preco: 'R$ 639,00', imagem: 'https://1stpneus.com.br/wp-content/uploads/2022/10/CROSSWIND-AT.jpg' },
-  { marca: 'ROADKING', nome: '175/70/14C Radial109 95/93T', preco: 'R$ 289,00', imagem: 'https://cdn.iset.io/assets/42004/produtos/2461/thumb_550-550-9409-1.jpg' },
-  { marca: 'SPEEDMAX', nome: '175/55/16 80H Energrip SPM022', preco: 'R$ 489,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17555r16_speedmax_energrip_spm022_ev_80h_1_20260522095029_33f1e899ed35.jpg' },
-  { marca: 'TORNEL', nome: '175/70/14 Astral Neo 84T', preco: 'R$ 279,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_785643-MLB110473824363_042026-F.webp' },
-  { marca: 'XBRI', nome: '175/75/14 86T Fastway A5', preco: 'R$ 269,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_686334-MLA100095996251_122025-F.webp' },
-  { marca: 'YOKOHAMA', nome: '175/65/14 ES32 82T', preco: 'R$ 399,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_714535-MLB107513343737_022026-F.webp' },
-  { marca: 'ZMAX', nome: '225/65/16C Vanmejor 112/110R Carga', preco: 'R$ 559,00', imagem: 'https://http2.mlstatic.com/D_930543-MLA112057599751_052026-C.jpg' },
-];
+const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 
 const FALLBACK_IMG =
   'data:image/svg+xml;utf8,' +
@@ -62,10 +34,15 @@ function CountUp({ to, duration = 1500 }: { to: number; duration?: number }) {
   return <span ref={ref}>{value}</span>;
 }
 
-function TireCard({ tire }: { tire: PromoTire }) {
+const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
+  // URL da página dedicada — vai junto na mensagem do WhatsApp para rastrear a origem do clique
+  const pageUrl = `${BASE_URL}/pneu-promocao/${tire.slug}`;
+  const whatsappMsg = `Olá! Vi a *promoção do pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) por ${tire.preco}. Gostaria de garantir esse preço.\n\nOrigem do contato: ${pageUrl}`;
+  const whatsappUrl = `https://wa.me/554130827282?text=${encodeURIComponent(whatsappMsg)}`;
+
   return (
     <div className="group flex w-[230px] sm:w-[260px] flex-shrink-0 flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-primary/70 hover:shadow-[0_8px_28px_rgba(245,156,0,0.22)]">
-      <div className="relative aspect-square bg-white p-4 flex items-center justify-center overflow-hidden">
+      <Link to={`/pneu-promocao/${tire.slug}`} className="relative aspect-square bg-white p-4 flex items-center justify-center overflow-hidden">
         <img
           src={tire.imagem}
           alt={`Pneu ${tire.marca} ${tire.nome}`}
@@ -78,12 +55,12 @@ function TireCard({ tire }: { tire: PromoTire }) {
         <span className="absolute top-3 left-3 bg-primary text-black text-[11px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded">
           Promoção
         </span>
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-4">
-        <p className="font-accent font-bold uppercase tracking-wide text-primary text-base leading-none">
+        <Link to={`/pneu-promocao/${tire.slug}`} className="font-accent font-bold uppercase tracking-wide text-primary text-base leading-none hover:underline">
           {tire.marca}
-        </p>
+        </Link>
         <p className="mt-1.5 text-neutral-600 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
 
         <div className="mt-3 flex items-baseline gap-1">
@@ -92,7 +69,7 @@ function TireCard({ tire }: { tire: PromoTire }) {
         <p className="font-accent font-bold text-neutral-900 text-2xl leading-none">{tire.preco}</p>
 
         <a
-          href={WHATSAPP_URL}
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 font-accent font-bold uppercase tracking-wide text-black text-sm transition-colors hover:bg-[#ffae2e]"
@@ -100,6 +77,14 @@ function TireCard({ tire }: { tire: PromoTire }) {
           <MessageCircle size={16} strokeWidth={2.5} />
           Pedir orçamento
         </a>
+
+        <Link
+          to={`/pneu-promocao/${tire.slug}`}
+          className="mt-2 inline-flex items-center justify-center gap-1 rounded-xl border border-neutral-200 px-4 py-2 font-accent font-bold uppercase tracking-wide text-neutral-700 text-xs transition-colors hover:border-primary hover:text-primary"
+        >
+          Saiba mais
+          <ArrowRight size={14} strokeWidth={2.5} />
+        </Link>
       </div>
     </div>
   );
@@ -107,10 +92,10 @@ function TireCard({ tire }: { tire: PromoTire }) {
 
 export default function PneusPromocao() {
   // Duplicamos a lista para criar o efeito de loop infinito da esteira
-  const track = [...TIRES, ...TIRES];
+  const track = [...PROMO_TIRES, ...PROMO_TIRES];
 
   return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section id="promocao" className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Cabeçalho */}
         <motion.div
