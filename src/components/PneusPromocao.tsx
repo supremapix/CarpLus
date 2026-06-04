@@ -52,7 +52,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           }}
           className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
-        <span className="absolute top-3 left-3 bg-black text-primary text-[11px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+        <span className="absolute top-3 left-3 bg-black text-white text-[11px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded">
           Promoção
         </span>
       </Link>
@@ -72,7 +72,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wide text-primary text-sm transition-colors hover:bg-neutral-800"
+          className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wide text-white text-sm transition-colors hover:bg-neutral-800"
         >
           <MessageCircle size={16} strokeWidth={2.5} />
           Pedir orçamento
