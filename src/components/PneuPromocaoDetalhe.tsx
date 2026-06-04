@@ -13,6 +13,7 @@ import {
   Truck,
   CreditCard,
   MapPin,
+  Car,
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -49,6 +50,14 @@ export default function PneuPromocaoDetalhe() {
           q: `Posso parcelar a compra do pneu ${tire.marca}?`,
           a: `Sim. Você pode parcelar em até 10x sem juros no cartão de crédito. Consulte as condições no WhatsApp ou diretamente na loja no Portão.`,
         },
+        ...(tire.carros.length
+          ? [
+              {
+                q: `Quais carros usam o pneu ${tire.medida}?`,
+                a: `A medida ${tire.medida} é compatível com modelos populares como ${tire.carros.slice(0, 6).join(', ')}, entre outros. Confira a especificação na lateral do seu pneu atual ou consulte a equipe Carplus pelo WhatsApp (41) 3082-7282.`,
+              },
+            ]
+          : []),
       ]
     : [];
 
@@ -300,6 +309,36 @@ export default function PneuPromocaoDetalhe() {
             </div>
           ))}
         </section>
+
+        {/* Carros Compatíveis */}
+        {tire.carros.length > 0 && (
+          <section id="carros-compativeis" className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-gray-100 mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 uppercase italic tracking-tight flex items-center gap-3">
+              <Car className="text-primary" size={30} /> Carros compatíveis com o pneu {tire.medida}
+            </h2>
+            <p className="text-gray-500 mb-8 leading-relaxed">
+              O pneu <strong>{tire.marca} {tire.medida}</strong> é indicado para os seguintes modelos mais populares no
+              Brasil. Em caso de dúvida sobre a medida do seu veículo, fale com a equipe Carplus pelo WhatsApp.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {tire.carros.map((carro) => (
+                <li
+                  key={carro}
+                  className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl px-4 py-3"
+                >
+                  <span className="flex-shrink-0 w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    <Car size={18} />
+                  </span>
+                  <span className="font-bold text-gray-700 text-sm">{carro}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-xs text-gray-400 leading-relaxed">
+              * Lista de referência com os veículos mais comuns para esta medida. Sempre confira a especificação original
+              na lateral do pneu atual ou no manual do seu carro.
+            </p>
+          </section>
+        )}
 
         {/* Saiba Mais (conteúdo rico SEO) */}
         <section id="saiba-mais" className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-gray-100 mb-16">

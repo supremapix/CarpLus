@@ -14,6 +14,7 @@ export interface PromoTire {
   aro: number;
   carga: string;
   velocidade: string;
+  carros: string[];
 }
 
 interface RawPromoTire {
@@ -45,6 +46,30 @@ const RAW_TIRES: RawPromoTire[] = [
   { marca: 'YOKOHAMA', nome: '175/65/14 ES32 82T', preco: 'R$ 399,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_714535-MLB107513343737_022026-F.webp' },
   { marca: 'ZMAX', nome: '225/65/16C Vanmejor 112/110R Carga', preco: 'R$ 559,00', imagem: 'https://http2.mlstatic.com/D_930543-MLA112057599751_052026-C.jpg' },
 ];
+
+// Carros compatíveis por medida (modelos mais comuns no Brasil para cada dimensão).
+// Chave no formato largura/perfil/aro.
+const CARROS_POR_MEDIDA: Record<string, string[]> = {
+  '195/55/15': ['Chevrolet Onix', 'VW Polo', 'VW Virtus', 'Hyundai HB20S', 'Chevrolet Prisma', 'VW Gol (G6/G7)', 'Ford Fiesta'],
+  '185/60/14': ['VW Gol', 'VW Voyage', 'VW Fox', 'Fiat Palio', 'Fiat Siena', 'Chevrolet Celta', 'Ford Ka', 'Ford Fiesta'],
+  '175/65/14': ['Chevrolet Onix', 'Chevrolet Prisma', 'Hyundai HB20', 'Renault Sandero', 'Renault Logan', 'VW Up!', 'Ford Ka'],
+  '185/60/15': ['Chevrolet Onix', 'Hyundai HB20', 'VW Fox', 'Fiat Argo', 'Fiat Cronos', 'VW Gol', 'Renault Sandero'],
+  '205/55/17': ['Honda Civic', 'Toyota Corolla', 'Chevrolet Cruze', 'VW Jetta', 'Kia Cerato', 'Nissan Sentra'],
+  '175/70/13': ['VW Gol (G2/G3/G4)', 'Fiat Palio', 'Fiat Uno', 'Chevrolet Corsa', 'Chevrolet Celta', 'Renault Clio'],
+  '195/60/15': ['Toyota Corolla (antigo)', 'Honda Civic (antigo)', 'Chevrolet Astra', 'Chevrolet Vectra', 'Ford Focus', 'Renault Mégane'],
+  '185/65/15': ['Renault Logan', 'Renault Sandero', 'Chevrolet Spin', 'Chevrolet Cobalt', 'Honda Fit', 'Honda City', 'Fiat Idea'],
+  '215/50/17': ['Honda Civic', 'Toyota Corolla', 'Chevrolet Cruze', 'Kia Cerato', 'Nissan Sentra', 'Renault Mégane'],
+  '185/55/16': ['VW Polo', 'VW Virtus', 'Honda City', 'Honda Fit', 'Toyota Yaris', 'Hyundai HB20', 'Chevrolet Onix Plus'],
+  '265/60/18': ['Toyota Hilux', 'Toyota SW4', 'Ford Ranger', 'Chevrolet S10', 'VW Amarok', 'Mitsubishi Pajero', 'Chevrolet Trailblazer'],
+  '175/70/14': ['VW Gol', 'VW Voyage', 'VW Saveiro', 'Fiat Strada', 'Fiat Fiorino', 'Fiat Doblò', 'VW Kombi'],
+  '175/55/16': ['VW Up!', 'Peugeot 208', 'Fiat Argo', 'Fiat Mobi', 'VW Polo (entrada)'],
+  '175/75/14': ['VW Kombi', 'Fiat Fiorino', 'Fiat Strada', 'VW Saveiro', 'Fiat Doblò Cargo'],
+  '225/65/16': ['Renault Master', 'Mercedes Sprinter', 'Fiat Ducato', 'Iveco Daily', 'Peugeot Boxer', 'Citroën Jumper'],
+};
+
+function carrosParaMedida(largura: number, perfil: number, aro: number): string[] {
+  return CARROS_POR_MEDIDA[`${largura}/${perfil}/${aro}`] ?? [];
+}
 
 function slugify(text: string): string {
   return text
@@ -84,6 +109,7 @@ function enrich(raw: RawPromoTire): PromoTire {
     aro,
     carga,
     velocidade,
+    carros: carrosParaMedida(largura, perfil, aro),
   };
 }
 
