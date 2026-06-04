@@ -52,7 +52,7 @@ export default function ReviewsHeader({ reviewCount = 215 }: ReviewsHeaderProps)
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
-        className="mt-7 text-center text-[22px] font-medium uppercase leading-tight text-[#202124]"
+        className="mt-7 text-center text-[22px] font-bold uppercase leading-tight text-[#202124]"
       >
         <span className="block">O QUE NOSSOS</span>
         <span className="block italic text-[#F59E0B]">CLIENTES DIZEM</span>
