@@ -37,7 +37,7 @@ const TIRES: PromoTire[] = [
 const FALLBACK_IMG =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#1a1a1a"/><circle cx="100" cy="100" r="70" fill="none" stroke="#f59c00" stroke-width="14"/><circle cx="100" cy="100" r="30" fill="#f59c00"/></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#f3f4f6"/><circle cx="100" cy="100" r="70" fill="none" stroke="#f59c00" stroke-width="14"/><circle cx="100" cy="100" r="30" fill="#f59c00"/></svg>`,
   );
 
 function CountUp({ to, duration = 1500 }: { to: number; duration?: number }) {
@@ -62,16 +62,10 @@ function CountUp({ to, duration = 1500 }: { to: number; duration?: number }) {
   return <span ref={ref}>{value}</span>;
 }
 
-function TireCard({ tire, index }: { tire: PromoTire; index: number }) {
+function TireCard({ tire }: { tire: PromoTire }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.4), ease: 'easeOut' }}
-      className="group flex flex-col rounded-2xl border border-white/10 bg-[#111] overflow-hidden transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_24px_rgba(245,156,0,0.25)]"
-    >
-      <div className="relative aspect-square bg-white/5 p-4 flex items-center justify-center overflow-hidden">
+    <div className="group flex w-[230px] sm:w-[260px] flex-shrink-0 flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-primary/70 hover:shadow-[0_8px_28px_rgba(245,156,0,0.22)]">
+      <div className="relative aspect-square bg-white p-4 flex items-center justify-center overflow-hidden">
         <img
           src={tire.imagem}
           alt={`Pneu ${tire.marca} ${tire.nome}`}
@@ -90,12 +84,12 @@ function TireCard({ tire, index }: { tire: PromoTire; index: number }) {
         <p className="font-accent font-bold uppercase tracking-wide text-primary text-base leading-none">
           {tire.marca}
         </p>
-        <p className="mt-1.5 text-white/70 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
+        <p className="mt-1.5 text-neutral-600 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
 
         <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-white/40 text-xs">a partir de</span>
+          <span className="text-neutral-400 text-xs">a partir de</span>
         </div>
-        <p className="font-accent font-bold text-primary text-2xl leading-none">{tire.preco}</p>
+        <p className="font-accent font-bold text-neutral-900 text-2xl leading-none">{tire.preco}</p>
 
         <a
           href={WHATSAPP_URL}
@@ -107,23 +101,16 @@ function TireCard({ tire, index }: { tire: PromoTire; index: number }) {
           Pedir orçamento
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function PneusPromocao() {
-  return (
-    <section className="relative bg-[#1A1A1A] py-16 md:py-24 overflow-hidden">
-      {/* Textura diagonal sutil no topo da seção */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-64 opacity-[0.06] pointer-events-none"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(135deg, #f59c00 0, #f59c00 2px, transparent 2px, transparent 16px)',
-        }}
-      />
+  // Duplicamos a lista para criar o efeito de loop infinito da esteira
+  const track = [...TIRES, ...TIRES];
 
+  return (
+    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Cabeçalho */}
         <motion.div
@@ -133,32 +120,42 @@ export default function PneusPromocao() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-accent font-bold uppercase text-white text-4xl sm:text-5xl md:text-6xl tracking-tight text-balance">
+          <h2 className="font-accent font-bold uppercase text-neutral-900 text-4xl sm:text-5xl md:text-6xl tracking-tight text-balance">
             Pneus em <span className="text-primary">Promoção</span>
           </h2>
 
           {/* Badge de preço estilo etiqueta de oferta */}
           <div className="mt-6 inline-flex flex-col items-center">
-            <span className="text-white/60 font-accent uppercase tracking-[0.2em] text-sm">
+            <span className="text-neutral-500 font-accent uppercase tracking-[0.2em] text-sm">
               Preços a partir de
             </span>
             <motion.div
               animate={{ scale: [1, 1.04, 1] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-3 shadow-[0_0_30px_rgba(245,156,0,0.45)]"
+              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-3 shadow-[0_0_30px_rgba(245,156,0,0.30)]"
             >
               <Zap size={32} className="text-primary fill-primary" />
-              <span className="font-accent font-bold text-primary text-5xl sm:text-6xl leading-none drop-shadow-[0_0_12px_rgba(245,156,0,0.6)]">
+              <span className="font-accent font-bold text-primary text-5xl sm:text-6xl leading-none">
                 R$ <CountUp to={239} />
               </span>
             </motion.div>
           </div>
         </motion.div>
+      </div>
 
-        {/* Grid de pneus */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TIRES.map((tire, index) => (
-            <TireCard key={`${tire.marca}-${tire.nome}`} tire={tire} index={index} />
+      {/* Esteira de produtos (direita -> esquerda) */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{
+          maskImage:
+            'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+          WebkitMaskImage:
+            'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+        }}
+      >
+        <div className="flex w-max gap-5 [animation:var(--animate-marquee-left)] hover:[animation-play-state:paused]">
+          {track.map((tire, index) => (
+            <TireCard key={`${tire.marca}-${index}`} tire={tire} />
           ))}
         </div>
       </div>
