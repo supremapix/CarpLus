@@ -21,6 +21,7 @@ import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
 import BorrachariaPortao from './components/BorrachariaPortao';
 import BackToTop from './components/BackToTop';
 import PneusCuritibaHub from './components/PneusCuritibaHub';
+import PneusMedidasHub from './components/PneusMedidasHub';
 import LojaDePneusPertoDeMim from './components/LojaDePneusPertoDeMim';
 import {
   AroLandingPage,
@@ -28,6 +29,7 @@ import {
   VehicleLandingPage,
   LocalComboLandingPage,
   IntentLandingPage,
+  ComparisonLandingPage,
 } from './components/SeoLandingPages';
 import {
   ARO_PAGES,
@@ -35,6 +37,7 @@ import {
   VEHICLE_PAGES,
   LOCAL_COMBO_PAGES,
   INTENT_PAGES,
+  COMPARISON_PAGES,
 } from './data/seoLanding';
 
 export default function App() {
@@ -71,6 +74,7 @@ export default function App() {
 
       {/* ───── Hub SEO de Pneus ───── */}
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
+      <Route path="/medidas-de-pneus-curitiba" element={<PneusMedidasHub />} />
       <Route path="/loja-de-pneus-curitiba-perto-de-mim" element={<LojaDePneusPertoDeMim />} />
 
       {/* Landing pages por Aro */}
@@ -96,6 +100,11 @@ export default function App() {
       {/* Landing pages de Intenção de Compra */}
       {INTENT_PAGES.map((p) => (
         <Route key={p.slug} path={`/${p.slug}`} element={<IntentLandingPage slug={p.slug} />} />
+      ))}
+
+      {/* Landing pages de Comparativo de Marcas */}
+      {COMPARISON_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<ComparisonLandingPage slug={p.slug} />} />
       ))}
         
         {/* Redirects bairros .html → /bairro/ */}
