@@ -95,8 +95,18 @@ const popularMeasures = [
   '245-45-19', '265-50-19', '275-55-19', '285-45-19', '235-40-19',
   '245-35-19', '255-30-19', '275-30-19', '285-30-19', '225-35-19',
   '175-70-14', '215-65-16', '245-45-17', '245-40-17', '255-35-20',
-  '245-40-20', '245-45-20'
+  '245-40-20', '245-45-20',
+  // Medidas de alta intenção (ETAPA 2) — existentes no catálogo
+  '205-60-16', '215-60-17', '265-65-17'
 ];
+
+// Converte "185-60-15" no slug correto aceito pela rota /pneu-medida ("185-60r15").
+// A rota normaliza "-" para "/", então o aro precisa ficar colado ao perfil com "r".
+function measureToSlug(measure) {
+  const parts = measure.split('-');
+  if (parts.length === 3) return `${parts[0]}-${parts[1]}r${parts[2]}`;
+  return measure;
+}
 
 // Data da última atualização (para <lastmod>)
 const lastmod = new Date().toISOString().split('T')[0];
@@ -143,7 +153,7 @@ for (const bairro of bairros) {
 // Add tire measures
 for (const measure of popularMeasures) {
   sitemap += `  <url>
-    <loc>${baseUrl}/pneu-medida/${measure}</loc>
+    <loc>${baseUrl}/pneu-medida/${measureToSlug(measure)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
