@@ -148,6 +148,9 @@ export function VehicleLandingPage({ slug: slugProp }: { slug?: string }) {
       canonicalPath={`/${page.slug}`}
       intro={page.intro}
       sections={[
+        ...(page.pneuOriginal
+          ? [{ title: `Pneu original do ${page.nome}`, content: page.pneuOriginal }]
+          : []),
         { title: `Medidas comuns do ${page.nome}`, content: page.medidasComuns },
         {
           title: 'Troca completa no Portão',

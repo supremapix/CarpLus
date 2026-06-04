@@ -690,7 +690,7 @@ export const BRAND_PAGES: BrandPage[] = [
   },
 ];
 
-// ══════════════════════════════════════════════════════��═════════
+// ══════════════════════════════════════════════════════���═════════
 // FASE 5 — PÁGINAS POR VEÍCULO (clusters de modelos populares)
 // ════════════════════════════════════════════════════════════════
 export interface VehiclePage {
@@ -702,6 +702,7 @@ export interface VehiclePage {
   metaDescription: string;
   intro: string;
   medidasComuns: string;
+  pneuOriginal?: string; // medida(s) de fábrica e contexto (ETAPA 4)
   faq: FaqItem[];
 }
 
@@ -838,7 +839,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       'O Jeep Compass é um dos SUVs mais populares do país. Na Carplus, no Portão em Curitiba, você encontra pneus para o Compass de todas as versões, com marcas adequadas ao peso e ao uso do SUV.',
     medidasComuns:
       'O Compass usa medidas como 225/65R17, 225/55R18 e 235/45R19, conforme a versão (Sport, Longitude, Limited e topo de linha). Confirme a medida original do seu Compass.',
+    pneuOriginal:
+      'O pneu original de fábrica do Jeep Compass é o 225/65R17 nas versões Sport e Longitude, o 225/55R18 nas versões Limited e o 235/45R19 nos topos de linha. A medida correta está na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original do Jeep Compass?',
+        answer:
+          'O pneu original do Jeep Compass é o 225/65R17 (Sport e Longitude), 225/55R18 (Limited) ou 235/45R19 (topo de linha), conforme a versão. Confirme na etiqueta da porta do motorista.',
+      },
       {
         question: 'Qual a medida de pneu do Compass?',
         answer:
@@ -868,7 +876,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       'O Jeep Renegade é um SUV compacto versátil para cidade e estrada. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Renegade adequados ao uso urbano e leve off-road.',
     medidasComuns:
       'O Renegade usa medidas como 215/65R16, 215/60R17 e 235/55R18, conforme a versão. Confirme a medida original na lateral do seu pneu.',
+    pneuOriginal:
+      'O pneu original de fábrica do Jeep Renegade é o 215/65R16 nas versões de entrada, o 215/60R17 nas intermediárias e o 235/55R18 nos topos de linha. A medida correta vem indicada na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original do Jeep Renegade?',
+        answer:
+          'O pneu original do Jeep Renegade é o 215/65R16 (entrada), 215/60R17 (intermediárias) ou 235/55R18 (topo de linha), conforme a versão. Confirme na etiqueta da porta do motorista.',
+      },
       {
         question: 'Qual a medida de pneu do Renegade?',
         answer:
@@ -928,7 +943,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       'O Hyundai Creta é um SUV compacto que une conforto e robustez. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Creta com instalação completa e marcas adequadas ao SUV.',
     medidasComuns:
       'O Creta usa medidas como 205/65R16 e 215/60R17, conforme a versão. Confirme a medida original na lateral do seu pneu.',
+    pneuOriginal:
+      'O pneu original de fábrica do Hyundai Creta é o 205/65R16 nas versões de entrada e o 215/60R17 nas versões mais equipadas. A medida correta está indicada na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original do Hyundai Creta?',
+        answer:
+          'O pneu original do Hyundai Creta é o 205/65R16 nas versões de entrada e o 215/60R17 nas versões mais equipadas. Confirme a medida na etiqueta da porta do motorista.',
+      },
       {
         question: 'Qual a medida de pneu do Creta?',
         answer:
@@ -1107,12 +1129,19 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     intro:
       'A Ford Ranger é uma das picapes médias mais robustas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Ranger em uso urbano, estrada e trabalho, com instalação especializada para picapes.',
     medidasComuns:
-      'Conforme a versão, a Ranger usa medidas como 255/70R16, 265/65R17, 265/60R18 e 255/55R20 (Limited). Confirme a medida original do seu veículo.',
+      'Conforme a versão, a Ranger usa medidas como 265/70R16, 255/70R16, 265/65R17, 265/60R18 e 255/55R20 (Limited). Confirme a medida original do seu veículo.',
+    pneuOriginal:
+      'O pneu original de fábrica da Ford Ranger é o 265/65R17 na maioria das versões intermediárias e topo de linha, enquanto versões de trabalho saem com 265/70R16. A medida correta vem indicada na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original da Ford Ranger?',
+        answer:
+          'O pneu original da Ford Ranger é o 265/65R17 na maioria das versões e o 265/70R16 nas versões de trabalho. Confirme a medida na etiqueta da porta do motorista.',
+      },
       {
         question: 'Qual a medida de pneu da Ranger?',
         answer:
-          'A Ranger usa medidas como 255/70R16, 265/65R17, 265/60R18 e 255/55R20, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
+          'A Ranger usa medidas como 265/70R16, 255/70R16, 265/65R17, 265/60R18 e 255/55R20, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
         question: 'Tem pneu para Ranger com perfil para estrada e trabalho?',
@@ -1138,7 +1167,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       'A Toyota Hilux é referência em durabilidade entre as picapes médias. Na Carplus, no Portão em Curitiba, você encontra pneus para a Hilux em uso urbano, estrada e trabalho pesado, com instalação especializada.',
     medidasComuns:
       'Conforme a versão, a Hilux usa medidas como 265/70R16, 255/65R17, 265/65R17 e 265/60R18. Confirme a medida original na lateral do pneu.',
+    pneuOriginal:
+      'O pneu original de fábrica da Toyota Hilux é o 265/65R17 na maioria das versões SR e SRV, enquanto versões de trabalho usam 265/70R16 e topos de linha (SRX) usam 265/60R18. A medida correta vem indicada na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original da Toyota Hilux?',
+        answer:
+          'O pneu original da Toyota Hilux é o 265/65R17 na maioria das versões, o 265/70R16 nas de trabalho e o 265/60R18 nos topos de linha. Confirme na etiqueta da porta do motorista.',
+      },
       {
         question: 'Qual a medida de pneu da Hilux?',
         answer:
@@ -1227,12 +1263,19 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     intro:
       'A Fiat Toro é uma das picapes intermediárias mais desejadas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Toro em uso urbano, estrada e trabalho leve, com instalação especializada.',
     medidasComuns:
-      'Conforme a versão, a Toro usa medidas como 225/65R17, 235/60R18 e 245/45R20 (Ultra). Confirme a medida original do seu veículo.',
+      'Conforme a versão, a Toro usa medidas como 215/65R16, 225/65R17, 235/60R18 e 245/45R20 (Ultra). Confirme a medida original do seu veículo.',
+    pneuOriginal:
+      'O pneu original de fábrica da Fiat Toro é, na maioria das versões, o 225/65R17, enquanto versões de entrada saem com 215/65R16 e topos de linha usam 235/60R18 ou 245/45R20. A medida exata vem indicada na lateral do pneu atual e na etiqueta da porta do motorista.',
     faq: [
+      {
+        question: 'Qual o pneu original da Fiat Toro?',
+        answer:
+          'O pneu original da Fiat Toro é, na maioria das versões, o 225/65R17. Versões de entrada usam 215/65R16 e topos de linha usam 235/60R18 ou 245/45R20.',
+      },
       {
         question: 'Qual a medida de pneu da Toro?',
         answer:
-          'A Toro usa medidas como 225/65R17, 235/60R18 e 245/45R20, conforme a versão. Verifique no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
+          'A Toro usa medidas como 215/65R16, 225/65R17, 235/60R18 e 245/45R20, conforme a versão. Verifique no pneu atual e consulte disponibilidade pelo WhatsApp (41) 3082-7282.',
       },
       {
         question: 'Qual a melhor marca de pneu para a Toro?',
@@ -2128,7 +2171,7 @@ export function getLocalComboPage(slug: string): LocalComboPage | undefined {
   return LOCAL_COMBO_PAGES.find((p) => p.slug === slug);
 }
 
-// ════════════════════════════════════════════════════════════════
+// ══════════════════════════════════���═════════════════════════════
 // FASE 8 — COMPARATIVOS DE MARCAS (Curitiba)
 // Páginas comparativas e de avaliação ("é bom?") usando SOMENTE marcas
 // efetivamente comercializadas pela Carplus. Sem XBRI (ausente do catálogo).
