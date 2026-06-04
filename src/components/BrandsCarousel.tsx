@@ -38,7 +38,7 @@ export default function BrandsCarousel() {
           <div className="w-full space-y-8 md:space-y-10 order-1 text-center md:text-left relative">
             
             {/* Mobile Badge */}
-            <div className="md:hidden inline-flex items-center gap-2 bg-white/5 border border-white/10 text-primary px-4 py-1.5 rounded-full mb-6 font-display font-bold text-[10px] uppercase tracking-widest">
+            <div className="md:hidden inline-flex items-center gap-2 bg-white/5 border border-white/10 text-primary px-4 py-2 rounded-full mb-6 font-display font-bold text-sm uppercase tracking-widest">
                 Consultoria Técnica Gratuita
             </div>
 
