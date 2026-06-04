@@ -15,6 +15,8 @@ export interface PromoTire {
   carga: string;
   velocidade: string;
   carros: string[];
+  catalogoUrl: string;
+  temCatalogoMarca: boolean;
 }
 
 interface RawPromoTire {
@@ -71,6 +73,33 @@ function carrosParaMedida(largura: number, perfil: number, aro: number): string[
   return CARROS_POR_MEDIDA[`${largura}/${perfil}/${aro}`] ?? [];
 }
 
+// Marcas que possuem página de catálogo dedicada (BRAND_PAGES em seoLanding.ts).
+// Chave normalizada (minúscula, sem acento) → slug da página de catálogo.
+const CATALOGO_POR_MARCA: Record<string, string> = {
+  pirelli: '/pneu-pirelli-curitiba',
+  michelin: '/pneu-michelin-curitiba',
+  goodyear: '/pneu-goodyear-curitiba',
+  continental: '/pneu-continental-curitiba',
+  yokohama: '/pneu-yokohama-curitiba',
+  bridgestone: '/pneu-bridgestone-curitiba',
+  firestone: '/pneu-firestone-curitiba',
+  prinx: '/pneu-prinx-curitiba',
+  delinte: '/pneu-delinte-curitiba',
+};
+
+// Catálogo geral (fallback para marcas sem página própria).
+const CATALOGO_GERAL = '/pneus';
+
+function catalogoParaMarca(marca: string): { url: string; proprio: boolean } {
+  const chave = marca
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+  const url = CATALOGO_POR_MARCA[chave];
+  return url ? { url, proprio: true } : { url: CATALOGO_GERAL, proprio: false };
+}
+
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -96,6 +125,8 @@ function enrich(raw: RawPromoTire): PromoTire {
   const carga = cargaMatch ? cargaMatch[1] : '—';
   const velocidade = cargaMatch ? cargaMatch[2] : '—';
 
+  const catalogo = catalogoParaMarca(raw.marca);
+
   return {
     slug: slugify(`${raw.marca}-${raw.nome}`),
     marca: raw.marca,
@@ -110,6 +141,8 @@ function enrich(raw: RawPromoTire): PromoTire {
     carga,
     velocidade,
     carros: carrosParaMedida(largura, perfil, aro),
+    catalogoUrl: catalogo.url,
+    temCatalogoMarca: catalogo.proprio,
   };
 }
 

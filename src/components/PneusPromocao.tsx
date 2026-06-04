@@ -1,7 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useEffect, useRef, useState, type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, MessageCircle, ArrowRight } from 'lucide-react';
+import { Zap, MessageCircle, ArrowRight, List } from 'lucide-react';
 import { PROMO_TIRES, PromoTire } from '../data/promoTires';
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
@@ -143,6 +143,21 @@ export default function PneusPromocao() {
             <TireCard key={`${tire.marca}-${index}`} tire={tire} />
           ))}
         </div>
+      </div>
+
+      {/* CTA: ver todos os pneus em lista */}
+      <div className="mt-12 flex flex-col items-center gap-3 px-4">
+        <p className="text-neutral-500 text-center text-sm">
+          Não quer esperar a esteira passar? Veja todas as ofertas de uma vez.
+        </p>
+        <Link
+          to="/pneus-promocao"
+          className="inline-flex items-center gap-2 rounded-2xl bg-primary px-8 py-4 font-accent font-bold uppercase tracking-wide text-black text-base sm:text-lg transition-colors hover:bg-[#ffae2e]"
+        >
+          <List size={22} strokeWidth={2.5} />
+          Ver todos os pneus em lista
+          <ArrowRight size={20} strokeWidth={2.5} />
+        </Link>
       </div>
     </section>
   );

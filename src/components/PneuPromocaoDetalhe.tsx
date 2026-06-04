@@ -340,6 +340,37 @@ export default function PneuPromocaoDetalhe() {
           </section>
         )}
 
+        {/* Catálogo da marca / catálogo geral */}
+        <section className="bg-gray-900 text-white rounded-[2.5rem] p-8 md:p-12 shadow-xl mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold uppercase italic tracking-tight mb-2">
+              {tire.temCatalogoMarca
+                ? `Veja toda a linha ${tire.marca}`
+                : 'Veja o catálogo completo de pneus'}
+            </h2>
+            <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
+              {tire.temCatalogoMarca
+                ? `Conheça as outras medidas e linhas de pneus ${tire.marca} disponíveis na Carplus em Curitiba.`
+                : `Explore todas as marcas e medidas de pneus disponíveis na Carplus, no bairro Portão em Curitiba.`}
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            <Link
+              to={tire.catalogoUrl}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-accent font-bold uppercase tracking-wide text-black text-sm transition-colors hover:bg-[#ffae2e]"
+            >
+              <Tag size={18} strokeWidth={2.5} />
+              {tire.temCatalogoMarca ? `Catálogo ${tire.marca}` : 'Catálogo de pneus'}
+            </Link>
+            <Link
+              to="/pneus-promocao"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 font-accent font-bold uppercase tracking-wide text-white text-sm transition-colors hover:border-primary hover:text-primary"
+            >
+              Todas as promoções
+            </Link>
+          </div>
+        </section>
+
         {/* Saiba Mais (conteúdo rico SEO) */}
         <section id="saiba-mais" className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-gray-100 mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 uppercase italic tracking-tight flex items-center gap-3">

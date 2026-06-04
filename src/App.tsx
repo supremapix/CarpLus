@@ -7,6 +7,7 @@ import ServiceDetail from './components/ServiceDetail';
 import TireCatalog from './components/TireCatalog';
 import TireDetail from './components/TireDetail';
 import PneuPromocaoDetalhe from './components/PneuPromocaoDetalhe';
+import PneusPromocaoLista from './components/PneusPromocaoLista';
 import TireMeasureDetail from './components/TireMeasureDetail';
 import PrivacyPolicy from './components/Institutional/PrivacyPolicy';
 import ReturnPolicy from './components/Institutional/ReturnPolicy';
@@ -58,6 +59,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/pneus" element={<TireCatalog />} />
       <Route path="/pneu/:slug" element={<TireDetail />} />
+      <Route path="/pneus-promocao" element={<PneusPromocaoLista />} />
       <Route path="/pneu-promocao/:slug" element={<PneuPromocaoDetalhe />} />
       <Route path="/pneu-medida/:medida" element={<TireMeasureDetail />} />
       <Route path="/bairro/:slug" element={<NeighborhoodDetail />} />
