@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { Star, ArrowUp } from 'lucide-react';
 
 // Logo colorido do Google (26px)
 function GoogleLogo() {
@@ -43,8 +43,18 @@ export default function ReviewsHeader({ reviewCount = 215 }: ReviewsHeaderProps)
         {/* Separador: ponto */}
         <span className="h-1 w-1 flex-shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
 
-        {/* Direita: total de avaliações */}
-        <span className="flex-shrink-0 text-[13px] text-gray-500">{reviewCount} avaliações</span>
+        {/* Direita: total de avaliações com seta verde subindo */}
+        <span className="flex flex-shrink-0 items-center gap-1 text-[13px] text-gray-500">
+          {reviewCount} avaliações
+          <motion.span
+            aria-label="Avaliações em alta"
+            animate={{ y: [2, -3, 2], opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 1.4, ease: 'easeInOut', repeat: Infinity }}
+            className="inline-flex text-[#16A34A]"
+          >
+            <ArrowUp size={14} strokeWidth={3} aria-hidden="true" />
+          </motion.span>
+        </span>
       </motion.div>
 
       {/* Título */}
