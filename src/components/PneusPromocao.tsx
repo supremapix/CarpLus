@@ -58,10 +58,10 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
       </Link>
 
       <div className="flex flex-1 flex-col p-4">
-        <Link to={`/pneu-promocao/${tire.slug}`} className="font-accent font-bold uppercase tracking-wide text-primary text-2xl sm:text-3xl leading-none hover:underline">
+        <Link to={`/pneu-promocao/${tire.slug}`} className="font-accent font-bold uppercase tracking-wide text-primary text-base leading-none hover:underline">
           {tire.marca}
         </Link>
-        <p className="mt-2 text-neutral-700 font-semibold text-lg sm:text-xl leading-snug min-h-[3.5rem]">{tire.nome}</p>
+        <p className="mt-1.5 text-neutral-600 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
 
         <div className="mt-3 flex items-baseline gap-1">
           <span className="text-neutral-400 text-xs">a partir de</span>
