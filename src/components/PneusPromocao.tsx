@@ -42,7 +42,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
 
   return (
     <div className="group flex w-[230px] sm:w-[260px] flex-shrink-0 flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-primary/70 hover:shadow-[0_8px_28px_rgba(245,156,0,0.22)]">
-      <Link to={`/pneu-promocao/${tire.slug}`} className="relative aspect-square bg-white p-4 flex items-center justify-center overflow-hidden">
+      <Link to={`/pneu-promocao/${tire.slug}`} className="relative aspect-square bg-white p-1 flex items-center justify-center overflow-hidden">
         <img
           src={tire.imagem}
           alt={`Pneu ${tire.marca} ${tire.nome}`}
@@ -50,7 +50,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
           }}
-          className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
         <span className="absolute top-3 left-3 bg-black text-white text-[11px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded">
           Promoção
