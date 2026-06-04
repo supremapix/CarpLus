@@ -34,17 +34,17 @@ export default function ReviewsHeader({ reviewCount = 215 }: ReviewsHeaderProps)
         <div className="flex flex-1 flex-col gap-1">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={18} fill="#FACC15" color="#FACC15" aria-hidden="true" />
+              <Star key={i} size={22} fill="#FACC15" color="#FACC15" aria-hidden="true" />
             ))}
           </div>
-          <span className="text-[13px] font-medium text-[#202124]">4,9 de 5 estrelas</span>
+          <span className="text-base font-medium text-[#202124]">4,9 de 5 estrelas</span>
         </div>
 
         {/* Separador: ponto */}
-        <span className="h-1 w-1 flex-shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
+        <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
 
         {/* Direita: total de avaliações */}
-        <span className="flex-shrink-0 text-[13px] text-gray-500">{reviewCount} avaliações</span>
+        <span className="flex-shrink-0 text-base text-gray-500">{reviewCount} avaliações</span>
       </motion.div>
 
       {/* Título */}
@@ -52,7 +52,7 @@ export default function ReviewsHeader({ reviewCount = 215 }: ReviewsHeaderProps)
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
-        className="mt-7 text-center text-[22px] font-bold uppercase leading-tight text-[#202124]"
+        className="mt-7 text-center text-3xl font-bold uppercase leading-tight text-[#202124]"
       >
         <span className="block">O QUE NOSSOS</span>
         <span className="block italic text-[#F59E0B]">CLIENTES DIZEM</span>
