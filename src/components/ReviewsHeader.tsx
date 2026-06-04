@@ -13,7 +13,11 @@ function GoogleLogo() {
   );
 }
 
-export default function ReviewsHeader() {
+interface ReviewsHeaderProps {
+  reviewCount?: number;
+}
+
+export default function ReviewsHeader({ reviewCount = 215 }: ReviewsHeaderProps) {
   return (
     <div className="mx-auto w-full max-w-[380px]">
       {/* Card superior */}
@@ -40,7 +44,7 @@ export default function ReviewsHeader() {
         <span className="h-1 w-1 flex-shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
 
         {/* Direita: total de avaliações */}
-        <span className="flex-shrink-0 text-[13px] text-gray-500">215 avaliações</span>
+        <span className="flex-shrink-0 text-[13px] text-gray-500">{reviewCount} avaliações</span>
       </motion.div>
 
       {/* Título */}

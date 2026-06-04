@@ -3,6 +3,7 @@ import { Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import SectionTitle from './SectionTitle';
+import ReviewsHeader from './ReviewsHeader';
 
 // Função para gerar tempo aleatório entre 1 dia e 3 meses
 const TIME_OPTIONS = [
@@ -482,7 +483,13 @@ export default function Reviews() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center md:text-left max-w-[640px] mb-14 mx-auto md:mx-0">
+        {/* Cabeçalho mobile */}
+        <div className="md:hidden mb-14">
+          <ReviewsHeader reviewCount={TOTAL_REVIEWS} />
+        </div>
+
+        {/* Cabeçalho desktop */}
+        <div className="hidden md:block text-center md:text-left max-w-[640px] mb-14 mx-auto md:mx-0">
           {/* Badge estilo Google */}
           <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm px-5 py-2.5 rounded-full mb-6 mx-auto md:mx-0">
             <GoogleLogo />
