@@ -111,16 +111,16 @@ export default function PneusPromocao() {
 
           {/* Badge de preço estilo etiqueta de oferta */}
           <div className="mt-6 inline-flex flex-col items-center">
-            <span className="text-neutral-500 font-accent uppercase tracking-[0.2em] text-sm">
+            <span className="text-neutral-900 font-accent font-bold uppercase tracking-[0.2em] text-lg sm:text-xl">
               Preços a partir de
             </span>
             <motion.div
               animate={{ scale: [1, 1.04, 1] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-3 shadow-[0_0_30px_rgba(245,156,0,0.30)]"
+              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)]"
             >
-              <Zap size={32} className="text-primary fill-primary" />
-              <span className="font-accent font-bold text-primary text-5xl sm:text-6xl leading-none">
+              <Zap size={40} className="text-primary fill-primary" />
+              <span className="font-accent font-bold text-neutral-900 text-6xl sm:text-7xl leading-none">
                 R$ <CountUp to={239} />
               </span>
             </motion.div>
