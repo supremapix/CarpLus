@@ -690,7 +690,7 @@ export const BRAND_PAGES: BrandPage[] = [
   },
 ];
 
-// ════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════��═════════
 // FASE 5 — PÁGINAS POR VEÍCULO (clusters de modelos populares)
 // ════════════════════════════════════════════════════════════════
 export interface VehiclePage {
@@ -2126,4 +2126,572 @@ export function getVehiclePage(slug: string): VehiclePage | undefined {
 }
 export function getLocalComboPage(slug: string): LocalComboPage | undefined {
   return LOCAL_COMBO_PAGES.find((p) => p.slug === slug);
+}
+
+// ════════════════════════════════════════════════════════════════
+// FASE 8 — COMPARATIVOS DE MARCAS (Curitiba)
+// Páginas comparativas e de avaliação ("é bom?") usando SOMENTE marcas
+// efetivamente comercializadas pela Carplus. Sem XBRI (ausente do catálogo).
+// Conteúdo imparcial, sem inventar especificações ou produtos inexistentes.
+// ════════════════════════════════════════════════════════════════
+export interface ComparisonPage {
+  slug: string;
+  badge: string;
+  h1: string;
+  highlight: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  tags: string[];
+  // Marcas reais do catálogo usadas para puxar pneus disponíveis (1 ou 2).
+  brands: string[];
+  sections: { title: string; content: string }[];
+  faq: FaqItem[];
+  whatsappMsg: string;
+}
+
+export const COMPARISON_PAGES: ComparisonPage[] = [
+  // ─── Pirelli x Bridgestone ─────────────────────────────────────
+  {
+    slug: 'pirelli-ou-bridgestone',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Pirelli ou Bridgestone: qual escolher?',
+    highlight: 'Pirelli ou Bridgestone',
+    metaTitle: 'Pirelli ou Bridgestone: qual o melhor pneu? | Carplus Curitiba',
+    metaDescription:
+      'Pirelli ou Bridgestone? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pirelli e Bridgestone estão entre as marcas premium mais procuradas do mercado. Ambas oferecem ótimo desempenho e durabilidade — a melhor escolha depende da medida do seu carro, do seu estilo de uso e do orçamento. Veja abaixo um comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão.',
+    tags: ['Premium', 'Pirelli', 'Bridgestone', 'Comparativo imparcial'],
+    brands: ['Pirelli', 'Bridgestone'],
+    sections: [
+      {
+        title: 'O que esperar da Pirelli',
+        content:
+          'A Pirelli é uma marca italiana com forte presença no Brasil, reconhecida pelo equilíbrio entre conforto, aderência e custo. Linhas como Cinturato e P400 Evo atendem bem o uso urbano e rodoviário do dia a dia, com boa disponibilidade de medidas.',
+      },
+      {
+        title: 'O que esperar da Bridgestone',
+        content:
+          'A Bridgestone é uma marca japonesa referência em tecnologia, com linhas como Turanza, Ecopia (foco em economia de combustível) e Potenza (foco em performance). Costuma se destacar em conforto acústico e baixa resistência ao rolamento.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Não existe "marca melhor" universal: o ideal é comparar o modelo certo para a sua medida e necessidade. Nossa equipe técnica ajuda você a escolher entre as opções disponíveis sem compromisso. Em ambas as marcas, a montagem, o balanceamento e a calibragem já estão inclusos, com até 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Pirelli ou Bridgestone: qual dura mais?',
+        answer:
+          'A durabilidade depende mais do modelo específico e dos hábitos de condução do que da marca em si. As duas têm linhas de alta durabilidade. Informe a medida do seu carro pelo WhatsApp (41) 3082-7282 que indicamos as melhores opções disponíveis.',
+      },
+      {
+        question: 'Qual é mais barato, Pirelli ou Bridgestone?',
+        answer:
+          'O preço varia conforme a medida e a linha de cada marca. Na Carplus você compara os valores das opções em estoque e parcela em até 10x sem juros, com montagem inclusa.',
+      },
+      {
+        question: 'A Carplus trabalha com as duas marcas?',
+        answer:
+          'Sim. Trabalhamos com Pirelli e Bridgestone, entre outras marcas, na loja do bairro Portão, em Curitiba. Consulte a disponibilidade da sua medida pelo WhatsApp.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Bridgestone. Pode me ajudar a escolher?',
+  },
+  // ─── Pirelli x Michelin ────────────────────────────────────────
+  {
+    slug: 'pirelli-ou-michelin',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Pirelli ou Michelin: qual o melhor pneu?',
+    highlight: 'Pirelli ou Michelin',
+    metaTitle: 'Pirelli ou Michelin: qual escolher? | Carplus Curitiba',
+    metaDescription:
+      'Pirelli ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pirelli e Michelin são duas das marcas mais premiadas do mundo. As duas entregam segurança e qualidade — a diferença está nas linhas e medidas disponíveis para o seu carro. Veja o comparativo e os modelos em estoque na Carplus, no Portão, em Curitiba.',
+    tags: ['Premium', 'Pirelli', 'Michelin', 'Comparativo imparcial'],
+    brands: ['Pirelli', 'Michelin'],
+    sections: [
+      {
+        title: 'O que esperar da Pirelli',
+        content:
+          'A Pirelli, de origem italiana, é muito popular no Brasil pelo equilíbrio entre preço e desempenho. Linhas como Cinturato P7 e P400 Evo são opções sólidas para sedans e hatches no uso diário.',
+      },
+      {
+        title: 'O que esperar da Michelin',
+        content:
+          'A Michelin, francesa, costuma ser reconhecida pela durabilidade e pela tecnologia. Linhas como Energy XM2, Primacy 4 e Pilot Sport 4 cobrem do uso econômico ao de alta performance, geralmente posicionadas no topo de preço.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Se a prioridade é custo-benefício, a Pirelli costuma ser muito competitiva; se o foco é máxima durabilidade ou performance, vale avaliar a Michelin. O melhor é comparar o modelo certo para a sua medida — fazemos isso com você, sem compromisso, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Michelin é melhor que Pirelli?',
+        answer:
+          'Depende do modelo e do uso. A Michelin é referência em durabilidade e performance, enquanto a Pirelli costuma oferecer ótimo custo-benefício. As duas são marcas premium confiáveis. Consulte a sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual marca tem melhor custo-benefício?',
+        answer:
+          'Na maioria das medidas, a Pirelli tende a ter preço mais acessível que a Michelin, mas isso varia por linha e disponibilidade. Compare os valores em estoque na Carplus.',
+      },
+      {
+        question: 'Posso parcelar a compra?',
+        answer:
+          'Sim. Tanto Pirelli quanto Michelin podem ser parceladas em até 10x sem juros, com montagem, balanceamento e calibragem inclusos.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Michelin. Pode me ajudar a escolher?',
+  },
+  // ─── Pirelli x Goodyear ────────────────────────────────────────
+  {
+    slug: 'pirelli-ou-goodyear',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Pirelli ou Goodyear: qual escolher?',
+    highlight: 'Pirelli ou Goodyear',
+    metaTitle: 'Pirelli ou Goodyear: qual o melhor pneu? | Carplus Curitiba',
+    metaDescription:
+      'Pirelli ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pirelli e Goodyear são marcas tradicionais e confiáveis, presentes em milhões de carros. A escolha ideal depende da medida do seu veículo e da linha disponível. Confira o comparativo e os modelos em estoque na Carplus, no Portão.',
+    tags: ['Pirelli', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
+    brands: ['Pirelli', 'Goodyear'],
+    sections: [
+      {
+        title: 'O que esperar da Pirelli',
+        content:
+          'Marca italiana com ampla oferta no Brasil, a Pirelli equilibra conforto, aderência e preço. Linhas como Cinturato e P400 Evo são bastante procuradas para o uso urbano e rodoviário.',
+      },
+      {
+        title: 'O que esperar da Goodyear',
+        content:
+          'A Goodyear, de origem americana, é conhecida pela robustez e por linhas como Direction Touring e EfficientGrip, com bom desempenho em conforto e segurança no dia a dia.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'As duas marcas são confiáveis para o uso cotidiano. A melhor decisão vem da comparação direta entre os modelos disponíveis para a sua medida. A equipe da Carplus faz essa comparação com você, com montagem inclusa e parcelamento em até 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Pirelli ou Goodyear: qual é melhor para uso urbano?',
+        answer:
+          'As duas têm linhas indicadas para o uso urbano. A escolha depende da medida e do modelo disponível para o seu carro. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'A Carplus tem as duas marcas em estoque?',
+        answer:
+          'Trabalhamos com Pirelli e Goodyear, entre outras marcas. A disponibilidade varia por medida — confirme a sua pelo WhatsApp ou veja os modelos abaixo.',
+      },
+      {
+        question: 'A montagem está inclusa?',
+        answer:
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos no valor dos pneus.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Goodyear. Pode me ajudar a escolher?',
+  },
+  // ─── Pirelli x Yokohama ────────────────────────────────────────
+  {
+    slug: 'pirelli-ou-yokohama',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Pirelli ou Yokohama: qual o melhor?',
+    highlight: 'Pirelli ou Yokohama',
+    metaTitle: 'Pirelli ou Yokohama: qual escolher? | Carplus Curitiba',
+    metaDescription:
+      'Pirelli ou Yokohama? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Pirelli e Yokohama atendem desde o uso urbano até a performance. As duas têm boa reputação e ampla variedade de medidas. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
+    tags: ['Pirelli', 'Yokohama', 'Comparativo imparcial', 'Curitiba'],
+    brands: ['Pirelli', 'Yokohama'],
+    sections: [
+      {
+        title: 'O que esperar da Pirelli',
+        content:
+          'A Pirelli é uma das marcas mais vendidas do Brasil, com forte equilíbrio entre conforto, aderência e custo, e ampla disponibilidade de medidas para passeio.',
+      },
+      {
+        title: 'O que esperar da Yokohama',
+        content:
+          'A Yokohama, japonesa, é reconhecida pela boa relação entre desempenho e preço, com opções para passeio, SUV e performance. É uma das marcas com maior variedade de medidas na Carplus.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Se você busca uma marca consagrada e amplamente disponível, a Pirelli é forte candidata; se quer comparar performance e preço com boa variedade, vale avaliar a Yokohama. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Yokohama é uma boa marca de pneu?',
+        answer:
+          'Sim. A Yokohama é uma marca japonesa reconhecida, com boas opções para passeio, SUV e performance e excelente variedade de medidas. Consulte a sua pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual marca tem mais opções de medida?',
+        answer:
+          'Na Carplus, a Yokohama costuma ter uma das maiores variedades de medidas, mas a Pirelli também tem ampla cobertura. Confirme a sua medida abaixo ou pelo WhatsApp.',
+      },
+      {
+        question: 'Posso parcelar?',
+        answer:
+          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem inclusos, em ambas as marcas.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Yokohama. Pode me ajudar a escolher?',
+  },
+  // ─── Bridgestone x Michelin ────────────────────────────────────
+  {
+    slug: 'bridgestone-ou-michelin',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Bridgestone ou Michelin: qual escolher?',
+    highlight: 'Bridgestone ou Michelin',
+    metaTitle: 'Bridgestone ou Michelin: qual o melhor pneu? | Carplus Curitiba',
+    metaDescription:
+      'Bridgestone ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Bridgestone e Michelin são duas marcas premium de referência mundial. As duas entregam alto padrão de qualidade — a melhor escolha depende da linha e da medida do seu carro. Veja o comparativo e os modelos disponíveis na Carplus, no Portão.',
+    tags: ['Premium', 'Bridgestone', 'Michelin', 'Comparativo imparcial'],
+    brands: ['Bridgestone', 'Michelin'],
+    sections: [
+      {
+        title: 'O que esperar da Bridgestone',
+        content:
+          'Marca japonesa líder global, a Bridgestone tem linhas como Turanza (conforto), Ecopia (economia de combustível) e Potenza (performance), com destaque em conforto acústico e eficiência.',
+      },
+      {
+        title: 'O que esperar da Michelin',
+        content:
+          'A Michelin, francesa, é referência em durabilidade. Linhas como Primacy 4, Energy XM2 e Pilot Sport 4 cobrem do uso econômico ao esportivo, geralmente no topo de preço do segmento.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'As duas são excelentes; a decisão passa por linha, medida e orçamento. Se prioriza durabilidade máxima, avalie a Michelin; se busca eficiência e conforto acústico, a Bridgestone é forte. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Bridgestone ou Michelin dura mais?',
+        answer:
+          'A Michelin é frequentemente associada a alta durabilidade, mas a Bridgestone também tem linhas muito duráveis. O resultado depende do modelo e do uso. Consulte a sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual é mais cara?',
+        answer:
+          'Ambas são marcas premium e o preço varia por linha e medida. Na Carplus você compara os valores em estoque e parcela em até 10x sem juros.',
+      },
+      {
+        question: 'A Carplus instala na hora?',
+        answer:
+          'Na maioria das medidas em estoque, sim — com montagem, balanceamento e calibragem inclusos. Confirme pelo WhatsApp.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Bridgestone e Michelin. Pode me ajudar a escolher?',
+  },
+  // ─── Bridgestone x Goodyear ────────────────────────────────────
+  {
+    slug: 'bridgestone-ou-goodyear',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Bridgestone ou Goodyear: qual o melhor?',
+    highlight: 'Bridgestone ou Goodyear',
+    metaTitle: 'Bridgestone ou Goodyear: qual escolher? | Carplus Curitiba',
+    metaDescription:
+      'Bridgestone ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Bridgestone e Goodyear são marcas tradicionais e confiáveis. As duas atendem bem o uso diário — a escolha depende da medida e da linha disponível para o seu carro. Confira o comparativo e os modelos em estoque na Carplus, no Portão.',
+    tags: ['Bridgestone', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
+    brands: ['Bridgestone', 'Goodyear'],
+    sections: [
+      {
+        title: 'O que esperar da Bridgestone',
+        content:
+          'A Bridgestone, japonesa, é líder mundial e oferece linhas como Turanza, Ecopia e Potenza, com destaque em conforto e eficiência de combustível.',
+      },
+      {
+        title: 'O que esperar da Goodyear',
+        content:
+          'A Goodyear, americana, é conhecida pela robustez e por linhas como Direction Touring e EfficientGrip, com bom equilíbrio entre conforto e segurança.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'As duas marcas são confiáveis para o dia a dia. A melhor escolha vem da comparação direta entre os modelos disponíveis para a sua medida — feita por nossa equipe técnica, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Bridgestone ou Goodyear: qual é melhor?',
+        answer:
+          'As duas são confiáveis. A diferença está na linha e na medida disponível. Consulte a sua pelo WhatsApp (41) 3082-7282 e compare as opções em estoque.',
+      },
+      {
+        question: 'Qual marca economiza mais combustível?',
+        answer:
+          'A linha Ecopia, da Bridgestone, tem foco em baixa resistência ao rolamento, o que ajuda na economia. A Goodyear também tem opções eficientes. Depende do modelo específico.',
+      },
+      {
+        question: 'A montagem é inclusa?',
+        answer:
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos, com parcelamento em até 10x sem juros.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Bridgestone e Goodyear. Pode me ajudar a escolher?',
+  },
+  // ─── Michelin x Goodyear ───────────────────────────────────────
+  {
+    slug: 'michelin-ou-goodyear',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Michelin ou Goodyear: qual escolher?',
+    highlight: 'Michelin ou Goodyear',
+    metaTitle: 'Michelin ou Goodyear: qual o melhor pneu? | Carplus Curitiba',
+    metaDescription:
+      'Michelin ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Michelin e Goodyear são marcas consagradas e presentes em montadoras do mundo todo. A melhor escolha depende da linha, da medida e do orçamento. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no Portão.',
+    tags: ['Michelin', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
+    brands: ['Michelin', 'Goodyear'],
+    sections: [
+      {
+        title: 'O que esperar da Michelin',
+        content:
+          'A Michelin, francesa, é referência em durabilidade e tecnologia, com linhas como Energy XM2, Primacy 4 e Pilot Sport 4, geralmente posicionadas no topo de preço.',
+      },
+      {
+        title: 'O que esperar da Goodyear',
+        content:
+          'A Goodyear, americana, é robusta e confiável, com linhas como Direction Touring e EfficientGrip, oferecendo bom equilíbrio entre conforto, segurança e preço.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Se a prioridade é durabilidade máxima, a Michelin tende a se destacar; se você busca uma marca premium com preço mais acessível, a Goodyear é forte candidata. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Michelin dura mais que Goodyear?',
+        answer:
+          'A Michelin é frequentemente associada a alta durabilidade, mas o resultado depende do modelo e do uso. A Goodyear também tem linhas duráveis. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual tem melhor preço?',
+        answer:
+          'Na maioria das medidas, a Goodyear costuma ter preço mais acessível que a Michelin, mas isso varia por linha. Compare os valores em estoque na Carplus.',
+      },
+      {
+        question: 'A Carplus trabalha com as duas?',
+        answer:
+          'Sim, com Michelin e Goodyear, entre outras marcas, na loja do bairro Portão, em Curitiba. Montagem inclusa e 10x sem juros.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Michelin e Goodyear. Pode me ajudar a escolher?',
+  },
+  // ─── Yokohama x Pirelli ────────────────────────────────────────
+  {
+    slug: 'yokohama-ou-pirelli',
+    badge: 'Comparativo · Curitiba',
+    h1: 'Yokohama ou Pirelli: qual o melhor?',
+    highlight: 'Yokohama ou Pirelli',
+    metaTitle: 'Yokohama ou Pirelli: qual escolher? | Carplus Curitiba',
+    metaDescription:
+      'Yokohama ou Pirelli? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Yokohama e Pirelli são marcas fortes com ampla variedade de medidas. As duas atendem do uso urbano à performance. Veja o comparativo e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
+    tags: ['Yokohama', 'Pirelli', 'Comparativo imparcial', 'Curitiba'],
+    brands: ['Yokohama', 'Pirelli'],
+    sections: [
+      {
+        title: 'O que esperar da Yokohama',
+        content:
+          'A Yokohama, japonesa, oferece ótima relação entre desempenho e preço, com opções para passeio, SUV e performance. É uma das marcas com maior variedade de medidas na Carplus.',
+      },
+      {
+        title: 'O que esperar da Pirelli',
+        content:
+          'A Pirelli, italiana, é uma das marcas mais vendidas do Brasil, com equilíbrio entre conforto, aderência e custo, e linhas consagradas como Cinturato e P400 Evo.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Se você quer comparar performance e preço com boa variedade, a Yokohama é forte; se prefere uma marca amplamente consagrada e disponível, a Pirelli é ótima opção. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Yokohama é tão boa quanto a Pirelli?',
+        answer:
+          'Sim. As duas são marcas reconhecidas e confiáveis. A diferença está na linha e na medida disponível para o seu carro. Consulte pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Qual tem mais opções de medida?',
+        answer:
+          'A Yokohama costuma ter uma das maiores variedades de medidas na Carplus, mas a Pirelli também tem ampla cobertura. Veja os modelos abaixo ou confirme pelo WhatsApp.',
+      },
+      {
+        question: 'Posso parcelar a compra?',
+        answer:
+          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem inclusos, em ambas as marcas.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Yokohama e Pirelli. Pode me ajudar a escolher?',
+  },
+  // ─── Prinx x Delinte ───────────────────────────────────────────
+  {
+    slug: 'prinx-ou-delinte',
+    badge: 'Custo-benefício · Curitiba',
+    h1: 'Prinx ou Delinte: qual escolher?',
+    highlight: 'Prinx ou Delinte',
+    metaTitle: 'Prinx ou Delinte: qual o melhor pneu de custo-benefício? | Carplus Curitiba',
+    metaDescription:
+      'Prinx ou Delinte? Comparativo imparcial de duas marcas de custo-benefício na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'Prinx e Delinte são marcas que se destacam pelo custo-benefício, ideais para quem busca economia sem abrir mão de segurança. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
+    tags: ['Custo-benefício', 'Prinx', 'Delinte', 'Comparativo imparcial'],
+    brands: ['Prinx', 'Delinte'],
+    sections: [
+      {
+        title: 'O que esperar da Prinx',
+        content:
+          'A Prinx é uma marca com excelente custo-benefício para passeio e SUV, oferecendo boa qualidade por um preço acessível. É uma opção interessante para quem quer economizar na troca.',
+      },
+      {
+        title: 'O que esperar da Delinte',
+        content:
+          'A Delinte oferece opções de performance e SUV com ótimo preço, atendendo bem quem busca pneus mais largos ou esportivos sem o valor das marcas premium.',
+      },
+      {
+        title: 'Como decidir',
+        content:
+          'Ambas são marcas de custo-benefício. A escolha depende da medida e do perfil do seu carro. Nossa equipe ajuda você a comparar as opções disponíveis sem compromisso, com montagem inclusa e parcelamento em até 10x sem juros.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Prinx ou Delinte: qual tem melhor custo-benefício?',
+        answer:
+          'As duas são marcas de bom custo-benefício. A melhor escolha depende da medida e da disponibilidade para o seu carro. Consulte pelo WhatsApp (41) 3082-7282 e compare os valores.',
+      },
+      {
+        question: 'Essas marcas são seguras?',
+        answer:
+          'Sim. Prinx e Delinte seguem os padrões exigidos para comercialização no Brasil. São boas opções para quem busca economia mantendo segurança no uso diário.',
+      },
+      {
+        question: 'A montagem está inclusa?',
+        answer:
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos, com até 10x sem juros.',
+      },
+    ],
+    whatsappMsg: 'Olá! Estou em dúvida entre Prinx e Delinte. Pode me ajudar a escolher?',
+  },
+  // ─── Prinx é bom? ──────────────────────────────────────────────
+  {
+    slug: 'prinx-e-bom',
+    badge: 'Avaliação · Curitiba',
+    h1: 'Pneu Prinx é bom? Vale a pena?',
+    highlight: 'Prinx é bom',
+    metaTitle: 'Pneu Prinx é bom? Vale a pena? | Carplus Curitiba',
+    metaDescription:
+      'Pneu Prinx é bom? Saiba se vale a pena, suas vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu Prinx é uma das opções de custo-benefício mais procuradas por quem quer economizar na troca sem abrir mão de segurança. Veja abaixo uma avaliação honesta da marca e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
+    tags: ['Prinx', 'Custo-benefício', 'Avaliação', 'Curitiba'],
+    brands: ['Prinx'],
+    sections: [
+      {
+        title: 'Prinx vale a pena?',
+        content:
+          'A Prinx é uma marca de custo-benefício que entrega boa qualidade por um preço acessível, sendo uma escolha interessante para o uso urbano e rodoviário do dia a dia. Para quem prioriza economia na troca, costuma ser uma ótima opção.',
+      },
+      {
+        title: 'Para quem é indicada',
+        content:
+          'É indicada para motoristas que rodam principalmente na cidade e em estradas, sem exigência de desempenho extremo, e que querem reduzir o custo da troca mantendo segurança. Para passeio e SUV, a Prinx tem opções competitivas.',
+      },
+      {
+        title: 'Compre com instalação na Carplus',
+        content:
+          'Na Carplus, no Portão, o pneu Prinx vem com montagem, balanceamento e calibragem inclusos, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Pneu Prinx é bom mesmo?',
+        answer:
+          'Sim. A Prinx é uma marca de custo-benefício que cumpre bem o uso urbano e rodoviário, sendo uma boa opção para quem quer economizar mantendo segurança. Consulte a sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Quanto tempo dura um pneu Prinx?',
+        answer:
+          'A durabilidade depende dos hábitos de condução, da calibragem correta e do alinhamento em dia. Com cuidados básicos, a Prinx oferece vida útil adequada para o uso diário.',
+      },
+      {
+        question: 'A Carplus tem pneu Prinx em estoque?',
+        answer:
+          'Trabalhamos com a marca Prinx em diversas medidas. A disponibilidade varia — confirme a sua medida pelo WhatsApp ou veja os modelos abaixo.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber se o pneu Prinx é bom para o meu carro e o preço.',
+  },
+  // ─── Delinte é bom? ────────────────────────────────────────────
+  {
+    slug: 'delinte-e-bom',
+    badge: 'Avaliação · Curitiba',
+    h1: 'Pneu Delinte é bom? Vale a pena?',
+    highlight: 'Delinte é bom',
+    metaTitle: 'Pneu Delinte é bom? Vale a pena? | Carplus Curitiba',
+    metaDescription:
+      'Pneu Delinte é bom? Veja se vale a pena, vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+    intro:
+      'O pneu Delinte é uma opção de custo-benefício com destaque para medidas de performance e SUV. Veja abaixo uma avaliação honesta da marca e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
+    tags: ['Delinte', 'Custo-benefício', 'Avaliação', 'Curitiba'],
+    brands: ['Delinte'],
+    sections: [
+      {
+        title: 'Delinte vale a pena?',
+        content:
+          'A Delinte é uma marca de custo-benefício que se destaca em opções de performance e SUV, oferecendo pneus mais largos e esportivos por um preço acessível. É uma boa escolha para quem busca esse perfil sem o valor das marcas premium.',
+      },
+      {
+        title: 'Para quem é indicada',
+        content:
+          'É indicada para motoristas que buscam medidas esportivas ou para SUV com bom preço, mantendo segurança no uso diário. Para quem quer um visual mais agressivo sem gastar como em marcas premium, é uma opção competitiva.',
+      },
+      {
+        title: 'Compre com instalação na Carplus',
+        content:
+          'Na Carplus, no Portão, o pneu Delinte vem com montagem, balanceamento e calibragem inclusos, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Pneu Delinte é bom?',
+        answer:
+          'Sim. A Delinte é uma marca de custo-benefício com boas opções de performance e SUV, indicada para quem quer economizar mantendo segurança. Consulte a sua medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Delinte é boa para SUV?',
+        answer:
+          'A Delinte tem opções voltadas para SUV e performance com bom preço. A indicação certa depende da medida do seu veículo — confirme pelo WhatsApp.',
+      },
+      {
+        question: 'A Carplus instala o pneu Delinte?',
+        answer:
+          'Sim. Trabalhamos com a marca Delinte e a montagem, o balanceamento e a calibragem já estão inclusos, com até 10x sem juros.',
+      },
+    ],
+    whatsappMsg: 'Olá! Quero saber se o pneu Delinte é bom para o meu carro e o preço.',
+  },
+];
+
+export function getComparisonPage(slug: string): ComparisonPage | undefined {
+  return COMPARISON_PAGES.find((p) => p.slug === slug);
 }

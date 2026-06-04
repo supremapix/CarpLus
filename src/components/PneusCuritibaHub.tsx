@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Circle, Tag, Car, Ruler, MapPin, MessageSquare, Phone } from 'lucide-react';
+import { ChevronRight, Circle, Tag, Car, Ruler, MapPin, MessageSquare, Phone, Scale } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useSEO } from '../hooks/useSEO';
@@ -11,6 +11,7 @@ import {
   VEHICLE_PAGES,
   MEASURE_SEO,
   LOCAL_COMBO_PAGES,
+  COMPARISON_PAGES,
   BASE_URL,
   WHATSAPP_NUMBER,
   PHONE_DISPLAY,
@@ -153,6 +154,23 @@ export default function PneusCuritibaHub() {
             {MEASURE_SEO.map((m) => (
               <Link key={m.medida} to={`/pneu-medida/${measureToSlug(m.medida)}`} className={linkClass}>
                 <ChevronRight size={14} className="text-primary" /> {m.medida}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/medidas-de-pneus-curitiba"
+            className="inline-flex items-center gap-2 mt-5 text-primary font-bold hover:underline uppercase text-sm tracking-tight"
+          >
+            Ver todas as medidas e como ler a do seu pneu <ChevronRight size={16} />
+          </Link>
+        </Section>
+
+        {/* Comparativos de Marcas */}
+        <Section icon={Scale} title="Comparativos de Marcas" subtitle="Ajudamos você a escolher">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {COMPARISON_PAGES.map((p) => (
+              <Link key={p.slug} to={`/${p.slug}`} className={linkClass}>
+                <ChevronRight size={14} className="text-primary" /> {p.h1}
               </Link>
             ))}
           </div>

@@ -7,11 +7,13 @@ import {
   VEHICLE_PAGES,
   LOCAL_COMBO_PAGES,
   INTENT_PAGES,
+  COMPARISON_PAGES,
   getAroPage,
   getBrandPage,
   getVehiclePage,
   getLocalComboPage,
   getIntentPage,
+  getComparisonPage,
   getTiresByAro,
   getTiresByBrand,
   getTiresByVehicle,
@@ -206,6 +208,62 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
       faq={page.faq}
       breadcrumb={[HOME_CRUMB, HUB_CRUMB, { name: page.h1, path: `/${page.slug}` }]}
       relatedLinksTitle="Serviços e páginas relacionadas"
+      relatedLinks={relatedLinks}
+      whatsappMsg={page.whatsappMsg}
+    />
+  );
+}
+
+// ─── PÁGINA DE COMPARATIVO DE MARCAS ─────────────────────────────
+export function ComparisonLandingPage({ slug: slugProp }: { slug?: string }) {
+  const params = useParams();
+  const slug = slugProp || params.slug || '';
+  const page = getComparisonPage(slug);
+  if (!page) return <NotFound />;
+
+  // Puxa pneus reais do catálogo para cada marca envolvida, intercalando
+  // para que ambas as marcas apareçam no grid quando houver duas.
+  const perBrand = page.brands.map((b) => getTiresByBrand(b));
+  const merged: ReturnType<typeof getTiresByBrand> = [];
+  const maxLen = Math.max(0, ...perBrand.map((arr) => arr.length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const arr of perBrand) {
+      if (arr[i]) merged.push(arr[i]);
+    }
+  }
+
+  // Links internos: páginas de marca reais + outros comparativos + hub.
+  const brandLinks = page.brands
+    .map((b) => BRAND_PAGES.find((bp) => bp.marca === b))
+    .filter((bp): bp is (typeof BRAND_PAGES)[number] => Boolean(bp))
+    .map((bp) => ({ label: `Pneu ${bp.marca}`, to: `/${bp.slug}` }));
+
+  const otherComparisons = COMPARISON_PAGES.filter((p) => p.slug !== page.slug)
+    .slice(0, 8)
+    .map((p) => ({ label: p.h1, to: `/${p.slug}` }));
+
+  const relatedLinks = [
+    ...brandLinks,
+    { label: 'Todas as marcas', to: '/pneus-curitiba' },
+    { label: 'Catálogo de Pneus', to: '/pneus' },
+    ...otherComparisons,
+  ];
+
+  return (
+    <SeoTireLanding
+      badge={page.badge}
+      h1={page.h1}
+      highlight={page.highlight}
+      metaTitle={page.metaTitle}
+      metaDescription={page.metaDescription}
+      canonicalPath={`/${page.slug}`}
+      intro={page.intro}
+      tags={page.tags}
+      sections={page.sections}
+      tires={merged}
+      faq={page.faq}
+      breadcrumb={[HOME_CRUMB, HUB_CRUMB, { name: page.h1, path: `/${page.slug}` }]}
+      relatedLinksTitle="Marcas e comparativos relacionados"
       relatedLinks={relatedLinks}
       whatsappMsg={page.whatsappMsg}
     />

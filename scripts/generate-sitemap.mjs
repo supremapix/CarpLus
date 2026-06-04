@@ -29,6 +29,7 @@ const staticPages = [
   { url: '/', changefreq: 'daily', priority: '1.0' },
   { url: '/pneus', changefreq: 'daily', priority: '0.9' },
   { url: '/pneus-curitiba', changefreq: 'weekly', priority: '0.9' },
+  { url: '/medidas-de-pneus-curitiba', changefreq: 'weekly', priority: '0.9' },
   { url: '/loja-de-pneus-curitiba-perto-de-mim', changefreq: 'weekly', priority: '0.9' },
   { url: '/servicos', changefreq: 'weekly', priority: '0.9' },
   { url: '/quem-somos', changefreq: 'monthly', priority: '0.8' },
