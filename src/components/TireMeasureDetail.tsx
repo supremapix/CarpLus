@@ -593,6 +593,12 @@ export default function TireMeasureDetail() {
                 </Link>
               ))}
               <Link
+                to="/medidas-de-pneus-curitiba"
+                className="bg-white border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all"
+              >
+                Todas as Medidas
+              </Link>
+              <Link
                 to="/pneus-curitiba"
                 className="bg-white border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all flex items-center gap-2"
               >

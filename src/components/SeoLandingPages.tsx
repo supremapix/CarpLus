@@ -84,7 +84,13 @@ export function BrandLandingPage({ slug: slugProp }: { slug?: string }) {
 
   const tires = getTiresByBrand(page.marca);
 
+  // Comparativos que envolvem esta marca (links contextuais — ETAPA 8)
+  const brandComparisons = COMPARISON_PAGES.filter((c) => c.brands.includes(page.marca)).map(
+    (c) => ({ label: c.h1, to: `/${c.slug}` }),
+  );
+
   const relatedLinks = [
+    ...brandComparisons,
     ...BRAND_PAGES.filter((b) => b.marca !== page.marca).map((b) => ({
       label: `Pneu ${b.marca}`,
       to: `/${b.slug}`,

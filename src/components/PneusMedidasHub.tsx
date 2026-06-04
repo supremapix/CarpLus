@@ -7,6 +7,8 @@ import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import {
   MEASURE_SEO,
   ARO_PAGES,
+  BRAND_PAGES,
+  VEHICLE_PAGES,
   BASE_URL,
   WHATSAPP_NUMBER,
   PHONE_DISPLAY,
@@ -204,6 +206,50 @@ export default function PneusMedidasHub() {
             </section>
           );
         })}
+
+        {/* Navegação cruzada: marcas e veículos */}
+        <section className="mb-14">
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-100">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tighter italic mb-2">
+              Busque também por <span className="text-primary">marca ou veículo</span>
+            </h2>
+            <p className="text-gray-500 text-sm font-medium mb-8">
+              Prefere escolher pela marca do pneu ou pelo modelo do seu carro? Use os atalhos abaixo.
+            </p>
+
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Por marca</h3>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {BRAND_PAGES.map((b) => (
+                <Link
+                  key={b.slug}
+                  to={`/${b.slug}`}
+                  className="bg-gray-50 border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all"
+                >
+                  {b.marca}
+                </Link>
+              ))}
+            </div>
+
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Por veículo</h3>
+            <div className="flex flex-wrap gap-3">
+              {VEHICLE_PAGES.slice(0, 12).map((v) => (
+                <Link
+                  key={v.slug}
+                  to={`/${v.slug}`}
+                  className="bg-gray-50 border border-gray-200 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:border-primary hover:text-primary transition-all"
+                >
+                  {v.nome}
+                </Link>
+              ))}
+              <Link
+                to="/pneus-curitiba"
+                className="bg-primary text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-tight hover:bg-yellow-400 transition-all inline-flex items-center gap-1"
+              >
+                Central de Pneus <ChevronRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* FAQ */}
         <section className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl mb-14">
