@@ -72,7 +72,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wide text-white text-sm transition-colors hover:bg-neutral-800"
+          className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wide !text-white text-sm transition-colors hover:bg-neutral-800"
         >
           <MessageCircle size={16} strokeWidth={2.5} />
           Pedir orçamento
