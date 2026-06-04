@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import Hero from './Hero';
 import TireSearchBar from './TireSearchBar';
+import PneusPromocao from './PneusPromocao';
 import TiresByBrand from './TiresByBrand';
 import BrandsCarousel from './BrandsCarousel';
 import TireMeasuresSection from './TireMeasuresSection';
@@ -30,7 +31,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        
+
+        <PneusPromocao />
+
         <TireSearchBar />
         
         <TireMeasuresSection />
