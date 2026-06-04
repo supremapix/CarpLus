@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
@@ -14,6 +15,9 @@ import {
   CreditCard,
   MapPin,
   Car,
+  Share2,
+  Copy,
+  Check,
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -30,6 +34,42 @@ export default function PneuPromocaoDetalhe() {
   const tire = getPromoTireBySlug(slug);
 
   const pageUrl = `${BASE_URL}/pneu-promocao/${slug}`;
+
+  const [copied, setCopied] = useState(false);
+  const [showShareMenu, setShowShareMenu] = useState(false);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      const textArea = document.createElement('textarea');
+      textArea.value = pageUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const handleShare = async () => {
+    if (navigator.share && tire) {
+      try {
+        await navigator.share({
+          title: `${tire.marca} ${tire.medida}`,
+          text: `Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Auto Center em Curitiba!`,
+          url: pageUrl,
+        });
+      } catch {
+        setShowShareMenu(true);
+      }
+    } else {
+      setShowShareMenu((prev) => !prev);
+    }
+  };
 
   // FAQ específico do produto (gera FAQPage schema + conteúdo visível)
   const faqs = tire
@@ -154,14 +194,93 @@ export default function PneuPromocaoDetalhe() {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
-        {/* Voltar */}
-        <button
-          onClick={() => (window.history.length > 2 ? navigate(-1) : navigate('/'))}
-          className="mb-6 flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors group"
-        >
-          <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-          <span className="uppercase tracking-widest text-xs">Voltar</span>
-        </button>
+        {/* Voltar & Compartilhar */}
+        <div className="mb-6 flex items-center justify-between">
+          <button
+            onClick={() => (window.history.length > 2 ? navigate(-1) : navigate('/'))}
+            className="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors group"
+          >
+            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="uppercase tracking-widest text-xs">Voltar</span>
+          </button>
+
+          <div className="relative">
+            <button
+              onClick={handleShare}
+              aria-label="Compartilhar este pneu"
+              className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
+            >
+              <Share2 size={16} />
+              <span className="hidden sm:inline">Compartilhar</span>
+            </button>
+
+            {showShareMenu && (
+              <div className="absolute right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 z-50 min-w-[280px]">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                  Compartilhar este pneu
+                </p>
+
+                <div className="flex items-center gap-2 bg-gray-50 rounded-xl p-3 mb-3">
+                  <input
+                    type="text"
+                    value={pageUrl}
+                    readOnly
+                    className="flex-1 bg-transparent text-xs text-gray-600 outline-none truncate"
+                  />
+                  <button
+                    onClick={handleCopyLink}
+                    aria-label="Copiar link"
+                    className={`p-2 rounded-lg transition-all ${copied ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'}`}
+                  >
+                    {copied ? <Check size={14} /> : <Copy size={14} />}
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus: ${pageUrl}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-green-600 transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1877F2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Auto Center!`)}&url=${encodeURIComponent(pageUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-gray-800 transition-colors"
+                  >
+                    X / Twitter
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0A66C2] text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-blue-800 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+
+                <button
+                  onClick={() => setShowShareMenu(false)}
+                  className="w-full mt-3 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  Fechar
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Breadcrumb */}
         <nav
