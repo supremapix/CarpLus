@@ -104,13 +104,13 @@ export default function OfertasExclusivas() {
         </motion.div>
 
         {/* Grid principal */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
+        <div className="grid lg:grid-cols-3 gap-8 items-start min-w-0">
           {/* Coluna esquerda - Servicos */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-4 min-w-0"
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-amber-500" />
@@ -127,13 +127,13 @@ export default function OfertasExclusivas() {
                   <div className="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/30 transition-colors">
                     <servico.Icone className="w-5 h-5 text-amber-500" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="text-white font-semibold group-hover:text-amber-500 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-white font-semibold group-hover:text-amber-500 transition-colors text-balance">
                       {servico.titulo}
                     </h4>
-                    <p className="text-neutral-500 text-sm">{servico.descricao}</p>
+                    <p className="text-neutral-500 text-sm text-pretty">{servico.descricao}</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-neutral-600 group-hover:text-amber-500 transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-neutral-600 group-hover:text-amber-500 transition-colors flex-shrink-0" />
                 </div>
               </Link>
             ))}
@@ -152,7 +152,7 @@ export default function OfertasExclusivas() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-full min-w-0"
           >
             <YouTubeShorts 
               videoId="4FpPSM5vYE8" 
@@ -165,10 +165,10 @@ export default function OfertasExclusivas() {
 
           {/* Coluna direita - Beneficios e CTA */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 min-w-0"
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <Star className="w-5 h-5 text-amber-500" />
@@ -197,8 +197,8 @@ export default function OfertasExclusivas() {
             <div className="bg-neutral-800/50 border border-neutral-700/50 rounded-xl p-5 mt-6">
               <div className="flex items-start gap-3 mb-4">
                 <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-white text-sm font-medium">Av. Presidente Arthur da Silva Bernardes, 1323</p>
+                <div className="min-w-0">
+                  <p className="text-white text-sm font-medium text-pretty">Av. Presidente Arthur da Silva Bernardes, 1323</p>
                   <p className="text-neutral-500 text-sm">Portao - Curitiba - PR</p>
                 </div>
               </div>
