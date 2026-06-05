@@ -79,23 +79,23 @@ export default function BrandsCarousel() {
             {/* Info de Contato vs Botão Mobile */}
             <div className="pt-6 border-t border-white/5 space-y-6">
                 {/* Desktop Contact Info */}
-                <div className="hidden md:flex flex-col gap-5">
-                    <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                            <Phone className="text-primary" size={20} />
+                <div className="hidden md:flex flex-col gap-6">
+                    <div className="flex items-center gap-5">
+                        <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                            <Phone className="text-primary" size={28} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Ligue ou chame agora</span>
-                            <strong className="text-primary font-display font-black text-lg tracking-wide">(41) 3082-7282</strong>
+                            <span className="text-sm text-white/50 uppercase tracking-[0.15em] font-sans font-bold">Ligue ou chame agora</span>
+                            <strong className="text-primary font-display font-black text-3xl tracking-wide">(41) 3082-7282</strong>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                            <Clock className="text-primary" size={20} />
+                    <div className="flex items-center gap-5">
+                        <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shrink-0">
+                            <Clock className="text-primary" size={28} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-sans font-bold">Horário de atendimento</span>
-                            <strong className="text-primary font-display font-black text-base tracking-wide">Seg–Sex 8h–18h | Sáb 8h–12h</strong>
+                            <span className="text-sm text-white/50 uppercase tracking-[0.15em] font-sans font-bold">Horário de atendimento</span>
+                            <strong className="text-primary font-display font-black text-xl tracking-wide">Seg–Sex 8h–18h | Sáb 8h–12h</strong>
                         </div>
                     </div>
                 </div>

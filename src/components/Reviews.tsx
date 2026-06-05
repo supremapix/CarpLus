@@ -1,5 +1,5 @@
 
-import { Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, X, ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import SectionTitle from './SectionTitle';
@@ -500,7 +500,17 @@ export default function Reviews() {
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
             <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
-            <span className="text-[#70757a] text-sm">• {TOTAL_REVIEWS} avaliações</span>
+            <span className="flex items-center gap-1 text-[#70757a] text-sm">
+              • {TOTAL_REVIEWS} avaliações
+              <motion.span
+                aria-label="Avaliações em alta"
+                animate={{ y: [2, -3, 2], opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 1.4, ease: 'easeInOut', repeat: Infinity }}
+                className="inline-flex text-[#16A34A]"
+              >
+                <ArrowUp size={14} strokeWidth={3} aria-hidden="true" />
+              </motion.span>
+            </span>
           </div>
           <div className="flex flex-col items-center md:items-start">
             <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
