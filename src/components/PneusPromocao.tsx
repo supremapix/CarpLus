@@ -96,8 +96,10 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
 }
 
 export default function PneusPromocao() {
+  // Home exibe apenas 8 ofertas; o catalogo completo de promocoes fica em /pneus-promocao.
+  const destaquePromo = PROMO_TIRES.slice(0, 8);
   // Duplicamos a lista para criar o efeito de loop infinito da esteira
-  const track = [...PROMO_TIRES, ...PROMO_TIRES];
+  const track = [...destaquePromo, ...destaquePromo];
 
   return (
     <section id="promocao" className="relative bg-white py-16 md:py-24 overflow-hidden">

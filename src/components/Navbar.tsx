@@ -1,9 +1,11 @@
 
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import GlobalSearch from './GlobalSearch';
+
+// Carrega o modal de busca (e o catalogo de pneus que ele usa) somente sob demanda.
+const GlobalSearch = lazy(() => import('./GlobalSearch'));
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -226,8 +228,12 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Global Search Modal */}
-      <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {/* Global Search Modal — montado (e o catalogo carregado) apenas apos abrir a busca */}
+      {isSearchOpen && (
+        <Suspense fallback={null}>
+          <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+        </Suspense>
+      )}
     </header>
   );
 }

@@ -2,7 +2,8 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import TireSearchBar from './TireSearchBar';
 import PneusPromocao from './PneusPromocao';
-import TiresByBrand from './TiresByBrand';
+import BestSellerTires from './BestSellerTires';
+import TiresByBrandLazy from './TiresByBrandLazy';
 import BrandsCarousel from './BrandsCarousel';
 import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
@@ -41,15 +42,13 @@ export default function Home() {
 
         <PneusCuritibaPromo />
 
-        <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-        >
-          <DeferredSection minHeight={900} unmountOnExit>
-            <TiresByBrand />
-          </DeferredSection>
-        </motion.div>
+        <DeferredSection minHeight={900}>
+          <BestSellerTires />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
+          <TiresByBrandLazy />
+        </DeferredSection>
 
         <StoreSection />
 
