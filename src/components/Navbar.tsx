@@ -75,11 +75,15 @@ export default function Navbar() {
             <img loading="lazy"
               src="/images/logos/logo-horizontal.svg"
               alt="Carplus Auto Center"
+              width={1182}
+              height={168}
               className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
             <img loading="lazy"
               src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
               alt="Carplus Auto Center"
+              width={2952}
+              height={708}
               className={`lg:hidden transition-all duration-300 w-auto ${isScrolled ? 'h-9' : 'h-11'}`}
             />
           </Link>
@@ -146,6 +150,8 @@ export default function Navbar() {
               <img loading="lazy"
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
                 alt="Carplus Auto Center"
+                width={2952}
+                height={708}
                 className="h-10"
               />
               <button onClick={() => setIsMobileMenuOpen(false)} className="bg-white/10 p-2 rounded-xl">

@@ -249,6 +249,8 @@ export default function TireDetail() {
                         <motion.img 
                             src={tire.imagemGrande} 
                             alt={tire.nome}
+                            width={600}
+                            height={600}
                             className="w-full h-[300px] md:h-[500px] object-contain relative z-10 [mix-blend-mode:multiply] group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-transparent pointer-events-none" />
@@ -381,8 +383,10 @@ export default function TireDetail() {
         {/* Why Buy Carplus */}
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <img loading="lazy" 
+                <img loading="lazy"
                     src="/images/loja/oficina-mecanica-portao-curitiba.png"
+                    width={1200}
+                    height={801}
                     className="w-full h-full object-cover grayscale"
                     alt="Oficina Carplus no Portão em Curitiba"
                 />
@@ -449,11 +453,13 @@ export default function TireDetail() {
                             className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary transition-all group"
                         >
                             <div className="relative mb-6 overflow-visible flex items-center justify-center p-4">
-                                <img loading="lazy" 
-                                    src={t.imagem} 
-                                    alt={t.nome} 
-                                    className="h-32 object-contain group-hover:scale-110 transition-transform duration-500 [mix-blend-mode:multiply]"
-                                />
+                <img loading="lazy"
+                    src={t.imagem}
+                    alt={t.nome}
+                    width={600}
+                    height={600}
+                    className="h-32 object-contain group-hover:scale-110 transition-transform duration-500 [mix-blend-mode:multiply]"
+                />
                             </div>
                             <span className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1 block">{t.marca}</span>
                             <h3 className="font-bold uppercase tracking-tighter mb-4 line-clamp-2 leading-tight group-hover:text-primary transition-colors">

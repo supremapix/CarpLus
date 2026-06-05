@@ -362,6 +362,8 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
             <img loading="lazy"
               src={review.avatar}
               alt={review.name}
+              width={36}
+              height={36}
               className="w-9 h-9 rounded-full flex-shrink-0 object-cover"
               crossOrigin="anonymous"
             />
@@ -573,12 +575,14 @@ export default function Reviews() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
                     {selectedReview.review.avatar ? (
-                      <img loading="lazy"
-                        src={selectedReview.review.avatar}
-                        alt={selectedReview.review.name}
-                        className="w-16 h-16 rounded-full object-cover shadow-md"
-                        crossOrigin="anonymous"
-                      />
+            <img loading="lazy"
+              src={selectedReview.review.avatar}
+              alt={selectedReview.review.name}
+              width={64}
+              height={64}
+              className="w-16 h-16 rounded-full object-cover shadow-md"
+              crossOrigin="anonymous"
+            />
                     ) : (
                       <div
                         className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl uppercase shadow-md"

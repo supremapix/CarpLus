@@ -464,6 +464,8 @@ export default function ServiceDetail() {
               <div className="relative group">
                  <img loading="lazy" 
                     src="/images/loja/loja-de-pneus-curitiba.webp" 
+                    width={1067}
+                    height={800}
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={`Oficina mecanica especializada em ${service.title} – ${service.title} na Carplus Curitiba Portao`} 
                  />
@@ -504,13 +506,15 @@ export default function ServiceDetail() {
                   className="max-w-4xl mx-auto mb-16"
                 >
                   <figure className="relative rounded-3xl overflow-hidden shadow-2xl">
-                    <img 
-                      src={seoContent.imagemDestaque} 
-                      alt={seoContent.imagemAlt || `${service.title} no bairro Portão em Curitiba - Carplus Auto Center`}
-                      title={seoContent.imagemTitle || `${service.title} Curitiba Portão`}
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
+                  <img
+                    src={seoContent.imagemDestaque}
+                    alt={seoContent.imagemAlt || `${service.title} no bairro Portão em Curitiba - Carplus Auto Center`}
+                    title={seoContent.imagemTitle || `${service.title} Curitiba Portão`}
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
                     <figcaption className="sr-only">
                       {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Auto Center no bairro Portão, região sul de Curitiba. Atendimento especializado com melhor preço da região.`}
                     </figcaption>
@@ -1339,9 +1343,11 @@ export default function ServiceDetail() {
                 className="mb-16"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="/images/rodas/recuperacao-rodas.webp" 
+                  <img
+                    src="/images/rodas/recuperacao-rodas.webp"
                     alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
+                    width={799}
+                    height={1200}
                     className="w-full h-auto object-cover"
                     loading="lazy"
                   />
@@ -1403,8 +1409,10 @@ export default function ServiceDetail() {
                     className="relative rounded-2xl overflow-hidden aspect-square group"
                   >
                     <img 
-                      src={img.src} 
+                      src={img.src}
                       alt={img.alt}
+                      width={1200}
+                      height={801}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                     />
@@ -1501,12 +1509,14 @@ export default function ServiceDetail() {
                   className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/30 transition-all group"
                 >
                   <div className="aspect-square mb-3 overflow-hidden rounded-xl bg-gray-50">
-                    <img 
-                      src={tire.imagem} 
-                      alt={tire.nome}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
-                      loading="lazy"
-                    />
+                  <img
+                    src={tire.imagem}
+                    alt={tire.nome}
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                    loading="lazy"
+                  />
                   </div>
                   <p className="text-xs font-bold text-gray-400 uppercase">{tire.marca}</p>
                   <p className="text-sm font-bold text-dark truncate">{tire.medida}</p>

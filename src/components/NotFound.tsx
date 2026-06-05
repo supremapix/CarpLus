@@ -52,6 +52,8 @@ export default function NotFound() {
           <img loading="lazy"
             src="/favicon-carplus.png"
             alt="Carplus Auto Center"
+            width={957}
+            height={1025}
             className="w-24 h-auto object-contain"
           />
         </div>

@@ -19,6 +19,8 @@ export default function BrandsCarousel() {
         <img loading="lazy"
           src="/images/loja/oficina-carplus-pneus.webp"
           alt=""
+          width={1200}
+          height={428}
           className="w-full h-full object-cover object-center opacity-70"
         />
       </div>

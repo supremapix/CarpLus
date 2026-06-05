@@ -159,6 +159,8 @@ export default function TireCatalog() {
         <div className="absolute inset-0 opacity-10">
           <img loading="lazy"
             src="/images/loja/loja-de-pneus-curitiba.webp"
+            width={1067}
+            height={800}
             className="w-full h-full object-cover"
             alt="Fundo"
           />

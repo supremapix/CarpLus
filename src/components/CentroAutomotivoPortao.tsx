@@ -151,6 +151,8 @@ export default function CentroAutomotivoPortao() {
           <img loading="lazy" 
             src="/images/centro-automotivo/oficina-elevadores.webp" 
             alt="Centro Automotivo Carplus no bairro Portão em Curitiba - Vista interna da oficina mecânica"
+            width={1200}
+            height={801}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
@@ -341,6 +343,8 @@ export default function CentroAutomotivoPortao() {
                   src={img.src}
                   alt={img.alt}
                   title={img.title}
+                  width={1200}
+                  height={801}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
@@ -367,11 +371,13 @@ export default function CentroAutomotivoPortao() {
           >
             <X size={32} />
           </button>
-          <img loading="lazy"
-            src={GALERIA_IMAGENS[imagemAberta].src}
-            alt={GALERIA_IMAGENS[imagemAberta].alt}
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-          />
+              <img loading="lazy"
+                src={GALERIA_IMAGENS[imagemAberta].src}
+                alt={GALERIA_IMAGENS[imagemAberta].alt}
+                width={1200}
+                height={801}
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              />
         </div>
       )}
 
@@ -408,6 +414,8 @@ export default function CentroAutomotivoPortao() {
                 <img loading="lazy"
                   src="/images/centro-automotivo/pneu-pirelli-scorpion.webp"
                   alt="Quando trocar os pneus do carro"
+                  width={802}
+                  height={1200}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -440,6 +448,8 @@ export default function CentroAutomotivoPortao() {
                 <img loading="lazy"
                   src="/images/centro-automotivo/mecanico-elevador.webp"
                   alt="Importância da revisão preventiva"
+                  width={802}
+                  height={1200}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -472,6 +482,8 @@ export default function CentroAutomotivoPortao() {
                 <img loading="lazy"
                   src="/images/centro-automotivo/oficina-elevadores.webp"
                   alt="Matéria Gazeta do Povo sobre revisão de verão"
+                  width={1200}
+                  height={801}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
