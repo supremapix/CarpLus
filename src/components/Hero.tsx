@@ -1,5 +1,4 @@
 
-import { motion } from 'motion/react';
 import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';
 
 export default function Hero() {
@@ -32,12 +31,7 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl"
-        >
+        <div className="max-w-2xl">
           <h1 className="text-[3.2rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-3 leading-[0.95] font-bold text-center md:text-left tracking-tighter">
             PNEUS <br className="md:hidden" /><span className="text-primary">EM CURITIBA</span>
           </h1>
@@ -50,23 +44,19 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-12 justify-center md:justify-start px-4 sm:px-0">
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <a
               href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
               target="_blank"
-              className="bg-white hover:bg-gray-100 text-dark px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all uppercase tracking-tight shadow-lg"
+              className="bg-white hover:bg-gray-100 text-dark px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] uppercase tracking-tight shadow-lg"
             >
               <Navigation size={18} /> Ir até a Carplus
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            </a>
+            <a
               href="tel:+554130827282"
-              className="bg-surface/40 backdrop-blur-sm hover:bg-gray-700 text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-all uppercase tracking-tight border border-white/20"
+              className="bg-surface/40 backdrop-blur-sm hover:bg-gray-700 text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] uppercase tracking-tight border border-white/20"
             >
               <Phone size={18} /> Ligar agora
-            </motion.a>
+            </a>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 md:gap-y-6 mt-4 md:mt-6">
@@ -82,7 +72,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Brand Ticker */}

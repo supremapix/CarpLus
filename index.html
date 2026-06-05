@@ -38,6 +38,10 @@
     <!-- Fontes hospedadas localmente: preload para renderizar texto sem requisicoes externas -->
     <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/oswald-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Preload da imagem Hero (LCP): baixa apenas a variante do viewport, com prioridade alta -->
+    <link rel="preload" as="image" href="/images/hero-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="/images/hero-desktop.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
     
     <title>Carplus Auto Center – Loja de Pneus e Oficina em Curitiba, Portão</title>
     <meta name="description" content="Carplus Auto Center: loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282." />
