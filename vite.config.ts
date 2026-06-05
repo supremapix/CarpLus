@@ -1,23 +1,30 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '');
+export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            vendor: ['react', 'react-dom', 'react-router-dom'],
+          // Separa as libs e dados pesados em chunks cacheáveis e
+          // independentes, mantendo o bundle inicial pequeno.
+          manualChunks(id) {
+            // Catálogo de pneus (~2 MB): chunk próprio, carregado sob
+            // demanda e cacheado/compartilhado entre as rotas que o usam.
+            if (/[\\/]src[\\/]data\.ts$/.test(id)) return 'tire-catalog';
+            if (!id.includes('node_modules')) return undefined;
+            if (/[\\/]node_modules[\\/](react|react-dom|scheduler|react-router|react-router-dom)[\\/]/.test(id))
+              return 'react-vendor';
+            if (id.includes('motion')) return 'motion';
+            if (id.includes('react-helmet-async')) return 'helmet';
+            if (id.includes('lucide-react')) return 'icons';
+            return 'vendor';
           },
         },
       },
-    },
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
     resolve: {
       alias: {

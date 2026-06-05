@@ -14,13 +14,15 @@ import {
   getLocalComboPage,
   getIntentPage,
   getComparisonPage,
+  normalizeText,
+} from '../data/seoLanding';
+import {
   getTiresByAro,
   getTiresByBrand,
   getTiresByVehicle,
   getMeasuresForTires,
   getFeaturedTires,
-  normalizeText,
-} from '../data/seoLanding';
+} from '../data/seoLandingFilters';
 
 const HOME_CRUMB = { name: 'Home', path: '/' };
 const HUB_CRUMB = { name: 'Pneus Curitiba', path: '/pneus-curitiba' };

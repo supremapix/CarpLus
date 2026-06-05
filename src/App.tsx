@@ -1,38 +1,7 @@
 
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import Home from './components/Home';
-import NeighborhoodDetail from './components/NeighborhoodDetail';
-import ServiceDetail from './components/ServiceDetail';
-import TireCatalog from './components/TireCatalog';
-import TireDetail from './components/TireDetail';
-import PneuPromocaoDetalhe from './components/PneuPromocaoDetalhe';
-import PneusPromocaoLista from './components/PneusPromocaoLista';
-import TireMeasureDetail from './components/TireMeasureDetail';
-import PrivacyPolicy from './components/Institutional/PrivacyPolicy';
-import ReturnPolicy from './components/Institutional/ReturnPolicy';
-import AboutUs from './components/Institutional/AboutUs';
-import Contact from './components/Institutional/Contact';
-import Sitemap from './components/Sitemap';
-import NotFound from './components/NotFound';
-import ServicosPage from './components/ServicosPage';
-import ComoChegar from './components/ComoChegar';
-import BairrosPage from './components/BairrosPage';
-import FAQPage from './components/FAQPage';
-import CentroAutomotivoPortao from './components/CentroAutomotivoPortao';
-import BorrachariaPortao from './components/BorrachariaPortao';
+import { useEffect, lazy, Suspense } from 'react';
 import BackToTop from './components/BackToTop';
-import PneusCuritibaHub from './components/PneusCuritibaHub';
-import PneusMedidasHub from './components/PneusMedidasHub';
-import LojaDePneusPertoDeMim from './components/LojaDePneusPertoDeMim';
-import {
-  AroLandingPage,
-  BrandLandingPage,
-  VehicleLandingPage,
-  LocalComboLandingPage,
-  IntentLandingPage,
-  ComparisonLandingPage,
-} from './components/SeoLandingPages';
 import {
   ARO_PAGES,
   BRAND_PAGES,
@@ -41,6 +10,64 @@ import {
   INTENT_PAGES,
   COMPARISON_PAGES,
 } from './data/seoLanding';
+
+// ───── Code-splitting: cada rota vira um chunk carregado sob demanda ─────
+const Home = lazy(() => import('./components/Home'));
+const NeighborhoodDetail = lazy(() => import('./components/NeighborhoodDetail'));
+const ServiceDetail = lazy(() => import('./components/ServiceDetail'));
+const TireCatalog = lazy(() => import('./components/TireCatalog'));
+const TireDetail = lazy(() => import('./components/TireDetail'));
+const PneuPromocaoDetalhe = lazy(() => import('./components/PneuPromocaoDetalhe'));
+const PneusPromocaoLista = lazy(() => import('./components/PneusPromocaoLista'));
+const TireMeasureDetail = lazy(() => import('./components/TireMeasureDetail'));
+const PrivacyPolicy = lazy(() => import('./components/Institutional/PrivacyPolicy'));
+const ReturnPolicy = lazy(() => import('./components/Institutional/ReturnPolicy'));
+const AboutUs = lazy(() => import('./components/Institutional/AboutUs'));
+const Contact = lazy(() => import('./components/Institutional/Contact'));
+const Sitemap = lazy(() => import('./components/Sitemap'));
+const NotFound = lazy(() => import('./components/NotFound'));
+const ServicosPage = lazy(() => import('./components/ServicosPage'));
+const ComoChegar = lazy(() => import('./components/ComoChegar'));
+const BairrosPage = lazy(() => import('./components/BairrosPage'));
+const FAQPage = lazy(() => import('./components/FAQPage'));
+const CentroAutomotivoPortao = lazy(() => import('./components/CentroAutomotivoPortao'));
+const BorrachariaPortao = lazy(() => import('./components/BorrachariaPortao'));
+const PneusCuritibaHub = lazy(() => import('./components/PneusCuritibaHub'));
+const PneusMedidasHub = lazy(() => import('./components/PneusMedidasHub'));
+const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDeMim'));
+
+// Landing pages SEO (todas no mesmo módulo)
+const AroLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.AroLandingPage })),
+);
+const BrandLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.BrandLandingPage })),
+);
+const VehicleLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.VehicleLandingPage })),
+);
+const LocalComboLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.LocalComboLandingPage })),
+);
+const IntentLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.IntentLandingPage })),
+);
+const ComparisonLandingPage = lazy(() =>
+  import('./components/SeoLandingPages').then((m) => ({ default: m.ComparisonLandingPage })),
+);
+
+// Fallback minimalista enquanto o chunk da rota carrega
+function RouteFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-dark">
+      <div
+        className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin"
+        role="status"
+        aria-label="Carregando"
+      />
+    </div>
+  );
+}
 
 export default function App() {
   const { pathname } = useLocation();
@@ -55,7 +82,8 @@ export default function App() {
       {/* LocalBusiness/Organization/WebSite vivem como fonte UNICA no index.html.
           Nao injetar schema global aqui para evitar duplicacao no Search Console. */}
       <BackToTop />
-      <Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/pneus" element={<TireCatalog />} />
       <Route path="/pneu/:slug" element={<TireDetail />} />
@@ -185,7 +213,8 @@ export default function App() {
         
         {/* 404 — SEMPRE POR ULTIMO */}
         <Route path="*" element={<NotFound />} />
-      </Routes>
+        </Routes>
+      </Suspense>
     </>
   );
 }
