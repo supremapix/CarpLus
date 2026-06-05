@@ -23,7 +23,7 @@ interface DeferredSectionProps {
 export default function DeferredSection({
   children,
   minHeight = 600,
-  rootMargin = '400px',
+  rootMargin = '150px',
   className,
   unmountOnExit = false,
 }: DeferredSectionProps) {
