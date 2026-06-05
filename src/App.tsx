@@ -2,6 +2,7 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
 import BackToTop from './components/BackToTop';
+import AnalyticsLoader from './components/AnalyticsLoader';
 import {
   ARO_PAGES,
   BRAND_PAGES,
@@ -82,6 +83,8 @@ export default function App() {
       {/* LocalBusiness/Organization/WebSite vivem como fonte UNICA no index.html.
           Nao injetar schema global aqui para evitar duplicacao no Search Console. */}
       <BackToTop />
+      {/* Delayed Analytics: injeta o GTM apos 5s OU scroll OU clique (nunca no load inicial). */}
+      <AnalyticsLoader />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
       <Route path="/" element={<Home />} />
