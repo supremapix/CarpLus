@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -24,13 +24,35 @@ interface TireCardProps {
 function TireCard({ tire, index }: TireCardProps) {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  // Cacheia o retangulo do card medido uma unica vez ao entrar com o mouse,
+  // evitando getBoundingClientRect (forced reflow) a cada onMouseMove.
+  const rectRef = useRef<DOMRect | null>(null);
+  const rafRef = useRef<number | null>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - left) / width) * 100;
-    const y = ((e.clientY - top) / height) * 100;
-    setMousePos({ x, y });
-  };
+  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+    setIsHovered(true);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rectRef.current = null;
+    setIsHovered(false);
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = rectRef.current;
+    if (!rect) return;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    // Agrupa a atualizacao de estado num frame, sem ler layout durante o movimento.
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const x = ((clientX - rect.left) / rect.width) * 100;
+      const y = ((clientY - rect.top) / rect.height) * 100;
+      setMousePos({ x, y });
+    });
+  }, []);
 
   return (
     <motion.div
@@ -56,8 +78,8 @@ function TireCard({ tire, index }: TireCardProps) {
       
       <div 
         className="mt-6 mb-6 relative aspect-square cursor-none overflow-visible flex items-center justify-center p-4 bg-transparent"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
         <img 

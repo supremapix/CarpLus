@@ -104,22 +104,43 @@ export default function ServicesGrid() {
     return () => clearInterval(timer);
   }, []);
 
-  // Check scroll position
-  const checkScroll = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
+  // Dimensoes do carrossel medidas via ResizeObserver (nao a cada scroll),
+  // evitando leitura de scrollWidth/clientWidth (forced reflow) em todo evento.
+  const scrollMetrics = useRef({ scrollWidth: 0, clientWidth: 0 });
+  const scrollRafRef = useRef<number | null>(null);
+
+  const updateScrollState = (scrollLeft: number) => {
+    const { scrollWidth, clientWidth } = scrollMetrics.current;
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
   };
 
   useEffect(() => {
-    checkScroll();
     const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('scroll', checkScroll);
-      return () => carousel.removeEventListener('scroll', checkScroll);
-    }
+    if (!carousel) return;
+
+    // Mede as dimensoes apenas quando o tamanho muda.
+    const ro = new ResizeObserver(() => {
+      scrollMetrics.current = {
+        scrollWidth: carousel.scrollWidth,
+        clientWidth: carousel.clientWidth,
+      };
+      updateScrollState(carousel.scrollLeft);
+    });
+    ro.observe(carousel);
+
+    // No scroll, le apenas scrollLeft (valor ja calculado pelo evento) dentro de rAF.
+    const onScroll = () => {
+      if (scrollRafRef.current) cancelAnimationFrame(scrollRafRef.current);
+      scrollRafRef.current = requestAnimationFrame(() => updateScrollState(carousel.scrollLeft));
+    };
+    carousel.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      ro.disconnect();
+      carousel.removeEventListener('scroll', onScroll);
+      if (scrollRafRef.current) cancelAnimationFrame(scrollRafRef.current);
+    };
   }, [activeCategory]);
 
   // Scroll functions
