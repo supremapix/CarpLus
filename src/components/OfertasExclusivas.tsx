@@ -1,47 +1,17 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
-  Play, CheckCircle2, MapPin, Phone, Star, ArrowRight,
+  CheckCircle2, MapPin, Phone, Star, ArrowRight,
   CircleDot, Wrench, Shield, Clock, Award
 } from 'lucide-react';
-import { useState } from 'react';
+import LiteYouTube from './LiteYouTube';
 
-// Componente de Video YouTube Shorts (9:16)
+// Componente de Video YouTube Shorts (9:16) — usa façade LiteYouTube:
+// nenhum script do YouTube carrega antes do clique do usuário.
 function YouTubeShorts({ videoId, title }: { videoId: string; title: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
-    <div className="relative aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl group">
-      {!isPlaying ? (
-        <>
-          <img loading="lazy"
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <button
-            onClick={() => setIsPlaying(true)}
-            className="absolute inset-0 flex items-center justify-center group"
-            aria-label="Reproduzir video"
-          >
-            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-              <Play className="w-8 h-8 text-white ml-1" fill="white" />
-            </div>
-          </button>
-          <div className="absolute bottom-4 left-4 right-4">
-            <p className="text-white text-sm font-medium line-clamp-2">{title}</p>
-          </div>
-        </>
-      ) : (
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="w-full h-full"
-        />
-      )}
+    <div className="relative aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+      <LiteYouTube videoId={videoId} title={title} params="rel=0" />
     </div>
   );
 }

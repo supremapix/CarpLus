@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Tag, Phone, ChevronRight, ChevronLeft, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LiteYouTube from './LiteYouTube';
 
 const VIDEOS = [
   {
@@ -117,12 +118,10 @@ export default function PneusCuritibaPromo() {
                   transition={{ duration: 0.3 }}
                   className="absolute inset-0"
                 >
-                  <iframe
-                    src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&mute=1&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                  <LiteYouTube
+                    videoId={activeVideo.id}
                     title={`CarPlus - ${activeVideo.title}`}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    params={`mute=1&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
                   />
                 </motion.div>
               </AnimatePresence>
