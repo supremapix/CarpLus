@@ -261,6 +261,8 @@ export default function BorrachariaPortao() {
                     alt={img.alt}
                     title={img.title}
                     loading="lazy"
+                    width={1200}
+                    height={801}
                     className="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -290,6 +292,8 @@ export default function BorrachariaPortao() {
                 exit={{ scale: 0.9 }}
                 src={GALERIA_BORRACHARIA[selectedImage].src}
                 alt={GALERIA_BORRACHARIA[selectedImage].alt}
+                width={1200}
+                height={801}
                 className="max-w-full max-h-[90vh] rounded-2xl"
               />
             </motion.div>

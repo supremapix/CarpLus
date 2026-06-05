@@ -81,6 +81,8 @@ export default function CentroAutomotivoCTA() {
                 <img loading="lazy"
                   src="/images/centro-automotivo/oficina-elevadores.webp"
                   alt="Centro Automotivo Carplus no Portão - Oficina Mecânica Completa em Curitiba"
+                  width={1200}
+                  height={801}
                   className="w-full h-80 lg:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

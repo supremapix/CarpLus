@@ -140,6 +140,8 @@ export default function NeighborhoodDetail() {
            <div className="absolute inset-0">
               <img loading="lazy"
                 src="/images/loja/carplus-oficina-portao-fachada-curitiba.jpg"
+                width={1200}
+                height={801}
                 className="w-full h-full object-cover"
                 alt={`Loja de pneus para ${bairro.name} - Carplus Auto Center Curitiba`}
               />
@@ -586,9 +588,11 @@ export default function NeighborhoodDetail() {
                   className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/30 transition-all group"
                 >
                   <div className="aspect-square mb-3 overflow-hidden rounded-xl bg-gray-50">
-                    <img 
-                      src={tire.imagem} 
+                    <img
+                      src={tire.imagem}
                       alt={`${tire.nome} para ${bairro.name}`}
+                      width={600}
+                      height={600}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                       loading="lazy"
                     />

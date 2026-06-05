@@ -177,6 +177,8 @@ export default function LojaDePneusPertoDeMim() {
           <img loading="lazy"
             src={heroImg}
             alt="Loja de pneus Carplus no bairro Portão em Curitiba, fácil acesso de toda a região"
+            width={1200}
+            height={801}
             className="w-full h-full object-cover"
             fetchPriority="high"
           />

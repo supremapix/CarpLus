@@ -1,6 +1,5 @@
 
 import { useState, useRef, useCallback } from 'react';
-import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
@@ -55,12 +54,8 @@ function TireCard({ tire, index }: TireCardProps) {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.2 }}
-      className="group bg-white rounded-[2.5rem] p-6 shadow-sm border border-gray-100 relative flex flex-col justify-between hover:shadow-2xl hover:border-primary/20 transition-all overflow-hidden"
+    <div
+      className="group bg-white rounded-[2.5rem] p-6 shadow-sm border border-gray-100 relative flex flex-col justify-between hover:shadow-2xl hover:border-primary/20 transition-all overflow-hidden [animation:var(--animate-fade-in-up)]"
     >
       <div className="absolute top-6 left-6 flex flex-col gap-2 z-20">
          <span className="text-primary font-black text-[11px] uppercase tracking-[0.2em]">{tire.marca}</span>
@@ -137,17 +132,15 @@ function TireCard({ tire, index }: TireCardProps) {
         </div>
 
         <div className="space-y-2">
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-             <Link 
-                to={`/pneu/${tire.slug}`}
-                className="w-full flex items-center justify-center gap-3 bg-black hover:bg-primary hover:text-black text-white py-4 rounded-2xl font-black transition-all text-sm uppercase tracking-widest shadow-xl"
-              >
-                Detalhes <ChevronRight size={18} />
-              </Link>
-          </motion.div>
+          <Link
+            to={`/pneu/${tire.slug}`}
+            className="w-full flex items-center justify-center gap-3 bg-black hover:bg-primary hover:text-black text-white py-4 rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-[0.98] text-sm uppercase tracking-widest shadow-xl"
+          >
+            Detalhes <ChevronRight size={18} />
+          </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

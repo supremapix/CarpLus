@@ -318,6 +318,8 @@ export default function ServicesGrid() {
                     key={src}
                     src={src} 
                     alt="Oficina Mecânica Carplus" 
+                    width={1200}
+                    height={900}
                     initial={false}
                     animate={{ 
                       opacity: i === currentImageIndex ? 1 : 0,

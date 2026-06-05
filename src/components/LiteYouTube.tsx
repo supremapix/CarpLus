@@ -67,6 +67,8 @@ export default function LiteYouTube({
         alt={title}
         loading="lazy"
         decoding="async"
+        width={480}
+        height={360}
         onError={() => setThumbErrored(true)}
         className="absolute inset-0 w-full h-full object-cover"
       />

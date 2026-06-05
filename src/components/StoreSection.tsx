@@ -33,6 +33,8 @@ export default function StoreSection() {
               <img loading="lazy"
                 src="/images/loja/carplus-oficina-interior.webp"
                 alt="Carplus Pneus - Loja e Oficina no Portao, Curitiba"
+                width={1001}
+                height={1200}
                 className="w-full h-auto object-cover"
               />
             </div>

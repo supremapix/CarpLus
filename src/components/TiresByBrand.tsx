@@ -189,6 +189,8 @@ export default function TiresByBrand() {
             <img loading="lazy"
               src="/images/loja/estoque-pneus-carplus.webp"
               alt="Loja de pneus Carplus"
+              width={1200}
+              height={429}
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-black/30" />

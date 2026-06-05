@@ -10,7 +10,7 @@ export default function Hero() {
           src="/images/hero-mobile.webp" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
           fetchPriority="high"
-          width={800}
+          width={554}
           height={1200}
           className="w-full h-full object-cover object-[30%_top]"
         />
@@ -24,7 +24,7 @@ export default function Hero() {
           alt="Carplus Pneus - Oficina de Pneus em Curitiba" 
           fetchPriority="high"
           width={1920}
-          height={1080}
+          height={685}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
