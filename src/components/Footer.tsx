@@ -34,7 +34,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 text-center md:text-left items-center md:items-start">
          {/* About */}
          <div className="space-y-10 flex flex-col items-center md:items-start w-full">
-            <img 
+            <img loading="lazy" 
               src="/images/logos/logo-vertical.svg" 
               className="h-56 md:h-64 drop-shadow-2xl" 
               alt="Carplus" 
@@ -192,7 +192,7 @@ export default function Footer() {
             <span className="text-white/50 text-xs font-medium">por</span>
             <span className="text-white group-hover:text-primary font-bold text-xs transition-colors flex items-center gap-2">
               Suprema Sites Express
-              <img src="/images/logos/suprema.webp" alt="Suprema" className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <img loading="lazy" src="/images/logos/suprema.webp" alt="Suprema" className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
             </span>
          </a>
       </div>

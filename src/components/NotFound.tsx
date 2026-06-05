@@ -49,7 +49,7 @@ export default function NotFound() {
       <section className="flex-1 flex flex-col items-center justify-center px-4 py-20 text-center">
         {/* Logo animada */}
         <div className="w-32 h-32 rounded-full bg-surface border-2 border-accent flex items-center justify-center mb-8 animate-pulse-glow overflow-hidden">
-          <img
+          <img loading="lazy"
             src="/favicon-carplus.png"
             alt="Carplus Auto Center"
             className="w-24 h-auto object-contain"

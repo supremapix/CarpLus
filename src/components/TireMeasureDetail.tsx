@@ -185,7 +185,7 @@ export default function TireMeasureDetail() {
                     </div>
                   )}
                   <div className="flex items-center gap-3 mb-2">
-                    <img 
+                    <img loading="lazy" 
                       src={firstTire.imagem} 
                       alt={firstTire.linha}
                       className="w-16 h-16 object-contain [mix-blend-mode:multiply]"
@@ -430,7 +430,7 @@ export default function TireMeasureDetail() {
                   >
                     <td className="py-4 px-2">
                       <div className="flex items-center gap-3">
-                        <img src={t.imagem} alt={t.nome} className="w-12 h-12 object-contain [mix-blend-mode:multiply]" />
+                        <img loading="lazy" src={t.imagem} alt={t.nome} className="w-12 h-12 object-contain [mix-blend-mode:multiply]" />
                         <div>
                           <span className="text-[10px] font-bold text-primary uppercase tracking-widest block">{t.marca}</span>
                           <span className="font-bold text-sm">{t.nome.replace(`${t.marca} `, '').replace(`${t.medida} `, '')}</span>
@@ -479,7 +479,7 @@ export default function TireMeasureDetail() {
         {/* Why Buy Carplus */}
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-20 mb-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <img 
+            <img loading="lazy" 
               src="/images/loja/oficina-mecanica-portao-curitiba.png"
               className="w-full h-full object-cover grayscale"
               alt="Oficina Carplus no Portão em Curitiba"
@@ -547,7 +547,7 @@ export default function TireMeasureDetail() {
                   className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary transition-all group"
                 >
                   <div className="relative mb-6 overflow-visible flex items-center justify-center p-4">
-                    <img 
+                    <img loading="lazy" 
                       src={t.imagem} 
                       alt={t.nome} 
                       className="h-32 object-contain group-hover:scale-110 transition-transform duration-500 [mix-blend-mode:multiply]"

@@ -359,7 +359,7 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2.5">
           {review.avatar ? (
-            <img
+            <img loading="lazy"
               src={review.avatar}
               alt={review.name}
               className="w-9 h-9 rounded-full flex-shrink-0 object-cover"
@@ -560,7 +560,7 @@ export default function Reviews() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
                     {selectedReview.review.avatar ? (
-                      <img
+                      <img loading="lazy"
                         src={selectedReview.review.avatar}
                         alt={selectedReview.review.name}
                         className="w-16 h-16 rounded-full object-cover shadow-md"

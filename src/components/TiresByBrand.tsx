@@ -186,7 +186,7 @@ export default function TiresByBrand() {
         >
           {/* Background image */}
           <div className="absolute inset-0">
-            <img
+            <img loading="lazy"
               src="/images/loja/estoque-pneus-carplus.webp"
               alt="Loja de pneus Carplus"
               className="w-full h-full object-cover object-center"

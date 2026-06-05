@@ -14,7 +14,7 @@ function YouTubeShorts({ videoId, title }: { videoId: string; title: string }) {
     <div className="relative aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl group">
       {!isPlaying ? (
         <>
-          <img
+          <img loading="lazy"
             src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
             alt={title}
             className="w-full h-full object-cover"

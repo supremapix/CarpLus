@@ -138,7 +138,7 @@ export default function NeighborhoodDetail() {
         {/* Hero Section - SEO Otimizado */}
         <section className="relative min-h-[580px] flex flex-col justify-end bg-dark text-white overflow-hidden">
            <div className="absolute inset-0">
-              <img
+              <img loading="lazy"
                 src="/images/loja/carplus-oficina-portao-fachada-curitiba.jpg"
                 className="w-full h-full object-cover"
                 alt={`Loja de pneus para ${bairro.name} - Carplus Auto Center Curitiba`}

@@ -124,7 +124,7 @@ export default function AboutUs() {
             className="relative"
           >
             <div className="absolute inset-0 bg-amber-500/10 rounded-3xl blur-3xl" />
-            <img
+            <img loading="lazy"
               src="/images/loja/proposito-carplus.webp"
               alt="Proposito e Valores da Carplus Pneus - Valorizacao de Pessoas, Honestidade, Respeito e Colaboracao, Transparencia, Excelencia, Compromisso"
               className="relative w-full h-auto rounded-2xl md:rounded-3xl shadow-2xl border border-[#2a2a2a]"
@@ -375,7 +375,7 @@ export default function AboutUs() {
                 className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
               >
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oxidacao%20severa%20%E2%86%92%20pintura%20eletrostatica-x6lyP8nFMo2iNxOXrTbBQR8kGcHI9t.png" 
                     alt="Pintura de rodas profissional na Carplus Curitiba - Tecnico especializado realizando pintura eletrostatica em roda de liga leve"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -396,7 +396,7 @@ export default function AboutUs() {
                 className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
               >
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Roda%20amassada%20%E2%86%92%20restaurada%20em%202h-dFTVy6dSoaU0u7xdkPprLwtEJhSajO.png" 
                     alt="Rodas restauradas na Carplus Curitiba - Jogo de rodas pretas brilhantes recuperadas com acabamento impecavel"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -417,7 +417,7 @@ export default function AboutUs() {
                 className="relative group overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-amber-500/50 transition-colors"
               >
                 <div className="aspect-[3/4] overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Risco%20profundo%20%E2%86%92%20recuperacao%20total-U6WANiatYVSBrd9DVnwKajZ3hiA3mk.png" 
                     alt="Troca de pneus na Carplus Curitiba Portao - Cliente satisfeito com roda restaurada e pneu novo"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
