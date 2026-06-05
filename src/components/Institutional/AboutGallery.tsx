@@ -78,6 +78,8 @@ export default function AboutGallery() {
               key={selectedIndex}
               src={GALLERY_IMAGES[selectedIndex].src}
               alt={GALLERY_IMAGES[selectedIndex].alt}
+              width={1200}
+              height={801}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -118,6 +120,8 @@ export default function AboutGallery() {
               <img loading="lazy"
                 src={image.src}
                 alt={image.alt}
+                width={1200}
+                height={801}
                 className="w-full h-full object-cover"
               />
               {selectedIndex === index && (
