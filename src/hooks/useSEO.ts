@@ -82,25 +82,7 @@ export function useSEO({
       canonicalEl.href = canonical;
     }
 
-    // Resource hints para performance
-    const addLink = (rel: string, href: string, extra?: Record<string, string>) => {
-      if (!document.querySelector(`link[rel="${rel}"][href="${href}"]`)) {
-        const link = document.createElement('link');
-        link.rel = rel;
-        link.href = href;
-        if (extra) {
-          Object.entries(extra).forEach(([key, value]) => {
-            link.setAttribute(key, value);
-          });
-        }
-        document.head.appendChild(link);
-      }
-    };
-
-    addLink('dns-prefetch', '//fonts.googleapis.com');
-    addLink('dns-prefetch', '//fonts.gstatic.com');
-    addLink('preconnect', 'https://fonts.googleapis.com', { crossorigin: '' });
-    addLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: '' });
+    // Fontes hospedadas localmente (Inter + Oswald): sem hints ao Google Fonts.
 
     // Schema.org JSON-LD
     // Remove schemas dinâmicos anteriores
