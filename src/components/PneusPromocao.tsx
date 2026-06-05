@@ -1,4 +1,3 @@
-import { motion, useInView } from 'motion/react';
 import { useEffect, useRef, useState, type FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, MessageCircle, ArrowRight, List } from 'lucide-react';
@@ -14,7 +13,25 @@ const FALLBACK_IMG =
 
 function CountUp({ to, duration = 1500 }: { to: number; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
+  const [inView, setInView] = useState(false);
+
+  // IntersectionObserver no lugar do useInView do motion (uma observacao, dispara uma vez).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-50px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const [value, setValue] = useState(0);
 
   useEffect(() => {
@@ -105,13 +122,7 @@ export default function PneusPromocao() {
     <section id="promocao" className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Cabeçalho */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 [animation:var(--animate-fade-in-up)]">
           <h2 className="font-accent font-bold uppercase text-neutral-900 text-4xl sm:text-5xl md:text-6xl tracking-tight text-balance">
             Pneus em <span className="text-primary">Promoção</span>
           </h2>
@@ -121,18 +132,16 @@ export default function PneusPromocao() {
             <span className="text-neutral-900 font-accent font-bold uppercase tracking-[0.2em] text-lg sm:text-xl">
               Preços a partir de
             </span>
-            <motion.div
-              animate={{ scale: [1, 1.04, 1] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)]"
+            <div
+              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)] [animation:var(--animate-pulse-scale)] will-change-transform"
             >
               <Zap size={40} className="text-primary fill-primary" />
               <span className="font-accent font-bold text-neutral-900 text-6xl sm:text-7xl leading-none">
                 R$ <CountUp to={239} />
               </span>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Esteira de produtos (direita -> esquerda) */}

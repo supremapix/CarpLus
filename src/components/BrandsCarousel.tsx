@@ -1,5 +1,4 @@
 
-import { motion } from 'motion/react';
 import { MessageSquare, Star, ShieldCheck, Phone, Clock } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 
@@ -42,17 +41,12 @@ export default function BrandsCarousel() {
                 Consultoria Técnica Gratuita
             </div>
 
-            <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-            >
+            <div className="space-y-6 [animation:var(--animate-fade-in-up)]">
                 <SectionTitle prefix="FALE COM UM" highlight="ESPECIALISTA" darkBg className="md:text-left" />
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-sans font-medium max-w-[460px] mx-auto md:mx-0 leading-tight md:leading-relaxed text-center md:text-left">
                    O Maurício está pronto para te ajudar a escolher o pneu com o melhor custo-benefício para seu estilo de condução.
                 </p>
-            </motion.div>
+            </div>
 
             {/* Badges de confiança */}
             <div className="flex flex-col sm:flex-row items-stretch md:items-center gap-4 py-2">
@@ -101,20 +95,16 @@ export default function BrandsCarousel() {
                 </div>
 
                 {/* Mobile Button - Visible only on mobile */}
-                <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="md:hidden block w-full"
-                >
+                <div className="md:hidden block w-full">
                     <a 
                         href="https://wa.me/554130827282?text=Olá Mauricio! Gostaria de uma consultoria técnica sobre pneus." 
                         target="_blank"
-                        className="bg-primary hover:bg-white text-black px-8 py-5 rounded-3xl font-black text-xl flex items-center justify-center gap-3 shadow-2xl shadow-primary/20 transition-all w-full leading-none group"
+                        className="bg-primary hover:bg-white text-black px-8 py-5 rounded-3xl font-black text-xl flex items-center justify-center gap-3 shadow-2xl shadow-primary/20 transition-transform hover:scale-105 active:scale-95 w-full leading-none group"
                     >
                         CHAMAR NO WHATSAPP 
                         <MessageSquare size={24} className="group-hover:rotate-12 transition-transform" />
                     </a>
-                </motion.div>
+                </div>
             </div>
           </div>
 

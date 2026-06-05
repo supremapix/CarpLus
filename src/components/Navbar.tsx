@@ -1,5 +1,4 @@
 
-import { motion, AnimatePresence } from 'motion/react';
 import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
@@ -109,15 +108,13 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <a
               href="https://wa.me/554130827282"
               target="_blank"
-              className="bg-[#25D366] text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all text-sm uppercase tracking-tighter shadow-lg"
+              className="bg-[#25D366] text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-opacity-90 transition-transform hover:scale-105 active:scale-95 text-sm uppercase tracking-tighter shadow-lg"
             >
               <MessageSquare size={16} /> WhatsApp
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile toggle + search */}
@@ -140,15 +137,10 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-dark text-white p-6 flex flex-col"
-          >
+      <div
+        className={`fixed inset-0 z-[60] bg-dark text-white p-6 flex flex-col transition-transform duration-300 ease-out will-change-transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}
+        aria-hidden={!isMobileMenuOpen}
+      >
             {/* Header do drawer com logo local */}
             <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
               <img loading="lazy"
@@ -220,13 +212,11 @@ export default function Navbar() {
                   <div>
                     <p className="text-white font-bold text-base leading-tight">Portão – Curitiba</p>
                     <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Av. Arthur Bernardes, 1323</p>
-                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      </div>
 
       {/* Global Search Modal — montado (e o catalogo carregado) apenas apos abrir a busca */}
       {isSearchOpen && (
