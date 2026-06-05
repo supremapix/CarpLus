@@ -13,6 +13,7 @@ import FAQInfiniteScroll from './FAQInfiniteScroll';
 import CentroAutomotivoCTA from './CentroAutomotivoCTA';
 import OfertasExclusivas from './OfertasExclusivas';
 import Footer from './Footer';
+import DeferredSection from './DeferredSection';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
@@ -45,22 +46,32 @@ export default function Home() {
            whileInView={{ opacity: 1 }}
            viewport={{ once: true }}
         >
-          <TiresByBrand />
+          <DeferredSection minHeight={900} unmountOnExit>
+            <TiresByBrand />
+          </DeferredSection>
         </motion.div>
 
         <StoreSection />
 
-        <ServicesGrid />
+        <DeferredSection minHeight={800} unmountOnExit>
+          <ServicesGrid />
+        </DeferredSection>
 
         <CentroAutomotivoCTA />
 
         <OfertasExclusivas />
 
-        <Reviews />
+        <DeferredSection minHeight={900} unmountOnExit>
+          <Reviews />
+        </DeferredSection>
 
-        <FAQInfiniteScroll />
-        
-        <BrandsCarousel />
+        <DeferredSection minHeight={700} unmountOnExit>
+          <FAQInfiniteScroll />
+        </DeferredSection>
+
+        <DeferredSection minHeight={300} unmountOnExit>
+          <BrandsCarousel />
+        </DeferredSection>
       </main>
       <Footer />
 

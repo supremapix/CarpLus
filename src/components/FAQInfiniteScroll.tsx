@@ -699,7 +699,10 @@ interface FAQColumnProps {
 
 function FAQColumn({ questions, duration, columnIndex, onQuestionClick }: FAQColumnProps) {
   const columnRef = useRef<HTMLDivElement>(null);
-  const duplicatedQuestions = [...questions, ...questions];
+  // Renderiza apenas um subconjunto por coluna; o marquee precisa de poucos itens
+  // para o loop visual. Os dados completos seguem disponiveis para modal e SEO.
+  const visibleQuestions = questions.slice(0, 16);
+  const duplicatedQuestions = [...visibleQuestions, ...visibleQuestions];
   
   const iconComponents = [
     <Disc key="disc" size={14} className="text-primary shrink-0" />,

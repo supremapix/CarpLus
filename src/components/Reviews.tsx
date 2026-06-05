@@ -398,7 +398,10 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
 }
 
 function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick }: { reviews: typeof ALL_REVIEWS; duration: number; delay?: number; offset?: number; onReviewClick: (review: typeof ALL_REVIEWS[0], index: number) => void }) {
-  const doubled = [...reviews, ...reviews];
+  // Limita os cards renderizados no marquee; o loop visual precisa de poucos itens.
+  // O acervo completo de avaliacoes continua acessivel pelo modal (ALL_REVIEWS).
+  const visible = reviews.slice(0, 8);
+  const doubled = [...visible, ...visible];
   return (
     <div className="flex flex-col gap-3 overflow-hidden" style={{ maxHeight: '680px' }}>
       <div

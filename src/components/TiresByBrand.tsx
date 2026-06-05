@@ -122,7 +122,7 @@ export default function TiresByBrand() {
 
     return sortedBrands.slice(0, 9).map(brand => ({
       brand,
-      tires: grouped[brand].slice(0, 12) // Limit to 12 tires per brand for performance
+      tires: grouped[brand].slice(0, 6) // 6 pneus por marca; carrossel + card "Ver todos" cobrem o resto
     }));
   }, []);
 
