@@ -9,6 +9,7 @@ import {
 import { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import LiteYouTube from './LiteYouTube';
 
 // Galeria de imagens da borracharia
 const GALERIA_BORRACHARIA = [
@@ -164,12 +165,10 @@ export default function BorrachariaPortao() {
                 className="relative"
               >
                 <div className="relative aspect-[9/16] max-w-sm mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-amber-500/20">
-                  <iframe
-                    src="https://www.youtube.com/embed/1fWqUJdCdRg"
+                  <LiteYouTube
+                    videoId="1fWqUJdCdRg"
                     title="Carplus Borracharia no Portão - Troca de Pneus Curitiba"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full"
+                    params="rel=0&playsinline=1"
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-amber-500 text-neutral-900 px-4 py-2 rounded-xl font-bold text-sm">

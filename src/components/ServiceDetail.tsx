@@ -2,11 +2,12 @@ import { useParams, Link } from 'react-router-dom';
 import { SERVICES, TIRES, NEIGHBORHOODS } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
 import { getServiceFaqs } from '../data/serviceFaqs';
-import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer } from 'lucide-react';
+import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer, Wrench, Settings, Phone } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'motion/react';
-import * as LucideIcons from 'lucide-react';
+import { getIcon } from './iconMap';
+import LiteYouTube from './LiteYouTube';
 import { useSEO } from '../hooks/useSEO';
 
 // Flatten all services from new categories
@@ -398,7 +399,7 @@ export default function ServiceDetail() {
 
   if (!service) return <div>Serviço não encontrado</div>;
 
-  const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Wrench;
+  const Icon = getIcon(service.icon);
 
   return (
     <div className="min-h-screen bg-dark">
@@ -461,7 +462,7 @@ export default function ServiceDetail() {
               </div>
 
               <div className="relative group">
-                 <img 
+                 <img loading="lazy" 
                     src="/images/loja/loja-de-pneus-curitiba.webp" 
                     className="rounded-[40px] shadow-2xl w-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105" 
                     alt={`Oficina mecanica especializada em ${service.title} – ${service.title} na Carplus Curitiba Portao`} 
@@ -759,12 +760,10 @@ export default function ServiceDetail() {
                   {/* Video Frame */}
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-red-500/20 border-4 border-red-500/30">
                     {/* YouTube Shorts Embed */}
-                    <iframe
-                      src="https://www.youtube.com/embed/-7jfKxcDlTs?autoplay=1&mute=1&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                    <LiteYouTube
+                      videoId="-7jfKxcDlTs"
                       title="CarPlus - Troca de Fluido de Freio"
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      params="mute=1&loop=1&playlist=-7jfKxcDlTs&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                     />
                     
                     {/* Top Overlay */}
@@ -979,12 +978,10 @@ export default function ServiceDetail() {
                   {/* Video Frame */}
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-amber-500/20 border-4 border-amber-500/30">
                     {/* YouTube Shorts Embed */}
-                    <iframe
-                      src="https://www.youtube.com/embed/TY8qfETXlJQ?autoplay=1&mute=1&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-                      title="CarPlus - Troca de Oleo e Filtros"
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                    <LiteYouTube
+                      videoId="TY8qfETXlJQ"
+                      title="CarPlus - Troca de Óleo"
+                      params="mute=1&loop=1&playlist=TY8qfETXlJQ&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                     />
                     
                     {/* Top Overlay */}
@@ -1175,12 +1172,10 @@ export default function ServiceDetail() {
                   {/* Video Frame */}
                   <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-4 border-primary/30">
                     {/* YouTube Shorts Embed */}
-                    <iframe
-                      src="https://www.youtube.com/embed/OEDrtkA19mY?autoplay=1&mute=1&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+                    <LiteYouTube
+                      videoId="OEDrtkA19mY"
                       title="Carplus Auto Center - Servico de Suspensao e Freios em Curitiba"
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      params="mute=1&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                     />
                     
                     {/* Top Overlay */}
@@ -1267,7 +1262,7 @@ export default function ServiceDetail() {
                   {/* Service List */}
                   <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8">
                     <h3 className="text-xl font-black text-white uppercase tracking-tight mb-5 flex items-center gap-3">
-                      <LucideIcons.Wrench className="text-primary" size={24} />
+                      <Wrench className="text-primary" size={24} />
                       Nossos Servicos
                     </h3>
                     <ul className="space-y-3">
@@ -1370,7 +1365,7 @@ export default function ServiceDetail() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 {[
                   { icon: <Shield className="w-6 h-6" />, title: 'Garantia', desc: 'Em todos os reparos' },
-                  { icon: <LucideIcons.Settings className="w-6 h-6" />, title: 'Equipamento', desc: 'De ultima geracao' },
+                  { icon: <Settings className="w-6 h-6" />, title: 'Equipamento', desc: 'De ultima geracao' },
                   { icon: <Clock className="w-6 h-6" />, title: 'Rapidez', desc: 'Entrega em 1-2h' },
                   { icon: <Star className="w-6 h-6" />, title: 'Qualidade', desc: 'Acabamento perfeito' },
                 ].map((item, i) => (
@@ -1478,7 +1473,7 @@ export default function ServiceDetail() {
                    href="tel:+554130827282"
                    className="bg-black/10 border border-black/20 text-black px-7 py-3 rounded-full font-bold text-sm hover:bg-black/20 transition-all flex items-center justify-center gap-2 uppercase tracking-tight"
                  >
-                    <LucideIcons.Phone size={16} /> (41) 3082-7282
+                    <Phone size={16} /> (41) 3082-7282
                  </motion.a>
               </div>
            </div>

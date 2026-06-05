@@ -157,7 +157,7 @@ export default function TireCatalog() {
       {/* Hero Section */}
       <section className="bg-dark pt-32 md:pt-40 pb-0 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img
+          <img loading="lazy"
             src="/images/loja/loja-de-pneus-curitiba.webp"
             className="w-full h-full object-cover"
             alt="Fundo"

@@ -174,7 +174,7 @@ export default function LojaDePneusPertoDeMim() {
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img loading="lazy"
             src={heroImg}
             alt="Loja de pneus Carplus no bairro Portão em Curitiba, fácil acesso de toda a região"
             className="w-full h-full object-cover"

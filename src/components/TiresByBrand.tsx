@@ -122,7 +122,7 @@ export default function TiresByBrand() {
 
     return sortedBrands.slice(0, 9).map(brand => ({
       brand,
-      tires: grouped[brand].slice(0, 12) // Limit to 12 tires per brand for performance
+      tires: grouped[brand].slice(0, 6) // 6 pneus por marca; carrossel + card "Ver todos" cobrem o resto
     }));
   }, []);
 
@@ -186,7 +186,7 @@ export default function TiresByBrand() {
         >
           {/* Background image */}
           <div className="absolute inset-0">
-            <img
+            <img loading="lazy"
               src="/images/loja/estoque-pneus-carplus.webp"
               alt="Loja de pneus Carplus"
               className="w-full h-full object-cover object-center"

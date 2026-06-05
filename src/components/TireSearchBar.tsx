@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { Search, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { TIRES } from '../data';
+import { TIRE_FILTER_TREE, TIRE_AROS } from '../data/tireFilters';
 
 export default function TireSearchBar() {
   const navigate = useNavigate();
@@ -11,25 +11,18 @@ export default function TireSearchBar() {
   const [altura, setAltura] = useState<number | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Get unique values from TIRES data
-  const aros = useMemo(() => {
-    const unique = [...new Set(TIRES.filter(t => t && t.aro).map(t => t.aro))].sort((a, b) => a - b);
-    return unique;
-  }, []);
+  // Opcoes derivadas de uma arvore de filtros pequena (gerada do catalogo),
+  // evitando importar o catalogo completo (~2 MB) na Home.
+  const aros = TIRE_AROS;
 
   const larguras = useMemo(() => {
-    let tires = TIRES.filter(t => t);
-    if (aro) tires = tires.filter(t => t.aro === aro);
-    const unique = [...new Set(tires.filter(t => t.largura).map(t => t.largura))].sort((a, b) => a - b);
-    return unique;
+    if (!aro) return [] as number[];
+    return Object.keys(TIRE_FILTER_TREE[aro] ?? {}).map(Number).sort((a, b) => a - b);
   }, [aro]);
 
   const alturas = useMemo(() => {
-    let tires = TIRES.filter(t => t);
-    if (aro) tires = tires.filter(t => t.aro === aro);
-    if (largura) tires = tires.filter(t => t.largura === largura);
-    const unique = [...new Set(tires.filter(t => t.perfil).map(t => t.perfil))].sort((a, b) => a - b);
-    return unique;
+    if (!aro || !largura) return [] as number[];
+    return (TIRE_FILTER_TREE[aro]?.[largura] ?? []).slice().sort((a, b) => a - b);
   }, [aro, largura]);
 
   const handleSearch = () => {

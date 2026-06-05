@@ -10,6 +10,9 @@ export default function Hero() {
         <img 
           src="/images/hero-mobile.webp" 
           alt="Carplus Pneus - Loja de Pneus em Curitiba" 
+          fetchPriority="high"
+          width={800}
+          height={1200}
           className="w-full h-full object-cover object-[30%_top]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
@@ -20,6 +23,9 @@ export default function Hero() {
         <img 
           src="/images/hero-desktop.webp" 
           alt="Carplus Pneus - Oficina de Pneus em Curitiba" 
+          fetchPriority="high"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />

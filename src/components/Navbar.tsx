@@ -1,9 +1,11 @@
 
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import GlobalSearch from './GlobalSearch';
+
+// Carrega o modal de busca (e o catalogo de pneus que ele usa) somente sob demanda.
+const GlobalSearch = lazy(() => import('./GlobalSearch'));
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,12 +73,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex-shrink-1">
             {/* Desktop: logo externa / Mobile: SVG local */}
-            <img
+            <img loading="lazy"
               src="/images/logos/logo-horizontal.svg"
               alt="Carplus Auto Center"
               className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
-            <img
+            <img loading="lazy"
               src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
               alt="Carplus Auto Center"
               className={`lg:hidden transition-all duration-300 w-auto ${isScrolled ? 'h-9' : 'h-11'}`}
@@ -149,7 +151,7 @@ export default function Navbar() {
           >
             {/* Header do drawer com logo local */}
             <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
-              <img
+              <img loading="lazy"
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
                 alt="Carplus Auto Center"
                 className="h-10"
@@ -226,8 +228,12 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Global Search Modal */}
-      <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {/* Global Search Modal — montado (e o catalogo carregado) apenas apos abrir a busca */}
+      {isSearchOpen && (
+        <Suspense fallback={null}>
+          <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+        </Suspense>
+      )}
     </header>
   );
 }

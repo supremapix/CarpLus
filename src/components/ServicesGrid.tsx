@@ -1,16 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import * as LucideIcons from 'lucide-react';
+import {
+  Check,
+  Clock,
+  ChevronRight,
+  ChevronLeft,
+  ArrowRight,
+  LayoutGrid,
+  MoveHorizontal,
+} from 'lucide-react';
 import { SERVICES } from '../data';
 import { SERVICE_CATEGORIES, BUSINESS_INFO } from '../data/services';
 import SectionTitle from './SectionTitle';
-
-// Helper para pegar icone do Lucide
-const getIcon = (iconName: string) => {
-  const Icon = (LucideIcons as any)[iconName];
-  return Icon || LucideIcons.Circle;
-};
+import { getIcon } from './iconMap';
 
 // Flatten all services from categories
 const ALL_SERVICES = SERVICE_CATEGORIES.flatMap(cat => 
@@ -63,7 +66,7 @@ function ServiceCarouselCard({ service, index }: { service: typeof ALL_SERVICES[
       <ul className="space-y-1.5 mb-4">
         {service.highlights.slice(0, 2).map((h, i) => (
           <li key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-            <LucideIcons.Check size={12} className="text-green-500 mt-0.5 shrink-0" />
+            <Check size={12} className="text-green-500 mt-0.5 shrink-0" />
             <span className="line-clamp-1">{h}</span>
           </li>
         ))}
@@ -73,14 +76,14 @@ function ServiceCarouselCard({ service, index }: { service: typeof ALL_SERVICES[
       <div className="flex items-center justify-between pt-3 border-t border-gray-100">
         {service.estimatedTime && (
           <span className="text-[10px] text-gray-400 flex items-center gap-1">
-            <LucideIcons.Clock size={10} /> {service.estimatedTime}
+            <Clock size={10} /> {service.estimatedTime}
           </span>
         )}
         <Link 
           to={`/servico/${service.slug}`}
           className="text-primary text-[11px] font-bold uppercase tracking-tight flex items-center gap-1 hover:gap-2 transition-all"
         >
-          Ver mais <LucideIcons.ChevronRight size={12} />
+          Ver mais <ChevronRight size={12} />
         </Link>
       </div>
     </motion.div>
@@ -130,10 +133,11 @@ export default function ServicesGrid() {
     }
   };
 
-  // Filter services by category
+  // Filter services by category. No preview "Todos", limita a 12 cards (o link
+  // "Ver Todos os Servicos" cobre o restante) para manter o DOM enxuto.
   const filteredServices = activeCategory 
     ? ALL_SERVICES.filter(s => SERVICE_CATEGORIES.find(c => c.id === activeCategory)?.services.some(cs => cs.id === s.id))
-    : ALL_SERVICES;
+    : ALL_SERVICES.slice(0, 12);
 
   return (
     <section id="servicos" className="py-16 md:py-24 bg-white overflow-hidden">
@@ -151,7 +155,7 @@ export default function ServicesGrid() {
             className="flex items-center gap-2 bg-primary text-black px-5 py-3 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/20"
           >
             Ver Todos os Serviços
-            <LucideIcons.ArrowRight size={16} />
+            <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -166,7 +170,7 @@ export default function ServicesGrid() {
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              <LucideIcons.LayoutGrid size={14} />
+              <LayoutGrid size={14} />
               Todos
             </button>
             {SERVICE_CATEGORIES.map(cat => {
@@ -198,7 +202,7 @@ export default function ServicesGrid() {
               className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-xl rounded-full items-center justify-center hover:bg-primary hover:text-white transition-colors border border-gray-100"
               aria-label="Rolar para esquerda"
             >
-              <LucideIcons.ChevronLeft size={24} />
+              <ChevronLeft size={24} />
             </button>
           )}
           {canScrollRight && (
@@ -207,7 +211,7 @@ export default function ServicesGrid() {
               className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-xl rounded-full items-center justify-center hover:bg-primary hover:text-white transition-colors border border-gray-100"
               aria-label="Rolar para direita"
             >
-              <LucideIcons.ChevronRight size={24} />
+              <ChevronRight size={24} />
             </button>
           )}
 
@@ -231,7 +235,7 @@ export default function ServicesGrid() {
           {/* Scroll hint for mobile */}
           <div className="flex items-center justify-center gap-2 mt-4 md:hidden">
             <span className="text-xs text-gray-400">Arraste para ver mais</span>
-            <LucideIcons.MoveHorizontal size={14} className="text-gray-400" />
+            <MoveHorizontal size={14} className="text-gray-400" />
           </div>
         </div>
 
@@ -272,7 +276,7 @@ export default function ServicesGrid() {
                  ].map(item => (
                    <div key={item} className="flex items-center gap-3">
                       <div className="w-5 h-5 md:w-6 md:h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <LucideIcons.Check className="text-primary" size={12} />
+                        <Check className="text-primary" size={12} />
                       </div>
                       <span className="font-medium text-white/90 text-sm md:text-base">{item}</span>
                    </div>
@@ -282,7 +286,7 @@ export default function ServicesGrid() {
                 to="/servico/scanner-automotivo"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black font-bold uppercase tracking-widest text-xs px-6 py-4 rounded-xl transition-all"
               >
-                Agendar Diagnóstico <LucideIcons.ArrowRight size={14} />
+                Agendar Diagnóstico <ArrowRight size={14} />
               </Link>
            </div>
            

@@ -359,7 +359,7 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2.5">
           {review.avatar ? (
-            <img
+            <img loading="lazy"
               src={review.avatar}
               alt={review.name}
               className="w-9 h-9 rounded-full flex-shrink-0 object-cover"
@@ -398,7 +398,10 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
 }
 
 function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick }: { reviews: typeof ALL_REVIEWS; duration: number; delay?: number; offset?: number; onReviewClick: (review: typeof ALL_REVIEWS[0], index: number) => void }) {
-  const doubled = [...reviews, ...reviews];
+  // Limita os cards renderizados no marquee; o loop visual precisa de poucos itens.
+  // O acervo completo de avaliacoes continua acessivel pelo modal (ALL_REVIEWS).
+  const visible = reviews.slice(0, 4);
+  const doubled = [...visible, ...visible];
   return (
     <div className="flex flex-col gap-3 overflow-hidden" style={{ maxHeight: '680px' }}>
       <div
@@ -560,7 +563,7 @@ export default function Reviews() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
                     {selectedReview.review.avatar ? (
-                      <img
+                      <img loading="lazy"
                         src={selectedReview.review.avatar}
                         alt={selectedReview.review.name}
                         className="w-16 h-16 rounded-full object-cover shadow-md"

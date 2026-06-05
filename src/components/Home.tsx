@@ -2,7 +2,8 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import TireSearchBar from './TireSearchBar';
 import PneusPromocao from './PneusPromocao';
-import TiresByBrand from './TiresByBrand';
+import BestSellerTires from './BestSellerTires';
+import TiresByBrandLazy from './TiresByBrandLazy';
 import BrandsCarousel from './BrandsCarousel';
 import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
@@ -13,6 +14,7 @@ import FAQInfiniteScroll from './FAQInfiniteScroll';
 import CentroAutomotivoCTA from './CentroAutomotivoCTA';
 import OfertasExclusivas from './OfertasExclusivas';
 import Footer from './Footer';
+import DeferredSection from './DeferredSection';
 import { motion } from 'motion/react';
 import { MessageSquare } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
@@ -40,27 +42,35 @@ export default function Home() {
 
         <PneusCuritibaPromo />
 
-        <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-        >
-          <TiresByBrand />
-        </motion.div>
+        <DeferredSection minHeight={900}>
+          <BestSellerTires />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
+          <TiresByBrandLazy />
+        </DeferredSection>
 
         <StoreSection />
 
-        <ServicesGrid />
+        <DeferredSection minHeight={800} unmountOnExit>
+          <ServicesGrid />
+        </DeferredSection>
 
         <CentroAutomotivoCTA />
 
         <OfertasExclusivas />
 
-        <Reviews />
+        <DeferredSection minHeight={900} unmountOnExit>
+          <Reviews />
+        </DeferredSection>
 
-        <FAQInfiniteScroll />
-        
-        <BrandsCarousel />
+        <DeferredSection minHeight={700} unmountOnExit>
+          <FAQInfiniteScroll />
+        </DeferredSection>
+
+        <DeferredSection minHeight={300} unmountOnExit>
+          <BrandsCarousel />
+        </DeferredSection>
       </main>
       <Footer />
 

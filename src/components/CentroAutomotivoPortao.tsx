@@ -148,7 +148,7 @@ export default function CentroAutomotivoPortao() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <img loading="lazy" 
             src="/images/centro-automotivo/oficina-elevadores.webp" 
             alt="Centro Automotivo Carplus no bairro Portão em Curitiba - Vista interna da oficina mecânica"
             className="w-full h-full object-cover"
@@ -367,7 +367,7 @@ export default function CentroAutomotivoPortao() {
           >
             <X size={32} />
           </button>
-          <img
+          <img loading="lazy"
             src={GALERIA_IMAGENS[imagemAberta].src}
             alt={GALERIA_IMAGENS[imagemAberta].alt}
             className="max-w-full max-h-[90vh] object-contain rounded-lg"
@@ -405,7 +405,7 @@ export default function CentroAutomotivoPortao() {
               className="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 group"
             >
               <div className="aspect-video overflow-hidden">
-                <img
+                <img loading="lazy"
                   src="/images/centro-automotivo/pneu-pirelli-scorpion.webp"
                   alt="Quando trocar os pneus do carro"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -437,7 +437,7 @@ export default function CentroAutomotivoPortao() {
               className="bg-neutral-900 rounded-2xl overflow-hidden border border-neutral-800 group"
             >
               <div className="aspect-video overflow-hidden">
-                <img
+                <img loading="lazy"
                   src="/images/centro-automotivo/mecanico-elevador.webp"
                   alt="Importância da revisão preventiva"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -469,7 +469,7 @@ export default function CentroAutomotivoPortao() {
               className="bg-gradient-to-br from-amber-500/10 to-neutral-900 rounded-2xl overflow-hidden border border-amber-500/20 group"
             >
               <div className="aspect-video overflow-hidden relative">
-                <img
+                <img loading="lazy"
                   src="/images/centro-automotivo/oficina-elevadores.webp"
                   alt="Matéria Gazeta do Povo sobre revisão de verão"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

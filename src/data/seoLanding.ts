@@ -4,8 +4,6 @@
 // Clusters: Aro · Medida · Marca · Veículo · SEO Local
 // ════════════════════════════════════════════════════════════════
 
-import { TIRES, Tire } from '../data';
-
 export const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 export const WHATSAPP_NUMBER = '554130827282';
 export const PHONE_DISPLAY = '(41) 3082-7282';
@@ -28,41 +26,9 @@ export function normalizeText(value: string): string {
 }
 
 // ─── Filtros sobre o catálogo real ───────────────────────────────
-export function getTiresByAro(aro: number): Tire[] {
-  return TIRES.filter((t) => t && t.aro === aro);
-}
-
-export function getTiresByBrand(marca: string): Tire[] {
-  const target = marca.toLowerCase();
-  return TIRES.filter((t) => t && t.marca && t.marca.toLowerCase() === target);
-}
-
-export function getTiresByMeasure(medida: string): Tire[] {
-  const target = medida.toUpperCase().replace(/\s/g, '');
-  return TIRES.filter(
-    (t) => t && t.medida && t.medida.toUpperCase().replace(/\s/g, '') === target
-  );
-}
-
-export function getTiresByVehicle(termos: string[]): Tire[] {
-  const targets = termos.map((t) => t.toLowerCase());
-  return TIRES.filter(
-    (t) =>
-      t &&
-      Array.isArray(t.carros) &&
-      t.carros.some((carro) =>
-        targets.some((target) => carro.toLowerCase().includes(target))
-      )
-  );
-}
-
-export function getBrandsForTires(tires: Tire[]): string[] {
-  return [...new Set(tires.filter((t) => t && t.marca).map((t) => t.marca))].sort();
-}
-
-export function getMeasuresForTires(tires: Tire[]): string[] {
-  return [...new Set(tires.filter((t) => t && t.medida).map((t) => t.medida))].sort();
-}
+// As funções que dependem de TIRES (≈2 MB) vivem em './seoLandingFilters'
+// e devem ser importadas diretamente de lá pelos componentes lazy, para
+// que o catálogo NÃO entre no bundle inicial.
 
 // ════════════════════════════════════════════════════════════════
 // FASE 2 — PÁGINAS POR ARO (13 ao 23)
@@ -2138,21 +2104,7 @@ export const INTENT_PAGES: IntentPage[] = [
   },
 ];
 
-// Seleção representativa do catálogo para páginas de intenção genéricas
-export function getFeaturedTires(limit = 12): Tire[] {
-  const featured: Tire[] = [];
-  const seen = new Set<number>();
-  for (const aro of [14, 15, 16, 17, 18, 13]) {
-    for (const tire of getTiresByAro(aro)) {
-      if (tire && !seen.has(tire.id)) {
-        seen.add(tire.id);
-        featured.push(tire);
-      }
-      if (featured.length >= limit) return featured;
-    }
-  }
-  return featured;
-}
+// getFeaturedTires foi movido para './seoLandingFilters' (depende de TIRES).
 
 // ─── Helpers de busca por slug ───────────────────────────────────
 export function getIntentPage(slug: string): IntentPage | undefined {

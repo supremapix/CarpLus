@@ -8,6 +8,7 @@ export interface PromoTire {
   preco: string;
   precoNumero: number;
   imagem: string;
+  imagemSmall: string;
   medida: string;
   largura: number;
   perfil: number;
@@ -27,26 +28,26 @@ interface RawPromoTire {
 }
 
 const RAW_TIRES: RawPromoTire[] = [
-  { marca: 'BRIDGESTONE', nome: '195/55/15 Ecopia EP150 85H', preco: 'R$ 489,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_bridgestone_aro_15_ecopia_ep150_19555r15_bl85_1_20260424103219_554d143d730b.jpg' },
-  { marca: 'COMFORSER', nome: '185/60/14 82H CF510', preco: 'R$ 239,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_18560r14_82h_cf510_comforser_1_20260317145707_26dca0dc6878.jpg' },
-  { marca: 'CONTINENTAL', nome: '175/65/14 ContiPowerContact 82T', preco: 'R$ 379,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17565r14_continental_contipowercontact_82t_1_20251222152416_f9cbacb94d08.jpg' },
-  { marca: 'DELINTE', nome: '185/60/15 DH2 84H', preco: 'R$ 329,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_775428-MLU76889830244_062024-F.webp' },
-  { marca: 'FIRESTONE', nome: '175/65/14 F700 82T', preco: 'R$ 379,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17565r14_firestone_f700_82t_1_20250911111043_865d44577d85.jpg' },
-  { marca: 'GOODYEAR', nome: '205/55/17 91V Wrangler Territory', preco: 'R$ 789,00', imagem: 'https://www.acheipneus.com.br/media/catalog/product/p/n/pneu-20555r17-goodyear-wrangler-territory-ht-91v-1.png' },
-  { marca: 'HIFLY', nome: '185/60/14 82H HF261', preco: 'R$ 269,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_18560r14_hifly_hf261_82h_1_20250912182338_fa8f9c5baa8e.jpg' },
-  { marca: 'JK TYRE', nome: '175/70/13 82T Turbo', preco: 'R$ 269,00', imagem: 'https://www.alvespneus.com.br/image/catalog/Jk-Tyre/pneu-aro-13-175-70r13-jk-tyre-82t-tl-turbo.png' },
-  { marca: 'LINGLONG', nome: '195/60/15 Green-Max HP010 88H', preco: 'R$ 289,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_958386-MLA99823472497_112025-F.webp' },
-  { marca: 'MAXTREK', nome: '185/65/15 88H Maximus M2', preco: 'R$ 299,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1445393/pneu_maxtrek_aro_16_maximus_m2_20565r15_94h_sl_1_20260218135248_7d79f0f6def4.jpg' },
-  { marca: 'MICHELIN', nome: '215/50/17 95W Primacy 4 +', preco: 'R$ 749,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_967456-MLA79828137217_102024-F.webp' },
-  { marca: 'PIRELLI', nome: '175/65/14 82H P400 Evo', preco: 'R$ 379,00', imagem: 'https://www.pensepneus.com.br/media/catalog/product/cache/e5c188f9fa76550a763b93b91095e130/p/4/p400_evo_1.webp' },
-  { marca: 'PRINX', nome: '185/55/16 HH2 83H', preco: 'R$ 459,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_18555r16_prinx_hh2_hicity_83h_1_20250909002931_6e7b2d587166.jpg' },
-  { marca: 'PROVATO', nome: '265/60/18 Crosswind A/T 110T', preco: 'R$ 639,00', imagem: 'https://1stpneus.com.br/wp-content/uploads/2022/10/CROSSWIND-AT.jpg' },
-  { marca: 'ROADKING', nome: '175/70/14C Radial109 95/93T', preco: 'R$ 289,00', imagem: 'https://cdn.iset.io/assets/42004/produtos/2461/thumb_550-550-9409-1.jpg' },
-  { marca: 'SPEEDMAX', nome: '175/55/16 80H Energrip SPM022', preco: 'R$ 489,00', imagem: 'https://images.tcdn.com.br/img/img_prod/1411063/pneu_17555r16_speedmax_energrip_spm022_ev_80h_1_20260522095029_33f1e899ed35.jpg' },
-  { marca: 'TORNEL', nome: '175/70/14 Astral Neo 84T', preco: 'R$ 279,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_785643-MLB110473824363_042026-F.webp' },
-  { marca: 'XBRI', nome: '175/75/14 86T Fastway A5', preco: 'R$ 269,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_686334-MLA100095996251_122025-F.webp' },
-  { marca: 'YOKOHAMA', nome: '175/65/14 ES32 82T', preco: 'R$ 399,00', imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_714535-MLB107513343737_022026-F.webp' },
-  { marca: 'ZMAX', nome: '225/65/16C Vanmejor 112/110R Carga', preco: 'R$ 559,00', imagem: 'https://http2.mlstatic.com/D_930543-MLA112057599751_052026-C.jpg' },
+  { marca: 'BRIDGESTONE', nome: '195/55/15 Ecopia EP150 85H', preco: 'R$ 489,00', imagem: '/pneus/bridgestone.webp' },
+  { marca: 'COMFORSER', nome: '185/60/14 82H CF510', preco: 'R$ 239,00', imagem: '/pneus/comforser.webp' },
+  { marca: 'CONTINENTAL', nome: '175/65/14 ContiPowerContact 82T', preco: 'R$ 379,00', imagem: '/pneus/continental.webp' },
+  { marca: 'DELINTE', nome: '185/60/15 DH2 84H', preco: 'R$ 329,00', imagem: '/pneus/delinte.webp' },
+  { marca: 'FIRESTONE', nome: '175/65/14 F700 82T', preco: 'R$ 379,00', imagem: '/pneus/firestone.webp' },
+  { marca: 'GOODYEAR', nome: '205/55/17 91V Wrangler Territory', preco: 'R$ 789,00', imagem: '/pneus/goodyear.webp' },
+  { marca: 'HIFLY', nome: '185/60/14 82H HF261', preco: 'R$ 269,00', imagem: '/pneus/hifly.webp' },
+  { marca: 'JK TYRE', nome: '175/70/13 82T Turbo', preco: 'R$ 269,00', imagem: '/pneus/jk-tyre.webp' },
+  { marca: 'LINGLONG', nome: '195/60/15 Green-Max HP010 88H', preco: 'R$ 289,00', imagem: '/pneus/linglong.webp' },
+  { marca: 'MAXTREK', nome: '185/65/15 88H Maximus M2', preco: 'R$ 299,00', imagem: '/pneus/maxtrek.webp' },
+  { marca: 'MICHELIN', nome: '215/50/17 95W Primacy 4 +', preco: 'R$ 749,00', imagem: '/pneus/michelin.webp' },
+  { marca: 'PIRELLI', nome: '175/65/14 82H P400 Evo', preco: 'R$ 379,00', imagem: '/pneus/pirelli.webp' },
+  { marca: 'PRINX', nome: '185/55/16 HH2 83H', preco: 'R$ 459,00', imagem: '/pneus/prinx.webp' },
+  { marca: 'PROVATO', nome: '265/60/18 Crosswind A/T 110T', preco: 'R$ 639,00', imagem: '/pneus/provato.webp' },
+  { marca: 'ROADKING', nome: '175/70/14C Radial109 95/93T', preco: 'R$ 289,00', imagem: '/pneus/roadking.webp' },
+  { marca: 'SPEEDMAX', nome: '175/55/16 80H Energrip SPM022', preco: 'R$ 489,00', imagem: '/pneus/speedmax.webp' },
+  { marca: 'TORNEL', nome: '175/70/14 Astral Neo 84T', preco: 'R$ 279,00', imagem: '/pneus/tornel.webp' },
+  { marca: 'XBRI', nome: '175/75/14 86T Fastway A5', preco: 'R$ 269,00', imagem: '/pneus/xbri.webp' },
+  { marca: 'YOKOHAMA', nome: '175/65/14 ES32 82T', preco: 'R$ 399,00', imagem: '/pneus/yokohama.webp' },
+  { marca: 'ZMAX', nome: '225/65/16C Vanmejor 112/110R Carga', preco: 'R$ 559,00', imagem: '/pneus/zmax.webp' },
 ];
 
 // Carros compatíveis por medida (modelos mais comuns no Brasil para cada dimensão).
@@ -134,6 +135,7 @@ function enrich(raw: RawPromoTire): PromoTire {
     preco: raw.preco,
     precoNumero: parsePrice(raw.preco),
     imagem: raw.imagem,
+    imagemSmall: raw.imagem.replace(/\.webp$/, '-300.webp'),
     medida,
     largura,
     perfil,

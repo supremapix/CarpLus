@@ -1,21 +1,15 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import * as LucideIcons from 'lucide-react';
 import { 
   MessageSquare, Clock, Star, ShieldCheck, CreditCard, Trophy, Phone,
-  ChevronRight, ArrowUp
+  ChevronRight, ArrowUp, Wrench, LayoutGrid
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category, type Service } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
-
-// Helper para pegar icone do Lucide
-const getIcon = (iconName: string) => {
-  const Icon = (LucideIcons as any)[iconName];
-  return Icon || LucideIcons.Circle;
-};
+import { getIcon } from './iconMap';
 
 // Componente de contagem animada
 function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: string }) {
@@ -277,7 +271,7 @@ export default function ServicosPage() {
           </p>
           
           <div className="mt-6 inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-bold">
-            <LucideIcons.Wrench size={16} />
+            <Wrench size={16} />
             {totalServices} Serviços Disponíveis
           </div>
         </div>
@@ -320,7 +314,7 @@ export default function ServicosPage() {
                     : 'bg-white/5 text-white/70 hover:bg-white/10 border border-white/10'
                 }`}
               >
-                <LucideIcons.LayoutGrid size={16} />
+                <LayoutGrid size={16} />
                 <span>Todos</span>
               </button>
               {SERVICE_CATEGORIES.map(cat => {

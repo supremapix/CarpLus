@@ -30,7 +30,7 @@ export default function StoreSection() {
             
             {/* Main Image */}
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
-              <img
+              <img loading="lazy"
                 src="/images/loja/carplus-oficina-interior.webp"
                 alt="Carplus Pneus - Loja e Oficina no Portao, Curitiba"
                 className="w-full h-auto object-cover"

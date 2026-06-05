@@ -115,7 +115,7 @@ export default function AboutGallery() {
                   : 'opacity-60 hover:opacity-100'
               }`}
             >
-              <img
+              <img loading="lazy"
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover"
