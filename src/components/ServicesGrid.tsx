@@ -133,10 +133,11 @@ export default function ServicesGrid() {
     }
   };
 
-  // Filter services by category
+  // Filter services by category. No preview "Todos", limita a 12 cards (o link
+  // "Ver Todos os Servicos" cobre o restante) para manter o DOM enxuto.
   const filteredServices = activeCategory 
     ? ALL_SERVICES.filter(s => SERVICE_CATEGORIES.find(c => c.id === activeCategory)?.services.some(cs => cs.id === s.id))
-    : ALL_SERVICES;
+    : ALL_SERVICES.slice(0, 12);
 
   return (
     <section id="servicos" className="py-16 md:py-24 bg-white overflow-hidden">
