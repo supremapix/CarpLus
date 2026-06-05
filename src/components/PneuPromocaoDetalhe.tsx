@@ -316,6 +316,10 @@ export default function PneuPromocaoDetalhe() {
                 <img
                   src={tire.imagem}
                   alt={`Pneu ${tire.marca} ${tire.nome} medida ${tire.medida}`}
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={600}
                   className="w-full h-[300px] md:h-[460px] object-contain relative z-10 [mix-blend-mode:multiply]"
                 />
               </motion.div>
@@ -571,8 +575,13 @@ export default function PneuPromocaoDetalhe() {
                   <div className="aspect-square p-4 flex items-center justify-center">
                     <img
                       src={rt.imagem}
+                      srcSet={`${rt.imagemSmall} 300w, ${rt.imagem} 600w`}
+                      sizes="(max-width: 768px) 45vw, 200px"
                       alt={`Pneu ${rt.marca} ${rt.medida}`}
                       loading="lazy"
+                      decoding="async"
+                      width={300}
+                      height={300}
                       className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform"
                     />
                   </div>

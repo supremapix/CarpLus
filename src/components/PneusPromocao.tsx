@@ -45,8 +45,13 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
       <Link to={`/pneu-promocao/${tire.slug}`} className="relative aspect-square bg-white p-1 flex items-center justify-center overflow-hidden">
         <img
           src={tire.imagem}
+          srcSet={`${tire.imagemSmall} 300w, ${tire.imagem} 600w`}
+          sizes="(max-width: 640px) 230px, 260px"
           alt={`Pneu ${tire.marca} ${tire.nome}`}
           loading="lazy"
+          decoding="async"
+          width={300}
+          height={300}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
           }}
