@@ -10,7 +10,7 @@ import LiteYouTube from './LiteYouTube';
 // nenhum script do YouTube carrega antes do clique do usuário.
 function YouTubeShorts({ videoId, title }: { videoId: string; title: string }) {
   return (
-    <div className="relative aspect-[9/16] max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+    <div className="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
       <LiteYouTube videoId={videoId} title={title} params="rel=0" />
     </div>
   );

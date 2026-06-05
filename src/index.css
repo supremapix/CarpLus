@@ -1,9 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap');
 @import "tailwindcss";
+
+/* Fontes hospedadas localmente (sem requisicoes ao Google Fonts).
+   Inter e Oswald sao fontes variaveis: um unico .woff2 cobre todos os pesos. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/oswald-latin-var.woff2") format("woff2");
+}
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Poppins", sans-serif;
+  --font-display: "Oswald", sans-serif;
   --font-accent: "Oswald", sans-serif;
 
   --color-primary: #f59c00;
@@ -36,7 +53,7 @@
     @apply font-display uppercase;
   }
   
-  /* H1 - Poppins optimized typography */
+  /* H1 - Oswald optimized typography */
   h1 {
     font-weight: 700;
     line-height: 1.05;
@@ -49,7 +66,7 @@
     }
   }
   
-  /* H2 - Poppins optimized typography */
+  /* H2 - Oswald optimized typography */
   h2 {
     font-weight: 600;
     line-height: 1.375; /* leading-snug */
@@ -62,14 +79,14 @@
     }
   }
   
-  /* H3 - Poppins optimized typography */
+  /* H3 - Oswald optimized typography */
   h3 {
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: 0em;
   }
   
-  /* H4 - Poppins optimized typography */
+  /* H4 - Oswald optimized typography */
   h4 {
     font-weight: 600;
     line-height: 1.3;
