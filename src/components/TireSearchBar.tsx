@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
 import { Search, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { TIRE_FILTER_TREE, TIRE_AROS } from '../data/tireFilters';
@@ -57,10 +56,8 @@ export default function TireSearchBar() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/20 blur-[120px] rounded-full" />
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="py-4 md:py-6"
+        <div
+          className="py-4 md:py-6 [animation:var(--animate-fade-in-down)]"
         >
           {/* Mobile Toggle Button */}
           <button
@@ -165,26 +162,22 @@ export default function TireSearchBar() {
                 {/* Search Button */}
                 <div className="flex gap-3">
                   {hasFilters && (
-                    <motion.button
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
+                    <button
                       onClick={clearFilters}
-                      className="w-14 h-14 md:h-[58px] flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-2xl transition-colors shrink-0"
+                      className="w-14 h-14 md:h-[58px] flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-2xl transition-transform hover:scale-105 active:scale-95 shrink-0 [animation:var(--animate-pop-in)]"
                       title="Limpar filtros"
                     >
                       <X size={20} className="text-gray-600" />
-                    </motion.button>
+                    </button>
                   )}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  <button
                     onClick={handleSearch}
                     disabled={!aro}
-                    className="flex-1 bg-primary hover:bg-yellow-400 disabled:bg-gray-300 disabled:cursor-not-allowed text-black px-6 py-4 rounded-2xl font-black text-base uppercase tracking-tight flex items-center justify-center gap-2 transition-colors shadow-lg shadow-primary/20 disabled:shadow-none"
+                    className="flex-1 bg-primary hover:bg-yellow-400 disabled:bg-gray-300 disabled:cursor-not-allowed text-black px-6 py-4 rounded-2xl font-black text-base uppercase tracking-tight flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20 disabled:shadow-none"
                   >
                     <Search size={20} />
                     <span className="hidden md:inline">Pesquisar</span>
-                  </motion.button>
+                  </button>
                 </div>
               </div>
 
@@ -196,7 +189,7 @@ export default function TireSearchBar() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

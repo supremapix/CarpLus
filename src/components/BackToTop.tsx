@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,21 +26,17 @@ export default function BackToTop() {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          transition={{ duration: 0.2 }}
-          onClick={scrollToTop}
-          className="fixed bottom-24 md:bottom-6 left-6 z-40 bg-primary hover:bg-primary/90 text-black p-3 rounded-full shadow-lg hover:shadow-xl transition-all group"
-          aria-label="Voltar ao topo"
-          title="Voltar ao topo"
-        >
-          <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-24 md:bottom-6 left-6 z-40 bg-primary hover:bg-primary/90 text-black p-3 rounded-full shadow-lg hover:shadow-xl group transition-all duration-200 ${
+        isVisible ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 translate-y-5 scale-90 pointer-events-none'
+      }`}
+      aria-label="Voltar ao topo"
+      title="Voltar ao topo"
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
+    >
+      <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
+    </button>
   );
 }

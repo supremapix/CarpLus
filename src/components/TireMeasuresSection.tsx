@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
 
 export default function TireMeasuresSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,33 +40,24 @@ export default function TireMeasuresSection() {
       }}
     >
       {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4"
+      <h2
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'}`}
       >
         <span className="text-white">Como entender as </span>
         <span className="text-amber-500">medidas</span>
         <span className="text-white"> do pneu?</span>
-      </motion.h2>
+      </h2>
 
       {/* Description */}
-      <motion.p
-        initial={{ opacity: 0, y: -10 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
+      <p
+        className={`text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed px-2 transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2.5'}`}
       >
         Entenda o significado dos numeros na lateral do seu pneu e escolha o modelo certo.
-      </motion.p>
+      </p>
 
       {/* Infographic Image */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full max-w-[900px] mx-auto"
+      <div
+        className={`w-full max-w-[900px] mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
         <img
           src="/images/pneus/pneus-medidas.webp"
@@ -77,7 +67,7 @@ export default function TireMeasuresSection() {
           className="w-full h-auto"
           loading="lazy"
         />
-      </motion.div>
+      </div>
     </section>
   );
 }
