@@ -62,8 +62,8 @@ export default function TireMeasuresSection() {
         <img
           src="/images/pneus/pneus-medidas.webp"
           alt="Infográfico mostrando as medidas de um pneu: Largura em milímetros, Altura em relação à largura e Aro em polegadas, com exemplo 225/55 R18"
-          width={600}
-          height={396}
+          width={1024}
+          height={1024}
           className="w-full h-auto"
           loading="lazy"
         />
