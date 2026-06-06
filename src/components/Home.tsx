@@ -1,22 +1,26 @@
+import { lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import TireSearchBar from './TireSearchBar';
 import PneusPromocao from './PneusPromocao';
-import BestSellerTires from './BestSellerTires';
-import TiresByBrandLazy from './TiresByBrandLazy';
 import BrandsCarousel from './BrandsCarousel';
 import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
-import StoreSection from './StoreSection';
-import ServicesGrid from './ServicesGrid';
-import Reviews from './Reviews';
-import FAQInfiniteScroll from './FAQInfiniteScroll';
-import CentroAutomotivoCTA from './CentroAutomotivoCTA';
-import OfertasExclusivas from './OfertasExclusivas';
 import Footer from './Footer';
 import DeferredSection from './DeferredSection';
 import { MessageSquare } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+
+// Componentes abaixo da dobra: carregados sob demanda (lazy) para manter o
+// chunk "motion" fora do caminho critico do carregamento inicial da Home.
+const BestSellerTires = lazy(() => import('./BestSellerTires'));
+const TiresByBrandLazy = lazy(() => import('./TiresByBrandLazy'));
+const StoreSection = lazy(() => import('./StoreSection'));
+const ServicesGrid = lazy(() => import('./ServicesGrid'));
+const Reviews = lazy(() => import('./Reviews'));
+const FAQInfiniteScroll = lazy(() => import('./FAQInfiniteScroll'));
+const CentroAutomotivoCTA = lazy(() => import('./CentroAutomotivoCTA'));
+const OfertasExclusivas = lazy(() => import('./OfertasExclusivas'));
 
 export default function Home() {
   useSEO({
@@ -42,29 +46,51 @@ export default function Home() {
         <PneusCuritibaPromo />
 
         <DeferredSection minHeight={900}>
-          <BestSellerTires />
+          <Suspense fallback={null}>
+            <BestSellerTires />
+          </Suspense>
         </DeferredSection>
 
         <DeferredSection minHeight={400}>
-          <TiresByBrandLazy />
+          <Suspense fallback={null}>
+            <TiresByBrandLazy />
+          </Suspense>
         </DeferredSection>
 
-        <StoreSection />
+        <DeferredSection minHeight={800}>
+          <Suspense fallback={null}>
+            <StoreSection />
+          </Suspense>
+        </DeferredSection>
 
         <DeferredSection minHeight={800} unmountOnExit>
-          <ServicesGrid />
+          <Suspense fallback={null}>
+            <ServicesGrid />
+          </Suspense>
         </DeferredSection>
 
-        <CentroAutomotivoCTA />
+        <DeferredSection minHeight={500}>
+          <Suspense fallback={null}>
+            <CentroAutomotivoCTA />
+          </Suspense>
+        </DeferredSection>
 
-        <OfertasExclusivas />
+        <DeferredSection minHeight={700}>
+          <Suspense fallback={null}>
+            <OfertasExclusivas />
+          </Suspense>
+        </DeferredSection>
 
         <DeferredSection minHeight={900} unmountOnExit>
-          <Reviews />
+          <Suspense fallback={null}>
+            <Reviews />
+          </Suspense>
         </DeferredSection>
 
         <DeferredSection minHeight={700} unmountOnExit>
-          <FAQInfiniteScroll />
+          <Suspense fallback={null}>
+            <FAQInfiniteScroll />
+          </Suspense>
         </DeferredSection>
 
         <DeferredSection minHeight={300} unmountOnExit>

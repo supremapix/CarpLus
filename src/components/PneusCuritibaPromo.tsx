@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Tag, Phone, ChevronRight, ChevronLeft, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LiteYouTube from './LiteYouTube';
@@ -62,11 +61,8 @@ export default function PneusCuritibaPromo() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12 md:mb-16"
+        <div
+          className={`text-center mb-12 md:mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'}`}
         >
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest mb-5">
             <Tag size={14} />
@@ -79,17 +75,14 @@ export default function PneusCuritibaPromo() {
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Os melhores preços em pneus no bairro Portão. Condições imperdíveis para você trocar seus pneus com segurança e economia.
           </p>
-        </motion.div>
+        </div>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Video Gallery 9:16 */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-[320px] lg:max-w-[380px]"
+          <div
+            className={`relative mx-auto w-full max-w-[320px] lg:max-w-[380px] transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             {/* Navigation Arrows */}
             <button
@@ -109,22 +102,16 @@ export default function PneusCuritibaPromo() {
 
             <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-dark/10">
               {/* YouTube Shorts Embed */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeVideo.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0"
-                >
-                  <LiteYouTube
-                    videoId={activeVideo.id}
-                    title={`CarPlus - ${activeVideo.title}`}
-                    params={`mute=1&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
-                  />
-                </motion.div>
-              </AnimatePresence>
+              <div
+                key={activeVideo.id}
+                className="absolute inset-0 [animation:var(--animate-fade-in)]"
+              >
+                <LiteYouTube
+                  videoId={activeVideo.id}
+                  title={`CarPlus - ${activeVideo.title}`}
+                  params={`mute=1&loop=1&playlist=${activeVideo.id}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+                />
+              </div>
               
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-dark/20 pointer-events-none" />
@@ -163,14 +150,11 @@ export default function PneusCuritibaPromo() {
             {/* Decorative Elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-          </motion.div>
+          </div>
 
           {/* Promo Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
+          <div
+            className={`space-y-6 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
           >
             {/* Promo Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -228,7 +212,7 @@ export default function PneusCuritibaPromo() {
                 <p className="text-gray-500 text-sm">Av. Presidente Arthur da Silva Bernardes, 1323 - Atendimento de Seg a Sáb</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
