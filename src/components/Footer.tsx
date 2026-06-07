@@ -179,7 +179,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-white/40 text-sm">
          <div className="text-center md:text-left space-y-1">
-            <p className="font-bold">Carplus Auto Center © 2025</p>
+            <p className="font-bold">Carplus Centro Automotivo © 2025</p>
             <p className="text-xs">CNPJ 22.345.678/0001-90 · Todos os direitos reservados</p>
          </div>
          

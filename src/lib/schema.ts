@@ -69,7 +69,7 @@ export function generateProductSchema(props: ProductSchemaProps): object {
       availability: availabilityMap[availability],
       seller: {
         "@type": "Organization",
-        name: "Carplus Auto Center",
+        name: "Carplus Centro Automotivo",
         telephone: "+55-41-3082-7282",
         address: {
           "@type": "PostalAddress",
@@ -123,7 +123,7 @@ export function generateProductListSchema(
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Catalogo de Pneus — Carplus Auto Center",
+    name: "Catalogo de Pneus — Carplus Centro Automotivo",
     itemListElement: products.map((p) => ({
       "@type": "ListItem",
       position: p.position,
@@ -173,7 +173,7 @@ export function generateLocalBusinessSchema(): object {
   return {
     "@context": "https://schema.org",
     "@type": ["AutoRepair", "TireShop", "LocalBusiness"],
-    name: "Carplus Auto Center",
+    name: "Carplus Centro Automotivo",
     alternateName: "Carplus Pneus",
     url: "https://www.carpluspneuseoficina.com.br",
     logo: "https://www.carpluspneuseoficina.com.br/images/logo-carplus-curitiba-portao.svg",

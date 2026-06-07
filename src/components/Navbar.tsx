@@ -74,14 +74,14 @@ export default function Navbar() {
             {/* Desktop: logo externa / Mobile: SVG local */}
             <img loading="lazy"
               src="/images/logos/logo-horizontal.svg"
-              alt="Carplus Auto Center"
+              alt="Carplus Centro Automotivo"
               width={1182}
               height={168}
               className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
             <img loading="lazy"
               src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
-              alt="Carplus Auto Center"
+              alt="Carplus Centro Automotivo"
               width={2952}
               height={708}
               className={`lg:hidden transition-all duration-300 w-auto ${isScrolled ? 'h-9' : 'h-11'}`}
@@ -149,7 +149,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
               <img loading="lazy"
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
-                alt="Carplus Auto Center"
+                alt="Carplus Centro Automotivo"
                 width={2952}
                 height={708}
                 className="h-10"

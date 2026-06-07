@@ -49,7 +49,7 @@ const HUB_FAQ = [
 
 export default function PneusMedidasHub() {
   useSEO({
-    title: 'Medidas de Pneus em Curitiba | Carplus Auto Center – Portão',
+    title: 'Medidas de Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     description:
       'Encontre pneus por medida em Curitiba na Carplus, bairro Portão. Veja as medidas mais procuradas (175/65R14, 195/65R15, 205/55R16, 225/65R17 e mais), aplicações por modelo, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     canonical: `${BASE_URL}/medidas-de-pneus-curitiba`,

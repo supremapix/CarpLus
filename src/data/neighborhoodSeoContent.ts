@@ -29,11 +29,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'portao': {
     slug: 'portao',
     name: 'Portão',
-    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Auto Center - 2 min',
+    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Centro Automotivo - 2 min',
     metaDescription: 'Loja de pneus no Portão, Curitiba. Pneus Pirelli, Michelin, Goodyear com montagem inclusa. Alinhamento 3D, balanceamento e troca de óleo. Estamos na sua porta!',
     h1: 'Pneus e Oficina no Portão',
     heroSubtitle: 'A melhor loja de pneus do seu bairro, a apenas 2 minutos de você!',
-    introText: 'Moradores do Portão têm a vantagem de contar com a Carplus Auto Center literalmente a poucos passos de casa. Localizada na Av. Arthur da Silva Bernardes, 1323, somos referência em pneus e serviços automotivos na região sul de Curitiba há mais de 10 anos.',
+    introText: 'Moradores do Portão têm a vantagem de contar com a Carplus Centro Automotivo literalmente a poucos passos de casa. Localizada na Av. Arthur da Silva Bernardes, 1323, somos referência em pneus e serviços automotivos na região sul de Curitiba há mais de 10 anos.',
     localContext: 'O Portão é um dos bairros mais tradicionais de Curitiba, conhecido pelo comércio forte e pela proximidade com o Shopping Palladium. Quem mora aqui sabe que praticidade é essencial — e é exatamente isso que oferecemos: serviço de qualidade sem precisar atravessar a cidade.',
     servicesHighlight: [
       'Troca de pneus com montagem e balanceamento inclusos',
@@ -78,7 +78,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Pneus em Curitiba para moradores do Água Verde. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 5 minutos pela República Argentina.',
     h1: 'Pneus para Moradores do Água Verde',
     heroSubtitle: 'Só 5 minutos pela República Argentina até a melhor loja de pneus de Curitiba',
-    introText: 'O Água Verde é conhecido pela qualidade de vida e pelo perfil exigente de seus moradores. Para quem preza por segurança e busca os melhores produtos para seu veículo, a Carplus Auto Center está a apenas 5 minutos de distância.',
+    introText: 'O Água Verde é conhecido pela qualidade de vida e pelo perfil exigente de seus moradores. Para quem preza por segurança e busca os melhores produtos para seu veículo, a Carplus Centro Automotivo está a apenas 5 minutos de distância.',
     localContext: 'Um dos bairros mais nobres e arborizados de Curitiba, o Água Verde reúne famílias que valorizam conforto e praticidade. Com fácil acesso pela Avenida República Argentina, chegar à Carplus é rápido e sem complicações.',
     servicesHighlight: [
       'Pneus premium para sedans e SUVs do Água Verde',
@@ -159,7 +159,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'parolin': {
     slug: 'parolin',
     name: 'Parolin',
-    metaTitle: 'Loja de Pneus Parolin Curitiba | Carplus Auto Center - 8 min',
+    metaTitle: 'Loja de Pneus Parolin Curitiba | Carplus Centro Automotivo - 8 min',
     metaDescription: 'Pneus e serviços automotivos para o Parolin, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D, troca de óleo. A 8 minutos pela Getúlio Vargas.',
     h1: 'Pneus e Oficina Mecânica para o Parolin',
     heroSubtitle: 'Do Parolin à Carplus em apenas 8 minutos pela Getúlio Vargas',
@@ -289,7 +289,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'fazendinha': {
     slug: 'fazendinha',
     name: 'Fazendinha',
-    metaTitle: 'Pneus Fazendinha Curitiba | Carplus Auto Center - 10 min',
+    metaTitle: 'Pneus Fazendinha Curitiba | Carplus Centro Automotivo - 10 min',
     metaDescription: 'Loja de pneus para Fazendinha, Curitiba. Pirelli, Michelin, Goodyear com instalação inclusa. Alinhamento 3D e troca de óleo a 10 min de você.',
     h1: 'Pneus e Oficina para a Fazendinha',
     heroSubtitle: 'Da Fazendinha à Carplus em 10 minutos pela João Dembinski',
@@ -367,7 +367,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cic': {
     slug: 'cic',
     name: 'CIC',
-    metaTitle: 'Pneus CIC Curitiba | Carplus Auto Center - 15 min',
+    metaTitle: 'Pneus CIC Curitiba | Carplus Centro Automotivo - 15 min',
     metaDescription: 'Loja de pneus para o CIC, Curitiba. Pneus para carros, vans e utilitários. Alinhamento 3D e serviços mecânicos. Atendemos frotas empresariais.',
     h1: 'Pneus e Oficina para o CIC (Cidade Industrial)',
     heroSubtitle: 'CIC: pneus e serviços para frotas e veículos particulares',
@@ -1785,11 +1785,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'abranches': {
     slug: 'abranches',
     name: 'Abranches',
-    metaTitle: 'Pneus Abranches Curitiba | Carplus Auto Center - 18 min',
+    metaTitle: 'Pneus Abranches Curitiba | Carplus Centro Automotivo - 18 min',
     metaDescription: 'Loja de pneus para Abranches, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços automotivos. A 18 min de você.',
     h1: 'Pneus e Oficina para Abranches',
     heroSubtitle: 'Abranches: pneus de qualidade a 18 minutos da sua casa',
-    introText: 'O bairro Abranches, tradicional região norte de Curitiba, conta com a Carplus Auto Center para todas as necessidades automotivas. Oferecemos pneus das melhores marcas com instalação profissional e preço justo.',
+    introText: 'O bairro Abranches, tradicional região norte de Curitiba, conta com a Carplus Centro Automotivo para todas as necessidades automotivas. Oferecemos pneus das melhores marcas com instalação profissional e preço justo.',
     localContext: 'Abranches é conhecido por suas áreas verdes e tranquilidade. Moradores do bairro encontram na Carplus uma oficina completa a apenas 18 minutos, com fácil acesso pela Av. Anita Garibaldi.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear e Yokohama',
@@ -1828,7 +1828,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Bom Retiro, Curitiba. Pirelli, Michelin, Goodyear com instalação. Alinhamento 3D e balanceamento a 15 min.',
     h1: 'Pneus e Oficina para o Bom Retiro',
     heroSubtitle: 'Bom Retiro: sua oficina de confiança está a 15 minutos',
-    introText: 'O Bom Retiro é um bairro tradicional e bem localizado de Curitiba. Para moradores que buscam pneus de qualidade e serviços automotivos confiáveis, a Carplus Auto Center oferece o melhor atendimento.',
+    introText: 'O Bom Retiro é um bairro tradicional e bem localizado de Curitiba. Para moradores que buscam pneus de qualidade e serviços automotivos confiáveis, a Carplus Centro Automotivo oferece o melhor atendimento.',
     localContext: 'Com fácil acesso ao centro e outras regiões, o Bom Retiro tem moradores exigentes que valorizam qualidade. A Carplus atende esse perfil com pneus premium e serviços de alta qualidade.',
     servicesHighlight: [
       'Pneus para carros populares e executivos',
@@ -1862,11 +1862,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'boqueirao': {
     slug: 'boqueirao',
     name: 'Boqueirão',
-    metaTitle: 'Pneus Boqueirão Curitiba | Carplus Auto Center - 15 min',
+    metaTitle: 'Pneus Boqueirão Curitiba | Carplus Centro Automotivo - 15 min',
     metaDescription: 'Loja de pneus para o Boqueirão, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D, balanceamento e serviços. A 15 min pela Linha Verde.',
     h1: 'Pneus e Oficina para o Boqueirão',
     heroSubtitle: 'Boqueirão: pneus das melhores marcas a 15 minutos de distância',
-    introText: 'O Boqueirão é um dos maiores e mais populosos bairros de Curitiba. A Carplus Auto Center atende essa comunidade com pneus de todas as marcas e serviços automotivos completos, com preço justo e atendimento de qualidade.',
+    introText: 'O Boqueirão é um dos maiores e mais populosos bairros de Curitiba. A Carplus Centro Automotivo atende essa comunidade com pneus de todas as marcas e serviços automotivos completos, com preço justo e atendimento de qualidade.',
     localContext: 'Com forte comércio e grande população, o Boqueirão tem moradores que precisam de praticidade. A Carplus oferece estoque próprio de pneus e serviços rápidos para quem não pode perder tempo.',
     servicesHighlight: [
       'Pneus econômicos e intermediários para carros populares',
@@ -1907,7 +1907,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Butiatuvinha. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos a 25 min.',
     h1: 'Pneus e Oficina para Butiatuvinha',
     heroSubtitle: 'Butiatuvinha: pneus de qualidade com atendimento diferenciado',
-    introText: 'Butiatuvinha é um bairro residencial na região noroeste de Curitiba. Moradores encontram na Carplus Auto Center todas as soluções em pneus e serviços automotivos.',
+    introText: 'Butiatuvinha é um bairro residencial na região noroeste de Curitiba. Moradores encontram na Carplus Centro Automotivo todas as soluções em pneus e serviços automotivos.',
     localContext: 'O bairro Butiatuvinha fica próximo ao Parque Tingui e Santa Felicidade. A Carplus atende moradores da região com qualidade e preço justo.',
     servicesHighlight: [
       'Pneus para todos os tipos de veículos',
@@ -1944,7 +1944,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Cachoeira, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 20 min.',
     h1: 'Pneus e Oficina para Cachoeira',
     heroSubtitle: 'Cachoeira: sua oficina de confiança está a 20 minutos',
-    introText: 'O bairro Cachoeira, na zona norte de Curitiba, conta com a Carplus Auto Center para todas as necessidades em pneus e serviços automotivos.',
+    introText: 'O bairro Cachoeira, na zona norte de Curitiba, conta com a Carplus Centro Automotivo para todas as necessidades em pneus e serviços automotivos.',
     localContext: 'Cachoeira é um bairro tranquilo com fácil acesso à região central. A Carplus oferece pneus de qualidade e serviços profissionais.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2018,7 +2018,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Campo de Santana, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 25 min.',
     h1: 'Pneus e Oficina para Campo de Santana',
     heroSubtitle: 'Campo de Santana: pneus com instalação profissional',
-    introText: 'Campo de Santana é um bairro em crescimento na região sul de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços completos para moradores do bairro.',
+    introText: 'Campo de Santana é um bairro em crescimento na região sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços completos para moradores do bairro.',
     localContext: 'O Campo de Santana fica na região sul de Curitiba, com fácil acesso pela Av. Raimundo Blum. A Carplus atende moradores com preço justo.',
     servicesHighlight: [
       'Pneus para carros populares',
@@ -2055,7 +2055,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Capão da Imbuia. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços a 20 min.',
     h1: 'Pneus e Oficina para Capão da Imbuia',
     heroSubtitle: 'Capão da Imbuia: pneus das melhores marcas a 20 minutos',
-    introText: 'O Capão da Imbuia é um bairro tradicional da zona leste de Curitiba. A Carplus Auto Center oferece pneus de todas as marcas e serviços automotivos completos.',
+    introText: 'O Capão da Imbuia é um bairro tradicional da zona leste de Curitiba. A Carplus Centro Automotivo oferece pneus de todas as marcas e serviços automotivos completos.',
     localContext: 'Com fácil acesso pela Av. Prefeito Mauricio Fruet, o Capão da Imbuia está bem conectado ao Portão. A Carplus atende moradores com qualidade e preço justo.',
     servicesHighlight: [
       'Pneus econômicos e premium',
@@ -2089,11 +2089,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'caximba': {
     slug: 'caximba',
     name: 'Caximba',
-    metaTitle: 'Pneus Caximba Curitiba | Carplus Auto Center - 30 min',
+    metaTitle: 'Pneus Caximba Curitiba | Carplus Centro Automotivo - 30 min',
     metaDescription: 'Loja de pneus para Caximba, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Caximba',
     heroSubtitle: 'Caximba: pneus de qualidade para sua família',
-    introText: 'O bairro Caximba, na extremidade sul de Curitiba, conta com a Carplus Auto Center para todas as necessidades em pneus e serviços automotivos.',
+    introText: 'O bairro Caximba, na extremidade sul de Curitiba, conta com a Carplus Centro Automotivo para todas as necessidades em pneus e serviços automotivos.',
     localContext: 'A Caximba é um dos bairros mais ao sul de Curitiba. A Carplus oferece pneus de qualidade e preço justo para moradores que buscam economia.',
     servicesHighlight: [
       'Pneus econômicos para carros populares',
@@ -2126,11 +2126,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'ecoville': {
     slug: 'ecoville',
     name: 'Ecoville',
-    metaTitle: 'Pneus Ecoville Curitiba | Carplus Auto Center - 12 min',
+    metaTitle: 'Pneus Ecoville Curitiba | Carplus Centro Automotivo - 12 min',
     metaDescription: 'Loja de pneus Ecoville, Curitiba. Pirelli, Michelin, Continental, Yokohama. Alinhamento 3D para SUVs e sedans executivos a 12 min.',
     h1: 'Pneus e Oficina para o Ecoville',
     heroSubtitle: 'Ecoville: pneus premium para veículos de alto padrão',
-    introText: 'O Ecoville é uma das regiões mais valorizadas de Curitiba, com moradores que buscam qualidade e excelência. A Carplus Auto Center oferece pneus premium das melhores marcas mundiais e serviços de alta precisão.',
+    introText: 'O Ecoville é uma das regiões mais valorizadas de Curitiba, com moradores que buscam qualidade e excelência. A Carplus Centro Automotivo oferece pneus premium das melhores marcas mundiais e serviços de alta precisão.',
     localContext: 'Conhecido pelo alto padrão de vida e proximidade com o Parque Barigui, o Ecoville reúne profissionais exigentes. A Carplus atende esse perfil com pneus para SUVs premium, sedans executivos e carros importados.',
     servicesHighlight: [
       'Pneus premium para BMW, Mercedes, Audi e Volvo',
@@ -2167,11 +2167,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'fanny': {
     slug: 'fanny',
     name: 'Fanny',
-    metaTitle: 'Pneus Fanny Curitiba | Carplus Auto Center - 8 min',
+    metaTitle: 'Pneus Fanny Curitiba | Carplus Centro Automotivo - 8 min',
     metaDescription: 'Loja de pneus para Fanny, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 8 min.',
     h1: 'Pneus e Oficina para o Fanny',
     heroSubtitle: 'Fanny: pneus de qualidade pertinho de você',
-    introText: 'O bairro Fanny é uma região residencial tradicional de Curitiba. A Carplus Auto Center, localizada no Portão vizinho, oferece pneus das melhores marcas com instalação profissional.',
+    introText: 'O bairro Fanny é uma região residencial tradicional de Curitiba. A Carplus Centro Automotivo, localizada no Portão vizinho, oferece pneus das melhores marcas com instalação profissional.',
     localContext: 'Vizinho do Portão, o Fanny está a apenas 8 minutos da Carplus. Moradores do bairro têm a comodidade de uma oficina completa pertinho de casa.',
     servicesHighlight: [
       'Pneus para carros populares e familiares',
@@ -2209,7 +2209,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Ganchinho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Ganchinho',
     heroSubtitle: 'Ganchinho: pneus com preço justo',
-    introText: 'O Ganchinho é um bairro da zona sul de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível para moradores da região.',
+    introText: 'O Ganchinho é um bairro da zona sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível para moradores da região.',
     localContext: 'Localizado na região sul, o Ganchinho tem acesso ao Portão pela Linha Verde. A Carplus oferece os melhores preços de pneus de Curitiba.',
     servicesHighlight: [
       'Pneus econômicos',
@@ -2246,7 +2246,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Guabirotuba, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e balanceamento a 15 min.',
     h1: 'Pneus e Oficina para Guabirotuba',
     heroSubtitle: 'Guabirotuba: pneus das melhores marcas a 15 minutos',
-    introText: 'O Guabirotuba é um bairro residencial da zona leste de Curitiba. A Carplus Auto Center oferece pneus de todas as marcas e serviços automotivos completos para moradores do bairro.',
+    introText: 'O Guabirotuba é um bairro residencial da zona leste de Curitiba. A Carplus Centro Automotivo oferece pneus de todas as marcas e serviços automotivos completos para moradores do bairro.',
     localContext: 'Bem localizado entre o Centro e o Jardim Botânico, o Guabirotuba tem fácil acesso à Carplus pela Av. das Torres ou Centro.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear e Yokohama',
@@ -2280,11 +2280,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'hauer': {
     slug: 'hauer',
     name: 'Hauer',
-    metaTitle: 'Pneus Hauer Curitiba | Carplus Auto Center - 12 min',
+    metaTitle: 'Pneus Hauer Curitiba | Carplus Centro Automotivo - 12 min',
     metaDescription: 'Loja de pneus para Hauer, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 12 min.',
     h1: 'Pneus e Oficina para o Hauer',
     heroSubtitle: 'Hauer: pneus de qualidade a 12 minutos da sua casa',
-    introText: 'O Hauer é um bairro tradicional de Curitiba, com forte comércio e moradores que valorizam qualidade. A Carplus Auto Center está a apenas 12 minutos para atender todas as suas necessidades automotivas.',
+    introText: 'O Hauer é um bairro tradicional de Curitiba, com forte comércio e moradores que valorizam qualidade. A Carplus Centro Automotivo está a apenas 12 minutos para atender todas as suas necessidades automotivas.',
     localContext: 'Localizado entre o Boqueirão e o Centro, o Hauer tem fácil acesso ao Portão. A Carplus oferece pneus de qualidade e serviços profissionais.',
     servicesHighlight: [
       'Pneus para carros populares e SUVs',
@@ -2322,7 +2322,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Hugo Lange, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 15 min.',
     h1: 'Pneus e Oficina para Hugo Lange',
     heroSubtitle: 'Hugo Lange: pneus premium para veículos de alto padrão',
-    introText: 'Hugo Lange é um bairro nobre de Curitiba, com moradores que valorizam qualidade. A Carplus Auto Center oferece pneus premium e serviços de excelência.',
+    introText: 'Hugo Lange é um bairro nobre de Curitiba, com moradores que valorizam qualidade. A Carplus Centro Automotivo oferece pneus premium e serviços de excelência.',
     localContext: 'Localizado próximo ao Jardim Botânico, Hugo Lange reúne famílias que buscam o melhor. A Carplus atende com pneus para veículos de alto padrão.',
     servicesHighlight: [
       'Pneus premium para sedans executivos',
@@ -2359,7 +2359,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Jardim das Américas. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D a 18 min.',
     h1: 'Pneus e Oficina para Jardim das Américas',
     heroSubtitle: 'Jardim das Américas: pneus das melhores marcas',
-    introText: 'O Jardim das Américas é um bairro tradicional de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços automotivos completos para moradores.',
+    introText: 'O Jardim das Américas é um bairro tradicional de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços automotivos completos para moradores.',
     localContext: 'Com fácil acesso pela Av. das Torres, o Jardim das Américas está a 18 minutos da Carplus. Moradores encontram pneus de todas as marcas.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
@@ -2396,7 +2396,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Jardim Social, Curitiba. Pirelli, Michelin, Continental. Alinhamento 3D para veículos de alto padrão.',
     h1: 'Pneus e Oficina para Jardim Social',
     heroSubtitle: 'Jardim Social: pneus premium para seu veículo',
-    introText: 'O Jardim Social é um dos bairros mais nobres de Curitiba. A Carplus Auto Center oferece pneus premium para veículos de alto padrão.',
+    introText: 'O Jardim Social é um dos bairros mais nobres de Curitiba. A Carplus Centro Automotivo oferece pneus premium para veículos de alto padrão.',
     localContext: 'Bairro residencial de alto padrão, o Jardim Social reúne famílias exigentes. A Carplus atende com pneus para veículos importados e nacionais premium.',
     servicesHighlight: [
       'Pneus para BMW, Mercedes, Audi',
@@ -2433,7 +2433,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Lamenha Pequena. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Lamenha Pequena',
     heroSubtitle: 'Lamenha Pequena: pneus de qualidade',
-    introText: 'Lamenha Pequena é um bairro da região noroeste de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'Lamenha Pequena é um bairro da região noroeste de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'Próximo a Santa Felicidade, Lamenha Pequena tem acesso fácil ao centro. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2465,11 +2465,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'lindoia': {
     slug: 'lindoia',
     name: 'Lindóia',
-    metaTitle: 'Pneus Lindóia Curitiba | Carplus Auto Center - 8 min',
+    metaTitle: 'Pneus Lindóia Curitiba | Carplus Centro Automotivo - 8 min',
     metaDescription: 'Loja de pneus Lindóia, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 8 min.',
     h1: 'Pneus e Oficina para Lindóia',
     heroSubtitle: 'Lindóia: pneus de qualidade a 8 minutos',
-    introText: 'O Lindóia é um bairro bem localizado de Curitiba, vizinho do Portão. A Carplus Auto Center está a apenas 8 minutos para atender moradores com pneus de qualidade.',
+    introText: 'O Lindóia é um bairro bem localizado de Curitiba, vizinho do Portão. A Carplus Centro Automotivo está a apenas 8 minutos para atender moradores com pneus de qualidade.',
     localContext: 'Vizinho do Portão e Fanny, o Lindóia tem acesso direto à Carplus. Moradores encontram pneus das melhores marcas com preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2506,7 +2506,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus para Mossunguê, Curitiba. Pirelli, Michelin, Goodyear, Continental. Alinhamento 3D a 12 min.',
     h1: 'Pneus e Oficina para Mossunguê',
     heroSubtitle: 'Mossunguê: pneus premium para seu veículo',
-    introText: 'O Mossunguê é um bairro de alto padrão de Curitiba, próximo ao Parque Barigui. A Carplus Auto Center oferece pneus premium e serviços de qualidade.',
+    introText: 'O Mossunguê é um bairro de alto padrão de Curitiba, próximo ao Parque Barigui. A Carplus Centro Automotivo oferece pneus premium e serviços de qualidade.',
     localContext: 'Com moradores exigentes, o Mossunguê está a 12 minutos da Carplus. Oferecemos pneus para SUVs e sedans executivos.',
     servicesHighlight: [
       'Pneus premium para SUVs',
@@ -2543,7 +2543,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Orleans, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Orleans',
     heroSubtitle: 'Orleans: pneus de qualidade',
-    introText: 'Orleans é um bairro residencial de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços profissionais.',
+    introText: 'Orleans é um bairro residencial de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
     localContext: 'O bairro Orleans está bem localizado com acesso fácil ao Portão. A Carplus atende moradores com preço justo.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2580,7 +2580,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Prado Velho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
     h1: 'Pneus e Oficina para Prado Velho',
     heroSubtitle: 'Prado Velho: pneus de qualidade a 12 minutos',
-    introText: 'O Prado Velho é um bairro bem localizado de Curitiba, próximo ao Centro e à PUCPR. A Carplus Auto Center oferece pneus de qualidade.',
+    introText: 'O Prado Velho é um bairro bem localizado de Curitiba, próximo ao Centro e à PUCPR. A Carplus Centro Automotivo oferece pneus de qualidade.',
     localContext: 'Com fácil acesso pela Av. das Torres, o Prado Velho está a 12 minutos da Carplus. Atendemos estudantes e moradores.',
     servicesHighlight: [
       'Pneus para carros populares',
@@ -2617,7 +2617,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Santa Quitéria, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 8 min.',
     h1: 'Pneus e Oficina para Santa Quitéria',
     heroSubtitle: 'Santa Quitéria: pneus de qualidade pertinho',
-    introText: 'Santa Quitéria é um bairro tradicional de Curitiba, vizinho do Portão. A Carplus Auto Center está a apenas 8 minutos com pneus das melhores marcas.',
+    introText: 'Santa Quitéria é um bairro tradicional de Curitiba, vizinho do Portão. A Carplus Centro Automotivo está a apenas 8 minutos com pneus das melhores marcas.',
     localContext: 'Vizinho do Portão, Santa Quitéria tem acesso direto à Carplus. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2654,7 +2654,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Santo Inácio, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Santo Inácio',
     heroSubtitle: 'Santo Inácio: pneus de qualidade',
-    introText: 'Santo Inácio é um bairro da região oeste de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços profissionais.',
+    introText: 'Santo Inácio é um bairro da região oeste de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
     localContext: 'Com fácil acesso ao Portão, Santo Inácio está a 15 minutos da Carplus. Moradores encontram pneus de todas as marcas.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2691,7 +2691,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus São Braz, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento.',
     h1: 'Pneus e Oficina para São Braz',
     heroSubtitle: 'São Braz: pneus de qualidade',
-    introText: 'São Braz é um bairro tradicional da região noroeste de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'São Braz é um bairro tradicional da região noroeste de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'Próximo a Santa Felicidade, São Braz tem acesso fácil ao Portão. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2728,7 +2728,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus São Francisco, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
     h1: 'Pneus e Oficina para São Francisco',
     heroSubtitle: 'São Francisco: pneus de qualidade',
-    introText: 'O bairro São Francisco é uma região nobre de Curitiba. A Carplus Auto Center oferece pneus premium e serviços de qualidade.',
+    introText: 'O bairro São Francisco é uma região nobre de Curitiba. A Carplus Centro Automotivo oferece pneus premium e serviços de qualidade.',
     localContext: 'Localizado próximo ao Centro, São Francisco tem moradores exigentes. A Carplus atende com pneus de alta qualidade.',
     servicesHighlight: [
       'Pneus premium',
@@ -2765,7 +2765,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus São João, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para São João',
     heroSubtitle: 'São João: pneus de qualidade',
-    introText: 'São João é um bairro da região norte de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'São João é um bairro da região norte de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'O bairro São João tem acesso fácil ao centro. A Carplus atende moradores com qualidade e atendimento profissional.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2802,7 +2802,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus São Miguel, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para São Miguel',
     heroSubtitle: 'São Miguel: pneus com preço justo',
-    introText: 'São Miguel é um bairro da zona sul de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível.',
+    introText: 'São Miguel é um bairro da zona sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível.',
     localContext: 'O bairro São Miguel fica na região sul com acesso pela Linha Verde. A Carplus atende moradores com os melhores preços.',
     servicesHighlight: [
       'Pneus econômicos',
@@ -2839,7 +2839,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Seminário, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 10 min.',
     h1: 'Pneus e Oficina para o Seminário',
     heroSubtitle: 'Seminário: pneus de qualidade a 10 minutos',
-    introText: 'O Seminário é um bairro bem localizado de Curitiba. A Carplus Auto Center está a apenas 10 minutos com pneus das melhores marcas.',
+    introText: 'O Seminário é um bairro bem localizado de Curitiba. A Carplus Centro Automotivo está a apenas 10 minutos com pneus das melhores marcas.',
     localContext: 'Vizinho do Bigorrilho e Mercês, o Seminário tem fácil acesso ao Portão. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2876,7 +2876,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Taboão, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Taboão',
     heroSubtitle: 'Taboão: pneus de qualidade',
-    introText: 'Taboão é um bairro da região sul de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'Taboão é um bairro da região sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'O bairro Taboão tem acesso fácil pela Linha Verde. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2913,7 +2913,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Tarumã, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 20 min.',
     h1: 'Pneus e Oficina para Tarumã',
     heroSubtitle: 'Tarumã: pneus de qualidade',
-    introText: 'O Tarumã é um bairro tradicional de Curitiba, próximo ao Parque do Tarumã. A Carplus Auto Center oferece pneus de qualidade.',
+    introText: 'O Tarumã é um bairro tradicional de Curitiba, próximo ao Parque do Tarumã. A Carplus Centro Automotivo oferece pneus de qualidade.',
     localContext: 'Com o famoso Parque do Tarumã, o bairro tem moradores que valorizam qualidade de vida. A Carplus atende com pneus de alta qualidade.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
@@ -2950,7 +2950,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Augusta, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Augusta',
     heroSubtitle: 'Augusta: pneus de qualidade',
-    introText: 'Augusta é um bairro da região de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços profissionais.',
+    introText: 'Augusta é um bairro da região de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
     localContext: 'O bairro Augusta está bem conectado às principais vias. A Carplus atende moradores com qualidade e preço justo.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -2987,7 +2987,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Riviera, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Riviera',
     heroSubtitle: 'Riviera: pneus de qualidade',
-    introText: 'Riviera é um bairro residencial de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'Riviera é um bairro residencial de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'O bairro Riviera está bem localizado com acesso fácil ao Portão. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -3024,7 +3024,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Alto Boqueirão, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 18 min.',
     h1: 'Pneus e Oficina para Alto Boqueirão',
     heroSubtitle: 'Alto Boqueirão: pneus de qualidade',
-    introText: 'O Alto Boqueirão é uma região populosa de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível para moradores.',
+    introText: 'O Alto Boqueirão é uma região populosa de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível para moradores.',
     localContext: 'Parte do grande Boqueirão, o Alto Boqueirão tem acesso pela Linha Verde. A Carplus atende com os melhores preços.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
@@ -3061,7 +3061,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Caiuá, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Caiuá',
     heroSubtitle: 'Caiuá: pneus de qualidade',
-    introText: 'Caiuá é um bairro da região sul de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'Caiuá é um bairro da região sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'O bairro Caiuá fica próximo ao CIC com acesso fácil ao Portão. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus econômicos',
@@ -3097,11 +3097,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-izabel': {
     slug: 'vila-izabel',
     name: 'Vila Izabel',
-    metaTitle: 'Pneus Vila Izabel Curitiba | Carplus Auto Center - 5 min',
+    metaTitle: 'Pneus Vila Izabel Curitiba | Carplus Centro Automotivo - 5 min',
     metaDescription: 'Loja de pneus Vila Izabel, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 5 min.',
     h1: 'Pneus e Oficina para Vila Izabel',
     heroSubtitle: 'Vila Izabel: pneus de qualidade pertinho de você',
-    introText: 'A Vila Izabel é uma região vizinha do Portão. A Carplus Auto Center está a apenas 5 minutos, oferecendo pneus das melhores marcas.',
+    introText: 'A Vila Izabel é uma região vizinha do Portão. A Carplus Centro Automotivo está a apenas 5 minutos, oferecendo pneus das melhores marcas.',
     localContext: 'Vizinha do Portão, a Vila Izabel tem acesso direto à Carplus. Moradores encontram qualidade e preço justo a poucos minutos de casa.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear, Yokohama',
@@ -3138,7 +3138,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Hauer, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
     h1: 'Pneus e Oficina para Vila Hauer',
     heroSubtitle: 'Vila Hauer: pneus de qualidade',
-    introText: 'A Vila Hauer é uma região tradicional de Curitiba. A Carplus Auto Center oferece pneus de qualidade e serviços profissionais.',
+    introText: 'A Vila Hauer é uma região tradicional de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
     localContext: 'Próxima ao Hauer, a Vila Hauer tem acesso fácil ao Portão. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -3175,7 +3175,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Guaíra, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 5 min.',
     h1: 'Pneus e Oficina para Vila Guaíra',
     heroSubtitle: 'Vila Guaíra: pneus de qualidade pertinho',
-    introText: 'A Vila Guaíra é uma região próxima ao Guaíra e Portão. A Carplus Auto Center está a apenas 5 minutos com pneus das melhores marcas.',
+    introText: 'A Vila Guaíra é uma região próxima ao Guaíra e Portão. A Carplus Centro Automotivo está a apenas 5 minutos com pneus das melhores marcas.',
     localContext: 'Vizinha do Portão, a Vila Guaíra tem acesso direto à Carplus. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -3212,7 +3212,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Fanny, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 8 min.',
     h1: 'Pneus e Oficina para Vila Fanny',
     heroSubtitle: 'Vila Fanny: pneus de qualidade',
-    introText: 'A Vila Fanny é uma região próxima ao Fanny e Portão. A Carplus Auto Center oferece pneus das melhores marcas.',
+    introText: 'A Vila Fanny é uma região próxima ao Fanny e Portão. A Carplus Centro Automotivo oferece pneus das melhores marcas.',
     localContext: 'Vizinha do Portão, a Vila Fanny tem acesso fácil à Carplus. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -3249,7 +3249,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Torres, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Torres',
     heroSubtitle: 'Vila Torres: pneus de qualidade',
-    introText: 'A Vila Torres é uma região de Curitiba próxima ao Prado Velho. A Carplus Auto Center oferece pneus de qualidade e preço acessível.',
+    introText: 'A Vila Torres é uma região de Curitiba próxima ao Prado Velho. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível.',
     localContext: 'A Vila Torres tem acesso fácil ao centro e ao Portão. A Carplus atende moradores com os melhores preços.',
     servicesHighlight: [
       'Pneus econômicos',
@@ -3286,7 +3286,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Oficinas, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Oficinas',
     heroSubtitle: 'Vila Oficinas: pneus de qualidade',
-    introText: 'A Vila Oficinas é uma região de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'A Vila Oficinas é uma região de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'A Vila Oficinas está bem conectada às principais vias. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -3326,7 +3326,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Sandra, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços a 15 min.',
     h1: 'Pneus e Oficina para Vila Sandra',
     heroSubtitle: 'Vila Sandra: pneus de qualidade',
-    introText: 'A Vila Sandra é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo para moradores.',
+    introText: 'A Vila Sandra é uma comunidade de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo para moradores.',
     localContext: 'A Vila Sandra tem acesso fácil ao Portão. A Carplus atende moradores com qualidade e preços competitivos.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -3359,11 +3359,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'neoville': {
     slug: 'neoville',
     name: 'Neoville',
-    metaTitle: 'Pneus Neoville Curitiba | Carplus Auto Center - 12 min',
+    metaTitle: 'Pneus Neoville Curitiba | Carplus Centro Automotivo - 12 min',
     metaDescription: 'Loja de pneus Neoville, Curitiba. Pirelli, Michelin, Goodyear, Continental. Alinhamento 3D para veículos de alto padrão.',
     h1: 'Pneus e Oficina para Neoville',
     heroSubtitle: 'Neoville: pneus premium para seu veículo',
-    introText: 'O Neoville é um empreendimento de alto padrão em Curitiba. A Carplus Auto Center oferece pneus premium e serviços de excelência para moradores exigentes.',
+    introText: 'O Neoville é um empreendimento de alto padrão em Curitiba. A Carplus Centro Automotivo oferece pneus premium e serviços de excelência para moradores exigentes.',
     localContext: 'O Neoville reúne moradores que valorizam qualidade. A Carplus atende com pneus para veículos de alto padrão e serviços profissionais.',
     servicesHighlight: [
       'Pneus premium para SUVs e sedans executivos',
@@ -3400,7 +3400,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Verde, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Vila Verde',
     heroSubtitle: 'Vila Verde: pneus de qualidade',
-    introText: 'A Vila Verde é uma região residencial de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'A Vila Verde é uma região residencial de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'A Vila Verde está bem localizada com acesso ao Portão. A Carplus atende moradores com qualidade e atendimento profissional.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -3437,7 +3437,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Nossa Senhora da Luz, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 15 min.',
     h1: 'Pneus e Oficina para Vila Nossa Senhora da Luz',
     heroSubtitle: 'Vila Nossa Senhora da Luz: pneus de qualidade',
-    introText: 'A Vila Nossa Senhora da Luz é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível.',
+    introText: 'A Vila Nossa Senhora da Luz é uma comunidade de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível.',
     localContext: 'A Vila Nossa Senhora da Luz tem acesso ao Portão pelas principais vias. A Carplus atende moradores com os melhores preços.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
@@ -3474,7 +3474,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vila Pantanal, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Pantanal',
     heroSubtitle: 'Vila Pantanal: pneus de qualidade',
-    introText: 'A Vila Pantanal é uma comunidade de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço justo para moradores.',
+    introText: 'A Vila Pantanal é uma comunidade de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo para moradores.',
     localContext: 'A Vila Pantanal está conectada às principais vias de Curitiba. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus das melhores marcas',
@@ -3511,7 +3511,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Vitória Régia, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Vitória Régia',
     heroSubtitle: 'Vitória Régia: pneus de qualidade',
-    introText: 'Vitória Régia é uma região de Curitiba. A Carplus Auto Center oferece pneus de qualidade e preço acessível para moradores.',
+    introText: 'Vitória Régia é uma região de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível para moradores.',
     localContext: 'Vitória Régia tem acesso ao Portão pelas principais vias. A Carplus atende moradores com os melhores preços.',
     servicesHighlight: [
       'Pneus econômicos',
@@ -3548,7 +3548,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Sabará, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Sabará',
     heroSubtitle: 'Sabará: pneus de qualidade',
-    introText: 'Sabará é um bairro de Curitiba na região do Pinheirinho. A Carplus Auto Center oferece pneus de qualidade e preço justo.',
+    introText: 'Sabará é um bairro de Curitiba na região do Pinheirinho. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo.',
     localContext: 'Sabará está bem localizado com acesso ao Portão. A Carplus atende moradores com qualidade e atendimento profissional.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -3585,7 +3585,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     metaDescription: 'Loja de pneus Santa Felicidade Norte, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Santa Felicidade Norte',
     heroSubtitle: 'Santa Felicidade Norte: pneus de qualidade',
-    introText: 'Santa Felicidade Norte é uma região tradicional de Curitiba, conhecida pela gastronomia italiana. A Carplus Auto Center oferece pneus de qualidade.',
+    introText: 'Santa Felicidade Norte é uma região tradicional de Curitiba, conhecida pela gastronomia italiana. A Carplus Centro Automotivo oferece pneus de qualidade.',
     localContext: 'Santa Felicidade Norte fica na região noroeste de Curitiba, com acesso pela Av. Manoel Ribas. A Carplus atende moradores com qualidade.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
@@ -3744,11 +3744,11 @@ export function generateGenericSeoContent(name: string, slug: string, tempo: str
   return {
     slug,
     name,
-    metaTitle: `Pneus ${name} | Carplus Auto Center Curitiba - ${tempo}`,
+    metaTitle: `Pneus ${name} | Carplus Centro Automotivo Curitiba - ${tempo}`,
     metaDescription: `Loja de pneus para ${name}. Pirelli, Michelin, Goodyear com instalação inclusa. Alinhamento 3D e balanceamento. A ${tempo} de você.`,
     h1: `Pneus e Oficina para ${name}`,
     heroSubtitle: `${name}: sua oficina de confiança está a ${tempo}`,
-    introText: `Moradores de ${name} encontram na Carplus Auto Center a melhor opção em pneus e serviços automotivos em Curitiba. Localizada no Portão, a ${tempo} de você, oferecemos pneus Pirelli, Michelin, Goodyear e Continental com montagem e balanceamento inclusos.`,
+    introText: `Moradores de ${name} encontram na Carplus Centro Automotivo a melhor opção em pneus e serviços automotivos em Curitiba. Localizada no Portão, a ${tempo} de você, oferecemos pneus Pirelli, Michelin, Goodyear e Continental com montagem e balanceamento inclusos.`,
     localContext: `${name} tem acesso fácil ao Portão via ${via}. A Carplus atende moradores da região com qualidade, preço justo e atendimento profissional há mais de 10 anos.`,
     servicesHighlight: [
       'Pneus das melhores marcas com instalação inclusa',

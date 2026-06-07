@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Circle as HelpCircle } from 'lucide-react';
 
 const FAQS = [
-  { q: "Onde fica a Carplus Auto Center em Curitiba?", a: "Estamos na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR. Referência: próximo ao Shopping Palladium. Fácil acesso pelas avenidas República Argentina, Sete de Setembro e Winston Churchill." },
+  { q: "Onde fica a Carplus Centro Automotivo em Curitiba?", a: "Estamos na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR. Referência: próximo ao Shopping Palladium. Fácil acesso pelas avenidas República Argentina, Sete de Setembro e Winston Churchill." },
   { q: "Quais marcas de pneus a Carplus vende?", a: "Somos revendedores autorizados de Pirelli, Michelin, Goodyear, Continental, Firestone, Bridgestone e Yokohama. Todos os aros, do 13 ao 22, para carros de passeio, SUVs, picapes e veículos esportivos." },
   { q: "A montagem e o balanceamento estão inclusos na compra do pneu?", a: "Sim! Na Carplus a montagem e o balanceamento são inclusos na compra dos pneus. Nossos técnicos utilizam equipamentos de precisão para garantir segurança e conforto na sua direção." },
   { q: "A Carplus parcela a compra de pneus?", a: "Sim! Parcelamos pneus em até 10x sem juros no cartão de crédito. Aceitamos também débito, PIX e dinheiro. Para frotas em quantidade, temos condições especiais — consulte pelo WhatsApp: (41) 3082-7282." },

@@ -50,7 +50,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['loja de pneus curitiba', 'pneus portão curitiba', 'pneu pirelli curitiba', 'pneu michelin curitiba', 'comprar pneus curitiba', 'pneus baratos curitiba']
   },
   'alinhamento-3d': {
-    intro: 'O alinhamento 3D computadorizado é essencial para a segurança e economia do seu veículo. Na Carplus Auto Center, utilizamos equipamento de alinhamento Hunter 3D de última geração, o mesmo utilizado pelas concessionárias premium. O alinhamento corrige a geometria das rodas, evitando desgaste irregular dos pneus e melhorando a estabilidade do veículo.',
+    intro: 'O alinhamento 3D computadorizado é essencial para a segurança e economia do seu veículo. Na Carplus Centro Automotivo, utilizamos equipamento de alinhamento Hunter 3D de última geração, o mesmo utilizado pelas concessionárias premium. O alinhamento corrige a geometria das rodas, evitando desgaste irregular dos pneus e melhorando a estabilidade do veículo.',
     detalhes: [
       'Equipamento Hunter 3D com precisão de 0,01 grau - padrão internacional',
       'Alinhamento das 4 rodas com ajuste de câmber, cáster e convergência',
@@ -67,7 +67,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['alinhamento 3d curitiba', 'alinhamento computadorizado curitiba', 'alinhamento hunter curitiba', 'alinhamento portão', 'geometria curitiba']
   },
   'troca-de-oleo': {
-    intro: 'A troca de óleo é a manutenção mais importante para a longevidade do motor do seu carro. Na Carplus Auto Center em Curitiba, realizamos troca de óleo com lubrificantes das melhores marcas: Mobil, Shell Helix, Castrol, Petronas e Selenia. Trabalhamos com óleos minerais, semi-sintéticos e 100% sintéticos para todos os tipos de motor.',
+    intro: 'A troca de óleo é a manutenção mais importante para a longevidade do motor do seu carro. Na Carplus Centro Automotivo em Curitiba, realizamos troca de óleo com lubrificantes das melhores marcas: Mobil, Shell Helix, Castrol, Petronas e Selenia. Trabalhamos com óleos minerais, semi-sintéticos e 100% sintéticos para todos os tipos de motor.',
     detalhes: [
       'Óleos das marcas Mobil 1, Shell Helix Ultra, Castrol Edge e Petronas Syntium',
       'Troca de filtro de óleo sempre inclusa no serviço',
@@ -87,7 +87,7 @@ const SEO_CONTENT: Record<string, {
     videoBadge: 'Video Explicativo Premium'
   },
   'scanner-automotivo': {
-    intro: 'O diagnóstico por scanner automotivo é fundamental para identificar problemas eletrônicos no seu veículo. Na Carplus Auto Center, utilizamos scanners multiprotocolo de última geração que leem todos os módulos do carro: motor, câmbio, ABS, airbag, direção elétrica e muito mais. Atendemos todas as marcas nacionais e importadas.',
+    intro: 'O diagnóstico por scanner automotivo é fundamental para identificar problemas eletrônicos no seu veículo. Na Carplus Centro Automotivo, utilizamos scanners multiprotocolo de última geração que leem todos os módulos do carro: motor, câmbio, ABS, airbag, direção elétrica e muito mais. Atendemos todas as marcas nacionais e importadas.',
     detalhes: [
       'Scanner multiprotocolo compatível com mais de 80 marcas de veículos',
       'Leitura e apagamento de códigos de falha (DTCs) de todos os módulos',
@@ -104,7 +104,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['scanner automotivo curitiba', 'diagnóstico eletrônico curitiba', 'luz injeção curitiba', 'check engine curitiba', 'scanner portão']
   },
   'suspensao-e-freios': {
-    intro: 'A suspensão e os freios são sistemas críticos para a segurança do seu veículo. Na Carplus Auto Center, oferecemos serviço completo de revisão e reparo de amortecedores, molas, pivôs, buchas, pastilhas, discos e todo o sistema de frenagem. Utilizamos peças de qualidade com garantia e mão de obra especializada.',
+    intro: 'A suspensão e os freios são sistemas críticos para a segurança do seu veículo. Na Carplus Centro Automotivo, oferecemos serviço completo de revisão e reparo de amortecedores, molas, pivôs, buchas, pastilhas, discos e todo o sistema de frenagem. Utilizamos peças de qualidade com garantia e mão de obra especializada.',
     detalhes: [
       'Troca de amortecedores das marcas Cofap, Monroe, Kayaba e originais',
       'Substituição de pastilhas e discos de freio com peças de primeira linha',
@@ -121,7 +121,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['suspensão curitiba', 'amortecedor curitiba', 'freio curitiba', 'pastilha de freio curitiba', 'disco de freio curitiba', 'troca amortecedor portão']
   },
   'ar-condicionado': {
-    intro: 'O ar-condicionado automotivo é essencial para o conforto em Curitiba, tanto no verão quanto no inverno úmido. Na Carplus Auto Center, realizamos todos os serviços de manutenção do sistema de climatização: carga de gás, higienização, reparo de compressor, troca de filtro de cabine e diagnóstico completo do sistema.',
+    intro: 'O ar-condicionado automotivo é essencial para o conforto em Curitiba, tanto no verão quanto no inverno úmido. Na Carplus Centro Automotivo, realizamos todos os serviços de manutenção do sistema de climatização: carga de gás, higienização, reparo de compressor, troca de filtro de cabine e diagnóstico completo do sistema.',
     detalhes: [
       'Carga de gás R134a e R1234yf (novo gás ecológico) com medição precisa',
       'Higienização do sistema com produto bactericida e fungicida',
@@ -138,7 +138,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['ar condicionado automotivo curitiba', 'carga de gás curitiba', 'higienização ar condicionado curitiba', 'ar carro curitiba', 'ar condicionado portão']
   },
   'manutencao-motor': {
-    intro: 'A manutenção do motor é fundamental para garantir desempenho, economia de combustível e durabilidade do seu veículo. Na Carplus Auto Center em Curitiba, realizamos revisões preventivas e corretivas completas: troca de velas, cabos, filtros, correias, bomba d\'água, embreagem e muito mais. Atendemos carros nacionais e importados.',
+    intro: 'A manutenção do motor é fundamental para garantir desempenho, economia de combustível e durabilidade do seu veículo. Na Carplus Centro Automotivo em Curitiba, realizamos revisões preventivas e corretivas completas: troca de velas, cabos, filtros, correias, bomba d\'água, embreagem e muito mais. Atendemos carros nacionais e importados.',
     detalhes: [
       'Revisão completa seguindo o plano de manutenção do fabricante',
       'Troca de velas de ignição convencionais e de irídio/platina',
@@ -155,7 +155,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['revisão carro curitiba', 'manutenção motor curitiba', 'troca de velas curitiba', 'mecânico curitiba', 'oficina mecânica portão']
   },
   'conserto-de-rodas': {
-    intro: 'O conserto de rodas é uma solução econômica para recuperar rodas amassadas, trincadas ou arranhadas sem precisar comprar rodas novas. Na Carplus Auto Center, utilizamos equipamento especializado para recuperar a geometria original de rodas de liga leve e aço, garantindo segurança e economia.',
+    intro: 'O conserto de rodas é uma solução econômica para recuperar rodas amassadas, trincadas ou arranhadas sem precisar comprar rodas novas. Na Carplus Centro Automotivo, utilizamos equipamento especializado para recuperar a geometria original de rodas de liga leve e aço, garantindo segurança e economia.',
     detalhes: [
       'Recuperação de rodas de liga leve amassadas por buracos e guias',
       'Solda especial para trincas em rodas de alumínio',
@@ -172,7 +172,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['conserto de rodas curitiba', 'roda amassada curitiba', 'reparo roda liga leve curitiba', 'desempeno roda curitiba', 'roda trincada curitiba']
   },
   'correia-dentada': {
-    intro: 'A correia dentada é uma das peças mais importantes do motor. Se ela quebrar, pode causar danos gravíssimos e irreversíveis ao motor, custando milhares de reais em reparo. Na Carplus Auto Center, realizamos a troca preventiva da correia dentada com kit completo de qualidade, incluindo tensor, polia e bomba d\'água quando necessário.',
+    intro: 'A correia dentada é uma das peças mais importantes do motor. Se ela quebrar, pode causar danos gravíssimos e irreversíveis ao motor, custando milhares de reais em reparo. Na Carplus Centro Automotivo, realizamos a troca preventiva da correia dentada com kit completo de qualidade, incluindo tensor, polia e bomba d\'água quando necessário.',
     detalhes: [
       'Kit completo de correia dentada com tensor, polia e guias',
       'Verificação e troca da bomba d\'água quando necessário',
@@ -189,7 +189,7 @@ const SEO_CONTENT: Record<string, {
     keywords: ['correia dentada curitiba', 'troca correia dentada curitiba', 'kit correia dentada curitiba', 'correia gates curitiba', 'tensor correia curitiba']
   },
   'retifica-de-disco-de-freio': {
-    intro: 'A retífica de disco de freio é um serviço especializado que restaura a superfície dos discos, eliminando ranhuras, irregularidades e vibrações no pedal. Na Carplus Auto Center, localizada no bairro Portão em Curitiba, somos referência em retífica de disco de freio para toda a região sul da cidade. Se você mora no Portão, Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso ou arredores, a Carplus é a sua melhor opção para este serviço premium com o melhor preço da região.',
+    intro: 'A retífica de disco de freio é um serviço especializado que restaura a superfície dos discos, eliminando ranhuras, irregularidades e vibrações no pedal. Na Carplus Centro Automotivo, localizada no bairro Portão em Curitiba, somos referência em retífica de disco de freio para toda a região sul da cidade. Se você mora no Portão, Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso ou arredores, a Carplus é a sua melhor opção para este serviço premium com o melhor preço da região.',
     detalhes: [
       'Equipamento de usinagem próprio com precisão milimétrica',
       'Atendimento para moradores do Portão e toda região sul de Curitiba',
@@ -201,18 +201,18 @@ const SEO_CONTENT: Record<string, {
       'Localização estratégica na Av. Presidente Arthur da Silva Bernardes'
     ],
     perguntas: [
-      { pergunta: 'Qual o preço da retífica de disco de freio no Portão?', resposta: 'Na Carplus Auto Center oferecemos o melhor preço de retífica de disco de freio da região do Portão em Curitiba. O valor varia conforme o tamanho do disco, mas garantimos preço competitivo com qualidade superior. Consulte orçamento pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Qual o preço da retífica de disco de freio no Portão?', resposta: 'Na Carplus Centro Automotivo oferecemos o melhor preço de retífica de disco de freio da região do Portão em Curitiba. O valor varia conforme o tamanho do disco, mas garantimos preço competitivo com qualidade superior. Consulte orçamento pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'A Carplus fica perto do Portão em Curitiba?', resposta: 'Sim! A Carplus está localizada na Av. Presidente Arthur da Silva Bernardes, 1323, no coração do bairro Portão. Fácil acesso para quem vem da Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso e toda região sul de Curitiba.' },
       { pergunta: 'Por que escolher a Carplus para retífica de disco no Portão?', resposta: 'Somos especialistas em freios com mais de 10 anos de experiência. Temos equipamento de usinagem próprio, oferecemos o melhor preço da região do Portão e garantia total no serviço. Além disso, fazemos diagnóstico completo do sistema de freios.' }
     ],
     keywords: ['retifica disco freio portao', 'retifica disco curitiba portao', 'retificar disco freio portao curitiba', 'disco freio portao', 'oficina freio portao curitiba', 'melhor preço retifica disco portao'],
     temImagem: true,
     imagemDestaque: '/images/servicos/retifica-disco-freio-portao-curitiba.webp',
-    imagemAlt: 'Retífica de Disco de Freio no bairro Portão em Curitiba - Carplus Auto Center - Serviço Premium com Melhor Preço da Região Sul',
+    imagemAlt: 'Retífica de Disco de Freio no bairro Portão em Curitiba - Carplus Centro Automotivo - Serviço Premium com Melhor Preço da Região Sul',
     imagemTitle: 'Retífica de Disco de Freio Portão Curitiba - Carplus Pneus e Oficina Mecânica'
   },
   'troca-de-fluido-de-freio': {
-    intro: 'A troca de fluido de freio é um serviço de segurança essencial que muitos motoristas negligenciam. O fluido de freio é higroscópico, ou seja, absorve umidade do ar com o tempo. Essa contaminação reduz o ponto de ebulição do fluido, podendo causar "fading" (perda de frenagem) em situações de uso intenso. Na Carplus Auto Center em Curitiba, realizamos a troca completa com sangria de todo o sistema, utilizando fluidos DOT3 e DOT4 de alta qualidade.',
+    intro: 'A troca de fluido de freio é um serviço de segurança essencial que muitos motoristas negligenciam. O fluido de freio é higroscópico, ou seja, absorve umidade do ar com o tempo. Essa contaminação reduz o ponto de ebulição do fluido, podendo causar "fading" (perda de frenagem) em situações de uso intenso. Na Carplus Centro Automotivo em Curitiba, realizamos a troca completa com sangria de todo o sistema, utilizando fluidos DOT3 e DOT4 de alta qualidade.',
     detalhes: [
       'Sangria completa de todo o sistema de freios (4 rodas)',
       'Fluidos DOT3 e DOT4 das melhores marcas (Bosch, TRW, Varga)',
@@ -233,7 +233,7 @@ const SEO_CONTENT: Record<string, {
     videoBadge: 'Video Explicativo Premium'
   },
   'rodizio-de-pneus': {
-    intro: 'O rodizio de pneus e um servico essencial para prolongar a vida util dos seus pneus e garantir desgaste uniforme. Na Carplus Auto Center no bairro Portao em Curitiba, somos especialistas em rodizio de pneus para todos os tipos de veiculos. Realizamos o servico com agilidade e precisao, seguindo as recomendacoes tecnicas de cada fabricante, garantindo que seu veiculo rode com seguranca e economia.',
+    intro: 'O rodizio de pneus e um servico essencial para prolongar a vida util dos seus pneus e garantir desgaste uniforme. Na Carplus Centro Automotivo no bairro Portao em Curitiba, somos especialistas em rodizio de pneus para todos os tipos de veiculos. Realizamos o servico com agilidade e precisao, seguindo as recomendacoes tecnicas de cada fabricante, garantindo que seu veiculo rode com seguranca e economia.',
     detalhes: [
       'Rodizio tecnico seguindo padrao X, diagonal ou dianteiro-traseiro conforme veiculo',
       'Inspecao visual completa de todos os pneus durante o servico',
@@ -343,7 +343,7 @@ export default function ServiceDetail() {
   useSEO(
     service
       ? {
-          title: `${service.title} em Curitiba Portão | Carplus Auto Center`,
+          title: `${service.title} em Curitiba Portão | Carplus Centro Automotivo`,
           description: `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`,
           ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
@@ -355,7 +355,7 @@ export default function ServiceDetail() {
               "description": service.description,
               "provider": {
                 "@type": "AutoPartsStore",
-                "name": "Carplus Auto Center",
+                "name": "Carplus Centro Automotivo",
                 "telephone": "+55-41-3082-7282",
                 "url": "https://www.carpluspneuseoficina.com.br/",
                 "address": {
@@ -419,7 +419,7 @@ export default function ServiceDetail() {
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 italic uppercase tracking-tight font-bold leading-tight">{service.title} <span className="text-primary">em Curitiba</span> – Bairro Portão</h1>
               <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
-                A Carplus Auto Center é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
+                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
               </p>
 
               <div className="flex justify-center gap-4">
@@ -441,7 +441,7 @@ export default function ServiceDetail() {
               <div className="space-y-8">
                  <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 leading-snug font-bold tracking-tight">Por que escolher a Carplus para {service.title}?</h2>
                  <p className="text-lg text-gray-500 leading-relaxed">
-                   Na Carplus Auto Center, localizada no bairro Portão em Curitiba, investimos constantemente em equipamentos modernos e capacitacao da equipe. Nosso servico de {service.title} segue rigorosos padroes de seguranca e qualidade, atendendo clientes de toda Curitiba e regiao metropolitana.
+                   Na Carplus Centro Automotivo, localizada no bairro Portão em Curitiba, investimos constantemente em equipamentos modernos e capacitacao da equipe. Nosso servico de {service.title} segue rigorosos padroes de seguranca e qualidade, atendendo clientes de toda Curitiba e regiao metropolitana.
                  </p>
                  
                  <h3 className="sr-only">Diferenciais técnicos e tecnologia utilizada</h3>
@@ -508,7 +508,7 @@ export default function ServiceDetail() {
                   <figure className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img
                     src={seoContent.imagemDestaque}
-                    alt={seoContent.imagemAlt || `${service.title} no bairro Portão em Curitiba - Carplus Auto Center`}
+                    alt={seoContent.imagemAlt || `${service.title} no bairro Portão em Curitiba - Carplus Centro Automotivo`}
                     title={seoContent.imagemTitle || `${service.title} Curitiba Portão`}
                     width={1200}
                     height={800}
@@ -516,7 +516,7 @@ export default function ServiceDetail() {
                     loading="lazy"
                   />
                     <figcaption className="sr-only">
-                      {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Auto Center no bairro Portão, região sul de Curitiba. Atendimento especializado com melhor preço da região.`}
+                      {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Centro Automotivo no bairro Portão, região sul de Curitiba. Atendimento especializado com melhor preço da região.`}
                     </figcaption>
                   </figure>
                 </motion.div>
@@ -593,7 +593,7 @@ export default function ServiceDetail() {
                     Perguntas Frequentes sobre {service.title} em Curitiba
                   </h3>
                   <p className="text-gray-500 text-center mb-8">
-                    Tire suas duvidas sobre {service.title} na Carplus Auto Center, bairro Portao.
+                    Tire suas duvidas sobre {service.title} na Carplus Centro Automotivo, bairro Portao.
                   </p>
                   <div className="space-y-3">
                     {getServiceFaqs(service.slug).map((faq, idx) => (
@@ -643,7 +643,7 @@ export default function ServiceDetail() {
               {/* Keywords para SEO (hidden but crawlable) */}
               <div className="sr-only">
                 <p>Palavras-chave relacionadas: {seoContent.keywords.join(', ')}</p>
-                <p>Carplus Auto Center - {service.title} no bairro Portão em Curitiba, Paraná. Atendemos toda a região metropolitana incluindo São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
+                <p>Carplus Centro Automotivo - {service.title} no bairro Portão em Curitiba, Paraná. Atendemos toda a região metropolitana incluindo São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
               </div>
             </div>
           </section>
@@ -791,7 +791,7 @@ export default function ServiceDetail() {
                     
                     {/* Bottom Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
-                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Centro Automotivo</p>
                       <p className="text-red-400/80 text-sm font-medium">Sua seguranca em primeiro lugar</p>
                     </div>
                   </div>
@@ -1009,7 +1009,7 @@ export default function ServiceDetail() {
                     
                     {/* Bottom Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
-                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Centro Automotivo</p>
                       <p className="text-amber-400/80 text-sm font-medium">Cuidando do seu motor</p>
                     </div>
                   </div>
@@ -1178,7 +1178,7 @@ export default function ServiceDetail() {
                     {/* YouTube Shorts Embed */}
                     <LiteYouTube
                       videoId="OEDrtkA19mY"
-                      title="Carplus Auto Center - Servico de Suspensao e Freios em Curitiba"
+                      title="Carplus Centro Automotivo - Servico de Suspensao e Freios em Curitiba"
                       params="mute=1&loop=1&playlist=OEDrtkA19mY&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1"
                     />
                     
@@ -1203,7 +1203,7 @@ export default function ServiceDetail() {
                     
                     {/* Bottom Info */}
                     <figcaption className="absolute bottom-0 left-0 right-0 p-6 z-10 bg-gradient-to-t from-black/90 to-transparent">
-                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Auto Center</p>
+                      <p className="text-white font-black text-xl uppercase tracking-tight mb-1">Carplus Centro Automotivo</p>
                       <p className="text-primary/80 text-sm font-medium">Especialistas em Suspensao e Freios</p>
                     </figcaption>
                   </div>
@@ -1345,7 +1345,7 @@ export default function ServiceDetail() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img
                     src="/images/rodas/recuperacao-rodas.webp"
-                    alt="Recuperação e restauração de rodas danificadas na Carplus Auto Center em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
+                    alt="Recuperação e restauração de rodas danificadas na Carplus Centro Automotivo em Curitiba - Serviço especializado de conserto de rodas amassadas, trincadas e deformadas com comparativo antes e depois"
                     width={799}
                     height={1200}
                     className="w-full h-auto object-cover"
@@ -1395,9 +1395,9 @@ export default function ServiceDetail() {
               {/* Galeria de Imagens */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 {[
-                  { src: "/images/rodas/roda-polida-1.webp", alt: "Roda de liga leve polida e recuperada na Carplus Auto Center Curitiba - Conserto profissional de rodas amassadas" },
+                  { src: "/images/rodas/roda-polida-1.webp", alt: "Roda de liga leve polida e recuperada na Carplus Centro Automotivo Curitiba - Conserto profissional de rodas amassadas" },
                   { src: "/images/rodas/roda-volvo-yokohama.webp", alt: "Detalhe de roda Volvo recuperada com pneu Yokohama na Carplus - Restauracao de acabamento original" },
-                  { src: "/images/rodas/volvo-xc60-rodas.webp", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Auto Center Curitiba Portao" },
+                  { src: "/images/rodas/volvo-xc60-rodas.webp", alt: "Volvo XC60 com rodas restauradas na oficina Carplus Centro Automotivo Curitiba Portao" },
                   { src: "/images/rodas/veiculo-rodas-consertadas.webp", alt: "Veiculo com rodas consertadas estacionado na Carplus Pneus Curitiba - Servico de qualidade" },
                 ].map((img, i) => (
                   <motion.div

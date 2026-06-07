@@ -1,4 +1,4 @@
-# robots.txt - Carplus Auto Center
+# robots.txt - Carplus Centro Automotivo
 # https://www.carpluspneuseoficina.com.br
 
 User-agent: *

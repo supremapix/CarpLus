@@ -50,7 +50,7 @@ export default function TireDetail() {
       try {
         await navigator.share({
           title: tire.nome,
-          text: `Confira o pneu ${tire.nome} na Carplus Auto Center em Curitiba!`,
+          text: `Confira o pneu ${tire.nome} na Carplus Centro Automotivo em Curitiba!`,
           url: shareUrl,
         });
       } catch (err) {
@@ -94,7 +94,7 @@ export default function TireDetail() {
   useSEO(
     tire
       ? {
-          title: `${tire.nome} em Curitiba | Carplus Auto Center – Portao`,
+          title: `${tire.nome} em Curitiba | Carplus Centro Automotivo – Portao`,
           description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em ate 10x sem juros, garantia de fabrica. Ligue: (41) 3082-7282.`,
           canonical: `${BASE_URL}/pneu/${tire.slug}`,
           ogImage: tire.imagemGrande,
@@ -185,7 +185,7 @@ export default function TireDetail() {
                     Facebook
                   </a>
                   <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus Auto Center!`)}&url=${encodeURIComponent(shareUrl)}`}
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus Centro Automotivo!`)}&url=${encodeURIComponent(shareUrl)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-black text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-gray-800 transition-colors"
