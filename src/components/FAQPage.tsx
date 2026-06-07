@@ -13,7 +13,7 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   // Pneus
-  { categoria: "Pneus", pergunta: "Qual a melhor marca de pneu para meu carro?", resposta: "A melhor marca de pneu depende do seu tipo de uso, veiculo e orcamento. Na Carplus Auto Center em Curitiba, trabalhamos com as principais marcas do mercado como Pirelli, Michelin, Goodyear, Continental, Bridgestone e Firestone. Para uso urbano, pneus como Pirelli Cinturato e Michelin Primacy oferecem excelente conforto. Para SUVs e picapes, recomendamos linhas como Scorpion e Dueler. Nossa equipe faz uma analise completa do seu veiculo para indicar o pneu ideal." },
+  { categoria: "Pneus", pergunta: "Qual a melhor marca de pneu para meu carro?", resposta: "A melhor marca de pneu depende do seu tipo de uso, veiculo e orcamento. Na Carplus Centro Automotivo em Curitiba, trabalhamos com as principais marcas do mercado como Pirelli, Michelin, Goodyear, Continental, Bridgestone e Firestone. Para uso urbano, pneus como Pirelli Cinturato e Michelin Primacy oferecem excelente conforto. Para SUVs e picapes, recomendamos linhas como Scorpion e Dueler. Nossa equipe faz uma analise completa do seu veiculo para indicar o pneu ideal." },
   { categoria: "Pneus", pergunta: "Quanto tempo dura um pneu novo?", resposta: "A durabilidade de um pneu novo varia entre 40.000 a 80.000 km, dependendo da marca, modelo, tipo de conducao e manutencao. Pneus de alta performance tendem a durar menos por terem compostos mais macios. Calibragem correta, alinhamento em dia e rotacao periodica podem aumentar significativamente a vida util. Na Carplus, recomendamos verificar os pneus a cada 10.000 km e trocar quando o indicador TWI estiver nivelado com a banda de rodagem." },
   { categoria: "Pneus", pergunta: "Posso misturar marcas de pneu no mesmo eixo?", resposta: "Nao e recomendado misturar marcas diferentes no mesmo eixo. Pneus de marcas distintas podem ter caracteristicas diferentes de tracao, frenagem e comportamento em curvas, comprometendo a estabilidade e seguranca do veiculo. O ideal e sempre usar pneus identicos por eixo. Se precisar misturar, coloque os pneus novos no eixo traseiro para maior estabilidade." },
   { categoria: "Pneus", pergunta: "Qual o prazo de validade de um pneu?", resposta: "O prazo de validade de um pneu e de aproximadamente 5 anos a partir da data de fabricacao, mesmo sem uso. A borracha sofre degradacao natural com o tempo devido a oxidacao e ressecamento. Voce pode verificar a data de fabricacao pelo codigo DOT na lateral do pneu - os 4 ultimos digitos indicam semana e ano de fabricacao. Na Carplus, vendemos apenas pneus com fabricacao recente." },
@@ -31,7 +31,7 @@ const faqData: FAQItem[] = [
   { categoria: "Pneus", pergunta: "Qual pneu e melhor para estrada?", resposta: "Para uso rodoviario, recomendamos pneus com foco em conforto, baixo ruido e durabilidade como Michelin Primacy, Pirelli Cinturato P7, Continental ContiPowerContact e Goodyear EfficientGrip. Esses modelos oferecem excelente estabilidade em alta velocidade, boa drenagem de agua e economia de combustivel. Na Carplus, avaliamos seu perfil de uso para indicar o pneu ideal para suas viagens." },
   { categoria: "Pneus", pergunta: "Qual pneu e mais economico?", resposta: "Pneus com baixa resistencia ao rolamento consomem menos combustivel. Linhas como Pirelli Cinturato, Michelin Energy Saver, Continental EcoContact e Bridgestone Ecopia sao desenvolvidas para economia. A diferenca pode chegar a 5% no consumo. Alem da economia, esses pneus tambem emitem menos CO2. Na Carplus, temos diversas opcoes de pneus economicos." },
   { categoria: "Pneus", pergunta: "Quanto custa um jogo de pneus em Curitiba?", resposta: "O preco de um jogo de 4 pneus em Curitiba varia conforme a marca, modelo e medida. Pneus para carros populares aro 14 custam a partir de R$ 1.200 o jogo. Medidas mais comuns como 185/65R15 e 205/55R16 ficam entre R$ 1.400 e R$ 2.400. Pneus premium e para SUVs podem passar de R$ 4.000. Na Carplus, oferecemos os melhores precos e parcelamento em ate 10x sem juros." },
-  { categoria: "Pneus", pergunta: "Onde comprar pneu Pirelli em Curitiba?", resposta: "A Carplus Auto Center e revendedor autorizado Pirelli em Curitiba, localizada no bairro Portao. Trabalhamos com toda a linha Pirelli: Cinturato P1, P7, Scorpion, P Zero e mais. Oferecemos garantia de fabrica, montagem profissional e os melhores precos da regiao. Visite nossa loja na Rua Padre Anchieta ou solicite orcamento pelo WhatsApp." },
+  { categoria: "Pneus", pergunta: "Onde comprar pneu Pirelli em Curitiba?", resposta: "A Carplus Centro Automotivo e revendedor autorizado Pirelli em Curitiba, localizada no bairro Portao. Trabalhamos com toda a linha Pirelli: Cinturato P1, P7, Scorpion, P Zero e mais. Oferecemos garantia de fabrica, montagem profissional e os melhores precos da regiao. Visite nossa loja na Rua Padre Anchieta ou solicite orcamento pelo WhatsApp." },
   { categoria: "Pneus", pergunta: "Pneu com bolha pode estourar?", resposta: "Sim, pneu com bolha pode estourar a qualquer momento e e extremamente perigoso. A bolha indica que a estrutura interna do pneu foi danificada, geralmente por impacto em buracos ou meios-fios. Nao existe reparo para pneu com bolha - a unica solucao e a substituicao imediata. Na Carplus, fazemos avaliacao gratuita e temos pneus para pronta entrega." },
   { categoria: "Pneus", pergunta: "Quanto custa trocar os 4 pneus?", resposta: "O custo para trocar os 4 pneus inclui o valor dos pneus mais servicos de montagem, balanceamento e alinhamento. Na Carplus, a montagem e balanceamento estao inclusos no preco dos pneus. O alinhamento 3D custa a partir de R$ 120. O valor total varia conforme a marca e medida dos pneus - faca um orcamento sem compromisso pelo nosso WhatsApp." },
   { categoria: "Pneus", pergunta: "Pneu muda o consumo de combustivel?", resposta: "Sim, o pneu influencia diretamente no consumo de combustivel. Pneus com baixa resistencia ao rolamento podem economizar ate 5% de combustivel. Alem disso, pneus descalibrados aumentam o consumo em ate 3%. Manter os pneus calibrados e escolher modelos economicos como Michelin Energy Saver ou Pirelli Cinturato faz diferenca no bolso." },
@@ -42,7 +42,7 @@ const faqData: FAQItem[] = [
   { categoria: "Alinhamento", pergunta: "Qual a diferenca entre alinhamento 2D e 3D?", resposta: "O alinhamento 2D mede os angulos em duas dimensoes, enquanto o 3D mede em tres dimensoes com maior precisao. O 3D captura mais informacoes, detecta problemas que o 2D nao consegue e permite ajustes mais finos. O resultado e maior durabilidade dos pneus, melhor dirigibilidade e economia de combustivel. Na Carplus, so trabalhamos com alinhamento 3D." },
   { categoria: "Alinhamento", pergunta: "Com que frequencia fazer alinhamento?", resposta: "Recomendamos fazer alinhamento a cada 10.000 km ou quando trocar os pneus. Tambem e necessario apos bater em buracos grandes, meios-fios ou qualquer impacto na suspensao. Sinais como volante torto, carro puxando para um lado ou desgaste irregular nos pneus indicam necessidade de alinhamento imediato." },
   { categoria: "Alinhamento", pergunta: "Alinhamento resolve pneu que puxa?", resposta: "Na maioria dos casos, sim. O desalinhamento e a principal causa de o carro puxar para um lado. Porem, outras causas podem ser diferenca de pressao entre os pneus, desgaste desigual ou problemas na suspensao. Na Carplus, fazemos diagnostico completo antes do alinhamento para garantir que o problema seja resolvido definitivamente." },
-  { categoria: "Alinhamento", pergunta: "Quanto custa alinhamento 3D em Curitiba?", resposta: "Na Carplus Auto Center, o alinhamento 3D completo custa a partir de R$ 120. Utilizamos equipamento Hunter de ultima geracao que garante precisao maxima. O servico inclui medicao de todos os angulos, ajustes necessarios e relatorio impresso. Fazemos orcamento sem compromisso." },
+  { categoria: "Alinhamento", pergunta: "Quanto custa alinhamento 3D em Curitiba?", resposta: "Na Carplus Centro Automotivo, o alinhamento 3D completo custa a partir de R$ 120. Utilizamos equipamento Hunter de ultima geracao que garante precisao maxima. O servico inclui medicao de todos os angulos, ajustes necessarios e relatorio impresso. Fazemos orcamento sem compromisso." },
   { categoria: "Alinhamento", pergunta: "O que e balanceamento de pneus?", resposta: "Balanceamento e o processo de equilibrar o peso do conjunto pneu/roda para que gire sem vibracoes. Pequenas diferencas de peso causam trepidacao no volante e desgaste irregular. O balanceamento usa contrapesos de chumbo ou zinco para compensar essas diferencas. Na Carplus, utilizamos balanceadora computadorizada de alta precisao." },
   { categoria: "Alinhamento", pergunta: "Balanceamento precisa ser feito junto com alinhamento?", resposta: "Sao servicos diferentes mas complementares. Balanceamento elimina vibracoes e deve ser feito sempre que trocar ou desmontar os pneus. Alinhamento corrige os angulos das rodas e deve ser feito periodicamente ou apos impactos. O ideal e fazer os dois juntos quando trocar pneus, mas cada um tem sua indicacao especifica." },
   { categoria: "Alinhamento", pergunta: "Carro tremendo na estrada precisa de balanceamento?", resposta: "Vibracao em alta velocidade geralmente indica necessidade de balanceamento. Se a trepidacao ocorre principalmente entre 80-120 km/h e se sente no volante, balanceamento e a primeira suspeita. Porem, pode ser tambem pneu com deformacao, roda amassada ou problema na suspensao. Na Carplus, diagnosticamos a causa correta." },
@@ -105,7 +105,7 @@ const faqData: FAQItem[] = [
   { categoria: "Diagnostico", pergunta: "Scanner detecta todos os problemas do carro?", resposta: "O scanner detecta problemas registrados nos modulos eletronicos do veiculo, mas nao substitui a avaliacao mecanica. Desgaste de pecas, folgas, vazamentos e problemas mecanicos em geral precisam de inspecao visual e testes. Na Carplus, combinamos diagnostico por scanner com avaliacao mecanica completa." },
 
   // Localizacao e Atendimento
-  { categoria: "Carplus", pergunta: "Onde fica a Carplus em Curitiba?", resposta: "A Carplus Auto Center esta localizada na Rua Padre Anchieta, 2285, no bairro Portao, em Curitiba-PR. Estamos em uma regiao de facil acesso, com amplo estacionamento para clientes. Ficamos proximos ao Terminal do Portao e atendemos toda a regiao sul de Curitiba." },
+  { categoria: "Carplus", pergunta: "Onde fica a Carplus em Curitiba?", resposta: "A Carplus Centro Automotivo esta localizada na Rua Padre Anchieta, 2285, no bairro Portao, em Curitiba-PR. Estamos em uma regiao de facil acesso, com amplo estacionamento para clientes. Ficamos proximos ao Terminal do Portao e atendemos toda a regiao sul de Curitiba." },
   { categoria: "Carplus", pergunta: "A Carplus fica no bairro Portao?", resposta: "Sim, a Carplus esta localizada no coracao do bairro Portao, um dos mais tradicionais de Curitiba. Nosso endereco e Rua Padre Anchieta, 2285. Estamos a poucos minutos do Terminal do Portao e atendemos moradores de toda a regiao." },
   { categoria: "Carplus", pergunta: "Qual o horario de atendimento da Carplus?", resposta: "A Carplus funciona de segunda a sexta-feira das 8h as 18h, e aos sabados das 8h as 12h. Nao abrimos aos domingos e feriados. Para atendimento mais rapido, recomendamos agendar pelo WhatsApp, especialmente para servicos mais demorados." },
   { categoria: "Carplus", pergunta: "A Carplus abre no sabado?", resposta: "Sim, a Carplus abre aos sabados das 8h as 12h. E um otimo horario para quem trabalha durante a semana. Recomendamos chegar cedo ou agendar pelo WhatsApp para garantir atendimento, pois os sabados costumam ter alta demanda." },
@@ -149,7 +149,7 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = 'FAQ - Perguntas Frequentes | Carplus Auto Center Curitiba';
+    document.title = 'FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba';
 
     // Meta description
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
@@ -160,7 +160,7 @@ export default function FAQPage() {
     }
     desc.setAttribute(
       'content',
-      'Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Auto Center no Portão, Curitiba.'
+      'Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Centro Automotivo no Portão, Curitiba.'
     );
 
     // Canonical (host unico com www)
@@ -186,7 +186,7 @@ export default function FAQPage() {
   const faqSchemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "name": "Perguntas Frequentes - Carplus Auto Center Curitiba",
+    "name": "Perguntas Frequentes - Carplus Centro Automotivo Curitiba",
     "description": "Encontre respostas para as duvidas mais comuns sobre pneus, alinhamento, balanceamento, freios, suspensao e servicos automotivos em Curitiba.",
     "url": "https://www.carpluspneuseoficina.com.br/faq",
     "mainEntity": faqData.map(faq => ({
@@ -232,7 +232,7 @@ export default function FAQPage() {
             </h1>
             
             <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
-              Encontre respostas para suas duvidas sobre pneus, servicos automotivos, precos e atendimento da Carplus Auto Center em Curitiba.
+              Encontre respostas para suas duvidas sobre pneus, servicos automotivos, precos e atendimento da Carplus Centro Automotivo em Curitiba.
             </p>
 
             {/* Search Bar */}

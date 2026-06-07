@@ -50,7 +50,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 13,
     slug: 'pneu-aro-13-curitiba',
     h1: 'Pneu Aro 13 em Curitiba',
-    metaTitle: 'Pneu Aro 13 em Curitiba | Carplus Auto Center – Montagem Inclusa',
+    metaTitle: 'Pneu Aro 13 em Curitiba | Carplus Centro Automotivo – Montagem Inclusa',
     metaDescription:
       'Pneu aro 13 em Curitiba na Carplus, bairro Portão. Marcas como Pirelli e Firestone para carros populares, montagem e balanceamento inclusos e até 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -80,7 +80,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 14,
     slug: 'pneu-aro-14-curitiba',
     h1: 'Pneu Aro 14 em Curitiba',
-    metaTitle: 'Pneu Aro 14 em Curitiba | Carplus Auto Center – Pirelli e mais',
+    metaTitle: 'Pneu Aro 14 em Curitiba | Carplus Centro Automotivo – Pirelli e mais',
     metaDescription:
       'Pneu aro 14 em Curitiba na Carplus Portão. Medidas como 175/65R14, 185/60R14 e 185/65R14 para hatch e sedan, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -110,7 +110,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 15,
     slug: 'pneu-aro-15-curitiba',
     h1: 'Pneu Aro 15 em Curitiba',
-    metaTitle: 'Pneu Aro 15 em Curitiba | Carplus Auto Center – Maior Estoque',
+    metaTitle: 'Pneu Aro 15 em Curitiba | Carplus Centro Automotivo – Maior Estoque',
     metaDescription:
       'Pneu aro 15 em Curitiba na Carplus Portão. Maior variedade: 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -140,7 +140,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 16,
     slug: 'pneu-aro-16-curitiba',
     h1: 'Pneu Aro 16 em Curitiba',
-    metaTitle: 'Pneu Aro 16 em Curitiba | Carplus Auto Center – Sedan e SUV',
+    metaTitle: 'Pneu Aro 16 em Curitiba | Carplus Centro Automotivo – Sedan e SUV',
     metaDescription:
       'Pneu aro 16 em Curitiba na Carplus Portão. Medidas 205/55R16, 205/60R16, 215/65R16 e mais para sedans e SUVs. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -170,7 +170,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 17,
     slug: 'pneu-aro-17-curitiba',
     h1: 'Pneu Aro 17 em Curitiba',
-    metaTitle: 'Pneu Aro 17 em Curitiba | Carplus Auto Center – Performance e SUV',
+    metaTitle: 'Pneu Aro 17 em Curitiba | Carplus Centro Automotivo – Performance e SUV',
     metaDescription:
       'Pneu aro 17 em Curitiba na Carplus Portão. Medidas 215/50R17, 215/55R17, 225/45R17, 225/50R17, 225/65R17 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -200,7 +200,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 18,
     slug: 'pneu-aro-18-curitiba',
     h1: 'Pneu Aro 18 em Curitiba',
-    metaTitle: 'Pneu Aro 18 em Curitiba | Carplus Auto Center – SUV e Premium',
+    metaTitle: 'Pneu Aro 18 em Curitiba | Carplus Centro Automotivo – SUV e Premium',
     metaDescription:
       'Pneu aro 18 em Curitiba na Carplus Portão. Medidas 225/45R18, 235/55R18, 235/60R18, 245/40R18, 245/45R18 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -230,7 +230,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 19,
     slug: 'pneu-aro-19-curitiba',
     h1: 'Pneu Aro 19 em Curitiba',
-    metaTitle: 'Pneu Aro 19 em Curitiba | Carplus Auto Center – SUV e Esportivo',
+    metaTitle: 'Pneu Aro 19 em Curitiba | Carplus Centro Automotivo – SUV e Esportivo',
     metaDescription:
       'Pneu aro 19 em Curitiba na Carplus Portão. Medidas 235/50R19, 235/55R19, 245/40R19, 245/45R19, 255/35R19 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -260,7 +260,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 20,
     slug: 'pneu-aro-20-curitiba',
     h1: 'Pneu Aro 20 em Curitiba',
-    metaTitle: 'Pneu Aro 20 em Curitiba | Carplus Auto Center – SUV e Picape',
+    metaTitle: 'Pneu Aro 20 em Curitiba | Carplus Centro Automotivo – SUV e Picape',
     metaDescription:
       'Pneu aro 20 em Curitiba na Carplus Portão. Medidas 255/35R20, 245/40R20, 245/45R20 e mais para SUVs e picapes premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -290,7 +290,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 21,
     slug: 'pneu-aro-21-curitiba',
     h1: 'Pneu Aro 21 em Curitiba',
-    metaTitle: 'Pneu Aro 21 em Curitiba | Carplus Auto Center – SUV Premium',
+    metaTitle: 'Pneu Aro 21 em Curitiba | Carplus Centro Automotivo – SUV Premium',
     metaDescription:
       'Pneu aro 21 em Curitiba na Carplus Portão. Medidas 245/40R21, 275/45R21, 285/45R21, 315/40R21 e mais para SUVs e esportivos premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -320,7 +320,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 22,
     slug: 'pneu-aro-22-curitiba',
     h1: 'Pneu Aro 22 em Curitiba',
-    metaTitle: 'Pneu Aro 22 em Curitiba | Carplus Auto Center – SUV de Luxo',
+    metaTitle: 'Pneu Aro 22 em Curitiba | Carplus Centro Automotivo – SUV de Luxo',
     metaDescription:
       'Pneu aro 22 em Curitiba na Carplus Portão. Medidas 265/40R22, 275/40R22, 285/40R22, 315/35R22 e mais para SUVs de luxo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -350,7 +350,7 @@ export const ARO_PAGES: AroPage[] = [
     aro: 23,
     slug: 'pneu-aro-23-curitiba',
     h1: 'Pneu Aro 23 em Curitiba',
-    metaTitle: 'Pneu Aro 23 em Curitiba | Carplus Auto Center – Alto Padrão',
+    metaTitle: 'Pneu Aro 23 em Curitiba | Carplus Centro Automotivo – Alto Padrão',
     metaDescription:
       'Pneu aro 23 em Curitiba na Carplus Portão. Medidas 275/35R23, 305/35R23, 315/30R23 e mais para SUVs de alto padrão e customizações. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -397,7 +397,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Pirelli',
     slug: 'pneu-pirelli-curitiba',
     h1: 'Pneu Pirelli em Curitiba',
-    metaTitle: 'Pneu Pirelli em Curitiba | Carplus Auto Center – Revenda no Portão',
+    metaTitle: 'Pneu Pirelli em Curitiba | Carplus Centro Automotivo – Revenda no Portão',
     metaDescription:
       'Pneu Pirelli em Curitiba na Carplus Portão. Linhas P400 Evo, Cinturato P7 e P Zero com montagem, balanceamento e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -426,7 +426,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Michelin',
     slug: 'pneu-michelin-curitiba',
     h1: 'Pneu Michelin em Curitiba',
-    metaTitle: 'Pneu Michelin em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Michelin em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Michelin em Curitiba na Carplus Portão. Linhas Energy XM2, Primacy 4 e Pilot Sport 4 com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -455,7 +455,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Goodyear',
     slug: 'pneu-goodyear-curitiba',
     h1: 'Pneu Goodyear em Curitiba',
-    metaTitle: 'Pneu Goodyear em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Goodyear em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Goodyear em Curitiba na Carplus Portão. Linhas Direction Touring e EfficientGrip com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -484,7 +484,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Continental',
     slug: 'pneu-continental-curitiba',
     h1: 'Pneu Continental em Curitiba',
-    metaTitle: 'Pneu Continental em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Continental em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -513,7 +513,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Yokohama',
     slug: 'pneu-yokohama-curitiba',
     h1: 'Pneu Yokohama em Curitiba',
-    metaTitle: 'Pneu Yokohama em Curitiba | Carplus Auto Center – Maior Variedade',
+    metaTitle: 'Pneu Yokohama em Curitiba | Carplus Centro Automotivo – Maior Variedade',
     metaDescription:
       'Pneu Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -542,7 +542,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Bridgestone',
     slug: 'pneu-bridgestone-curitiba',
     h1: 'Pneu Bridgestone em Curitiba',
-    metaTitle: 'Pneu Bridgestone em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Bridgestone em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Bridgestone em Curitiba na Carplus Portão. Linhas Turanza, Ecopia e Potenza com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -571,7 +571,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Firestone',
     slug: 'pneu-firestone-curitiba',
     h1: 'Pneu Firestone em Curitiba',
-    metaTitle: 'Pneu Firestone em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Firestone em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Firestone em Curitiba na Carplus Portão. Custo-benefício com qualidade Bridgestone, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -600,7 +600,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Prinx',
     slug: 'pneu-prinx-curitiba',
     h1: 'Pneu Prinx em Curitiba',
-    metaTitle: 'Pneu Prinx em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Prinx em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Prinx em Curitiba na Carplus Portão. Excelente custo-benefício para passeio e SUV, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -629,7 +629,7 @@ export const BRAND_PAGES: BrandPage[] = [
     marca: 'Delinte',
     slug: 'pneu-delinte-curitiba',
     h1: 'Pneu Delinte em Curitiba',
-    metaTitle: 'Pneu Delinte em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneu Delinte em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneu Delinte em Curitiba na Carplus Portão. Opções de performance e SUV com ótimo preço, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -678,7 +678,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Hyundai HB20',
     termos: ['HB20'],
     h1: 'Pneu para Hyundai HB20 em Curitiba',
-    metaTitle: 'Pneu para HB20 em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para HB20 em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Hyundai HB20 em Curitiba na Carplus Portão. Medidas originais aro 14, 15 e 16, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -708,7 +708,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Chevrolet Onix',
     termos: ['Onix'],
     h1: 'Pneu para Chevrolet Onix em Curitiba',
-    metaTitle: 'Pneu para Onix em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Onix em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Chevrolet Onix e Onix Plus em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -738,7 +738,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Toyota Corolla',
     termos: ['Corolla'],
     h1: 'Pneu para Toyota Corolla em Curitiba',
-    metaTitle: 'Pneu para Corolla em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Corolla em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Toyota Corolla e Corolla Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -768,7 +768,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Honda Civic',
     termos: ['Civic'],
     h1: 'Pneu para Honda Civic em Curitiba',
-    metaTitle: 'Pneu para Civic em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Civic em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Honda Civic em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, marcas premium, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -798,7 +798,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Jeep Compass',
     termos: ['Compass'],
     h1: 'Pneu para Jeep Compass em Curitiba',
-    metaTitle: 'Pneu para Compass em Curitiba | Carplus Auto Center – SUV',
+    metaTitle: 'Pneu para Compass em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
       'Pneu para Jeep Compass em Curitiba na Carplus Portão. Medidas aro 17, 18 e 19, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -835,7 +835,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Jeep Renegade',
     termos: ['Renegade'],
     h1: 'Pneu para Jeep Renegade em Curitiba',
-    metaTitle: 'Pneu para Renegade em Curitiba | Carplus Auto Center – SUV',
+    metaTitle: 'Pneu para Renegade em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
       'Pneu para Jeep Renegade em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -872,7 +872,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'VW T-Cross',
     termos: ['T-Cross'],
     h1: 'Pneu para VW T-Cross em Curitiba',
-    metaTitle: 'Pneu para T-Cross em Curitiba | Carplus Auto Center – SUV',
+    metaTitle: 'Pneu para T-Cross em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
       'Pneu para Volkswagen T-Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -902,7 +902,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Hyundai Creta',
     termos: ['Creta'],
     h1: 'Pneu para Hyundai Creta em Curitiba',
-    metaTitle: 'Pneu para Creta em Curitiba | Carplus Auto Center – SUV',
+    metaTitle: 'Pneu para Creta em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
       'Pneu para Hyundai Creta em Curitiba na Carplus Portão. Medidas aro 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -939,7 +939,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Fiat Argo',
     termos: ['Argo'],
     h1: 'Pneu para Fiat Argo em Curitiba',
-    metaTitle: 'Pneu para Argo em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Argo em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Fiat Argo em Curitiba na Carplus Portão. Medidas aro 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -969,7 +969,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Renault Kwid',
     termos: ['Kwid'],
     h1: 'Pneu para Renault Kwid em Curitiba',
-    metaTitle: 'Pneu para Kwid em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Kwid em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Renault Kwid em Curitiba na Carplus Portão. Medidas aro 13 e 14, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -999,7 +999,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Volkswagen Gol',
     termos: ['Gol'],
     h1: 'Pneu para Volkswagen Gol em Curitiba',
-    metaTitle: 'Pneu para Gol em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Gol em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Volkswagen Gol em Curitiba na Carplus Portão. Medidas aro 13, 14 e 15, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1029,7 +1029,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Volkswagen Polo',
     termos: ['Polo'],
     h1: 'Pneu para Volkswagen Polo em Curitiba',
-    metaTitle: 'Pneu para Polo em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Polo em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Volkswagen Polo em Curitiba na Carplus Portão. Medidas aro 15, 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1059,7 +1059,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Honda HR-V',
     termos: ['HR-V'],
     h1: 'Pneu para Honda HR-V em Curitiba',
-    metaTitle: 'Pneu para HR-V em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para HR-V em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Honda HR-V em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1089,7 +1089,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Ford Ranger',
     termos: ['Ranger'],
     h1: 'Pneu para Ford Ranger em Curitiba',
-    metaTitle: 'Pneu para Ranger em Curitiba | Carplus Auto Center – Picape',
+    metaTitle: 'Pneu para Ranger em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
       'Pneu para Ford Ranger em Curitiba na Carplus Portão. Medidas aro 16, 17, 18 e 20 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1126,7 +1126,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Toyota Hilux',
     termos: ['Hilux'],
     h1: 'Pneu para Toyota Hilux em Curitiba',
-    metaTitle: 'Pneu para Hilux em Curitiba | Carplus Auto Center – Picape',
+    metaTitle: 'Pneu para Hilux em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
       'Pneu para Toyota Hilux em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1163,7 +1163,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Chevrolet S10',
     termos: ['S10'],
     h1: 'Pneu para Chevrolet S10 em Curitiba',
-    metaTitle: 'Pneu para S10 em Curitiba | Carplus Auto Center – Picape',
+    metaTitle: 'Pneu para S10 em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
       'Pneu para Chevrolet S10 em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1193,7 +1193,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Fiat Strada',
     termos: ['Strada'],
     h1: 'Pneu para Fiat Strada em Curitiba',
-    metaTitle: 'Pneu para Strada em Curitiba | Carplus Auto Center – Medidas e Preço',
+    metaTitle: 'Pneu para Strada em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
       'Pneu para Fiat Strada em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1223,7 +1223,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     nome: 'Fiat Toro',
     termos: ['Toro'],
     h1: 'Pneu para Fiat Toro em Curitiba',
-    metaTitle: 'Pneu para Toro em Curitiba | Carplus Auto Center – Picape',
+    metaTitle: 'Pneu para Toro em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
       'Pneu para Fiat Toro em Curitiba na Carplus Portão. Medidas aro 17, 18 e 20, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1445,7 +1445,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     aro: 15,
     bairro: 'Portão',
     h1: 'Pneu Aro 15 no Portão, Curitiba',
-    metaTitle: 'Pneu Aro 15 no Portão Curitiba | Carplus Auto Center',
+    metaTitle: 'Pneu Aro 15 no Portão Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Pneu aro 15 no bairro Portão, em Curitiba, na Carplus. Maior variedade de medidas, montagem inclusa e 10x sem juros. Venha à Av. Arthur da Silva Bernardes, 1323. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1454,7 +1454,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
       {
         question: 'Onde comprar pneu aro 15 no Portão em Curitiba?',
         answer:
-          'Na Carplus Auto Center, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão. Temos a maior variedade de pneus aro 15 com montagem inclusa e parcelamento em até 10x sem juros.',
+          'Na Carplus Centro Automotivo, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão. Temos a maior variedade de pneus aro 15 com montagem inclusa e parcelamento em até 10x sem juros.',
       },
       {
         question: 'A Carplus do Portão instala o pneu aro 15 na hora?',
@@ -1469,7 +1469,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     aro: 16,
     bairro: 'Água Verde',
     h1: 'Pneu Aro 16 no Água Verde, Curitiba',
-    metaTitle: 'Pneu Aro 16 no Água Verde Curitiba | Carplus Auto Center',
+    metaTitle: 'Pneu Aro 16 no Água Verde Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Pneu aro 16 para quem é do Água Verde, em Curitiba. A Carplus fica ao lado, no Portão, com medidas 205/55R16 e 205/60R16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1493,7 +1493,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     marca: 'Michelin',
     bairro: 'Seminário',
     h1: 'Pneu Michelin no Seminário, Curitiba',
-    metaTitle: 'Pneu Michelin no Seminário Curitiba | Carplus Auto Center',
+    metaTitle: 'Pneu Michelin no Seminário Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Pneu Michelin para quem é do Seminário, em Curitiba. A Carplus fica no Portão, ao lado, com linhas Energy XM2, Primacy 4 e Pilot Sport 4. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1502,7 +1502,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
       {
         question: 'Onde comprar pneu Michelin perto do Seminário?',
         answer:
-          'Na Carplus Auto Center, no bairro Portão, vizinho ao Seminário em Curitiba. Trabalhamos com pneus Michelin com montagem inclusa e parcelamento em até 10x sem juros.',
+          'Na Carplus Centro Automotivo, no bairro Portão, vizinho ao Seminário em Curitiba. Trabalhamos com pneus Michelin com montagem inclusa e parcelamento em até 10x sem juros.',
       },
       {
         question: 'Quais linhas Michelin a Carplus tem?',
@@ -1516,11 +1516,11 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     tipo: 'loja',
     bairro: 'Portão',
     h1: 'Loja de Pneus no Portão, Curitiba',
-    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Auto Center',
+    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Loja de pneus no Portão, em Curitiba: Carplus Auto Center. Pneus de várias marcas, oficina mecânica completa, alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Loja de pneus no Portão, em Curitiba: Carplus Centro Automotivo. Pneus de várias marcas, oficina mecânica completa, alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Carplus Auto Center é a loja de pneus e oficina mecânica completa do bairro Portão, em Curitiba. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios, suspensão e troca de óleo no mesmo lugar.',
+      'A Carplus Centro Automotivo é a loja de pneus e oficina mecânica completa do bairro Portão, em Curitiba. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios, suspensão e troca de óleo no mesmo lugar.',
     faq: [
       {
         question: 'Qual o endereço da loja de pneus no Portão?',
@@ -1561,7 +1561,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Melhor Preço · Curitiba',
     h1: 'Pneus em Curitiba com o Melhor Preço',
     highlight: 'Melhor Preço',
-    metaTitle: 'Pneus em Curitiba com o Melhor Preço | Carplus Auto Center',
+    metaTitle: 'Pneus em Curitiba com o Melhor Preço | Carplus Centro Automotivo',
     metaDescription:
       'Pneus em Curitiba com o melhor preço na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, várias marcas e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1603,9 +1603,9 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Loja de Pneus · Curitiba',
     h1: 'Loja de Pneus em Curitiba',
     highlight: 'Pneus',
-    metaTitle: 'Loja de Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Loja de Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Loja de pneus em Curitiba: Carplus Auto Center, no bairro Portão. Pneus de várias marcas, oficina mecânica completa, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Loja de pneus em Curitiba: Carplus Centro Automotivo, no bairro Portão. Pneus de várias marcas, oficina mecânica completa, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Carplus é uma loja de pneus completa em Curitiba, no bairro Portão, que também é oficina mecânica full service. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios e troca de óleo no mesmo lugar.',
     tags: ['Loja física', 'Oficina completa', 'Várias marcas', 'Portão · Curitiba'],
@@ -1645,7 +1645,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus Baratos · Curitiba',
     h1: 'Pneus Baratos em Curitiba',
     highlight: 'Baratos',
-    metaTitle: 'Pneus Baratos em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneus Baratos em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneus baratos em Curitiba com qualidade na Carplus, bairro Portão. Opções econômicas e premium, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1687,7 +1687,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Maior Estoque · Curitiba',
     h1: 'Maior Estoque de Pneus em Curitiba',
     highlight: 'Estoque',
-    metaTitle: 'Maior Estoque de Pneus em Curitiba | Carplus Auto Center',
+    metaTitle: 'Maior Estoque de Pneus em Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Maior estoque de pneus em Curitiba na Carplus, bairro Portão. Aros 13 a 23, várias marcas e pronta entrega com montagem inclusa. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1729,7 +1729,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Onde Comprar · Curitiba',
     h1: 'Onde Comprar Pneus em Curitiba',
     highlight: 'Comprar Pneus',
-    metaTitle: 'Onde Comprar Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Onde Comprar Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Onde comprar pneus em Curitiba com segurança? Na Carplus, bairro Portão: várias marcas, montagem inclusa, garantia com nota fiscal e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1751,7 +1751,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Onde comprar pneus em Curitiba com garantia?',
         answer:
-          'Na Carplus Auto Center, no bairro Portão. Todos os pneus têm garantia e nota fiscal, com montagem e balanceamento inclusos.',
+          'Na Carplus Centro Automotivo, no bairro Portão. Todos os pneus têm garantia e nota fiscal, com montagem e balanceamento inclusos.',
       },
       {
         question: 'Vale a pena comprar pneu em loja com oficina?',
@@ -1771,7 +1771,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Promoção · Curitiba',
     h1: 'Promoção de Pneus em Curitiba',
     highlight: 'Promoção',
-    metaTitle: 'Promoção de Pneus em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Promoção de Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Promoção de pneus em Curitiba na Carplus, bairro Portão. Condições especiais por medida, montagem inclusa e 10x sem juros. Consulte a promoção no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1813,7 +1813,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus em Oferta · Curitiba',
     h1: 'Pneus em Oferta em Curitiba',
     highlight: 'Oferta',
-    metaTitle: 'Pneus em Oferta em Curitiba | Carplus Auto Center – Portão',
+    metaTitle: 'Pneus em Oferta em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
       'Pneus em oferta em Curitiba na Carplus, bairro Portão. Ofertas por medida e marca, montagem inclusa e 10x sem juros. Consulte no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1855,7 +1855,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus Parcelados · Curitiba',
     h1: 'Pneus Parcelados em Curitiba',
     highlight: 'Parcelados',
-    metaTitle: 'Pneus Parcelados em Curitiba | Carplus Auto Center – 10x sem juros',
+    metaTitle: 'Pneus Parcelados em Curitiba | Carplus Centro Automotivo – 10x sem juros',
     metaDescription:
       'Pneus parcelados em Curitiba na Carplus, bairro Portão. Até 10x sem juros no cartão, montagem inclusa e várias marcas. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
@@ -1897,7 +1897,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Melhor Loja · Curitiba',
     h1: 'Melhor Loja de Pneus em Curitiba',
     highlight: 'Melhor Loja',
-    metaTitle: 'Melhor Loja de Pneus em Curitiba | Carplus Auto Center – 4,9 no Google',
+    metaTitle: 'Melhor Loja de Pneus em Curitiba | Carplus Centro Automotivo – 4,9 no Google',
     metaDescription:
       'Considerada uma das melhores lojas de pneus de Curitiba, a Carplus fica no Portão: 4,9 no Google, várias marcas, oficina completa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1919,7 +1919,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Qual a melhor loja de pneus em Curitiba?',
         answer:
-          'A Carplus Auto Center, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 300 avaliações de clientes.',
+          'A Carplus Centro Automotivo, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 300 avaliações de clientes.',
       },
       {
         question: 'O que torna a Carplus a melhor opção?',
@@ -1939,7 +1939,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Qual o Melhor Pneu · Curitiba',
     h1: 'Qual o Melhor Pneu em Curitiba',
     highlight: 'Melhor Pneu',
-    metaTitle: 'Qual o Melhor Pneu para o seu Carro em Curitiba | Carplus Auto Center',
+    metaTitle: 'Qual o Melhor Pneu para o seu Carro em Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Qual o melhor pneu para o seu carro? A Carplus, no Portão em Curitiba, ajuda a escolher entre economia, conforto e performance. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -1981,7 +1981,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus com Instalação · Curitiba',
     h1: 'Pneus com Instalação em Curitiba',
     highlight: 'Instalação',
-    metaTitle: 'Pneus com Instalação em Curitiba | Carplus Auto Center – Montagem Inclusa',
+    metaTitle: 'Pneus com Instalação em Curitiba | Carplus Centro Automotivo – Montagem Inclusa',
     metaDescription:
       'Pneus com instalação em Curitiba na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, alinhamento 3D na hora e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -2023,7 +2023,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus + Alinhamento · Curitiba',
     h1: 'Pneus com Alinhamento e Balanceamento em Curitiba',
     highlight: 'Alinhamento e Balanceamento',
-    metaTitle: 'Pneus com Alinhamento e Balanceamento em Curitiba | Carplus Auto Center',
+    metaTitle: 'Pneus com Alinhamento e Balanceamento em Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Pneus com alinhamento e balanceamento em Curitiba na Carplus, bairro Portão. Troca completa com alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
@@ -2065,7 +2065,7 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Centro Automotivo · Curitiba',
     h1: 'Centro Automotivo para Troca de Pneus em Curitiba',
     highlight: 'Troca de Pneus',
-    metaTitle: 'Centro Automotivo para Troca de Pneus em Curitiba | Carplus Auto Center',
+    metaTitle: 'Centro Automotivo para Troca de Pneus em Curitiba | Carplus Centro Automotivo',
     metaDescription:
       'Centro automotivo para troca de pneus em Curitiba: Carplus, no bairro Portão. Pneus, alinhamento, balanceamento, freios, suspensão e troca de óleo. WhatsApp: (41) 3082-7282.',
     intro:

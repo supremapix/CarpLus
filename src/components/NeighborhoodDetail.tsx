@@ -68,7 +68,7 @@ export default function NeighborhoodDetail() {
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Carplus Auto Center",
+              "name": "Carplus Centro Automotivo",
               "description": seoContent.metaDescription,
               "url": `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
               "telephone": "+55-41-3082-7282",
@@ -109,7 +109,7 @@ export default function NeighborhoodDetail() {
               "serviceType": "Venda e instalação de pneus",
               "provider": {
                 "@type": "LocalBusiness",
-                "name": "Carplus Auto Center"
+                "name": "Carplus Centro Automotivo"
               },
               "areaServed": {
                 "@type": "Neighborhood",
@@ -143,7 +143,7 @@ export default function NeighborhoodDetail() {
                 width={1200}
                 height={801}
                 className="w-full h-full object-cover"
-                alt={`Loja de pneus para ${bairro.name} - Carplus Auto Center Curitiba`}
+                alt={`Loja de pneus para ${bairro.name} - Carplus Centro Automotivo Curitiba`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
            </div>
@@ -370,7 +370,7 @@ export default function NeighborhoodDetail() {
                     <div className="absolute bottom-6 left-6 right-6 z-[1000] bg-white p-5 rounded-2xl shadow-xl">
                        <div className="flex items-center justify-between">
                          <div>
-                           <p className="font-bold text-dark">Carplus Auto Center</p>
+                           <p className="font-bold text-dark">Carplus Centro Automotivo</p>
                            <p className="text-sm text-gray-500">Portão, Curitiba - PR</p>
                          </div>
                          <a
@@ -561,7 +561,7 @@ export default function NeighborhoodDetail() {
               ))}
             </div>
             <p className="text-center text-gray-400 text-sm mt-8">
-              A Carplus Auto Center atende {bairro.name} e toda Curitiba com pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e mais.
+              A Carplus Centro Automotivo atende {bairro.name} e toda Curitiba com pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e mais.
             </p>
           </div>
         </section>

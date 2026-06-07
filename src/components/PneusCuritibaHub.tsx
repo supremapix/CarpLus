@@ -25,7 +25,7 @@ const HUB_FAQ = [
   {
     question: 'Onde comprar pneus em Curitiba com montagem inclusa?',
     answer:
-      'Na Carplus Auto Center, no bairro Portão, em Curitiba. Trabalhamos com pneus de várias marcas e aros, com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
+      'Na Carplus Centro Automotivo, no bairro Portão, em Curitiba. Trabalhamos com pneus de várias marcas e aros, com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
   },
   {
     question: 'Quais marcas de pneus a Carplus trabalha?',
@@ -66,7 +66,7 @@ function Section({
 
 export default function PneusCuritibaHub() {
   useSEO({
-    title: 'Pneus em Curitiba | Carplus Auto Center – Aros, Marcas e Medidas',
+    title: 'Pneus em Curitiba | Carplus Centro Automotivo – Aros, Marcas e Medidas',
     description:
       'Pneus em Curitiba na Carplus, bairro Portão. Encontre pneus por aro (13 ao 20), por marca (Pirelli, Michelin, Goodyear, Continental, Yokohama), por medida e por veículo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     canonical: `${BASE_URL}/pneus-curitiba`,

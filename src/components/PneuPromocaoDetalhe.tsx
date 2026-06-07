@@ -60,7 +60,7 @@ export default function PneuPromocaoDetalhe() {
       try {
         await navigator.share({
           title: `${tire.marca} ${tire.medida}`,
-          text: `Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Auto Center em Curitiba!`,
+          text: `Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Centro Automotivo em Curitiba!`,
           url: pageUrl,
         });
       } catch {
@@ -76,7 +76,7 @@ export default function PneuPromocaoDetalhe() {
     ? [
         {
           q: `Qual o preço do pneu ${tire.marca} ${tire.medida} em Curitiba?`,
-          a: `O pneu ${tire.marca} ${tire.nome} está em promoção a partir de ${tire.preco} na Carplus Auto Center, no bairro Portão em Curitiba. Solicite seu orçamento atualizado pelo WhatsApp (41) 3082-7282.`,
+          a: `O pneu ${tire.marca} ${tire.nome} está em promoção a partir de ${tire.preco} na Carplus Centro Automotivo, no bairro Portão em Curitiba. Solicite seu orçamento atualizado pelo WhatsApp (41) 3082-7282.`,
         },
         {
           q: `A montagem e o balanceamento estão inclusos?`,
@@ -104,7 +104,7 @@ export default function PneuPromocaoDetalhe() {
   const productSchema = tire
     ? generateProductSchema({
         name: `Pneu ${tire.marca} ${tire.nome}`,
-        description: `Pneu ${tire.marca} ${tire.nome}, medida ${tire.medida}, em promoção na Carplus Auto Center no Portão, Curitiba. Montagem, balanceamento e garantia de fábrica inclusos.`,
+        description: `Pneu ${tire.marca} ${tire.nome}, medida ${tire.medida}, em promoção na Carplus Centro Automotivo no Portão, Curitiba. Montagem, balanceamento e garantia de fábrica inclusos.`,
         image: [tire.imagem],
         sku: tire.slug,
         brand: tire.marca,
@@ -139,7 +139,7 @@ export default function PneuPromocaoDetalhe() {
     tire
       ? {
           title: `Pneu ${tire.marca} ${tire.medida} em Promoção | ${tire.preco} – Carplus Curitiba`,
-          description: `Pneu ${tire.marca} ${tire.nome} a partir de ${tire.preco} em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Auto Center, no Portão. WhatsApp: (41) 3082-7282.`,
+          description: `Pneu ${tire.marca} ${tire.nome} a partir de ${tire.preco} em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Centro Automotivo, no Portão. WhatsApp: (41) 3082-7282.`,
           canonical: pageUrl,
           ogImage: tire.imagem,
           ogType: 'product',
@@ -254,7 +254,7 @@ export default function PneuPromocaoDetalhe() {
                     Facebook
                   </a>
                   <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Auto Center!`)}&url=${encodeURIComponent(pageUrl)}`}
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus Centro Automotivo!`)}&url=${encodeURIComponent(pageUrl)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-black text-white text-center py-2 rounded-lg text-xs font-bold hover:bg-gray-800 transition-colors"
@@ -346,7 +346,7 @@ export default function PneuPromocaoDetalhe() {
 
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
                   Pneu {tire.marca} na medida <strong>{tire.medida}</strong> com montagem, balanceamento e garantia de
-                  fábrica inclusos. Instalação rápida por técnicos certificados na Carplus Auto Center, no Portão, em
+                  fábrica inclusos. Instalação rápida por técnicos certificados na Carplus Centro Automotivo, no Portão, em
                   Curitiba.
                 </p>
 
@@ -503,7 +503,7 @@ export default function PneuPromocaoDetalhe() {
             <p>
               O pneu <strong>{tire.marca} {tire.nome}</strong> é uma excelente opção de custo-benefício para quem busca
               segurança e economia em Curitiba. Na medida <strong>{tire.medida}</strong> (aro {tire.aro}), ele atende a
-              uma ampla variedade de veículos de passeio e está disponível em promoção na Carplus Auto Center, no bairro
+              uma ampla variedade de veículos de passeio e está disponível em promoção na Carplus Centro Automotivo, no bairro
               Portão.
             </p>
             <p>
@@ -518,7 +518,7 @@ export default function PneuPromocaoDetalhe() {
               atendendo todos os bairros e região metropolitana.
             </p>
             <p className="flex items-center gap-2 text-sm font-bold text-primary">
-              <MapPin size={16} /> Carplus Auto Center — Portão, Curitiba/PR
+              <MapPin size={16} /> Carplus Centro Automotivo — Portão, Curitiba/PR
             </p>
           </div>
         </section>

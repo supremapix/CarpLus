@@ -5,7 +5,7 @@ import { useSEO } from '../../hooks/useSEO';
 export default function ReturnPolicy() {
   useSEO({
     title: 'Trocas, Devoluções e Garantia | Carplus Pneus Curitiba',
-    description: 'Política de trocas, devoluções e garantia da Carplus Auto Center: garantia de fábrica nos pneus e 90 dias nos serviços de oficina, conforme o CDC.',
+    description: 'Política de trocas, devoluções e garantia da Carplus Centro Automotivo: garantia de fábrica nos pneus e 90 dias nos serviços de oficina, conforme o CDC.',
     canonical: 'https://www.carpluspneuseoficina.com.br/trocas-e-devolucoes',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
   });
@@ -16,7 +16,7 @@ export default function ReturnPolicy() {
       <main className="pt-32 md:pt-36 pb-24 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl mb-8">Política de Devolução e Garantia</h1>
         <div className="prose prose-lg text-gray-600 space-y-6">
-          <p>A Carplus Auto Center preza pela transparência e satisfação total dos nossos clientes de Curitiba e região.</p>
+          <p>A Carplus Centro Automotivo preza pela transparência e satisfação total dos nossos clientes de Curitiba e região.</p>
           
           <h2 className="text-2xl font-bold text-dark">1. Garantia de Pneus</h2>
           <p>Todos os pneus vendidos (Pirelli, Michelin, Goodyear, etc.) possuem garantia de fábrica contra defeitos de fabricação pelo período estipulado pelo fabricante (geralmente 5 anos). A garantia não cobre danos causados por mau uso, cortes, bolhas por impacto ou falta de alinhamento.</p>
