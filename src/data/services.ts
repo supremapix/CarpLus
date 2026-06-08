@@ -443,16 +443,6 @@ export const SERVICE_CATEGORIES: Category[] = [
     emoji: "🌟",
     services: [
       {
-        id: "martelinho-ouro",
-        name: "Martelinho de Ouro",
-        slug: "martelinho-de-ouro",
-        shortDescription: "Remoção de amassados sem danificar a pintura original. Técnica PDR especializada para batidas e granizo. Preserva o valor do veículo.",
-        fullDescription: "O martelinho de ouro é uma técnica especializada para remoção de amassados na lataria sem danificar a pintura original do veículo. Na Carplus, nossos profissionais utilizam ferramentas precisas (PDR – Paintless Dent Repair) para restaurar a lataria com perfeição, eliminando amassados causados por batidas, granizo e outras situações. O resultado é impecável e preserva o valor do veículo sem necessidade de funilaria ou repintura.",
-        highlights: ["Sem danificar a pintura original", "Técnica PDR especializada", "Amassados por batidas e granizo", "Preserva o valor do veículo"],
-        estimatedTime: "1–3 horas",
-        icon: "Award"
-      },
-      {
         id: "inspecao-veicular",
         name: "Inspeção Veicular de Segurança",
         slug: "inspecao-veicular",

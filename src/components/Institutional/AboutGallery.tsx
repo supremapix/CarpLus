@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const GALLERY_IMAGES = [
   { src: '/images/galeria/fachada-fullservice.webp', alt: 'Fachada Carplus Pneus - Oficina Mecanica Full Service' },
-  { src: '/images/galeria/fachada-carro.webp', alt: 'Fachada com carro da Carplus Pneus' },
   { src: '/images/galeria/proprietario-pneu.webp', alt: 'Proprietario Carplus Pneus' },
   { src: '/images/galeria/showroom.webp', alt: 'Showroom Carplus Pneus' },
   { src: '/images/galeria/sala-espera.webp', alt: 'Sala de Espera Carplus Pneus' },
@@ -17,13 +16,10 @@ const GALLERY_IMAGES = [
   { src: '/images/galeria/montagem-pneu.webp', alt: 'Montagem de pneu' },
   { src: '/images/galeria/rodas-pretas.webp', alt: 'Rodas esportivas' },
   { src: '/images/galeria/mecanicos-trabalho.webp', alt: 'Mecanicos trabalhando na Carplus Pneus' },
-  { src: '/images/galeria/oficina-vidro.webp', alt: 'Oficina vista pelo vidro' },
   { src: '/images/galeria/display-pneus.webp', alt: 'Display de pneus Pirelli' },
-  { src: '/images/galeria/espaco-kids.webp', alt: 'Espaco Kids Carplus Pneus' },
   { src: '/images/galeria/escritorio.webp', alt: 'Escritorio Carplus Pneus' },
   { src: '/images/galeria/fachada-logo.webp', alt: 'Fachada com logo Carplus Pneus' },
   { src: '/images/galeria/caminhonete.webp', alt: 'Caminhonete Carplus Pneus' },
-  { src: '/images/galeria/oficina-elevadores.webp', alt: 'Oficina com elevadores' },
   { src: '/images/galeria/loja-de-pneus-portao-curitiba-pirelli.png', alt: 'Loja de pneus Carplus no Portão em Curitiba - mecânico em atendimento' },
 ];
 
