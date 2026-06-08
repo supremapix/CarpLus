@@ -23,7 +23,15 @@ const ALL_SERVICES = SERVICE_CATEGORIES.flatMap(cat =>
 const STUDIO_IMAGES = [
   "/images/loja/loja-de-pneus.webp",
   "/images/loja/carplus-oficina-portao-fachada-curitiba.jpg",
-  "/images/loja/oficina-mecanica-portao-curitiba.png"
+  "/images/loja/oficina-mecanica-portao-curitiba.png",
+  "/images/servicos-galeria/oficina-mecanica-elevadores-curitiba.webp",
+  "/images/servicos-galeria/montagem-pneu-pirelli-curitiba.webp",
+  "/images/servicos-galeria/alinhamento-3d-curitiba.webp",
+  "/images/servicos-galeria/balanceamento-roda-curitiba.webp",
+  "/images/servicos-galeria/manutencao-freios-curitiba.webp",
+  "/images/servicos-galeria/loja-pneus-prinx-curitiba.webp",
+  "/images/servicos-galeria/rodas-alinhamento-oficina-curitiba.webp",
+  "/images/servicos-galeria/alinhamento-pneu-michelin-curitiba.webp"
 ];
 
 // Service Card para o carrossel
