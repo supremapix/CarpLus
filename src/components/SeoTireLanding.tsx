@@ -21,6 +21,7 @@ import { WHATSAPP_NUMBER, PHONE_DISPLAY, ADDRESS_FULL, BASE_URL, OG_IMAGE } from
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
+import ServicosGaleria, { getGaleriaSchema } from './ServicosGaleria';
 import { useSEO } from '../hooks/useSEO';
 import {
   generateBreadcrumbSchema,
@@ -53,6 +54,8 @@ export interface SeoTireLandingProps {
   relatedLinksTitle?: string;
   relatedLinks: SeoLandingLink[];
   whatsappMsg: string;
+  /** Quando informado, exibe a galeria de fotos da oficina/serviços com alt e schema localizados (ex.: "Curitiba", "Portão"). */
+  galleryLocal?: string;
 }
 
 function FaqAccordion({ faq }: { faq: FaqItem[] }) {
@@ -126,6 +129,7 @@ export default function SeoTireLanding({
   relatedLinksTitle = 'Explore também',
   relatedLinks,
   whatsappMsg,
+  galleryLocal,
 }: SeoTireLandingProps) {
   const displayTires = tires.slice(0, 12);
   const brands = [...new Set(tires.filter((t) => t && t.marca).map((t) => t.marca))];
@@ -159,6 +163,7 @@ export default function SeoTireLanding({
       itemListSchema,
       generateBreadcrumbSchema(breadcrumb.map((b) => ({ name: b.name, url: `${BASE_URL}${b.path}` }))),
       generateFaqSchema(faq),
+      ...(galleryLocal ? [getGaleriaSchema(galleryLocal)] : []),
     ],
   });
 
@@ -315,6 +320,13 @@ export default function SeoTireLanding({
                 </Link>
               </div>
             )}
+          </section>
+        )}
+
+        {/* Galeria de fotos da oficina e serviços (localizada) */}
+        {galleryLocal && (
+          <section className="mb-16 -mx-4 md:-mx-6">
+            <ServicosGaleria local={galleryLocal} variant="light" />
           </section>
         )}
 

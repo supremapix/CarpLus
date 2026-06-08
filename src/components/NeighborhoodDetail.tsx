@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useSEO } from '../hooks/useSEO';
 import { getFaqCompleto } from '../data/faqBairros';
 import { getNeighborhoodSeoContent, generateGenericSeoContent, NeighborhoodSeoContent } from '../data/neighborhoodSeoContent';
+import ServicosGaleria, { getGaleriaSchema } from './ServicosGaleria';
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +121,8 @@ export default function NeighborhoodDetail() {
                 }
               },
               "description": `Venda de pneus Pirelli, Michelin, Goodyear e Continental para moradores de ${bairro.name}. Instalação, alinhamento 3D e balanceamento inclusos.`
-            }
+            },
+            getGaleriaSchema(bairro.name)
           ]
         }
       : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.' }
@@ -387,6 +389,9 @@ export default function NeighborhoodDetail() {
               </div>
            </div>
         </section>
+
+        {/* Galeria de Serviços e Centro Automotivo */}
+        <ServicosGaleria local={bairro.name} variant="light" />
 
         {/* Por que Escolher a Carplus */}
         <section className="py-20 bg-dark text-white">
