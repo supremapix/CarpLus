@@ -59,15 +59,15 @@ export default function StoreSection() {
             {/* Paragraphs */}
             <div className="space-y-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center lg:text-left">
               <p>
-                Bem-vindo a <span className="text-white font-semibold">Carplus Pneus</span>, sua referencia absoluta em pneus e servicos automotivos em Curitiba e Regiao Metropolitana. Somos especialistas em oferecer a linha completa de pneus de alta performance, unindo a conveniencia de um catalogo digital robusto com a seguranca do atendimento personalizado via WhatsApp.
+                Bem-vindo à <span className="text-white font-semibold">Carplus Pneus e Oficina</span>, sua referência em pneus e serviços automotivos em Curitiba e Região Metropolitana. Trabalhamos com as principais marcas do mercado — <span className="text-white font-semibold">Pirelli, Michelin, Goodyear, Continental, Bridgestone, Firestone, Yokohama, Prinx e Delinte</span> — com pneus <span className="text-white font-semibold">a partir de R$ 239,00 à vista</span> e parcelamento em até 10x sem juros.
               </p>
-              
+
               <p>
-                Aqui, voce encontra o pneu ideal para o seu veiculo, desde carros de passeio compactos ate SUVs de luxo e caminhonetes off-road. Nossa estrutura de loja de pneus foi desenhada para garantir disponibilidade imediata e precos competitivos em toda a familia Pirelli: Cinturato, Scorpion, P Zero e muito mais. Nao somos apenas um site, somos uma <span className="text-white font-semibold">loja fisica consolidada com estoque real</span>.
+                Aqui você encontra o pneu ideal para o seu veículo, de carros de passeio compactos a SUVs, picapes e utilitários. Nossa estrutura foi pensada para garantir disponibilidade imediata e preços competitivos, com atendimento personalizado via WhatsApp e a segurança de uma <span className="text-white font-semibold">loja física consolidada com estoque real</span> no bairro Portão.
               </p>
-              
+
               <p>
-                Ao navegar por nossas categorias, voce tem a garantia de comprar produtos originais com selo do INMETRO e garantia de fabrica. Simplifique a manutencao do seu carro: escolha a medida certa, negocie diretamente com nossos consultores e garanta a melhor aderencia e seguranca para rodar nas ruas de Curitiba. <span className="text-white font-semibold">Carplus Pneus: qualidade que voce confia</span>.
+                Todos os produtos são originais, com selo do INMETRO e garantia de fábrica. Além da venda de pneus, somos uma oficina <span className="text-white font-semibold">full service</span>: alinhamento 3D, balanceamento, troca de óleo, freios e suspensão. Escolha a medida certa, negocie diretamente com nossos consultores e rode com mais segurança pelas ruas de Curitiba. <span className="text-white font-semibold">Carplus Pneus: qualidade e confiança em um só lugar</span>.
               </p>
             </div>
             
