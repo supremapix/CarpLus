@@ -21,6 +21,7 @@ import { WHATSAPP_NUMBER, PHONE_DISPLAY, ADDRESS_FULL, BASE_URL, OG_IMAGE } from
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
+import ServicosGaleria, { getGaleriaSchema } from './ServicosGaleria';
 import { useSEO } from '../hooks/useSEO';
 import {
   generateBreadcrumbSchema,
@@ -53,6 +54,8 @@ export interface SeoTireLandingProps {
   relatedLinksTitle?: string;
   relatedLinks: SeoLandingLink[];
   whatsappMsg: string;
+  /** Quando informado, exibe a galeria de fotos da oficina/serviços com alt e schema localizados (ex.: "Curitiba", "Portão"). */
+  galleryLocal?: string;
 }
 
 function FaqAccordion({ faq }: { faq: FaqItem[] }) {
@@ -126,6 +129,7 @@ export default function SeoTireLanding({
   relatedLinksTitle = 'Explore também',
   relatedLinks,
   whatsappMsg,
+  galleryLocal,
 }: SeoTireLandingProps) {
   const displayTires = tires.slice(0, 12);
   const brands = [...new Set(tires.filter((t) => t && t.marca).map((t) => t.marca))];
@@ -159,6 +163,7 @@ export default function SeoTireLanding({
       itemListSchema,
       generateBreadcrumbSchema(breadcrumb.map((b) => ({ name: b.name, url: `${BASE_URL}${b.path}` }))),
       generateFaqSchema(faq),
+      ...(galleryLocal ? [getGaleriaSchema(galleryLocal)] : []),
     ],
   });
 
@@ -200,53 +205,67 @@ export default function SeoTireLanding({
         </nav>
 
         {/* Hero */}
-        <section className="mb-12">
-          <span className="inline-flex items-center gap-2 bg-primary text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-5">
-            <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
-            {badge}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter italic leading-none mb-5 text-balance">
-            {highlight ? (
-              <>
-                {h1Before}
-                <span className="text-primary">{h1Highlight}</span>
-                {h1After}
-              </>
-            ) : (
-              h1
+        <section className="relative mb-12 overflow-hidden rounded-[2rem] bg-dark text-white">
+          <div className="absolute inset-0">
+            <img
+              loading="lazy"
+              src="/images/hero/pneu-prinx-hicity-curitiba.webp"
+              width={1200}
+              height={801}
+              className="w-full h-full object-cover"
+              alt={`${h1} - Carplus Pneus e Centro Automotivo em Curitiba`}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+          </div>
+
+          <div className="relative z-10 p-7 md:p-12">
+            <span className="inline-flex items-center gap-2 bg-primary text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-5">
+              <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+              {badge}
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter italic leading-none mb-5 text-balance [text-shadow:_0_2px_12px_rgb(0_0_0_/_55%)]">
+              {highlight ? (
+                <>
+                  {h1Before}
+                  <span className="text-primary">{h1Highlight}</span>
+                  {h1After}
+                </>
+              ) : (
+                h1
+              )}
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-3xl text-pretty [text-shadow:_0_1px_8px_rgb(0_0_0_/_50%)]">{intro}</p>
+
+            {tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-6">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             )}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-3xl text-pretty">{intro}</p>
 
-          {tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-6">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight"
-                >
-                  {tag}
-                </span>
-              ))}
+            {/* CTA principal */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-900/40"
+              >
+                <MessageSquare size={22} /> Orçamento no WhatsApp
+              </a>
+              <a
+                href={`tel:+${WHATSAPP_NUMBER}`}
+                className="flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all"
+              >
+                <Phone size={20} /> {PHONE_DISPLAY}
+              </a>
             </div>
-          )}
-
-          {/* CTA principal */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-200"
-            >
-              <MessageSquare size={22} /> Orçamento no WhatsApp
-            </a>
-            <a
-              href={`tel:+${WHATSAPP_NUMBER}`}
-              className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-900 transition-all"
-            >
-              <Phone size={20} /> {PHONE_DISPLAY}
-            </a>
           </div>
         </section>
 
@@ -315,6 +334,13 @@ export default function SeoTireLanding({
                 </Link>
               </div>
             )}
+          </section>
+        )}
+
+        {/* Galeria de fotos da oficina e serviços (localizada) */}
+        {galleryLocal && (
+          <section className="mb-16 -mx-4 md:-mx-6">
+            <ServicosGaleria local={galleryLocal} variant="light" />
           </section>
         )}
 

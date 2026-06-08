@@ -73,6 +73,7 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Pneus por aro e medida"
       relatedLinks={relatedLinks}
       whatsappMsg={`Olá! Vi a página de pneu aro ${page.aro} em Curitiba e gostaria de um orçamento.`}
+      galleryLocal="Curitiba"
     />
   );
 }
@@ -125,6 +126,7 @@ export function BrandLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Outras marcas e aros"
       relatedLinks={relatedLinks}
       whatsappMsg={`Olá! Vi a página de pneu ${page.marca} em Curitiba e gostaria de um orçamento.`}
+      galleryLocal="Curitiba"
     />
   );
 }
@@ -174,6 +176,7 @@ export function VehicleLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Pneus para outros veículos"
       relatedLinks={relatedLinks}
       whatsappMsg={`Olá! Tenho um ${page.nome} e gostaria de um orçamento de pneus.`}
+      galleryLocal="Curitiba"
     />
   );
 }
@@ -221,6 +224,7 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Serviços e páginas relacionadas"
       relatedLinks={relatedLinks}
       whatsappMsg={page.whatsappMsg}
+      galleryLocal="Curitiba"
     />
   );
 }
@@ -277,6 +281,7 @@ export function ComparisonLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Marcas e comparativos relacionados"
       relatedLinks={relatedLinks}
       whatsappMsg={page.whatsappMsg}
+      galleryLocal="Curitiba"
     />
   );
 }
@@ -333,6 +338,7 @@ export function LocalComboLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinksTitle="Veja também"
       relatedLinks={relatedLinks}
       whatsappMsg={`Olá! Vi a página "${page.h1}" e gostaria de um orçamento.`}
+      galleryLocal={page.bairro}
     />
   );
 }

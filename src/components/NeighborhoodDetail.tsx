@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useSEO } from '../hooks/useSEO';
 import { getFaqCompleto } from '../data/faqBairros';
 import { getNeighborhoodSeoContent, generateGenericSeoContent, NeighborhoodSeoContent } from '../data/neighborhoodSeoContent';
+import ServicosGaleria, { getGaleriaSchema } from './ServicosGaleria';
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -120,7 +121,8 @@ export default function NeighborhoodDetail() {
                 }
               },
               "description": `Venda de pneus Pirelli, Michelin, Goodyear e Continental para moradores de ${bairro.name}. Instalação, alinhamento 3D e balanceamento inclusos.`
-            }
+            },
+            getGaleriaSchema(bairro.name)
           ]
         }
       : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.' }
@@ -139,7 +141,7 @@ export default function NeighborhoodDetail() {
         <section className="relative min-h-[580px] flex flex-col justify-end bg-dark text-white overflow-hidden">
            <div className="absolute inset-0">
               <img loading="lazy"
-                src="/images/loja/carplus-oficina-portao-fachada-curitiba.jpg"
+                src="/images/hero/pneu-prinx-hicity-curitiba.webp"
                 width={1200}
                 height={801}
                 className="w-full h-full object-cover"
@@ -165,11 +167,11 @@ export default function NeighborhoodDetail() {
               </Link>
               
               {/* H1 Principal - SEO */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight font-bold">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight font-bold [text-shadow:_0_2px_12px_rgb(0_0_0_/_55%)]">
                 {seoContent.h1.split(bairro.name)[0]}
                 <span className="text-primary italic">{bairro.name}</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/70 font-light mb-4 max-w-3xl">{seoContent.heroSubtitle}</p>
+              <p className="text-xl md:text-2xl text-white/70 font-light mb-4 max-w-3xl [text-shadow:_0_1px_8px_rgb(0_0_0_/_50%)]">{seoContent.heroSubtitle}</p>
               
               {/* Badge de tempo */}
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
@@ -387,6 +389,9 @@ export default function NeighborhoodDetail() {
               </div>
            </div>
         </section>
+
+        {/* Galeria de Serviços e Centro Automotivo */}
+        <ServicosGaleria local={bairro.name} variant="light" />
 
         {/* Por que Escolher a Carplus */}
         <section className="py-20 bg-dark text-white">

@@ -13,7 +13,6 @@ import {
 
 // Galeria de imagens do centro automotivo
 const GALERIA_IMAGENS = [
-  { src: '/images/centro-automotivo/oficina-elevadores.webp', alt: 'Centro Automotivo Carplus no Portão - Área de elevadores e serviços', title: 'Oficina Mecânica Completa' },
   { src: '/images/centro-automotivo/mecanico-elevador.webp', alt: 'Mecânico especializado trabalhando no elevador - Carplus Portão', title: 'Profissionais Especializados' },
   { src: '/images/centro-automotivo/mecanico-pneus.webp', alt: 'Troca de pneus no Centro Automotivo Carplus Portão Curitiba', title: 'Serviço de Pneus' },
   { src: '/images/centro-automotivo/pneu-pirelli-scorpion.webp', alt: 'Pneu Pirelli Scorpion - Loja de Pneus Portão Curitiba', title: 'Pneus Premium' },
@@ -124,7 +123,7 @@ export default function CentroAutomotivoPortao() {
         <meta property="og:description" content="Centro Automotivo completo no bairro Portão. Pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e diagnóstico. Pirelli Performance Center certificado." />
         <meta property="og:url" content="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
         <meta property="og:type" content="business.business" />
-        <meta property="og:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/oficina-elevadores.webp" />
+        <meta property="og:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/mecanico-elevador.webp" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="business:contact_data:street_address" content="Av. Presidente Arthur da Silva Bernardes, 1323" />
         <meta property="business:contact_data:locality" content="Curitiba" />
@@ -136,7 +135,7 @@ export default function CentroAutomotivoPortao() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Centro Automotivo no Portão Curitiba | Carplus" />
         <meta name="twitter:description" content="Centro Automotivo completo no Portão. Pneus, mecânica, alinhamento, balanceamento. Pirelli Performance Center." />
-        <meta name="twitter:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/oficina-elevadores.webp" />
+        <meta name="twitter:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/mecanico-elevador.webp" />
 
         {/* Schema.org - LocalBusiness vem da fonte unica (index.html). Aqui apenas FAQ + Breadcrumb. */}
         <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
@@ -149,7 +148,7 @@ export default function CentroAutomotivoPortao() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img loading="lazy" 
-            src="/images/centro-automotivo/oficina-elevadores.webp" 
+            src="/images/centro-automotivo/mecanico-elevador.webp" 
             alt="Centro Automotivo Carplus no bairro Portão em Curitiba - Vista interna da oficina mecânica"
             width={1200}
             height={801}
@@ -480,7 +479,7 @@ export default function CentroAutomotivoPortao() {
             >
               <div className="aspect-video overflow-hidden relative">
                 <img loading="lazy"
-                  src="/images/centro-automotivo/oficina-elevadores.webp"
+                  src="/images/centro-automotivo/mecanico-elevador.webp"
                   alt="Matéria Gazeta do Povo sobre revisão de verão"
                   width={1200}
                   height={801}
