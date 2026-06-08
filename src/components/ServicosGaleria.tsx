@@ -18,42 +18,42 @@ export interface GaleriaImagem {
 export function getGaleriaServicos(local: string): GaleriaImagem[] {
   return [
     {
-      src: '/images/servicos-galeria/oficina-mecanica-elevadores-curitiba.jpg',
+      src: '/images/servicos-galeria/oficina-mecanica-elevadores-curitiba.webp',
       alt: `Centro automotivo Carplus com elevadores atendendo ${local} - Curitiba`,
       legenda: 'Oficina mecânica completa com elevadores',
     },
     {
-      src: '/images/servicos-galeria/montagem-pneu-pirelli-curitiba.jpg',
+      src: '/images/servicos-galeria/montagem-pneu-pirelli-curitiba.webp',
       alt: `Montagem de pneus para clientes de ${local} - Carplus Pirelli Performance Center`,
       legenda: 'Montagem de pneus por equipe especializada',
     },
     {
-      src: '/images/servicos-galeria/alinhamento-3d-curitiba.jpg',
+      src: '/images/servicos-galeria/alinhamento-3d-curitiba.webp',
       alt: `Alinhamento 3D computadorizado para veículos de ${local} - Carplus Curitiba`,
       legenda: 'Alinhamento 3D computadorizado',
     },
     {
-      src: '/images/servicos-galeria/balanceamento-roda-curitiba.jpg',
+      src: '/images/servicos-galeria/balanceamento-roda-curitiba.webp',
       alt: `Balanceamento de rodas para motoristas de ${local} - Carplus Curitiba`,
       legenda: 'Balanceamento de rodas de precisão',
     },
     {
-      src: '/images/servicos-galeria/manutencao-freios-curitiba.jpg',
+      src: '/images/servicos-galeria/manutencao-freios-curitiba.webp',
       alt: `Manutenção e revisão de freios para carros de ${local} - Carplus Curitiba`,
       legenda: 'Revisão e manutenção de freios',
     },
     {
-      src: '/images/servicos-galeria/loja-pneus-prinx-curitiba.jpg',
+      src: '/images/servicos-galeria/loja-pneus-prinx-curitiba.webp',
       alt: `Loja de pneus com diversas marcas para ${local} - Carplus Curitiba`,
       legenda: 'Pneus das melhores marcas em estoque',
     },
     {
-      src: '/images/servicos-galeria/alinhamento-pneu-michelin-curitiba.jpg',
+      src: '/images/servicos-galeria/alinhamento-pneu-michelin-curitiba.webp',
       alt: `Serviço de alinhamento de pneus Michelin para ${local} - Carplus Curitiba`,
       legenda: 'Alinhamento com equipamento profissional',
     },
     {
-      src: '/images/servicos-galeria/rodas-alinhamento-oficina-curitiba.jpg',
+      src: '/images/servicos-galeria/rodas-alinhamento-oficina-curitiba.webp',
       alt: `Estrutura da oficina Carplus para atender ${local} - Curitiba`,
       legenda: 'Estrutura completa de oficina',
     },
