@@ -40,7 +40,7 @@ export default function Hero() {
           </h2>
           
           <p className="text-[0.95rem] sm:text-base md:text-lg text-white/80 mb-8 max-w-xl font-medium text-center md:text-left mx-auto md:mx-0 leading-relaxed">
-            Pneus das melhores marcas a partir de R$ 269,00 à vista! Parcelamento em até 10x sem juros. Atendemos toda Curitiba e Região.
+            Pneus das melhores marcas com preços a partir de R$ 269,00 à vista. Parcele em até 10x sem juros e conte com atendimento em toda Curitiba e Região.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-12 justify-center md:justify-start px-4 sm:px-0">
