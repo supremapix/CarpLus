@@ -39,8 +39,5 @@
         { "key": "X-XSS-Protection", "value": "1; mode=block" }
       ]
     }
-  ],
-  "env": {
-    "PRERENDER_TOKEN": "5KWu7hUG1fFd1memM52s"
-  }
+  ]
 }
