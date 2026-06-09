@@ -71,8 +71,10 @@ export default function TireCatalog() {
   const urlAltura = searchParams.get('altura');
   const urlPage = parseInt(searchParams.get('page') || '1', 10);
   const currentPage = Number.isNaN(urlPage) || urlPage < 1 ? 1 : urlPage;
-  
-  const [search, setSearch] = useState("");
+  // Termo de busca vindo do SearchAction do Google (sitelinks searchbox): /pneus?q=...
+  const urlQuery = searchParams.get('q') || '';
+
+  const [search, setSearch] = useState(urlQuery);
   const [selectedBrands, setSelectedBrands] = useState<string[]>(() => {
     if (urlMarca) {
       const matchedBrand = BRANDS.find(b => b.toLowerCase() === urlMarca.toLowerCase());
@@ -103,7 +105,8 @@ export default function TireCatalog() {
     if (urlAro) setSelectedRims([parseInt(urlAro)]);
     if (urlLargura) setSelectedLargura(parseInt(urlLargura));
     if (urlAltura) setSelectedAltura(parseInt(urlAltura));
-  }, [urlMarca, urlAro, urlLargura, urlAltura]);
+    if (urlQuery) setSearch(urlQuery);
+  }, [urlMarca, urlAro, urlLargura, urlAltura, urlQuery]);
 
   const filteredTires = useMemo(() => {
     // Use URL params OR state for filtering

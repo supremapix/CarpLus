@@ -9,6 +9,7 @@ import TireTips from './TireTips';
 import { useEffect, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
+import { getTireReview } from '../data/tireReviews';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -63,7 +64,10 @@ export default function TireDetail() {
   };
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
-  
+
+  // Avaliações e preço reais (quando cadastrados). Sem dados → schema sem rating/preço.
+  const review = tire ? getTireReview(tire.slug) : undefined;
+
   // Gera schema de produto otimizado para Rich Snippets
   const productSchema = tire
     ? generateProductSchema({
@@ -77,7 +81,13 @@ export default function TireDetail() {
         brand: tire.marca,
         availability: "InStock",
         url: `${BASE_URL}/pneu/${tire.slug}`,
-        // ratingValue e reviewCount podem ser adicionados quando houver dados reais
+        // AggregateRating + Offer com preço são incluídos apenas quando há dados reais
+        ...(review && {
+          ratingValue: review.ratingValue,
+          reviewCount: review.reviewCount,
+          price: review.price,
+          reviews: review.reviews,
+        }),
       })
     : null;
 
