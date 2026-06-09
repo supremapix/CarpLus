@@ -34,13 +34,13 @@ const REGIOES = [
 
 // Marcas disponíveis — links internos para landing pages de marca
 const MARCAS = [
-  { nome: 'Pirelli', slug: 'pneu-pirelli-curitiba' },
-  { nome: 'Michelin', slug: 'pneu-michelin-curitiba' },
-  { nome: 'Goodyear', slug: 'pneu-goodyear-curitiba' },
-  { nome: 'Continental', slug: 'pneu-continental-curitiba' },
-  { nome: 'Bridgestone', slug: 'pneu-bridgestone-curitiba' },
+  { nome: 'Pirelli', slug: 'pneus-pirelli-curitiba' },
+  { nome: 'Michelin', slug: 'pneus-michelin-curitiba' },
+  { nome: 'Goodyear', slug: 'pneus-goodyear-curitiba' },
+  { nome: 'Continental', slug: 'pneus-continental-curitiba' },
+  { nome: 'Bridgestone', slug: 'pneus-bridgestone-curitiba' },
   { nome: 'Firestone', slug: 'pneu-firestone-curitiba' },
-  { nome: 'Yokohama', slug: 'pneu-yokohama-curitiba' },
+  { nome: 'Yokohama', slug: 'pneus-yokohama-curitiba' },
   { nome: 'Prinx', slug: 'pneu-prinx-curitiba' },
 ];
 

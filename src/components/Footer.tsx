@@ -149,7 +149,7 @@ export default function Footer() {
                <ul className="space-y-2 text-xs font-medium text-white/50">
                   {[['pirelli','Pirelli'],['michelin','Michelin'],['goodyear','Goodyear'],['continental','Continental'],['yokohama','Yokohama']].map(([slug,name]) => (
                     <li key={slug}>
-                      <Link to={`/pneu-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneu {name}</Link>
+                      <Link to={`/pneus-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneus {name}</Link>
                     </li>
                   ))}
                </ul>
@@ -194,7 +194,7 @@ export default function Footer() {
             <span className="text-white/50 text-xs font-medium">por</span>
             <span className="text-white group-hover:text-primary font-bold text-xs transition-colors flex items-center gap-2">
               Suprema Sites Express
-              <img loading="lazy" src="/images/logos/suprema.webp" alt="Suprema" width={649} height={185} className="h-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <img loading="lazy" src="/images/logos/suprema.webp" alt="Suprema Mídia" width={649} height={185} className="h-4 w-auto flex-shrink-0 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
             </span>
          </a>
       </div>

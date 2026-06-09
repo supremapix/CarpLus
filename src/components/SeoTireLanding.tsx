@@ -14,6 +14,11 @@ import {
   Target,
   CircleCheck as CheckCircle2,
   MapPin,
+  Crosshair,
+  Disc3,
+  Car,
+  Droplets,
+  Wrench,
 } from 'lucide-react';
 import type { Tire } from '../data';
 import type { FaqItem } from '../data/seoLanding';
@@ -27,6 +32,60 @@ import {
   generateBreadcrumbSchema,
   generateFaqSchema,
 } from '../lib/schema';
+
+// Serviços relacionados à compra de pneus — links internos exigidos para SEO
+// (alinhamento, balanceamento, suspensão, troca de óleo) + Service Schema.
+const RELATED_SERVICES = [
+  {
+    icon: Crosshair,
+    title: 'Alinhamento 3D',
+    description: 'Alinhamento computadorizado que evita desgaste irregular dos pneus novos.',
+    to: '/servico/alinhamento-e-balanceamento',
+  },
+  {
+    icon: Disc3,
+    title: 'Balanceamento',
+    description: 'Balanceamento de precisão que elimina vibrações no volante e na carroceria.',
+    to: '/servico/alinhamento-e-balanceamento',
+  },
+  {
+    icon: Car,
+    title: 'Suspensão',
+    description: 'Revisão de amortecedores, molas e batentes para mais segurança e conforto.',
+    to: '/servico/revisao-de-suspensao',
+  },
+  {
+    icon: Droplets,
+    title: 'Troca de Óleo',
+    description: 'Troca de óleo e filtros com produtos de qualidade no mesmo dia.',
+    to: '/servico/troca-de-oleo',
+  },
+] as const;
+
+function getRelatedServicesSchema(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Serviços relacionados — Carplus Centro Automotivo',
+    itemListElement: RELATED_SERVICES.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.description,
+        url: `${BASE_URL}${s.to}`,
+        serviceType: s.title,
+        areaServed: { '@type': 'City', name: 'Curitiba' },
+        provider: {
+          '@type': 'AutoRepair',
+          name: 'Carplus Centro Automotivo',
+          telephone: '+55-41-3082-7282',
+        },
+      },
+    })),
+  };
+}
 
 export interface SeoLandingSection {
   title: string;
@@ -163,6 +222,7 @@ export default function SeoTireLanding({
       itemListSchema,
       generateBreadcrumbSchema(breadcrumb.map((b) => ({ name: b.name, url: `${BASE_URL}${b.path}` }))),
       generateFaqSchema(faq),
+      getRelatedServicesSchema(),
       ...(galleryLocal ? [getGaleriaSchema(galleryLocal)] : []),
     ],
   });
@@ -390,6 +450,37 @@ export default function SeoTireLanding({
             </div>
           </div>
           <FaqAccordion faq={faq} />
+        </section>
+
+        {/* Serviços Relacionados */}
+        <section className="mb-16">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="bg-dark p-3 rounded-2xl">
+              <Wrench className="text-primary" size={28} />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter italic">Serviços Relacionados</h2>
+              <p className="text-gray-500 text-sm font-medium">Tudo o que seu carro precisa, no mesmo lugar — no Portão, em Curitiba</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {RELATED_SERVICES.map((s) => (
+              <Link
+                key={s.title}
+                to={s.to}
+                className="group bg-white rounded-[2rem] p-7 shadow-sm border border-gray-100 hover:border-primary hover:shadow-xl transition-all flex flex-col"
+              >
+                <div className="bg-primary/10 text-primary p-3 rounded-2xl w-fit mb-5 group-hover:bg-primary group-hover:text-black transition-colors">
+                  <s.icon size={26} />
+                </div>
+                <h3 className="text-lg font-bold uppercase tracking-tight italic mb-2">{s.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed flex-1">{s.description}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-tight">
+                  Saiba mais <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Internal Linking */}
