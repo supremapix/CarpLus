@@ -121,6 +121,32 @@ for (const page of staticPages) {
 `;
 }
 
+// Add paginated catalog pages (/pneus?page=N) — 24 tires per page.
+// A contagem de páginas precisa espelhar EXATAMENTE o array TIRES usado pelo
+// catálogo (TireCatalog pagina sobre TIRES.length). Importamos TIRES diretamente
+// para evitar descompasso com a contagem de slugs únicos (que ignora duplicatas).
+const PER_PAGE = 24;
+let totalCatalogPages = Math.max(1, Math.ceil(uniqueTireSlugs.length / PER_PAGE));
+try {
+  const mod = await import(new URL('../src/data.ts', import.meta.url).href);
+  if (Array.isArray(mod.TIRES) && mod.TIRES.length > 0) {
+    totalCatalogPages = Math.max(1, Math.ceil(mod.TIRES.length / PER_PAGE));
+  }
+} catch (err) {
+  console.warn(`[sitemap] Não foi possível importar TIRES (${err.message}). Usando contagem por slugs.`);
+}
+// A página 1 já é coberta por /pneus acima, então começamos da página 2.
+for (let p = 2; p <= totalCatalogPages; p++) {
+  sitemap += `  <url>
+    <loc>${baseUrl}/pneus?page=${p}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+}
+console.log(`Found ${totalCatalogPages} paginated catalog pages (/pneus?page=N)`);
+
 // Add services
 for (const service of uniqueServices) {
   sitemap += `  <url>
@@ -185,10 +211,11 @@ fs.writeFileSync(sitemapPath, sitemap);
 
 console.log(`Sitemap generated with:`);
 console.log(`- ${staticPages.length} static pages`);
+console.log(`- ${totalCatalogPages - 1} paginated catalog pages (/pneus?page=2..${totalCatalogPages})`);
 console.log(`- ${uniqueServices.length} services`);
 console.log(`- ${bairros.length} neighborhoods`);
 console.log(`- ${popularMeasures.length} tire measures`);
 console.log(`- ${seoLandingSlugs.length} SEO landing pages`);
 console.log(`- ${uniqueTireSlugs.length} individual tires`);
-console.log(`Total URLs: ${staticPages.length + uniqueServices.length + bairros.length + popularMeasures.length + seoLandingSlugs.length + uniqueTireSlugs.length}`);
+console.log(`Total URLs: ${staticPages.length + (totalCatalogPages - 1) + uniqueServices.length + bairros.length + popularMeasures.length + seoLandingSlugs.length + uniqueTireSlugs.length}`);
 console.log(`Sitemap saved to: ${sitemapPath}`);

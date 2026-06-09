@@ -21,6 +21,7 @@ const Reviews = lazy(() => import('./Reviews'));
 const FAQInfiniteScroll = lazy(() => import('./FAQInfiniteScroll'));
 const CentroAutomotivoCTA = lazy(() => import('./CentroAutomotivoCTA'));
 const OfertasExclusivas = lazy(() => import('./OfertasExclusivas'));
+const PneusPorAroSection = lazy(() => import('./PneusPorAroSection'));
 
 export default function Home() {
   useSEO({
@@ -28,7 +29,7 @@ export default function Home() {
     description: 'Loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
-    keywords: ['loja de pneus Curitiba', 'pneus Portão Curitiba', 'oficina mecânica Portão', 'alinhamento 3D Curitiba', 'Carplus Centro Automotivo'],
+    keywords: ['loja de pneus Curitiba', 'pneus Portão Curitiba', 'oficina mecânica Portão', 'alinhamento 3D Curitiba', 'Carplus Centro Automotivo', 'pneu aro 14', 'pneu aro 15', 'pneu aro 16', 'pneu aro 17', 'pneu aro 18', 'pneu aro 19', 'pneu aro 20', 'pneu aro 21', 'pneu aro 22', 'pneu aro 23'],
   });
 
   return (
@@ -78,6 +79,12 @@ export default function Home() {
         <DeferredSection minHeight={700}>
           <Suspense fallback={null}>
             <OfertasExclusivas />
+          </Suspense>
+        </DeferredSection>
+
+        <DeferredSection minHeight={500}>
+          <Suspense fallback={null}>
+            <PneusPorAroSection />
           </Suspense>
         </DeferredSection>
 
