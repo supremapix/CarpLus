@@ -97,7 +97,7 @@ export default function TireMeasureDetail() {
             }
           ]
         }
-      : { title: 'Pneu não encontrado | Carplus', description: 'Pneu não encontrado.' }
+      : { title: 'Pneu não encontrado | Carplus', description: 'Pneu não encontrado.', noindex: true, statusCode: 404 }
   );
 
   if (tiresWithMeasure.length === 0) {

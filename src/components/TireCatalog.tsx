@@ -74,13 +74,18 @@ export default function TireCatalog() {
     { name: "Pneus", url: `${BASE_URL}/pneus` },
   ]);
 
-  // SEO para pagina de catalogo
+  // SEO para pagina de catalogo.
+  // Quando há filtros via query string (?marca=, ?aro=, ?largura=, ?altura=),
+  // a URL é uma variação do catálogo: canonicalizamos para /pneus e marcamos
+  // noindex para não gerar "páginas alternativas com canônica" no Search Console.
+  const hasFilterParams = Boolean(urlMarca || urlAro || urlLargura || urlAltura);
   useSEO({
     title: "Catalogo de Pneus em Curitiba | Carplus Centro Automotivo – Portao",
     description: "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem gratuita, ate 10x sem juros.",
     canonical: `${BASE_URL}/pneus`,
     ogType: "website",
     schemaJSON: [productListSchema, breadcrumbSchema],
+    noindex: hasFilterParams,
   });
 
   const filteredTires = useMemo(() => {

@@ -9,6 +9,12 @@ interface SEOProps {
   keywords?: string[];
   schemaJSON?: object | object[];
   noindex?: boolean;
+  /**
+   * Código HTTP que o Prerender.io deve devolver aos bots.
+   * Use 404 em páginas sem conteúdo real (medida/serviço/bairro inexistente)
+   * para eliminar os "soft 404" do Search Console.
+   */
+  statusCode?: 200 | 404 | 410;
 }
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
@@ -21,7 +27,8 @@ export function useSEO({
   ogType = 'website', 
   keywords = [],
   schemaJSON,
-  noindex = false 
+  noindex = false,
+  statusCode = 200,
 }: SEOProps) {
   useEffect(() => {
     // Atualiza o título
@@ -43,7 +50,13 @@ export function useSEO({
 
     // Meta tags básicas
     setMeta('meta[name="description"]', 'content', description);
-    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    // Páginas sem conteúdo real (statusCode 404/410) NUNCA devem ser indexadas.
+    const effectiveNoindex = noindex || statusCode !== 200;
+    setMeta('meta[name="robots"]', 'content', effectiveNoindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+
+    // Prerender.io lê esta meta para devolver o HTTP status correto aos bots.
+    // Isso elimina os "soft 404": páginas vazias passam a retornar 404 real.
+    setMeta('meta[name="prerender-status-code"]', 'content', String(statusCode));
     
     // Keywords
     if (keywords.length > 0) {
@@ -112,5 +125,5 @@ export function useSEO({
     return () => {
       injected.forEach(s => s.parentNode?.removeChild(s));
     };
-  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex]);
+  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex, statusCode]);
 }

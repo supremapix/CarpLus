@@ -125,7 +125,7 @@ export default function NeighborhoodDetail() {
             getGaleriaSchema(bairro.name)
           ]
         }
-      : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.' }
+      : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.', noindex: true, statusCode: 404 }
   );
 
   if (!bairro || !seoContent) return <div className="min-h-screen bg-white flex items-center justify-center">Bairro não encontrado</div>;

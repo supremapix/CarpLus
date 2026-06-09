@@ -394,7 +394,7 @@ export default function ServiceDetail() {
             }] : [])
           ]
         }
-      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.' }
+      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.', noindex: true, statusCode: 404 }
   );
 
   if (!service) return <div>Serviço não encontrado</div>;
