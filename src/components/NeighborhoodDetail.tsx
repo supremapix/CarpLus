@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useSEO } from '../hooks/useSEO';
 import { getFaqCompleto } from '../data/faqBairros';
 import { getNeighborhoodSeoContent, generateGenericSeoContent, NeighborhoodSeoContent } from '../data/neighborhoodSeoContent';
+import { isIndexableNeighborhood } from '../data/indexableNeighborhoods';
 import ServicosGaleria, { getGaleriaSchema } from './ServicosGaleria';
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -58,12 +59,17 @@ export default function NeighborhoodDetail() {
     ? (getNeighborhoodSeoContent(slugForUrl || '') || generateGenericSeoContent(bairro.name, slugForUrl || '', bairro.tempo, bairro.via))
     : null;
 
+  // Apenas os bairros mais próximos/relevantes ao Portão permanecem indexáveis.
+  // Os demais recebem noindex para evitar o problema de "thin content".
+  const shouldIndex = isIndexableNeighborhood(slugForUrl);
+
   useSEO(
     bairro && seoContent
       ? {
           title: seoContent.metaTitle,
           description: seoContent.metaDescription,
           canonical: `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
+          noindex: !shouldIndex,
           ogImage: '/images/loja/carplus-oficina-portao-fachada-curitiba.jpg',
           schemaJSON: [
             {
@@ -125,7 +131,7 @@ export default function NeighborhoodDetail() {
             getGaleriaSchema(bairro.name)
           ]
         }
-      : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.' }
+      : { title: 'Bairro não encontrado | Carplus', description: 'Bairro não encontrado.', noindex: true }
   );
 
   if (!bairro || !seoContent) return <div className="min-h-screen bg-white flex items-center justify-center">Bairro não encontrado</div>;
