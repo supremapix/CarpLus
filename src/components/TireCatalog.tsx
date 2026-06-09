@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront } from 'lucide-react';
+import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront, Ruler, BadgeCheck, ChevronDown } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
 import { ARO_PAGES } from '../data/seoLanding';
@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
 import { useSEO } from '../hooks/useSEO';
-import { generateProductListSchema, generateBreadcrumbSchema } from '../lib/schema';
+import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema, generateProductSchema } from '../lib/schema';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -17,12 +17,49 @@ const VEHICLE_TYPES = ["Hatch", "Sedan", "SUV", "Picape", "Esportivo", "Sedan Pr
 
 // Quantidade de pneus exibidos por página (paginação SEO friendly)
 const PER_PAGE = 24;
+const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
 // Mapa aro -> slug da landing page de aro já existente e indexada.
 // Reaproveitamos as páginas /pneu-aro-XX-curitiba para NÃO criar conteúdo duplicado.
 const ARO_SLUG_BY_NUMBER = new Map<number, string>(ARO_PAGES.map((p) => [p.aro, p.slug]));
 // Aros para a navegação (13 ao 23), conforme landing pages disponíveis.
 const ARO_NAV = ARO_PAGES.map((p) => p.aro).sort((a, b) => a - b);
+
+// Marcas de pneus em destaque, com link interno para o catálogo filtrado por marca.
+const FEATURED_BRANDS = ["Michelin", "Bridgestone", "Goodyear", "Pirelli", "Continental", "Yokohama"];
+
+// Medidas mais procuradas -> slug aceito pela rota /pneu-medida/:medida (ex: 195-55r15).
+const POPULAR_MEASURES: Array<{ label: string; slug: string }> = [
+  { label: "195/55R15", slug: "195-55r15" },
+  { label: "205/55R16", slug: "205-55r16" },
+  { label: "175/70R14", slug: "175-70r14" },
+  { label: "185/60R15", slug: "185-60r15" },
+  { label: "225/45R17", slug: "225-45r17" },
+];
+
+// FAQ da página /pneus — usado tanto no schema (FAQPage) quanto na UI (accordion).
+const CATALOG_FAQS: Array<{ question: string; answer: string }> = [
+  {
+    question: "Qual o melhor pneu aro 15?",
+    answer:
+      "Não existe um único melhor pneu aro 15: depende do seu carro e do uso. Para uso urbano e economia, modelos como Pirelli P400 Evo e Goodyear Assurance são ótimos. Para mais conforto e silêncio, o Michelin Energy XM2+ se destaca, e para desempenho esportivo há opções como o Yokohama. Na Carplus, no Portão em Curitiba, indicamos a medida certa (185/60R15, 195/55R15 e outras) conforme o seu veículo.",
+  },
+  {
+    question: "Como escolher o pneu correto?",
+    answer:
+      "O pneu correto é definido pela medida original do veículo, que está na lateral do pneu atual (ex: 195/55R15) ou na etiqueta da porta do motorista. Respeite a medida, os índices de carga e velocidade e escolha a categoria (econômico, conforto ou performance) de acordo com o seu uso. Em caso de dúvida, informe o modelo e ano do carro pelo WhatsApp (41) 3082-7282 que indicamos a opção ideal.",
+  },
+  {
+    question: "Quando trocar os pneus?",
+    answer:
+      "Troque os pneus quando o sulco atingir o indicador de desgaste (TWI), em torno de 1,6 mm de profundidade, ou ao notar trincas, bolhas, deformações e vibrações anormais. Em geral, recomenda-se avaliar os pneus a cada 40.000 a 50.000 km ou a cada 5 anos, mesmo com pouca rodagem. A Carplus faz a avaliação gratuita no Portão, em Curitiba.",
+  },
+  {
+    question: "Qual a calibragem ideal?",
+    answer:
+      "A calibragem ideal é a recomendada pela montadora, indicada na etiqueta da porta do motorista ou no manual do veículo, normalmente entre 30 e 34 PSI para carros de passeio. Calibre sempre com os pneus frios e verifique a pressão a cada 15 dias. Com carga total ou viagens longas, siga a pressão específica indicada pela montadora. Na Carplus calibramos com nitrogênio e ar normal.",
+  },
+];
 
 export default function TireCatalog() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -67,24 +104,6 @@ export default function TireCatalog() {
     if (urlLargura) setSelectedLargura(parseInt(urlLargura));
     if (urlAltura) setSelectedAltura(parseInt(urlAltura));
   }, [urlMarca, urlAro, urlLargura, urlAltura]);
-
-  const BASE_URL = "https://www.carpluspneuseoficina.com.br";
-
-  // Schema ItemList para catalogo de produtos
-  const productListSchema = generateProductListSchema(
-    TIRES.slice(0, 50).map((tire, index) => ({
-      name: tire.nome,
-      url: `${BASE_URL}/pneu/${tire.slug}`,
-      image: `${BASE_URL}${tire.imagemGrande}`,
-      position: index + 1,
-    }))
-  );
-
-  // Schema Breadcrumb para pagina de catalogo
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: BASE_URL },
-    { name: "Pneus", url: `${BASE_URL}/pneus` },
-  ]);
 
   const filteredTires = useMemo(() => {
     // Use URL params OR state for filtering
@@ -144,6 +163,58 @@ export default function TireCatalog() {
   const firstItem = totalResults === 0 ? 0 : startIndex + 1;
   const lastItem = Math.min(startIndex + PER_PAGE, totalResults);
 
+  // ───── Schemas estruturados (JSON-LD) ─────
+  // Aro ativo (via filtro ou URL) para enriquecer o breadcrumb: Home > Pneus > Pneu Aro 15.
+  const activeAro = urlAro
+    ? parseInt(urlAro)
+    : selectedRims.length === 1
+      ? selectedRims[0]
+      : null;
+
+  const schemaJSON = useMemo(() => {
+    // 1. BreadcrumbList — Home > Pneus (> Pneu Aro XX quando há aro selecionado)
+    const breadcrumbItems = [
+      { name: "Home", url: BASE_URL },
+      { name: "Pneus", url: `${BASE_URL}/pneus` },
+    ];
+    if (activeAro) {
+      const aroSlug = ARO_SLUG_BY_NUMBER.get(activeAro);
+      breadcrumbItems.push({
+        name: `Pneu Aro ${activeAro}`,
+        url: aroSlug ? `${BASE_URL}/${aroSlug}` : `${BASE_URL}/pneus?aro=${activeAro}`,
+      });
+    }
+    const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems);
+
+    // 2. ItemList — apenas os pneus da página atual, com posição absoluta no catálogo.
+    const itemListSchema = generateProductListSchema(
+      paginatedTires.map((tire, index) => ({
+        name: `${tire.nome} ${tire.medida} Curitiba`,
+        url: `${BASE_URL}/pneu/${tire.slug}`,
+        image: `${BASE_URL}${tire.imagemGrande}`,
+        position: startIndex + index + 1,
+      }))
+    );
+
+    // 3. Product Schema por pneu exibido na página (limitado a 12 para não inflar o HTML).
+    const productSchemas = paginatedTires.slice(0, 12).map((tire) =>
+      generateProductSchema({
+        name: `${tire.marca} ${tire.nome} ${tire.medida} - Curitiba`,
+        description: tire.descricao,
+        image: `${BASE_URL}${tire.imagemGrande}`,
+        sku: tire.slug,
+        brand: tire.marca,
+        availability: "InStock",
+        url: `${BASE_URL}/pneu/${tire.slug}`,
+      })
+    );
+
+    // 7. FAQPage Schema
+    const faqSchema = generateFaqSchema(CATALOG_FAQS);
+
+    return [breadcrumbSchema, itemListSchema, faqSchema, ...productSchemas];
+  }, [paginatedTires, startIndex, activeAro]);
+
   // Há filtros/busca ativos? Nesse caso a URL deixa de ser canônica e recebe noindex
   // (mantém o comportamento anti-conteúdo-duplicado das URLs com ?marca=, ?aro= etc.).
   const hasActiveFilters =
@@ -153,7 +224,7 @@ export default function TireCatalog() {
     selectedCategories.length > 0 || selectedVehicleTypes.length > 0 ||
     search.trim().length > 0;
 
-  // ───── SEO dinâmico por página ─────
+  // ───── SEO dinâmico por página ──��──
   const seoTitle = safePage > 1
     ? `Pneus em Curitiba - Página ${safePage} | Carplus Pneus`
     : "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
@@ -174,7 +245,13 @@ export default function TireCatalog() {
       'pneu aro 17', 'pneu aro 18', 'pneu aro 19', 'pneu aro 20', 'pneu aro 21',
       'pneu aro 22', 'pneu aro 23',
     ],
-    schemaJSON: [productListSchema, breadcrumbSchema],
+    schemaJSON,
+    prevUrl: !hasActiveFilters && safePage > 1
+      ? (safePage - 1 === 1 ? `${BASE_URL}/pneus` : `${BASE_URL}/pneus?page=${safePage - 1}`)
+      : undefined,
+    nextUrl: !hasActiveFilters && safePage < totalPages
+      ? `${BASE_URL}/pneus?page=${safePage + 1}`
+      : undefined,
   });
 
   // Navega para uma página específica preservando os demais query params.
@@ -493,6 +570,15 @@ export default function TireCatalog() {
 
             {/* Bloco SEO — Encontre Pneus por Aro */}
             <AroSeoBlock />
+
+            {/* Bloco — Marcas de Pneus */}
+            <BrandsBlock />
+
+            {/* Bloco — Pneus Mais Procurados (medidas populares) */}
+            <PopularMeasuresBlock />
+
+            {/* FAQ SEO da página de pneus */}
+            <CatalogFaqBlock />
           </div>
         </div>
       </main>
@@ -735,6 +821,100 @@ function AroSeoBlock() {
             >
               Pneus Aro {aro}
             </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+// Bloco "Marcas de Pneus" — links internos para o catálogo filtrado por marca.
+function BrandsBlock() {
+  return (
+    <section className="mt-8 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100" aria-labelledby="marcas-titulo">
+      <h2 id="marcas-titulo" className="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+        <BadgeCheck className="text-primary" size={24} /> Marcas de Pneus
+      </h2>
+      <p className="text-gray-600 leading-relaxed mb-6 text-pretty">
+        Trabalhamos com as principais marcas de pneus do mercado em Curitiba. Escolha a sua marca
+        preferida e veja todos os modelos disponíveis na Carplus, no bairro Portão, com montagem,
+        balanceamento e parcelamento em até 10x sem juros.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {FEATURED_BRANDS.map((brand) => (
+          <Link
+            key={brand}
+            to={`/pneus?marca=${encodeURIComponent(brand)}`}
+            className="h-11 px-5 inline-flex items-center justify-center rounded-xl text-sm font-bold bg-gray-50 text-gray-700 border border-gray-100 hover:bg-primary hover:text-black hover:border-primary transition-all"
+          >
+            Pneus {brand}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// Bloco "Pneus Mais Procurados" — links para as medidas populares (/pneu-medida/:medida).
+function PopularMeasuresBlock() {
+  return (
+    <section className="mt-8 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100" aria-labelledby="medidas-titulo">
+      <h2 id="medidas-titulo" className="text-2xl font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+        <Ruler className="text-primary" size={24} /> Pneus Mais Procurados
+      </h2>
+      <p className="text-gray-600 leading-relaxed mb-6 text-pretty">
+        As medidas de pneu mais buscadas em Curitiba para hatches, sedans e SUVs. Clique na medida
+        do seu veículo para ver os modelos disponíveis, aplicações e o melhor preço com montagem
+        inclusa na Carplus.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {POPULAR_MEASURES.map((m) => (
+          <Link
+            key={m.slug}
+            to={`/pneu-medida/${m.slug}`}
+            className="h-11 px-5 inline-flex items-center justify-center rounded-xl text-sm font-bold bg-gray-50 text-gray-700 border border-gray-100 hover:bg-primary hover:text-black hover:border-primary transition-all"
+          >
+            {m.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// FAQ SEO da página /pneus — accordion acessível, sincronizado com o FAQPage Schema.
+function CatalogFaqBlock() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  return (
+    <section className="mt-8 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100" aria-labelledby="faq-titulo">
+      <h2 id="faq-titulo" className="text-2xl font-bold uppercase tracking-tight mb-6">
+        Perguntas Frequentes sobre Pneus
+      </h2>
+      <div className="flex flex-col gap-3">
+        {CATALOG_FAQS.map((faq, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div key={index} className="border border-gray-100 rounded-2xl overflow-hidden">
+              <h3>
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-4 p-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+                >
+                  <span>{faq.question}</span>
+                  <ChevronDown
+                    size={20}
+                    className={`flex-shrink-0 text-primary transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+              </h3>
+              {isOpen && (
+                <div className="px-5 pb-5 text-gray-600 leading-relaxed text-pretty">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
           );
         })}
       </div>

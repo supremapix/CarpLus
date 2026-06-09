@@ -79,7 +79,7 @@ function TireCard({ tire, index }: TireCardProps) {
       >
         <img 
           src={tire.imagem} 
-          alt={`Pneu ${tire.marca} ${tire.nome} ${tire.medida} aro ${tire.aro}`}
+          alt={`Pneu ${tire.marca} ${tire.nome} ${tire.medida} aro ${tire.aro} em Curitiba`}
           loading={index < 4 ? 'eager' : 'lazy'}
           decoding="async"
           width={400}

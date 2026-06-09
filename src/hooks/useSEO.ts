@@ -9,6 +9,10 @@ interface SEOProps {
   keywords?: string[];
   schemaJSON?: object | object[];
   noindex?: boolean;
+  /** URL da página anterior na paginação (gera <link rel="prev">). */
+  prevUrl?: string;
+  /** URL da próxima página na paginação (gera <link rel="next">). */
+  nextUrl?: string;
 }
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
@@ -21,7 +25,9 @@ export function useSEO({
   ogType = 'website', 
   keywords = [],
   schemaJSON,
-  noindex = false 
+  noindex = false,
+  prevUrl,
+  nextUrl,
 }: SEOProps) {
   useEffect(() => {
     // Atualiza o título
@@ -82,6 +88,28 @@ export function useSEO({
       canonicalEl.href = canonical;
     }
 
+    // rel="prev" / rel="next" para paginação (reforça sinais ao Google).
+    const setPageLink = (rel: 'prev' | 'next', href?: string): HTMLLinkElement | null => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (href) {
+        if (!el) {
+          el = document.createElement('link');
+          el.rel = rel;
+          document.head.appendChild(el);
+        }
+        el.href = href;
+        el.setAttribute('data-dynamic-pagelink', 'true');
+        return el;
+      }
+      // Sem href: remove eventual link remanescente de outra página.
+      if (el && el.getAttribute('data-dynamic-pagelink') === 'true') {
+        el.parentNode?.removeChild(el);
+      }
+      return null;
+    };
+    const prevLinkEl = setPageLink('prev', prevUrl);
+    const nextLinkEl = setPageLink('next', nextUrl);
+
     // Fontes hospedadas localmente (Inter + Oswald): sem hints ao Google Fonts.
 
     // Schema.org JSON-LD
@@ -111,6 +139,8 @@ export function useSEO({
 
     return () => {
       injected.forEach(s => s.parentNode?.removeChild(s));
+      prevLinkEl?.parentNode?.removeChild(prevLinkEl);
+      nextLinkEl?.parentNode?.removeChild(nextLinkEl);
     };
-  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex]);
+  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex, prevUrl, nextUrl]);
 }
