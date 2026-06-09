@@ -43,6 +43,18 @@ export interface AroPage {
   aplicacoes: string;
   perfilTipico: string[];
   faq: FaqItem[];
+  /**
+   * Conteúdo editorial exclusivo da página (≈500-800 palavras únicas por aro).
+   * Cada item vira uma seção H2 + parágrafo no corpo da landing page.
+   * Cobre: veículos que usam o aro, marcas disponíveis, como escolher e texto
+   * local para Curitiba. Conteúdo 100% diferente entre páginas (sem duplicação).
+   */
+  secoesConteudo?: SeoLandingSection[];
+}
+
+export interface SeoLandingSection {
+  title: string;
+  content: string;
 }
 
 export const ARO_PAGES: AroPage[] = [
@@ -74,6 +86,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'O balanceamento está incluso na montagem. O alinhamento 3D é altamente recomendado a cada troca de pneus para evitar desgaste irregular e é feito na própria Carplus, sem necessidade de agendamento.',
       },
+      {
+        question: 'Pneu aro 13 ainda é fabricado pelas grandes marcas?',
+        answer:
+          'Sim. Apesar de ser uma medida mais antiga, o aro 13 segue em linha de produção na Pirelli, Firestone e outras fabricantes, justamente por equipar uma frota enorme de carros populares que ainda circula em Curitiba. A Carplus mantém as medidas mais comuns em estoque o ano inteiro.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 13',
+        content:
+          'O aro 13 acompanha a primeira geração de carros populares 1.0 que dominou as ruas de Curitiba nas décadas de 1990 e 2000. Entre os modelos mais comuns estão o Chevrolet Celta e Classic, o Fiat Uno Mille e Fiat Palio Fire, o Volkswagen Gol G3 e G4, o Ford Ka antigo e o Renault Clio. Esses veículos saíram de fábrica com medidas como 165/70R13, 175/70R13 e 175/65R13, que continuam entre as mais procuradas por motoristas de aplicativo, frotistas e famílias que mantêm o segundo carro da casa. Por serem leves e econômicos, o aro 13 prioriza baixa resistência ao rolamento, o que ajuda a reduzir o consumo de combustível no trânsito do dia a dia.',
+      },
+      {
+        title: 'Marcas de pneu aro 13 disponíveis na Carplus',
+        content:
+          'No aro 13, a Carplus trabalha principalmente com Pirelli e Firestone, duas marcas com forte presença no segmento popular e ampla rede de garantia no Brasil. A linha Pirelli P400 Evo é a queridinha de quem busca durabilidade e silêncio por um preço acessível, enquanto a Firestone F-600 entrega ótimo custo-benefício para uso urbano intenso. Para quem roda muito em aplicativo, indicamos modelos com carcaça reforçada e composto de borracha de maior quilometragem. Como o aro 13 tem giro alto no estoque, conseguimos manter preços competitivos e pronta entrega na maioria das medidas, sem que você precise esperar encomenda.',
+      },
+      {
+        title: 'Como escolher o pneu aro 13 ideal',
+        content:
+          'A escolha começa pela medida original do veículo, que aparece na lateral do pneu atual (por exemplo, 175/70R13 82T) e também no manual do proprietário. Respeite sempre os índices de carga e de velocidade indicados pela montadora. Depois, pense no uso: se o carro roda quase só na cidade, um pneu econômico de uso urbano resolve bem; se há trechos de rodovia ou uso em aplicativo, vale priorizar durabilidade e aderência em piso molhado, algo importante no clima chuvoso de Curitiba. Nossa equipe técnica avalia gratuitamente o desgaste dos seus pneus antigos e indica a linha aro 13 mais adequada ao seu bolso e à sua rotina.',
+      },
+      {
+        title: 'Pneu aro 13 em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus fica na Avenida Presidente Arthur da Silva Bernardes, no bairro Portão, com acesso fácil para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial e região metropolitana. Você troca o pneu aro 13 com montagem, balanceamento e calibragem inclusos no mesmo atendimento, normalmente sem precisar deixar o carro o dia todo. Aceitamos cartões com parcelamento em até 10x sem juros e emitimos nota fiscal com garantia em todos os serviços. Antes de vir, envie a medida pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e já deixar tudo separado para a sua chegada.',
+      },
     ],
   },
   {
@@ -103,6 +142,33 @@ export const ARO_PAGES: AroPage[] = [
         question: 'Vocês têm pneu aro 14 de marca premium?',
         answer:
           'Trabalhamos com marcas como Pirelli, Michelin e Goodyear no aro 14, além de opções econômicas. Informe seu carro e seu objetivo de uso que indicamos a melhor linha.',
+      },
+      {
+        question: 'Quantos quilômetros dura um pneu aro 14?',
+        answer:
+          'Com calibragem correta, rodízio a cada 10.000 km e alinhamento em dia, um pneu aro 14 de uso urbano costuma durar entre 40.000 e 60.000 km. Linhas de conforto tendem a render mais. Na Carplus orientamos a manutenção certa para você extrair o máximo de cada jogo de pneus.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 14',
+        content:
+          'O aro 14 é o coração da frota brasileira atual e equipa a maior parte dos hatchbacks e sedans de entrada vendidos na última década. Em Curitiba, é a medida de modelos como Volkswagen Gol G5 e G6, Chevrolet Onix 1.0 e Prisma, Fiat Palio e Siena, Hyundai HB20 1.0, Renault Sandero e Logan, além do Ford Ka. As medidas de saída de fábrica mais comuns são 175/65R14, 185/60R14 e 185/65R14. É um aro que equilibra muito bem conforto, economia de combustível e preço de reposição, por isso agrada tanto a famílias quanto a motoristas que rodam o dia inteiro pela cidade.',
+      },
+      {
+        title: 'Marcas de pneu aro 14 disponíveis na Carplus',
+        content:
+          'O aro 14 é o que tem maior diversidade de marcas no nosso estoque, indo do econômico ao premium. Trabalhamos com Pirelli (linha P400 Evo e Cinturato), Goodyear (Assurance e Direction), Michelin (Energy XM2+), Firestone e Bridgestone, além de opções de excelente custo-benefício para quem precisa renovar os quatro pneus gastando menos. Para quem busca silêncio e maciez, o Michelin Energy XM2+ é uma referência; para durabilidade com preço justo, as linhas Pirelli e Goodyear se destacam. Como o giro do aro 14 é alto, conseguimos preços agressivos e pronta entrega praticamente o ano todo.',
+      },
+      {
+        title: 'Como escolher o pneu aro 14 ideal',
+        content:
+          'Comece confirmando a medida exata na lateral do pneu (por exemplo, 185/60R14 82H) e mantenha os índices de carga e velocidade originais. Em seguida, defina a prioridade: economia de combustível, conforto acústico ou durabilidade. Para o trânsito urbano de Curitiba, com paradas frequentes e ruas de paralelepípedo em alguns bairros, um pneu com boa absorção de impacto faz diferença no conforto. Já quem encara a BR-116 ou a Linha Verde com frequência se beneficia de um composto com melhor estabilidade em alta. Trazemos seu carro, avaliamos o desgaste atual e indicamos sem compromisso a linha aro 14 que melhor combina com o seu uso e orçamento.',
+      },
+      {
+        title: 'Pneu aro 14 em Curitiba: pronta entrega no Portão',
+        content:
+          'Por ser a medida mais vendida, o aro 14 quase sempre tem pronta entrega na Carplus, no bairro Portão. Isso significa que você consegue trocar os quatro pneus no mesmo dia, com montagem, balanceamento e calibragem inclusos, sem deixar o carro parado. Atendemos motoristas de toda a capital e da região metropolitana — Colombo, Pinhais, São José dos Pinhais e Araucária — que buscam preço justo e serviço rápido. O pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia. Mande a medida pelo WhatsApp (41) 3082-7282 e já receba o orçamento fechado antes de sair de casa.',
       },
     ],
   },
@@ -134,6 +200,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'Sim. Com pronta entrega no Portão, a maioria das medidas aro 15 é instalada no mesmo dia, com balanceamento e calibragem inclusos. Agende pelo WhatsApp (41) 3082-7282.',
       },
+      {
+        question: 'Qual a diferença entre 195/55R15 e 195/65R15?',
+        answer:
+          'O segundo número é o perfil (altura da lateral). O 195/55R15 tem perfil mais baixo, com pegada mais esportiva e firme; o 195/65R15 tem perfil mais alto, priorizando conforto e absorção de buracos. Use sempre a medida recomendada pela montadora do seu carro — em caso de dúvida, confirmamos para você na Carplus.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 15',
+        content:
+          'O aro 15 é a medida de transição entre os populares e os carros de conforto, o que explica a enorme variedade de veículos que o utilizam. Em Curitiba, equipa modelos como Chevrolet Onix Plus e Cruze de entrada, Fiat Argo e Cronos, Honda City e Fit, Volkswagen Virtus e Golf, Hyundai HB20S, Toyota Etios e Yaris, além de versões intermediárias do Renault Duster. As medidas mais buscadas são 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15. É o aro ideal para quem quer um pouco mais de estabilidade e presença visual sem abrir mão do conforto e da economia no dia a dia.',
+      },
+      {
+        title: 'Marcas de pneu aro 15 disponíveis na Carplus',
+        content:
+          'O aro 15 é o campeão de variedade no estoque da Carplus. Trabalhamos com Pirelli (P400 Evo, Cinturato P1 e P7), Michelin (Energy XM2+ e Primacy 4), Goodyear (Assurance e EfficientGrip), Continental (PowerContact e ComfortContact), Bridgestone e Firestone, além de opções all season para quem quer versatilidade o ano inteiro. Essa amplitude permite atender desde quem precisa do menor preço até quem busca o máximo em silêncio e durabilidade. Para o City e o Virtus, por exemplo, linhas de conforto fazem grande diferença; já para hatches mais leves, modelos econômicos entregam excelente quilometragem por um valor acessível.',
+      },
+      {
+        title: 'Como escolher o pneu aro 15 ideal',
+        content:
+          'Confira a medida na lateral do pneu (por exemplo, 195/55R15 85V) e mantenha os índices originais de carga e velocidade. Como o aro 15 cobre perfis variados, vale entender o que você prioriza: o perfil 55 e 50 entrega resposta mais esportiva, enquanto o 60 e 65 favorece conforto e proteção contra buracos — algo relevante em ruas de Curitiba que ainda sofrem com o asfalto irregular após o inverno. Se você usa o carro para trabalho e lazer, um pneu de conforto premium tende a compensar pelo silêncio e pela durabilidade. Faça uma avaliação gratuita na Carplus: medimos o sulco, verificamos o alinhamento e indicamos a melhor linha aro 15 para o seu caso.',
+      },
+      {
+        title: 'Pneu aro 15 em Curitiba: maior estoque no Portão',
+        content:
+          'Por concentrar a maior variedade de modelos, o aro 15 é onde a Carplus oferece o atendimento mais ágil em Curitiba. Na loja do bairro Portão, você encontra desde a opção mais econômica até linhas premium, quase sempre com pronta entrega para instalação no mesmo dia. A montagem, o balanceamento e a calibragem já estão inclusos, e o alinhamento 3D é feito na hora para preservar os pneus novos. Atendemos clientes de toda a cidade e da região metropolitana, com parcelamento em até 10x sem juros e garantia com nota fiscal. Envie sua medida pelo WhatsApp (41) 3082-7282 e compare as opções antes de fechar.',
+      },
     ],
   },
   {
@@ -163,6 +256,33 @@ export const ARO_PAGES: AroPage[] = [
         question: 'O alinhamento é necessário ao trocar pneu aro 16?',
         answer:
           'Sim. Recomendamos sempre o alinhamento 3D e o balanceamento ao trocar os pneus, garantindo estabilidade, menor consumo e desgaste uniforme. Ambos são feitos na Carplus.',
+      },
+      {
+        question: 'Pneu aro 16 com perfil baixo é indicado para o dia a dia?',
+        answer:
+          'Sim, desde que seja a medida correta do seu carro. O perfil mais baixo do aro 16 melhora a estabilidade em curvas e a resposta da direção, mantendo bom conforto. Só é preciso atenção redobrada com buracos. Na Carplus indicamos a linha com melhor equilíbrio entre conforto e desempenho para o seu modelo.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 16',
+        content:
+          'O aro 16 marca a entrada no universo dos sedans médios, hatches premium e SUVs compactos. Em Curitiba, é a medida de modelos como Toyota Corolla, Honda Civic, Volkswagen Jetta e Golf GTI de entrada, Chevrolet Cruze LT, Hyundai HB20S e Creta de entrada, Jeep Renegade, Nissan Kicks e Hyundai Tucson antigo. As medidas mais comuns são 205/55R16, 205/60R16 e 215/65R16. É um aro que entrega mais estabilidade em alta velocidade e visual mais esportivo, sendo muito procurado por quem faz viagens frequentes pela BR-277 e BR-116 e quer segurança extra em rodovia.',
+      },
+      {
+        title: 'Marcas de pneu aro 16 disponíveis na Carplus',
+        content:
+          'No aro 16, a Carplus prioriza marcas com forte desempenho em conforto e segurança: Michelin (Primacy 4 e Pilot Sport), Goodyear (EfficientGrip Performance), Continental (PremiumContact e ComfortContact), Pirelli (Cinturato P7) e Bridgestone (Turanza). Para o Corolla e o Civic, linhas de conforto premium reduzem o ruído na cabine e aumentam a maciez; para SUVs compactos como Kicks e Renegade, há modelos com flancos reforçados que aguentam melhor o uso misto cidade-estrada. Também oferecemos opções intermediárias de ótimo custo-benefício para quem quer qualidade sem pagar o preço da linha topo.',
+      },
+      {
+        title: 'Como escolher o pneu aro 16 ideal',
+        content:
+          'Verifique a medida na lateral (por exemplo, 205/55R16 91V) e mantenha os índices originais. No aro 16, vale pensar no tipo de uso: para quem roda muito em rodovia, um pneu com bom desempenho em alta velocidade e frenagem no molhado é essencial — sobretudo no inverno curitibano, quando a pista amanhece úmida. Para uso urbano predominante, linhas de conforto reduzem ruído e vibração. SUVs compactos pedem atenção ao índice de carga, que costuma ser mais alto. Na Carplus, fazemos a leitura da etiqueta do seu carro, avaliamos o desgaste atual e recomendamos a linha aro 16 que melhor atende segurança, conforto e durabilidade.',
+      },
+      {
+        title: 'Pneu aro 16 em Curitiba: instalação especializada no Portão',
+        content:
+          'A Carplus, no bairro Portão, é referência para troca de pneus aro 16 em Curitiba, unindo loja e oficina no mesmo endereço. Além de vender o pneu, fazemos montagem com equipamento que preserva rodas de liga leve, balanceamento computadorizado e alinhamento 3D — tudo no mesmo atendimento. Atendemos motoristas do Batel, Água Verde, Champagnat, Portão e de toda a região metropolitana que buscam um serviço completo e confiável. Parcelamos em até 10x sem juros, com nota fiscal e garantia. Para agilizar, envie o modelo do carro e a medida pelo WhatsApp (41) 3082-7282 e receba o orçamento com as melhores opções de marca.',
       },
     ],
   },
@@ -194,6 +314,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'Sim. Quanto maior o aro e menor o perfil, mais sensível o conjunto a desequilíbrios. Por isso fazemos balanceamento computadorizado preciso em todos os pneus aro 17 instalados.',
       },
+      {
+        question: 'Posso colocar pneu aro 17 no lugar do aro 16?',
+        answer:
+          'Só com a roda correta e respeitando o diâmetro externo recomendado para o modelo. Trocar de aro exige recalcular a medida para não afetar velocímetro, consumo e segurança. Na Carplus orientamos qual combinação de roda e pneu é homologada para o seu carro antes de qualquer alteração.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 17',
+        content:
+          'O aro 17 é hoje o mais procurado entre os SUVs e sedans médios que circulam por Curitiba. Equipa modelos como Jeep Compass, Toyota Corolla Cross, Honda HR-V, Volkswagen T-Cross e Nivus, Chevrolet Tracker, Hyundai Creta, Renault Duster, além de sedans premium como Audi A4 e BMW Série 3 de entrada. As medidas mais buscadas são 215/50R17, 215/55R17, 225/45R17, 225/50R17 e 225/65R17. É o aro que melhor combina esportividade, presença visual e conforto, sendo a escolha natural de quem trocou o sedan compacto por um SUV nos últimos anos.',
+      },
+      {
+        title: 'Marcas de pneu aro 17 disponíveis na Carplus',
+        content:
+          'No aro 17, a Carplus trabalha com linhas de performance e conforto das principais marcas: Michelin (Primacy 4 e Pilot Sport 4), Goodyear (Eagle F1 e EfficientGrip), Continental (PremiumContact 6 e CrossContact para SUV), Pirelli (Scorpion e Cinturato) e Bridgestone (Turanza e Alenza). Para SUVs como Compass e Corolla Cross, recomendamos pneus da família Scorpion ou CrossContact, projetados para o peso e o uso misto desses veículos. Para sedans esportivos, linhas Pilot Sport e Eagle F1 entregam aderência superior em curvas e frenagem. Também há opções intermediárias para quem quer qualidade sem o preço da linha premium.',
+      },
+      {
+        title: 'Como escolher o pneu aro 17 ideal',
+        content:
+          'Confirme a medida na lateral (por exemplo, 225/45R17 91W) e respeite os índices de carga e velocidade — em SUVs, o índice de carga é especialmente importante por causa do peso do veículo. Defina a prioridade: aderência esportiva, conforto ou robustez para uso misto. Quem encara a serra rumo ao litoral pela BR-277 se beneficia de pneus com boa estabilidade e desempenho no molhado, já que a região tem neblina e pista úmida com frequência. SUVs que enfrentam estrada de terra ocasional pedem flancos mais reforçados. Na Carplus, analisamos a etiqueta do seu carro e o seu perfil de uso para indicar a linha aro 17 ideal.',
+      },
+      {
+        title: 'Pneu aro 17 em Curitiba: performance e SUV no Portão',
+        content:
+          'A Carplus, no bairro Portão, é especialista na troca de pneus aro 17 para SUVs e sedans premium em Curitiba. Contamos com equipamento de montagem que protege rodas de liga leve de maior valor, balanceamento de alta precisão e alinhamento 3D no mesmo atendimento. Atendemos motoristas de toda a capital e da região metropolitana que querem instalar pneus aro 17 com segurança e sem riscar a roda. O pagamento pode ser parcelado em até 10x sem juros, sempre com nota fiscal e garantia. Envie o modelo do seu SUV ou sedan e a medida pelo WhatsApp (41) 3082-7282 para receber as melhores opções de marca e preço.',
+      },
     ],
   },
   {
@@ -223,6 +370,33 @@ export const ARO_PAGES: AroPage[] = [
         question: 'Vocês instalam pneu aro 18 sem danificar a roda?',
         answer:
           'Sim. Usamos equipamento de montagem moderno que preserva o aro e o acabamento, essencial para rodas de liga leve comuns no aro 18.',
+      },
+      {
+        question: 'Pneu aro 18 run flat pode ser reparado?',
+        answer:
+          'Pneus run flat têm reparo limitado e nem sempre recomendado pelo fabricante, pois rodam vazios por curtas distâncias e podem ter a estrutura comprometida. Avaliamos cada caso na Carplus e orientamos se o reparo é seguro ou se a troca é a opção correta para a sua segurança.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 18',
+        content:
+          'O aro 18 equipa SUVs médios e veículos premium que pedem estabilidade e presença. Em Curitiba, é a medida de modelos como Jeep Compass topo de linha e Commander, Toyota RAV4 e SW4, Honda CR-V, Volkswagen Tiguan e Taos, Audi Q3, Volvo XC40, BMW X1 e Mercedes GLA. As medidas mais procuradas são 225/45R18, 235/55R18, 235/60R18, 245/40R18 e 245/45R18. É um aro que valoriza o design da roda e melhora o comportamento dinâmico do veículo, sendo comum em versões mais equipadas que combinam tecnologia, conforto e esportividade.',
+      },
+      {
+        title: 'Marcas de pneu aro 18 disponíveis na Carplus',
+        content:
+          'No aro 18, a Carplus trabalha com linhas premium voltadas a SUVs e veículos de alto padrão: Michelin (Pilot Sport 4 SUV e Primacy), Continental (CrossContact e PremiumContact 6), Pirelli (Scorpion Verde e P Zero), Goodyear (Eagle F1 e Wrangler) e Bridgestone (Alenza e Dueler). Para SUVs como RAV4, CR-V e Tiguan, indicamos pneus da família Scorpion, CrossContact ou Dueler, projetados para o peso e o uso misto. Modelos esportivos e premium pedem linhas P Zero ou Pilot Sport, que entregam aderência e precisão de direção superiores. Há também opções run flat para veículos que saem de fábrica com essa tecnologia.',
+      },
+      {
+        title: 'Como escolher o pneu aro 18 ideal',
+        content:
+          'Verifique a medida na lateral (por exemplo, 235/55R18 100V) e respeite rigorosamente o índice de carga, fundamental em SUVs mais pesados. No aro 18, o perfil é mais baixo, o que melhora a estabilidade mas exige cuidado redobrado com buracos e valetas — algo a considerar no trânsito de Curitiba e nas vias da região metropolitana. Pense também no clima: pneus com boa performance em piso molhado aumentam a segurança nas chuvas frequentes da cidade. Quem viaja para o litoral ou para a serra deve priorizar estabilidade em alta e bom desempenho em frenagem. Na Carplus, indicamos a linha aro 18 ideal conforme o seu veículo e o seu uso.',
+      },
+      {
+        title: 'Pneu aro 18 em Curitiba: montagem premium no Portão',
+        content:
+          'A Carplus, no bairro Portão, oferece montagem profissional de pneus aro 18 em Curitiba com o cuidado que rodas de liga leve de alto valor exigem. Nosso equipamento moderno preserva o acabamento da roda, e o balanceamento de precisão elimina vibrações comuns em pneus de perfil baixo. Fazemos também alinhamento 3D no mesmo atendimento, protegendo o investimento em pneus premium. Atendemos motoristas de SUVs e veículos de alto padrão de toda a cidade e região metropolitana, com parcelamento em até 10x sem juros, nota fiscal e garantia. Envie o modelo do seu carro e a medida pelo WhatsApp (41) 3082-7282 para conferir as opções disponíveis.',
       },
     ],
   },
@@ -254,6 +428,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'Sim. Em pneus de alto custo como o aro 19, o alinhamento 3D protege o investimento, evitando desgaste irregular precoce. É um serviço essencial a cada troca.',
       },
+      {
+        question: 'Pneu aro 19 faz diferença no consumo de combustível?',
+        answer:
+          'Pode fazer. Pneus maiores e mais largos tendem a ter maior resistência ao rolamento, o que pode elevar levemente o consumo. Escolher uma linha com tecnologia de baixa resistência e manter a calibragem correta ajuda a minimizar esse efeito. Na Carplus indicamos modelos aro 19 que equilibram desempenho e eficiência.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 19',
+        content:
+          'O aro 19 é destinado a SUVs premium e veículos esportivos de alta performance que circulam pelos bairros nobres de Curitiba. Equipa modelos como Audi Q5, BMW X3 e X4, Volvo XC60, Mercedes-Benz GLC e GLA topo de linha, Range Rover Evoque, Porsche Macan e versões mais equipadas do Jeep Compass. As medidas mais buscadas são 235/50R19, 235/55R19, 245/40R19, 245/45R19 e 255/35R19. É um aro que combina design imponente, perfil baixo e excelente comportamento dinâmico, valorizando o visual e a esportividade de veículos de alto padrão.',
+      },
+      {
+        title: 'Marcas de pneu aro 19 disponíveis na Carplus',
+        content:
+          'No aro 19, a Carplus trabalha com linhas premium de alta performance: Michelin (Pilot Sport 4 SUV e Latitude Sport), Continental (SportContact e CrossContact), Pirelli (P Zero e Scorpion Zero), Goodyear (Eagle F1 Asymmetric) e Bridgestone (Potenza e Alenza). Para SUVs premium como Q5, X3 e XC60, indicamos pneus projetados para o peso e a potência desses veículos, com flancos reforçados e excelente aderência. Muitos modelos aro 19 saem de fábrica com tecnologia run flat ou com identificação específica de montadora (como N0 da Porsche ou MO da Mercedes), e orientamos a escolha correta para manter o comportamento original do carro.',
+      },
+      {
+        title: 'Como escolher o pneu aro 19 ideal',
+        content:
+          'Verifique a medida e a homologação na lateral do pneu (por exemplo, 255/35R19 96Y), prestando atenção a marcações de montadora que indicam pneu desenvolvido sob medida para aquele veículo. O perfil baixo do aro 19 oferece resposta de direção precisa, mas é mais sensível a impactos, exigindo atenção com buracos nas vias urbanas. Para quem dirige em alta velocidade na rodovia ou busca esportividade, linhas como P Zero e Pilot Sport são referência. Já para uso mais voltado ao conforto, há opções premium com tecnologia de redução de ruído. Na Carplus, ajudamos a escolher a linha aro 19 que mantém o desempenho de fábrica do seu veículo.',
+      },
+      {
+        title: 'Pneu aro 19 em Curitiba: alta precisão no Portão',
+        content:
+          'A Carplus, no bairro Portão, atende proprietários de SUVs premium e esportivos que precisam trocar pneus aro 19 em Curitiba com total segurança. Pneus de perfil baixo e alto valor exigem montagem cuidadosa e balanceamento computadorizado de alta precisão para eliminar qualquer vibração — e é exatamente isso que entregamos. Realizamos também o alinhamento 3D no mesmo atendimento, protegendo o investimento em pneus que custam bem mais que a média. Atendemos clientes de toda a capital e região, com parcelamento em até 10x sem juros, nota fiscal e garantia. Envie a medida exata e o modelo pelo WhatsApp (41) 3082-7282 para confirmarmos disponibilidade e preço.',
+      },
     ],
   },
   {
@@ -283,6 +484,33 @@ export const ARO_PAGES: AroPage[] = [
         question: 'A montagem de pneu aro 20 tem cuidado especial?',
         answer:
           'Sim. Rodas aro 20, geralmente de liga leve e alto valor, são montadas com equipamento que preserva o acabamento, seguidas de balanceamento de precisão.',
+      },
+      {
+        question: 'Pneu aro 20 para picape aguenta carga e off-road leve?',
+        answer:
+          'Sim, desde que seja a linha correta. Para picapes como Ranger e S10, indicamos pneus com índice de carga adequado e construção reforçada, que suportam peso na caçamba e trechos de estrada de terra. Na Carplus orientamos entre opções mais voltadas ao asfalto ou ao uso misto, conforme a sua necessidade.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 20',
+        content:
+          'O aro 20 equipa SUVs grandes, picapes premium e veículos esportivos de luxo. Em Curitiba, é a medida de modelos como Ford Ranger e Chevrolet S10 em versões topo de linha, Porsche Cayenne, BMW X3, X4 e X5, Audi Q7, Volvo XC90, Land Rover Discovery e Toyota SW4 mais equipada. As medidas mais procuradas incluem 255/35R20, 245/40R20, 245/45R20 e 275/45R20. É um aro que entrega imponência visual e excelente estabilidade, sendo escolhido tanto por quem valoriza o design quanto por quem precisa de capacidade de carga em picapes de uso executivo.',
+      },
+      {
+        title: 'Marcas de pneu aro 20 disponíveis na Carplus',
+        content:
+          'No aro 20, a Carplus trabalha com linhas premium para SUVs e picapes de alto padrão: Pirelli (Scorpion e P Zero), Continental (CrossContact e SportContact), Michelin (Latitude Sport e Pilot Sport 4 SUV), Goodyear (Eagle F1 e Wrangler) e Bridgestone (Dueler e Alenza). Para picapes como Ranger e S10, indicamos pneus da família Dueler ou Wrangler, com construção robusta para suportar carga e uso misto. Para SUVs esportivos como Cayenne e X5, linhas Scorpion Zero e Pilot Sport entregam aderência e desempenho à altura da potência desses veículos. Caso a medida específica não esteja em estoque, fazemos a busca com agilidade junto aos fornecedores.',
+      },
+      {
+        title: 'Como escolher o pneu aro 20 ideal',
+        content:
+          'Confirme a medida e o índice de carga na lateral (por exemplo, 275/45R20 110Y), pois SUVs grandes e picapes exigem capacidade de carga elevada. Defina o uso: picapes que rodam carregadas ou enfrentam estrada de terra pedem pneus reforçados, enquanto SUVs urbanos premium se beneficiam de linhas focadas em conforto e silêncio. O perfil baixo do aro 20 melhora a estabilidade, mas exige cuidado com buracos e obstáculos nas vias. Para quem viaja muito pela região, estabilidade em alta velocidade e desempenho em frenagem no molhado são essenciais. Na Carplus, avaliamos seu veículo e indicamos a linha aro 20 que melhor equilibra robustez, conforto e desempenho.',
+      },
+      {
+        title: 'Pneu aro 20 em Curitiba: montagem especializada no Portão',
+        content:
+          'A Carplus, no bairro Portão, é preparada para a montagem de pneus aro 20 em Curitiba, com o cuidado que rodas de liga leve de alto valor exigem. Nosso equipamento moderno protege o acabamento durante a montagem, e o balanceamento de alta precisão garante rodagem sem vibração mesmo em pneus largos e de perfil baixo. Realizamos alinhamento 3D no mesmo atendimento, fundamental para SUVs e picapes que rodam carregados. Atendemos clientes de toda a capital e da região metropolitana, com parcelamento em até 10x sem juros, nota fiscal e garantia. Envie o modelo e a medida pelo WhatsApp (41) 3082-7282 para confirmarmos estoque e orçamento.',
       },
     ],
   },
@@ -314,6 +542,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'Sim. Quanto maior o aro e menor o perfil, mais sensível o conjunto a vibrações. Por isso usamos balanceamento computadorizado de alta precisão em todos os pneus aro 21.',
       },
+      {
+        question: 'Quanto tempo dura um pneu aro 21?',
+        answer:
+          'Por equiparem veículos pesados e potentes, os pneus aro 21 costumam ter quilometragem menor que medidas urbanas, em geral entre 25.000 e 40.000 km, dependendo do estilo de condução. Alinhamento, balanceamento e calibragem corretos prolongam essa vida útil. Na Carplus orientamos a manutenção ideal para proteger esse investimento.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 21',
+        content:
+          'O aro 21 equipa SUVs premium de grande porte e esportivos de alto desempenho que circulam pelas regiões nobres de Curitiba. É a medida de modelos como BMW X5 e X6, Porsche Cayenne, Audi Q7 e Q8, Land Rover Discovery e Range Rover Sport, Mercedes-Benz GLE e GLE Coupé, e Volvo XC90 topo de linha. As medidas mais procuradas são 245/40R21, 275/45R21, 285/45R21, 285/40R21 e 315/40R21. É um aro de altíssimo padrão, escolhido por quem busca o máximo em presença visual e desempenho, geralmente em versões mais potentes e equipadas desses veículos de luxo.',
+      },
+      {
+        title: 'Marcas de pneu aro 21 disponíveis na Carplus',
+        content:
+          'No aro 21, a Carplus trabalha com as linhas mais avançadas das principais fabricantes: Yokohama (Advan e Geolandar), Continental (CrossContact e SportContact 6), Bridgestone (Alenza e Potenza) e Pirelli (Scorpion Zero e P Zero). Muitos pneus aro 21 têm homologação específica de montadora — como N0/N1 da Porsche, MO da Mercedes ou marcação estrela da BMW — desenvolvida sob medida para o comportamento de cada veículo, e nós orientamos a escolha correta. Por se tratar de medida especial, caso o modelo exato não esteja em estoque, fazemos a busca junto aos fornecedores com agilidade para você não ficar com o carro parado.',
+      },
+      {
+        title: 'Como escolher o pneu aro 21 ideal',
+        content:
+          'Verifique a medida, o índice de carga e a marcação de montadora na lateral (por exemplo, 285/45R21 113Y MO), pois usar o pneu homologado preserva a dinâmica original do veículo. O perfil extremamente baixo do aro 21 entrega resposta de direção precisa e visual marcante, mas é bastante sensível a impactos, exigindo atenção redobrada com buracos e obstáculos. Para esses SUVs potentes, aderência em alta velocidade, estabilidade e desempenho em frenagem são prioridades de segurança. Na Carplus, ajudamos a identificar a linha aro 21 correta para o seu veículo, equilibrando desempenho, conforto e durabilidade dentro do que a montadora especifica.',
+      },
+      {
+        title: 'Pneu aro 21 em Curitiba: alto padrão no Portão',
+        content:
+          'A Carplus, no bairro Portão, atende proprietários de SUVs premium e esportivos de luxo que precisam trocar pneus aro 21 em Curitiba. Rodas desse porte são de altíssimo valor e exigem montagem com equipamento que preserva integralmente o acabamento, seguida de balanceamento computadorizado de alta precisão para garantir rodagem sem qualquer vibração. Realizamos alinhamento 3D no mesmo atendimento, protegendo um conjunto de pneus que representa investimento considerável. Atendemos clientes de toda a capital e região com discrição e agilidade, parcelamento em até 10x sem juros, nota fiscal e garantia. Envie a medida exata e a marcação de montadora pelo WhatsApp (41) 3082-7282 para confirmarmos disponibilidade.',
+      },
     ],
   },
   {
@@ -344,6 +599,33 @@ export const ARO_PAGES: AroPage[] = [
         answer:
           'Sim. Caso a medida aro 22 específica não esteja em estoque, fazemos a busca junto aos nossos fornecedores com agilidade para você.',
       },
+      {
+        question: 'Pneu aro 22 é homologado ou é só customização?',
+        answer:
+          'Existem as duas situações. Vários SUVs de luxo saem de fábrica com aro 22 homologado, com medida e índices definidos pela montadora. Em outros casos, o aro 22 é fruto de customização, e aí é essencial respeitar o diâmetro externo correto para não afetar segurança, velocímetro e suspensão. Na Carplus orientamos a combinação adequada para cada caso.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 22',
+        content:
+          'O aro 22 é destinado a SUVs de luxo e veículos premium de grande porte, além de projetos de customização. Em Curitiba, é a medida de modelos como Range Rover e Range Rover Sport, BMW X6 e X7, Mercedes-Benz GLE e GLS, Porsche Cayenne Turbo, Audi Q8 e Lamborghini Urus, bem como picapes customizadas com rodas esportivas. As medidas mais buscadas são 265/40R22, 275/40R22, 285/40R22 e 315/35R22. É um aro de perfil extrabaixo que transforma completamente o visual do veículo, escolhido por quem busca exclusividade e presença máxima nas ruas.',
+      },
+      {
+        title: 'Marcas de pneu aro 22 disponíveis na Carplus',
+        content:
+          'No aro 22, a Carplus trabalha com as linhas premium das marcas que melhor atendem esse segmento: Pirelli (Scorpion Zero e P Zero), Continental (CrossContact e SportContact), Yokohama (Advan e Geolandar), Bridgestone (Alenza e Dueler) e Goodyear (Eagle F1). Muitos modelos têm homologação de montadora específica, e respeitar essa marcação é fundamental para manter o comportamento original de SUVs de luxo de altíssima potência. Por ser uma medida premium, mantemos contato próximo com fornecedores: se o pneu aro 22 exato não estiver pronto na loja, localizamos rapidamente para que você não precise deixar o veículo parado por muito tempo.',
+      },
+      {
+        title: 'Como escolher o pneu aro 22 ideal',
+        content:
+          'Confira a medida, o índice de carga e a homologação na lateral (por exemplo, 285/40R22 110Y), respeitando sempre a especificação da montadora ou, em customizações, o diâmetro externo correto para o veículo. O perfil extrabaixo do aro 22 oferece visual imponente e ótima estabilidade, mas é muito sensível a impactos — buracos e obstáculos podem danificar tanto o pneu quanto a roda de alto valor, exigindo atenção máxima na direção urbana. Para esses veículos potentes, aderência, estabilidade em alta e desempenho em frenagem são essenciais. Na Carplus, orientamos a escolha da linha aro 22 correta, considerando homologação, uso e o cuidado que rodas tão valiosas merecem.',
+      },
+      {
+        title: 'Pneu aro 22 em Curitiba: cuidado de luxo no Portão',
+        content:
+          'A Carplus, no bairro Portão, atende proprietários de SUVs de luxo que precisam trocar pneus aro 22 em Curitiba com o máximo de cuidado. Rodas desse porte estão entre as mais valiosas do mercado e são montadas com equipamento moderno que protege integralmente o acabamento, seguido de balanceamento computadorizado de precisão para garantir rodagem perfeita mesmo com perfil extrabaixo. Realizamos alinhamento 3D no mesmo atendimento, preservando o conjunto. Atendemos com discrição e agilidade clientes de toda a capital e região metropolitana, com parcelamento em até 10x sem juros, nota fiscal e garantia. Envie a medida e a homologação pelo WhatsApp (41) 3082-7282 para confirmarmos disponibilidade.',
+      },
     ],
   },
   {
@@ -373,6 +655,33 @@ export const ARO_PAGES: AroPage[] = [
         question: 'A montagem de pneu aro 23 tem cuidado especial?',
         answer:
           'Sim. Rodas aro 23 são de altíssimo valor e exigem o máximo cuidado. A montagem é feita com equipamento que preserva o acabamento, seguida de balanceamento de alta precisão.',
+      },
+      {
+        question: 'Por que o pneu aro 23 é considerado uma medida rara?',
+        answer:
+          'O aro 23 é uma medida de nicho, presente em poucos SUVs de altíssimo padrão e em projetos de customização exclusivos. Por isso, raramente fica em estoque permanente nas lojas. Na Carplus, trabalhamos com encomenda ágil junto aos fornecedores e orientamos sobre prazos e opções de marca disponíveis para a sua medida.',
+      },
+    ],
+    secoesConteudo: [
+      {
+        title: 'Veículos que usam pneu aro 23',
+        content:
+          'O aro 23 é uma medida de alto padrão, voltada a SUVs de luxo de grande porte e a projetos de customização exclusivos. Em Curitiba, aparece em modelos como Range Rover e Range Rover Sport em versões especiais, além de SUVs premium equipados com pacotes de rodas esportivas de fábrica ou preparados por especialistas. As medidas disponíveis incluem 275/35R23, 305/35R23 e 315/30R23. Por ser uma medida de nicho, o aro 23 está associado à máxima exclusividade e a um perfil extrabaixo que transforma radicalmente o visual do veículo, sendo procurado por um público bastante específico e exigente.',
+      },
+      {
+        title: 'Marcas de pneu aro 23 disponíveis na Carplus',
+        content:
+          'No aro 23, a Carplus trabalha com as marcas que atendem esse segmento ultrapremium, com destaque para a Yokohama, além de opções Pirelli e Continental conforme disponibilidade. Por ser uma medida especial, o estoque é trabalhado sob encomenda: localizamos o pneu aro 23 junto aos nossos fornecedores e informamos prazo e opções antes de fechar. Esse tipo de pneu costuma ter construção voltada à alta performance e ao peso de SUVs de grande porte, e orientamos sobre a melhor escolha para o seu veículo, considerando uso, desempenho e o cuidado que rodas de tão alto valor exigem na montagem e no dia a dia.',
+      },
+      {
+        title: 'Como escolher o pneu aro 23 ideal',
+        content:
+          'Como o aro 23 é frequentemente fruto de customização, o ponto mais importante é respeitar o diâmetro externo correto para o veículo, evitando alterações que comprometam velocímetro, suspensão e segurança. Confira a medida e o índice de carga na lateral (por exemplo, 305/35R23) e priorize linhas de alta performance compatíveis com o peso e a potência do SUV. O perfil extrabaixo entrega visual impressionante, mas é extremamente sensível a impactos, exigindo direção atenta em vias urbanas. Na Carplus, orientamos toda a combinação de roda e pneu aro 23, garantindo que o conjunto seja seguro e adequado ao seu veículo antes de qualquer instalação.',
+      },
+      {
+        title: 'Pneu aro 23 em Curitiba: exclusividade no Portão',
+        content:
+          'A Carplus, no bairro Portão, atende o público mais exigente que busca pneus aro 23 em Curitiba, oferecendo encomenda ágil e montagem com o máximo cuidado. Rodas aro 23 estão entre as mais valiosas e raras do mercado, e nossa montagem é feita com equipamento que preserva integralmente o acabamento, seguida de balanceamento computadorizado de alta precisão. Realizamos alinhamento 3D no mesmo atendimento para proteger esse conjunto exclusivo. Atendemos com total discrição clientes de toda a capital e região metropolitana, com parcelamento em até 10x sem juros, nota fiscal e garantia. Envie a medida exata pelo WhatsApp (41) 3082-7282 para verificarmos disponibilidade e prazo de entrega.',
       },
     ],
   },

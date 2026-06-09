@@ -61,6 +61,7 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
       tags={page.perfilTipico}
       sections={[
         { title: 'Aplicações do Aro ' + page.aro, content: page.aplicacoes },
+        ...(page.secoesConteudo ?? []),
         {
           title: 'Por que comprar na Carplus',
           content:
