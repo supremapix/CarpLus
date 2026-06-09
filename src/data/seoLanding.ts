@@ -692,27 +692,63 @@ export const ARO_PAGES: AroPage[] = [
 // ════════════════════════════════════════════════════════════════
 export interface BrandPage {
   marca: string; // valor exato em TIRES.marca
-  slug: string; // /pneu-michelin-curitiba
+  slug: string; // /pneus-michelin-curitiba
+  /** Slug antigo (singular) para redirect 301 → novo slug plural. */
+  legacySlug?: string;
   h1: string;
   metaTitle: string;
   metaDescription: string;
   intro: string;
   linhas: string;
+  /**
+   * Conteúdo editorial exclusivo da marca (≈800-1500 palavras únicas por página).
+   * Cobre: linhas/tecnologias, aplicações por veículo, vantagens da marca, produtos
+   * disponíveis na Carplus e conteúdo local de Curitiba. Sem duplicação entre marcas.
+   */
+  secoesConteudo?: SeoLandingSection[];
   faq: FaqItem[];
 }
 
 export const BRAND_PAGES: BrandPage[] = [
   {
     marca: 'Pirelli',
-    slug: 'pneu-pirelli-curitiba',
-    h1: 'Pneu Pirelli em Curitiba',
-    metaTitle: 'Pneu Pirelli em Curitiba | Carplus Centro Automotivo – Revenda no Portão',
+    slug: 'pneus-pirelli-curitiba',
+    legacySlug: 'pneu-pirelli-curitiba',
+    h1: 'Pneus Pirelli em Curitiba',
+    metaTitle: 'Pneus Pirelli em Curitiba | Carplus Centro Automotivo – Revenda no Portão',
     metaDescription:
-      'Pneu Pirelli em Curitiba na Carplus Portão. Linhas P400 Evo, Cinturato P7 e P Zero com montagem, balanceamento e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneus Pirelli em Curitiba na Carplus Portão. Linhas P400 Evo, Cinturato P7 e P Zero com montagem, balanceamento e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'A Pirelli é uma das marcas mais tradicionais do mercado e está entre as mais vendidas na Carplus, no bairro Portão em Curitiba. Trabalhamos com diversas linhas Pirelli para uso urbano, conforto e alta performance.',
+      'A Pirelli é uma das marcas mais tradicionais e desejadas do mundo, escolhida como equipamento original por montadoras de prestígio e parceira oficial da Fórmula 1. Na Carplus, no bairro Portão em Curitiba, os pneus Pirelli estão entre os mais vendidos: trabalhamos com linhas para uso urbano econômico, conforto, SUV e alta performance, sempre com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
     linhas:
-      'No catálogo Pirelli da Carplus você encontra a linha P400 Evo (econômica e urbana), a Cinturato P7 e P7 All Season (conforto e desempenho) e a P Zero (esportiva premium, inclusive Run Flat), cobrindo dos carros populares aos veículos premium.',
+      'No catálogo Pirelli da Carplus você encontra a linha P400 Evo (econômica e urbana, ideal para carros populares), a Cinturato P1 e P7 (conforto, baixo ruído e desempenho para sedans e hatches médios), a Scorpion (linha SUV, com versões para asfalto e uso misto) e a P Zero (esportiva premium, inclusive em versão Run Flat), cobrindo dos carros populares aos veículos de luxo.',
+    secoesConteudo: [
+      {
+        title: 'Tecnologia e herança esportiva da Pirelli',
+        content:
+          'Fundada em 1872, a Pirelli construiu sua reputação unindo engenharia de ponta e competição. Como fornecedora exclusiva da Fórmula 1, a marca transfere para os pneus de rua o conhecimento adquirido nas pistas, especialmente em aderência, estabilidade em curvas e comportamento sob frenagem. Tecnologias como o desenho assimétrico de banda de rodagem, compostos de sílica para melhor desempenho em piso molhado e a estrutura Run Flat — que permite rodar mesmo após uma perda de pressão — estão presentes nas linhas vendidas na Carplus. Esse DNA esportivo faz da Pirelli a escolha natural de quem valoriza resposta de direção precisa sem abrir mão da segurança no dia a dia.',
+      },
+      {
+        title: 'Aplicações Pirelli por tipo de veículo',
+        content:
+          'A amplitude do portfólio Pirelli permite atender praticamente qualquer carro que circula em Curitiba. Para hatches e populares como Gol, Onix, HB20 e Argo, a P400 Evo entrega quilometragem alta e economia de combustível. Sedans e hatches médios como Corolla, Civic, Virtus e Golf encontram na Cinturato P7 o equilíbrio ideal entre conforto acústico e desempenho. SUVs como Compass, Creta, Corolla Cross e Tucson são atendidos pela família Scorpion, com flancos reforçados para o peso desses veículos. Já esportivos e sedans premium como BMW, Audi e Mercedes contam com a P Zero, inclusive em medidas Run Flat originais de fábrica. Essa cobertura completa significa que dificilmente um cliente sai da Carplus sem uma opção Pirelli adequada.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Pirelli',
+        content:
+          'Optar pela Pirelli traz benefícios concretos. O primeiro é a confiança de uma marca homologada por montadoras premium, o que garante comportamento previsível e seguro. O segundo é a aderência em piso molhado, fundamental no clima chuvoso de Curitiba, onde a pista úmida é frequente boa parte do ano. A Pirelli também se destaca pela durabilidade equilibrada com performance: mesmo as linhas esportivas entregam quilometragem competitiva. Por fim, há a ampla rede de garantia no Brasil, com cobertura contra defeitos de fabricação que a Carplus ajuda a acionar diretamente na loja, sem burocracia para o cliente.',
+      },
+      {
+        title: 'Pneus Pirelli disponíveis na Carplus',
+        content:
+          'Na loja da Carplus, no Portão, mantemos as principais medidas Pirelli em pronta entrega, especialmente nos aros 14, 15, 16 e 17, que concentram a maior demanda em Curitiba. As linhas P400 Evo e Cinturato têm giro alto e costumam estar disponíveis para instalação no mesmo dia. Medidas de SUV (Scorpion) e esportivas (P Zero) também são trabalhadas, com encomenda ágil quando necessário. Todos os pneus Pirelli vendidos são novos, com data de fabricação recente (DOT), e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é feito na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Pirelli em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus fica na Avenida Presidente Arthur da Silva Bernardes, no bairro Portão, com acesso fácil para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial, Batel e de toda a região metropolitana, como São José dos Pinhais, Araucária e Colombo. Como somos loja e oficina no mesmo endereço, você compra o pneu Pirelli e já realiza a instalação completa sem precisar se deslocar. Para agilizar, envie a medida do seu pneu (que aparece na lateral, como 195/55R15) pelo WhatsApp (41) 3082-7282: confirmamos o estoque, passamos o orçamento fechado e deixamos tudo separado para a sua chegada.',
+      },
+    ],
     faq: [
       {
         question: 'A Carplus é revenda Pirelli em Curitiba?',
@@ -722,89 +758,203 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'Qual a melhor linha Pirelli para meu carro?',
         answer:
-          'Para uso urbano e economia, a P400 Evo é ideal; para conforto e desempenho, a Cinturato P7; para esportividade, a P Zero. Informe seu veículo pelo WhatsApp (41) 3082-7282 que indicamos a melhor opção.',
+          'Para uso urbano e economia, a P400 Evo é ideal; para conforto e desempenho, a Cinturato P7; para SUV, a Scorpion; e para esportividade, a P Zero. Informe seu veículo pelo WhatsApp (41) 3082-7282 que indicamos a melhor opção.',
       },
       {
         question: 'O pneu Pirelli tem garantia na Carplus?',
         answer:
           'Sim. Todos os pneus Pirelli contam com garantia de fábrica contra defeitos de fabricação, e oferecemos suporte completo para acionamento na própria loja.',
       },
+      {
+        question: 'O que é a tecnologia Run Flat da Pirelli?',
+        answer:
+          'A tecnologia Run Flat permite que o pneu continue rodando por uma distância limitada mesmo após perder pressão, graças a flancos reforçados. É comum em carros premium e está disponível em linhas P Zero. Na Carplus orientamos se o seu veículo é compatível.',
+      },
+      {
+        question: 'Pneu Pirelli é bom para a chuva de Curitiba?',
+        answer:
+          'Sim. As linhas Pirelli usam compostos com sílica e desenhos de banda que melhoram a drenagem de água e a frenagem em piso molhado, característica importante para o clima úmido da região. A Cinturato e a P Zero se destacam nesse quesito.',
+      },
     ],
   },
   {
     marca: 'Michelin',
-    slug: 'pneu-michelin-curitiba',
-    h1: 'Pneu Michelin em Curitiba',
-    metaTitle: 'Pneu Michelin em Curitiba | Carplus Centro Automotivo – Portão',
+    slug: 'pneus-michelin-curitiba',
+    legacySlug: 'pneu-michelin-curitiba',
+    h1: 'Pneus Michelin em Curitiba',
+    metaTitle: 'Pneus Michelin em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Michelin em Curitiba na Carplus Portão. Linhas Energy XM2, Primacy 4 e Pilot Sport 4 com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Michelin em Curitiba na Carplus Portão. Linhas Energy XM2, Primacy 4 e Pilot Sport 4 com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Michelin é referência mundial em durabilidade e segurança. Na Carplus, no Portão em Curitiba, você encontra pneus Michelin para economia, conforto premium e alta performance, com instalação completa.',
+      'A Michelin é referência mundial em durabilidade, segurança e tecnologia. Reconhecida por entregar desempenho consistente do primeiro ao último quilômetro, a marca francesa é a escolha de quem busca o melhor custo por quilômetro rodado. Na Carplus, no Portão em Curitiba, você encontra pneus Michelin para economia, conforto premium, SUV e alta performance, sempre com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
-      'No catálogo Michelin da Carplus estão linhas como Energy XM2 (eficiência e economia de combustível), Primacy 4 e Primacy SUV (conforto e segurança premium) e Pilot Sport 4 (esportiva de altíssima performance).',
+      'No catálogo Michelin da Carplus estão linhas como a Energy XM2+ (eficiência, economia de combustível e durabilidade para o uso urbano), a Primacy 4 e Primacy SUV (conforto acústico e segurança premium para sedans e utilitários esportivos) e a Pilot Sport 4 e 4 SUV (esportiva de altíssima performance e aderência).',
+    secoesConteudo: [
+      {
+        title: 'A filosofia Michelin: desempenho que dura',
+        content:
+          'A Michelin construiu sua reputação sobre um princípio simples: um pneu deve oferecer segurança e desempenho não apenas quando novo, mas durante toda a sua vida útil. Para isso, a marca investe pesado em pesquisa de compostos e desenho de banda de rodagem, tecnologias como o EverGrip, que mantém boa aderência mesmo com o pneu desgastado. Essa abordagem rende à Michelin liderança constante em testes independentes de frenagem e quilometragem. Pioneira na invenção do pneu radial, a empresa francesa também é dona de selos de qualidade reconhecidos mundialmente, e essa mesma engenharia chega às linhas vendidas na Carplus, em Curitiba.',
+      },
+      {
+        title: 'Aplicações Michelin por tipo de veículo',
+        content:
+          'O portfólio Michelin cobre desde o carro popular até o SUV premium. Para hatches e sedans compactos como HB20, Onix, Gol e Argo, a Energy XM2+ é imbatível em durabilidade e economia, rendendo muitos quilômetros por jogo. Sedans médios e premium como Corolla, Civic, Jetta e os modelos da BMW e Mercedes encontram na Primacy 4 o máximo em conforto acústico e frenagem segura. SUVs como Compass, Tucson, RAV4 e CR-V são atendidos pela Primacy SUV e pela Pilot Sport 4 SUV, conforme o equilíbrio desejado entre conforto e esportividade. Já carros esportivos e de alta potência têm na Pilot Sport 4 a referência absoluta em aderência e precisão de direção.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Michelin',
+        content:
+          'A principal vantagem da Michelin é o custo por quilômetro: embora o preço inicial seja premium, a alta durabilidade dilui o investimento ao longo do tempo, muitas vezes tornando-a mais econômica que opções aparentemente mais baratas. Some-se a isso a segurança comprovada em frenagem, mesmo com o pneu já gasto, e o conforto acústico que reduz o ruído na cabine, algo que faz diferença em viagens longas pela BR-277 ou no trânsito urbano. A Michelin também oferece baixa resistência ao rolamento em linhas como a Energy, contribuindo para a economia de combustível. Tudo isso com a garantia de fábrica que a Carplus auxilia a acionar diretamente.',
+      },
+      {
+        title: 'Pneus Michelin disponíveis na Carplus',
+        content:
+          'Na Carplus, no Portão, mantemos as medidas Michelin de maior procura em pronta entrega, com destaque para os aros 15, 16 e 17, muito comuns em sedans e SUVs de Curitiba. A linha Energy XM2+ é a mais vendida para uso urbano, enquanto a Primacy 4 atende quem busca conforto premium. Para SUVs e esportivos, trabalhamos com Primacy SUV e Pilot Sport, com encomenda rápida quando a medida específica não está em estoque. Todos os pneus Michelin são novos, com DOT recente, e a compra inclui montagem cuidadosa, balanceamento de precisão e calibragem. O alinhamento 3D é realizado na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Michelin em Curitiba: instalação no Portão',
+        content:
+          'Comprar pneus Michelin na Carplus significa unir a qualidade premium da marca a um atendimento completo no bairro Portão, em Curitiba. Somos loja e oficina no mesmo endereço, então você adquire o pneu e já faz toda a instalação no mesmo dia, sem deslocamentos. Atendemos motoristas de toda a capital — Batel, Água Verde, Champagnat, Portão e região — além das cidades vizinhas. Por se tratar de uma marca premium, muitos clientes aproveitam o parcelamento em até 10x sem juros para renovar os quatro pneus de uma vez. Envie a medida do seu carro pelo WhatsApp (41) 3082-7282 e receba o orçamento Michelin antes de sair de casa.',
+      },
+    ],
     faq: [
       {
         question: 'Por que o pneu Michelin dura mais?',
         answer:
-          'A Michelin investe em tecnologia de composto e desenho que mantém o desempenho do primeiro ao último quilômetro, oferecendo frenagem segura mesmo com o pneu desgastado. Isso resulta em maior quilometragem útil.',
+          'A Michelin investe em tecnologia de composto e desenho que mantém o desempenho do primeiro ao último quilômetro, oferecendo frenagem segura mesmo com o pneu desgastado. Isso resulta em maior quilometragem útil e melhor custo por quilômetro rodado.',
       },
       {
         question: 'A Carplus tem pneu Michelin para SUV?',
         answer:
-          'Sim. Trabalhamos com linhas Michelin para SUV, como a Primacy SUV e a Pilot Sport. Informe a medida do seu veículo pelo WhatsApp (41) 3082-7282 para verificar disponibilidade.',
+          'Sim. Trabalhamos com linhas Michelin para SUV, como a Primacy SUV e a Pilot Sport 4 SUV. Informe a medida do seu veículo pelo WhatsApp (41) 3082-7282 para verificar disponibilidade.',
       },
       {
         question: 'Pneu Michelin é mais caro? Posso parcelar?',
         answer:
-          'A Michelin é uma marca premium, mas a Carplus parcela em até 10x sem juros e já inclui montagem e balanceamento, tornando o investimento mais acessível.',
+          'A Michelin é uma marca premium, mas a Carplus parcela em até 10x sem juros e já inclui montagem e balanceamento, tornando o investimento mais acessível. A alta durabilidade também reduz o custo por quilômetro.',
+      },
+      {
+        question: 'Qual a diferença entre Energy XM2+ e Primacy 4?',
+        answer:
+          'A Energy XM2+ foca em durabilidade e economia, sendo ideal para o uso urbano de hatches e sedans compactos. A Primacy 4 prioriza conforto acústico e segurança premium, indicada para sedans médios e veículos que rodam muito em rodovia.',
+      },
+      {
+        question: 'O pneu Michelin é bom em piso molhado?',
+        answer:
+          'Sim. A Michelin é referência em frenagem no molhado, com tecnologias que preservam a aderência mesmo com o pneu desgastado. É uma vantagem importante para o clima chuvoso de Curitiba e para quem encara a serra rumo ao litoral.',
       },
     ],
   },
   {
     marca: 'Goodyear',
-    slug: 'pneu-goodyear-curitiba',
-    h1: 'Pneu Goodyear em Curitiba',
-    metaTitle: 'Pneu Goodyear em Curitiba | Carplus Centro Automotivo – Portão',
+    slug: 'pneus-goodyear-curitiba',
+    legacySlug: 'pneu-goodyear-curitiba',
+    h1: 'Pneus Goodyear em Curitiba',
+    metaTitle: 'Pneus Goodyear em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Goodyear em Curitiba na Carplus Portão. Linhas Direction Touring e EfficientGrip com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Goodyear em Curitiba na Carplus Portão. Linhas Direction Touring e EfficientGrip com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Goodyear é sinônimo de tecnologia e conforto para o dia a dia e viagens. Na Carplus, no Portão em Curitiba, oferecemos pneus Goodyear com instalação completa e preço justo.',
+      'A Goodyear é uma das marcas mais antigas e respeitadas do mundo, sinônimo de tecnologia, conforto e confiabilidade para o dia a dia e para viagens. Com mais de um século de história e forte presença em competições e na aviação, a marca norte-americana traz inovação para os pneus de passeio. Na Carplus, no Portão em Curitiba, oferecemos pneus Goodyear com instalação completa, preço justo e parcelamento em até 10x sem juros.',
     linhas:
-      'No catálogo Goodyear da Carplus você encontra linhas como a Direction Touring (conforto e estabilidade para viagens) e a EfficientGrip Performance (frenagem em molhado e baixa resistência ao rolamento).',
+      'No catálogo Goodyear da Carplus você encontra linhas como a Direction Touring (conforto e estabilidade para o dia a dia e viagens), a Assurance (segurança e durabilidade para uso urbano) e a EfficientGrip Performance (frenagem em molhado e baixa resistência ao rolamento para sedans e hatches médios).',
+    secoesConteudo: [
+      {
+        title: 'Mais de 100 anos de inovação Goodyear',
+        content:
+          'Fundada em 1898 nos Estados Unidos, a Goodyear é uma das fabricantes mais tradicionais do planeta e tem um histórico de inovações que marcaram a indústria, dos pneus para a aviação aos compostos de alta tecnologia usados em competições. Essa bagagem se traduz em pneus de rua equilibrados, que priorizam conforto, segurança e custo-benefício. Tecnologias como desenhos de banda otimizados para drenagem de água e compostos que reduzem a resistência ao rolamento estão presentes nas linhas vendidas na Carplus, entregando ao motorista de Curitiba um produto confiável tanto na cidade quanto na estrada.',
+      },
+      {
+        title: 'Aplicações Goodyear por tipo de veículo',
+        content:
+          'A Goodyear cobre bem a frota urbana e rodoviária brasileira. Para hatches e sedans compactos como Onix, HB20, Gol e Voyage, a linha Assurance entrega segurança e durabilidade no uso urbano. Para quem viaja com frequência em sedans como Corolla, Civic, Cruze e Jetta, a Direction Touring é desenvolvida para conforto e estabilidade em longas distâncias, com baixo ruído. Já hatches e sedans médios que buscam melhor desempenho dinâmico encontram na EfficientGrip Performance excelente frenagem em piso molhado e economia de combustível. Essa distribuição torna a Goodyear uma marca versátil, adequada a perfis variados de motorista.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Goodyear',
+        content:
+          'A Goodyear se destaca pelo equilíbrio entre preço e qualidade, oferecendo tecnologia de marca consagrada por um valor competitivo. O conforto em viagens é um dos seus pontos fortes: as linhas touring reduzem o ruído e a vibração em longas distâncias, ideal para quem sai de Curitiba rumo ao litoral ou ao interior. A frenagem em piso molhado, presente na linha EfficientGrip, agrega segurança no clima chuvoso da região. A baixa resistência ao rolamento de várias linhas também ajuda a economizar combustível. E, como toda compra na Carplus, há a garantia de fábrica contra defeitos, com suporte para acionamento direto na loja.',
+      },
+      {
+        title: 'Pneus Goodyear disponíveis na Carplus',
+        content:
+          'Na loja da Carplus, no Portão, trabalhamos com Goodyear nos aros de maior procura, especialmente 14, 15 e 16, que equipam grande parte dos carros de Curitiba. As linhas Assurance e Direction Touring têm boa disponibilidade e costumam permitir instalação no mesmo dia. Para medidas mais específicas ou de perfil esportivo, fazemos encomenda ágil junto aos fornecedores. Todos os pneus Goodyear são novos, com data de fabricação recente, e a compra já inclui montagem, balanceamento e calibragem. O alinhamento 3D é feito na própria oficina para prolongar a vida útil dos pneus, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Goodyear em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus está no bairro Portão, em Curitiba, em um endereço de fácil acesso para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial e região metropolitana. Por sermos loja e oficina no mesmo local, você compra o pneu Goodyear e já realiza toda a instalação sem precisar procurar outro estabelecimento. Atendemos famílias, motoristas de aplicativo e quem faz muitas viagens, sempre com orientação técnica gratuita sobre a melhor linha para o seu uso. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e já preparar o orçamento Goodyear completo.',
+      },
+    ],
     faq: [
       {
         question: 'O pneu Goodyear é bom para viagens?',
         answer:
-          'Sim. A linha Direction Touring é desenvolvida para conforto e estabilidade em longas distâncias, com baixo ruído e boa aderência na chuva, ideal para quem viaja com frequência.',
+          'Sim. A linha Direction Touring é desenvolvida para conforto e estabilidade em longas distâncias, com baixo ruído e boa aderência na chuva, ideal para quem viaja com frequência saindo de Curitiba.',
       },
       {
         question: 'A Carplus tem pneu Goodyear aro 15 e 16?',
         answer:
-          'Sim, trabalhamos com Goodyear nos aros mais procurados, como 15 e 16. Consulte a medida exata do seu carro pelo WhatsApp (41) 3082-7282.',
+          'Sim, trabalhamos com Goodyear nos aros mais procurados, como 14, 15 e 16. Consulte a medida exata do seu carro pelo WhatsApp (41) 3082-7282.',
       },
       {
         question: 'A instalação do pneu Goodyear já está inclusa?',
         answer:
           'Sim. Montagem, balanceamento e calibragem estão inclusos, e o alinhamento 3D é feito na própria Carplus para prolongar a vida útil dos pneus.',
       },
+      {
+        question: 'Qual a diferença entre Assurance e EfficientGrip?',
+        answer:
+          'A Assurance foca em segurança e durabilidade para o uso urbano, com ótimo custo-benefício. A EfficientGrip Performance prioriza frenagem em molhado e baixa resistência ao rolamento, sendo indicada para sedans e hatches médios que buscam desempenho e economia.',
+      },
+      {
+        question: 'Pneu Goodyear tem boa quilometragem?',
+        answer:
+          'Sim. As linhas Goodyear são projetadas para entregar durabilidade equilibrada com conforto. Mantendo calibragem correta, rodízio e alinhamento em dia, é possível extrair excelente quilometragem, o que a Carplus orienta a cada troca.',
+      },
     ],
   },
   {
     marca: 'Continental',
-    slug: 'pneu-continental-curitiba',
-    h1: 'Pneu Continental em Curitiba',
-    metaTitle: 'Pneu Continental em Curitiba | Carplus Centro Automotivo – Portão',
+    slug: 'pneus-continental-curitiba',
+    legacySlug: 'pneu-continental-curitiba',
+    h1: 'Pneus Continental em Curitiba',
+    metaTitle: 'Pneus Continental em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Continental traz a tecnologia alemã para conforto, segurança e baixo ruído. Na Carplus, no Portão em Curitiba, você encontra uma ampla variedade de pneus Continental para passeio, sedans e SUVs.',
+      'A Continental traz a engenharia alemã para o conforto, a segurança e o baixo ruído. Fornecedora original de montadoras europeias e referência em tecnologia de frenagem, a marca é escolhida por quem valoriza dirigibilidade precisa e silêncio na cabine. Na Carplus, no Portão em Curitiba, você encontra uma ampla variedade de pneus Continental para carros de passeio, sedans e SUVs, com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
-      'No catálogo Continental da Carplus estão linhas voltadas ao conforto e à eficiência, como a ContiComfortContact, com foco em menor emissão de ruído e dirigibilidade refinada na cidade e na estrada.',
+      'No catálogo Continental da Carplus estão linhas voltadas ao conforto e à eficiência, como a ContiComfortContact e a ContiPowerContact (foco em silêncio, durabilidade e dirigibilidade urbana), além de opções CrossContact para SUVs, com reforço estrutural e estabilidade para veículos mais pesados.',
+    secoesConteudo: [
+      {
+        title: 'Engenharia alemã a serviço da segurança',
+        content:
+          'A Continental nasceu na Alemanha em 1871 e se tornou uma das maiores fabricantes de pneus e sistemas automotivos do mundo. Sua forte ligação com a indústria de freios e segurança veicular se reflete em pneus desenvolvidos com foco em distâncias curtas de frenagem e estabilidade em manobras de emergência. Tecnologias como compostos de sílica de alta aderência e desenhos de banda que reduzem o ruído fazem parte do DNA da marca. Como fornecedora original de montadoras europeias, a Continental entrega pneus calibrados para comportamento refinado, e essa mesma qualidade está disponível para o motorista de Curitiba na Carplus.',
+      },
+      {
+        title: 'Aplicações Continental por tipo de veículo',
+        content:
+          'A Continental cobre desde hatches urbanos até SUVs de porte. Para carros de passeio como Onix, HB20, Polo e Argo, as linhas ContiPowerContact e ContiComfortContact entregam silêncio e durabilidade no trânsito do dia a dia. Sedans médios e premium como Corolla, Civic, Jetta e modelos europeus encontram na linha PremiumContact o máximo em conforto acústico e dirigibilidade. Para SUVs como Compass, Tiguan, Creta e Tucson, a família CrossContact oferece flancos reforçados e estabilidade compatível com o peso desses veículos. Essa amplitude faz da Continental uma das marcas com maior variedade de medidas no estoque da Carplus.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Continental',
+        content:
+          'O grande diferencial da Continental é o conforto acústico: poucos pneus do mercado são tão silenciosos, o que melhora a experiência tanto na cidade quanto na estrada. A segurança em frenagem, herança da expertise alemã em sistemas de freio, é outro ponto forte, especialmente relevante no piso molhado frequente em Curitiba. A dirigibilidade precisa agrada quem gosta de uma direção bem conectada, e a durabilidade equilibrada garante bom custo-benefício ao longo do tempo. A marca ainda oferece ampla variedade de medidas, aumentando a chance de termos exatamente o pneu do seu carro em estoque, com garantia de fábrica que a Carplus ajuda a acionar.',
+      },
+      {
+        title: 'Pneus Continental disponíveis na Carplus',
+        content:
+          'A Continental está entre as marcas com maior variedade de medidas no catálogo da Carplus, no Portão, cobrindo do aro 15 aos aros maiores para SUVs. As linhas de conforto para passeio têm boa disponibilidade para pronta entrega, e as medidas de SUV (CrossContact) são trabalhadas com encomenda ágil quando necessário. Todos os pneus Continental vendidos são novos, com DOT recente, e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é realizado na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, sempre com nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Continental em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus fica no bairro Portão, em Curitiba, com acesso fácil para motoristas do Batel, Água Verde, Champagnat, Fazendinha e de toda a região metropolitana, como São José dos Pinhais e Pinhais. Por reunirmos loja e oficina no mesmo endereço, você compra o pneu Continental e já faz a instalação completa no mesmo dia. Como a marca tem grande variedade de medidas, é comum atendermos clientes com carros europeus que buscam exatamente a especificação original. Envie a medida e o modelo do seu veículo pelo WhatsApp (41) 3082-7282 para confirmarmos a disponibilidade e fechar o orçamento Continental.',
+      },
+    ],
     faq: [
       {
         question: 'Por que escolher pneu Continental?',
         answer:
-          'A Continental é reconhecida pela tecnologia alemã que entrega conforto acústico, frenagem segura e dirigibilidade precisa. É uma excelente escolha para quem valoriza silêncio e estabilidade.',
+          'A Continental é reconhecida pela tecnologia alemã que entrega conforto acústico, frenagem segura e dirigibilidade precisa. É uma excelente escolha para quem valoriza silêncio e estabilidade no dia a dia e na estrada.',
       },
       {
         question: 'A Carplus tem boa variedade de pneu Continental?',
@@ -814,50 +964,126 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'Pneu Continental é indicado para SUV?',
         answer:
-          'Sim. Há linhas Continental específicas para SUVs, com reforço estrutural e estabilidade. Informe a medida do seu veículo que verificamos a melhor opção.',
+          'Sim. Há linhas Continental específicas para SUVs, como a família CrossContact, com reforço estrutural e estabilidade. Informe a medida do seu veículo que verificamos a melhor opção.',
+      },
+      {
+        question: 'O pneu Continental é silencioso?',
+        answer:
+          'Sim. O conforto acústico é um dos principais diferenciais da Continental, com desenhos de banda que reduzem o ruído de rolamento. É uma das marcas mais silenciosas do mercado, ideal para quem busca tranquilidade na cabine.',
+      },
+      {
+        question: 'Pneu Continental é bom para carro importado?',
+        answer:
+          'Sim. Como fornecedora original de montadoras europeias, a Continental costuma ter a especificação exata de muitos carros importados. Na Carplus verificamos a medida e a homologação para garantir o comportamento original do seu veículo.',
       },
     ],
   },
   {
     marca: 'Yokohama',
-    slug: 'pneu-yokohama-curitiba',
-    h1: 'Pneu Yokohama em Curitiba',
-    metaTitle: 'Pneu Yokohama em Curitiba | Carplus Centro Automotivo – Maior Variedade',
+    slug: 'pneus-yokohama-curitiba',
+    legacySlug: 'pneu-yokohama-curitiba',
+    h1: 'Pneus Yokohama em Curitiba',
+    metaTitle: 'Pneus Yokohama em Curitiba | Carplus Centro Automotivo – Maior Variedade',
     metaDescription:
-      'Pneu Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Yokohama é a marca com a maior variedade de modelos no estoque da Carplus, no Portão em Curitiba. São opções para carros de passeio, SUVs e veículos de performance, com tecnologia japonesa.',
+      'A Yokohama é a marca japonesa reconhecida mundialmente por unir tecnologia de performance e ampla variedade de medidas. Presente em competições e no mercado de reposição, é a marca com o maior número de modelos no estoque da Carplus, no Portão em Curitiba. São opções para carros de passeio, SUVs e veículos de alta performance, com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
-      'O catálogo Yokohama da Carplus cobre uma ampla gama de medidas e categorias, do uso urbano à alta performance, sendo uma das marcas com mais opções de aros e perfis disponíveis para pronta entrega.',
+      'O catálogo Yokohama da Carplus cobre uma ampla gama de medidas e categorias: a linha BluEarth (foco em economia de combustível e baixa emissão de ruído), a Advan (alta performance e aderência esportiva) e a Geolandar (SUVs e picapes, com versões para asfalto e uso misto), do uso urbano à pista.',
+    secoesConteudo: [
+      {
+        title: 'Tecnologia japonesa e variedade de medidas',
+        content:
+          'Fundada em 1917 no Japão, a Yokohama é uma das fabricantes mais versáteis do mercado, combinando herança esportiva com forte presença no mercado de reposição. A marca é conhecida por linhas de alta performance usadas em competições e por tecnologias como compostos com óleo de laranja (na família BluEarth), que melhoram a aderência e reduzem o consumo. Para o consumidor brasileiro, o grande trunfo da Yokohama é a enorme variedade de medidas e perfis disponíveis, o que a torna uma solução frequente para carros e SUVs cujas medidas são mais difíceis de encontrar em outras marcas. Na Carplus, essa amplitude é um diferencial real para o cliente de Curitiba.',
+      },
+      {
+        title: 'Aplicações Yokohama por tipo de veículo',
+        content:
+          'A diversidade do portfólio Yokohama permite atender perfis bem distintos. Para hatches e sedans de passeio como Onix, HB20, Gol e Corolla, a linha BluEarth entrega economia de combustível e rodagem silenciosa. Quem busca esportividade em hatches e sedans mais potentes encontra na linha Advan aderência e resposta de direção de nível competitivo. Já SUVs e picapes como Compass, Hilux, Ranger, SW4 e S10 são atendidos pela Geolandar, com versões específicas para asfalto, uso misto e estrada de terra. Essa cobertura ampla, somada à variedade de medidas, faz da Yokohama uma das primeiras opções quando o cliente precisa de uma medida específica em pronta entrega.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Yokohama',
+        content:
+          'A maior vantagem da Yokohama é a disponibilidade: por ter a maior variedade de medidas no estoque da Carplus, há grande chance de encontrarmos exatamente o pneu do seu carro sem espera. Além disso, a marca oferece excelente relação entre performance e preço, com linhas esportivas reconhecidas que custam menos que concorrentes premium equivalentes. A tecnologia BluEarth contribui para a economia de combustível, enquanto a Geolandar entrega robustez para quem usa SUV ou picape em estrada. A aderência em piso seco e molhado das linhas de performance é um ponto forte, e todos os pneus contam com garantia de fábrica e suporte da Carplus.',
+      },
+      {
+        title: 'Pneus Yokohama disponíveis na Carplus',
+        content:
+          'A Yokohama é a marca campeã de variedade no estoque da Carplus, no Portão, cobrindo de carros populares a esportivos e SUVs, em uma faixa ampla de aros e perfis. Muitas medidas estão disponíveis para pronta entrega e instalação no mesmo dia, inclusive algumas mais difíceis de achar no mercado. As linhas BluEarth, Advan e Geolandar são trabalhadas conforme o perfil do veículo, com encomenda rápida para medidas especiais. Todos os pneus Yokohama são novos, com data de fabricação recente, e a compra inclui montagem, balanceamento e calibragem. O alinhamento 3D é feito na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Yokohama em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus está no bairro Portão, em Curitiba, em um ponto de fácil acesso para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial e da região metropolitana. Como reunimos loja e oficina no mesmo endereço, você compra o pneu Yokohama e já faz toda a instalação sem precisar se deslocar. A grande variedade de medidas da marca é especialmente útil para quem tem dificuldade de encontrar o pneu do seu carro ou SUV em outras lojas. Envie a medida pelo WhatsApp (41) 3082-7282 e confira a disponibilidade Yokohama: há boa chance de termos a sua medida pronta para instalação.',
+      },
+    ],
     faq: [
       {
         question: 'A Carplus tem muitas opções de pneu Yokohama?',
         answer:
-          'Sim. A Yokohama é a marca com a maior variedade de medidas no nosso catálogo, cobrindo de carros populares a SUVs e esportivos. Há grande chance de termos a sua medida em estoque.',
+          'Sim. A Yokohama é a marca com a maior variedade de medidas no nosso catálogo, cobrindo de carros populares a SUVs e esportivos. Há grande chance de termos a sua medida em estoque para pronta entrega.',
       },
       {
         question: 'Pneu Yokohama é bom para performance?',
         answer:
-          'A Yokohama é reconhecida mundialmente por linhas de performance e aderência. Informe seu veículo e estilo de uso pelo WhatsApp (41) 3082-7282 que indicamos a linha ideal.',
+          'A Yokohama é reconhecida mundialmente por linhas de performance e aderência, como a família Advan. Informe seu veículo e estilo de uso pelo WhatsApp (41) 3082-7282 que indicamos a linha ideal.',
       },
       {
         question: 'A montagem do pneu Yokohama está inclusa?',
         answer:
           'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na própria Carplus.',
       },
+      {
+        question: 'A Yokohama tem pneu para SUV e picape?',
+        answer:
+          'Sim. A linha Geolandar é desenvolvida para SUVs e picapes, com versões para asfalto, uso misto e estrada de terra. Atende modelos como Hilux, Ranger, SW4, S10 e Compass. Consulte a medida pelo WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'O que é a tecnologia BluEarth da Yokohama?',
+        answer:
+          'A BluEarth é a linha ecológica da Yokohama, que usa compostos com óleo de laranja para melhorar a aderência e reduzir a resistência ao rolamento, gerando economia de combustível e menor ruído. É indicada para uso urbano em carros de passeio.',
+      },
     ],
   },
   {
     marca: 'Bridgestone',
-    slug: 'pneu-bridgestone-curitiba',
-    h1: 'Pneu Bridgestone em Curitiba',
-    metaTitle: 'Pneu Bridgestone em Curitiba | Carplus Centro Automotivo – Portão',
+    slug: 'pneus-bridgestone-curitiba',
+    legacySlug: 'pneu-bridgestone-curitiba',
+    h1: 'Pneus Bridgestone em Curitiba',
+    metaTitle: 'Pneus Bridgestone em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Bridgestone em Curitiba na Carplus Portão. Linhas Turanza, Ecopia e Potenza com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Bridgestone em Curitiba na Carplus Portão. Linhas Turanza, Ecopia e Potenza com montagem, balanceamento e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Bridgestone é a maior fabricante de pneus do mundo e está entre as marcas com maior estoque na Carplus, no Portão em Curitiba. Trabalhamos com linhas Bridgestone para conforto, economia e alta performance, com instalação completa.',
+      'A Bridgestone é a maior fabricante de pneus do mundo e uma das marcas mais completas em tecnologia, segurança e variedade. Combinando a herança japonesa de qualidade com forte investimento em pesquisa, é uma das marcas com maior estoque na Carplus, no Portão em Curitiba. Trabalhamos com linhas Bridgestone para conforto, economia de combustível, SUV e alta performance, sempre com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
-      'No catálogo Bridgestone da Carplus você encontra linhas como a Turanza (conforto e silêncio para sedans), a Ecopia (baixa resistência ao rolamento e economia de combustível) e a Potenza (esportiva, com aderência e resposta de direção).',
+      'No catálogo Bridgestone da Carplus você encontra linhas como a Turanza (conforto e silêncio para sedans), a Ecopia (baixa resistência ao rolamento e economia de combustível), a Potenza (esportiva, com aderência e resposta de direção) e a Dueler (SUVs e picapes, com versões para asfalto e uso misto).',
+    secoesConteudo: [
+      {
+        title: 'A líder mundial em tecnologia de pneus',
+        content:
+          'Fundada no Japão em 1931, a Bridgestone é hoje a maior fabricante de pneus do planeta, com presença em competições de alto nível e forte parceria com montadoras como equipamento original. Esse porte se traduz em investimento contínuo em pesquisa: tecnologias como o composto NanoPro-Tech, que reduz a resistência ao rolamento, e estruturas que melhoram o conforto e a durabilidade estão presentes nas linhas vendidas na Carplus. A amplitude do portfólio Bridgestone, do econômico ao esportivo, permite atender praticamente qualquer perfil de motorista de Curitiba com a confiança de uma marca líder global.',
+      },
+      {
+        title: 'Aplicações Bridgestone por tipo de veículo',
+        content:
+          'O portfólio Bridgestone cobre toda a frota nacional. Para hatches e sedans compactos como Onix, HB20, Gol e Argo, a linha Ecopia entrega economia de combustível e durabilidade no uso urbano. Sedans médios e premium como Corolla, Civic, Jetta e Cruze encontram na Turanza o conforto acústico e a estabilidade ideais para quem roda muito na cidade e na estrada. Carros esportivos e de maior potência têm na Potenza a referência em aderência e resposta de direção. Já SUVs e picapes como Compass, Hilux, SW4, RAV4 e S10 são atendidos pela família Dueler, com flancos reforçados e versões para diferentes tipos de piso.',
+      },
+      {
+        title: 'Vantagens de escolher pneus Bridgestone',
+        content:
+          'Escolher Bridgestone significa contar com a tecnologia da maior fabricante do mundo. A linha Ecopia se destaca pela economia de combustível, fruto da baixa resistência ao rolamento, um benefício direto no bolso de quem roda muito. A Turanza oferece conforto e silêncio que rivalizam com marcas premium, enquanto a Potenza entrega esportividade para quem busca desempenho. A robustez da Dueler atende com segurança SUVs e picapes. A marca também tem ampla disponibilidade de medidas e uma rede de garantia consolidada no Brasil, com defeitos de fabricação cobertos e acionamento facilitado pela Carplus, diretamente na loja.',
+      },
+      {
+        title: 'Pneus Bridgestone disponíveis na Carplus',
+        content:
+          'A Bridgestone é uma das marcas com maior estoque na Carplus, no Portão, cobrindo do aro 14 aos aros maiores para SUVs e esportivos. As linhas Ecopia e Turanza têm giro alto e costumam estar disponíveis para instalação no mesmo dia, enquanto medidas de SUV (Dueler) e esportivas (Potenza) são trabalhadas com encomenda ágil quando necessário. Todos os pneus Bridgestone são novos, com data de fabricação recente (DOT), e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é feito na própria oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+      },
+      {
+        title: 'Pneus Bridgestone em Curitiba: atendimento no Portão',
+        content:
+          'A Carplus está localizada no bairro Portão, em Curitiba, com acesso fácil para motoristas do Água Verde, Fazendinha, Novo Mundo, Batel, Cidade Industrial e de toda a região metropolitana, incluindo São José dos Pinhais, Araucária e Colombo. Por sermos loja e oficina no mesmo endereço, você compra o pneu Bridgestone e já faz a instalação completa no mesmo dia, sem precisar procurar outro estabelecimento. Com grande estoque e ampla variedade de medidas, atendemos desde o carro popular até SUVs e esportivos. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e fechar o orçamento Bridgestone completo.',
+      },
+    ],
     faq: [
       {
         question: 'A Carplus tem boa variedade de pneu Bridgestone?',
@@ -873,6 +1099,16 @@ export const BRAND_PAGES: BrandPage[] = [
         question: 'O pneu Bridgestone tem garantia na Carplus?',
         answer:
           'Sim. Todos os pneus Bridgestone contam com garantia de fábrica contra defeitos de fabricação, com suporte completo para acionamento na própria loja.',
+      },
+      {
+        question: 'Qual a diferença entre Turanza e Potenza?',
+        answer:
+          'A Turanza foca em conforto acústico e estabilidade, ideal para sedans que rodam muito na cidade e na estrada. A Potenza é a linha esportiva, com aderência e resposta de direção superiores, indicada para carros mais potentes e quem busca desempenho.',
+      },
+      {
+        question: 'A Bridgestone tem pneu para SUV e picape?',
+        answer:
+          'Sim. A linha Dueler é desenvolvida para SUVs e picapes, com flancos reforçados e versões para asfalto e uso misto. Atende modelos como Compass, Hilux, SW4, RAV4 e S10. Consulte a medida pelo WhatsApp (41) 3082-7282.',
       },
     ],
   },

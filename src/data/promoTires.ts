@@ -77,12 +77,12 @@ function carrosParaMedida(largura: number, perfil: number, aro: number): string[
 // Marcas que possuem página de catálogo dedicada (BRAND_PAGES em seoLanding.ts).
 // Chave normalizada (minúscula, sem acento) → slug da página de catálogo.
 const CATALOGO_POR_MARCA: Record<string, string> = {
-  pirelli: '/pneu-pirelli-curitiba',
-  michelin: '/pneu-michelin-curitiba',
-  goodyear: '/pneu-goodyear-curitiba',
-  continental: '/pneu-continental-curitiba',
-  yokohama: '/pneu-yokohama-curitiba',
-  bridgestone: '/pneu-bridgestone-curitiba',
+  pirelli: '/pneus-pirelli-curitiba',
+  michelin: '/pneus-michelin-curitiba',
+  goodyear: '/pneus-goodyear-curitiba',
+  continental: '/pneus-continental-curitiba',
+  yokohama: '/pneus-yokohama-curitiba',
+  bridgestone: '/pneus-bridgestone-curitiba',
   firestone: '/pneu-firestone-curitiba',
   prinx: '/pneu-prinx-curitiba',
   delinte: '/pneu-delinte-curitiba',

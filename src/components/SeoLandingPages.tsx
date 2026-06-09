@@ -113,6 +113,7 @@ export function BrandLandingPage({ slug: slugProp }: { slug?: string }) {
       intro={page.intro}
       sections={[
         { title: `Linhas ${page.marca} disponíveis`, content: page.linhas },
+        ...(page.secoesConteudo ?? []),
         {
           title: 'Instalação completa inclusa',
           content:

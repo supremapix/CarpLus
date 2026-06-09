@@ -122,6 +122,15 @@ export default function App() {
         <Route key={p.slug} path={`/${p.slug}`} element={<BrandLandingPage slug={p.slug} />} />
       ))}
 
+      {/* Redirects 301 dos slugs antigos (singular) → novos slugs (plural) de marca */}
+      {BRAND_PAGES.filter((p) => p.legacySlug).map((p) => (
+        <Route
+          key={p.legacySlug}
+          path={`/${p.legacySlug}`}
+          element={<Navigate to={`/${p.slug}`} replace />}
+        />
+      ))}
+
       {/* Landing pages por Veículo */}
       {VEHICLE_PAGES.map((p) => (
         <Route key={p.slug} path={`/${p.slug}`} element={<VehicleLandingPage slug={p.slug} />} />
