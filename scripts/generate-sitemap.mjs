@@ -65,21 +65,14 @@ const services = [
 const uniqueServices = [...new Set(services)];
 
 // Neighborhoods (bairros de Curitiba)
+// IMPORTANTE: mantemos no sitemap apenas os bairros mais próximos/relevantes ao
+// Portão. Os demais (~70 páginas) foram marcados com noindex no componente
+// NeighborhoodDetail para evitar o problema de "thin content" detectado pelo Google.
+// Esta lista deve espelhar src/data/indexableNeighborhoods.ts.
 const bairros = [
-  'portao', 'agua-verde', 'fazendinha', 'santa-quiteria', 'vila-izabel',
-  'novo-mundo', 'capao-raso', 'sitio-cercado', 'xaxim', 'pinheirinho',
-  'cidade-industrial', 'tatuquara', 'boqueirao', 'hauer', 'fanny',
-  'lindoia', 'parolin', 'guaira', 'jardim-botanico', 'alto-da-gloria',
-  'centro', 'reboucas', 'prado-velho', 'cristo-rei', 'cajuru',
-  'uberaba', 'jardim-das-americas', 'guabirotuba', 'alto-da-xv', 'hugo-lange',
-  'juveve', 'cabral', 'ahu', 'bom-retiro', 'centro-civico',
-  'sao-francisco', 'merces', 'bigorrilho', 'champagnat', 'batel',
-  'seminario', 'campo-comprido', 'mossungue', 'santo-inacio', 'cascatinha',
-  'sao-joao', 'vista-alegre', 'pilarzinho', 'sao-lourenco', 'boa-vista',
-  'bacacheri', 'tingui', 'atuba', 'bairro-alto', 'taruma',
-  'santa-candida', 'cachoeira', 'barreirinha', 'abranches', 'taboao',
-  'lamenha-pequena', 'santa-felicidade', 'butiatuvinha', 'orleans', 'sao-braz',
-  'augusta', 'riviera', 'campo-de-santana', 'caximba', 'ganchinho', 'umbara'
+  'portao', 'agua-verde', 'fazendinha', 'novo-mundo', 'santa-quiteria',
+  'vila-izabel', 'capao-raso', 'campo-comprido', 'pinheirinho', 'xaxim',
+  'araucaria', 'sao-jose-dos-pinhais', 'fanny', 'lindoia', 'guaira'
 ];
 
 // Popular tire measures

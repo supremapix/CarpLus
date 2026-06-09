@@ -8,6 +8,14 @@ const dataContent = fs.readFileSync(dataPath, 'utf-8');
 // Base URL
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 
+// Apenas bairros mais próximos/relevantes ao Portão permanecem no sitemap.
+// Espelha src/data/indexableNeighborhoods.ts. Os demais bairros recebem noindex.
+const INDEXABLE_NEIGHBORHOOD_SLUGS = [
+  'portao', 'agua-verde', 'fazendinha', 'novo-mundo', 'santa-quiteria',
+  'vila-izabel', 'capao-raso', 'campo-comprido', 'pinheirinho', 'xaxim',
+  'araucaria', 'sao-jose-dos-pinhais', 'fanny', 'lindoia', 'guaira'
+];
+
 // Extract slugs from TIRES array
 function extractTireSlugs(content) {
   const slugs = [];
@@ -87,7 +95,8 @@ function extractNeighborhoods(content) {
       neighborhoods.push(slug);
     }
   }
-  return [...new Set(neighborhoods)];
+  // Mantém apenas os bairros indexáveis no sitemap.
+  return [...new Set(neighborhoods)].filter((slug) => INDEXABLE_NEIGHBORHOOD_SLUGS.includes(slug));
 }
 
 // Generate sitemap
