@@ -67,8 +67,8 @@ export function useSEO({
     if (ogImage) {
       const fullImageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`;
       setMeta('meta[property="og:image"]', 'content', fullImageUrl);
-      setMeta('meta[property="og:image:width"]', 'content', '1200');
-      setMeta('meta[property="og:image:height"]', 'content', '630');
+      setMeta('meta[property="og:image:width"]', 'content', '1402');
+      setMeta('meta[property="og:image:height"]', 'content', '1122');
       setMeta('meta[name="twitter:image"]', 'content', fullImageUrl);
     }
 
