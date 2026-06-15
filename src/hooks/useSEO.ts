@@ -49,7 +49,7 @@ export function useSEO({
 
     // Meta tags básicas
     setMeta('meta[name="description"]', 'content', description);
-    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     
     // Keywords
     if (keywords.length > 0) {
