@@ -35,6 +35,14 @@ export default function PneuPromocaoDetalhe() {
 
   const pageUrl = `${BASE_URL}/pneu-promocao/${slug}`;
 
+  // Data da última revisão de conteúdo (ISO para schema, PT-BR para exibição)
+  const modifiedISO = new Date().toISOString().split('T')[0];
+  const lastUpdated = new Date().toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
@@ -111,6 +119,7 @@ export default function PneuPromocaoDetalhe() {
         price: tire.precoNumero,
         availability: 'InStock',
         url: pageUrl,
+        dateModified: modifiedISO,
       })
     : null;
 
@@ -348,6 +357,10 @@ export default function PneuPromocaoDetalhe() {
                   Pneu {tire.marca} na medida <strong>{tire.medida}</strong> com montagem, balanceamento e garantia de
                   fábrica inclusos. Instalação rápida por técnicos certificados na Carplus Centro Automotivo, no Portão, em
                   Curitiba.
+                </p>
+
+                <p className="text-[11px] text-gray-400 font-medium mb-8 -mt-4">
+                  Última atualização: {lastUpdated}.
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-8">
