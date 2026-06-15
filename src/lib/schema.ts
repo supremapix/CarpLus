@@ -80,6 +80,38 @@ export function generateProductSchema(props: ProductSchemaProps): object {
           addressCountry: "BR",
         },
       },
+      // Política de devolução — exigida pelo Google Rich Results para Merchant Listings
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "BR",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 7,
+        returnMethod: "https://schema.org/ReturnInStore",
+        returnFees: "https://schema.org/FreeReturn",
+      },
+      // Informações de entrega — exigidas pelo Google Rich Results para Merchant Listings
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "BR",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 1,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 1,
+            maxValue: 7,
+            unitCode: "DAY",
+          },
+        },
+      },
     },
   };
 
