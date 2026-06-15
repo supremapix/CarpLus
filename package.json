@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "sitemap": "tsx scripts/generate-sitemap.ts",
-    "prebuild": "tsx scripts/generate-sitemap.ts",
+    "redirects": "tsx scripts/generate-redirects.ts",
+    "prebuild": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-redirects.ts",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",

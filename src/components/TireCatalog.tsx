@@ -1,15 +1,15 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront, Ruler, BadgeCheck, ChevronDown } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
-import { ARO_PAGES, BRAND_PAGES } from '../data/seoLanding';
+import { ARO_PAGES } from '../data/seoLanding';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema, generateProductSchema } from '../lib/schema';
-import { detectDominantProfile } from '../lib/seoIndexing';
+import { detectDominantProfile, resolveThematicLanding, REDIRECT_THRESHOLD } from '../lib/seoIndexing';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -25,33 +25,6 @@ const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 const ARO_SLUG_BY_NUMBER = new Map<number, string>(ARO_PAGES.map((p) => [p.aro, p.slug]));
 // Aros para a navegação (13 ao 23), conforme landing pages disponíveis.
 const ARO_NAV = ARO_PAGES.map((p) => p.aro).sort((a, b) => a - b);
-
-// Mapa marca (lowercase) -> slug da landing temática de marca já indexada
-// (ex.: "michelin" -> "pneus-michelin-curitiba"). Reaproveita as páginas de
-// /pneus-{marca}-curitiba para concentrar autoridade, sem criar conteúdo novo.
-const BRAND_SLUG_BY_NAME = new Map<string, string>(
-  BRAND_PAGES.map((p) => [p.marca.toLowerCase(), p.slug]),
-);
-
-/**
- * Resolve a melhor landing temática existente para um perfil dominante de página.
- * Marca e aro possuem landings dedicadas; categoria/medida sem landing retornam null
- * (a página segue como noindex, fora do sitemap).
- */
-function resolveThematicLanding(
-  profile: { type: string; value: string | number } | null,
-): { slug: string; label: string } | null {
-  if (!profile) return null;
-  if (profile.type === 'marca') {
-    const slug = BRAND_SLUG_BY_NAME.get(String(profile.value).toLowerCase());
-    return slug ? { slug, label: `Pneus ${profile.value} em Curitiba` } : null;
-  }
-  if (profile.type === 'aro') {
-    const slug = ARO_SLUG_BY_NUMBER.get(Number(profile.value));
-    return slug ? { slug, label: `Pneus Aro ${profile.value} em Curitiba` } : null;
-  }
-  return null;
-}
 
 // Marcas de pneus em destaque, com link interno para o catálogo filtrado por marca.
 const FEATURED_BRANDS = ["Michelin", "Bridgestone", "Goodyear", "Pirelli", "Continental", "Yokohama"];
@@ -359,6 +332,22 @@ export default function TireCatalog() {
     setSearch(value);
     resetToFirstPage();
   };
+
+  // ───── 301-equivalente (SPA) para paginações fortemente dominadas ─────
+  // Quando a paginação tem dominância ≥ REDIRECT_THRESHOLD (85%) e existe landing
+  // temática correspondente, redirecionamos definitivamente para consolidar a
+  // autoridade. No edge, o vercel.json aplica o 301 real; aqui garantimos a mesma
+  // experiência dentro da SPA (e para crawlers que executam JS).
+  const shouldRedirect =
+    safePage > 1 &&
+    !hasActiveFilters &&
+    !!thematicLanding &&
+    !!dominantProfile &&
+    dominantProfile.share >= REDIRECT_THRESHOLD;
+
+  if (shouldRedirect && thematicLanding) {
+    return <Navigate to={`/${thematicLanding.slug}`} replace />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
