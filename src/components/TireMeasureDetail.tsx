@@ -8,6 +8,7 @@ import TireFAQ from './TireFAQ';
 import TireTips from './TireTips';
 import { useState, useEffect, useMemo } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { isMeasureIndexable } from '../lib/seoIndexing';
 
 export default function TireMeasureDetail() {
   const { medida } = useParams<{ medida: string }>();
@@ -65,6 +66,7 @@ export default function TireMeasureDetail() {
           title: `Pneu ${normalizedMedida} em Curitiba | Carplus Centro Automotivo – Todas as Marcas`,
           description: `Compare e compre pneu ${normalizedMedida} na Carplus em Curitiba. Várias marcas: Pirelli, Firestone, Continental. Montagem inclusa, parcelamento em até 10x sem juros. Ligue: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/pneu-medida/${medida}`,
+          noindex: !isMeasureIndexable(normalizedMedida),
           ogImage: tire.imagemGrande,
           ogType: 'product',
           schemaJSON: [

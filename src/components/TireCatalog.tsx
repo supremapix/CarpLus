@@ -242,7 +242,9 @@ export default function TireCatalog() {
     description: seoDescription,
     canonical: seoCanonical,
     ogType: "website",
-    noindex: hasActiveFilters,
+    // Paginação (/pneus?page=2+) e URLs com filtros ativos recebem noindex,follow.
+    // Apenas a primeira página (/pneus) permanece indexável e canônica.
+    noindex: hasActiveFilters || safePage > 1,
     keywords: [
       'pneus curitiba', 'pneu aro 13', 'pneu aro 14', 'pneu aro 15', 'pneu aro 16',
       'pneu aro 17', 'pneu aro 18', 'pneu aro 19', 'pneu aro 20', 'pneu aro 21',

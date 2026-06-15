@@ -36,6 +36,7 @@ const BorrachariaPortao = lazy(() => import('./components/BorrachariaPortao'));
 const PneusCuritibaHub = lazy(() => import('./components/PneusCuritibaHub'));
 const PneusMedidasHub = lazy(() => import('./components/PneusMedidasHub'));
 const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDeMim'));
+const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
 
 // Landing pages SEO (todas no mesmo módulo)
 const AroLandingPage = lazy(() =>
@@ -223,6 +224,9 @@ export default function App() {
         <Route path="/fazenda-rio-grande.html" element={<Navigate to="/bairro/fazenda-rio-grande" replace />} />
         <Route path="/contenda.html" element={<Navigate to="/bairro/contenda" replace />} />
         
+        {/* Dashboard administrativo de SEO (noindex) */}
+        <Route path="/admin/seo" element={<AdminSeoDashboard />} />
+
         {/* 404 — SEMPRE POR ULTIMO */}
         <Route path="*" element={<NotFound />} />
         </Routes>

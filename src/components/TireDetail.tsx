@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 import { getTireReview } from '../data/tireReviews';
+import { decideTireIndexing, getCanonicalSlug } from '../lib/seoIndexing';
+import TireSeoContent from './TireSeoContent';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -65,6 +67,10 @@ export default function TireDetail() {
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
+  // Decisão de indexação inteligente: variantes equivalentes recebem canonical
+  // para a URL principal do grupo + noindex,follow. A página canônica é indexada.
+  const indexDecision = tire ? decideTireIndexing(tire) : null;
+
   // Avaliações e preço reais (quando cadastrados). Sem dados → schema sem rating/preço.
   const review = tire ? getTireReview(tire.slug) : undefined;
 
@@ -80,7 +86,7 @@ export default function TireDetail() {
         sku: tire.slug,
         brand: tire.marca,
         availability: "InStock",
-        url: `${BASE_URL}/pneu/${tire.slug}`,
+        url: `${BASE_URL}/pneu/${getCanonicalSlug(tire.slug)}`,
         // AggregateRating + Offer com preço são incluídos apenas quando há dados reais
         ...(review && {
           ratingValue: review.ratingValue,
@@ -106,7 +112,8 @@ export default function TireDetail() {
       ? {
           title: `${tire.nome} em Curitiba | Carplus Centro Automotivo – Portao`,
           description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em ate 10x sem juros, garantia de fabrica. Ligue: (41) 3082-7282.`,
-          canonical: `${BASE_URL}/pneu/${tire.slug}`,
+          canonical: indexDecision?.canonicalUrl ?? `${BASE_URL}/pneu/${tire.slug}`,
+          noindex: indexDecision ? !indexDecision.index : false,
           ogImage: tire.imagemGrande,
           ogType: 'product',
           schemaJSON: [productSchema, breadcrumbSchema].filter(Boolean),
@@ -437,6 +444,9 @@ export default function TireDetail() {
                 </motion.div>
             </div>
         </section>
+
+        {/* Conteúdo programático premium + linkagem interna contextual */}
+        <TireSeoContent tire={tire} />
 
         {/* Tips Section */}
         <TireTips tireName={tire.nome} categoria={tire.categoria} />
