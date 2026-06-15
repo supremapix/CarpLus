@@ -224,6 +224,9 @@ export default function App() {
         <Route path="/fazenda-rio-grande.html" element={<Navigate to="/bairro/fazenda-rio-grande" replace />} />
         <Route path="/contenda.html" element={<Navigate to="/bairro/contenda" replace />} />
         
+        {/* Dashboard administrativo de SEO (noindex) */}
+        <Route path="/admin/seo" element={<AdminSeoDashboard />} />
+
         {/* 404 — SEMPRE POR ULTIMO */}
         <Route path="*" element={<NotFound />} />
         </Routes>

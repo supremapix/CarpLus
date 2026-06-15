@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { CircleCheck as CheckCircle2, ChevronRight, BookOpen, GitCompare, Ruler, Tag, CarFront, Wrench, MessageSquare } from 'lucide-react';
 import { TIRES, type Tire } from '../data';
@@ -182,7 +183,7 @@ export default function TireSeoContent({ tire }: TireSeoContentProps) {
 }
 
 interface LinkBlockProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   items: { to: string; label: string }[];
   seeAll?: { to: string; label: string };
