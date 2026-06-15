@@ -1,6 +1,74 @@
 // /src/lib/schema.ts
 // Gerador de JSON-LD para Rich Snippets de Produto
 
+// ---------------------------------------------------------------------------
+// CONSTANTES CENTRALIZADAS (evitam duplicação e mantêm consistência enterprise)
+// ---------------------------------------------------------------------------
+
+/** Endereço oficial da loja Carplus (PostalAddress reutilizável). */
+const CARPLUS_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "Av. Presidente Arthur da Silva Bernardes, 1323",
+  addressLocality: "Curitiba",
+  addressRegion: "PR",
+  postalCode: "80320-300",
+  addressCountry: "BR",
+} as const;
+
+/** Vendedor enriquecido como AutoPartsStore — usado dentro de cada Offer. */
+export const CARPLUS_SELLER = {
+  "@type": "AutoPartsStore",
+  name: "Carplus Pneus e Oficina",
+  telephone: "+55-41-3082-7282",
+  address: CARPLUS_ADDRESS,
+} as const;
+
+/** Política de devolução — exigida pelo Google Rich Results (Merchant Listings). */
+export const CARPLUS_RETURN_POLICY = {
+  "@type": "MerchantReturnPolicy",
+  applicableCountry: "BR",
+  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+  merchantReturnDays: 7,
+  returnMethod: "https://schema.org/ReturnInStore",
+  returnFees: "https://schema.org/FreeReturn",
+} as const;
+
+/** Informações de entrega — exigidas pelo Google Rich Results (Merchant Listings). */
+export const CARPLUS_SHIPPING = {
+  "@type": "OfferShippingDetails",
+  shippingDestination: {
+    "@type": "DefinedRegion",
+    addressCountry: "BR",
+  },
+  deliveryTime: {
+    "@type": "ShippingDeliveryTime",
+    handlingTime: {
+      "@type": "QuantitativeValue",
+      minValue: 0,
+      maxValue: 1,
+      unitCode: "DAY",
+    },
+    transitTime: {
+      "@type": "QuantitativeValue",
+      minValue: 1,
+      maxValue: 7,
+      unitCode: "DAY",
+    },
+  },
+} as const;
+
+/** Retorna uma data ISO (YYYY-MM-DD) somando `days` à data atual. */
+export function addDays(days: number, base: Date = new Date()): string {
+  const d = new Date(base);
+  d.setDate(d.getDate() + days);
+  return d.toISOString().split("T")[0];
+}
+
+/** Data atual em formato ISO (YYYY-MM-DD), usada como fallback de dateModified. */
+export function todayISO(): string {
+  return new Date().toISOString().split("T")[0];
+}
+
 export interface ProductSchemaProps {
   name: string;
   description: string;
@@ -13,6 +81,8 @@ export interface ProductSchemaProps {
   url: string;
   ratingValue?: number;
   reviewCount?: number;
+  /** Data da última revisão de conteúdo (ISO YYYY-MM-DD). Default: hoje. */
+  dateModified?: string;
   reviews?: Array<{
     author: string;
     datePublished: string;
@@ -34,6 +104,7 @@ export function generateProductSchema(props: ProductSchemaProps): object {
     url,
     ratingValue,
     reviewCount,
+    dateModified,
     reviews = [],
   } = props;
 
@@ -55,63 +126,20 @@ export function generateProductSchema(props: ProductSchemaProps): object {
       "@type": "Brand",
       name: brand,
     },
+    // Última revisão de conteúdo da página (sinal de frescor para o Google)
+    dateModified: dateModified ?? todayISO(),
     offers: {
       "@type": "Offer",
       url,
       priceCurrency: currency,
       ...(price && { price: price.toFixed(2) }),
-      priceValidUntil: new Date(
-        new Date().setFullYear(new Date().getFullYear() + 1)
-      )
-        .toISOString()
-        .split("T")[0],
+      // Validade do preço dinâmica: 30 dias a partir de hoje
+      priceValidUntil: addDays(30),
       itemCondition: "https://schema.org/NewCondition",
       availability: availabilityMap[availability],
-      seller: {
-        "@type": "Organization",
-        name: "Carplus Centro Automotivo",
-        telephone: "+55-41-3082-7282",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Arthur da Silva Bernardes, 1323",
-          addressLocality: "Curitiba",
-          addressRegion: "PR",
-          postalCode: "80320-300",
-          addressCountry: "BR",
-        },
-      },
-      // Política de devolução — exigida pelo Google Rich Results para Merchant Listings
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "BR",
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 7,
-        returnMethod: "https://schema.org/ReturnInStore",
-        returnFees: "https://schema.org/FreeReturn",
-      },
-      // Informações de entrega — exigidas pelo Google Rich Results para Merchant Listings
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "BR",
-        },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: {
-            "@type": "QuantitativeValue",
-            minValue: 0,
-            maxValue: 1,
-            unitCode: "DAY",
-          },
-          transitTime: {
-            "@type": "QuantitativeValue",
-            minValue: 1,
-            maxValue: 7,
-            unitCode: "DAY",
-          },
-        },
-      },
+      seller: CARPLUS_SELLER,
+      hasMerchantReturnPolicy: CARPLUS_RETURN_POLICY,
+      shippingDetails: CARPLUS_SHIPPING,
     },
   };
 

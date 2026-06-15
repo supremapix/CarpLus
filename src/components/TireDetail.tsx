@@ -67,6 +67,14 @@ export default function TireDetail() {
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
+  // Data da última revisão de conteúdo (ISO para schema, formato PT-BR para exibição)
+  const modifiedISO = new Date().toISOString().split("T")[0];
+  const lastUpdated = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+
   // Decisão de indexação inteligente: variantes equivalentes recebem canonical
   // para a URL principal do grupo + noindex,follow. A página canônica é indexada.
   const indexDecision = tire ? decideTireIndexing(tire) : null;
@@ -87,6 +95,7 @@ export default function TireDetail() {
         brand: tire.marca,
         availability: "InStock",
         url: `${BASE_URL}/pneu/${getCanonicalSlug(tire.slug)}`,
+        dateModified: modifiedISO,
         // AggregateRating + Offer com preço são incluídos apenas quando há dados reais
         ...(review && {
           ratingValue: review.ratingValue,
@@ -290,8 +299,12 @@ export default function TireDetail() {
                             {tire.nome}
                         </h1>
 
-                        <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
+                        <p className="text-lg text-gray-600 mb-4 leading-relaxed font-medium">
                             {tire.descricao}
+                        </p>
+
+                        <p className="text-[11px] text-gray-400 font-medium mb-8">
+                            Última atualização: {lastUpdated}.
                         </p>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
