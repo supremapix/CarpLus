@@ -228,6 +228,80 @@ export function isMeasureIndexable(normalizedMedida: string): boolean {
   return countTiresByMeasure(normalizedMedida) >= 2;
 }
 
+// ─── PERFIL DOMINANTE DE PAGINAÇÃO ─────────────────────────────────────────────
+// Resolve o problema das páginas genéricas "Pneus em Curitiba - Página N", que não
+// têm intenção de busca real. Detecta automaticamente o padrão predominante dos
+// produtos exibidos numa página de paginação (marca / aro / categoria) e permite
+// redirecionar a autoridade para uma landing temática já existente e indexável.
+export type DominantDimension = 'marca' | 'aro' | 'categoria';
+
+export interface DominantProfile {
+  type: DominantDimension;
+  /** Valor predominante (ex.: "Michelin", 17, "SUV"). */
+  value: string | number;
+  /** Participação no total da página (0..1). */
+  share: number;
+  /** Quantos itens da página correspondem ao valor predominante. */
+  count: number;
+}
+
+// Limite mínimo de dominância para uma página virar landing temática (60%).
+export const DOMINANT_THRESHOLD = 0.6;
+
+/** Conta o valor mais frequente de uma dimensão dentro do conjunto. */
+function topValue(
+  tires: Tire[],
+  key: (t: Tire) => string | number | undefined | null,
+): { value: string | number; count: number } | null {
+  const counts = new Map<string | number, number>();
+  for (const t of tires) {
+    const v = key(t);
+    if (v === undefined || v === null || v === '') continue;
+    counts.set(v, (counts.get(v) || 0) + 1);
+  }
+  let best: { value: string | number; count: number } | null = null;
+  for (const [value, count] of counts) {
+    if (!best || count > best.count) best = { value, count };
+  }
+  return best;
+}
+
+/**
+ * Detecta o perfil predominante de uma lista de pneus (tipicamente a fatia de uma
+ * página de paginação). Retorna a dimensão com maior dominância acima do limite,
+ * priorizando marca > aro > categoria em caso de empate de participação.
+ * Retorna null quando NÃO há padrão forte — sinal de que a página deve receber
+ * noindex e ficar de fora do sitemap.
+ */
+export function detectDominantProfile(
+  tires: Tire[],
+  threshold: number = DOMINANT_THRESHOLD,
+): DominantProfile | null {
+  const total = tires.length;
+  if (total === 0) return null;
+
+  const dims: Array<{ type: DominantDimension; pick: (t: Tire) => string | number | undefined }> = [
+    { type: 'marca', pick: (t) => t.marca },
+    { type: 'aro', pick: (t) => t.aro },
+    { type: 'categoria', pick: (t) => t.categoria },
+  ];
+
+  const candidates: DominantProfile[] = [];
+  for (const dim of dims) {
+    const top = topValue(tires, dim.pick);
+    if (top) {
+      candidates.push({ type: dim.type, value: top.value, count: top.count, share: top.count / total });
+    }
+  }
+
+  const priority: Record<DominantDimension, number> = { marca: 3, aro: 2, categoria: 1 };
+  const strong = candidates
+    .filter((c) => c.share >= threshold)
+    .sort((a, b) => b.share - a.share || priority[b.type] - priority[a.type]);
+
+  return strong[0] ?? null;
+}
+
 // ─── AGREGADOS PARA O DASHBOARD / SITEMAP ──────────────────────────────────────
 export interface IndexableTire {
   tire: Tire;
