@@ -1,49 +1,1341 @@
 {
+  "redirects": [
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "2"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "3"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "4"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "5"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "6"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "7"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "8"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "9"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "10"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "11"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "12"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "13"
+        }
+      ],
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "15"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "16"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "17"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "18"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "19"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "20"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "21"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "22"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "23"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "24"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "25"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "26"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "27"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "28"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "29"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "30"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "31"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "32"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "33"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "34"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "35"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "36"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "37"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "38"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "39"
+        }
+      ],
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "42"
+        }
+      ],
+      "destination": "/pneu-firestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "43"
+        }
+      ],
+      "destination": "/pneu-firestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "44"
+        }
+      ],
+      "destination": "/pneu-firestone-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "46"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "47"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "48"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "49"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "50"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "51"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "52"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "53"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "54"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "55"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "56"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "57"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "58"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "59"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "60"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "61"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "62"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "63"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "64"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "65"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "66"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "67"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "68"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "69"
+        }
+      ],
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "70"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "71"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "72"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "73"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "74"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "75"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "76"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "77"
+        }
+      ],
+      "destination": "/pneu-prinx-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "79"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "80"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "81"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "82"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "83"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "84"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "85"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "86"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "87"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "88"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "89"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "90"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "91"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "92"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "93"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "94"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "95"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "96"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "97"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "98"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "99"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "100"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "101"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "102"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "103"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "104"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "105"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "106"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "107"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "108"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "109"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneus",
+      "has": [
+        {
+          "type": "query",
+          "key": "page",
+          "value": "110"
+        }
+      ],
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/(sitemap-produtos|sitemap-medidas|sitemap-veiculos|sitemap-servicos).xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/llms-full.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     }
   ]

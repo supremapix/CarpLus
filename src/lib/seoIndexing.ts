@@ -11,6 +11,7 @@
 // (scripts/generate-sitemap.ts) para garantir uma única fonte da verdade.
 
 import { TIRES, type Tire } from '../data';
+import { ARO_PAGES, BRAND_PAGES } from '../data/seoLanding';
 
 export const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 
@@ -300,6 +301,157 @@ export function detectDominantProfile(
     .sort((a, b) => b.share - a.share || priority[b.type] - priority[a.type]);
 
   return strong[0] ?? null;
+}
+
+// ─── CONSOLIDAÇÃO DE PAGINAÇÃO (transferência de autoridade) ───────────────────
+// Transforma páginas "/pneus?page=N" — que nunca têm intenção de busca própria —
+// em mecanismos de transferência de autoridade para as landings temáticas reais
+// já indexadas. Toda paginação permanece noindex,follow; quando há um tema
+// dominante, o canonical aponta para a landing e (acima de REDIRECT_THRESHOLD)
+// aplica-se 301 permanente. É a FONTE ÚNICA usada pelo catálogo (runtime), pelo
+// dashboard e pelo gerador de redirects (build).
+
+/** Itens por página do catálogo /pneus (espelha PER_PAGE de TireCatalog). */
+export const CATALOG_PER_PAGE = 24;
+
+/**
+ * Acima deste limite (≥85%) a paginação é tão dominada por um único tema que,
+ * havendo landing temática correspondente, aplicamos 301 permanente para ela.
+ * Entre DOMINANT_THRESHOLD e REDIRECT_THRESHOLD apenas consolidamos via canonical.
+ */
+export const REDIRECT_THRESHOLD = 0.85;
+
+// Mapas de slug temático (reutilizando as landings JÁ indexadas).
+const _brandSlugByName = new Map<string, string>(
+  BRAND_PAGES.map((p) => [p.marca.toLowerCase(), p.slug]),
+);
+const _aroSlugByNumber = new Map<number, string>(
+  ARO_PAGES.map((p) => [p.aro, p.slug]),
+);
+
+export interface ThematicLanding {
+  slug: string;
+  label: string;
+}
+
+/**
+ * Resolve a melhor landing temática EXISTENTE para um perfil dominante.
+ * Marca e aro possuem landings dedicadas; categoria (sem landing) retorna null.
+ * Nunca cria rotas novas — apenas reaproveita /pneus-{marca}-curitiba e
+ * /pneu-aro-{n}-curitiba.
+ */
+export function resolveThematicLanding(profile: DominantProfile | null): ThematicLanding | null {
+  if (!profile) return null;
+  if (profile.type === 'marca') {
+    const slug = _brandSlugByName.get(String(profile.value).toLowerCase());
+    return slug ? { slug, label: `Pneus ${profile.value} em Curitiba` } : null;
+  }
+  if (profile.type === 'aro') {
+    const slug = _aroSlugByNumber.get(Number(profile.value));
+    return slug ? { slug, label: `Pneus Aro ${profile.value} em Curitiba` } : null;
+  }
+  return null; // categoria não possui landing dedicada
+}
+
+/** Lista de pneus na ordenação padrão do catálogo (sem filtros). */
+export function getDefaultOrderedTires(): Tire[] {
+  return TIRES.filter((t) => t && t.slug)
+    .slice()
+    .sort((a, b) => a.marca.localeCompare(b.marca) || a.aro - b.aro);
+}
+
+export interface PaginationAnalysis {
+  page: number;
+  /** Quantidade de produtos exibidos na página. */
+  count: number;
+  profile: DominantProfile | null;
+  landing: ThematicLanding | null;
+  /** Sempre 'noindex,follow' — nenhuma paginação é indexável. */
+  robots: 'noindex,follow';
+  /** Canônica: landing temática quando existir, senão auto-referência a /pneus. */
+  canonical: string;
+  /** True quando dominância ≥ REDIRECT_THRESHOLD e há landing → 301 permanente. */
+  redirect: boolean;
+}
+
+/**
+ * Analisa TODAS as páginas de paginação do catálogo (page ≥ 2) na ordenação
+ * padrão, classificando robots/canonical/redirect.
+ */
+export function analyzePagination(): PaginationAnalysis[] {
+  const ordered = getDefaultOrderedTires();
+  const totalPages = Math.max(1, Math.ceil(ordered.length / CATALOG_PER_PAGE));
+  const out: PaginationAnalysis[] = [];
+
+  for (let page = 2; page <= totalPages; page++) {
+    const start = (page - 1) * CATALOG_PER_PAGE;
+    const slice = ordered.slice(start, start + CATALOG_PER_PAGE);
+    const profile = detectDominantProfile(slice);
+    const landing = resolveThematicLanding(profile);
+    const redirect = !!landing && !!profile && profile.share >= REDIRECT_THRESHOLD;
+    out.push({
+      page,
+      count: slice.length,
+      profile,
+      landing,
+      robots: 'noindex,follow',
+      canonical: landing ? `${BASE_URL}/${landing.slug}` : `${BASE_URL}/pneus`,
+      redirect,
+    });
+  }
+  return out;
+}
+
+export interface PaginationRedirect {
+  from: string; // ex.: /pneus?page=52
+  toSlug: string; // ex.: pneus-michelin-curitiba
+  to: string; // URL absoluta
+  page: number;
+}
+
+/** Redirects 301 a aplicar (dominância ≥ REDIRECT_THRESHOLD + landing existente). */
+export function getPaginationRedirects(): PaginationRedirect[] {
+  return analyzePagination()
+    .filter((p) => p.redirect && p.landing)
+    .map((p) => ({
+      from: `/pneus?page=${p.page}`,
+      toSlug: p.landing!.slug,
+      to: `${BASE_URL}/${p.landing!.slug}`,
+      page: p.page,
+    }));
+}
+
+export interface PaginationStats {
+  totalPaginated: number; // páginas page≥2
+  consolidated: number; // com landing temática (canonical consolidado)
+  redirected: number; // com 301 permanente
+  noindexOnly: number; // sem padrão forte (canonical auto + noindex)
+  indexableLandings: number; // landings reais de intenção (marca + aro)
+  consolidationRate: number; // consolidadas / total (0..1)
+  indexationRate: number; // % de aproveitamento dos sinais de paginação
+  lowIndexationAlert: boolean; // true quando indexationRate < 70%
+}
+
+/** Métricas de saúde de indexação da paginação (usadas pelo dashboard). */
+export function getPaginationStats(): PaginationStats {
+  const pages = analyzePagination();
+  const totalPaginated = pages.length;
+  const consolidated = pages.filter((p) => p.landing).length;
+  const redirected = pages.filter((p) => p.redirect).length;
+  const noindexOnly = totalPaginated - consolidated;
+  const indexableLandings = _brandSlugByName.size + _aroSlugByNumber.size;
+  const consolidationRate = totalPaginated > 0 ? consolidated / totalPaginated : 1;
+  const indexationRate = Math.round(consolidationRate * 100);
+  return {
+    totalPaginated,
+    consolidated,
+    redirected,
+    noindexOnly,
+    indexableLandings,
+    consolidationRate,
+    indexationRate,
+    lowIndexationAlert: indexationRate < 70,
+  };
 }
 
 // ─── AGREGADOS PARA O DASHBOARD / SITEMAP ──────────────────────────────────────
