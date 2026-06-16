@@ -32,6 +32,7 @@ import {
   COMPARISON_PAGES,
   MEASURE_SEO,
 } from '../src/data/seoLanding';
+import { CENTRO_AUTOMOTIVO_PAGES } from '../src/data/centroAutomotivoSeo';
 import { SERVICE_CATEGORIES } from '../src/data/services';
 import { INDEXABLE_NEIGHBORHOOD_SLUGS } from '../src/data/indexableNeighborhoods';
 
@@ -134,6 +135,7 @@ const landings: UrlEntry[] = [
   ...LOCAL_COMBO_PAGES,
   ...INTENT_PAGES,
   ...COMPARISON_PAGES,
+  ...CENTRO_AUTOMOTIVO_PAGES,
 ].map((p: { slug: string }) => ({
   loc: `${BASE_URL}/${p.slug}`,
   changefreq: 'weekly',

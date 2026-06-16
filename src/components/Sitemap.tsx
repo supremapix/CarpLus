@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
 import { ARO_PAGES, BRAND_PAGES, VEHICLE_PAGES, LOCAL_COMBO_PAGES } from '../data/seoLanding';
+import { CENTRO_AUTOMOTIVO_PAGES } from '../data/centroAutomotivoSeo';
 import { Link } from 'react-router-dom';
 import { MapPin, Wrench, Globe, ChevronRight, Circle, Car, Tag, Navigation } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
@@ -197,6 +198,24 @@ export default function Sitemap() {
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Páginas de Centro Automotivo (SEO Landing Pages) */}
+          <div className="mt-16 pt-12 border-t border-gray-100">
+            <h2 className="text-2xl font-bold uppercase tracking-tight flex items-center gap-2 border-b-2 border-primary pb-2 mb-8">
+              <Wrench size={24} className="text-primary" /> Centro Automotivo e Oficina
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-sm text-gray-600">
+              {CENTRO_AUTOMOTIVO_PAGES.map(p => (
+                <Link
+                  key={p.slug}
+                  to={`/${p.slug}`}
+                  className="hover:text-primary transition-colors flex items-center gap-1"
+                >
+                  <ChevronRight size={12} className="text-primary shrink-0" /> {p.breadcrumbName}
+                </Link>
+              ))}
             </div>
           </div>
 

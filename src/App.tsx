@@ -11,6 +11,7 @@ import {
   INTENT_PAGES,
   COMPARISON_PAGES,
 } from './data/seoLanding';
+import { CENTRO_AUTOMOTIVO_PAGES } from './data/centroAutomotivoSeo';
 
 // ───── Code-splitting: cada rota vira um chunk carregado sob demanda ─────
 const Home = lazy(() => import('./components/Home'));
@@ -37,6 +38,7 @@ const PneusCuritibaHub = lazy(() => import('./components/PneusCuritibaHub'));
 const PneusMedidasHub = lazy(() => import('./components/PneusMedidasHub'));
 const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDeMim'));
 const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
+const CentroAutomotivoSeoPage = lazy(() => import('./components/CentroAutomotivoSeoPage'));
 
 // Landing pages SEO (todas no mesmo módulo)
 const AroLandingPage = lazy(() =>
@@ -107,6 +109,11 @@ export default function App() {
       <Route path="/faq" element={<FAQPage />} />
       <Route path="/centro-automotivo-portao" element={<CentroAutomotivoPortao />} />
       <Route path="/borracharia-portao" element={<BorrachariaPortao />} />
+
+      {/* ───── Landing pages SEO de Centro Automotivo ───── */}
+      {CENTRO_AUTOMOTIVO_PAGES.map((p) => (
+        <Route key={p.slug} path={`/${p.slug}`} element={<CentroAutomotivoSeoPage slug={p.slug} />} />
+      ))}
 
       {/* ───── Hub SEO de Pneus ───── */}
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
