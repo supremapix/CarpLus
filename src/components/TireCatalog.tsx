@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
 import { useSEO } from '../hooks/useSEO';
-import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema, generateProductSchema } from '../lib/schema';
+import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { detectDominantProfile, resolveThematicLanding, REDIRECT_THRESHOLD } from '../lib/seoIndexing';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
@@ -200,23 +200,15 @@ export default function TireCatalog() {
       }))
     );
 
-    // 3. Product Schema por pneu exibido na página (limitado a 12 para não inflar o HTML).
-    const productSchemas = paginatedTires.slice(0, 12).map((tire) =>
-      generateProductSchema({
-        name: `${tire.marca} ${tire.nome} ${tire.medida} - Curitiba`,
-        description: tire.descricao,
-        image: `${BASE_URL}${tire.imagemGrande}`,
-        sku: tire.slug,
-        brand: tire.marca,
-        availability: "InStock",
-        url: `${BASE_URL}/pneu/${tire.slug}`,
-      })
-    );
+    // NOTA: Páginas de categoria/listagem (/pneus) NÃO emitem nós Product isolados.
+    // Sem preço real por pneu, um Product com `offers` sem `price` gera erro de
+    // Merchant Listings no Google. A vitrine é representada pelo ItemList acima
+    // (padrão recomendado); o Product completo vive na página de detalhe (/pneu/:slug).
 
     // 7. FAQPage Schema
     const faqSchema = generateFaqSchema(CATALOG_FAQS);
 
-    return [breadcrumbSchema, itemListSchema, faqSchema, ...productSchemas];
+    return [breadcrumbSchema, itemListSchema, faqSchema];
   }, [paginatedTires, startIndex, activeAro]);
 
   // Há filtros/busca ativos? Nesse caso a URL deixa de ser canônica e recebe noindex
