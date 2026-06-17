@@ -1,5 +1,5 @@
 
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
 import BackToTop from './components/BackToTop';
 import AnalyticsLoader from './components/AnalyticsLoader';
@@ -73,6 +73,13 @@ function RouteFallback() {
   );
 }
 
+// Redirect 301 de rotas legadas /pneus/:medida → /pneu-medida/:medida.
+// O Google rastreou URLs como /pneus/325-30-19, que nunca existiram como rota.
+function LegacyMedidaRedirect() {
+  const { medida } = useParams<{ medida: string }>();
+  return <Navigate to={`/pneu-medida/${medida ?? ''}`} replace />;
+}
+
 export default function App() {
   const { pathname } = useLocation();
 
@@ -96,6 +103,8 @@ export default function App() {
       <Route path="/pneus-promocao" element={<PneusPromocaoLista />} />
       <Route path="/pneu-promocao/:slug" element={<PneuPromocaoDetalhe />} />
       <Route path="/pneu-medida/:medida" element={<TireMeasureDetail />} />
+      {/* Redirect 301 de rota legada rastreada pelo Google */}
+      <Route path="/pneus/:medida" element={<LegacyMedidaRedirect />} />
       <Route path="/bairro/:slug" element={<NeighborhoodDetail />} />
       <Route path="/servico/:slug" element={<ServiceDetail />} />
       <Route path="/quem-somos" element={<AboutUs />} />

@@ -11,8 +11,9 @@ Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-medidas.xml
 Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-veiculos.xml
 Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-servicos.xml
 
-# Evita rastreamento de paginação e filtros (já marcados como noindex)
+# Evita rastreamento de paginação, filtros e template de busca (já marcados como noindex)
 Disallow: /*?page=
+Disallow: /*?q=
 Disallow: /pneus?*
 
 # LLMs.txt for AI assistants
@@ -49,11 +50,17 @@ Allow: /como-chegar
 # Google specific
 User-agent: Googlebot
 Allow: /
+Disallow: /*?page=
+Disallow: /*?q=
+Disallow: /pneus?*
 Crawl-delay: 0
 
 # Bing specific
 User-agent: Bingbot
 Allow: /
+Disallow: /*?page=
+Disallow: /*?q=
+Disallow: /pneus?*
 Crawl-delay: 0
 
 # Google Images

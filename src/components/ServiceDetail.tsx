@@ -394,10 +394,20 @@ export default function ServiceDetail() {
             }] : [])
           ]
         }
-      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.' }
+      : { title: 'Serviço não encontrado | Carplus', description: 'Serviço não encontrado.', noindex: true }
   );
 
-  if (!service) return <div>Serviço não encontrado</div>;
+  if (!service) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6 pt-24 md:pt-28">
+      <Navbar />
+      <div className="text-center">
+        <h1 className="text-4xl font-bold uppercase mb-4">Serviço não encontrado</h1>
+        <p className="text-gray-500 mb-8">O serviço que você procura não existe ou foi removido.</p>
+        <Link to="/servicos" className="bg-primary text-black px-7 py-3 rounded-full font-bold uppercase tracking-widest text-sm">Ver Todos os Serviços</Link>
+      </div>
+      <Footer />
+    </div>
+  );
 
   const Icon = getIcon(service.icon);
 

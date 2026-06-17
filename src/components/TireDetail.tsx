@@ -127,7 +127,7 @@ export default function TireDetail() {
           ogType: 'product',
           schemaJSON: [productSchema, breadcrumbSchema].filter(Boolean),
         }
-      : { title: 'Pneu nao encontrado | Carplus', description: 'Pneu nao encontrado.' }
+      : { title: 'Pneu nao encontrado | Carplus', description: 'Pneu nao encontrado.', noindex: true }
   );
 
   useEffect(() => {}, []);
