@@ -1,5 +1,4 @@
 {
-  "cleanUrls": true,
   "redirects": [
     {
       "source": "/pneus/:medida",
@@ -1383,5 +1382,6 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true
 }
