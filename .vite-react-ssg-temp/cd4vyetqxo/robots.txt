@@ -1,0 +1,72 @@
+# robots.txt - Carplus Centro Automotivo
+# https://www.carpluspneuseoficina.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemaps (índice + segmentados)
+Sitemap: https://www.carpluspneuseoficina.com.br/sitemap.xml
+Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-produtos.xml
+Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-medidas.xml
+Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-veiculos.xml
+Sitemap: https://www.carpluspneuseoficina.com.br/sitemap-servicos.xml
+
+# Evita rastreamento de paginação, filtros e template de busca (já marcados como noindex)
+Disallow: /*?page=
+Disallow: /*?q=
+Disallow: /pneus?*
+
+# LLMs.txt for AI assistants
+# https://llmstxt.org/
+# llms.txt: https://www.carpluspneuseoficina.com.br/llms.txt
+# llms-full.txt: https://www.carpluspneuseoficina.com.br/llms-full.txt
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block admin and internal paths (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow all important content
+Allow: /pneu/
+Allow: /pneus/
+Allow: /servico/
+Allow: /servicos
+Allow: /bairro/
+Allow: /bairros
+Allow: /pneu-medida/
+Allow: /pneus-curitiba
+Allow: /pneu-aro-
+Allow: /pneu-para-
+Allow: /loja-de-pneus-
+Allow: /quem-somos
+Allow: /contato
+Allow: /faq
+Allow: /como-chegar
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /*?page=
+Disallow: /*?q=
+Disallow: /pneus?*
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Disallow: /*?page=
+Disallow: /*?q=
+Disallow: /pneus?*
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /og-carplus.jpg
+
+# Host directive
+Host: https://www.carpluspneuseoficina.com.br

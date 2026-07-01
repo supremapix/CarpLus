@@ -1,17 +1,7 @@
-
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App.tsx';
+import { ViteReactSSG } from 'vite-react-ssg';
+import { routes } from './routes';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </StrictMode>,
-);
+// ViteReactSSG cuida do RouterProvider (data router) e do HelmetProvider internamente,
+// gerando HTML estático de cada rota no build (elimina a dependência de pré-render em runtime).
+export const createRoot = ViteReactSSG({ routes });

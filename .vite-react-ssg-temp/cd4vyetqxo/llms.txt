@@ -1,0 +1,125 @@
+# Carplus Centro Automotivo - Pneus e Oficina em Curitiba
+
+> Loja de pneus e centro automotivo em Curitiba, Parana, Brasil. Especialistas em venda e instalacao de pneus, alinhamento, balanceamento e servicos automotivos.
+
+## Informacoes da Empresa
+
+- **Nome**: Carplus Centro Automotivo
+- **Endereco**: R. Joao Bettega, 3199 - Portao, Curitiba - PR, 81070-001
+- **Telefone**: (41) 3246-3070
+- **WhatsApp**: (41) 98865-5566
+- **Email**: contato@carpluspneuseoficina.com.br
+- **Horario**: Segunda a Sexta 08:00-18:00, Sabado 08:00-12:00
+- **Website**: https://www.carpluspneuseoficina.com.br
+
+## Sobre Nos
+
+Carplus Centro Automotivo e uma loja de pneus e oficina mecanica localizada no bairro Portao em Curitiba. Com mais de 15 anos de experiencia, oferecemos:
+
+- Venda de pneus das principais marcas (Michelin, Pirelli, Continental, Goodyear, Bridgestone, Yokohama, Dunlop, Hankook, Kumho, Toyo, Nitto, BFGoodrich, Firestone, General Tire, GT Radial, Kenda, Laufenn, Maxxis, Nexen, Sailun, Triangle, Westlake, Achilles, Aptany, Delinte, Falken, Federal, Fuzion, Goodride, Haida, Hifly, Landsail, Linglong, Mazzini, Milestone, Nankang, Radar, Rotalla, Sunny, Torque, Vitour, Zeetex)
+- Servicos de alinhamento computadorizado 3D
+- Balanceamento de rodas
+- Troca de oleo e filtros
+- Revisao automotiva completa
+- Suspensao e freios
+- Ar condicionado automotivo
+- Injecao eletronica
+- Cambagem e caster
+
+## Catalogo de Pneus
+
+Temos mais de 2.600 modelos de pneus em estoque, incluindo:
+
+### Marcas Premium
+- Michelin (Primacy, Pilot Sport, CrossClimate, Energy)
+- Pirelli (Cinturato, P Zero, Scorpion, P7)
+- Continental (ContiSportContact, EcoContact, CrossContact, PowerContact)
+- Goodyear (EfficientGrip, Eagle, Wrangler, Assurance)
+- Bridgestone (Turanza, Potenza, Dueler, Ecopia)
+
+### Marcas Performance
+- Yokohama (ADVAN, GEOLANDAR, BluEarth, NEOVA)
+- Dunlop (SP Sport, Grandtrek, Direzza)
+- Hankook (Ventus, Kinergy, Dynapro)
+- Toyo (Proxes, Open Country)
+- Nitto (NT555, Terra Grappler)
+
+### Marcas Custo-Beneficio
+- Kumho, GT Radial, Kenda, Laufenn, Maxxis, Nexen
+- Sailun, Triangle, Westlake, Achilles, Aptany
+- Linglong, Goodride, Haida, Hifly, Landsail
+
+### Categorias de Pneus
+- Pneus para carros de passeio (aro 13 a 22)
+- Pneus para SUV e caminhonetes
+- Pneus para veiculos utilitarios e vans
+- Pneus off-road e todo-terreno (A/T, M/T)
+- Pneus esportivos e alta performance
+- Pneus run-flat
+
+## Servicos Automotivos
+
+### Pneus e Rodas
+- Alinhamento computadorizado 3D
+- Balanceamento de rodas
+- Troca e montagem de pneus
+- Rodizio de pneus
+- Reparo de pneus
+- Calibragem com nitrogenio
+
+### Mecanica Geral
+- Troca de oleo e filtros
+- Revisao de freios (pastilhas, discos, fluido)
+- Suspensao (amortecedores, molas, pivos, buchas)
+- Embreagem
+- Correia dentada
+- Sistema de arrefecimento
+
+### Servicos Especializados
+- Injecao eletronica
+- Ar condicionado automotivo
+- Diagnostico computadorizado
+- Scanner automotivo
+- Geometria de suspensao (cambagem, caster, convergencia)
+
+## Areas Atendidas
+
+### Curitiba - Bairros
+Portao, Agua Verde, Batel, Centro, Bigorrilho, Champagnat, Cristo Rei, Juveve, Merces, Reboucas, Santa Felicidade, Seminario, Alto da Gloria, Alto da XV, Bacacheri, Bom Retiro, Cabral, Cajuru, Campo Comprido, Capao Raso, CIC, Fazendinha, Hauer, Hugo Lange, Jardim Botanico, Jardim das Americas, Jardim Social, Lindoia, Novo Mundo, Orleans, Parolin, Pilarzinho, Pinheirinho, Prado Velho, Santa Quiteria, Santo Inacio, Sao Braz, Sao Lourenco, Sitio Cercado, Taruma, Tingui, Uberaba, Vila Izabel, Vista Alegre, Xaxim
+
+### Regiao Metropolitana
+Sao Jose dos Pinhais, Colombo, Araucaria, Campo Largo, Pinhais, Fazenda Rio Grande, Almirante Tamandare, Piraquara, Quatro Barras, Campo Magro, Campina Grande do Sul, Bocaiuva do Sul, Contenda, Mandirituba, Lapa
+
+## Estrutura do Site
+
+- `/` - Pagina inicial
+- `/pneus` - Catalogo completo de pneus com filtros
+- `/pneus-curitiba` - Central de pneus em Curitiba (hub por aro, marca, veiculo e bairro)
+- `/pneu/[slug]` - Pagina individual de cada pneu
+- `/pneu-aro-[13..20]-curitiba` - Pneus por aro em Curitiba (ex: /pneu-aro-15-curitiba)
+- `/pneu-[marca]-curitiba` - Pneus por marca (pirelli, michelin, goodyear, continental, yokohama)
+- `/pneu-para-[veiculo]-curitiba` - Pneus por veiculo (hb20, onix, corolla, civic, compass, renegade, t-cross, creta, argo, kwid)
+- `/pneu-medida/[medida]` - Pneus por medida (ex: /pneu-medida/175-65-14)
+- `/servicos` - Lista de todos os servicos
+- `/servico/[slug]` - Pagina individual de cada servico
+- `/bairros` - Bairros e cidades atendidas
+- `/bairro/[slug]` - Pagina por bairro/cidade
+- `/contato` - Informacoes de contato e formulario
+- `/sobre` - Sobre a empresa
+- `/sitemap` - Mapa do site visual
+- `/sitemap.xml` - Sitemap XML para buscadores
+
+## Contato
+
+Para orcamentos e agendamentos:
+- WhatsApp: (41) 98865-5566 (mais rapido)
+- Telefone: (41) 3246-3070
+- Email: contato@carpluspneuseoficina.com.br
+- Visite nossa loja: R. Joao Bettega, 3199 - Portao, Curitiba
+
+## Links Uteis
+
+- Catalogo de Pneus: https://www.carpluspneuseoficina.com.br/pneus
+- Servicos: https://www.carpluspneuseoficina.com.br/servicos
+- Contato: https://www.carpluspneuseoficina.com.br/contato
+- WhatsApp Direto: https://wa.me/5541988655566

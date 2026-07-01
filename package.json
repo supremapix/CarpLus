@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev": "vite-react-ssg dev --host",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "redirects": "tsx scripts/generate-redirects.ts",
     "prebuild": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-redirects.ts",
-    "build": "vite build",
+    "build": "vite-react-ssg build --mock",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
