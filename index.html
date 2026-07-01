@@ -7,7 +7,9 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <!-- robots por pagina vem do Helmet (componente <Seo/>): index/follow nas paginas
+         canonicas e noindex nas variantes/paginacao. Nao definir aqui para evitar
+         tags duplicadas/conflitantes no <head> do HTML gerado no build (SSG). -->
     <meta name="language" content="pt-BR" />
     <meta name="geo.region" content="BR-PR" />
     <meta name="geo.placename" content="Curitiba" />
@@ -42,12 +44,10 @@
     <link rel="preload" as="image" href="/images/hero-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 767px)" />
     <link rel="preload" as="image" href="/images/hero-desktop.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
     
-    <!-- Title/description/canonical/OG/Twitter por pagina sao gerenciados pelo React
-         (componente <Seo/> via react-helmet-async). Mantemos apenas defaults de fallback
-         abaixo, que o Helmet sobrescreve em cada rota. Assim evitamos tags duplicadas
-         (ex.: canonical apontando sempre para a home). -->
-    <title>Carplus Pneus e Oficina Mecânica no Portão | Centro Automotivo em Curitiba</title>
-    <meta name="description" content="Carplus Centro Automotivo: loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282." />
+    <!-- SEO por pagina (titulo, descricao, canonical, OG e Twitter) e 100% gerenciado
+         pelo React via o componente Seo (react-helmet-async) e fica embutido no HTML
+         estatico gerado no build (SSG via vite-react-ssg). Nao declarar tags de titulo
+         ou descricao aqui, para evitar duplicidade no cabecalho. -->
 
     <!-- Open Graph (defaults globais; og:title/description/url por pagina vem do Helmet) -->
     <meta property="og:type" content="website" />

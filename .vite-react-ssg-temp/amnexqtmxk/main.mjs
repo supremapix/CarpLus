@@ -2611,29 +2611,6 @@ const COMPARISON_PAGES = [
 function getComparisonPage(slug) {
   return COMPARISON_PAGES.find((p) => p.slug === slug);
 }
-const seoLanding = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  ADDRESS_FULL: ADDRESS_FULL$1,
-  ARO_PAGES,
-  BASE_URL,
-  BRAND_PAGES,
-  COMPARISON_PAGES,
-  INTENT_PAGES,
-  LOCAL_COMBO_PAGES,
-  MEASURE_SEO,
-  MEASURE_SLUGS,
-  OG_IMAGE,
-  PHONE_DISPLAY: PHONE_DISPLAY$1,
-  VEHICLE_PAGES,
-  WHATSAPP_NUMBER: WHATSAPP_NUMBER$1,
-  getAroPage,
-  getBrandPage,
-  getComparisonPage,
-  getIntentPage,
-  getLocalComboPage,
-  getVehiclePage,
-  normalizeText
-}, Symbol.toStringTag, { value: "Module" }));
 const WHATSAPP_NUMBER = "554130827282";
 const PHONE_DISPLAY = "(41) 3082-7282";
 const ADDRESS_FULL = "Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR";
@@ -3081,7 +3058,7 @@ const NotFound = lazy(() => import("./assets/NotFound-VeUBkCaf.js"));
 const ServicosPage = lazy(() => import("./assets/ServicosPage-DdWtry6y.js"));
 const ComoChegar = lazy(() => import("./assets/ComoChegar-CU6LKnt3.js"));
 const BairrosPage = lazy(() => import("./assets/BairrosPage-CKhLbpUu.js"));
-const FAQPage = lazy(() => import("./assets/FAQPage-CVhtXKrB.js"));
+const FAQPage = lazy(() => import("./assets/FAQPage-C9FMREUP.js"));
 const CentroAutomotivoPortao = lazy(() => import("./assets/CentroAutomotivoPortao-CWFwJtvv.js"));
 const BorrachariaPortao = lazy(() => import("./assets/BorrachariaPortao-CkW-MSWQ.js"));
 const PneusCuritibaHub = lazy(() => import("./assets/PneusCuritibaHub-G78stnCo.js"));
@@ -3119,8 +3096,7 @@ async function tirePaths() {
   return TIRES.filter((t) => t.slug && isCanonicalSlug(t.slug)).map((t) => `/pneu/${t.slug}`);
 }
 async function measurePaths() {
-  const { MEASURE_SLUGS: MEASURE_SLUGS2 } = await Promise.resolve().then(() => seoLanding);
-  return MEASURE_SLUGS2.map((s) => `/pneu-medida/${s}`);
+  return MEASURE_SLUGS.map((s) => `/pneu-medida/${s}`);
 }
 async function neighborhoodPaths() {
   const { INDEXABLE_NEIGHBORHOOD_SLUGS } = await import("./assets/indexableNeighborhoods-DE_rAs70.js");

@@ -9,6 +9,7 @@ import {
   LOCAL_COMBO_PAGES,
   INTENT_PAGES,
   COMPARISON_PAGES,
+  MEASURE_SLUGS,
 } from './data/seoLanding';
 import { CENTRO_AUTOMOTIVO_PAGES } from './data/centroAutomotivoSeo';
 
@@ -78,7 +79,6 @@ async function tirePaths(): Promise<string[]> {
 }
 
 async function measurePaths(): Promise<string[]> {
-  const { MEASURE_SLUGS } = await import('./data/seoLanding');
   return MEASURE_SLUGS.map((s) => `/pneu-medida/${s}`);
 }
 

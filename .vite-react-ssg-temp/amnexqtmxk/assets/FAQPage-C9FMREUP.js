@@ -1,5 +1,5 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { MessageCircleQuestion, Search, X, ChevronDown, Phone, MapPin, Clock, Disc, Settings, Wrench, Car } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
@@ -130,26 +130,6 @@ function FAQPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [openIndex, setOpenIndex] = useState(null);
-  useEffect(() => {
-    document.title = "FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba";
-    let desc = document.querySelector('meta[name="description"]');
-    if (!desc) {
-      desc = document.createElement("meta");
-      desc.setAttribute("name", "description");
-      document.head.appendChild(desc);
-    }
-    desc.setAttribute(
-      "content",
-      "Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Centro Automotivo no Portão, Curitiba."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.carpluspneuseoficina.com.br/faq";
-  }, []);
   const filteredFaqs = useMemo(() => {
     return faqData.filter((faq) => {
       const matchesSearch = searchTerm === "" || faq.pergunta.toLowerCase().includes(searchTerm.toLowerCase()) || faq.resposta.toLowerCase().includes(searchTerm.toLowerCase());
@@ -172,15 +152,15 @@ function FAQPage() {
       }
     }))
   };
+  const __seo = useSEO({
+    title: "FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba",
+    description: "Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Centro Automotivo no Portão, Curitiba.",
+    canonical: "https://www.carpluspneuseoficina.com.br/faq",
+    schemaJSON: faqSchemaData
+  });
   return /* @__PURE__ */ jsxs("div", { className: "min-h-screen bg-[#0f0f0f]", children: [
+    __seo,
     /* @__PURE__ */ jsx(Navbar, {}),
-    /* @__PURE__ */ jsx(
-      "script",
-      {
-        type: "application/ld+json",
-        dangerouslySetInnerHTML: { __html: JSON.stringify(faqSchemaData) }
-      }
-    ),
     /* @__PURE__ */ jsxs("section", { className: "relative pt-32 pb-16 bg-[#0f0f0f] overflow-hidden", children: [
       /* @__PURE__ */ jsxs("div", { className: "absolute inset-0 opacity-20", children: [
         /* @__PURE__ */ jsx("div", { className: "absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" }),

@@ -1,9 +1,10 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Search, MessageCircleQuestion, Phone, MapPin, ChevronDown, ChevronUp, Disc, Car, Settings, Wrench, Clock, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useSEO } from '../hooks/useSEO';
 
 interface FAQItem {
   pergunta: string;
@@ -148,31 +149,6 @@ export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    document.title = 'FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba';
-
-    // Meta description
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.setAttribute('name', 'description');
-      document.head.appendChild(desc);
-    }
-    desc.setAttribute(
-      'content',
-      'Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Centro Automotivo no Portão, Curitiba.'
-    );
-
-    // Canonical (host unico com www)
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.carpluspneuseoficina.com.br/faq';
-  }, []);
-
   const filteredFaqs = useMemo(() => {
     return faqData.filter(faq => {
       const matchesSearch = searchTerm === '' || 
@@ -199,15 +175,20 @@ export default function FAQPage() {
     }))
   };
 
+  // SEO via Helmet (capturado no HTML gerado no build/SSG). O schema FAQPage
+  // é injetado aqui; LocalBusiness/Organization ficam na fonte única (index.html).
+  const __seo = useSEO({
+    title: 'FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba',
+    description:
+      'Perguntas frequentes sobre pneus, alinhamento 3D, balanceamento, freios, suspensão e serviços automotivos da Carplus Centro Automotivo no Portão, Curitiba.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/faq',
+    schemaJSON: faqSchemaData,
+  });
+
   return (
     <div className="min-h-screen bg-[#0f0f0f]">
+      {__seo}
       <Navbar />
-      
-      {/* Schema Markup for SEO - apenas FAQPage. LocalBusiness vem da fonte unica (index.html). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
-      />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-[#0f0f0f] overflow-hidden">
