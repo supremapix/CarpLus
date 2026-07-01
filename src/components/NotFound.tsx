@@ -37,7 +37,7 @@ const FAQ_ITEMS = [
 export default function NotFound() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useSEO({
+  const __seo = useSEO({
     title: 'Página não encontrada (404) | Carplus Pneus e Oficina Curitiba',
     description: 'A página que você procura não existe. Conheça os pneus e serviços da Carplus Centro Automotivo no Portão, Curitiba.',
     noindex: true,
@@ -45,6 +45,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen bg-dark text-white flex flex-col">
+      {__seo}
       {/* Hero 404 */}
       <section className="flex-1 flex flex-col items-center justify-center px-4 py-20 text-center">
         {/* Logo animada */}

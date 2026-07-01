@@ -128,7 +128,7 @@ export default function ServicosPage() {
   const navRef = useRef<HTMLDivElement>(null);
 
   // SEO - Otimizado para SEO local com canonical correto
-  useSEO({
+  const __seo = useSEO({
     title: 'Serviços de Oficina e Pneus em Curitiba Portão | Carplus Centro Automotivo',
     description: 'Alinhamento 3D, troca de pneus, óleo, suspensão e freios em Curitiba. Carplus Centro Automotivo no Portão – agende pelo (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/servicos/',
@@ -187,6 +187,7 @@ export default function ServicosPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      {__seo}
       <Navbar />
 
       {/* Schema Markup */}

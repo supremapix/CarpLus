@@ -28,7 +28,7 @@ const REASON_LABEL: Record<NoindexReason, string> = {
 type FilterKey = 'all' | 'indexable' | 'duplicate' | 'low-score' | 'thin';
 
 export default function AdminSeoDashboard() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Dashboard SEO | Carplus (Admin)',
     description: 'Painel interno de monitoramento de indexação.',
     noindex: true,
@@ -87,6 +87,7 @@ export default function AdminSeoDashboard() {
 
   return (
     <div className="min-h-screen bg-dark text-white">
+      {__seo}
       <header className="border-b border-white/10 px-4 md:px-8 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>

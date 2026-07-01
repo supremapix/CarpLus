@@ -72,7 +72,7 @@ export default function PneusPromocaoLista() {
     { name: 'Pneus em Promoção', url: pageUrl },
   ]);
 
-  useSEO({
+  const __seo = useSEO({
     title: 'Pneus em Promoção em Curitiba | Lista Completa – Carplus Portão',
     description:
       'Lista completa de pneus em promoção em Curitiba a partir de R$ 239. Veja preço, medida e carros compatíveis de cada modelo. Montagem inclusa e até 10x sem juros na Carplus, no Portão. WhatsApp: (41) 3082-7282.',
@@ -92,6 +92,7 @@ export default function PneusPromocaoLista() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      {__seo}
       <Navbar />
 
       <main className="flex-1 pt-24 md:pt-28">

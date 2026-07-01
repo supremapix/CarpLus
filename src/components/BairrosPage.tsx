@@ -72,7 +72,7 @@ export default function BairrosPage() {
   const [zona, setZona] = useState('Todos');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useSEO({
+  const __seo = useSEO({
     title: 'Bairros Atendidos em Curitiba e Região | Carplus Pneus e Oficina',
     description: 'A Carplus atende todos os bairros de Curitiba e a região metropolitana a partir do Portão. Veja tempo de deslocamento e rotas até a nossa loja.',
     canonical: 'https://www.carpluspneuseoficina.com.br/bairros',
@@ -102,6 +102,7 @@ export default function BairrosPage() {
 
   return (
     <div className="min-h-screen bg-dark">
+      {__seo}
       <Navbar />
 
       {/* Hero */}

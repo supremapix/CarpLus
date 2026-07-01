@@ -24,7 +24,7 @@ const OfertasExclusivas = lazy(() => import('./OfertasExclusivas'));
 const PneusPorAroSection = lazy(() => import('./PneusPorAroSection'));
 
 export default function Home() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão',
     description: 'Loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/',
@@ -34,6 +34,7 @@ export default function Home() {
 
   return (
     <div className="relative">
+      {__seo}
       <Navbar />
       <main>
         <Hero />

@@ -16,7 +16,7 @@ const FEATURED_TIRES = TIRE_BRANDS.flatMap(brand =>
 );
 
 export default function Sitemap() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Mapa do Site | Carplus Centro Automotivo - Pneus e Servicos em Curitiba',
     description: 'Navegue por todas as paginas do site Carplus Centro Automotivo. Encontre pneus por marca, servicos automotivos, bairros atendidos em Curitiba e regiao metropolitana.',
     canonical: 'https://www.carpluspneuseoficina.com.br/sitemap',
@@ -40,6 +40,7 @@ export default function Sitemap() {
 
   return (
     <div className="bg-white min-h-screen">
+      {__seo}
       <Navbar />
       <main className="pt-32 md:pt-36 pb-24">
         <div className="max-w-7xl mx-auto px-4">

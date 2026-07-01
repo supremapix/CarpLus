@@ -65,7 +65,7 @@ function Section({
 }
 
 export default function PneusCuritibaHub() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Pneus em Curitiba | Carplus Centro Automotivo – Aros, Marcas e Medidas',
     description:
       'Pneus em Curitiba na Carplus, bairro Portão. Encontre pneus por aro (13 ao 20), por marca (Pirelli, Michelin, Goodyear, Continental, Yokohama), por medida e por veículo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
@@ -85,6 +85,7 @@ export default function PneusCuritibaHub() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
+      {__seo}
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
         {/* Breadcrumb */}

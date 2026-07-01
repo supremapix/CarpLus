@@ -144,7 +144,7 @@ export default function PneuPromocaoDetalhe() {
         }
       : null;
 
-  useSEO(
+  const __seo = useSEO(
     tire
       ? {
           title: `Pneu ${tire.marca} ${tire.medida} em Promoção | ${tire.preco} – Carplus Curitiba`,
@@ -200,6 +200,7 @@ export default function PneuPromocaoDetalhe() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 md:pt-28">
+      {__seo}
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">

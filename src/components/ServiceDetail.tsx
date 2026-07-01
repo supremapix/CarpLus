@@ -340,7 +340,7 @@ export default function ServiceDetail() {
     keywords: [`${newService.name.toLowerCase()} curitiba`, `${newService.name.toLowerCase()} portão`]
   } : null);
 
-  useSEO(
+  const __seo = useSEO(
     service
       ? {
           title: `${service.title} em Curitiba Portão | Carplus Centro Automotivo`,
@@ -413,6 +413,7 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-dark">
+      {__seo}
       <Navbar />
       
       <main className="bg-white">

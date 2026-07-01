@@ -262,7 +262,7 @@ export default function TireCatalog() {
     seoCanonical = `${BASE_URL}/pneus`;
   }
 
-  useSEO({
+  const __seo = useSEO({
     title: seoTitle,
     description: seoDescription,
     canonical: seoCanonical,
@@ -351,6 +351,7 @@ export default function TireCatalog() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {__seo}
       <Navbar />
       
       {/* Hero Section */}

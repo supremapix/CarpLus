@@ -1,4 +1,4 @@
-import { Head } from 'vite-react-ssg';
+import { Helmet } from 'react-helmet-async';
 
 export interface SEOProps {
   title: string;
@@ -21,9 +21,10 @@ const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
  * Componente de SEO renderizado na árvore React.
  *
  * Substitui o antigo hook `useSEO` (que manipulava o DOM via useEffect e só
- * funcionava no navegador). Ao renderizar via `<Head>` (react-helmet-async, por
- * baixo do vite-react-ssg), as tags são capturadas no HTML gerado no build (SSG),
- * eliminando a dependência de pré-render em runtime.
+ * funcionava no navegador). Ao renderizar via `<Helmet>` (react-helmet-async), as
+ * tags entram na árvore React e são capturadas no HTML gerado no build (SSG via
+ * vite-react-ssg, que usa o mesmo HelmetProvider), eliminando a dependência de
+ * pré-render em runtime.
  */
 export function Seo({
   title,
@@ -46,7 +47,7 @@ export function Seo({
   const schemas = schemaJSON ? (Array.isArray(schemaJSON) ? schemaJSON : [schemaJSON]) : [];
 
   return (
-    <Head>
+    <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta
@@ -87,6 +88,6 @@ export function Seo({
           {JSON.stringify(schema)}
         </script>
       ))}
-    </Head>
+    </Helmet>
   );
 }

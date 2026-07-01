@@ -63,7 +63,7 @@ export default function NeighborhoodDetail() {
   // Os demais recebem noindex para evitar o problema de "thin content".
   const shouldIndex = isIndexableNeighborhood(slugForUrl);
 
-  useSEO(
+  const __seo = useSEO(
     bairro && seoContent
       ? {
           title: seoContent.metaTitle,
@@ -140,6 +140,7 @@ export default function NeighborhoodDetail() {
 
   return (
     <div className="bg-white min-h-screen">
+      {__seo}
       <Navbar />
       
       <main>
