@@ -3,7 +3,7 @@ import Footer from '../Footer';
 import { useSEO } from '../../hooks/useSEO';
 
 export default function PrivacyPolicy() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Política de Privacidade | Carplus Pneus e Oficina Curitiba',
     description: 'Saiba como a Carplus Centro Automotivo coleta, usa e protege os dados dos clientes em Curitiba. Política de Privacidade da loja de pneus e oficina no Portão.',
     canonical: 'https://www.carpluspneuseoficina.com.br/politica-de-privacidade',
@@ -12,6 +12,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="bg-white min-h-screen">
+      {__seo}
       <Navbar />
       <main className="pt-32 md:pt-36 pb-24 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl mb-8">Política de Privacidade</h1>

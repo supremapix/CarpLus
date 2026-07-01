@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, MessageSquare, Navigation, Clock } from 'lucide-re
 import { useSEO } from '../../hooks/useSEO';
 
 export default function Contact() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Contato – Carplus Pneus e Oficina no Portão, Curitiba',
     description: 'Fale com a Carplus Centro Automotivo: (41) 3082-7282, WhatsApp e endereço na Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Orçamento de pneus e serviços.',
     canonical: 'https://www.carpluspneuseoficina.com.br/contato',
@@ -14,6 +14,7 @@ export default function Contact() {
 
   return (
     <div className="bg-white min-h-screen">
+      {__seo}
       <Navbar />
       <main className="pt-[130px] pb-24">
         <div className="max-w-7xl mx-auto px-4">

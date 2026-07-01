@@ -3,7 +3,7 @@ import Footer from '../Footer';
 import { useSEO } from '../../hooks/useSEO';
 
 export default function ReturnPolicy() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Trocas, Devoluções e Garantia | Carplus Pneus Curitiba',
     description: 'Política de trocas, devoluções e garantia da Carplus Centro Automotivo: garantia de fábrica nos pneus e 90 dias nos serviços de oficina, conforme o CDC.',
     canonical: 'https://www.carpluspneuseoficina.com.br/trocas-e-devolucoes',
@@ -12,6 +12,7 @@ export default function ReturnPolicy() {
 
   return (
     <div className="bg-white min-h-screen">
+      {__seo}
       <Navbar />
       <main className="pt-32 md:pt-36 pb-24 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl mb-8">Política de Devolução e Garantia</h1>

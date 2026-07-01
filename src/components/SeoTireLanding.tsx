@@ -212,7 +212,7 @@ export default function SeoTireLanding({
     })),
   };
 
-  useSEO({
+  const __seo = useSEO({
     title: metaTitle,
     description: metaDescription,
     canonical: `${BASE_URL}${canonicalPath}`,
@@ -242,6 +242,7 @@ export default function SeoTireLanding({
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 md:pt-28 pb-20 md:pb-0">
+      {__seo}
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">

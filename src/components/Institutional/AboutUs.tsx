@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useSEO } from '../../hooks/useSEO';
 
 export default function AboutUs() {
-  useSEO({
+  const __seo = useSEO({
     title: 'Quem Somos | Carplus Pneus e Oficina em Curitiba desde 2014',
     description: 'Conheça a Carplus Pneus: referência em pneus e serviços automotivos no Portão, Curitiba, desde 2014. Equipe especializada, estrutura moderna e atendimento transparente.',
     canonical: 'https://www.carpluspneuseoficina.com.br/quem-somos',
@@ -17,6 +17,7 @@ export default function AboutUs() {
 
   return (
     <div className="bg-dark min-h-screen">
+      {__seo}
       <Navbar />
       <main className="pt-[120px] pb-16">
         {/* Hero Section */}

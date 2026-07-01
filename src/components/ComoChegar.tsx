@@ -57,7 +57,7 @@ const FAQ_ITEMS = [
 export default function ComoChegar() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useSEO({
+  const __seo = useSEO({
     title: 'Como Chegar na Carplus – Pneus e Oficina no Portão, Curitiba',
     description: 'Como chegar na Carplus Centro Automotivo: Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Rotas, tempo e estacionamento próprio. (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/como-chegar',
@@ -76,6 +76,7 @@ export default function ComoChegar() {
 
   return (
     <div className="min-h-screen bg-dark">
+      {__seo}
       <Navbar />
 
       {/* Hero */}
