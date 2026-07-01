@@ -97,23 +97,6 @@ async function promoPaths(): Promise<string[]> {
   return PROMO_TIRES.map((t) => `/pneu-promocao/${t.slug}`);
 }
 
-// Slugs de bairros antigos (.html) → redirect 301 para /bairro/:slug
-const LEGACY_BAIRRO_HTML = [
-  'taboao', 'agua-verde', 'alto-da-rua-xv', 'bacacheri', 'batel', 'boqueirao',
-  'caiua', 'campo-comprido', 'campo-de-santana', 'capao-raso', 'cascatinha',
-  'caximba', 'centro', 'cic', 'conquista', 'cristo-rei', 'fazendinha',
-  'ganchinho', 'guaira', 'hauer', 'hugo-lange', 'jardim-botanico',
-  'jardim-das-americas', 'jardim-gabineto', 'jardim-da-ordem', 'jardim-itatiaia',
-  'jardim-social', 'juveve', 'lamenha-pequena', 'lindoia', 'merces', 'neoville',
-  'novo-mundo', 'orleans', 'parolin', 'pilarzinho', 'prado-velho', 'reboucas',
-  'santa-candida', 'santa-felicidade', 'santo-inacio', 'sao-braz', 'sao-lourenco',
-  'sao-miguel', 'taruma', 'uberaba', 'umbara', 'vila-nossa-senhora-da-luz',
-  'vila-oficinas', 'vila-sandra', 'vila-sao-pedro', 'vista-alegre', 'vitoria-regia',
-  'ahu', 'atenas', 'bairro-alto', 'bigorrilho', 'butiatuvinha', 'cajuru', 'portao',
-  'santa-quiteria', 'sao-jose-dos-pinhais', 'colombo', 'araucaria', 'pinhais',
-  'campo-largo', 'almirante-tamandare', 'fazenda-rio-grande', 'contenda',
-];
-
 export const routes: RouteRecord[] = [
   {
     // Rota "pathless": aplica o layout a todas as filhas mantendo os paths absolutos.
@@ -194,11 +177,11 @@ export const routes: RouteRecord[] = [
         element: <ComparisonLandingPage slug={p.slug} />,
       })),
 
-      // Redirects bairros .html → /bairro/:slug
-      ...LEGACY_BAIRRO_HTML.map((slug) => ({
-        path: `/${slug}.html`,
-        element: <Navigate to={`/bairro/${slug}`} replace />,
-      })),
+      // Redirects bairros ".html" (URLs legadas) → /bairro/:slug
+      // NÃO definidos aqui como rotas: um path terminando em ".html" faz o SSG
+      // gerar arquivos ".html.html" e não cobre a URL real. Esses 301 são
+      // server-side reais, escritos no vercel.json por scripts/generate-redirects.ts
+      // (buildLegacyRedirects → /:slug.html → /bairro/:slug), aplicados no edge.
 
       // Dashboard administrativo de SEO (noindex)
       { path: '/admin/seo', element: <AdminSeoDashboard /> },

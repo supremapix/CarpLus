@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, type ReactNode } from 'react';
 import { Search, MessageCircleQuestion, Phone, MapPin, ChevronDown, ChevronUp, Disc, Car, Settings, Wrench, Clock, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -132,7 +132,7 @@ const faqData: FAQItem[] = [
 
 const categorias = ["Todos", "Pneus", "Alinhamento", "Freios", "Suspensao", "Ar Condicionado", "Revisao", "Diagnostico", "Carplus", "Pneu Furado"];
 
-const categoryIcons: Record<string, React.ReactNode> = {
+const categoryIcons: Record<string, ReactNode> = {
   "Pneus": <Disc size={16} />,
   "Alinhamento": <Settings size={16} />,
   "Freios": <Car size={16} />,

@@ -19,6 +19,8 @@
 import fs from 'fs';
 import path from 'path';
 import { getPaginationRedirects, REDIRECT_THRESHOLD } from '../src/lib/seoIndexing';
+import { BRAND_PAGES } from '../src/data/seoLanding';
+import { LEGACY_BAIRRO_HTML } from '../src/data/legacyRedirects';
 
 const ROOT = process.cwd();
 const VERCEL_JSON = path.join(ROOT, 'vercel.json');
@@ -39,6 +41,23 @@ function isPaginationRule(r: RedirectRule): boolean {
   );
 }
 
+/**
+ * Regras "legadas" autogeradas (301 estáticos de URLs antigas):
+ *  - /pneus/:medida        → /pneu-medida/:medida
+ *  - /:legacySlug (marca)  → /:slug (novo slug plural)
+ *  - /:slug.html (bairro)  → /bairro/:slug
+ * Reconhecidas para regeneração idempotente (removidas antes de reescrever).
+ */
+function isGeneratedLegacyRule(r: RedirectRule): boolean {
+  if (r.has) return false; // regras legadas não usam query
+  if (r.source === '/pneus/:medida') return true;
+  if (r.source.endsWith('.html')) return true;
+  const brandLegacy = BRAND_PAGES.some(
+    (p) => p.legacySlug && r.source === `/${p.legacySlug}`,
+  );
+  return brandLegacy;
+}
+
 function buildPaginationRedirects(): RedirectRule[] {
   return getPaginationRedirects().map((r) => ({
     // Query-based 301: /pneus?page=N → /landing (permanente), mesmo host.
@@ -47,6 +66,32 @@ function buildPaginationRedirects(): RedirectRule[] {
     destination: `/${r.toSlug}`,
     permanent: true,
   }));
+}
+
+/** 301 estáticos de URLs legadas (rastreadas pelo Google) → URLs canônicas atuais. */
+function buildLegacyRedirects(): RedirectRule[] {
+  const rules: RedirectRule[] = [];
+
+  // Rota legada /pneus/:medida (nunca existiu como página) → /pneu-medida/:medida
+  rules.push({
+    source: '/pneus/:medida',
+    destination: '/pneu-medida/:medida',
+    permanent: true,
+  });
+
+  // Slugs antigos (singular) de marca → novos slugs (plural)
+  for (const p of BRAND_PAGES) {
+    if (p.legacySlug) {
+      rules.push({ source: `/${p.legacySlug}`, destination: `/${p.slug}`, permanent: true });
+    }
+  }
+
+  // Bairros servidos como ".html" na SPA legada → /bairro/:slug
+  for (const slug of LEGACY_BAIRRO_HTML) {
+    rules.push({ source: `/${slug}.html`, destination: `/bairro/${slug}`, permanent: true });
+  }
+
+  return rules;
 }
 
 function main() {
@@ -58,10 +103,15 @@ function main() {
     [k: string]: unknown;
   };
 
-  // Preserva redirects manuais (qualquer regra que NÃO seja de paginação).
-  const manualRedirects = (config.redirects ?? []).filter((r) => !isPaginationRule(r));
+  // Preserva redirects manuais (qualquer regra que NÃO seja autogerada:
+  // nem paginação, nem legada).
+  const manualRedirects = (config.redirects ?? []).filter(
+    (r) => !isPaginationRule(r) && !isGeneratedLegacyRule(r),
+  );
   const generated = buildPaginationRedirects();
-  const redirects = [...manualRedirects, ...generated];
+  const legacy = buildLegacyRedirects();
+  // Legados primeiro (mais específicos / paths), depois paginação (query-based).
+  const redirects = [...manualRedirects, ...legacy, ...generated];
 
   // redirects antes de rewrites (o Vercel aplica redirects primeiro).
   const ordered: Record<string, unknown> = {};
@@ -74,10 +124,11 @@ function main() {
 
   fs.writeFileSync(VERCEL_JSON, JSON.stringify(ordered, null, 2) + '\n');
 
-  console.log('[redirects] Redirects 301 de paginação gerados:');
+  console.log('[redirects] Redirects 301 gerados no vercel.json:');
   console.log(`  - threshold de redirect : ${Math.round(REDIRECT_THRESHOLD * 100)}%`);
   console.log(`  - regras manuais        : ${manualRedirects.length}`);
-  console.log(`  - regras geradas (301)  : ${generated.length}`);
+  console.log(`  - regras legadas (301)  : ${legacy.length} (/pneus/:medida, marcas, bairros .html)`);
+  console.log(`  - regras paginação (301): ${generated.length}`);
   for (const g of generated) {
     console.log(`    /pneus?page=${g.has?.[0].value} → ${g.destination}`);
   }
