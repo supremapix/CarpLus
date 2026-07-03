@@ -11,11 +11,9 @@ const GALLERY_IMAGES = [
   { src: '/images/galeria/jeep-compass.webp', alt: 'Jeep Compass no elevador' },
   { src: '/images/galeria/alinhamento-jeep.webp', alt: 'Servico de alinhamento' },
   { src: '/images/galeria/troca-pneu.webp', alt: 'Troca de pneu' },
-  { src: '/images/galeria/mecanico-motor.webp', alt: 'Mecanico trabalhando no motor' },
   { src: '/images/galeria/oficina-carros.webp', alt: 'Oficina com carros nos elevadores' },
   { src: '/images/galeria/montagem-pneu.webp', alt: 'Montagem de pneu' },
   { src: '/images/galeria/rodas-pretas.webp', alt: 'Rodas esportivas' },
-  { src: '/images/galeria/mecanicos-trabalho.webp', alt: 'Mecanicos trabalhando na Carplus Pneus' },
   { src: '/images/galeria/display-pneus.webp', alt: 'Display de pneus Pirelli' },
   { src: '/images/galeria/escritorio.webp', alt: 'Escritorio Carplus Pneus' },
   { src: '/images/galeria/fachada-logo.webp', alt: 'Fachada com logo Carplus Pneus' },
@@ -55,7 +53,7 @@ export default function AboutGallery() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-2xl md:text-3xl font-bold text-white text-center mb-8"
+        className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8"
       >
         Conheca Nossa <span className="text-amber-500">Estrutura</span>
       </motion.h2>
@@ -109,7 +107,7 @@ export default function AboutGallery() {
               onClick={() => handleThumbnailClick(index)}
               className={`relative flex-shrink-0 w-20 h-14 lg:w-full lg:h-20 xl:h-24 rounded-lg overflow-hidden transition-all duration-200 ${
                 selectedIndex === index
-                  ? 'ring-2 ring-amber-500 ring-offset-2 ring-offset-[#0d0d0d]'
+                  ? 'ring-2 ring-amber-500 ring-offset-2 ring-offset-white'
                   : 'opacity-60 hover:opacity-100'
               }`}
             >

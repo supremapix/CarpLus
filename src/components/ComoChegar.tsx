@@ -75,29 +75,29 @@ export default function ComoChegar() {
   });
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 bg-dark text-center relative overflow-hidden">
+      <section className="pt-32 pb-16 px-4 bg-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
         <div className="max-w-3xl mx-auto">
-          <nav className="text-xs text-white/40 mb-6 flex items-center justify-center gap-2">
-            <Link to="/" className="hover:text-white/70 transition-colors">Home</Link>
-            <span className="text-white/20">›</span>
-            <span className="text-white/60">Como Chegar</span>
+          <nav className="text-xs text-gray-500 mb-6 flex items-center justify-center gap-2">
+            <Link to="/" className="hover:text-gray-800 transition-colors">Home</Link>
+            <span className="text-gray-300">›</span>
+            <span className="text-gray-600">Como Chegar</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none mb-4 italic text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-gray-900 leading-none mb-4 italic text-center">
             Como <span className="text-primary">Chegar</span>
           </h1>
-          <p className="text-base md:text-lg text-white/55 max-w-xl mx-auto leading-relaxed text-center">
+          <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-center">
             Estamos no coração do Portão, de fácil acesso de toda Curitiba e região metropolitana.
           </p>
         </div>
       </section>
 
       {/* Address card */}
-      <section className="py-10 px-4 bg-[#1a1a1a]">
+      <section className="py-10 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#242424] border border-white/08 border-l-4 border-l-primary rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
@@ -111,7 +111,7 @@ export default function ComoChegar() {
               <a href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7" target="_blank" rel="noopener noreferrer" className="bg-[#4285F4] text-white px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
                 <Navigation size={15} /> Google Maps
               </a>
-              <a href="https://www.waze.com/ul?ll=-25.47699,-49.28448&navigate=yes" target="_blank" rel="noopener noreferrer" className="bg-[#33CCFF] text-black px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
+              <a href="https://www.waze.com/ul?ll=-25.46364093422533,-49.30287292373215&navigate=yes" target="_blank" rel="noopener noreferrer" className="bg-[#33CCFF] text-black px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
                 🔵 Waze
               </a>
               <a href="https://wa.me/554130827282" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
@@ -142,7 +142,7 @@ export default function ComoChegar() {
       </section>
 
       {/* Map */}
-      <section className="py-8 px-4 bg-[#1a1a1a]">
+      <section className="py-8 px-4 bg-white">
         <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ height: 420 }}>
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.240580658666!2d-49.30287292373215!3d-25.46364093422533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce31ec1ad6641%3A0xa51067e0d7b484af!2sCarplus%20Pneus%20e%20Oficina%20Mec%C3%A2nica!5e0!3m2!1spt-BR!2sbr!4v1779235735934!5m2!1spt-BR!2sbr"
@@ -157,9 +157,9 @@ export default function ComoChegar() {
       </section>
 
       {/* Routes */}
-      <section className="py-16 px-4 bg-[#242424]">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter text-white text-center mb-12 italic">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter text-gray-900 text-center mb-12 italic">
             Como Chegar de <span className="text-primary">Carro</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -200,7 +200,7 @@ export default function ComoChegar() {
       </section>
 
       {/* Parking */}
-      <section className="py-10 px-4 bg-[#1a1a1a]">
+      <section className="py-10 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="bg-[#FFD600]/08 border border-[#FFD600]/20 rounded-2xl p-6 flex items-center gap-5">
             <span className="text-4xl shrink-0">🅿️</span>
@@ -213,9 +213,9 @@ export default function ComoChegar() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-4 bg-[#242424]">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tighter text-white text-center mb-10 italic">
+          <h2 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tighter text-gray-900 text-center mb-10 italic">
             Dúvidas sobre <span className="text-primary">Localização</span>
           </h2>
           <div className="space-y-3">

@@ -200,7 +200,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Schema Markup for SEO - apenas FAQPage. LocalBusiness vem da fonte unica (index.html). */}
@@ -210,7 +210,7 @@ export default function FAQPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-[#0f0f0f] overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
@@ -227,11 +227,11 @@ export default function FAQPage() {
               <span className="text-sm font-medium text-primary">Central de Ajuda</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 uppercase tracking-tight mb-4">
               Perguntas <span className="text-primary italic">Frequentes</span>
             </h1>
             
-            <p className="text-lg text-white/60 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
               Encontre respostas para suas duvidas sobre pneus, servicos automotivos, precos e atendimento da Carplus Centro Automotivo em Curitiba.
             </p>
 
@@ -259,7 +259,7 @@ export default function FAQPage() {
 
             {/* Results Count */}
             {searchTerm && (
-              <p className="mt-4 text-white/50 text-sm">
+              <p className="mt-4 text-gray-500 text-sm">
                 {filteredFaqs.length} resultado{filteredFaqs.length !== 1 ? 's' : ''} encontrado{filteredFaqs.length !== 1 ? 's' : ''}
               </p>
             )}
@@ -290,13 +290,13 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ List */}
-      <section className="py-12 px-4 bg-[#0f0f0f]">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           {filteredFaqs.length === 0 ? (
             <div className="text-center py-16">
-              <MessageCircleQuestion size={48} className="mx-auto text-white/20 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Nenhum resultado encontrado</h3>
-              <p className="text-white/50">Tente buscar com outras palavras ou selecione uma categoria diferente.</p>
+              <MessageCircleQuestion size={48} className="mx-auto text-gray-300 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Nenhum resultado encontrado</h3>
+              <p className="text-gray-500">Tente buscar com outras palavras ou selecione uma categoria diferente.</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -376,12 +376,12 @@ export default function FAQPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-[#0f0f0f]">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
             Nao encontrou sua duvida?
           </h2>
-          <p className="text-white/60 mb-8 max-w-xl mx-auto">
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
             Nossa equipe esta pronta para atender voce. Entre em contato pelo WhatsApp ou visite nossa loja no Portao.
           </p>
           
@@ -397,7 +397,7 @@ export default function FAQPage() {
             </a>
             <Link
               to="/como-chegar"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1a1a1a] text-white font-bold rounded-full hover:bg-[#2a2a2a] transition-colors"
             >
               <MapPin size={20} />
               Como Chegar
@@ -406,17 +406,17 @@ export default function FAQPage() {
 
           {/* Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6">
               <Phone size={24} className="text-primary mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">(41) 3082-7282</h3>
               <p className="text-white/50 text-sm">Telefone Fixo</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6">
               <Clock size={24} className="text-primary mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">Seg-Sex 8h-18h</h3>
               <p className="text-white/50 text-sm">Sabado 8h-12h</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6">
               <MapPin size={24} className="text-primary mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">Portao, Curitiba</h3>
               <p className="text-white/50 text-sm">Rua Padre Anchieta, 2285</p>
