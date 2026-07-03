@@ -47,7 +47,8 @@ export default function Contact() {
                        <div>
                           <p className="font-bold text-xl">Av. Arthur da Silva Bernardes, 1323</p>
                           <p className="text-white/50">Portão, Curitiba - PR</p>
-                          <a href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7" className="text-primary underline mt-2 block font-bold">Abrir no Google Maps</a>
+                          <a href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7" target="_blank" rel="noopener noreferrer" className="text-primary underline mt-2 block font-bold">Abrir no Google Maps</a>
+                          <a href="https://ul.waze.com/ul?place=ChIJIwJzFnTj3JQRjCSZqaTtzbI&ll=-25.46364580%2C-49.30029800&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noopener noreferrer" className="text-primary underline mt-1 block font-bold">Abrir no Waze</a>
                        </div>
                     </li>
                     <li className="flex items-start gap-4">
