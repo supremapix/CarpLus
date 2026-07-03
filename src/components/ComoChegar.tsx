@@ -202,11 +202,11 @@ export default function ComoChegar() {
       {/* Parking */}
       <section className="py-10 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-[#FFD600]/08 border border-[#FFD600]/20 rounded-2xl p-6 flex items-center gap-5">
+          <div className="bg-[#FFD600]/10 border border-[#FFD600]/40 rounded-2xl p-6 flex items-center gap-5">
             <span className="text-4xl shrink-0">🅿️</span>
             <div>
-              <h3 className="font-display text-xl font-black text-[#FFD600] mb-1">Estacionamento Gratuito</h3>
-              <p className="text-sm text-white/55 leading-relaxed">A Carplus possui espaço próprio para você deixar o carro enquanto o serviço é realizado. Sem preocupações com estacionamento rotativo.</p>
+              <h3 className="font-display text-xl font-black text-gray-900 mb-1">Estacionamento Gratuito</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">A Carplus possui espaço próprio para você deixar o carro enquanto o serviço é realizado. Sem preocupações com estacionamento rotativo.</p>
             </div>
           </div>
         </div>
