@@ -107,7 +107,7 @@ function CategorySection({ category }: { category: Category }) {
         <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/40 flex items-center justify-center">
           <Icon className="w-5 h-5 text-primary" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white">
+        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-gray-900">
           {category.name}
         </h2>
         <div className="flex-grow h-px bg-gradient-to-r from-primary/40 to-transparent ml-4" />
@@ -186,7 +186,7 @@ export default function ServicosPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Schema Markup */}
@@ -253,20 +253,20 @@ export default function ServicosPage() {
       })}} />
 
       {/* Hero */}
-      <section className="pt-28 pb-12 px-4 bg-[#0a0a0a] text-center relative overflow-hidden">
+      <section className="pt-28 pb-12 px-4 bg-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
         <div className="max-w-3xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-xs text-white/40 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-white/70 transition-colors">Home</Link>
-            <span className="text-white/20" aria-hidden="true">›</span>
+          <nav className="text-xs text-gray-500 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-gray-800 transition-colors">Home</Link>
+            <span className="text-gray-300" aria-hidden="true">›</span>
             <span className="text-primary">Serviços</span>
           </nav>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-tight mb-4 italic text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-gray-900 leading-tight mb-4 italic text-center">
             Nossos <span className="text-primary">Serviços</span>
           </h1>
-          <p className="text-base md:text-lg text-white/55 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
             Oficina mecânica full service e loja de pneus no Portão, Curitiba. Tudo em um só lugar.
           </p>
           
@@ -351,7 +351,7 @@ export default function ServicosPage() {
       </div>
 
       {/* Services Sections */}
-      <main className="py-16 px-4 bg-[#0a0a0a]">
+      <main className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto space-y-20">
           {SERVICE_CATEGORIES.map(category => (
             <CategorySection key={category.id} category={category} />
@@ -406,7 +406,7 @@ export default function ServicosPage() {
           exit={{ opacity: 0, y: 20 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Voltar ao topo"
-          className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-white/10 backdrop-blur border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+          className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-gray-900/90 backdrop-blur border border-white/20 rounded-full flex items-center justify-center hover:bg-gray-900 transition-colors"
         >
           <ArrowUp className="w-5 h-5 text-white" />
         </motion.button>

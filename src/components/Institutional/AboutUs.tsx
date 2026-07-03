@@ -16,7 +16,7 @@ export default function AboutUs() {
   });
 
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="bg-white min-h-screen">
       <Navbar />
       <main className="pt-[120px] pb-16">
         {/* Hero Section */}
@@ -25,7 +25,7 @@ export default function AboutUs() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-normal text-white leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-normal text-gray-900 leading-tight mb-6"
           >
             Quem <span className="text-amber-500">Somos</span>
           </motion.h1>
@@ -33,7 +33,7 @@ export default function AboutUs() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-6"
+            className="text-gray-600 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-6"
           >
             Conheca a historia da Carplus Pneus, referencia em servicos automotivos em Curitiba desde 2014.
           </motion.p>
@@ -135,7 +135,7 @@ export default function AboutUs() {
         </section>
 
         {/* SECAO 2 - Diferenciais "Oficina Anti-Trauma" */}
-        <section className="py-16 md:py-20 bg-[#0d0d0d]">
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ export default function AboutUs() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
                 Por que a Carplus e diferente<br />
                 <span className="text-primary italic">de qualquer outra oficina?</span>
               </h2>
@@ -242,7 +242,7 @@ export default function AboutUs() {
         </section>
 
         {/* SECAO 3 - Depoimentos Reais */}
-        <section className="py-16 md:py-20 bg-dark">
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -250,7 +250,7 @@ export default function AboutUs() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
                 O que nossos clientes dizem
               </h2>
               <div className="inline-flex items-center gap-2 text-amber-500 text-xl font-medium">
@@ -350,7 +350,7 @@ export default function AboutUs() {
         </section>
 
         {/* SECAO 4 - Antes e Depois das Rodas */}
-        <section className="py-16 md:py-20 bg-[#0d0d0d]">
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -358,11 +358,11 @@ export default function AboutUs() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
                 Transformacao Carplus<br />
                 <span className="text-primary italic">Recuperacao de Rodas</span>
               </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Roda amassada ou riscada nao e sinonimo de troca. Veja o que fazemos por voce.
               </p>
             </motion.div>
@@ -453,7 +453,7 @@ export default function AboutUs() {
         </section>
 
         {/* SECAO 5 - Sobre o Time */}
-        <section className="py-16 md:py-20 bg-dark">
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -461,10 +461,10 @@ export default function AboutUs() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
                 Conheca quem cuida do seu carro
               </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Na Carplus, o atendimento tem nome e rosto. E isso que faz a diferenca.
               </p>
             </motion.div>
