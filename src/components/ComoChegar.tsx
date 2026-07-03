@@ -111,7 +111,7 @@ export default function ComoChegar() {
               <a href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7" target="_blank" rel="noopener noreferrer" className="bg-[#4285F4] text-white px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
                 <Navigation size={15} /> Google Maps
               </a>
-              <a href="https://www.waze.com/ul?ll=-25.46364093422533,-49.30287292373215&navigate=yes" target="_blank" rel="noopener noreferrer" className="bg-[#33CCFF] text-black px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
+              <a href="https://ul.waze.com/ul?place=ChIJIwJzFnTj3JQRjCSZqaTtzbI&ll=-25.46364580%2C-49.30029800&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" rel="noopener noreferrer" className="bg-[#33CCFF] text-black px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
                 🔵 Waze
               </a>
               <a href="https://wa.me/554130827282" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-85 transition-opacity">
