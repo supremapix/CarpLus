@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState, type FC } from 'react';
+import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, MessageCircle, ArrowRight, List } from 'lucide-react';
+import { MessageCircle, ArrowRight, List } from 'lucide-react';
 import { PROMO_TIRES, PromoTire } from '../data/promoTires';
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
@@ -11,50 +11,10 @@ const FALLBACK_IMG =
     `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#f3f4f6"/><circle cx="100" cy="100" r="70" fill="none" stroke="#f59c00" stroke-width="14"/><circle cx="100" cy="100" r="30" fill="#f59c00"/></svg>`,
   );
 
-function CountUp({ to, duration = 1500 }: { to: number; duration?: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [inView, setInView] = useState(false);
-
-  // IntersectionObserver no lugar do useInView do motion (uma observacao, dispara uma vez).
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '-50px' },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    let raf = 0;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * to));
-      if (progress < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, to, duration]);
-
-  return <span ref={ref}>{value}</span>;
-}
-
 const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
   // URL da página dedicada — vai junto na mensagem do WhatsApp para rastrear a origem do clique
   const pageUrl = `${BASE_URL}/pneu-promocao/${tire.slug}`;
-  const whatsappMsg = `Olá! Vi a *promoção do pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) por ${tire.preco}. Gostaria de garantir esse preço.\n\nOrigem do contato: ${pageUrl}`;
+  const whatsappMsg = `Olá! Vi o *pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) no site. Gostaria de saber o valor e consultar o pneu certo para o meu carro.\n\nOrigem do contato: ${pageUrl}`;
   const whatsappUrl = `https://wa.me/554130827282?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
@@ -85,10 +45,9 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
         </Link>
         <p className="mt-1.5 text-neutral-600 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
 
-        <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-neutral-400 text-xs">a partir de</span>
-        </div>
-        <p className="font-accent font-bold text-neutral-900 text-2xl leading-none">{tire.preco}</p>
+        <p className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-neutral-700 text-xs leading-snug">
+          Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp.
+        </p>
 
         <a
           href={whatsappUrl}
@@ -127,19 +86,22 @@ export default function PneusPromocao() {
             Pneus em <span className="text-primary">Promoção</span>
           </h2>
 
-          {/* Badge de preço estilo etiqueta de oferta */}
+          {/* Chamada para consulta rápida pelo WhatsApp */}
           <div className="mt-6 inline-flex flex-col items-center">
             <span className="text-neutral-900 font-accent font-bold uppercase tracking-[0.2em] text-lg sm:text-xl">
-              Preços a partir de
+              Consulte o pneu certo para o seu carro
             </span>
-            <div
-              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)] [animation:var(--animate-pulse-scale)] will-change-transform"
+            <a
+              href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20o%20pneu%20certo%20para%20o%20meu%20carro."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)] [animation:var(--animate-pulse-scale)] will-change-transform transition-colors hover:bg-primary/20"
             >
-              <Zap size={40} className="text-primary fill-primary" />
-              <span className="font-accent font-bold text-neutral-900 text-6xl sm:text-7xl leading-none">
-                R$ <CountUp to={239} />
+              <MessageCircle size={36} className="text-primary" strokeWidth={2.5} />
+              <span className="font-accent font-bold text-neutral-900 text-2xl sm:text-3xl leading-tight text-left">
+                Atendimento rápido<br />pelo WhatsApp
               </span>
-            </div>
+            </a>
           </div>
         </div>
       </div>

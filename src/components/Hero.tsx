@@ -1,5 +1,40 @@
 
+import { useEffect, useState } from 'react';
 import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';
+
+// Frases da descrição da Hero — conteúdo real do site (preços, serviços e oficina)
+const HERO_PHRASES = [
+  'Pneus das melhores marcas a partir de R$ 239,00 à vista, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros.',
+  'Oficina Full Service: alinhamento e balanceamento 3D, troca de óleo, freios, suspensão e direção com garantia em todos os serviços.',
+  'Referência no Portão, em Curitiba — diagnóstico antes do orçamento, conserto e reforma de rodas e atendimento rápido pelo WhatsApp.',
+];
+
+function HeroPhrasesLoop() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % HERO_PHRASES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative mb-8 max-w-xl mx-auto md:mx-0 min-h-[6rem] sm:min-h-[5rem] md:min-h-[4.5rem]">
+      {HERO_PHRASES.map((phrase, i) => (
+        <p
+          key={i}
+          aria-hidden={i !== index}
+          className={`absolute inset-0 text-[0.95rem] sm:text-base md:text-lg text-white/80 font-medium text-center md:text-left leading-relaxed transition-opacity duration-700 ${
+            i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          {phrase}
+        </p>
+      ))}
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -39,9 +74,7 @@ export default function Hero() {
             OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
           </h2>
           
-          <p className="text-[0.95rem] sm:text-base md:text-lg text-white/80 mb-8 max-w-xl font-medium text-center md:text-left mx-auto md:mx-0 leading-relaxed">
-            Pneus das melhores marcas com preços a partir de R$ 269,00 à vista. Parcele em até 10x sem juros e conte com atendimento em toda Curitiba e Região.
-          </p>
+          <HeroPhrasesLoop />
 
           <div className="flex flex-col sm:flex-row gap-3 mb-12 justify-center md:justify-start px-4 sm:px-0">
             <a
