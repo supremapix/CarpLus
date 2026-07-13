@@ -1,6 +1,6 @@
 # Migração SEO — Remoção do Prerender.io e adoção de HTML gerado no build
 
-> **Status:** Etapa 1 concluída — Auditoria técnica (sem migração).
+> **Status:** Etapa 1 concluída (auditoria) · **Etapa E2/E3 concluída — PROVA DE CONCEITO APROVADA (8/8 rotas)**.
 > **Site:** https://www.carpluspneuseoficina.com.br
 > **Stack atual:** React 19 + Vite 6 + React Router DOM 7 (SPA) + hospedagem Vercel.
 > **Objetivo:** eliminar a dependência do Prerender.io e passar a servir HTML pré-renderizado
@@ -120,8 +120,8 @@ Como não há dados de runtime e todas as rotas são deriváveis dos arrays de d
 
 > Executar em PRs pequenos, sempre validando no Search Console (Inspeção de URL → HTML renderizado) e no Rich Results Test.
 
-- [ ] **E2.** Criar enumerador único de rotas (reutilizar lógica de `generate-sitemap.ts` / `seoIndexing.ts`) que devolva a lista completa de URLs a gerar.
-- [ ] **E3.** Provar conceito: pré-renderizar em build um subconjunto (home + 1 produto + 1 medida + 1 serviço + 1 bairro + 1 landing) e inspecionar o HTML emitido (title/description/canonical/JSON-LD).
+- [x] **E2.** Criar enumerador único de rotas (reutilizar lógica de `generate-sitemap.ts` / `seoIndexing.ts`) que devolva a lista completa de URLs a gerar. → prova de conceito usa `scripts/static-pilot-routes.ts` (slugs lidos das fontes reais); a escala completa reutilizará o mesmo motor do sitemap.
+- [x] **E3.** Provar conceito: pré-renderizar em build um subconjunto (home + produto + medida + serviço + veículo + bairro + institucional + 404) e inspecionar o HTML emitido (title/description/canonical/JSON-LD). → **APROVADA** (ver Seção 10).
 - [ ] **E4.** Auditar componentes quanto a acesso a `window`/`document` fora de efeitos; corrigir os que quebrarem no prerender.
 - [ ] **E5.** Ajustar `vercel.json`: servir HTML estático por rota + fallback SPA; mover redirects client-side para 301 server-side.
 - [ ] **E6.** Escalar o prerender para todas as ~1.537 rotas com concorrência controlada; medir tempo de build.
@@ -167,4 +167,69 @@ Como não há dados de runtime e todas as rotas são deriváveis dos arrays de d
 
 ---
 
-*Documento gerado na Etapa 1 (auditoria). Nenhuma alteração de código de aplicação foi feita nesta etapa além da criação deste arquivo.*
+---
+
+## 10. Etapa E2/E3 — Prova de conceito (RESULTADO)
+
+### 10.1 Status
+**PROVA DE CONCEITO APROVADA** — 8/8 rotas piloto geradas e validadas automaticamente, com conteúdo real no HTML, metadados corretos, assets válidos, sem `localhost`, mantendo conteúdo com JavaScript desativado e hidratação sem quebra. **O Prerender.io não foi tocado** (token/meta/`render-event` permanecem) e o `vercel.json` **não foi alterado**.
+
+### 10.2 Arquivos criados/alterados nesta etapa
+- **Criado** `scripts/static-pilot-routes.ts` — lista explícita das rotas piloto (slugs lidos das fontes reais; nenhum inventado). Compartilhada entre gerador e validador.
+- **Criado** `scripts/generate-static-pages.ts` — sobe servidor estático sobre `dist` com fallback SPA, abre cada rota em Chrome headless (Puppeteer), aguarda sinal confiável de render, captura e sanitiza o HTML, grava por rota **após** capturar todas (evita contaminar o fallback) e emite `reports/static-pilot-generation.json`. Preserva o shell original em `reports/_spa-shell/index.html`.
+- **Criado** `scripts/validate-static-pilot.ts` — valida cada página e gera `reports/static-pilot-report.md`.
+- **Alterado** `src/hooks/useSEO.ts` — **ajuste mínimo**: além do `render-event` (mantido), seta `window.__STATIC_RENDER_READY__ = true` como sinal confiável de que título/description/canonical já foram aplicados. Coexiste com o Prerender.io.
+- **Alterado** `package.json` — scripts `build:spa`, `generate:static:pilot`, `build:static:pilot`, `validate:static:pilot`, `test:static:pilot`.
+- **Dependência (dev)** `puppeteer` instalada + Chromium headless.
+
+### 10.3 Rotas piloto selecionadas (reais)
+| Tipo | Rota | Arquivo gerado |
+|---|---|---|
+| Home | `/` | `dist/index.html` |
+| Produto | `/pneu/pneu-pirelli-175-70r13-p400-evo-82t` | `dist/pneu/.../index.html` |
+| Serviço | `/servico/venda-de-pneus` | `dist/servico/venda-de-pneus/index.html` |
+| Medida | `/pneu-medida/175-65r14` | `dist/pneu-medida/175-65r14/index.html` |
+| Veículo | `/pneu-para-hb20-curitiba` | `dist/pneu-para-hb20-curitiba/index.html` |
+| Local/Bairro | `/bairro/portao` | `dist/bairro/portao/index.html` |
+| Institucional | `/quem-somos` | `dist/quem-somos/index.html` |
+| 404 (erro) | `/rota-inexistente-teste-404` | `dist/rota-inexistente-teste-404/index.html` |
+
+### 10.4 Critério de "render concluído"
+Combinação (não tempo fixo): `window.__STATIC_RENDER_READY__` (pós `render-event`) **+** ausência do spinner de rota (`[role="status"][aria-label="Carregando"]`) **+** presença de `<h1>`/conteúdo principal **+** estabilização de 400 ms **+** timeout de segurança (20 s). Como as rotas são `lazy`, quando `useSEO` roda o chunk já montou o conteúdo — o sinal se mostrou confiável (0 timeouts).
+
+### 10.5 Evidências
+- **Conteúdo no HTML** (texto real, não só JS): produto ~13,9k chars; medida ~9,8k; bairro ~8,3k; serviço ~9,5k; home ~6,9k. Sem JS (via `curl`), o título e o texto continuam presentes.
+- **Metadados por rota:** exatamente 1 `<title>`, 1 `canonical`, 1 `og:title`, 1 `description` por página (sem duplicação). Canonicais refletem o caminho de cada rota; nenhuma rota indexável herdou o canonical da home.
+- **JSON-LD:** produto 5 blocos, veículo 7, bairro 6, medida/serviço 5, home/institucional 2 (schema global do shell).
+- **Assets:** todas as referências `/assets/...` são absolutas e existem fisicamente em `dist`.
+- **Sanitização:** nenhuma ocorrência de `localhost`/porta no HTML gerado (canonical/OG/schema limpos).
+- **Sem JS:** conteúdo essencial (título, H1, textos, breadcrumbs, telefone/WhatsApp, links) permanece visível.
+- **Hidratação:** no navegador, a página gerada hidrata sem tela branca, sem duplicação/fl' de conteúdo e sem erros de console; navegação SPA e elementos interativos (171 na página de produto) funcionam.
+
+### 10.6 Como reproduzir
+```bash
+npm run build:spa            # vite build
+npm run generate:static:pilot # snapshot headless das rotas piloto
+npm run validate:static:pilot # valida e gera reports/static-pilot-report.md
+# ou tudo de uma vez:
+npm run test:static:pilot
+```
+Relatórios: `reports/static-pilot-report.md` e `reports/static-pilot-generation.json`. Shell original preservado em `reports/_spa-shell/index.html`.
+
+### 10.7 Inventário de redirects client-side (para promover a 301 na etapa E5)
+Ainda **não convertidos** nesta etapa — apenas inventariados:
+- **69** redirects de bairros `*.html → /bairro/:slug` (`<Navigate>` em `src/App.tsx`).
+- **1** redirect de rota legada `/pneus/:medida → /pneu-medida/:medida` (componente `LegacyMedidaRedirect`).
+- **3** redirects de slug legado de marca (`BRAND_PAGES[].legacySlug → slug`).
+- Todos deverão virar `redirects` 301 no `vercel.json` (ou arquivo de config) na etapa E5.
+
+### 10.8 Ressalvas (status HTTP e escopo)
+- Gerar arquivos físicos **não garante sozinho** os códigos HTTP corretos na Vercel. O `vercel.json` ainda tem `rewrites: /(.*) → /index.html`, que **não foi alterado** nesta etapa. Servir o HTML por rota (e o 404 com status 404 real) será tratado na E5, após validação.
+- A POC cobre 8 rotas; a escala para ~1.537 páginas (E6) exigirá concorrência controlada e medição de tempo de build.
+
+### 10.9 Próximos passos
+Prosseguir para **E4** (auditar acessos a `window`/`document` fora de efeitos) e **E5** (ajuste de `vercel.json` + promoção dos redirects a 301), **somente após** aprovação destes resultados. Não avançar para todas as rotas antes disso.
+
+---
+
+*Etapa 1 (auditoria) e Etapa E2/E3 (prova de conceito). Nesta etapa E2/E3, as únicas mudanças de código de aplicação foram o ajuste mínimo no `useSEO` (sinal de render) e os scripts/relatórios da POC — Prerender.io e `vercel.json` permanecem intactos.*
