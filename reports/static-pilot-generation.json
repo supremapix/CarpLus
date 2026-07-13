@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T19:12:33.578Z",
+  "generatedAt": "2026-07-13T19:19:22.155Z",
   "baseUrl": "https://www.carpluspneuseoficina.com.br",
   "viewport": "desktop",
   "total": 11,
@@ -23,7 +23,7 @@
       "hasBreadcrumb": false,
       "jsonLdTotal": 3,
       "jsonLdDynamic": 0,
-      "htmlBytes": 575787,
+      "htmlBytes": 575750,
       "textLength": 25519,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -76,7 +76,7 @@
       "hasBreadcrumb": false,
       "jsonLdTotal": 5,
       "jsonLdDynamic": 2,
-      "htmlBytes": 171603,
+      "htmlBytes": 171329,
       "textLength": 13858,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -160,7 +160,7 @@
       "hasBreadcrumb": false,
       "jsonLdTotal": 5,
       "jsonLdDynamic": 2,
-      "htmlBytes": 173470,
+      "htmlBytes": 173176,
       "textLength": 9742,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -201,7 +201,7 @@
       "hasBreadcrumb": true,
       "jsonLdTotal": 7,
       "jsonLdDynamic": 5,
-      "htmlBytes": 140661,
+      "htmlBytes": 140599,
       "textLength": 6853,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -244,7 +244,7 @@
       "hasBreadcrumb": true,
       "jsonLdTotal": 6,
       "jsonLdDynamic": 4,
-      "htmlBytes": 134078,
+      "htmlBytes": 133778,
       "textLength": 8245,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -284,7 +284,7 @@
       "hasBreadcrumb": false,
       "jsonLdTotal": 2,
       "jsonLdDynamic": 0,
-      "htmlBytes": 102613,
+      "htmlBytes": 102149,
       "textLength": 6447,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -322,7 +322,7 @@
       "hasBreadcrumb": true,
       "jsonLdTotal": 3,
       "jsonLdDynamic": 0,
-      "htmlBytes": 215824,
+      "htmlBytes": 215713,
       "textLength": 13581,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -362,7 +362,7 @@
       "hasBreadcrumb": false,
       "jsonLdTotal": 3,
       "jsonLdDynamic": 0,
-      "htmlBytes": 243802,
+      "htmlBytes": 240821,
       "textLength": 6631,
       "assetRefs": [
         "/assets/index-BkA_AbDY.js",
@@ -429,7 +429,7 @@
       "canonical": "https://www.carpluspneuseoficina.com.br/",
       "robots": "noindex, follow",
       "ogTitle": "Página não encontrada (404) | Carplus Pneus e Oficina Curitiba",
-      "ogUrl": "http://127.0.0.1:41755/rota-inexistente-teste-404",
+      "ogUrl": "http://127.0.0.1:43257/rota-inexistente-teste-404",
       "twitterCard": "summary_large_image",
       "h1": "Essa página não existe, mas a Carplus sim!",
       "hasMain": true,

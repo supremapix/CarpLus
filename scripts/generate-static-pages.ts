@@ -25,7 +25,8 @@
 // Também expõe `generateRoutes()` para reuso pelos testes (determinismo/viewport),
 // que capturam em memória SEM gravar em disco.
 //
-// Execução: `tsx scripts/generate-static-pages.ts`
+// Execução: `npm run generate:static:pilot`
+//   (usa scripts/run-ts.mjs → esbuild bundle + node, portátil neste ambiente).
 //   Env opcionais:
 //     STATIC_RENDER_TIMEOUT=20000   timeout por rota (ms)
 //     STATIC_VIEWPORT=desktop|mobile viewport de captura (default desktop)
@@ -388,20 +389,26 @@ export async function generateRoutes(
         // nada roda no meio de um evaluate: normalizamos e serializamos no mesmo
         // "tick", garantindo estabilidade entre execuções.
         const data = await page.evaluate(() => {
-          // (1) Normaliza animações: remove opacity<1 e transforms de reveal.
+          // (1) Normaliza animações. O framer-motion (whileInView e afins) injeta
+          // inline `opacity` e `transform` cujos valores dependem do estágio exato
+          // da animação no instante da captura — inclusive resíduos no-op como
+          // `opacity: 1` e `transform: none`. Para conteúdo indexável estável e
+          // determinístico, removemos QUALQUER opacity/transform/will-change inline
+          // (qualquer valor). São artefatos de animação: o estado final desejado é
+          // "totalmente visível, sem deslocamento", que equivale à ausência dessas
+          // props. A hidratação restaura tudo no cliente.
           document.querySelectorAll<HTMLElement>('[style]').forEach((el) => {
             const s = el.style;
             let touched = false;
-            if (s.opacity !== '' && parseFloat(s.opacity) < 1) {
+            if (s.opacity !== '') {
               s.removeProperty('opacity');
               touched = true;
             }
-            const t = s.transform;
-            if (t && /translate|scale|rotate|matrix/i.test(t)) {
+            if (s.transform !== '') {
               s.removeProperty('transform');
               touched = true;
             }
-            if (s.willChange && /transform|opacity/i.test(s.willChange)) {
+            if (s.willChange !== '') {
               s.removeProperty('will-change');
               touched = true;
             }
