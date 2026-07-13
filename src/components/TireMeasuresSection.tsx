@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { isPrerenderEager } from '../lib/prerender';
 
 export default function TireMeasuresSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(isPrerenderEager);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

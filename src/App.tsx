@@ -83,6 +83,16 @@ function LegacyMedidaRedirect() {
 export default function App() {
   const { pathname } = useLocation();
 
+  // Após a primeira hidratação de uma página pré-renderizada, remove o marcador
+  // `data-prerendered`. A primeira render já foi ansiosa (casou com o HTML
+  // estático); a partir daqui, navegações SPA voltam ao comportamento lazy
+  // normal (DeferredSection etc.) para preservar performance.
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.removeAttribute('data-prerendered');
+    }
+  }, []);
+
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);

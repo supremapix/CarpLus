@@ -10,10 +10,13 @@ import Footer from './Footer';
 import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category, type Service } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
 import { getIcon } from './iconMap';
+import { isPrerenderEager } from '../lib/prerender';
 
 // Componente de contagem animada
 function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: string }) {
-  const [isVisible, setIsVisible] = useState(false);
+  // No snapshot / hidratação de página pré-renderizada, mostra o valor final
+  // (não "0") para que o conteúdo indexável seja completo e determinístico.
+  const [isVisible, setIsVisible] = useState(isPrerenderEager);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {

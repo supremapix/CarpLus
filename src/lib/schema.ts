@@ -1,6 +1,8 @@
 // /src/lib/schema.ts
 // Gerador de JSON-LD para Rich Snippets de Produto
 
+import { BUILD_DATE_ISO } from './buildInfo';
+
 // ---------------------------------------------------------------------------
 // CONSTANTES CENTRALIZADAS (evitam duplicação e mantêm consistência enterprise)
 // ---------------------------------------------------------------------------
@@ -57,16 +59,20 @@ export const CARPLUS_SHIPPING = {
   },
 } as const;
 
-/** Retorna uma data ISO (YYYY-MM-DD) somando `days` à data atual. */
-export function addDays(days: number, base: Date = new Date()): string {
-  const d = new Date(base);
-  d.setDate(d.getDate() + days);
+/**
+ * Retorna uma data ISO (YYYY-MM-DD) somando `days` à data de build.
+ * Determinística: baseada em BUILD_DATE_ISO (baked no bundle), não no relógio
+ * de execução — evita não-determinismo e hydration mismatch no JSON-LD.
+ */
+export function addDays(days: number, base: string = BUILD_DATE_ISO): string {
+  const d = new Date(base + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().split("T")[0];
 }
 
-/** Data atual em formato ISO (YYYY-MM-DD), usada como fallback de dateModified. */
+/** Data de build em formato ISO (YYYY-MM-DD), usada como fallback de dateModified. */
 export function todayISO(): string {
-  return new Date().toISOString().split("T")[0];
+  return BUILD_DATE_ISO;
 }
 
 export interface ProductSchemaProps {

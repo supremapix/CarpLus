@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { MapPin, Tag, Phone, ChevronRight, ChevronLeft, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LiteYouTube from './LiteYouTube';
+import { isPrerenderEager } from '../lib/prerender';
 
 const VIDEOS = [
   {
@@ -23,7 +24,7 @@ const VIDEOS = [
 
 export default function PneusCuritibaPromo() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(isPrerenderEager);
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
 
   useEffect(() => {

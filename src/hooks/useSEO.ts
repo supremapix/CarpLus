@@ -135,10 +135,35 @@ export function useSEO({
     // Dispara evento para pre-render saber que renderizou
     if (typeof window !== 'undefined') {
       document.dispatchEvent(new Event('render-event'));
-      // Sinal confiável para a geração estática interna (POC E2/E3):
-      // marca que ao menos uma rota chamou useSEO com título/description/canonical
+      // Sinal confiável para a geração estática interna (E2/E3/E4):
+      // marca que a rota atual chamou useSEO com título/description/canonical/JSON-LD
       // já aplicados ao DOM. Coexiste com o Prerender.io (render-event) sem substituí-lo.
-      (window as unknown as { __STATIC_RENDER_READY__?: boolean }).__STATIC_RENDER_READY__ = true;
+      const w = window as unknown as {
+        __STATIC_RENDER_READY__?: boolean;
+        __STATIC_RENDER_STATUS__?: {
+          ready: boolean;
+          route: string;
+          title: string;
+          hasCanonical: boolean;
+          jsonLd: number;
+          noindex: boolean;
+          timestamp: number;
+        };
+      };
+      w.__STATIC_RENDER_READY__ = true;
+      // Status detalhado: só é "ready" quando há título e canonical aplicados.
+      // O gerador (E4) usa isto para confirmar que os metadados essenciais da
+      // ROTA CORRETA já estão no DOM antes de capturar (evita capturar a home
+      // em outra rota ou metadados incompletos).
+      w.__STATIC_RENDER_STATUS__ = {
+        ready: !!title && !!canonicalEl?.getAttribute('href'),
+        route: window.location.pathname,
+        title: document.title,
+        hasCanonical: !!canonicalEl?.getAttribute('href'),
+        jsonLd: document.querySelectorAll('script[data-dynamic-schema="true"]').length,
+        noindex: !!noindex,
+        timestamp: Date.now(),
+      };
     }
 
     return () => {

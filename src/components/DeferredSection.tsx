@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, type ReactNode } from 'react';
+import { isPrerenderEager, isStaticGeneration } from '../lib/prerender';
 
 interface DeferredSectionProps {
   children: ReactNode;
@@ -28,10 +29,17 @@ export default function DeferredSection({
   unmountOnExit = false,
 }: DeferredSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
+  // Render ansioso durante a geração estática ou ao hidratar uma página
+  // pré-renderizada → conteúdo completo no snapshot, sem hydration mismatch.
+  const eager = isPrerenderEager();
+  const [isVisible, setIsVisible] = useState(eager);
+  const [hasMounted, setHasMounted] = useState(eager);
 
   useEffect(() => {
+    // Durante a geração headless, mantém tudo montado (não instala o observer,
+    // para o unmountOnExit não desmontar seções fora da viewport antes do capture).
+    if (isStaticGeneration()) return;
+
     const el = ref.current;
     if (!el) return;
 
