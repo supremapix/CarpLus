@@ -135,6 +135,10 @@ export function useSEO({
     // Dispara evento para pre-render saber que renderizou
     if (typeof window !== 'undefined') {
       document.dispatchEvent(new Event('render-event'));
+      // Sinal confiável para a geração estática interna (POC E2/E3):
+      // marca que ao menos uma rota chamou useSEO com título/description/canonical
+      // já aplicados ao DOM. Coexiste com o Prerender.io (render-event) sem substituí-lo.
+      (window as unknown as { __STATIC_RENDER_READY__?: boolean }).__STATIC_RENDER_READY__ = true;
     }
 
     return () => {

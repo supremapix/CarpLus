@@ -51,7 +51,7 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
     TIRES.forEach(tire => {
       index.push({
         type: 'pneu',
-        title: `${tire.marca} ${tire.modelo} ${tire.medida}`,
+        title: tire.nome,
         description: `Pneu ${tire.categoria} - ${tire.indiceVelocidade ? `Indice ${tire.indiceVelocidade}` : 'Aro ' + tire.aro}`,
         url: `/pneu/${tire.slug}`,
         icon: <Car size={16} className="text-primary" />

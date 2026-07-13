@@ -21,7 +21,7 @@ import { PROMO_TIRES } from '../data/promoTires';
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 const WHATSAPP_PHONE = '554130827282';
 
-type Ordenacao = 'menor' | 'maior' | 'marca';
+type Ordenacao = 'marca' | 'marcaDesc' | 'aro';
 
 const FALLBACK_IMG =
   'data:image/svg+xml;utf8,' +
@@ -31,7 +31,7 @@ const FALLBACK_IMG =
 
 export default function PneusPromocaoLista() {
   const [busca, setBusca] = useState('');
-  const [ordem, setOrdem] = useState<Ordenacao>('menor');
+  const [ordem, setOrdem] = useState<Ordenacao>('marca');
 
   const pageUrl = `${BASE_URL}/pneus-promocao`;
 
@@ -52,8 +52,8 @@ export default function PneusPromocaoLista() {
     });
 
     return [...filtrada].sort((a, b) => {
-      if (ordem === 'menor') return a.precoNumero - b.precoNumero;
-      if (ordem === 'maior') return b.precoNumero - a.precoNumero;
+      if (ordem === 'marcaDesc') return b.marca.localeCompare(a.marca);
+      if (ordem === 'aro') return a.aro - b.aro;
       return a.marca.localeCompare(b.marca);
     });
   }, [busca, ordem]);
@@ -75,7 +75,7 @@ export default function PneusPromocaoLista() {
   useSEO({
     title: 'Pneus em Promoção em Curitiba | Lista Completa – Carplus Portão',
     description:
-      'Lista completa de pneus em promoção em Curitiba a partir de R$ 239. Veja preço, medida e carros compatíveis de cada modelo. Montagem inclusa e até 10x sem juros na Carplus, no Portão. WhatsApp: (41) 3082-7282.',
+      'Lista completa de pneus em promoção em Curitiba. Veja marca, medida e carros compatíveis de cada modelo. Montagem inclusa e até 10x sem juros na Carplus, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.',
     canonical: pageUrl,
     keywords: [
       'pneus em promoção curitiba',
@@ -87,8 +87,6 @@ export default function PneusPromocaoLista() {
     ],
     schemaJSON: [productListSchema, breadcrumbSchema],
   });
-
-  const precoMin = Math.min(...PROMO_TIRES.map((t) => t.precoNumero));
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -117,12 +115,11 @@ export default function PneusPromocaoLista() {
             Pneus em Promoção em Curitiba
           </h1>
           <p className="mt-3 text-gray-600 leading-relaxed max-w-2xl">
-            Confira a lista completa das nossas ofertas a partir de{' '}
+            Confira a lista completa das nossas ofertas. Todas já incluem montagem, balanceamento e calibragem, com
+            parcelamento em até 10x sem juros na Carplus, no bairro Portão.{' '}
             <strong className="text-gray-900">
-              R$ {precoMin.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp.
             </strong>
-            . Todos os preços já incluem montagem, balanceamento e calibragem, com parcelamento em até 10x sem juros na
-            Carplus, no bairro Portão.
           </p>
         </header>
 
@@ -147,9 +144,9 @@ export default function PneusPromocaoLista() {
               className="w-full appearance-none rounded-xl border border-gray-200 bg-white pl-11 pr-8 py-3 text-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
               aria-label="Ordenar lista"
             >
-              <option value="menor">Menor preço</option>
-              <option value="maior">Maior preço</option>
               <option value="marca">Marca (A-Z)</option>
+              <option value="marcaDesc">Marca (Z-A)</option>
+              <option value="aro">Aro (menor)</option>
             </select>
           </div>
         </div>
@@ -170,7 +167,7 @@ export default function PneusPromocaoLista() {
           ) : (
             <ul className="flex flex-col gap-4">
               {listaFiltrada.map((tire, i) => {
-                const msg = `Olá! Vi a *promoção do pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) por ${tire.preco}. Gostaria de garantir esse preço.\n\nOrigem do contato: ${BASE_URL}/pneus-promocao (lista)`;
+                const msg = `Olá! Vi o *pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) no site. Gostaria de consultar o pneu certo para o meu carro e saber as condições.\n\nOrigem do contato: ${BASE_URL}/pneus-promocao (lista)`;
                 const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 
                 return (
@@ -245,9 +242,10 @@ export default function PneusPromocaoLista() {
 
                     {/* Preço + CTA */}
                     <div className="flex flex-row sm:flex-col items-end justify-between sm:justify-center gap-2 sm:w-48 sm:border-l sm:border-gray-100 sm:pl-4">
-                      <div className="text-right">
-                        <span className="block text-[11px] text-gray-400 uppercase tracking-wide">a partir de</span>
-                        <span className="font-accent font-bold text-gray-900 text-2xl leading-none">{tire.preco}</span>
+                      <div className="text-right sm:text-left">
+                        <span className="block text-xs text-gray-600 leading-snug">
+                          Consulte o pneu certo pelo WhatsApp
+                        </span>
                       </div>
                       <div className="flex flex-col gap-2 w-auto sm:w-full">
                         <a
