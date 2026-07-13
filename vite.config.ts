@@ -6,6 +6,11 @@ import { defineConfig } from 'vite';
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
+    // Data de build determinística, baked no bundle (ver src/lib/buildInfo.ts).
+    // Idêntica em todas as páginas, no snapshot estático e na hidratação.
+    define: {
+      __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+    },
     build: {
       rollupOptions: {
         output: {

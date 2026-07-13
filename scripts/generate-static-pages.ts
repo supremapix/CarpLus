@@ -1,6 +1,6 @@
 // scripts/generate-static-pages.ts
 // ─────────────────────────────────────────────────────────────────────────────
-// PROVA DE CONCEITO — GERAÇÃO ESTÁTICA INTERNA (SNAPSHOT HEADLESS) — Etapa E2/E3
+// GERAÇÃO ESTÁTICA INTERNA (SNAPSHOT HEADLESS) — Etapas E2/E3/E4
 // ─────────────────────────────────────────────────────────────────────────────
 // Substitui FUTURAMENTE o Prerender.io. Nesta etapa COEXISTE com ele:
 //   • não remove o token/meta Prerender.io do index.html;
@@ -11,16 +11,24 @@
 //   1. usa o build já existente em /dist (rode `vite build` antes);
 //   2. sobe um servidor estático local com fallback SPA;
 //   3. abre cada rota piloto em Chrome headless (puppeteer);
-//   4. aguarda um sinal confiável de render (render-event + __STATIC_RENDER_READY__
-//      + H1/conteúdo + ausência do spinner) com timeout de segurança;
-//   5. captura o HTML final já renderizado;
-//   6. sanitiza (remove qualquer referência a localhost/porta);
-//   7. grava no caminho físico correspondente à rota (após capturar TODAS);
-//   8. preserva uma cópia do shell original em reports/_spa-shell/;
-//   9. encerra navegador e servidor;
-//  10. grava um resumo JSON em reports/static-pilot-generation.json.
+//   4. injeta `window.__STATIC_RENDER__ = true` ANTES do app rodar → render ansioso;
+//   5. aguarda um sinal confiável de render (STATUS.ready + rota correta + H1/conteúdo
+//      + ausência do spinner) com timeout de segurança;
+//   6. captura erros: pageerror, console.error (classificados), requisições/chunks
+//      com falha, rota resolvida incorretamente;
+//   7. captura o HTML final e marca <html data-prerendered="true">;
+//   8. sanitiza (remove qualquer referência a localhost/porta);
+//   9. grava no caminho físico correspondente à rota (após capturar TODAS);
+//  10. preserva o shell original em reports/_spa-shell/;
+//  11. grava um resumo JSON em reports/static-pilot-generation.json.
+//
+// Também expõe `generateRoutes()` para reuso pelos testes (determinismo/viewport),
+// que capturam em memória SEM gravar em disco.
 //
 // Execução: `tsx scripts/generate-static-pages.ts`
+//   Env opcionais:
+//     STATIC_RENDER_TIMEOUT=20000   timeout por rota (ms)
+//     STATIC_VIEWPORT=desktop|mobile viewport de captura (default desktop)
 
 import fs from 'fs';
 import path from 'path';
@@ -37,6 +45,12 @@ const SHELL_BACKUP = path.join(REPORTS, '_spa-shell');
 
 const RENDER_TIMEOUT_MS = Number(process.env.STATIC_RENDER_TIMEOUT ?? 20000);
 const STABILIZE_MS = 400;
+
+export type ViewportName = 'desktop' | 'mobile';
+const VIEWPORTS: Record<ViewportName, { width: number; height: number; isMobile: boolean }> = {
+  desktop: { width: 1307, height: 885, isMobile: false },
+  mobile: { width: 390, height: 844, isMobile: true },
+};
 
 // ─── Content-Types para o servidor estático ──────────────────────────────────
 const MIME: Record<string, string> = {
@@ -62,12 +76,13 @@ const MIME: Record<string, string> = {
 };
 
 // ─── Servidor estático com fallback SPA (serve index.html p/ rotas sem arquivo) ─
-function createStaticServer(): http.Server {
-  const indexHtml = fs.readFileSync(path.join(DIST, 'index.html'));
+// IMPORTANTE: durante a geração usamos SEMPRE o shell original (nunca um
+// index.html de rota já gravado), para não contaminar o fallback de outra rota.
+function createStaticServer(shellHtml: Buffer): http.Server {
   return http.createServer((req, res) => {
     try {
       const urlPath = decodeURIComponent((req.url ?? '/').split('?')[0]);
-      let filePath = path.join(DIST, urlPath);
+      const filePath = path.join(DIST, urlPath);
 
       // Impede path traversal para fora de /dist.
       if (!filePath.startsWith(DIST)) {
@@ -76,16 +91,21 @@ function createStaticServer(): http.Server {
         return;
       }
 
-      if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-        const ext = path.extname(filePath).toLowerCase();
+      // Só serve ARQUIVOS DE ASSET reais (js/css/img/fonts...). NUNCA serve um
+      // index.html de rota gravado: rotas de aplicação sempre recebem o shell.
+      const ext = path.extname(filePath).toLowerCase();
+      const isRealAsset =
+        ext && ext !== '.html' && fs.existsSync(filePath) && fs.statSync(filePath).isFile();
+
+      if (isRealAsset) {
         res.setHeader('Content-Type', MIME[ext] ?? 'application/octet-stream');
         res.end(fs.readFileSync(filePath));
         return;
       }
 
-      // Fallback SPA: qualquer rota "de aplicação" recebe o shell index.html.
+      // Fallback SPA: qualquer rota "de aplicação" recebe o shell original.
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      res.end(indexHtml);
+      res.end(shellHtml);
     } catch (err) {
       res.statusCode = 500;
       res.end('Server error: ' + (err as Error).message);
@@ -111,7 +131,7 @@ function outputFileFor(route: PilotRoute): string {
   return path.join(DIST, clean, 'index.html');
 }
 
-interface RouteResult {
+export interface RouteResult {
   path: string;
   type: string;
   outputFile: string;
@@ -131,9 +151,58 @@ interface RouteResult {
   htmlBytes: number;
   textLength: number;
   assetRefs: string[];
-  consoleErrors: string[];
+  consoleErrorsCritical: string[];
+  consoleErrorsTolerable: string[];
+  failedRequests: string[];
+  resolvedRoute: string | null;
+  routeMatched: boolean;
   containsLocalhost: boolean;
   error?: string;
+}
+
+// Classifica um erro de console/rede quanto à severidade para a geração.
+// - crítico: reprova a rota (React/chunk/import/exception real).
+// - tolerável: não reprova (analytics/terceiros/avisos de dev).
+function isNoiseOrTolerable(text: string): boolean {
+  const t = text.toLowerCase();
+  return (
+    t.includes('googletagmanager') ||
+    t.includes('google-analytics') ||
+    t.includes('gtag') ||
+    t.includes('gtm') ||
+    t.includes('facebook') ||
+    t.includes('fbevents') ||
+    t.includes('youtube') ||
+    t.includes('ytimg') ||
+    t.includes('doubleclick') ||
+    t.includes('favicon') ||
+    t.includes('preload') ||
+    t.includes('was preloaded using link preload') ||
+    t.includes('downloadable font') ||
+    t.includes('third-party cookie')
+  );
+}
+
+function isCriticalError(text: string): boolean {
+  if (isNoiseOrTolerable(text)) return false;
+  const t = text.toLowerCase();
+  return (
+    t.includes('failed to fetch dynamically imported module') ||
+    t.includes('error loading dynamically imported module') ||
+    t.includes('chunkloaderror') ||
+    t.includes('unexpected token') ||
+    t.includes('is not defined') ||
+    t.includes('is not a function') ||
+    t.includes('cannot read') ||
+    t.includes('cannot access') ||
+    t.includes('minified react error') ||
+    t.includes('hydration') ||
+    t.includes('uncaught') ||
+    t.includes('pageerror:') ||
+    t.includes('syntaxerror') ||
+    t.includes('typeerror') ||
+    t.includes('referenceerror')
+  );
 }
 
 // Sanitiza qualquer vazamento de localhost/porta do servidor temporário.
@@ -141,32 +210,45 @@ function sanitizeHtml(html: string, origin: string): string {
   const escaped = origin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(escaped, 'g');
   let out = html.replace(re, BASE_URL);
-  // Também cobre eventuais 127.0.0.1:PORT sem esquema.
   out = out.replace(/https?:\/\/127\.0\.0\.1:\d+/g, BASE_URL);
   out = out.replace(/https?:\/\/localhost:\d+/g, BASE_URL);
   if (!/^<!doctype html>/i.test(out)) out = '<!doctype html>\n' + out;
   return out;
 }
 
-async function main() {
+export interface GeneratedRoute {
+  result: RouteResult;
+  html: string | null;
+  outputFile: string;
+  isHome: boolean;
+}
+
+// ─── Núcleo reutilizável: gera todas as rotas e devolve HTML EM MEMÓRIA ───────
+export async function generateRoutes(
+  routes: PilotRoute[],
+  opts: { viewport?: ViewportName } = {},
+): Promise<GeneratedRoute[]> {
   if (!fs.existsSync(path.join(DIST, 'index.html'))) {
-    console.error('[static] dist/index.html não encontrado. Rode `npm run build:spa` antes.');
-    process.exit(2);
+    throw new Error('dist/index.html não encontrado. Rode `npm run build:spa` antes.');
   }
 
-  fs.mkdirSync(REPORTS, { recursive: true });
-  fs.mkdirSync(SHELL_BACKUP, { recursive: true });
+  // Usa o shell original preservado (se existir) para não realimentar o fallback
+  // com um index.html de rota já gravado numa execução anterior.
+  const shellPath = fs.existsSync(path.join(SHELL_BACKUP, 'index.html'))
+    ? path.join(SHELL_BACKUP, 'index.html')
+    : path.join(DIST, 'index.html');
+  const shellHtml = fs.readFileSync(shellPath);
+  // Título estático do shell (index.html). Usado para rejeitar renders em que
+  // a página ainda não aplicou seu próprio <title> (evita capturar a home).
+  const SHELL_TITLE = (shellHtml.toString().match(/<title>([^<]*)<\/title>/i)?.[1] ?? '').trim();
 
-  const server = createStaticServer();
+  const viewport = VIEWPORTS[opts.viewport ?? 'desktop'];
+  const server = createStaticServer(shellHtml);
   const port = await listenOnFreePort(server);
   const origin = `http://127.0.0.1:${port}`;
-  console.log(`[static] Servidor estático em ${origin} (fallback SPA ativo)`);
 
   let browser: Browser | null = null;
-  const results: RouteResult[] = [];
-  // Captura TODO o HTML em memória antes de gravar, para não contaminar o
-  // fallback SPA (evita que um index.html de rota vire fallback de outra).
-  const toWrite: { file: string; html: string; isHome: boolean }[] = [];
+  const out: GeneratedRoute[] = [];
 
   try {
     browser = await puppeteer.launch({
@@ -174,9 +256,12 @@ async function main() {
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     });
 
-    for (const route of PILOT_ROUTES) {
+    for (const route of routes) {
       const url = origin + route.path;
-      const consoleErrors: string[] = [];
+      const consoleErrorsCritical: string[] = [];
+      const consoleErrorsTolerable: string[] = [];
+      const failedRequests: string[] = [];
+
       const result: RouteResult = {
         path: route.path,
         type: route.type,
@@ -197,70 +282,128 @@ async function main() {
         htmlBytes: 0,
         textLength: 0,
         assetRefs: [],
-        consoleErrors,
+        consoleErrorsCritical,
+        consoleErrorsTolerable,
+        failedRequests,
+        resolvedRoute: null,
+        routeMatched: false,
         containsLocalhost: false,
       };
 
       const page = await browser.newPage();
-      // O tsx/esbuild instrumenta funções com chamadas a `__name` (keepNames).
-      // Ao serializar as funções para o contexto do navegador (evaluate/
-      // waitForFunction), esse helper não existe → definimos um shim global.
-      // Arrow anônima sem declarações nomeadas: não é instrumentada.
+      await page.setViewport({
+        width: viewport.width,
+        height: viewport.height,
+        isMobile: viewport.isMobile,
+        deviceScaleFactor: 1,
+        hasTouch: viewport.isMobile,
+      });
+
+      // Render ansioso: injeta ANTES de qualquer script do app.
+      // Também define o shim `__name` (tsx/esbuild keepNames) usado ao serializar
+      // funções para o contexto do navegador.
       await page.evaluateOnNewDocument(() => {
         (globalThis as unknown as { __name?: (f: unknown) => unknown }).__name = (f) => f;
+        (window as unknown as { __STATIC_RENDER__?: boolean }).__STATIC_RENDER__ = true;
       });
+
+      const classify = (text: string) => {
+        if (isCriticalError(text)) consoleErrorsCritical.push(text);
+        else consoleErrorsTolerable.push(text);
+      };
       page.on('console', (msg) => {
-        if (msg.type() === 'error') consoleErrors.push(msg.text());
+        if (msg.type() === 'error') classify(msg.text());
       });
       page.on('pageerror', (err: unknown) =>
-        consoleErrors.push('pageerror: ' + (err instanceof Error ? err.message : String(err))),
+        classify('pageerror: ' + (err instanceof Error ? err.message : String(err))),
       );
+      page.on('requestfailed', (req) => {
+        const u = req.url();
+        if (u.startsWith(origin)) failedRequests.push(`${req.failure()?.errorText ?? 'failed'} ${u}`);
+      });
+      page.on('response', (res) => {
+        const u = res.url();
+        // Chunks/assets locais com status de erro = crítico.
+        if (u.startsWith(origin) && res.status() >= 400) {
+          failedRequests.push(`HTTP ${res.status()} ${u}`);
+        }
+      });
 
       try {
         await page.goto(url, { waitUntil: 'load', timeout: RENDER_TIMEOUT_MS });
 
-        // Sinal confiável: render-event já disparou (__STATIC_RENDER_READY__),
-        // H1/conteúdo presentes e spinner de rota ausente.
+        // Critério de prontidão AGNÓSTICO ao mecanismo de SEO. Nem toda página
+        // usa o hook useSEO: FAQPage aplica title/canonical via useEffect e
+        // LojaDePneus usa react-helmet. Por isso combinamos:
+        //  (a) via preferencial: __STATIC_RENDER_STATUS__.ready da rota correta
+        //      (quando a página usa useSEO); OU
+        //  (b) heurística de DOM: rota correta (location.pathname), título
+        //      aplicado, <link rel=canonical> presente no head, spinner de rota
+        //      ausente e conteúdo principal (h1/main) presente.
+        // O default title do shell é ignorado para não aceitar render incompleto.
+        const expectedPath = route.path.replace(/\/+$/, '') || '/';
         await page.waitForFunction(
-          () => {
-            const w = window as unknown as { __STATIC_RENDER_READY__?: boolean };
-            if (!w.__STATIC_RENDER_READY__) return false;
+          (expected: string, shellTitle: string) => {
+            const current = (window.location.pathname.replace(/\/+$/, '') || '/');
+            if (current !== expected) return false;
             const spinner = document.querySelector('[role="status"][aria-label="Carregando"]');
             if (spinner) return false;
             const h1 = document.querySelector('h1');
             const main = document.querySelector('main') || document.querySelector('#root > div');
-            return !!(h1 || main);
+            if (!(h1 || main)) return false;
+
+            const w = window as unknown as {
+              __STATIC_RENDER_STATUS__?: { ready: boolean; route: string };
+            };
+            const st = w.__STATIC_RENDER_STATUS__;
+            if (st && st.ready && (st.route.replace(/\/+$/, '') || '/') === expected) {
+              return true; // via (a): useSEO confirmou metadados da rota
+            }
+            // via (b): heurística de DOM independente do useSEO
+            const title = (document.title || '').trim();
+            const hasTitle = title.length > 0 && title !== shellTitle;
+            const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+            const hasCanonical = !!canonical?.getAttribute('href');
+            return hasTitle && hasCanonical;
           },
           { timeout: RENDER_TIMEOUT_MS, polling: 200 },
+          expectedPath,
+          SHELL_TITLE,
         );
 
-        // Estabilização curta após o sinal.
         await new Promise((r) => setTimeout(r, STABILIZE_MS));
 
-        // Extrai metadados e conteúdo.
+        // Marca o documento como pré-renderizado (o cliente lê isto para hidratar
+        // de forma ansiosa e casar com o HTML servido).
+        await page.evaluate(() => {
+          document.documentElement.setAttribute('data-prerendered', 'true');
+        });
+
         const data = await page.evaluate(() => {
           const meta = (sel: string) =>
             (document.querySelector(sel) as HTMLMetaElement | null)?.content ?? null;
           const link = (sel: string) =>
             (document.querySelector(sel) as HTMLLinkElement | null)?.href ?? null;
           const jsonLdTotal = document.querySelectorAll('script[type="application/ld+json"]').length;
-          const jsonLdDynamic = document.querySelectorAll(
-            'script[data-dynamic-schema="true"]',
-          ).length;
+          const jsonLdDynamic = document.querySelectorAll('script[data-dynamic-schema="true"]').length;
           const h1El = document.querySelector('h1');
           const assetRefs: string[] = [];
           document.querySelectorAll('script[src]').forEach((s) => {
             const src = (s as HTMLScriptElement).getAttribute('src');
             if (src && src.startsWith('/assets')) assetRefs.push(src);
           });
-          document.querySelectorAll('link[rel="stylesheet"][href], link[rel="modulepreload"][href]').forEach((l) => {
-            const href = (l as HTMLLinkElement).getAttribute('href');
-            if (href && href.startsWith('/assets')) assetRefs.push(href);
-          });
+          document
+            .querySelectorAll('link[rel="stylesheet"][href], link[rel="modulepreload"][href]')
+            .forEach((l) => {
+              const href = (l as HTMLLinkElement).getAttribute('href');
+              if (href && href.startsWith('/assets')) assetRefs.push(href);
+            });
           const hasBreadcrumb =
             !!document.querySelector('nav[aria-label*="readcrumb" i]') ||
             !!document.querySelector('[class*="breadcrumb" i]') ||
             !!document.querySelector('ol[itemtype*="BreadcrumbList"]');
+          const st = (window as unknown as { __STATIC_RENDER_STATUS__?: { route: string } })
+            .__STATIC_RENDER_STATUS__;
           return {
             title: document.title || null,
             description: meta('meta[name="description"]'),
@@ -276,6 +419,7 @@ async function main() {
             jsonLdDynamic,
             textLength: (document.body.innerText || '').replace(/\s+/g, ' ').trim().length,
             assetRefs,
+            resolvedRoute: st?.route ?? window.location.pathname,
           };
         });
 
@@ -285,17 +429,45 @@ async function main() {
         Object.assign(result, data);
         result.htmlBytes = Buffer.byteLength(html, 'utf8');
         result.containsLocalhost = /localhost|127\.0\.0\.1/.test(html);
-        result.status = 'ok';
+        result.routeMatched =
+          (data.resolvedRoute ?? '').replace(/\/+$/, '') === expectedPath.replace(/\/+$/, '');
 
-        toWrite.push({ file: outputFileFor(route), html, isHome: !!route.isHome });
+        // Reprova se: erro crítico de console/exception, requisição local falha,
+        // rota resolvida incorreta, ou conteúdo essencial ausente.
+        const hardFail =
+          consoleErrorsCritical.length > 0 ||
+          failedRequests.length > 0 ||
+          !result.routeMatched ||
+          !data.title ||
+          !data.h1;
+
+        result.status = hardFail ? 'falha' : 'ok';
+        if (hardFail) {
+          result.error =
+            (consoleErrorsCritical[0] ||
+              failedRequests[0] ||
+              (!result.routeMatched ? `rota resolvida "${data.resolvedRoute}" ≠ "${route.path}"` : '') ||
+              (!data.title ? 'sem <title>' : '') ||
+              (!data.h1 ? 'sem <h1>' : '')) ?? 'falha';
+        }
+
+        out.push({
+          result,
+          html: result.status === 'ok' ? html : null,
+          outputFile: outputFileFor(route),
+          isHome: !!route.isHome,
+        });
+
+        const tag = result.status === 'ok' ? 'OK  ' : 'FALHA';
         console.log(
-          `[static] OK   ${route.path}  (title="${(data.title ?? '').slice(0, 50)}…", texto=${data.textLength}, jsonld=${data.jsonLdTotal})`,
+          `[static] ${tag} ${route.path}  (title="${(data.title ?? '').slice(0, 45)}…", texto=${data.textLength}, jsonld=${data.jsonLdTotal})` +
+            (result.status === 'falha' ? `  → ${result.error}` : ''),
         );
       } catch (err) {
         result.error = (err as Error).message;
+        out.push({ result, html: null, outputFile: outputFileFor(route), isHome: !!route.isHome });
         console.error(`[static] FALHA ${route.path} → ${result.error}`);
       } finally {
-        results.push(result);
         await page.close();
       }
     }
@@ -304,24 +476,40 @@ async function main() {
     await new Promise<void>((r) => server.close(() => r()));
   }
 
-  // Preserva o shell original ANTES de sobrescrever dist/index.html.
+  return out;
+}
+
+// ─── Execução direta: gera, grava em disco e escreve o resumo JSON ────────────
+async function main() {
+  fs.mkdirSync(REPORTS, { recursive: true });
+  fs.mkdirSync(SHELL_BACKUP, { recursive: true });
+
+  // Preserva o shell original ANTES de qualquer escrita (idempotente).
   const shellCopy = path.join(SHELL_BACKUP, 'index.html');
   if (!fs.existsSync(shellCopy)) {
     fs.copyFileSync(path.join(DIST, 'index.html'), shellCopy);
     console.log(`[static] Shell SPA original preservado em ${path.relative(ROOT, shellCopy)}`);
   }
 
-  // Grava os arquivos capturados.
-  for (const { file, html } of toWrite) {
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, html, 'utf8');
-    console.log(`[static] Gravado ${path.relative(ROOT, file)} (${Buffer.byteLength(html)} bytes)`);
+  const viewport = (process.env.STATIC_VIEWPORT as ViewportName) || 'desktop';
+  console.log(`[static] Gerando ${PILOT_ROUTES.length} rotas piloto (viewport=${viewport})…`);
+
+  const generated = await generateRoutes(PILOT_ROUTES, { viewport });
+
+  // Grava apenas as rotas OK.
+  for (const g of generated) {
+    if (g.html) {
+      fs.mkdirSync(path.dirname(g.outputFile), { recursive: true });
+      fs.writeFileSync(g.outputFile, g.html, 'utf8');
+      console.log(`[static] Gravado ${path.relative(ROOT, g.outputFile)} (${Buffer.byteLength(g.html)} bytes)`);
+    }
   }
 
-  // Resumo JSON para o validador/relatório.
+  const results = generated.map((g) => g.result);
   const summary = {
     generatedAt: new Date().toISOString(),
     baseUrl: BASE_URL,
+    viewport,
     total: results.length,
     ok: results.filter((r) => r.status === 'ok').length,
     falhas: results.filter((r) => r.status === 'falha').length,
@@ -332,15 +520,48 @@ async function main() {
     JSON.stringify(summary, null, 2),
     'utf8',
   );
+
+  // Relatório de erros de runtime (E4).
+  writeRuntimeErrorsReport(results);
+
   console.log(
     `[static] Concluído: ${summary.ok}/${summary.total} rotas geradas. Resumo em reports/static-pilot-generation.json`,
   );
 
-  // Exit code != 0 em falha crítica (qualquer rota piloto que não gerou).
   if (summary.falhas > 0) process.exit(1);
 }
 
-main().catch((err) => {
-  console.error('[static] Erro crítico:', err);
-  process.exit(1);
-});
+function writeRuntimeErrorsReport(results: RouteResult[]) {
+  const lines: string[] = [];
+  lines.push('# Relatório de erros de runtime — geração estática (E4)');
+  lines.push('');
+  lines.push(`Gerado em: ${new Date().toISOString()}`);
+  lines.push('');
+  const totalCrit = results.reduce((n, r) => n + r.consoleErrorsCritical.length, 0);
+  const totalTol = results.reduce((n, r) => n + r.consoleErrorsTolerable.length, 0);
+  const totalReq = results.reduce((n, r) => n + r.failedRequests.length, 0);
+  lines.push(`- Erros críticos: **${totalCrit}**`);
+  lines.push(`- Erros toleráveis/ruído: ${totalTol}`);
+  lines.push(`- Requisições locais com falha: **${totalReq}**`);
+  lines.push('');
+  for (const r of results) {
+    lines.push(`## ${r.path} — ${r.status.toUpperCase()}`);
+    lines.push(`- rota resolvida: \`${r.resolvedRoute}\` (match: ${r.routeMatched ? 'sim' : 'NÃO'})`);
+    if (r.error) lines.push(`- motivo da falha: ${r.error}`);
+    lines.push(`- críticos: ${r.consoleErrorsCritical.length ? r.consoleErrorsCritical.join('; ') : 'nenhum'}`);
+    lines.push(`- toleráveis: ${r.consoleErrorsTolerable.length ? r.consoleErrorsTolerable.slice(0, 5).join('; ') : 'nenhum'}`);
+    lines.push(`- requisições falhas: ${r.failedRequests.length ? r.failedRequests.join('; ') : 'nenhuma'}`);
+    lines.push('');
+  }
+  fs.writeFileSync(path.join(REPORTS, 'static-runtime-errors.md'), lines.join('\n'), 'utf8');
+}
+
+// Só executa main() quando rodado diretamente (não quando importado por testes).
+const invokedDirectly =
+  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (invokedDirectly) {
+  main().catch((err) => {
+    console.error('[static] Erro crítico:', err);
+    process.exit(1);
+  });
+}

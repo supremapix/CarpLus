@@ -12,6 +12,7 @@ import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 import { getTireReview } from '../data/tireReviews';
 import { decideTireIndexing, getCanonicalSlug } from '../lib/seoIndexing';
 import TireSeoContent from './TireSeoContent';
+import { BUILD_DATE_ISO, buildDatePtBR } from '../lib/buildInfo';
 
 export default function TireDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -67,13 +68,10 @@ export default function TireDetail() {
 
   const BASE_URL = "https://www.carpluspneuseoficina.com.br";
 
-  // Data da última revisão de conteúdo (ISO para schema, formato PT-BR para exibição)
-  const modifiedISO = new Date().toISOString().split("T")[0];
-  const lastUpdated = new Date().toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
+  // Data da última revisão de conteúdo — determinística (baked no build).
+  // ISO para schema, formato PT-BR para exibição. Evita hydration mismatch.
+  const modifiedISO = BUILD_DATE_ISO;
+  const lastUpdated = buildDatePtBR();
 
   // Decisão de indexação inteligente: variantes equivalentes recebem canonical
   // para a URL principal do grupo + noindex,follow. A página canônica é indexada.

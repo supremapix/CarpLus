@@ -24,6 +24,7 @@ import Footer from './Footer';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 import { getPromoTireBySlug, PROMO_TIRES } from '../data/promoTires';
+import { BUILD_DATE_ISO, buildDatePtBR } from '../lib/buildInfo';
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 const WHATSAPP_PHONE = '554130827282';
@@ -35,13 +36,10 @@ export default function PneuPromocaoDetalhe() {
 
   const pageUrl = `${BASE_URL}/pneu-promocao/${slug}`;
 
-  // Data da última revisão de conteúdo (ISO para schema, PT-BR para exibição)
-  const modifiedISO = new Date().toISOString().split('T')[0];
-  const lastUpdated = new Date().toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
+  // Data da última revisão de conteúdo — determinística (baked no build).
+  // ISO para schema, PT-BR para exibição. Evita hydration mismatch.
+  const modifiedISO = BUILD_DATE_ISO;
+  const lastUpdated = buildDatePtBR();
 
   const [copied, setCopied] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);

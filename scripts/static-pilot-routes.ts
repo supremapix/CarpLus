@@ -25,6 +25,9 @@ export interface PilotRoute {
   isHome?: boolean;
   /** É uma URL propositalmente inexistente (teste de erro 404)? */
   isNotFound?: boolean;
+  /** Rota "de risco" (E4): exercita componentes com APIs de navegador / lazy /
+   *  contadores / scroll infinito. Usada para provar completude e determinismo. */
+  risk?: string;
 }
 
 export const PILOT_ROUTES: PilotRoute[] = [
@@ -63,6 +66,27 @@ export const PILOT_ROUTES: PilotRoute[] = [
     path: '/quem-somos',
     type: 'Institucional',
     expectJsonLd: false,
+  },
+  // ─── Rotas de risco (E4) ────────────────────────────────────────────────
+  // Exercitam os componentes com maior chance de conteúdo incompleto/instável
+  // no snapshot: contador animado, scroll infinito e uso de navigator.
+  {
+    path: '/servicos',
+    type: 'Serviços (contador animado)',
+    expectJsonLd: false,
+    risk: 'AnimatedCounter (IntersectionObserver) — deve mostrar valor final, não "0"',
+  },
+  {
+    path: '/faq',
+    type: 'FAQ (scroll infinito)',
+    expectJsonLd: false,
+    risk: 'FAQInfiniteScroll — conteúdo essencial não pode depender de scroll',
+  },
+  {
+    path: '/loja-de-pneus-curitiba-perto-de-mim',
+    type: 'Local (navigator/geolocation)',
+    expectJsonLd: false,
+    risk: 'navigator.geolocation em handler — não pode bloquear/alterar o render',
   },
   {
     path: '/rota-inexistente-teste-404',
