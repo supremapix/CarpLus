@@ -10,7 +10,7 @@
     "prebuild": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-redirects.ts",
     "build": "vite build",
     "build:spa": "vite build",
-    "generate:static:pilot": "node scripts/run-ts.mjs scripts/generate-static-pages.ts",
+    "generate:static:pilot": "node scripts/run-ts.mjs scripts/generate-static-pages.entry.ts",
     "build:static:pilot": "npm run build:spa && npm run generate:static:pilot",
     "validate:static:pilot": "node scripts/run-ts.mjs scripts/validate-static-pilot.ts",
     "test:static:determinism": "node scripts/run-ts.mjs scripts/test-static-determinism.ts",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.1",
     "puppeteer": "^25.3.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.14",

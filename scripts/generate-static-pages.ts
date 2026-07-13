@@ -480,7 +480,7 @@ export async function generateRoutes(
 }
 
 // ─── Execução direta: gera, grava em disco e escreve o resumo JSON ────────────
-async function main() {
+export async function main() {
   fs.mkdirSync(REPORTS, { recursive: true });
   fs.mkdirSync(SHELL_BACKUP, { recursive: true });
 
@@ -556,12 +556,7 @@ function writeRuntimeErrorsReport(results: RouteResult[]) {
   fs.writeFileSync(path.join(REPORTS, 'static-runtime-errors.md'), lines.join('\n'), 'utf8');
 }
 
-// Só executa main() quando rodado diretamente (não quando importado por testes).
-const invokedDirectly =
-  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
-if (invokedDirectly) {
-  main().catch((err) => {
-    console.error('[static] Erro crítico:', err);
-    process.exit(1);
-  });
-}
+// NOTA: este módulo NÃO auto-executa main(). Ele é importado por
+// scripts/test-static-determinism.ts (que usa apenas generateRoutes) e
+// executado como entrypoint por scripts/generate-static-pages.entry.ts.
+// Assim evitamos o guard frágil de "invocado diretamente" sob bundling.
