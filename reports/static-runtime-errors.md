@@ -1,73 +1,84 @@
 # Relatório de erros de runtime — geração estática (E4)
 
-Gerado em: 2026-07-13T18:37:58.318Z
+Gerado em: 2026-07-13T18:50:59.281Z
 
 - Erros críticos: **0**
-- Erros toleráveis/ruído: 0
+- Erros toleráveis/ruído: 11
 - Requisições locais com falha: **0**
 
-## / — OK
-- rota resolvida: `/` (match: sim)
+## / — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /pneu/pneu-pirelli-175-70r13-p400-evo-82t — OK
-- rota resolvida: `/pneu/pneu-pirelli-175-70r13-p400-evo-82t` (match: sim)
+## /pneu/pneu-pirelli-175-70r13-p400-evo-82t — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /servico/venda-de-pneus — OK
-- rota resolvida: `/servico/venda-de-pneus` (match: sim)
+## /servico/venda-de-pneus — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /pneu-medida/175-65r14 — OK
-- rota resolvida: `/pneu-medida/175-65r14` (match: sim)
+## /pneu-medida/175-65r14 — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /pneu-para-hb20-curitiba — OK
-- rota resolvida: `/pneu-para-hb20-curitiba` (match: sim)
+## /pneu-para-hb20-curitiba — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /bairro/portao — OK
-- rota resolvida: `/bairro/portao` (match: sim)
+## /bairro/portao — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /quem-somos — OK
-- rota resolvida: `/quem-somos` (match: sim)
+## /quem-somos — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /servicos — OK
-- rota resolvida: `/servicos` (match: sim)
+## /servicos — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /faq — OK
-- rota resolvida: `/faq` (match: sim)
+## /faq — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /loja-de-pneus-curitiba-perto-de-mim — OK
-- rota resolvida: `/loja-de-pneus-curitiba-perto-de-mim` (match: sim)
+## /loja-de-pneus-curitiba-perto-de-mim — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma
 
-## /rota-inexistente-teste-404 — OK
-- rota resolvida: `/rota-inexistente-teste-404` (match: sim)
+## /rota-inexistente-teste-404 — FALHA
+- rota resolvida: `null` (match: NÃO)
+- motivo da falha: Waiting failed: 20000ms exceeded
 - críticos: nenhum
-- toleráveis: nenhum
+- toleráveis: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec.
 - requisições falhas: nenhuma

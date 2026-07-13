@@ -379,6 +379,67 @@ export async function generateRoutes(
           document.documentElement.setAttribute('data-prerendered', 'true');
         });
 
+        // Normalização de animações (E4). Reveals do framer-motion (whileInView)
+        // e afins iniciam em opacity:0 + transform e, num snapshot headless sem
+        // scroll, ficam INVISÍVEIS e com transform volátil (não-determinístico).
+        // Aqui forçamos o estado final: removemos o opacity<1 (→ conteúdo visível
+        // para crawlers/no-JS) e o transform de reveal (translate/scale/rotate),
+        // tornando o HTML estável entre execuções. Conteúdo com opacity/transform
+        // legítimos é restaurado na hidratação.
+        const normalizedCount = await page.evaluate(() => {
+          let count = 0;
+          const els = document.querySelectorAll<HTMLElement>('[style]');
+          els.forEach((el) => {
+            const s = el.style;
+            let touched = false;
+            // opacity inline < 1 → torna visível
+            if (s.opacity !== '' && parseFloat(s.opacity) < 1) {
+              s.removeProperty('opacity');
+              touched = true;
+            }
+            // transform de reveal (translate/scale/rotate) → estado final
+            const t = s.transform;
+            if (t && /translate|scale|rotate|matrix/i.test(t)) {
+              s.removeProperty('transform');
+              touched = true;
+            }
+            // will-change/filter deixados pela animação
+            if (s.willChange && /transform|opacity/i.test(s.willChange)) {
+              s.removeProperty('will-change');
+              touched = true;
+            }
+            // Se o atributo style ficou vazio, remove-o por completo (HTML limpo).
+            if (touched && s.length === 0) el.removeAttribute('style');
+            if (touched) count++;
+          });
+          return count;
+        });
+        void normalizedCount;
+
+        // Dedup de tags de <head> (E4). Páginas que usam react-helmet (ex.:
+        // /loja-de-pneus...) ADICIONAM canonical/OG próprios, enquanto o shell
+        // index.html já traz versões estáticas (da home). Isso deixa 2 canonicals
+        // no head — inválido para SEO e faz o crawler ler o errado. Mantemos a
+        // ÚLTIMA ocorrência (específica da página; o Helmet injeta após o head
+        // estático). Para páginas com useSEO, que atualizam in-place, não há dup.
+        await page.evaluate(() => {
+          const dedupeKeepLast = (selector: string) => {
+            const nodes = Array.from(document.head.querySelectorAll(selector));
+            for (let i = 0; i < nodes.length - 1; i++) nodes[i].remove();
+          };
+          [
+            'link[rel="canonical"]',
+            'meta[name="description"]',
+            'meta[name="robots"]',
+            'meta[property="og:title"]',
+            'meta[property="og:url"]',
+            'meta[property="og:description"]',
+            'meta[name="twitter:card"]',
+            'meta[name="twitter:title"]',
+            'meta[name="twitter:description"]',
+          ].forEach(dedupeKeepLast);
+        });
+
         const data = await page.evaluate(() => {
           const meta = (sel: string) =>
             (document.querySelector(sel) as HTMLMetaElement | null)?.content ?? null;

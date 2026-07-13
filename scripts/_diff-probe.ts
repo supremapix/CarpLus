@@ -16,7 +16,7 @@ function norm(html: string): string {
 }
 
 async function main() {
-  const target = '/quem-somos';
+  const target = '/faq';
   const routes = PILOT_ROUTES.filter((r) => r.path === target);
   const a = (await generateRoutes(routes, { viewport: 'desktop' }))[0];
   const b = (await generateRoutes(routes, { viewport: 'desktop' }))[0];
