@@ -212,7 +212,9 @@ async function main() {
       page.on('console', (msg) => {
         if (msg.type() === 'error') consoleErrors.push(msg.text());
       });
-      page.on('pageerror', (err) => consoleErrors.push('pageerror: ' + err.message));
+      page.on('pageerror', (err: unknown) =>
+        consoleErrors.push('pageerror: ' + (err instanceof Error ? err.message : String(err))),
+      );
 
       try {
         await page.goto(url, { waitUntil: 'load', timeout: RENDER_TIMEOUT_MS });
