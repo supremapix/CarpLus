@@ -1,0 +1,23 @@
+{
+  "state": {
+    "title": "Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão",
+    "staticFlag": true,
+    "status": {
+      "ready": true,
+      "route": "/",
+      "title": "Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão",
+      "hasCanonical": true,
+      "jsonLd": 0,
+      "noindex": false,
+      "timestamp": 1783969211042
+    },
+    "rootChildren": 2,
+    "rootHtmlLen": 563279,
+    "h1": "OFICINAEM CURITIBA",
+    "canonical": "https://www.carpluspneuseoficina.com.br/",
+    "bodyText": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W4SBDRGD\"\n    height=\"0\" width=\"0\" style=\"display:none;visi"
+  },
+  "errors": [
+    "WAIT_RESULT=RESOLVED"
+  ]
+}

@@ -1,6 +1,6 @@
 # Relatório de erros de runtime — geração estática (E4)
 
-Gerado em: 2026-07-13T18:50:59.281Z
+Gerado em: 2026-07-13T18:58:51.680Z
 
 - Erros críticos: **0**
 - Erros toleráveis/ruído: 11
