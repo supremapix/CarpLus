@@ -51,7 +51,9 @@ async function main() {
     (window as unknown as { __STATIC_RENDER__?: boolean }).__STATIC_RENDER__ = true;
   });
 
-  await page.goto(`http://localhost:${port}/`, { waitUntil: 'load', timeout: 30000 }).catch((e) => errors.push('GOTO: ' + e.message));
+  const gotoStart = Date.now();
+  await page.goto(`http://localhost:${port}/`, { waitUntil: 'networkidle0', timeout: 30000 }).catch((e) => errors.push('GOTO: ' + e.message));
+  errors.push('GOTO_MS=' + (Date.now() - gotoStart));
 
   // Replica EXATAMENTE a predicate do gerador para isolar o timeout.
   const expected = '/';

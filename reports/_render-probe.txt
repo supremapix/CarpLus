@@ -9,15 +9,16 @@
       "hasCanonical": true,
       "jsonLd": 0,
       "noindex": false,
-      "timestamp": 1783969211042
+      "timestamp": 1783969405084
     },
     "rootChildren": 2,
-    "rootHtmlLen": 563279,
+    "rootHtmlLen": 563247,
     "h1": "OFICINAEM CURITIBA",
     "canonical": "https://www.carpluspneuseoficina.com.br/",
     "bodyText": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-W4SBDRGD\"\n    height=\"0\" width=\"0\" style=\"display:none;visi"
   },
   "errors": [
+    "GOTO_MS=1144",
     "WAIT_RESULT=RESOLVED"
   ]
 }

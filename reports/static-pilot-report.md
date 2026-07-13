@@ -1,23 +1,23 @@
 # Relatório — Prova de Conceito de Geração Estática (E2/E3)
 
-> Gerado em 2026-07-13T18:38:08.615Z
+> Gerado em 2026-07-13T19:07:16.098Z
 
-## Veredito: **PROVA DE CONCEITO PARCIAL** (10/11 rotas aprovadas)
+## Veredito: **PROVA DE CONCEITO APROVADA** (11/11 rotas aprovadas)
 
 ## Tabela de rotas piloto
 
 | Rota | Tipo | Arquivo | Title (início) | Canonical | HTML (bytes) | Texto (chars) | H1 | JSON-LD | Assets | Status |
 |------|------|---------|----------------|-----------|--------------|---------------|----|---------|--------|--------|
-| `/` | Home | `dist/index.html` | Carplus Centro Automotivo – Loja… | / | 577497 | 25760 | OFIEM CURITIBA | 3 | ok | APROVADA |
+| `/` | Home | `dist/index.html` | Carplus Centro Automotivo – Loja… | / | 575963 | 25764 | OFICINAEM CURITIBA | 3 | ok | APROVADA |
 | `/pneu/pneu-pirelli-175-70r13-p400-evo-82t` | Produto (pneu) | `dist/pneu/pneu-pirelli-175-70r13-p400-evo-82t/index.html` | Pirelli 175/70R13 P400 Evo 82T e… | /pneu/pneu-pirelli-175-70r13-p400-evo-82t | 171602 | 13938 | Pirelli 175/70R13 P400 Evo 8 | 5 | ok | APROVADA |
-| `/servico/venda-de-pneus` | Serviço | `dist/servico/venda-de-pneus/index.html` | Venda de Pneus em Curitiba Portã… | /servico/venda-de-pneus/ | 127101 | 9516 | Venda de Pneus em Curitiba – | 5 | ok | APROVADA |
+| `/servico/venda-de-pneus` | Serviço | `dist/servico/venda-de-pneus/index.html` | Venda de Pneus em Curitiba Portã… | /servico/venda-de-pneus/ | 126659 | 9516 | Venda de Pneus em Curitiba – | 5 | ok | APROVADA |
 | `/pneu-medida/175-65r14` | Medida | `dist/pneu-medida/175-65r14/index.html` | Pneu 175/65R14 em Curitiba / Car… | /pneu-medida/175-65r14 | 173469 | 9815 | Pneu 175/65R14 | 5 | ok | APROVADA |
-| `/pneu-para-hb20-curitiba` | Veículo (landing) | `dist/pneu-para-hb20-curitiba/index.html` | Pneu para HB20 em Curitiba / Car… | /pneu-para-hb20-curitiba | 140695 | 6942 | Pneu para Hyundai HB20 em Cu | 7 | ok | APROVADA |
-| `/bairro/portao` | Local / Bairro | `dist/bairro/portao/index.html` | Loja de Pneus no Portão Curitiba… | /bairro/portao | 134420 | 8314 | Pneus e Oficina no Portão | 6 | ok | APROVADA |
-| `/quem-somos` | Institucional | `dist/quem-somos/index.html` | Quem Somos / Carplus Pneus e Ofi… | /quem-somos | 104143 | 6507 | Quem Somos | 2 | ok | APROVADA |
-| `/servicos` | Serviços (contador animado) | `dist/servicos/index.html` | Serviços de Oficina e Pneus em C… | /servicos/ | 217587 | 13680 | Nossos Serviços | 3 | ok | APROVADA |
-| `/faq` | FAQ (scroll infinito) | `dist/faq/index.html` | FAQ - Perguntas Frequentes / Car… | /faq | 248060 | 6695 | Perguntas Frequentes | 3 | ok | APROVADA |
-| `/loja-de-pneus-curitiba-perto-de-mim` | Local (navigator/geolocation) | `dist/loja-de-pneus-curitiba-perto-de-mim/index.html` | Loja de Pneus em Curitiba Perto … | / | 103345 | 5820 | Loja de Pneus em Curitiba Pe | 4 | ok | REPROVADA |
+| `/pneu-para-hb20-curitiba` | Veículo (landing) | `dist/pneu-para-hb20-curitiba/index.html` | Pneu para HB20 em Curitiba / Car… | /pneu-para-hb20-curitiba | 140660 | 6942 | Pneu para Hyundai HB20 em Cu | 7 | ok | APROVADA |
+| `/bairro/portao` | Local / Bairro | `dist/bairro/portao/index.html` | Loja de Pneus no Portão Curitiba… | /bairro/portao | 134077 | 8314 | Pneus e Oficina no Portão | 6 | ok | APROVADA |
+| `/quem-somos` | Institucional | `dist/quem-somos/index.html` | Quem Somos / Carplus Pneus e Ofi… | /quem-somos | 103202 | 6507 | Quem Somos | 2 | ok | APROVADA |
+| `/servicos` | Serviços (contador animado) | `dist/servicos/index.html` | Serviços de Oficina e Pneus em C… | /servicos/ | 215823 | 13680 | Nossos Serviços | 3 | ok | APROVADA |
+| `/faq` | FAQ (scroll infinito) | `dist/faq/index.html` | FAQ - Perguntas Frequentes / Car… | /faq | 243801 | 6695 | Perguntas Frequentes | 3 | ok | APROVADA |
+| `/loja-de-pneus-curitiba-perto-de-mim` | Local (navigator/geolocation) | `dist/loja-de-pneus-curitiba-perto-de-mim/index.html` | Loja de Pneus em Curitiba Perto … | /loja-de-pneus-curitiba-perto-de-mim | 100224 | 5820 | Loja de Pneus em Curitiba Pe | 4 | ok | APROVADA |
 | `/rota-inexistente-teste-404` | 404 (teste de erro) | `dist/rota-inexistente-teste-404/index.html` | Página não encontrada (404) / Ca… | / | 22363 | 639 | Essa página não existe, mas  | 2 | ok | APROVADA |
 
 ## Detalhe das verificações por rota
@@ -25,12 +25,12 @@
 ### [APROVADA] `/` — Home
 
 - [x] Arquivo HTML existe — _dist/index.html_
-- [x] Tamanho mínimo (>2KB) — _577497 bytes_
+- [x] Tamanho mínimo (>2KB) — _575963 bytes_
 - [x] Possui <title> — _Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/_
-- [x] Possui H1 — _OFIEM CURITIBA_
-- [x] Possui conteúdo principal (texto real) — _25760 chars_
+- [x] Possui H1 — _OFICINAEM CURITIBA_
+- [x] Possui conteúdo principal (texto real) — _25764 chars_
 - [x] JSON-LD presente (global do shell) — _3 blocos_
 - [x] Canonical sem localhost
 - [x] HTML sem localhost/porta
@@ -60,7 +60,7 @@
 ### [APROVADA] `/servico/venda-de-pneus` — Serviço
 
 - [x] Arquivo HTML existe — _dist/servico/venda-de-pneus/index.html_
-- [x] Tamanho mínimo (>2KB) — _127101 bytes_
+- [x] Tamanho mínimo (>2KB) — _126659 bytes_
 - [x] Possui <title> — _Venda de Pneus em Curitiba Portão | Carplus Centro Automotivo_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/servico/venda-de-pneus/_
@@ -98,7 +98,7 @@
 ### [APROVADA] `/pneu-para-hb20-curitiba` — Veículo (landing)
 
 - [x] Arquivo HTML existe — _dist/pneu-para-hb20-curitiba/index.html_
-- [x] Tamanho mínimo (>2KB) — _140695 bytes_
+- [x] Tamanho mínimo (>2KB) — _140660 bytes_
 - [x] Possui <title> — _Pneu para HB20 em Curitiba | Carplus Centro Automotivo – Medidas e Preço_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/pneu-para-hb20-curitiba_
@@ -117,7 +117,7 @@
 ### [APROVADA] `/bairro/portao` — Local / Bairro
 
 - [x] Arquivo HTML existe — _dist/bairro/portao/index.html_
-- [x] Tamanho mínimo (>2KB) — _134420 bytes_
+- [x] Tamanho mínimo (>2KB) — _134077 bytes_
 - [x] Possui <title> — _Loja de Pneus no Portão Curitiba | Carplus Centro Automotivo - 2 min_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/bairro/portao_
@@ -136,7 +136,7 @@
 ### [APROVADA] `/quem-somos` — Institucional
 
 - [x] Arquivo HTML existe — _dist/quem-somos/index.html_
-- [x] Tamanho mínimo (>2KB) — _104143 bytes_
+- [x] Tamanho mínimo (>2KB) — _103202 bytes_
 - [x] Possui <title> — _Quem Somos | Carplus Pneus e Oficina em Curitiba desde 2014_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/quem-somos_
@@ -155,7 +155,7 @@
 ### [APROVADA] `/servicos` — Serviços (contador animado)
 
 - [x] Arquivo HTML existe — _dist/servicos/index.html_
-- [x] Tamanho mínimo (>2KB) — _217587 bytes_
+- [x] Tamanho mínimo (>2KB) — _215823 bytes_
 - [x] Possui <title> — _Serviços de Oficina e Pneus em Curitiba Portão | Carplus Centro Automotivo_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/servicos/_
@@ -174,7 +174,7 @@
 ### [APROVADA] `/faq` — FAQ (scroll infinito)
 
 - [x] Arquivo HTML existe — _dist/faq/index.html_
-- [x] Tamanho mínimo (>2KB) — _248060 bytes_
+- [x] Tamanho mínimo (>2KB) — _243801 bytes_
 - [x] Possui <title> — _FAQ - Perguntas Frequentes | Carplus Centro Automotivo Curitiba_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/faq_
@@ -190,13 +190,13 @@
 - [x] Canonical diferente do canonical da home — _ok_
 - [x] Canonical reflete o caminho da rota — _https://www.carpluspneuseoficina.com.br/faq_
 
-### [REPROVADA] `/loja-de-pneus-curitiba-perto-de-mim` — Local (navigator/geolocation)
+### [APROVADA] `/loja-de-pneus-curitiba-perto-de-mim` — Local (navigator/geolocation)
 
 - [x] Arquivo HTML existe — _dist/loja-de-pneus-curitiba-perto-de-mim/index.html_
-- [x] Tamanho mínimo (>2KB) — _103345 bytes_
+- [x] Tamanho mínimo (>2KB) — _100224 bytes_
 - [x] Possui <title> — _Loja de Pneus em Curitiba Perto de Mim | Carplus - Portão_
 - [x] Possui description
-- [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/_
+- [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/loja-de-pneus-curitiba-perto-de-mim_
 - [x] Possui H1 — _Loja de Pneus em Curitiba Perto de Você_
 - [x] Possui conteúdo principal (texto real) — _5820 chars_
 - [x] JSON-LD presente (global do shell) — _4 blocos_
@@ -206,8 +206,8 @@
 - [x] HTML não é o shell vazio (tem conteúdo no #root)
 - [x] Assets /assets existem fisicamente — _todos ok_
 - [x] Title diferente do title da home — _ok_
-- [ ] Canonical diferente do canonical da home — _herdou canonical da home!_
-- [ ] Canonical reflete o caminho da rota — _https://www.carpluspneuseoficina.com.br/_
+- [x] Canonical diferente do canonical da home — _ok_
+- [x] Canonical reflete o caminho da rota — _https://www.carpluspneuseoficina.com.br/loja-de-pneus-curitiba-perto-de-mim_
 
 ### [APROVADA] `/rota-inexistente-teste-404` — 404 (teste de erro)
 
@@ -237,7 +237,7 @@ Nenhum erro de console registrado durante a geração.
 |------|------------------|---------------|--------|
 | `/servicos` | AnimatedCounter (IntersectionObserver) — deve mostrar valor final, não "0" | 13680 | APROVADA |
 | `/faq` | FAQInfiniteScroll — conteúdo essencial não pode depender de scroll | 6695 | APROVADA |
-| `/loja-de-pneus-curitiba-perto-de-mim` | navigator.geolocation em handler — não pode bloquear/alterar o render | 5820 | REPROVADA |
+| `/loja-de-pneus-curitiba-perto-de-mim` | navigator.geolocation em handler — não pode bloquear/alterar o render | 5820 | APROVADA |
 
 ## Critérios de aprovação (checklist do pedido)
 
@@ -245,7 +245,7 @@ Nenhum erro de console registrado durante a geração.
 - [x] Metadados corretos (title + canonical por rota)
 - [x] Assets funcionam (referências /assets existem)
 - [x] Sem localhost em canonical
-- [ ] Nenhuma rota indexável herdou canonical da home
+- [x] Nenhuma rota indexável herdou canonical da home
 - [ ] JavaScript desativado mantém o conteúdo (validar manualmente — ver seção no doc)
 - [ ] Hidratação sem quebra (validar no navegador — ver seção no doc)
 - [x] Geração sem dependência do Prerender.io

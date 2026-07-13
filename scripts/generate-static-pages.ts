@@ -379,50 +379,36 @@ export async function generateRoutes(
           document.documentElement.setAttribute('data-prerendered', 'true');
         });
 
-        // Normalização de animações (E4). Reveals do framer-motion (whileInView)
-        // e afins iniciam em opacity:0 + transform e, num snapshot headless sem
-        // scroll, ficam INVISÍVEIS e com transform volátil (não-determinístico).
-        // Aqui forçamos o estado final: removemos o opacity<1 (→ conteúdo visível
-        // para crawlers/no-JS) e o transform de reveal (translate/scale/rotate),
-        // tornando o HTML estável entre execuções. Conteúdo com opacity/transform
-        // legítimos é restaurado na hidratação.
-        const normalizedCount = await page.evaluate(() => {
-          let count = 0;
-          const els = document.querySelectorAll<HTMLElement>('[style]');
-          els.forEach((el) => {
+        // Captura ATÔMICA (E4): normalização de animações, dedup de <head> e a
+        // serialização do HTML acontecem TODAS dentro de UM único page.evaluate.
+        // Isso é essencial porque o framer-motion reaplica opacity:0/transform via
+        // requestAnimationFrame. Se normalizássemos num evaluate e serializássemos
+        // noutro (page.content()), o rAF dispararia no intervalo e reintroduziria
+        // estilos voláteis → HTML não-determinístico. Como o JS é single-thread,
+        // nada roda no meio de um evaluate: normalizamos e serializamos no mesmo
+        // "tick", garantindo estabilidade entre execuções.
+        const data = await page.evaluate(() => {
+          // (1) Normaliza animações: remove opacity<1 e transforms de reveal.
+          document.querySelectorAll<HTMLElement>('[style]').forEach((el) => {
             const s = el.style;
             let touched = false;
-            // opacity inline < 1 → torna visível
             if (s.opacity !== '' && parseFloat(s.opacity) < 1) {
               s.removeProperty('opacity');
               touched = true;
             }
-            // transform de reveal (translate/scale/rotate) → estado final
             const t = s.transform;
             if (t && /translate|scale|rotate|matrix/i.test(t)) {
               s.removeProperty('transform');
               touched = true;
             }
-            // will-change/filter deixados pela animação
             if (s.willChange && /transform|opacity/i.test(s.willChange)) {
               s.removeProperty('will-change');
               touched = true;
             }
-            // Se o atributo style ficou vazio, remove-o por completo (HTML limpo).
             if (touched && s.length === 0) el.removeAttribute('style');
-            if (touched) count++;
           });
-          return count;
-        });
-        void normalizedCount;
 
-        // Dedup de tags de <head> (E4). Páginas que usam react-helmet (ex.:
-        // /loja-de-pneus...) ADICIONAM canonical/OG próprios, enquanto o shell
-        // index.html já traz versões estáticas (da home). Isso deixa 2 canonicals
-        // no head — inválido para SEO e faz o crawler ler o errado. Mantemos a
-        // ÚLTIMA ocorrência (específica da página; o Helmet injeta após o head
-        // estático). Para páginas com useSEO, que atualizam in-place, não há dup.
-        await page.evaluate(() => {
+          // (2) Dedup de tags de <head> (mantém a última = específica da página).
           const dedupeKeepLast = (selector: string) => {
             const nodes = Array.from(document.head.querySelectorAll(selector));
             for (let i = 0; i < nodes.length - 1; i++) nodes[i].remove();
@@ -438,9 +424,8 @@ export async function generateRoutes(
             'meta[name="twitter:title"]',
             'meta[name="twitter:description"]',
           ].forEach(dedupeKeepLast);
-        });
 
-        const data = await page.evaluate(() => {
+          // (3) Coleta de metadados para o relatório.
           const meta = (sel: string) =>
             (document.querySelector(sel) as HTMLMetaElement | null)?.content ?? null;
           const link = (sel: string) =>
@@ -481,13 +466,16 @@ export async function generateRoutes(
             textLength: (document.body.innerText || '').replace(/\s+/g, ' ').trim().length,
             assetRefs,
             resolvedRoute: st?.route ?? window.location.pathname,
+            // Serializa o documento COMPLETO neste mesmo tick (pós-normalização),
+            // evitando a race com o requestAnimationFrame do framer-motion.
+            serializedHtml: '<!doctype html>\n' + document.documentElement.outerHTML,
           };
         });
 
-        const rawHtml = await page.content();
-        const html = sanitizeHtml(rawHtml, origin);
+        const { serializedHtml, ...meta } = data;
+        const html = sanitizeHtml(serializedHtml, origin);
 
-        Object.assign(result, data);
+        Object.assign(result, meta);
         result.htmlBytes = Buffer.byteLength(html, 'utf8');
         result.containsLocalhost = /localhost|127\.0\.0\.1/.test(html);
         result.routeMatched =
@@ -545,11 +533,43 @@ export async function main() {
   fs.mkdirSync(REPORTS, { recursive: true });
   fs.mkdirSync(SHELL_BACKUP, { recursive: true });
 
-  // Preserva o shell original ANTES de qualquer escrita (idempotente).
+  // Preserva o shell SPA original ANTES de qualquer escrita.
+  //
+  // Cuidado importante: o backup NÃO pode ficar obsoleto. Se um build novo do
+  // Vite gerar novos hashes de asset (ex.: index-XXXX.js), um backup antigo
+  // apontaria para um <script> que não existe mais → o app nunca monta e todas
+  // as rotas dão timeout. Por outro lado, se o dist/index.html já foi
+  // SOBRESCRITO por uma página pré-renderizada (rota "/"), não podemos usá-lo
+  // como shell (ele já tem conteúdo). Distinguimos os dois casos pelo conteúdo:
+  //   - shell SPA fresco  → <div id="root"></div> vazio, sem data-prerendered
+  //   - página gerada     → #root cheio e/ou data-prerendered presente
   const shellCopy = path.join(SHELL_BACKUP, 'index.html');
-  if (!fs.existsSync(shellCopy)) {
+  const distIndex = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+  const distIsFreshShell =
+    !/data-prerendered/i.test(distIndex) &&
+    /<div id="root">\s*<\/div>/i.test(distIndex);
+
+  if (distIsFreshShell) {
+    // Build novo detectado: (re)grava o backup com os hashes atuais.
     fs.copyFileSync(path.join(DIST, 'index.html'), shellCopy);
-    console.log(`[static] Shell SPA original preservado em ${path.relative(ROOT, shellCopy)}`);
+    console.log(`[static] Shell SPA atual preservado em ${path.relative(ROOT, shellCopy)}`);
+  } else if (!fs.existsSync(shellCopy)) {
+    // dist/index.html já é uma página gerada e não há backup: erro de fluxo.
+    throw new Error(
+      'dist/index.html não é um shell SPA (parece já pré-renderizado) e não há ' +
+        'backup em reports/_spa-shell. Rode `npm run build:spa` para regenerar o shell.',
+    );
+  } else {
+    // Reutiliza o backup existente, mas valida que seus assets ainda existem.
+    const backupHtml = fs.readFileSync(shellCopy, 'utf8');
+    const mainJs = backupHtml.match(/src="(\/assets\/[^"]+\.js)"/)?.[1];
+    if (mainJs && !fs.existsSync(path.join(DIST, mainJs.replace(/^\//, '')))) {
+      throw new Error(
+        `Backup do shell (${path.relative(ROOT, shellCopy)}) está obsoleto: o asset ` +
+          `${mainJs} não existe mais em dist/. Rode \`npm run build:spa\` e gere novamente.`,
+      );
+    }
+    console.log(`[static] Reutilizando shell preservado em ${path.relative(ROOT, shellCopy)}`);
   }
 
   const viewport = (process.env.STATIC_VIEWPORT as ViewportName) || 'desktop';
