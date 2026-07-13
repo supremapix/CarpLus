@@ -83,8 +83,8 @@ export default function PneuPromocaoDetalhe() {
   const faqs = tire
     ? [
         {
-          q: `Qual o preço do pneu ${tire.marca} ${tire.medida} em Curitiba?`,
-          a: `O pneu ${tire.marca} ${tire.nome} está em promoção a partir de ${tire.preco} na Carplus Centro Automotivo, no bairro Portão em Curitiba. Solicite seu orçamento atualizado pelo WhatsApp (41) 3082-7282.`,
+          q: `Como consultar o pneu ${tire.marca} ${tire.medida} em Curitiba?`,
+          a: `Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp (41) 3082-7282. A equipe Carplus confirma a disponibilidade e as condições do pneu ${tire.marca} ${tire.nome} na Carplus Centro Automotivo, no bairro Portão em Curitiba.`,
         },
         {
           q: `A montagem e o balanceamento estão inclusos?`,
@@ -116,7 +116,6 @@ export default function PneuPromocaoDetalhe() {
         image: [tire.imagem],
         sku: tire.slug,
         brand: tire.marca,
-        price: tire.precoNumero,
         availability: 'InStock',
         url: pageUrl,
         dateModified: modifiedISO,
@@ -147,8 +146,8 @@ export default function PneuPromocaoDetalhe() {
   useSEO(
     tire
       ? {
-          title: `Pneu ${tire.marca} ${tire.medida} em Promoção | ${tire.preco} – Carplus Curitiba`,
-          description: `Pneu ${tire.marca} ${tire.nome} a partir de ${tire.preco} em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Centro Automotivo, no Portão. WhatsApp: (41) 3082-7282.`,
+          title: `Pneu ${tire.marca} ${tire.medida} em Promoção – Carplus Curitiba`,
+          description: `Pneu ${tire.marca} ${tire.nome} em promoção em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Centro Automotivo, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.`,
           canonical: pageUrl,
           ogImage: tire.imagem,
           ogType: 'product',
@@ -191,7 +190,7 @@ export default function PneuPromocaoDetalhe() {
     );
   }
 
-  const whatsappMsg = `Olá! Vi a *promoção do pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) por ${tire.preco}. Gostaria de garantir esse preço.\n\nOrigem do contato: ${pageUrl}`;
+  const whatsappMsg = `Olá! Vi o *pneu ${tire.marca} ${tire.nome}* (medida ${tire.medida}) no site. Gostaria de consultar o pneu certo para o meu carro e saber as condições.\n\nOrigem do contato: ${pageUrl}`;
   const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(whatsappMsg)}`;
 
   const related = PROMO_TIRES.filter((t) => t.slug !== tire.slug && (t.aro === tire.aro || t.marca === tire.marca)).slice(0, 4);
@@ -378,15 +377,12 @@ export default function PneuPromocaoDetalhe() {
                   </div>
                 </div>
 
-                {/* Preço */}
-                <div className="mb-8">
-                  <span className="text-gray-400 text-sm font-bold uppercase tracking-widest">A partir de</span>
-                  <div className="flex items-end gap-3">
-                    <span className="font-accent font-bold text-primary text-5xl md:text-6xl leading-none">
-                      {tire.preco}
-                    </span>
-                    <span className="text-gray-500 text-sm mb-1">ou 10x sem juros</span>
-                  </div>
+                {/* Consulta de valor */}
+                <div className="mb-8 rounded-2xl bg-primary/10 border border-primary/20 p-5">
+                  <p className="text-neutral-800 font-bold leading-relaxed">
+                    Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp.
+                  </p>
+                  <span className="mt-1 block text-gray-500 text-sm">Montagem inclusa e parcelamento em até 10x sem juros.</span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -557,10 +553,10 @@ export default function PneuPromocaoDetalhe() {
         {/* CTA final */}
         <section className="bg-primary rounded-[2.5rem] p-10 md:p-16 mb-16 text-center">
           <h2 className="text-2xl md:text-4xl font-bold uppercase italic text-black mb-4 leading-snug text-balance">
-            Garanta o {tire.marca} {tire.medida} por {tire.preco}
+            Garanta o {tire.marca} {tire.medida} com atendimento rápido
           </h2>
           <p className="text-black/70 font-medium mb-8 max-w-xl mx-auto">
-            Fale agora com nossa equipe e reserve seu pneu em promoção. Estoque limitado!
+            Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp. Estoque limitado!
           </p>
           <a
             href={whatsappUrl}
@@ -601,9 +597,9 @@ export default function PneuPromocaoDetalhe() {
                   <div className="p-4 pt-0">
                     <p className="font-accent font-bold uppercase text-primary text-sm">{rt.marca}</p>
                     <p className="text-gray-500 text-xs leading-snug mb-2 min-h-[2rem]">{rt.nome}</p>
-                    <p className="font-accent font-bold text-black text-lg flex items-center gap-1">
-                      {rt.preco}
+                    <p className="text-primary text-xs font-bold flex items-center gap-1">
                       <CheckCircle2 size={14} className="text-green-500" />
+                      Consulte pelo WhatsApp
                     </p>
                   </div>
                 </Link>
