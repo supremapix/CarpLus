@@ -238,6 +238,9 @@ export async function generateRoutes(
     ? path.join(SHELL_BACKUP, 'index.html')
     : path.join(DIST, 'index.html');
   const shellHtml = fs.readFileSync(shellPath);
+  // Título estático do shell (index.html). Usado para rejeitar renders em que
+  // a página ainda não aplicou seu próprio <title> (evita capturar a home).
+  const SHELL_TITLE = (shellHtml.toString().match(/<title>([^<]*)<\/title>/i)?.[1] ?? '').trim();
 
   const viewport = VIEWPORTS[opts.viewport ?? 'desktop'];
   const server = createStaticServer(shellHtml);
@@ -329,27 +332,43 @@ export async function generateRoutes(
       try {
         await page.goto(url, { waitUntil: 'load', timeout: RENDER_TIMEOUT_MS });
 
-        // Sinal confiável: STATUS.ready (título + canonical aplicados), rota
-        // correta resolvida, spinner ausente e H1/conteúdo presentes.
+        // Critério de prontidão AGNÓSTICO ao mecanismo de SEO. Nem toda página
+        // usa o hook useSEO: FAQPage aplica title/canonical via useEffect e
+        // LojaDePneus usa react-helmet. Por isso combinamos:
+        //  (a) via preferencial: __STATIC_RENDER_STATUS__.ready da rota correta
+        //      (quando a página usa useSEO); OU
+        //  (b) heurística de DOM: rota correta (location.pathname), título
+        //      aplicado, <link rel=canonical> presente no head, spinner de rota
+        //      ausente e conteúdo principal (h1/main) presente.
+        // O default title do shell é ignorado para não aceitar render incompleto.
         const expectedPath = route.path.replace(/\/+$/, '') || '/';
         await page.waitForFunction(
-          (expected: string) => {
-            const w = window as unknown as {
-              __STATIC_RENDER_STATUS__?: { ready: boolean; route: string };
-              __STATIC_RENDER_READY__?: boolean;
-            };
-            const st = w.__STATIC_RENDER_STATUS__;
-            if (!st || !st.ready) return false;
-            const current = st.route.replace(/\/+$/, '') || '/';
+          (expected: string, shellTitle: string) => {
+            const current = (window.location.pathname.replace(/\/+$/, '') || '/');
             if (current !== expected) return false;
             const spinner = document.querySelector('[role="status"][aria-label="Carregando"]');
             if (spinner) return false;
             const h1 = document.querySelector('h1');
             const main = document.querySelector('main') || document.querySelector('#root > div');
-            return !!(h1 || main);
+            if (!(h1 || main)) return false;
+
+            const w = window as unknown as {
+              __STATIC_RENDER_STATUS__?: { ready: boolean; route: string };
+            };
+            const st = w.__STATIC_RENDER_STATUS__;
+            if (st && st.ready && (st.route.replace(/\/+$/, '') || '/') === expected) {
+              return true; // via (a): useSEO confirmou metadados da rota
+            }
+            // via (b): heurística de DOM independente do useSEO
+            const title = (document.title || '').trim();
+            const hasTitle = title.length > 0 && title !== shellTitle;
+            const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+            const hasCanonical = !!canonical?.getAttribute('href');
+            return hasTitle && hasCanonical;
           },
           { timeout: RENDER_TIMEOUT_MS, polling: 200 },
           expectedPath,
+          SHELL_TITLE,
         );
 
         await new Promise((r) => setTimeout(r, STABILIZE_MS));

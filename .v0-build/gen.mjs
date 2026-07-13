@@ -172,6 +172,7 @@ async function generateRoutes(routes, opts = {}) {
   }
   const shellPath = fs.existsSync(path.join(SHELL_BACKUP, "index.html")) ? path.join(SHELL_BACKUP, "index.html") : path.join(DIST, "index.html");
   const shellHtml = fs.readFileSync(shellPath);
+  const SHELL_TITLE = (shellHtml.toString().match(/<title>([^<]*)<\/title>/i)?.[1] ?? "").trim();
   const viewport = VIEWPORTS[opts.viewport ?? "desktop"];
   const server = createStaticServer(shellHtml);
   const port = await listenOnFreePort(server);
@@ -252,20 +253,28 @@ async function generateRoutes(routes, opts = {}) {
         await page.goto(url, { waitUntil: "load", timeout: RENDER_TIMEOUT_MS });
         const expectedPath = route.path.replace(/\/+$/, "") || "/";
         await page.waitForFunction(
-          (expected) => {
-            const w = window;
-            const st = w.__STATIC_RENDER_STATUS__;
-            if (!st || !st.ready) return false;
-            const current = st.route.replace(/\/+$/, "") || "/";
+          (expected, shellTitle) => {
+            const current = window.location.pathname.replace(/\/+$/, "") || "/";
             if (current !== expected) return false;
             const spinner = document.querySelector('[role="status"][aria-label="Carregando"]');
             if (spinner) return false;
             const h1 = document.querySelector("h1");
             const main2 = document.querySelector("main") || document.querySelector("#root > div");
-            return !!(h1 || main2);
+            if (!(h1 || main2)) return false;
+            const w = window;
+            const st = w.__STATIC_RENDER_STATUS__;
+            if (st && st.ready && (st.route.replace(/\/+$/, "") || "/") === expected) {
+              return true;
+            }
+            const title = (document.title || "").trim();
+            const hasTitle = title.length > 0 && title !== shellTitle;
+            const canonical = document.querySelector('link[rel="canonical"]');
+            const hasCanonical = !!canonical?.getAttribute("href");
+            return hasTitle && hasCanonical;
           },
           { timeout: RENDER_TIMEOUT_MS, polling: 200 },
-          expectedPath
+          expectedPath,
+          SHELL_TITLE
         );
         await new Promise((r) => setTimeout(r, STABILIZE_MS));
         await page.evaluate(() => {

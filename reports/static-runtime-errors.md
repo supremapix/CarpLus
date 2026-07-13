@@ -1,6 +1,6 @@
 # Relatório de erros de runtime — geração estática (E4)
 
-Gerado em: 2026-07-13T16:26:31.622Z
+Gerado em: 2026-07-13T16:28:31.170Z
 
 - Erros críticos: **0**
 - Erros toleráveis/ruído: 0
@@ -54,16 +54,14 @@ Gerado em: 2026-07-13T16:26:31.622Z
 - toleráveis: nenhum
 - requisições falhas: nenhuma
 
-## /faq — FALHA
-- rota resolvida: `null` (match: NÃO)
-- motivo da falha: Waiting failed: 20000ms exceeded
+## /faq — OK
+- rota resolvida: `/faq` (match: sim)
 - críticos: nenhum
 - toleráveis: nenhum
 - requisições falhas: nenhuma
 
-## /loja-de-pneus-curitiba-perto-de-mim — FALHA
-- rota resolvida: `null` (match: NÃO)
-- motivo da falha: Waiting failed: 20000ms exceeded
+## /loja-de-pneus-curitiba-perto-de-mim — OK
+- rota resolvida: `/loja-de-pneus-curitiba-perto-de-mim` (match: sim)
 - críticos: nenhum
 - toleráveis: nenhum
 - requisições falhas: nenhuma
