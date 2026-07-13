@@ -25,7 +25,9 @@ const DIST = path.join(ROOT, 'dist');
 const REPORTS = path.join(ROOT, 'reports');
 const MIN_HTML_BYTES = 2000;
 
-const HOME_TITLE = 'Carplus Pneus e Oficina Mecânica no Portão | Centro Automotivo em Curitiba';
+// Título/canonical da home são derivados dinamicamente do HTML gerado (ver
+// resolveHomeMeta) para que a checagem anti-herança continue válida mesmo se o
+// título da home mudar. O canonical da home é sempre a BASE_URL raiz.
 const HOME_CANONICAL = `${BASE_URL}/`;
 
 interface Check {
@@ -78,7 +80,15 @@ function validateAssets(html: string): { ok: boolean; missing: string[] } {
   return { ok: missing.length === 0, missing };
 }
 
+/** Lê o <title> real da home gerada, para a checagem anti-herança ser válida. */
+function resolveHomeTitle(): string | null {
+  const homeFile = path.join(DIST, 'index.html');
+  if (!fs.existsSync(homeFile)) return null;
+  return extract(fs.readFileSync(homeFile, 'utf8'), /<title>([^<]*)<\/title>/i);
+}
+
 function main() {
+  const HOME_TITLE = resolveHomeTitle();
   const reports: RouteReport[] = [];
 
   for (const route of PILOT_ROUTES) {
@@ -210,6 +220,18 @@ function main() {
       }
     }
     if (!any) md += `Nenhum erro de console registrado durante a geração.\n`;
+    md += `\n`;
+  }
+
+  // Rotas de risco (E4): componentes com APIs de navegador / lazy / contadores.
+  const riskRoutes = reports.filter((r) => r.route.risk);
+  if (riskRoutes.length) {
+    md += `## Rotas de risco (E4) — cobertura de APIs de navegador / lazy / contadores\n\n`;
+    md += `| Rota | Risco exercitado | Texto (chars) | Status |\n`;
+    md += `|------|------------------|---------------|--------|\n`;
+    for (const r of riskRoutes) {
+      md += `| \`${r.route.path}\` | ${r.route.risk} | ${r.textLength} | ${r.passed ? 'APROVADA' : 'REPROVADA'} |\n`;
+    }
     md += `\n`;
   }
 

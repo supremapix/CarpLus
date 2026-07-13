@@ -25,7 +25,8 @@
 // Também expõe `generateRoutes()` para reuso pelos testes (determinismo/viewport),
 // que capturam em memória SEM gravar em disco.
 //
-// Execução: `tsx scripts/generate-static-pages.ts`
+// Execução: `npm run generate:static:pilot`
+//   (usa scripts/run-ts.mjs → esbuild bundle + node, portátil neste ambiente).
 //   Env opcionais:
 //     STATIC_RENDER_TIMEOUT=20000   timeout por rota (ms)
 //     STATIC_VIEWPORT=desktop|mobile viewport de captura (default desktop)
@@ -379,7 +380,59 @@ export async function generateRoutes(
           document.documentElement.setAttribute('data-prerendered', 'true');
         });
 
+        // Captura ATÔMICA (E4): normalização de animações, dedup de <head> e a
+        // serialização do HTML acontecem TODAS dentro de UM único page.evaluate.
+        // Isso é essencial porque o framer-motion reaplica opacity:0/transform via
+        // requestAnimationFrame. Se normalizássemos num evaluate e serializássemos
+        // noutro (page.content()), o rAF dispararia no intervalo e reintroduziria
+        // estilos voláteis → HTML não-determinístico. Como o JS é single-thread,
+        // nada roda no meio de um evaluate: normalizamos e serializamos no mesmo
+        // "tick", garantindo estabilidade entre execuções.
         const data = await page.evaluate(() => {
+          // (1) Normaliza animações. O framer-motion (whileInView e afins) injeta
+          // inline `opacity` e `transform` cujos valores dependem do estágio exato
+          // da animação no instante da captura — inclusive resíduos no-op como
+          // `opacity: 1` e `transform: none`. Para conteúdo indexável estável e
+          // determinístico, removemos QUALQUER opacity/transform/will-change inline
+          // (qualquer valor). São artefatos de animação: o estado final desejado é
+          // "totalmente visível, sem deslocamento", que equivale à ausência dessas
+          // props. A hidratação restaura tudo no cliente.
+          document.querySelectorAll<HTMLElement>('[style]').forEach((el) => {
+            const s = el.style;
+            let touched = false;
+            if (s.opacity !== '') {
+              s.removeProperty('opacity');
+              touched = true;
+            }
+            if (s.transform !== '') {
+              s.removeProperty('transform');
+              touched = true;
+            }
+            if (s.willChange !== '') {
+              s.removeProperty('will-change');
+              touched = true;
+            }
+            if (touched && s.length === 0) el.removeAttribute('style');
+          });
+
+          // (2) Dedup de tags de <head> (mantém a última = específica da página).
+          const dedupeKeepLast = (selector: string) => {
+            const nodes = Array.from(document.head.querySelectorAll(selector));
+            for (let i = 0; i < nodes.length - 1; i++) nodes[i].remove();
+          };
+          [
+            'link[rel="canonical"]',
+            'meta[name="description"]',
+            'meta[name="robots"]',
+            'meta[property="og:title"]',
+            'meta[property="og:url"]',
+            'meta[property="og:description"]',
+            'meta[name="twitter:card"]',
+            'meta[name="twitter:title"]',
+            'meta[name="twitter:description"]',
+          ].forEach(dedupeKeepLast);
+
+          // (3) Coleta de metadados para o relatório.
           const meta = (sel: string) =>
             (document.querySelector(sel) as HTMLMetaElement | null)?.content ?? null;
           const link = (sel: string) =>
@@ -420,13 +473,16 @@ export async function generateRoutes(
             textLength: (document.body.innerText || '').replace(/\s+/g, ' ').trim().length,
             assetRefs,
             resolvedRoute: st?.route ?? window.location.pathname,
+            // Serializa o documento COMPLETO neste mesmo tick (pós-normalização),
+            // evitando a race com o requestAnimationFrame do framer-motion.
+            serializedHtml: '<!doctype html>\n' + document.documentElement.outerHTML,
           };
         });
 
-        const rawHtml = await page.content();
-        const html = sanitizeHtml(rawHtml, origin);
+        const { serializedHtml, ...meta } = data;
+        const html = sanitizeHtml(serializedHtml, origin);
 
-        Object.assign(result, data);
+        Object.assign(result, meta);
         result.htmlBytes = Buffer.byteLength(html, 'utf8');
         result.containsLocalhost = /localhost|127\.0\.0\.1/.test(html);
         result.routeMatched =
@@ -480,15 +536,47 @@ export async function generateRoutes(
 }
 
 // ─── Execução direta: gera, grava em disco e escreve o resumo JSON ────────────
-async function main() {
+export async function main() {
   fs.mkdirSync(REPORTS, { recursive: true });
   fs.mkdirSync(SHELL_BACKUP, { recursive: true });
 
-  // Preserva o shell original ANTES de qualquer escrita (idempotente).
+  // Preserva o shell SPA original ANTES de qualquer escrita.
+  //
+  // Cuidado importante: o backup NÃO pode ficar obsoleto. Se um build novo do
+  // Vite gerar novos hashes de asset (ex.: index-XXXX.js), um backup antigo
+  // apontaria para um <script> que não existe mais → o app nunca monta e todas
+  // as rotas dão timeout. Por outro lado, se o dist/index.html já foi
+  // SOBRESCRITO por uma página pré-renderizada (rota "/"), não podemos usá-lo
+  // como shell (ele já tem conteúdo). Distinguimos os dois casos pelo conteúdo:
+  //   - shell SPA fresco  → <div id="root"></div> vazio, sem data-prerendered
+  //   - página gerada     → #root cheio e/ou data-prerendered presente
   const shellCopy = path.join(SHELL_BACKUP, 'index.html');
-  if (!fs.existsSync(shellCopy)) {
+  const distIndex = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+  const distIsFreshShell =
+    !/data-prerendered/i.test(distIndex) &&
+    /<div id="root">\s*<\/div>/i.test(distIndex);
+
+  if (distIsFreshShell) {
+    // Build novo detectado: (re)grava o backup com os hashes atuais.
     fs.copyFileSync(path.join(DIST, 'index.html'), shellCopy);
-    console.log(`[static] Shell SPA original preservado em ${path.relative(ROOT, shellCopy)}`);
+    console.log(`[static] Shell SPA atual preservado em ${path.relative(ROOT, shellCopy)}`);
+  } else if (!fs.existsSync(shellCopy)) {
+    // dist/index.html já é uma página gerada e não há backup: erro de fluxo.
+    throw new Error(
+      'dist/index.html não é um shell SPA (parece já pré-renderizado) e não há ' +
+        'backup em reports/_spa-shell. Rode `npm run build:spa` para regenerar o shell.',
+    );
+  } else {
+    // Reutiliza o backup existente, mas valida que seus assets ainda existem.
+    const backupHtml = fs.readFileSync(shellCopy, 'utf8');
+    const mainJs = backupHtml.match(/src="(\/assets\/[^"]+\.js)"/)?.[1];
+    if (mainJs && !fs.existsSync(path.join(DIST, mainJs.replace(/^\//, '')))) {
+      throw new Error(
+        `Backup do shell (${path.relative(ROOT, shellCopy)}) está obsoleto: o asset ` +
+          `${mainJs} não existe mais em dist/. Rode \`npm run build:spa\` e gere novamente.`,
+      );
+    }
+    console.log(`[static] Reutilizando shell preservado em ${path.relative(ROOT, shellCopy)}`);
   }
 
   const viewport = (process.env.STATIC_VIEWPORT as ViewportName) || 'desktop';
@@ -556,12 +644,7 @@ function writeRuntimeErrorsReport(results: RouteResult[]) {
   fs.writeFileSync(path.join(REPORTS, 'static-runtime-errors.md'), lines.join('\n'), 'utf8');
 }
 
-// Só executa main() quando rodado diretamente (não quando importado por testes).
-const invokedDirectly =
-  process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
-if (invokedDirectly) {
-  main().catch((err) => {
-    console.error('[static] Erro crítico:', err);
-    process.exit(1);
-  });
-}
+// NOTA: este módulo NÃO auto-executa main(). Ele é importado por
+// scripts/test-static-determinism.ts (que usa apenas generateRoutes) e
+// executado como entrypoint por scripts/generate-static-pages.entry.ts.
+// Assim evitamos o guard frágil de "invocado diretamente" sob bundling.

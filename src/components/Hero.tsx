@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';
+import { isPrerenderEager } from '../lib/prerender';
 
 // Frases da descrição da Hero — conteúdo real do site (preços, serviços e oficina)
 const HERO_PHRASES = [
@@ -13,11 +14,18 @@ const HERO_PHRASES = [
 const TYPEWRITER_WORDS = ['OFICINA', 'PNEUS', 'CENTRO AUTOMOTIVO', 'SERVIÇOS', 'MECÂNICOS DE CONFIANÇA'];
 
 function Typewriter() {
+  // Durante a geração estática / hidratação de página pré-renderizada, o h1
+  // (conteúdo crítico de SEO) precisa estar COMPLETO e determinístico. Por isso
+  // iniciamos com a primeira palavra inteira, em vez de string vazia digitada.
+  const eager = isPrerenderEager();
   const [wordIndex, setWordIndex] = useState(0);
-  const [text, setText] = useState('');
+  const [text, setText] = useState(eager ? TYPEWRITER_WORDS[0] : '');
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    // No modo pré-render, não anima: mantém a palavra completa fixa e estável.
+    if (isPrerenderEager()) return;
+
     const currentWord = TYPEWRITER_WORDS[wordIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
