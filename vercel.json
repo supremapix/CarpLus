@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build:static",
+  "buildCommand": "npm run build",
   "redirects": [
     {
       "source": "/taboao.html",
