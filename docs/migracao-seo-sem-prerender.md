@@ -390,7 +390,8 @@ E6 — geração estática em escala (1512 rotas): implementada e validada
 E6.5 — build de deploy configurado e validado localmente: PARCIAL (deploy Vercel pendente)
 E7 — Chromium serverless + build resiliente: implementada (produção Ready)
 E8 — remoção controlada do Prerender.io (kill-switch + validação local): PARCIAL (edge real pendente); bug crítico da home corrigido
-Remoção definitiva do Prerender.io (E9): pendente (condicionada à validação no edge real)
+E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1/C4)
+Remoção definitiva do Prerender.io (E9): pendente (condicionada aos critérios C1-C9 da E8.5)
 Validação final: pendente
 ```
 
@@ -690,4 +691,49 @@ as metas em `index.html` e o `render-event` continuam intactos.
 E8 PARCIAL — validação LOCAL real APROVADA (kill-switch OK; HTML físico entrega SEO completo em
 todos os tipos; bug crítico da home corrigido e reconfirmado 1512/1512). Remoção definitiva (E9)
 PENDENTE da validação no edge real da Vercel (Preview bloqueado por SSO).
+```
+
+---
+
+## 19. Etapa E8.5 — Plano de remoção definitiva do Prerender.io (planejamento)
+
+Etapa de **planejamento apenas** — nada foi removido, publicado ou alterado em
+SEO/geração/redirects/sitemap/robots/llms/layouts/conteúdo. Plano executável completo em
+**`reports/e8.5-removal-plan.md`**.
+
+### 19.1 Inventário do acoplamento REAL (alvo da E9)
+Concentrado em 3 arquivos + 2 env vars + a assinatura externa. **Sem** dependência npm de
+prerender e **sem** headers de Prerender no `vercel.json` (ambos auditados).
+
+| Item | Local | Criticidade |
+|---|---|---|
+| Ponte Edge → `service.prerender.io` | `middleware.js` (1-102) | CRÍTICA |
+| `PRERENDER_TOKEN` + header `X-Prerender-Token` | `middleware.js` 46/65 + env | CRÍTICA |
+| Kill-switch `PRERENDER_ENABLED` | `middleware.js` 28 + env | CONTROLE (E8) |
+| Metas `prerender-token` / `prerender-status-code` | `index.html` 19-23 | MÉDIA (token exposto) |
+| `dispatchEvent('render-event')` | `useSEO.ts` 137 | BAIXA |
+| Assinatura Prerender.io | conta externa | OPERACIONAL |
+
+> **Permanece (SSG, não é Prerender.io):** `src/lib/prerender.ts`, `data-prerendered`,
+> `__STATIC_RENDER_READY__`, scripts `generate/validate-static-*`. Nunca remover na E9.
+
+### 19.2 Ordem de remoção (um passo por deploy)
+`PRERENDER_ENABLED=false` em Preview → validar bots no edge → `=false` em Produção → (observar
+14-30 dias) → remover `render-event` → remover metas Prerender → remover `PRERENDER_TOKEN` →
+remover `middleware.js` + cancelar assinatura → limpeza final. Passos 1-3 são reversíveis por env var.
+
+### 19.3 Search Console — timeline
+Após `=false` em produção, observar 24h / 72h / 7d / 14d / 30d (HTML renderizado, cobertura,
+indexação, rich results, CWV). Só remover código após **≥14 dias** sem alerta; middleware/assinatura
+só após **30 dias** estáveis. Detalhes e tabela de sinais no relatório.
+
+### 19.4 Critérios objetivos (C1-C9)
+A E9 só inicia com **todos** atendidos. Bloqueadores atuais: **C1** (Preview inacessível por SSO)
+e **C4** (404 real não implementado — pendência da E5).
+
+### 19.5 Veredito
+```text
+E8.5 PARCIAL — plano de remoção completo e executável entregue (inventário real, ordem,
+riscos/rollback, timeline de Search Console, monitoramento e critérios objetivos). A EXECUÇÃO
+da remoção (E9) permanece bloqueada por C1 (Preview/SSO) e C4 (404 real). Nada foi removido.
 ```
