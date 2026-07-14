@@ -122,8 +122,8 @@ Como não há dados de runtime e todas as rotas são deriváveis dos arrays de d
 
 - [x] **E2.** Criar enumerador único de rotas (reutilizar lógica de `generate-sitemap.ts` / `seoIndexing.ts`) que devolva a lista completa de URLs a gerar. → prova de conceito usa `scripts/static-pilot-routes.ts` (slugs lidos das fontes reais); a escala completa reutilizará o mesmo motor do sitemap.
 - [x] **E3.** Provar conceito: pré-renderizar em build um subconjunto (home + produto + medida + serviço + veículo + bairro + institucional + 404) e inspecionar o HTML emitido (title/description/canonical/JSON-LD). → **APROVADA** (ver Seção 10).
-- [ ] **E4.** Auditar componentes quanto a acesso a `window`/`document` fora de efeitos; corrigir os que quebrarem no prerender.
-- [ ] **E5.** Ajustar `vercel.json`: servir HTML estático por rota + fallback SPA; mover redirects client-side para 301 server-side.
+- [x] **E4.** Auditar componentes quanto a acesso a `window`/`document` fora de efeitos; corrigir os que quebrarem no prerender; garantir completude, sinal de prontidão confiável, captura de erros de runtime e **determinismo** da geração. → **APROVADA** (ver Seção 11).
+- [ ] **E5.** Ajustar `vercel.json`: servir HTML estático por rota + fallback SPA; mover redirects client-side para 301 server-side. → **pendente** (não iniciada).
 - [ ] **E6.** Escalar o prerender para todas as ~1.537 rotas com concorrência controlada; medir tempo de build.
 - [ ] **E7.** Validar paridade (amostragem): título, description, canonical, OG, JSON-LD e conteúdo textual presentes no HTML servido sem JS.
 - [ ] **E8.** Corrigir divergências de `og:image`/robots e padronizar `sameAs`.
@@ -232,4 +232,159 @@ Prosseguir para **E4** (auditar acessos a `window`/`document` fora de efeitos) e
 
 ---
 
-*Etapa 1 (auditoria) e Etapa E2/E3 (prova de conceito). Nesta etapa E2/E3, as únicas mudanças de código de aplicação foram o ajuste mínimo no `useSEO` (sinal de render) e os scripts/relatórios da POC — Prerender.io e `vercel.json` permanecem intactos.*
+## 11. Etapa E4 — Compatibilidade, robustez e determinismo da geração estática
+
+### 11.1 Status
+**E4 APROVADA** — concluída em **2026-07-13** (data das execuções que geraram os relatórios desta seção). As 11 rotas piloto (8 da POC + 3 rotas de risco + a rota 404 de teste) foram geradas, validadas, verificadas quanto a hidratação e quanto a conteúdo sem JavaScript, com **determinismo comprovado** (duas gerações byte-a-byte equivalentes após normalização) e **0 erros críticos de runtime**. **O Prerender.io não foi tocado** e o **`vercel.json` não foi alterado** nesta etapa.
+
+### 11.2 Objetivo da etapa
+A E4 teve como objetivo endurecer a geração estática antes de qualquer mudança de produção:
+- auditar acessos a APIs do navegador (`window`, `document`, `navigator`, `IntersectionObserver`, `requestAnimationFrame`);
+- identificar e neutralizar riscos que produzissem **snapshots incompletos** (conteúdo preguiçoso/lazy, contadores em "0", seções reveladas só por scroll);
+- tornar o **sinal de prontidão** confiável e agnóstico ao mecanismo de SEO (hook `useSEO`, `useEffect` direto ou `react-helmet`);
+- **capturar erros de runtime** (console.error, `pageerror`, requisições falhas) durante a geração;
+- validar **hidratação** sem "mismatch" (o DOM inicial do cliente casa com o HTML servido);
+- garantir **determinismo** (mesma entrada → mesmo HTML), removendo artefatos de animação voláteis;
+- testar **casos de risco** além da POC inicial (contador animado, scroll infinito, geolocalização).
+
+### 11.3 Alterações realizadas
+
+> Confirmadas no repositório (fonte: `git log` das branches de E4 e leitura dos arquivos). Nenhum arquivo ou mudança foi inventado.
+
+**Código de aplicação (`src/`)**
+
+| Arquivo | Tipo | Finalidade | Impacto na geração | Risco residual |
+|---|---|---|---|---|
+| `src/lib/prerender.ts` | **Criado** | Helpers `isStaticGeneration()` e `isPrerenderEager()` — decidem, de forma pura/determinística, se a primeira render deve ser "ansiosa". Baseiam-se em `window.__STATIC_RENDER__` (geração) e no atributo `html[data-prerendered]` (hidratação). | Componentes lazy montam conteúdo completo no snapshot **e** na 1ª render do cliente. | Baixo — helpers puros, sem efeito colateral. |
+| `src/components/DeferredSection.tsx` | **Alterado** | Renderiza o conteúdo imediatamente quando `isPrerenderEager()` é verdadeiro (em vez de esperar o `IntersectionObserver`). | Seções abaixo da dobra entram no HTML estático. | Baixo — comportamento preguiçoso normal preservado em navegação SPA. |
+| `src/components/Hero.tsx` | **Alterado** | O efeito _typewriter_ do `<h1>` inicia com a **primeira palavra completa** (e não anima) sob prerender. | `<h1>` completo e determinístico (antes vinha parcial/instável). | Baixo. |
+| `src/components/ServicosPage.tsx` | **Alterado** | `AnimatedCounter` (via IntersectionObserver) mostra o **valor final** sob prerender, não "0". | Rota `/servicos` com números corretos no HTML. | Baixo. |
+| `src/components/PneusCuritibaPromo.tsx` | **Alterado** | Render ansioso de blocos condicionados a viewport/observer. | Conteúdo completo no snapshot. | Baixo. |
+| `src/components/TireMeasuresSection.tsx` | **Alterado** | Render ansioso da listagem de medidas sob prerender. | Conteúdo completo no snapshot. | Baixo. |
+| `src/hooks/useSEO.ts` | **Alterado** | Mantém o `render-event` (Prerender.io) e adiciona o sinal estruturado `window.__STATIC_RENDER_STATUS__ = { ready, route }` além de `__STATIC_RENDER_READY__`. | Sinal de prontidão confiável e com rota resolvida. | Baixo — coexiste com o Prerender.io, não o substitui. |
+| `src/App.tsx` | **Alterado** | Após hidratar, remove `html[data-prerendered]` para que navegações SPA voltem ao comportamento preguiçoso (performance). | Evita render ansioso permanente no cliente. | Baixo. |
+| `src/lib/schema.ts`, `src/lib/buildInfo.ts`, `src/components/PneuPromocaoDetalhe.tsx`, `src/components/TireDetail.tsx` | **Alterado** | Ajustes de robustez/guarda relacionados à auditoria de APIs de navegador e a metadados/JSON-LD. | Estabilidade da captura. | Baixo. |
+
+**Scripts e tooling**
+
+| Arquivo | Tipo | Finalidade | Impacto na geração | Risco residual |
+|---|---|---|---|---|
+| `scripts/static-pilot-routes.ts` | **Alterado** | Acrescentou as **3 rotas de risco** (`/servicos`, `/faq`, `/loja-de-pneus-curitiba-perto-de-mim`) com o campo `risk`, além da rota 404 de teste. | Cobertura dos piores casos. | — |
+| `scripts/generate-static-pages.ts` | **Alterado** | **Captura atômica** (normalização de animações + dedup de `<head>` + serialização do HTML num único `page.evaluate`, evitando a corrida com o `requestAnimationFrame` do framer-motion); sinal de prontidão agnóstico ao mecanismo de SEO; correção do **backup de shell obsoleto** (assets com hash antigo); coleta de erros de runtime. | Determinismo + robustez do gerador. | Médio — depende de Chrome headless disponível no ambiente. |
+| `scripts/generate-static-pages.entry.ts` | **Criado** | _Entrypoint_ fino que só chama `main()`, separando o núcleo reutilizável do ponto de execução (o teste de determinismo importa `generateRoutes` sem disparar `main`). | Permite reuso sem efeitos colaterais. | Baixo. |
+| `scripts/test-static-determinism.ts` | **Criado** | Gera cada rota **duas vezes** e compara o HTML normalizado; também valida completude no viewport **mobile**. Emite `reports/static-determinism-report.md`. | Prova de determinismo. | Baixo. |
+| `scripts/validate-static-pilot.ts` | **Alterado** | Deriva o título/canonical da home dinamicamente (checagem anti-herança robusta) e adiciona a seção de rotas de risco ao relatório. | Validação mais fiel. | Baixo. |
+| `scripts/run-ts.mjs` | **Criado** | _Runner_ portátil (bundle via `esbuild` + `node`) porque o `tsx` está quebrado neste ambiente. Emite o bundle em `<raiz>/.v0-build/` para preservar o cálculo de `ROOT`. | Torna os scripts executáveis no sandbox. | Baixo. |
+| `package.json` | **Alterado** | Adicionou `esbuild` (devDependency) e apontou os scripts estáticos para o `run-ts.mjs`; scripts `generate/validate/test:static:*`. | Pipeline executável. | Baixo. |
+| `.gitignore` | **Alterado** | Ignora `.v0-build/` (bundles temporários do runner). | Higiene do repositório. | — |
+| `vite.config.ts` | **Alterado** | Ajustes de build relacionados à geração (chunking/estabilidade dos nomes de asset). | Estabilidade dos assets referenciados no HTML. | Baixo. |
+
+### 11.4 Rotas validadas (11 rotas piloto reais)
+
+Todas geraram HTML real, hidrataram sem quebra, mantiveram conteúdo essencial sem JavaScript e foram **determinísticas** (2 gerações equivalentes). Erros críticos de runtime: **0** em todas.
+
+| Rota | Tipo / motivo da escolha | Geração | Validação | Hidratação | Sem JS | Determinismo |
+|---|---|---|---|---|---|---|
+| `/` | Home (schema global no shell) | OK | APROVADA | OK | OK | sim |
+| `/pneu/pneu-pirelli-175-70r13-p400-evo-82t` | Produto (JSON-LD dinâmico) | OK | APROVADA | OK | OK | sim |
+| `/servico/venda-de-pneus` | Serviço | OK | APROVADA | OK | OK | sim |
+| `/pneu-medida/175-65r14` | Medida | OK | APROVADA | OK | OK | sim |
+| `/pneu-para-hb20-curitiba` | Veículo (landing) | OK | APROVADA | OK | OK | sim |
+| `/bairro/portao` | Local / bairro | OK | APROVADA | OK | OK | sim |
+| `/quem-somos` | Institucional | OK | APROVADA | OK | OK | sim |
+| `/servicos` | **Risco:** `AnimatedCounter` (IntersectionObserver) — deve exibir valor final, não "0" | OK | APROVADA | OK | OK | sim |
+| `/faq` | **Risco:** `FAQInfiniteScroll` — conteúdo essencial não pode depender de scroll | OK | APROVADA | OK | OK | sim |
+| `/loja-de-pneus-curitiba-perto-de-mim` | **Risco:** `navigator.geolocation` em handler — não pode bloquear/alterar o render | OK | APROVADA | OK | OK | sim |
+| `/rota-inexistente-teste-404` | 404 (teste de erro, `noindex`) — valida página de erro | OK | APROVADA | OK | OK | sim |
+
+### 11.5 Resultados consolidados
+```text
+Geração estática: 11/11 aprovada
+Validação técnica: 11/11 aprovada
+Determinismo: aprovado (2 gerações equivalentes após normalização)
+Hidratação: aprovada (sem "mismatch"/tela branca; navegação e interações OK)
+Conteúdo sem JavaScript: aprovado (título, H1, textos, contatos e links visíveis)
+Metadados por rota: aprovados (1 title / 1 canonical / 1 og:title / 1 description por página)
+JSON-LD: aprovado (produto 5, veículo 7, bairro 6, medida/serviço 5, home/institucional/404 2–3)
+Assets: aprovados (referências /assets absolutas e existentes em dist)
+Referências a localhost: nenhuma
+Erros críticos de runtime: 0
+Dependência do Prerender.io durante a geração: nenhuma
+```
+
+### 11.6 Comandos existentes (E2 / E3 / E4)
+
+| Comando | O que executa | Pré-requisito | Resultado | Quando usar | Altera `dist`? | Falha em erro crítico? |
+|---|---|---|---|---|---|---|
+| `npm run build:spa` | `vite build` (gera o SPA em `dist`, incluindo o shell). | — | `dist/` com o shell e assets. | Antes de qualquer geração estática. | **Sim** (regenera `dist`). | Sim (erro de build). |
+| `npm run generate:static:pilot` | Snapshot headless das 11 rotas piloto (via `run-ts.mjs` → `generate-static-pages.entry.ts`). | `build:spa` executado; Chrome headless disponível. | HTML por rota em `dist/**` + `reports/static-pilot-generation.json` + `reports/static-runtime-errors.md`. | Após o build, para gerar/atualizar o piloto. | **Sim** (grava HTML por rota). | Sim (rota que não renderiza / erro crítico). |
+| `npm run validate:static:pilot` | Valida cada HTML gerado (metadados, conteúdo, assets, anti-herança de canonical) via `validate-static-pilot.ts`. | Geração já executada. | `reports/static-pilot-report.md`. | Após gerar, para auditar. | Não. | Sim (rota reprovada). |
+| `npm run test:static:determinism` | Gera cada rota 2× e compara HTML normalizado + completude no mobile, via `test-static-determinism.ts`. | `build:spa` executado; Chrome headless. | `reports/static-determinism-report.md`. | Para provar determinismo. | Não (usa geração em memória). | Sim (divergência ou conteúdo incompleto). |
+| `npm run build:static:pilot` | `build:spa` + `generate:static:pilot`. | — | `dist` + relatórios de geração. | Atalho build+geração. | **Sim**. | Sim. |
+| `npm run test:static:pilot` | `build:static:pilot` + `validate:static:pilot` + `test:static:determinism`. | — | Pipeline completo + todos os relatórios. | Gate completo da E4. | **Sim**. | Sim (qualquer etapa). |
+| `npm run sitemap` | `tsx scripts/generate-sitemap.ts` (fluxo de sitemaps existente, pré-E4). | — | Sitemaps em `public/`. | Manutenção de sitemap. | Não (`public/`). | Sim. |
+
+### 11.7 Relatórios gerados
+
+> Existentes no repositório após a E4 (os relatórios de "browser API audit" e "readiness audit" citados em planejamentos **não** existem como arquivos separados — a auditoria foi consolidada nas rotas de risco e no relatório de erros de runtime).
+
+| Relatório | Finalidade | Execução que o gerou | Principais conclusões |
+|---|---|---|---|
+| `reports/static-pilot-report.md` | Validação técnica página a página (metadados/conteúdo/assets). | 2026-07-13T19:19 | 11/11 APROVADA; canonicais por rota corretos; nenhum `localhost`. |
+| `reports/static-pilot-generation.json` | Saída bruta da geração (por rota: HTML bytes, texto, JSON-LD, erros). | 2026-07-13T19:19 | `total 11 / ok 11 / falhas 0`. |
+| `reports/static-determinism-report.md` | Determinismo (2 gerações) + completude mobile. | 2026-07-13T19:19 | Veredito **APROVADO**; 11/11 determinísticas; mobile completo. |
+| `reports/static-runtime-errors.md` | Erros de runtime capturados durante a geração. | 2026-07-13T19:19 | 0 críticos, 0 toleráveis, 0 requisições locais com falha. |
+
+### 11.8 Riscos restantes após a E4
+Itens **ainda não resolvidos** (fora do escopo desta etapa):
+- **Fallback global do `vercel.json`** (`rewrites: /(.*) → /index.html`) ainda ativo.
+- **Status 200 indevido** em URLs inexistentes (404 real ainda não implementado no roteamento).
+- **Redirects client-side** ainda não promovidos a 301 server-side (69 bairros `*.html`, 1 `/pneus/:medida`, 3 slugs legados de marca).
+- **Dependência do Prerender.io em produção** ainda vigente.
+- **Escala para ~1.537 URLs** ainda não executada (piloto usa 11 rotas).
+- **Tempo e memória do build completo** ainda não medidos na escala real.
+- **Limites da Vercel** (tempo de build, tamanho do artefato de deploy) ainda não avaliados para o volume completo.
+- **Validação de todas as rotas** (paridade título/description/canonical/OG/JSON-LD sem JS) ainda pendente na escala completa.
+- **Possibilidade de páginas fracas ou duplicadas** a revisar quando toda a base for gerada.
+- **Sitemaps** ainda ligados ao fluxo atual (não reavaliados para o novo modelo).
+
+### 11.9 Bloqueadores para E5
+```text
+SEM BLOQUEADORES TÉCNICOS PARA INICIAR A E5
+```
+A geração estática piloto está aprovada, determinística e sem erros críticos; a E5 (roteamento de produção) pode ser iniciada de forma controlada quando autorizada.
+
+### 11.10 Estado do Prerender.io
+- A **geração estática piloto não depende** do Prerender.io (nenhuma chamada ao serviço durante a geração).
+- A **produção ainda pode depender** dele (interceptação por user-agent, `<meta prerender-*>` no `index.html` e `dispatchEvent('render-event')` no `useSEO` permanecem).
+- **Nenhuma integração, token ou regra foi removida.**
+- **Não deve ser cancelado nem removido** antes da E5, da geração completa e da validação em produção.
+
+### 11.11 Estado do `vercel.json`
+- O arquivo **não foi modificado** na E4.
+- O **rewrite global da SPA** (`/(.*) → /index.html`) **permanece**.
+- **HTMLs físicos por rota ainda não estão garantidos** como resposta em produção (o rewrite global intercepta tudo).
+- **404 real ainda não implementado.**
+- **Redirects 301 server-side ainda não promovidos** (os 76 `redirects` já presentes no `vercel.json` são de paginação, pré-E4, e não se confundem com os client-side a promover).
+
+### 11.12 Próxima etapa recomendada
+```text
+E5 — roteamento de produção, arquivos HTML por rota, redirects HTTP e 404 real
+```
+A E5 deve ser implementada de forma **controlada**, com **ambiente de preview** e **plano de rollback**, validando no Search Console (Inspeção de URL) antes de promover a produção.
+
+### 11.13 Checklist consolidado
+```text
+E1 — auditoria inicial: concluída
+E2 — enumerador de rotas: concluída
+E3 — prova de conceito: aprovada
+E4 — compatibilidade e determinismo: aprovada
+E5 — roteamento de produção: pendente
+Remoção do Prerender.io: pendente
+Geração das ~1.537 páginas: pendente
+Validação final: pendente
+```
+
+---
+
+*Etapa 1 (auditoria), Etapa E2/E3 (prova de conceito) e Etapa E4 (compatibilidade, robustez e determinismo). Na E4, as mudanças de código de aplicação limitaram-se a tornar componentes lazy/animados compatíveis com o prerender (render ansioso guardado por `isPrerenderEager`) e ao sinal de prontidão no `useSEO` — o Prerender.io e o `vercel.json` permanecem intactos. A E5 (roteamento de produção) NÃO foi iniciada.*
