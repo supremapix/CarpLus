@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-07-14T17:47:00.177Z",
+  "baseUrl": "https://www.carpluspneuseoficina.com.br",
+  "totalEnumerated": 1512,
+  "selected": 500,
+  "processed": 500,
+  "ok": 500,
+  "falha": 0,
+  "byType": {
+    "produto": {
+      "total": 447,
+      "ok": 447,
+      "falha": 0
+    },
+    "aro": {
+      "total": 4,
+      "ok": 4,
+      "falha": 0
+    },
+    "veiculo": {
+      "total": 7,
+      "ok": 7,
+      "falha": 0
+    },
+    "medida": {
+      "total": 8,
+      "ok": 8,
+      "falha": 0
+    },
+    "bairro": {
+      "total": 8,
+      "ok": 8,
+      "falha": 0
+    },
+    "landing-comercial": {
+      "total": 10,
+      "ok": 10,
+      "falha": 0
+    },
+    "marca": {
+      "total": 1,
+      "ok": 1,
+      "falha": 0
+    },
+    "servico": {
+      "total": 13,
+      "ok": 13,
+      "falha": 0
+    },
+    "hub": {
+      "total": 1,
+      "ok": 1,
+      "falha": 0
+    },
+    "institucional": {
+      "total": 1,
+      "ok": 1,
+      "falha": 0
+    }
+  },
+  "failures": []
+}

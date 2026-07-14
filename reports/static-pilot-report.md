@@ -1,6 +1,6 @@
 # Relatório — Prova de Conceito de Geração Estática (E2/E3)
 
-> Gerado em 2026-07-14T16:21:04.997Z
+> Gerado em 2026-07-14T17:39:55.115Z
 
 ## Veredito: **PROVA DE CONCEITO APROVADA** (11/11 rotas aprovadas)
 
