@@ -176,7 +176,7 @@ const SEO_CONTENT: Record<string, {
     detalhes: [
       'Kit completo de correia dentada com tensor, polia e guias',
       'Verificação e troca da bomba d\'água quando necessário',
-      'Peças das marcas Gates, Contitech, Dayco e originais',
+      'Pe��as das marcas Gates, Contitech, Dayco e originais',
       'Garantia de 1 ano ou 20.000 km no serviço completo',
       'Inspeção de retentores e juntas durante o serviço',
       'Adesivo informativo com data e km da próxima troca'
@@ -890,7 +890,7 @@ export default function ServiceDetail() {
                       href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Troca de Fluido de Freio. Pode me dar mais informações?"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-primary to-yellow-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
                     >
                       <MessageSquare size={18} /> Agendar Agora
                     </a>
@@ -1084,7 +1084,7 @@ export default function ServiceDetail() {
                       href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Troca de Óleo e Filtros. Pode me dar mais informações?"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-primary to-yellow-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
                     >
                       <MessageSquare size={18} /> Agendar Agora
                     </a>
@@ -1302,7 +1302,7 @@ export default function ServiceDetail() {
                       href="https://wa.me/554130827282?text=Olá! Tenho interesse no serviço de Suspensão e Freios. Pode me dar mais informações?"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-primary to-orange-400 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-black px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-tight flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-[1.02]"
                     >
                       <MessageSquare size={18} /> Agendar Agora
                     </a>

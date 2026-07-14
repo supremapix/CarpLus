@@ -126,7 +126,7 @@ export default function OfertasExclusivas() {
             {/* CTA Borracharia */}
             <Link
               to="/borracharia-portao"
-              className="block mt-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-neutral-900 font-bold py-4 px-6 rounded-xl text-center transition-all shadow-lg shadow-amber-500/20"
+              className="block mt-6 bg-primary hover:bg-primary/90 text-neutral-900 font-bold py-4 px-6 rounded-xl text-center transition-all shadow-lg shadow-primary/20"
             >
               Conhecer Borracharia Full Service
             </Link>
