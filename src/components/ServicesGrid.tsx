@@ -334,7 +334,7 @@ export default function ServicesGrid() {
                       scale: i === currentImageIndex ? 1 : 1.05
                     }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="absolute inset-0 w-full h-full object-contain"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 ))}
                 
