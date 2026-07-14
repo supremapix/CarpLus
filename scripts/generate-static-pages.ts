@@ -34,7 +34,8 @@ import fs from 'fs';
 import path from 'path';
 import http from 'http';
 import { fileURLToPath } from 'url';
-import puppeteer, { type Browser } from 'puppeteer';
+import type { Browser } from 'puppeteer-core';
+import { launchBrowser } from './launch-browser';
 import { PILOT_ROUTES, BASE_URL, type PilotRoute } from './static-pilot-routes';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -546,10 +547,7 @@ export async function generateRoutes(
   const out: GeneratedRoute[] = [];
 
   try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-    });
+    browser = await launchBrowser();
 
     for (const route of routes) {
       const g = await renderRouteOnPage(browser, route, origin, shellTitle, viewport);

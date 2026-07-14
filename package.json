@@ -24,14 +24,17 @@
     "generate:static:retry": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --retry-failed",
     "validate:static:all": "node scripts/run-ts.mjs scripts/validate-static-all.ts",
     "build:static": "npm run sitemap && npm run redirects && npm run build:spa && npm run generate:static:all && npm run validate:static:all",
+    "build:deploy": "node scripts/build-deploy.mjs",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "@sparticuz/chromium": "^149.0.0",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
+    "puppeteer-core": "25.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet-async": "^3.0.0",

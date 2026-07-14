@@ -28,7 +28,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import puppeteer, { type Browser } from 'puppeteer';
+import type { Browser } from 'puppeteer-core';
+import { launchBrowser } from './launch-browser';
 import { getStaticRoutes, type StaticRoute } from './static-routes';
 import {
   ROOT,
@@ -243,10 +244,7 @@ export async function main() {
   let sinceFlush = 0;
 
   try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-    });
+    browser = await launchBrowser();
 
     let cursor = 0;
     const total = queue.length;
