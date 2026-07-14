@@ -45,8 +45,23 @@ const SERVICOS_DESTAQUE = [
 
 export default function OfertasExclusivas() {
   return (
-    <section className="py-20 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 relative overflow-hidden">
-      {/* Background decorativo */}
+    <section className="py-20 bg-neutral-950 relative overflow-hidden">
+      {/* Imagem de fundo - troca de pneus na oficina Carplus */}
+      <div className="absolute inset-0">
+        <img
+          loading="lazy"
+          src="/images/loja/troca-de-pneus-portao-carplus.webp"
+          alt=""
+          width={1920}
+          height={1280}
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Sobreposicao escura para legibilidade */}
+        <div className="absolute inset-0 bg-neutral-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/40 to-neutral-950" />
+      </div>
+
+      {/* Brilho decorativo */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600 rounded-full blur-3xl" />
