@@ -92,12 +92,12 @@ export default function Hero() {
       {/* Background Image - Mobile */}
       <div className="absolute inset-0 md:hidden">
         <img 
-          src="/images/hero-mobile.webp" 
-          alt="Carplus Pneus - Loja de Pneus em Curitiba" 
+          src="/images/hero-fachada-carplus.webp" 
+          alt="Fachada da Carplus Pneus e Oficina Mecânica no Portão, em Curitiba, ao anoitecer" 
           fetchPriority="high"
-          width={554}
-          height={1200}
-          className="w-full h-full object-cover object-[30%_top]"
+          width={1808}
+          height={1352}
+          className="w-full h-full object-cover object-[65%_center]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
       </div>
@@ -105,11 +105,11 @@ export default function Hero() {
       {/* Background Image - Desktop */}
       <div className="absolute inset-0 hidden md:block">
         <img 
-          src="/images/hero-desktop.webp" 
-          alt="Carplus Pneus - Oficina de Pneus em Curitiba" 
+          src="/images/hero-fachada-carplus.webp" 
+          alt="Fachada da Carplus Pneus e Oficina Mecânica no Portão, em Curitiba, ao anoitecer" 
           fetchPriority="high"
-          width={1920}
-          height={685}
+          width={1808}
+          height={1352}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
