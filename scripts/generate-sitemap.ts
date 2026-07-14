@@ -2,11 +2,12 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SITEMAP INTELIGENTE E SEGMENTADO
 // ─────────────────────────────────────────────────────────────────────────────
-// Gera APENAS URLs indexáveis, usando o mesmo motor (src/lib/seoIndexing.ts)
-// que define o robots/canonical em runtime — garantindo sitemap e meta tags
-// 100% sincronizados.
+// Emite APENAS URLs indexáveis a partir do ENUMERADOR ÚNICO
+// (scripts/static-routes.ts), que por sua vez reutiliza o mesmo motor de
+// indexação (src/lib/seoIndexing.ts) usado no runtime — garantindo sitemap,
+// meta tags e geração estática 100% sincronizados (fonte única da verdade).
 //
-// Exclui automaticamente:
+// Exclui automaticamente (via enumerador/motor de indexação):
 //   • páginas noindex (variantes duplicadas, baixo score)
 //   • paginações (/pneus?page=N)
 //   • medidas com menos de 2 opções (conteúdo fino)
@@ -18,25 +19,13 @@
 //   /sitemap-veiculos.xml
 //   /sitemap-servicos.xml
 //
-// Execução: `tsx scripts/generate-sitemap.ts` (rodado no prebuild).
+// Execução: `node scripts/run-ts.mjs scripts/generate-sitemap.ts` (via `npm run
+// sitemap`, rodado no prebuild). Usa o wrapper confiável run-ts.mjs.
 
 import fs from 'fs';
 import path from 'path';
-import { getIndexableTireSlugs, isMeasureIndexable } from '../src/lib/seoIndexing';
-import {
-  ARO_PAGES,
-  BRAND_PAGES,
-  VEHICLE_PAGES,
-  LOCAL_COMBO_PAGES,
-  INTENT_PAGES,
-  COMPARISON_PAGES,
-  MEASURE_SEO,
-} from '../src/data/seoLanding';
-import { CENTRO_AUTOMOTIVO_PAGES } from '../src/data/centroAutomotivoSeo';
-import { SERVICE_CATEGORIES } from '../src/data/services';
-import { INDEXABLE_NEIGHBORHOOD_SLUGS } from '../src/data/indexableNeighborhoods';
+import { BASE_URL, getStaticRoutes, SITEMAP_SEGMENTS, type SitemapSegment } from './static-routes';
 
-const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const lastmod = new Date().toISOString().split('T')[0];
 
@@ -68,109 +57,48 @@ function write(file: string, content: string) {
   fs.writeFileSync(path.join(PUBLIC_DIR, file), content);
 }
 
-// Converte "195/60R15" → "195-60r15" (formato aceito pela rota /pneu-medida).
-function measureToSlug(medida: string): string {
-  return medida.toLowerCase().replace('/', '-');
+// ─── Agrupa o enumerador único por segmento (preserva a ordem de emissão) ─────
+const routes = getStaticRoutes();
+const bySegment = new Map<SitemapSegment, UrlEntry[]>();
+for (const seg of SITEMAP_SEGMENTS) bySegment.set(seg, []);
+for (const r of routes) {
+  bySegment.get(r.sitemap)!.push({
+    loc: `${BASE_URL}${r.path === '/' ? '/' : r.path}`,
+    changefreq: r.changefreq,
+    priority: r.priority,
+  });
 }
 
-// ─── 1) PRODUTOS (apenas canônicos indexáveis) ───────────────────────────────
-const indexableTireSlugs = getIndexableTireSlugs();
-const produtos: UrlEntry[] = indexableTireSlugs.map((slug) => ({
-  loc: `${BASE_URL}/pneu/${slug}`,
-  changefreq: 'weekly',
-  priority: '0.7',
-}));
-write('sitemap-produtos.xml', buildUrlset(produtos));
-
-// ─── 2) MEDIDAS (apenas com 2+ opções) ────────────────────────────────────────
-const medidas: UrlEntry[] = MEASURE_SEO.filter((m) => isMeasureIndexable(m.medida)).map((m) => ({
-  loc: `${BASE_URL}/pneu-medida/${measureToSlug(m.medida)}`,
-  changefreq: 'weekly',
-  priority: '0.8',
-}));
-write('sitemap-medidas.xml', buildUrlset(medidas));
-
-// ─── 3) VEÍCULOS ──────────────────────────────────────────────────────────────
-const veiculos: UrlEntry[] = VEHICLE_PAGES.map((p) => ({
-  loc: `${BASE_URL}/${p.slug}`,
-  changefreq: 'weekly',
-  priority: '0.8',
-}));
-write('sitemap-veiculos.xml', buildUrlset(veiculos));
-
-// ─── 4) SERVIÇOS + INSTITUCIONAL + HUBS + LANDINGS ────────────────────────────
-const staticPages: UrlEntry[] = [
-  { loc: `${BASE_URL}/`, changefreq: 'daily', priority: '1.0' },
-  { loc: `${BASE_URL}/pneus`, changefreq: 'daily', priority: '0.9' },
-  { loc: `${BASE_URL}/pneus-curitiba`, changefreq: 'weekly', priority: '0.9' },
-  { loc: `${BASE_URL}/medidas-de-pneus-curitiba`, changefreq: 'weekly', priority: '0.9' },
-  { loc: `${BASE_URL}/loja-de-pneus-curitiba-perto-de-mim`, changefreq: 'weekly', priority: '0.9' },
-  { loc: `${BASE_URL}/servicos`, changefreq: 'weekly', priority: '0.9' },
-  { loc: `${BASE_URL}/quem-somos`, changefreq: 'monthly', priority: '0.7' },
-  { loc: `${BASE_URL}/contato`, changefreq: 'monthly', priority: '0.7' },
-  { loc: `${BASE_URL}/como-chegar`, changefreq: 'monthly', priority: '0.7' },
-  { loc: `${BASE_URL}/faq`, changefreq: 'weekly', priority: '0.6' },
-  { loc: `${BASE_URL}/bairros`, changefreq: 'weekly', priority: '0.7' },
-];
-
-const serviceSlugs = new Set<string>();
-for (const cat of SERVICE_CATEGORIES) {
-  for (const s of cat.services) serviceSlugs.add(s.slug);
+// Normaliza a home para terminar com "/" (comportamento histórico: BASE_URL + "/").
+for (const [, entries] of bySegment) {
+  for (const e of entries) if (e.loc === BASE_URL) e.loc = `${BASE_URL}/`;
 }
-const servicos: UrlEntry[] = [...serviceSlugs].map((slug) => ({
-  loc: `${BASE_URL}/servico/${slug}`,
-  changefreq: 'weekly',
-  priority: '0.7',
-}));
 
-const bairros: UrlEntry[] = INDEXABLE_NEIGHBORHOOD_SLUGS.map((slug) => ({
-  loc: `${BASE_URL}/bairro/${slug}`,
-  changefreq: 'weekly',
-  priority: '0.6',
-}));
+const counts: Record<string, number> = {};
+for (const seg of SITEMAP_SEGMENTS) {
+  const entries = bySegment.get(seg)!;
+  counts[seg] = entries.length;
+  write(seg, buildUrlset(entries));
+}
 
-const landings: UrlEntry[] = [
-  ...ARO_PAGES,
-  ...BRAND_PAGES,
-  ...LOCAL_COMBO_PAGES,
-  ...INTENT_PAGES,
-  ...COMPARISON_PAGES,
-  ...CENTRO_AUTOMOTIVO_PAGES,
-].map((p: { slug: string }) => ({
-  loc: `${BASE_URL}/${p.slug}`,
-  changefreq: 'weekly',
-  priority: '0.8',
-}));
-
-write('sitemap-servicos.xml', buildUrlset([...staticPages, ...servicos, ...bairros, ...landings]));
-
-// ─── 5) ÍNDICE DE SITEMAPS ────────────────────────────────────────────────────
-const segments = [
-  'sitemap-produtos.xml',
-  'sitemap-medidas.xml',
-  'sitemap-veiculos.xml',
-  'sitemap-servicos.xml',
-];
+// ─── ÍNDICE DE SITEMAPS ────────────────────────────────────────────────────────
 const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${segments
-  .map(
-    (s) => `  <sitemap>
+${SITEMAP_SEGMENTS.map(
+  (s) => `  <sitemap>
     <loc>${BASE_URL}/${s}</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>`,
-  )
-  .join('\n')}
+).join('\n')}
 </sitemapindex>
 `;
 write('sitemap.xml', sitemapIndex);
 
 // ─── Log ──────────────────────────────────────────────────────────────────────
-console.log('[sitemap] Sitemap inteligente gerado:');
-console.log(`  - sitemap-produtos.xml : ${produtos.length} produtos canônicos indexáveis`);
-console.log(`  - sitemap-medidas.xml  : ${medidas.length} medidas (2+ opções)`);
-console.log(`  - sitemap-veiculos.xml : ${veiculos.length} páginas por veículo`);
-console.log(
-  `  - sitemap-servicos.xml : ${staticPages.length + servicos.length + bairros.length + landings.length} URLs (institucional + serviços + bairros + landings)`,
-);
-console.log(`  - sitemap.xml          : índice com ${segments.length} sitemaps`);
+console.log('[sitemap] Sitemap inteligente gerado (fonte única = static-routes.ts):');
+console.log(`  - sitemap-produtos.xml : ${counts['sitemap-produtos.xml']} produtos canônicos indexáveis`);
+console.log(`  - sitemap-medidas.xml  : ${counts['sitemap-medidas.xml']} medidas (2+ opções)`);
+console.log(`  - sitemap-veiculos.xml : ${counts['sitemap-veiculos.xml']} páginas por veículo`);
+console.log(`  - sitemap-servicos.xml : ${counts['sitemap-servicos.xml']} URLs (institucional + serviços + bairros + landings)`);
+console.log(`  - sitemap.xml          : índice com ${SITEMAP_SEGMENTS.length} sitemaps`);
+console.log(`  - TOTAL                : ${routes.length} URLs indexáveis`);
