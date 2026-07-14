@@ -38,6 +38,12 @@ export default function Home() {
       <main>
         <Hero />
 
+        <DeferredSection minHeight={800}>
+          <Suspense fallback={null}>
+            <ServicesGrid />
+          </Suspense>
+        </DeferredSection>
+
         <PneusPromocao />
 
         <TireSearchBar />
@@ -61,12 +67,6 @@ export default function Home() {
         <DeferredSection minHeight={800}>
           <Suspense fallback={null}>
             <StoreSection />
-          </Suspense>
-        </DeferredSection>
-
-        <DeferredSection minHeight={800} unmountOnExit>
-          <Suspense fallback={null}>
-            <ServicesGrid />
           </Suspense>
         </DeferredSection>
 
