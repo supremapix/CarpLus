@@ -383,7 +383,8 @@ E1 — auditoria inicial: concluída
 E2 — enumerador de rotas: concluída
 E3 — prova de conceito: aprovada
 E4 — compatibilidade e determinismo: aprovada
-E5 — roteamento de produção: pendente
+E5.0 — validação em ambiente controlado (sem produção): aprovada
+E5 — roteamento de produção: pendente (liberada para iniciar)
 Remoção do Prerender.io: pendente
 Geração das ~1.537 páginas: pendente
 Validação final: pendente
@@ -392,3 +393,36 @@ Validação final: pendente
 ---
 
 *Etapa 1 (auditoria), Etapa E2/E3 (prova de conceito) e Etapa E4 (compatibilidade, robustez e determinismo). Na E4, as mudanças de código de aplicação limitaram-se a tornar componentes lazy/animados compatíveis com o prerender (render ansioso guardado por `isPrerenderEager`) e ao sinal de prontidão no `useSEO` — o Prerender.io e o `vercel.json` permanecem intactos. A E5 (roteamento de produção) NÃO foi iniciada.*
+
+---
+
+## 12. Etapa E5.0 — Validação em ambiente controlado (sem produção)
+
+Objetivo: comprovar, **sem publicar em produção e sem alterar `vercel.json`, `middleware.js` ou o Prerender.io**, que a estratégia da E5 (servir HTML físico por rota com fallback SPA) é viável e não regride. Relatório completo com evidências: **`reports/e5-preview-validation.md`**.
+
+### 12.1 O que foi executado
+- `npm run build:static:pilot` (build do SPA) + `npm run generate:static:pilot` → **11/11** rotas piloto geradas como `dist/<rota>/index.html`.
+- `npm run validate:static:pilot` → **11/11 aprovadas** (title, description, canonical, JSON-LD, assets, conteúdo sem JS).
+- Servidor local `scripts/e5-precedence-server.mjs` replicando a ordem da Vercel (**filesystem primeiro, rewrite `/(.*) → /index.html` como fallback**) para provar precedência via header `X-Served-By`.
+- Teste de hidratação real no navegador (Cenário A — `createRoot`) e simulação da lógica de decisão do `middleware.js` por user-agent.
+
+### 12.2 Resultados-chave
+- **Precedência correta:** rotas com arquivo físico → `X-Served-By: filesystem` com metadados próprios; rota inexistente → `spa-fallback-rewrite` (soft-404, HTTP 200). O rewrite NÃO sobrepõe o HTML físico.
+- **HTML preenchido:** produto ~171 KB, medida ~173 KB, home ~50 KB; `<h1>`, canonical e JSON-LD presentes no HTML cru (sem executar JS).
+- **Hidratação (`createRoot`) sem quebra:** 0 mensagens no console, sem flicker/tela branca, `data-prerendered` removido após montagem. **Não é necessário migrar para `hydrateRoot` na E5.**
+- **`localhost` no dist:** 0 em HTML/canonical/OG/schema. A única ocorrência é uma string interna inerte do React Router dentro de `react-vendor-*.js` (sobrescrita por `window.location`).
+- **Middleware:** enquanto existir, **bots continuam desviados ao Prerender.io** (o middleware tem precedência sobre o filesystem e curto-circuita a requisição). Isso é a rede de segurança desejada durante a E5; a troca para HTML físico servido a bots só ocorre ao desativar o middleware (E9).
+
+### 12.3 Correções de documentação aplicadas nesta etapa
+- Paginação no `vercel.json`: “~80” → **76** (confirmado).
+- Slugs legados de marca: **3 → 6** (Pirelli, Michelin, Goodyear, Continental, Yokohama, Bridgestone).
+- Total client-side a promover: **76** (69 bairros/cidades + 1 medida + 6 marcas); total projetado no `vercel.json` após E5: **152**.
+
+### 12.4 Limites respeitados
+Nenhuma alteração em `vercel.json`, `middleware.js`, `index.html` ou no serviço Prerender.io. Nada publicado em produção. As únicas escritas foram: HTML gerado em `dist/` (piloto, descartável), o script auxiliar `scripts/e5-precedence-server.mjs`, o relatório `reports/e5-preview-validation.md` e estas correções de contagem no documento.
+
+### 12.5 Veredito
+```text
+E5.0 APROVADA — E5 (roteamento de produção) LIBERADA PARA INICIAR
+```
+Pré-condições técnicas comprovadas em ambiente controlado. A E5, no escopo definido (HTML físico por rota + manter fallback SPA + Prerender.io ligado como segurança), está liberada. Continuam válidos os limites: **não** remover o rewrite `/(.*)`, **não** habilitar `cleanUrls`, e 404 HTTP real permanece fora do escopo (depende da E6).
