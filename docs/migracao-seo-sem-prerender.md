@@ -27,7 +27,7 @@
 
 ### 1.4 Hospedagem e roteamento (`vercel.json`)
 - `rewrites`: `/(.*) → /index.html` (fallback global de SPA — **toda** rota cai no mesmo HTML vazio).
-- `redirects`: ~80 regras 301 de paginação (`/pneus?page=N → /landing-tematica`), geradas por `scripts/generate-redirects.ts`.
+- `redirects`: **76** regras 301 de paginação (`/pneus?page=N → /landing-tematica`), geradas por `scripts/generate-redirects.ts` (contagem confirmada no `vercel.json`).
 - `headers`: content-type/cache para sitemaps, robots, llms; headers de segurança globais.
 - Redirects adicionais (`*.html` de bairros, slugs legados de marca, `/pneus/:medida`) são feitos **client-side** via `<Navigate>` no React Router — logo, dependem de JS e do fallback do index.html.
 
@@ -217,11 +217,15 @@ npm run test:static:pilot
 Relatórios: `reports/static-pilot-report.md` e `reports/static-pilot-generation.json`. Shell original preservado em `reports/_spa-shell/index.html`.
 
 ### 10.7 Inventário de redirects client-side (para promover a 301 na etapa E5)
-Ainda **não convertidos** nesta etapa — apenas inventariados:
-- **69** redirects de bairros `*.html → /bairro/:slug` (`<Navigate>` em `src/App.tsx`).
+Ainda **não convertidos** nesta etapa — apenas inventariados (contagens reconferidas na E5.0 contra o código real):
+- **69** redirects de bairros/cidades `*.html → /bairro/:slug` (`<Navigate>` em `src/App.tsx`; `grep -c '.html" element={<Navigate' = 69`).
 - **1** redirect de rota legada `/pneus/:medida → /pneu-medida/:medida` (componente `LegacyMedidaRedirect`).
-- **3** redirects de slug legado de marca (`BRAND_PAGES[].legacySlug → slug`).
+- **6** redirects de slug legado de marca (`BRAND_PAGES[].legacySlug → slug`: Pirelli, Michelin, Goodyear, Continental, Yokohama, Bridgestone).
+- **Total client-side a promover a 301: 76** (69 + 1 + 6).
+- **Total projetado no `vercel.json` após a E5: 152 regras** = 76 de paginação já existentes + 76 client-side promovidas.
 - Todos deverão virar `redirects` 301 no `vercel.json` (ou arquivo de config) na etapa E5.
+
+> **Correção de contagem (E5.0):** versões anteriores deste inventário citavam **3** slugs legados de marca — número **desatualizado**. A releitura da fonte real (`src/data/seoLanding.ts`) confirma **6** marcas com `legacySlug`, elevando o total client-side de 73 → **76**. O grep bruto por `legacySlug` pode retornar 7 ocorrências, mas 1 é a declaração de tipo/opcional; o valor real (`BRAND_PAGES.filter(p => p.legacySlug)`) é **6**.
 
 ### 10.8 Ressalvas (status HTTP e escopo)
 - Gerar arquivos físicos **não garante sozinho** os códigos HTTP corretos na Vercel. O `vercel.json` ainda tem `rewrites: /(.*) → /index.html`, que **não foi alterado** nesta etapa. Servir o HTML por rota (e o 404 com status 404 real) será tratado na E5, após validação.
@@ -339,7 +343,7 @@ Dependência do Prerender.io durante a geração: nenhuma
 Itens **ainda não resolvidos** (fora do escopo desta etapa):
 - **Fallback global do `vercel.json`** (`rewrites: /(.*) → /index.html`) ainda ativo.
 - **Status 200 indevido** em URLs inexistentes (404 real ainda não implementado no roteamento).
-- **Redirects client-side** ainda não promovidos a 301 server-side (69 bairros `*.html`, 1 `/pneus/:medida`, 3 slugs legados de marca).
+- **Redirects client-side** ainda não promovidos a 301 server-side (69 bairros/cidades `*.html`, 1 `/pneus/:medida`, 6 slugs legados de marca = **76** no total).
 - **Dependência do Prerender.io em produção** ainda vigente.
 - **Escala para ~1.537 URLs** ainda não executada (piloto usa 11 rotas).
 - **Tempo e memória do build completo** ainda não medidos na escala real.
@@ -379,12 +383,197 @@ E1 — auditoria inicial: concluída
 E2 — enumerador de rotas: concluída
 E3 — prova de conceito: aprovada
 E4 — compatibilidade e determinismo: aprovada
-E5 — roteamento de produção: pendente
+E5.0 — validação em ambiente controlado (sem produção): aprovada
+E5 — roteamento de produção (152 redirects 301): implementada e validada
+E5.5 — auditoria independente da E5: aprovada (1 observação não-bloqueante)
+E6 — geração estática em escala (1512 rotas): implementada e validada
+E6.5 — build de deploy configurado e validado localmente: PARCIAL (deploy Vercel pendente)
 Remoção do Prerender.io: pendente
-Geração das ~1.537 páginas: pendente
 Validação final: pendente
 ```
 
 ---
 
 *Etapa 1 (auditoria), Etapa E2/E3 (prova de conceito) e Etapa E4 (compatibilidade, robustez e determinismo). Na E4, as mudanças de código de aplicação limitaram-se a tornar componentes lazy/animados compatíveis com o prerender (render ansioso guardado por `isPrerenderEager`) e ao sinal de prontidão no `useSEO` — o Prerender.io e o `vercel.json` permanecem intactos. A E5 (roteamento de produção) NÃO foi iniciada.*
+
+---
+
+## 12. Etapa E5.0 — Validação em ambiente controlado (sem produção)
+
+Objetivo: comprovar, **sem publicar em produção e sem alterar `vercel.json`, `middleware.js` ou o Prerender.io**, que a estratégia da E5 (servir HTML físico por rota com fallback SPA) é viável e não regride. Relatório completo com evidências: **`reports/e5-preview-validation.md`**.
+
+### 12.1 O que foi executado
+- `npm run build:static:pilot` (build do SPA) + `npm run generate:static:pilot` → **11/11** rotas piloto geradas como `dist/<rota>/index.html`.
+- `npm run validate:static:pilot` → **11/11 aprovadas** (title, description, canonical, JSON-LD, assets, conteúdo sem JS).
+- Servidor local `scripts/e5-precedence-server.mjs` replicando a ordem da Vercel (**filesystem primeiro, rewrite `/(.*) → /index.html` como fallback**) para provar precedência via header `X-Served-By`.
+- Teste de hidratação real no navegador (Cenário A — `createRoot`) e simulação da lógica de decisão do `middleware.js` por user-agent.
+
+### 12.2 Resultados-chave
+- **Precedência correta:** rotas com arquivo físico → `X-Served-By: filesystem` com metadados próprios; rota inexistente → `spa-fallback-rewrite` (soft-404, HTTP 200). O rewrite NÃO sobrepõe o HTML físico.
+- **HTML preenchido:** produto ~171 KB, medida ~173 KB, home ~50 KB; `<h1>`, canonical e JSON-LD presentes no HTML cru (sem executar JS).
+- **Hidratação (`createRoot`) sem quebra:** 0 mensagens no console, sem flicker/tela branca, `data-prerendered` removido após montagem. **Não é necessário migrar para `hydrateRoot` na E5.**
+- **`localhost` no dist:** 0 em HTML/canonical/OG/schema. A única ocorrência é uma string interna inerte do React Router dentro de `react-vendor-*.js` (sobrescrita por `window.location`).
+- **Middleware:** enquanto existir, **bots continuam desviados ao Prerender.io** (o middleware tem precedência sobre o filesystem e curto-circuita a requisição). Isso é a rede de segurança desejada durante a E5; a troca para HTML físico servido a bots só ocorre ao desativar o middleware (E9).
+
+### 12.3 Correções de documentação aplicadas nesta etapa
+- Paginação no `vercel.json`: “~80” → **76** (confirmado).
+- Slugs legados de marca: **3 → 6** (Pirelli, Michelin, Goodyear, Continental, Yokohama, Bridgestone).
+- Total client-side a promover: **76** (69 bairros/cidades + 1 medida + 6 marcas); total projetado no `vercel.json` após E5: **152**.
+
+### 12.4 Limites respeitados
+Nenhuma alteração em `vercel.json`, `middleware.js`, `index.html` ou no serviço Prerender.io. Nada publicado em produção. As únicas escritas foram: HTML gerado em `dist/` (piloto, descartável), o script auxiliar `scripts/e5-precedence-server.mjs`, o relatório `reports/e5-preview-validation.md` e estas correções de contagem no documento.
+
+### 12.5 Veredito
+```text
+E5.0 APROVADA — E5 (roteamento de produção) LIBERADA PARA INICIAR
+```
+Pré-condições técnicas comprovadas em ambiente controlado. A E5, no escopo definido (HTML físico por rota + manter fallback SPA + Prerender.io ligado como segurança), está liberada. Continuam válidos os limites: **não** remover o rewrite `/(.*)`, **não** habilitar `cleanUrls`, e 404 HTTP real permanece fora do escopo (depende da E6).
+
+---
+
+## 13. Etapa E5 — Roteamento de produção (301 server-side)
+
+Objetivo: promover os redirects client-side a `redirects` **301 server-side** no `vercel.json`, mantendo o fallback SPA, os headers e o Prerender.io intactos. Relatório completo: **`reports/e5-implementation.md`**.
+
+### 13.1 Resultado
+- `vercel.json`: **76 → 152 redirects** (76 paginação já existentes + 76 promovidos: 69 bairros/cidades `*.html`, 1 `/pneus/:medida` dinâmico, 6 slugs legados de marca).
+- Rewrite global `/(.*) → /index.html`, `headers` e ausência de `cleanUrls`/`trailingSlash`: **preservados**.
+- Redirects client-side no `App.tsx`: **mantidos** como rede de segurança (redundância).
+
+### 13.2 Robustez / idempotência
+- **Fonte única** `scripts/manual-redirects.ts` deriva os 76 manuais das mesmas fontes de dados do `App.tsx` (sem divergência).
+- `scripts/generate-redirects.ts` reescrito: monta `[manuais, paginação]`, **preserva** manuais desconhecidos por merge (nunca apaga regras) e é **idempotente** (2 execuções → sempre 152).
+- **Correção de ambiente:** `npm run redirects`/`prebuild` migraram de `tsx` para `node scripts/run-ts.mjs` — o `tsx` saía silenciosamente sem executar neste runtime (mesmo motivo do wrapper já usado no piloto), fazendo o gerador virar no-op.
+
+### 13.3 Validação
+- Análise estática (`scripts/validate-redirects.mjs`): 152 regras, **0** duplicatas, **0** cadeias, **0** loops, todos `permanent:true`.
+- HTTP real (`scripts/e5-routing-server.mjs` + `scripts/test-redirects-http.mjs`): **152/152 → 301** com `Location` exato, sem encadeamento; rotas piloto → 200 filesystem; rota inexistente → 200 fallback (soft-404); assets → 200.
+- Navegador: `/portao.html` → SPA resolve `/bairro/portao` com H1/conteúdo (redundância client-side confirmada).
+
+### 13.4 Limites respeitados
+Sem remover o rewrite, sem `cleanUrls`/`trailingSlash`, sem tocar em `middleware.js`/Prerender.io, sem publicar em produção. 404 HTTP real segue fora do escopo (E6).
+
+### 13.5 Veredito
+```text
+E5 IMPLEMENTADA E VALIDADA — pronta para publicar
+```
+
+---
+
+## 14. Etapa E5.5 — Auditoria independente da E5
+
+Objetivo: verificar de forma independente (recontagem a partir das fontes, não do relatório da E5) que a promoção a 301 está correta, idempotente e sem regressão — sem publicar em produção. Relatório completo com evidências: **`reports/e5.5-audit.md`**; inventário: **`reports/e5-redirect-inventory.csv`**.
+
+### 14.1 Confirmações
+- **Contagem:** 152 redirects = 76 paginação + 69 bairros/cidades + 1 medida + 6 marcas (recontado nas fontes). 0 duplicatas, 0 loops, 0 cadeias, todos 301.
+- **Idempotência:** `npm run redirects` 2× → `vercel.json` byte-idêntico; recuperação do zero restaura 152 regras idênticas.
+- **`run-ts.mjs`:** propaga exit code (3→3, throw→1), stdout/stderr e args corretamente; sem órfãos.
+- **HTTP:** 152/152 → 301 com `Location` exato e sem encadeamento; 14/14 controles negativos/precedência ok (`/pneus` puro = 200, filesystem tem precedência sobre rewrite, soft-404 no fallback).
+- **React/SEO:** hidratação sem erros no console, canonicals auto-referenciais (nenhum herda o da home), robots/OG/Twitter/JSON-LD presentes, 0 `localhost`.
+- **Bots:** `redirects` avaliados antes do middleware; rede de segurança Prerender.io intacta.
+- **Rollback:** via git (`git revert` dos commits da E5) ou regeneração determinística do `vercel.json`; redundância client-side no `App.tsx` permanece como segurança.
+
+### 14.2 Observação não-bloqueante
+O passo de **sitemap** do `prebuild` ainda usa `tsx` (no-op neste sandbox; funciona no build da Vercel), enquanto **redirects** usa `run-ts.mjs`. Sem impacto em produção, mas há inconsistência de runner. Recomendação (fora do escopo da E5): padronizar o sitemap para `run-ts.mjs`.
+
+### 14.3 Veredito
+```text
+E5.5 APROVADA — E5 confirmada correta, idempotente e sem regressão (1 observação não-bloqueante)
+```
+
+---
+
+## 15. Etapa E6 — Geração estática em escala
+
+Objetivo: escalar a geração de HTML físico de 11 rotas (piloto) para **todas as
+rotas indexáveis**, com pipeline determinística, retomável e validada — sem
+publicar em produção nem tocar em `middleware.js` / `vercel.json` / Prerender.io.
+Relatório completo: **`reports/e6-implementation.md`**.
+
+### 15.1 Resultado
+- **1512/1512 rotas geradas, 0 falhas** em 389s (3.88 rotas/s, concorrência 4).
+- **Validação global:** 1512 com arquivo, 0 problemas, 0 canonicais duplicados → APROVADO.
+- **Paridade** enumerador↔sitemap: 1512 = 1512, 0 divergências.
+- **HTTP** (redirects→filesystem→rewrite): 279/279 (200 físicas + 76 redirects 301 + soft-404).
+- **Hidratação** React sem erros/flicker em todos os tipos de rota.
+
+### 15.2 Arquitetura
+- **Fonte única** `scripts/static-routes.ts`; o sitemap passou a consumi-la →
+  paridade por construção.
+- Núcleo do piloto refatorado em `renderRouteOnPage()` (reuso sem duplicação; piloto segue passando).
+- `scripts/generate-static-all.ts`: concorrência, **checkpoint/retomada**
+  (`--fresh`, `--retry-failed`), **escrita atômica** e amostra determinística
+  **representativa** (`--limit --shuffle`).
+
+### 15.3 Correções técnicas indispensáveis
+1. **21 URLs de produto duplicadas** (defeito de dados pré-existente no `TIRES`,
+   já poluía o sitemap): dedupe por path no enumerador → 1371 → **1350** produtos.
+2. **Canonical de serviço com barra final** (`/servicos/`, `/servico/{slug}/`)
+   divergia do sitemap: corrigido (aprovado pelo usuário) em `ServicosPage.tsx`
+   e `ServiceDetail.tsx`.
+3. **Home ausente de amostras `--limit`** (defeito da pipeline): amostra passou a
+   garantir home + ≥1 rota por tipo.
+4. **Runner do sitemap** padronizado para `run-ts.mjs` (fecha a observação da E5.5).
+
+### 15.4 Observação não-bloqueante
+Similaridade máxima **0.963** entre variantes de um mesmo pneu (índices de carga
+diferentes). Esperado num catálogo; canonical/title/URL são únicos por variante.
+É estratégia de conteúdo, não defeito de pipeline.
+
+### 15.5 Limites respeitados
+`dist/` não é commitado; checkpoint/summary de runtime foram ignorados/destrackeados.
+Sem produção, sem middleware/Prerender.io, sem alterar rewrite/headers. 404 real
+segue como soft-404 (fallback SPA).
+
+### 15.6 Veredito
+```text
+E6 IMPLEMENTADA E VALIDADA — 1512/1512 rotas, 0 falhas, validação/paridade/HTTP OK.
+3 defeitos reais corrigidos, 1 observação de conteúdo. Pronta para publicar em Preview.
+```
+
+---
+
+## 16. Etapa E6.5 — Build de deploy configurado e validado localmente
+
+Objetivo: garantir que o **build de deploy** da Vercel passe a gerar as 1.512 páginas
+físicas e validar, sem publicar, todo o output real. Relatório completo com evidências:
+**`reports/e6.5-local.md`**. Veredito **PARCIAL** — deploy/Preview na Vercel não executado
+(sem autenticação e requer aprovação). Cada item foi rotulado **REAL** vs **PENDENTE (Preview)**.
+
+### 16.1 O que mudou
+- `vercel.json` agora define `"buildCommand": "npm run build:static"` (gera sitemap + redirects
+  + SPA + 1.512 páginas + validação). Antes, o build padrão só gerava o SPA — as páginas E6
+  **não** entrariam num deploy. O gerador de `vercel.json` preserva/reemite `buildCommand`
+  de forma idempotente, sem afetar os 152 redirects, o rewrite SPA nem os headers.
+
+### 16.2 Validado de forma REAL (neste ambiente)
+- **Build completo do zero:** 1512/1512 páginas, 0 falhas, **~6,9 min** (< 45 min da Vercel) e
+  **pico ~2,04 GB RSS** (< ~8 GB). `dist/` ≈ 261 MB. Validação global aprovada. Determinismo
+  confirmado (resultado idêntico à E6).
+- **Roteamento HTTP** sobre o output real (servidor que replica redirect→filesystem→rewrite
+  **+ headers**): **165/165** — 75 redirects 301, 87 rotas físicas, casos de borda (paginação,
+  medida dinâmica, asset, soft-404) e precedência corretos.
+- **Headers:** segurança global em todas as páginas; `Content-Type`+`Cache-Control` em sitemaps.
+- **SEO/hidratação** em 4 tipos (home, produto, serviços, catálogo): title/H1/canonical corretos
+  e auto-referenciais (`/servicos` sem barra, confirmando a correção da E6), hidratação sem erro
+  de console.
+- **Middleware/bots (lógica real executada, não simulada):** 9/9 casos. Descoberta-chave: o
+  middleware roda **antes** do filesystem e, para **bots** em rotas de página, reescreve para o
+  Prerender.io **antes** de alcançar as páginas físicas. Ou seja, enquanto o middleware estiver
+  ativo, as 1.512 páginas E6 **beneficiam humanos** mas **bots continuam no Prerender.io**. A
+  rede de segurança (SPA em ausência de token/erro/timeout) está intacta.
+
+### 16.3 Observação não-bloqueante
+`vercel.json` não define `Cache-Control` para `/assets/*` (arquivos com hash). Recomendável
+`public, max-age=31536000, immutable`. Fora do escopo da E6.5.
+
+### 16.4 PENDENTE (só verificável em Preview real)
+Tempo/memória no runner da Vercel; libs de sistema do Chrome no build image; comportamento
+real de bot no edge via Prerender.io; caching/headers efetivos na CDN; URL de Preview e logs.
+
+### 16.5 Veredito
+```text
+E6.5 PARCIAL — build de deploy configurado (buildCommand) e validado LOCALMENTE de ponta a
+ponta (1512/1512 dentro dos limites Vercel; roteamento/SEO/hidratação/headers/middleware REAIS).
+Itens de infraestrutura (deploy, edge, bots, CDN) PENDENTES de um Preview real da Vercel.
+```

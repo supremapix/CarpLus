@@ -1,5 +1,386 @@
 {
+  "buildCommand": "npm run build:static",
   "redirects": [
+    {
+      "source": "/taboao.html",
+      "destination": "/bairro/taboao",
+      "permanent": true
+    },
+    {
+      "source": "/agua-verde.html",
+      "destination": "/bairro/agua-verde",
+      "permanent": true
+    },
+    {
+      "source": "/alto-da-rua-xv.html",
+      "destination": "/bairro/alto-da-rua-xv",
+      "permanent": true
+    },
+    {
+      "source": "/bacacheri.html",
+      "destination": "/bairro/bacacheri",
+      "permanent": true
+    },
+    {
+      "source": "/batel.html",
+      "destination": "/bairro/batel",
+      "permanent": true
+    },
+    {
+      "source": "/boqueirao.html",
+      "destination": "/bairro/boqueirao",
+      "permanent": true
+    },
+    {
+      "source": "/caiua.html",
+      "destination": "/bairro/caiua",
+      "permanent": true
+    },
+    {
+      "source": "/campo-comprido.html",
+      "destination": "/bairro/campo-comprido",
+      "permanent": true
+    },
+    {
+      "source": "/campo-de-santana.html",
+      "destination": "/bairro/campo-de-santana",
+      "permanent": true
+    },
+    {
+      "source": "/capao-raso.html",
+      "destination": "/bairro/capao-raso",
+      "permanent": true
+    },
+    {
+      "source": "/cascatinha.html",
+      "destination": "/bairro/cascatinha",
+      "permanent": true
+    },
+    {
+      "source": "/caximba.html",
+      "destination": "/bairro/caximba",
+      "permanent": true
+    },
+    {
+      "source": "/centro.html",
+      "destination": "/bairro/centro",
+      "permanent": true
+    },
+    {
+      "source": "/cic.html",
+      "destination": "/bairro/cic",
+      "permanent": true
+    },
+    {
+      "source": "/conquista.html",
+      "destination": "/bairro/conquista",
+      "permanent": true
+    },
+    {
+      "source": "/cristo-rei.html",
+      "destination": "/bairro/cristo-rei",
+      "permanent": true
+    },
+    {
+      "source": "/fazendinha.html",
+      "destination": "/bairro/fazendinha",
+      "permanent": true
+    },
+    {
+      "source": "/ganchinho.html",
+      "destination": "/bairro/ganchinho",
+      "permanent": true
+    },
+    {
+      "source": "/guaira.html",
+      "destination": "/bairro/guaira",
+      "permanent": true
+    },
+    {
+      "source": "/hauer.html",
+      "destination": "/bairro/hauer",
+      "permanent": true
+    },
+    {
+      "source": "/hugo-lange.html",
+      "destination": "/bairro/hugo-lange",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-botanico.html",
+      "destination": "/bairro/jardim-botanico",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-das-americas.html",
+      "destination": "/bairro/jardim-das-americas",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-gabineto.html",
+      "destination": "/bairro/jardim-gabineto",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-da-ordem.html",
+      "destination": "/bairro/jardim-da-ordem",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-itatiaia.html",
+      "destination": "/bairro/jardim-itatiaia",
+      "permanent": true
+    },
+    {
+      "source": "/jardim-social.html",
+      "destination": "/bairro/jardim-social",
+      "permanent": true
+    },
+    {
+      "source": "/juveve.html",
+      "destination": "/bairro/juveve",
+      "permanent": true
+    },
+    {
+      "source": "/lamenha-pequena.html",
+      "destination": "/bairro/lamenha-pequena",
+      "permanent": true
+    },
+    {
+      "source": "/lindoia.html",
+      "destination": "/bairro/lindoia",
+      "permanent": true
+    },
+    {
+      "source": "/merces.html",
+      "destination": "/bairro/merces",
+      "permanent": true
+    },
+    {
+      "source": "/neoville.html",
+      "destination": "/bairro/neoville",
+      "permanent": true
+    },
+    {
+      "source": "/novo-mundo.html",
+      "destination": "/bairro/novo-mundo",
+      "permanent": true
+    },
+    {
+      "source": "/orleans.html",
+      "destination": "/bairro/orleans",
+      "permanent": true
+    },
+    {
+      "source": "/parolin.html",
+      "destination": "/bairro/parolin",
+      "permanent": true
+    },
+    {
+      "source": "/pilarzinho.html",
+      "destination": "/bairro/pilarzinho",
+      "permanent": true
+    },
+    {
+      "source": "/prado-velho.html",
+      "destination": "/bairro/prado-velho",
+      "permanent": true
+    },
+    {
+      "source": "/reboucas.html",
+      "destination": "/bairro/reboucas",
+      "permanent": true
+    },
+    {
+      "source": "/santa-candida.html",
+      "destination": "/bairro/santa-candida",
+      "permanent": true
+    },
+    {
+      "source": "/santa-felicidade.html",
+      "destination": "/bairro/santa-felicidade",
+      "permanent": true
+    },
+    {
+      "source": "/santo-inacio.html",
+      "destination": "/bairro/santo-inacio",
+      "permanent": true
+    },
+    {
+      "source": "/sao-braz.html",
+      "destination": "/bairro/sao-braz",
+      "permanent": true
+    },
+    {
+      "source": "/sao-lourenco.html",
+      "destination": "/bairro/sao-lourenco",
+      "permanent": true
+    },
+    {
+      "source": "/sao-miguel.html",
+      "destination": "/bairro/sao-miguel",
+      "permanent": true
+    },
+    {
+      "source": "/taruma.html",
+      "destination": "/bairro/taruma",
+      "permanent": true
+    },
+    {
+      "source": "/uberaba.html",
+      "destination": "/bairro/uberaba",
+      "permanent": true
+    },
+    {
+      "source": "/umbara.html",
+      "destination": "/bairro/umbara",
+      "permanent": true
+    },
+    {
+      "source": "/vila-nossa-senhora-da-luz.html",
+      "destination": "/bairro/vila-nossa-senhora-da-luz",
+      "permanent": true
+    },
+    {
+      "source": "/vila-oficinas.html",
+      "destination": "/bairro/vila-oficinas",
+      "permanent": true
+    },
+    {
+      "source": "/vila-sandra.html",
+      "destination": "/bairro/vila-sandra",
+      "permanent": true
+    },
+    {
+      "source": "/vila-sao-pedro.html",
+      "destination": "/bairro/vila-sao-pedro",
+      "permanent": true
+    },
+    {
+      "source": "/vista-alegre.html",
+      "destination": "/bairro/vista-alegre",
+      "permanent": true
+    },
+    {
+      "source": "/vitoria-regia.html",
+      "destination": "/bairro/vitoria-regia",
+      "permanent": true
+    },
+    {
+      "source": "/ahu.html",
+      "destination": "/bairro/ahu",
+      "permanent": true
+    },
+    {
+      "source": "/atenas.html",
+      "destination": "/bairro/atenas",
+      "permanent": true
+    },
+    {
+      "source": "/bairro-alto.html",
+      "destination": "/bairro/bairro-alto",
+      "permanent": true
+    },
+    {
+      "source": "/bigorrilho.html",
+      "destination": "/bairro/bigorrilho",
+      "permanent": true
+    },
+    {
+      "source": "/butiatuvinha.html",
+      "destination": "/bairro/butiatuvinha",
+      "permanent": true
+    },
+    {
+      "source": "/cajuru.html",
+      "destination": "/bairro/cajuru",
+      "permanent": true
+    },
+    {
+      "source": "/portao.html",
+      "destination": "/bairro/portao",
+      "permanent": true
+    },
+    {
+      "source": "/santa-quiteria.html",
+      "destination": "/bairro/santa-quiteria",
+      "permanent": true
+    },
+    {
+      "source": "/sao-jose-dos-pinhais.html",
+      "destination": "/bairro/sao-jose-dos-pinhais",
+      "permanent": true
+    },
+    {
+      "source": "/colombo.html",
+      "destination": "/bairro/colombo",
+      "permanent": true
+    },
+    {
+      "source": "/araucaria.html",
+      "destination": "/bairro/araucaria",
+      "permanent": true
+    },
+    {
+      "source": "/pinhais.html",
+      "destination": "/bairro/pinhais",
+      "permanent": true
+    },
+    {
+      "source": "/campo-largo.html",
+      "destination": "/bairro/campo-largo",
+      "permanent": true
+    },
+    {
+      "source": "/almirante-tamandare.html",
+      "destination": "/bairro/almirante-tamandare",
+      "permanent": true
+    },
+    {
+      "source": "/fazenda-rio-grande.html",
+      "destination": "/bairro/fazenda-rio-grande",
+      "permanent": true
+    },
+    {
+      "source": "/contenda.html",
+      "destination": "/bairro/contenda",
+      "permanent": true
+    },
+    {
+      "source": "/pneus/:medida",
+      "destination": "/pneu-medida/:medida",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-pirelli-curitiba",
+      "destination": "/pneus-pirelli-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-michelin-curitiba",
+      "destination": "/pneus-michelin-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-goodyear-curitiba",
+      "destination": "/pneus-goodyear-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-continental-curitiba",
+      "destination": "/pneus-continental-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-yokohama-curitiba",
+      "destination": "/pneus-yokohama-curitiba",
+      "permanent": true
+    },
+    {
+      "source": "/pneu-bridgestone-curitiba",
+      "destination": "/pneus-bridgestone-curitiba",
+      "permanent": true
+    },
     {
       "source": "/pneus",
       "has": [

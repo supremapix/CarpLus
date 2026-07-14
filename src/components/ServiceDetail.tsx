@@ -345,7 +345,7 @@ export default function ServiceDetail() {
       ? {
           title: `${service.title} em Curitiba Portão | Carplus Centro Automotivo`,
           description: `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
-          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`,
+          canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`,
           ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
           schemaJSON: [
             {

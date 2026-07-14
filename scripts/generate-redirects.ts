@@ -1,34 +1,40 @@
 // scripts/generate-redirects.ts
 // ─────────────────────────────────────────────────────────────────────────────
-// REDIRECTS 301 INTELIGENTES DE PAGINAÇÃO
+// GERADOR DE REDIRECTS 301 DO vercel.json
 // ─────────────────────────────────────────────────────────────────────────────
-// Gera, a partir do MESMO motor (src/lib/seoIndexing.ts), regras de redirect 301
-// permanentes para as paginações "/pneus?page=N" cuja dominância ≥ REDIRECT_THRESHOLD
-// (85%) aponta para uma landing temática real e indexável (ex.: /pneus-michelin-curitiba).
+// Escreve a chave "redirects" do vercel.json a partir de DUAS origens claramente
+// separadas, preservando rewrites, headers e demais chaves:
 //
-// As regras são escritas DIRETAMENTE no vercel.json (chave "redirects"), preservando
-// rewrites, headers e redirects manuais. As regras de paginação são reconhecidas pela
-// forma (source "/pneus" + query "page"), então rodar o script é idempotente.
+//   1. MANUAIS  (fonte: scripts/manual-redirects.ts) — 76 regras promovidas na E5:
+//        • 69 bairros/cidades  /<slug>.html      → /bairro/<slug>
+//        •  1 medida (dinâmica) /pneus/:medida     → /pneu-medida/:medida
+//        •  6 slugs de marca    /<legacySlug>       → /<slug>
+//      São a FONTE ÚNICA versionada — sempre reescritas, nunca perdidas.
 //
-// IMPORTANTE: o Vercel resolve o vercel.json versionado no repositório. Após rodar
-// este script, o vercel.json atualizado precisa ser commitado para que os 301s
-// entrem em vigor no edge. Em paralelo, o TireCatalog aplica o equivalente no SPA.
+//   2. PAGINAÇÃO (fonte: src/lib/seoIndexing.ts) — 76 regras autogeradas:
+//        /pneus?page=N → /landing-tematica  (dominância ≥ REDIRECT_THRESHOLD)
+//      Reconhecidas pela forma (source "/pneus" + query "page"); regeneradas a cada run.
+//
+// Resultado esperado após a E5: 76 manuais + 76 paginação = 152 redirects.
+//
+// GARANTIA DE NÃO-PERDA: qualquer redirect já presente no vercel.json que NÃO
+// seja de paginação e NÃO esteja no conjunto manual gerenciado é PRESERVADO como
+// "manual desconhecido" (defensivo). Assim o gerador é idempotente e nunca apaga
+// regras — rodar `npm run redirects` restaura os manuais mesmo se o arquivo for
+// esvaziado, sem descartar eventuais regras adicionadas à mão.
+//
+// Ordem final no vercel.json: [manuais, manuais-desconhecidos, paginação],
+// depois rewrites (fallback SPA) e headers. O Vercel avalia redirects primeiro.
 //
 // Execução: `tsx scripts/generate-redirects.ts` (encadeado no prebuild).
 
 import fs from 'fs';
 import path from 'path';
 import { getPaginationRedirects, REDIRECT_THRESHOLD } from '../src/lib/seoIndexing';
+import { getManualRedirects, redirectKey, type RedirectRule } from './manual-redirects';
 
 const ROOT = process.cwd();
 const VERCEL_JSON = path.join(ROOT, 'vercel.json');
-
-interface RedirectRule {
-  source: string;
-  has?: { type: 'query'; key: string; value: string }[];
-  destination: string;
-  permanent: boolean;
-}
 
 /** Uma regra é "de paginação" (autogerada) quando casa /pneus + query page. */
 function isPaginationRule(r: RedirectRule): boolean {
@@ -58,28 +64,46 @@ function main() {
     [k: string]: unknown;
   };
 
-  // Preserva redirects manuais (qualquer regra que NÃO seja de paginação).
-  const manualRedirects = (config.redirects ?? []).filter((r) => !isPaginationRule(r));
-  const generated = buildPaginationRedirects();
-  const redirects = [...manualRedirects, ...generated];
+  const existing = config.redirects ?? [];
 
-  // redirects antes de rewrites (o Vercel aplica redirects primeiro).
+  // 1. Manuais gerenciados (fonte única versionada).
+  const manual = getManualRedirects();
+  const manualKeys = new Set(manual.map(redirectKey));
+
+  // 2. Paginação (autogerada a cada run).
+  const pagination = buildPaginationRedirects();
+
+  // 3. Preserva manuais DESCONHECIDOS: presentes no vercel.json, mas que não são
+  //    paginação nem fazem parte do conjunto manual gerenciado. Defensivo contra perda.
+  const unknownManual = existing.filter(
+    (r) => !isPaginationRule(r) && !manualKeys.has(redirectKey(r)),
+  );
+
+  const redirects = [...manual, ...unknownManual, ...pagination];
+
+  // Ordem estável e determinística: buildCommand primeiro (config de deploy),
+  // depois redirects (o Vercel aplica redirects antes de rewrites), rewrites,
+  // headers e por fim quaisquer outras chaves preservadas do vercel.json.
   const ordered: Record<string, unknown> = {};
+  if (config.buildCommand !== undefined) ordered.buildCommand = config.buildCommand;
   if (redirects.length > 0) ordered.redirects = redirects;
   if (config.rewrites) ordered.rewrites = config.rewrites;
   if (config.headers) ordered.headers = config.headers;
   for (const [k, v] of Object.entries(config)) {
-    if (!['redirects', 'rewrites', 'headers'].includes(k)) ordered[k] = v;
+    if (!['buildCommand', 'redirects', 'rewrites', 'headers'].includes(k)) ordered[k] = v;
   }
 
   fs.writeFileSync(VERCEL_JSON, JSON.stringify(ordered, null, 2) + '\n');
 
-  console.log('[redirects] Redirects 301 de paginação gerados:');
-  console.log(`  - threshold de redirect : ${Math.round(REDIRECT_THRESHOLD * 100)}%`);
-  console.log(`  - regras manuais        : ${manualRedirects.length}`);
-  console.log(`  - regras geradas (301)  : ${generated.length}`);
-  for (const g of generated) {
-    console.log(`    /pneus?page=${g.has?.[0].value} → ${g.destination}`);
+  console.log('[redirects] vercel.json atualizado:');
+  console.log(`  - threshold de paginação    : ${Math.round(REDIRECT_THRESHOLD * 100)}%`);
+  console.log(`  - manuais (fonte única)     : ${manual.length}`);
+  console.log(`  - manuais preservados (n/i) : ${unknownManual.length}`);
+  console.log(`  - paginação (autogerada)    : ${pagination.length}`);
+  console.log(`  - TOTAL redirects           : ${redirects.length}`);
+  if (unknownManual.length > 0) {
+    console.log('  ⚠ regras manuais desconhecidas preservadas:');
+    for (const u of unknownManual) console.log(`      ${u.source} → ${u.destination}`);
   }
 }
 
