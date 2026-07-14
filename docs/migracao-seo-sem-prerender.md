@@ -387,6 +387,7 @@ E5.0 — validação em ambiente controlado (sem produção): aprovada
 E5 — roteamento de produção (152 redirects 301): implementada e validada
 E5.5 — auditoria independente da E5: aprovada (1 observação não-bloqueante)
 E6 — geração estática em escala (1512 rotas): implementada e validada
+E6.5 — build de deploy configurado e validado localmente: PARCIAL (deploy Vercel pendente)
 Remoção do Prerender.io: pendente
 Validação final: pendente
 ```
@@ -528,4 +529,51 @@ segue como soft-404 (fallback SPA).
 ```text
 E6 IMPLEMENTADA E VALIDADA — 1512/1512 rotas, 0 falhas, validação/paridade/HTTP OK.
 3 defeitos reais corrigidos, 1 observação de conteúdo. Pronta para publicar em Preview.
+```
+
+---
+
+## 16. Etapa E6.5 — Build de deploy configurado e validado localmente
+
+Objetivo: garantir que o **build de deploy** da Vercel passe a gerar as 1.512 páginas
+físicas e validar, sem publicar, todo o output real. Relatório completo com evidências:
+**`reports/e6.5-local.md`**. Veredito **PARCIAL** — deploy/Preview na Vercel não executado
+(sem autenticação e requer aprovação). Cada item foi rotulado **REAL** vs **PENDENTE (Preview)**.
+
+### 16.1 O que mudou
+- `vercel.json` agora define `"buildCommand": "npm run build:static"` (gera sitemap + redirects
+  + SPA + 1.512 páginas + validação). Antes, o build padrão só gerava o SPA — as páginas E6
+  **não** entrariam num deploy. O gerador de `vercel.json` preserva/reemite `buildCommand`
+  de forma idempotente, sem afetar os 152 redirects, o rewrite SPA nem os headers.
+
+### 16.2 Validado de forma REAL (neste ambiente)
+- **Build completo do zero:** 1512/1512 páginas, 0 falhas, **~6,9 min** (< 45 min da Vercel) e
+  **pico ~2,04 GB RSS** (< ~8 GB). `dist/` ≈ 261 MB. Validação global aprovada. Determinismo
+  confirmado (resultado idêntico à E6).
+- **Roteamento HTTP** sobre o output real (servidor que replica redirect→filesystem→rewrite
+  **+ headers**): **165/165** — 75 redirects 301, 87 rotas físicas, casos de borda (paginação,
+  medida dinâmica, asset, soft-404) e precedência corretos.
+- **Headers:** segurança global em todas as páginas; `Content-Type`+`Cache-Control` em sitemaps.
+- **SEO/hidratação** em 4 tipos (home, produto, serviços, catálogo): title/H1/canonical corretos
+  e auto-referenciais (`/servicos` sem barra, confirmando a correção da E6), hidratação sem erro
+  de console.
+- **Middleware/bots (lógica real executada, não simulada):** 9/9 casos. Descoberta-chave: o
+  middleware roda **antes** do filesystem e, para **bots** em rotas de página, reescreve para o
+  Prerender.io **antes** de alcançar as páginas físicas. Ou seja, enquanto o middleware estiver
+  ativo, as 1.512 páginas E6 **beneficiam humanos** mas **bots continuam no Prerender.io**. A
+  rede de segurança (SPA em ausência de token/erro/timeout) está intacta.
+
+### 16.3 Observação não-bloqueante
+`vercel.json` não define `Cache-Control` para `/assets/*` (arquivos com hash). Recomendável
+`public, max-age=31536000, immutable`. Fora do escopo da E6.5.
+
+### 16.4 PENDENTE (só verificável em Preview real)
+Tempo/memória no runner da Vercel; libs de sistema do Chrome no build image; comportamento
+real de bot no edge via Prerender.io; caching/headers efetivos na CDN; URL de Preview e logs.
+
+### 16.5 Veredito
+```text
+E6.5 PARCIAL — build de deploy configurado (buildCommand) e validado LOCALMENTE de ponta a
+ponta (1512/1512 dentro dos limites Vercel; roteamento/SEO/hidratação/headers/middleware REAIS).
+Itens de infraestrutura (deploy, edge, bots, CDN) PENDENTES de um Preview real da Vercel.
 ```
