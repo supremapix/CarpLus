@@ -17,11 +17,11 @@ export default function BrandsCarousel() {
         <div className="md:hidden absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/60 to-transparent z-10" />
         <div className="md:hidden absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent z-10" />
         <img loading="lazy"
-          src="/images/loja/oficina-carplus-pneus.webp"
+          src="/images/loja/especialista-mecanico-carplus.webp"
           alt=""
-          width={1200}
-          height={428}
-          className="w-full h-full object-cover object-center opacity-70"
+          width={1920}
+          height={1280}
+          className="w-full h-full object-cover object-[70%_center] opacity-70"
         />
       </div>
 
