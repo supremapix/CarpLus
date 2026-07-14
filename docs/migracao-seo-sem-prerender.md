@@ -578,6 +578,25 @@ ponta (1512/1512 dentro dos limites Vercel; roteamento/SEO/hidratação/headers/
 Itens de infraestrutura (deploy, edge, bots, CDN) PENDENTES de um Preview real da Vercel.
 ```
 
+### 16.6 Tentativa de auditoria no Preview (2026-07-14) — BLOQUEADA por SSO
+URL: `https://carp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app/`
+Relatório: **`reports/e6.5-preview-validation.md`**.
+
+A auditoria real **não pôde ser executada**: o Preview está sob **Deployment Protection
+(Vercel Authentication/SSO)**. Todas as requisições — humano, Googlebot, Bingbot, `sitemap.xml`,
+`robots.txt`, `llms.txt`, assets — retornam **HTTP 302 → `vercel.com/sso-api`** antes de alcançar
+a aplicação. O bypass sem token também é rejeitado. Nenhum item da checklist foi verificável.
+
+Para desbloquear: (a) desativar a Deployment Protection **ou** fornecer um secret de
+*Protection Bypass for Automation*; e (b) garantir **`GENERATE_STATIC=1`** no ambiente de Preview
+— sem essa flag o `build:deploy` (E7) publica só o SPA, sem as 1.512 páginas físicas. Após ambos,
+a auditoria completa será reexecutada.
+
+```text
+E6.5 (Preview) PARCIAL — CORREÇÕES NECESSÁRIAS: Preview inacessível (SSO 302).
+Auditoria pendente de: desativar Deployment Protection (ou bypass token) + GENERATE_STATIC=1.
+```
+
 ---
 
 ## 17. Etapa E7 — Chromium serverless + build de deploy resiliente
