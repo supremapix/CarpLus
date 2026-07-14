@@ -390,8 +390,9 @@ E6 — geração estática em escala (1512 rotas): implementada e validada
 E6.5 — build de deploy configurado e validado localmente: PARCIAL (deploy Vercel pendente)
 E7 — Chromium serverless + build resiliente: implementada (produção Ready)
 E8 — remoção controlada do Prerender.io (kill-switch + validação local): PARCIAL (edge real pendente); bug crítico da home corrigido
-E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1/C4)
-Remoção definitiva do Prerender.io (E9): pendente (condicionada aos critérios C1-C9 da E8.5)
+E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1)
+E8.6 — 404 HTTP real (fim do soft-404): APROVADA localmente (C4 destravado)
+Remoção definitiva do Prerender.io (E9): pendente (bloqueada apenas por C1 — Preview/SSO)
 Validação final: pendente
 ```
 
@@ -736,4 +737,42 @@ e **C4** (404 real não implementado — pendência da E5).
 E8.5 PARCIAL — plano de remoção completo e executável entregue (inventário real, ordem,
 riscos/rollback, timeline de Search Console, monitoramento e critérios objetivos). A EXECUÇÃO
 da remoção (E9) permanece bloqueada por C1 (Preview/SSO) e C4 (404 real). Nada foi removido.
+```
+
+---
+
+## 20. Etapa E8.6 — 404 HTTP real (fim do soft-404)
+
+Objetivo: eliminar o soft-404 (todas as rotas retornavam 200) e responder **404 real** a rotas
+inexistentes, sem quebrar nenhuma rota válida. Relatório: **`reports/e8.6-real-404.md`**.
+Destrava o critério **C4** da E8.5.
+
+### 20.1 Causa raiz
+O catch-all `rewrites: /(.*) → /index.html` casava com tudo e devolvia o shell SPA com 200,
+impedindo o `404.html` nativo de ser alcançado. O `<Route path="*">` renderizava a 404 apenas
+client-side (o status HTTP já era 200). O catch-all também servia de fallback SPA para rotas
+válidas não pré-geradas, então não podia simplesmente ser removido.
+
+### 20.2 Solução (mínima e aditiva)
+- **`vercel.json`**: catch-all substituído por **8 rewrites explícitos** das rotas válidas
+  não-físicas (institucionais, `/pneu-promocao/:slug`, `/admin/:path*`, `/bairro/:slug`,
+  `/servico/:slug`, `/sitemap`). Rotas desconhecidas deixam de casar e caem no `404.html`.
+- **`scripts/build-deploy.mjs`**: `emit404()` gera `dist/404.html` do shell SPA limpo → a Vercel
+  serve com **HTTP 404**; o React então renderiza `<NotFound>` (noindex).
+- **`useSEO.ts` + `NotFound.tsx`**: prop aditiva `prerenderStatusCode: 404` emite
+  `<meta name="prerender-status-code">` para os bots (via Prerender.io, enquanto o middleware
+  existir); removida no cleanup para **não vazar** o 404 em navegação SPA.
+- **Intacto:** geração de indexáveis, sitemap, redirects 301, robots, llms, layouts e conteúdo.
+
+### 20.3 Validação
+- Status (emulador fiel): válidas (física/rewrite/asset/sitemap.xml/robots/llms) = **200**;
+  inexistentes e produto inválido = **404 real**; redirects legados = **301**.
+- Browser real: 404 com `robots=noindex, follow` + `prerender-status-code=404`; após navegar para
+  a home (SPA) o status volta a 200 e `robots` a `index, follow` — sem vazamento.
+
+### 20.4 Veredito
+```text
+E8.6 APROVADA (local) — soft-404 eliminado; rotas inexistentes retornam 404 real, válidas seguem
+200, redirects seguem 301, bots recebem 404, sem vazamento em SPA. Validação no edge real da
+Vercel permanece condicionada ao desbloqueio do Preview (SSO, critério C1). C4 destravado.
 ```
