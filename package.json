@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "sitemap": "tsx scripts/generate-sitemap.ts",
-    "redirects": "tsx scripts/generate-redirects.ts",
-    "prebuild": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-redirects.ts",
+    "redirects": "node scripts/run-ts.mjs scripts/generate-redirects.ts",
+    "prebuild": "tsx scripts/generate-sitemap.ts && node scripts/run-ts.mjs scripts/generate-redirects.ts",
     "build": "vite build",
     "build:spa": "vite build",
     "generate:static:pilot": "node scripts/run-ts.mjs scripts/generate-static-pages.entry.ts",
