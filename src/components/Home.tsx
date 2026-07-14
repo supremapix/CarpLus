@@ -44,6 +44,12 @@ export default function Home() {
           </Suspense>
         </DeferredSection>
 
+        <DeferredSection minHeight={800}>
+          <Suspense fallback={null}>
+            <StoreSection />
+          </Suspense>
+        </DeferredSection>
+
         <PneusPromocao />
 
         <TireSearchBar />
@@ -61,12 +67,6 @@ export default function Home() {
         <DeferredSection minHeight={400}>
           <Suspense fallback={null}>
             <TiresByBrandLazy />
-          </Suspense>
-        </DeferredSection>
-
-        <DeferredSection minHeight={800}>
-          <Suspense fallback={null}>
-            <StoreSection />
           </Suspense>
         </DeferredSection>
 
