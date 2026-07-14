@@ -171,10 +171,34 @@ export async function main() {
 
   // 1) Enumeração (fonte única) + seleção determinística.
   const all = getStaticRoutes();
-  let selected: StaticRoute[] = args.shuffle
+  const ordered: StaticRoute[] = args.shuffle
     ? seededShuffle(all, args.seed)
     : all.slice().sort((a, b) => a.genPriority - b.genPriority || a.path.localeCompare(b.path));
-  if (args.limit != null) selected = selected.slice(0, args.limit);
+
+  let selected: StaticRoute[];
+  if (args.limit != null) {
+    // Amostra REPRESENTATIVA e determinística: uma amostra que valida a pipeline
+    // precisa cobrir a home (página SEO nº 1) e ≥1 rota de CADA tipo. Sem isso,
+    // um `--limit` pequeno pode sortear só produtos e nunca exercitar a home,
+    // landings, medidas, etc. Garantimos os representantes primeiro (na ordem já
+    // determinística) e completamos o restante da cota preservando a ordem.
+    const mustInclude: StaticRoute[] = [];
+    const seenTypes = new Set<string>();
+    for (const r of ordered) {
+      if (r.isHome || !seenTypes.has(r.type)) {
+        mustInclude.push(r);
+        seenTypes.add(r.type);
+      }
+    }
+    const quota = Math.max(args.limit, mustInclude.length);
+    const inMust = new Set(mustInclude.map((r) => r.path));
+    const filler = ordered.filter((r) => !inMust.has(r.path)).slice(0, quota - mustInclude.length);
+    const chosen = new Set([...mustInclude, ...filler].map((r) => r.path));
+    // Reordena pela ordem determinística original para geração estável.
+    selected = ordered.filter((r) => chosen.has(r.path));
+  } else {
+    selected = ordered;
+  }
 
   const cp = loadCheckpoint(all.length);
 

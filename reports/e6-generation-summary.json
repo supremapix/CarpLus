@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T17:47:00.177Z",
+  "generatedAt": "2026-07-14T17:59:35.629Z",
   "baseUrl": "https://www.carpluspneuseoficina.com.br",
   "totalEnumerated": 1512,
   "selected": 500,
@@ -8,8 +8,8 @@
   "falha": 0,
   "byType": {
     "produto": {
-      "total": 447,
-      "ok": 447,
+      "total": 446,
+      "ok": 446,
       "falha": 0
     },
     "aro": {
@@ -53,6 +53,11 @@
       "falha": 0
     },
     "institucional": {
+      "total": 1,
+      "ok": 1,
+      "falha": 0
+    },
+    "home": {
       "total": 1,
       "ok": 1,
       "falha": 0
