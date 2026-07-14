@@ -577,3 +577,50 @@ E6.5 PARCIAL — build de deploy configurado (buildCommand) e validado LOCALMENT
 ponta (1512/1512 dentro dos limites Vercel; roteamento/SEO/hidratação/headers/middleware REAIS).
 Itens de infraestrutura (deploy, edge, bots, CDN) PENDENTES de um Preview real da Vercel.
 ```
+
+---
+
+## 17. Etapa E7 — Chromium serverless + build de deploy resiliente
+
+Contexto: o merge da E6/E6.5 para `main` **quebrou a produção**. Causa-raiz confirmada: o
+`buildCommand` rodava `build:static`, que usa o pacote `puppeteer` com Chrome empacotado — e a
+imagem de build da Vercel **não tem as bibliotecas de sistema do Chrome**. Correção imediata:
+`buildCommand` voltou a `npm run build` (SPA seguro), restaurando a produção. Esta etapa entrega
+a capacidade de gerar as 1.512 páginas **no build da Vercel** sem risco de derrubar o deploy.
+
+### 17.1 O que mudou
+- **Chromium serverless:** `@sparticuz/chromium@^149` + `puppeteer-core@25.3.0` em
+  `dependencies` (disponíveis em produção). `puppeteer` (Chrome empacotado) segue em
+  `devDependencies` para uso local. Ambos os lockfiles (npm + pnpm) sincronizados.
+- **Helper único `scripts/launch-browser.ts`:** detecta o ambiente e escolhe o backend.
+  Na Vercel (`VERCEL=1`) usa `@sparticuz/chromium`; localmente usa `puppeteer`. Overrides:
+  `USE_SERVERLESS_CHROMIUM=1` e `PUPPETEER_LOCAL=1`. Os dois pontos de launch
+  (`generate-static-pages.ts` e `generate-static-all.ts`) passaram a usá-lo.
+- **Build resiliente e opt-in `scripts/build-deploy.mjs`** (novo `buildCommand`):
+  - Camada **ESSENCIAL** (sempre): `sitemap → redirects → build:spa`. Falha aqui = deploy falha.
+  - Camada **OPT-IN/best-effort** (só com `GENERATE_STATIC=1`): `generate:static:all →
+    validate:static:all`. Se o Chromium falhar, emite AVISO e **conclui com sucesso** servindo o
+    SPA (bots seguem cobertos pelo Prerender.io). Habilitar a flag **nunca** derruba a produção.
+
+### 17.2 Validado de forma REAL (neste ambiente)
+- **Caminho serverless funciona:** com `USE_SERVERLESS_CHROMIUM=1`, o `@sparticuz/chromium`
+  extraiu o Chromium em `/tmp/chromium` e renderizou o piloto (11/11 rotas OK) — mesmo mecanismo
+  que rodará na Vercel.
+- **Deploy padrão seguro:** `build:deploy` sem flag → SPA + sitemap + 152 redirects, 0 páginas,
+  `exit 0`.
+- **Resiliência sob falha:** `GENERATE_STATIC=1` com Chromium propositalmente quebrado → AVISO e
+  **`exit 0`** com o SPA publicado. Produção protegida.
+- `buildCommand` sobrevive à regeneração do `vercel.json`; rewrite e redirects intactos.
+
+### 17.3 Como ativar a geração completa na Vercel
+Definir `GENERATE_STATIC=1` nas variáveis de ambiente do projeto. PENDENTE de validação real:
+tempo/memória das 1.512 renderizações no runner da Vercel (o piloto local serverless roda a
+~1,3 rotas/s → estimado ~19 min para 1.512, o que pode exceder o limite de build; se exceder, a
+alternativa é gerar em CI/step separado e commitar o `dist`, ou reduzir a concorrência/lote).
+
+### 17.4 Veredito
+```text
+E7 IMPLEMENTADA — Chromium serverless + build resiliente. Deploy padrão seguro (SPA),
+geração completa opt-in via GENERATE_STATIC=1 e à prova de falhas (nunca quebra produção).
+Caminho serverless comprovado localmente; escala das 1.512 na Vercel PENDENTE de medição real.
+```
