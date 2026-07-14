@@ -133,7 +133,7 @@ export default function BorrachariaPortao() {
                     ))}
                   </div>
                   <span className="text-white font-bold">4.9</span>
-                  <span className="text-neutral-500">+847 avaliações no Google</span>
+                  <span className="text-neutral-500">+234 avaliações no Google</span>
                 </div>
 
                 {/* CTAs */}

@@ -30,10 +30,10 @@ export const BUSINESS_INFO = {
   website: "https://www.carpluspneuseoficina.com.br",
   hours: "Seg–Sex 8h–18h | Sáb 8h–12h",
   rating: 5.0,
-  totalReviews: 214,
+  totalReviews: 234,
   stats: [
     { value: "5,0/5", label: "Avaliações Google", icon: "Star" },
-    { value: "214+", label: "Avaliações Verificadas", icon: "Trophy" },
+    { value: "234+", label: "Avaliações Verificadas", icon: "Trophy" },
     { value: "Garantia", label: "Em Todos os Serviços", icon: "ShieldCheck" },
     { value: "10x", label: "Sem Juros nos Pneus", icon: "CreditCard" },
   ]
@@ -225,7 +225,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         name: "Troca de Amortecedores",
         slug: "troca-de-amortecedores",
         shortDescription: "Substituição com peças de qualidade para todas as marcas. Estabilidade direcional e conforto restaurados.",
-        fullDescription: "Amortecedores defeituosos comprometem seriamente a segurança, a estabilidade direcional e o conforto do veículo. Na Carplus, realizamos o diagnóstico preciso e a substituição de amortecedores com peças de qualidade para todos os modelos de carros e SUVs. Após a troca, recomendamos a realização do alinhamento para garantir o melhor desempenho.",
+        fullDescription: "Amortecedores defeituosos comprometem seriamente a segurança, a estabilidade direcional e o conforto do ve��culo. Na Carplus, realizamos o diagnóstico preciso e a substituição de amortecedores com peças de qualidade para todos os modelos de carros e SUVs. Após a troca, recomendamos a realização do alinhamento para garantir o melhor desempenho.",
         highlights: ["Dianteiro e traseiro", "Peças de qualidade", "Todos os modelos", "Alinhamento recomendado pós-troca"],
         estimatedTime: "1–3 horas",
         icon: "MoveVertical"

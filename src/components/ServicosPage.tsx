@@ -233,7 +233,7 @@ export default function ServicosPage() {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5.0",
-              "reviewCount": "214",
+              "reviewCount": "234",
               "bestRating": "5",
               "worstRating": "1"
             }

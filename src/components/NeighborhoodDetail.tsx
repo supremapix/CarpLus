@@ -97,7 +97,7 @@ export default function NeighborhoodDetail() {
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
-                "reviewCount": "850",
+                "reviewCount": "234",
                 "bestRating": "5"
               }
             },
@@ -420,7 +420,7 @@ export default function NeighborhoodDetail() {
                  {[
                     { icon: Shield, title: 'Garantia de Fábrica', desc: 'Todos os pneus com garantia oficial do fabricante.' },
                     { icon: CreditCard, title: 'Parcelamento', desc: 'Em até 10x sem juros no cartão de crédito.' },
-                    { icon: Award, title: '4.9 Estrelas', desc: 'Mais de 850 avaliações positivas no Google.' },
+                    { icon: Award, title: '4.9 Estrelas', desc: 'Mais de 234 avaliações positivas no Google.' },
                     { icon: Wrench, title: 'Serviço Incluso', desc: 'Montagem e balanceamento já inclusos no preço.' }
                  ].map((item, i) => (
                     <motion.div
@@ -472,7 +472,7 @@ export default function NeighborhoodDetail() {
                 <div className="flex justify-center gap-1 text-primary mb-2">
                    {[...Array(5)].map((_, i) => <Star key={i} size={28} fill="currentColor" />)}
                 </div>
-                <p className="text-gray-500 font-bold text-lg">4.9/5 estrelas no Google Maps (850+ avaliações)</p>
+                <p className="text-gray-500 font-bold text-lg">4.9/5 estrelas no Google Maps (234+ avaliações)</p>
               </div>
 
               <div className="space-y-6">

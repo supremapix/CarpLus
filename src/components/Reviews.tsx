@@ -323,7 +323,7 @@ const ALL_REVIEWS = [
 ];
 
 // Total de avaliações reais no Google (exibido ao usuário)
-const TOTAL_REVIEWS = 227;
+const TOTAL_REVIEWS = 234;
 
 const AVATAR_COLORS = [
   { bg: '#4285f4', text: '#fff' }, // azul Google

@@ -23,7 +23,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Vale a pena sair do ${nome} para trocar pneu na Carplus?`,
-      answer: `Sim, e muitos clientes do ${nome} confirmam nas nossas avaliações (4,9 estrelas no Google com 850+ avaliações). Com apenas ${tempo} de deslocamento, você tem acesso às melhores marcas de pneus, serviço profissional com garantia de fábrica e parcelamento em até 10x sem juros. A economia compensa!`,
+      answer: `Sim, e muitos clientes do ${nome} confirmam nas nossas avaliações (4,9 estrelas no Google com 234+ avaliações). Com apenas ${tempo} de deslocamento, você tem acesso às melhores marcas de pneus, serviço profissional com garantia de fábrica e parcelamento em até 10x sem juros. A economia compensa!`,
     },
     {
       question: `A Carplus faz alinhamento e balanceamento para quem vem do ${nome}?`,

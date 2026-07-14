@@ -100,7 +100,7 @@ export default function CentroAutomotivoCTA() {
                             <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
                           ))}
                         </div>
-                        <p className="text-white/80 text-sm">+800 avaliações no Google</p>
+                        <p className="text-white/80 text-sm">+234 avaliações no Google</p>
                       </div>
                     </div>
                   </div>

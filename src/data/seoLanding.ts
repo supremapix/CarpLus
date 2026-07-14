@@ -2446,8 +2446,8 @@ export const INTENT_PAGES: IntentPage[] = [
     metaDescription:
       'Considerada uma das melhores lojas de pneus de Curitiba, a Carplus fica no Portão: 4,9 no Google, várias marcas, oficina completa e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Carplus é reconhecida como uma das melhores lojas de pneus de Curitiba, no bairro Portão, com nota 4,9 no Google e mais de 300 avaliações. Aqui você encontra pneus de várias marcas e uma oficina mecânica completa.',
-    tags: ['4,9 no Google', '+300 avaliações', 'Oficina completa', 'Garantia com NF'],
+      'A Carplus é reconhecida como uma das melhores lojas de pneus de Curitiba, no bairro Portão, com nota 4,9 no Google e mais de 234 avaliações. Aqui você encontra pneus de várias marcas e uma oficina mecânica completa.',
+    tags: ['4,9 no Google', '+234 avaliações', 'Oficina completa', 'Garantia com NF'],
     sections: [
       {
         title: 'Por que somos referência em Curitiba',
@@ -2457,14 +2457,14 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         title: 'Avaliações reais de clientes',
         content:
-          'Com mais de 300 avaliações e nota 4,9 no Google, a confiança dos clientes é o nosso melhor argumento. Venha conferir o atendimento que rende essa reputação.',
+          'Com mais de 234 avaliações e nota 4,9 no Google, a confiança dos clientes é o nosso melhor argumento. Venha conferir o atendimento que rende essa reputação.',
       },
     ],
     faq: [
       {
         question: 'Qual a melhor loja de pneus em Curitiba?',
         answer:
-          'A Carplus Centro Automotivo, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 300 avaliações de clientes.',
+          'A Carplus Centro Automotivo, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 234 avaliações de clientes.',
       },
       {
         question: 'O que torna a Carplus a melhor opção?',
@@ -2885,7 +2885,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
           'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem inclusos, em ambas as marcas.',
       },
     ],
-    whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Yokohama. Pode me ajudar a escolher?',
+    whatsappMsg: 'Olá! Estou em d��vida entre Pirelli e Yokohama. Pode me ajudar a escolher?',
   },
   // ─── Bridgestone x Michelin ────────────────────────────────────
   {

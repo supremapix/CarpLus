@@ -117,7 +117,7 @@ export default function Footer() {
                   <Star className="text-accent" size={32} fill="currentColor" />
                   <div>
                     <p className="font-bold text-lg leading-tight">4.9/5 no Google</p>
-                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">312+ Avaliações</p>
+                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">234+ Avaliações</p>
                   </div>
                </div>
                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">

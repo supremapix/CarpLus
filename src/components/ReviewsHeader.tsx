@@ -17,7 +17,7 @@ interface ReviewsHeaderProps {
   reviewCount?: number;
 }
 
-export default function ReviewsHeader({ reviewCount = 227 }: ReviewsHeaderProps) {
+export default function ReviewsHeader({ reviewCount = 234 }: ReviewsHeaderProps) {
   return (
     <div className="mx-auto w-full max-w-[380px]">
       {/* Card superior */}

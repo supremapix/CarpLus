@@ -45,7 +45,7 @@ function ServiceCarouselCard({ service, index }: { service: typeof ALL_SERVICES[
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: Math.min(index * 0.05, 0.3) }}
-      className="flex-shrink-0 w-[280px] sm:w-[300px] bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all group"
+      className="flex-shrink-0 w-[280px] sm:w-[300px] bg-gray-100 border-2 border-gray-200 rounded-2xl p-5 shadow-sm hover:bg-white hover:border-primary hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-1.5 transition-all duration-300 group cursor-pointer"
     >
       {/* Category badge */}
       <div className="flex items-center gap-2 mb-4">
@@ -81,7 +81,7 @@ function ServiceCarouselCard({ service, index }: { service: typeof ALL_SERVICES[
       </ul>
       
       {/* Footer */}
-      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+      <div className="flex items-center justify-between pt-3 border-t border-gray-200 group-hover:border-primary/30 transition-colors">
         {service.estimatedTime && (
           <span className="text-[10px] text-gray-400 flex items-center gap-1">
             <Clock size={10} /> {service.estimatedTime}
@@ -279,7 +279,7 @@ export default function ServicesGrid() {
             <p className="text-xs text-gray-500 uppercase tracking-wider">Avaliação Google</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl md:text-3xl font-bold text-dark">214+</p>
+            <p className="text-2xl md:text-3xl font-bold text-dark">234+</p>
             <p className="text-xs text-gray-500 uppercase tracking-wider">Avaliações</p>
           </div>
           <div className="text-center">

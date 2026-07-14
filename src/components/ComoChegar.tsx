@@ -126,7 +126,7 @@ export default function ComoChegar() {
               { icon: <Clock size={20} className="text-primary" />, title: 'Seg–Sex', sub: '8h às 18h' },
               { icon: <Clock size={20} className="text-primary" />, title: 'Sábado', sub: '8h às 12h' },
               { icon: <Phone size={20} className="text-primary" />, title: 'Telefone', sub: '(41) 3082-7282', href: 'tel:+554130827282' },
-              { icon: <Star size={20} className="text-primary" />, title: '4,9/5', sub: '312+ avaliações' },
+              { icon: <Star size={20} className="text-primary" />, title: '4,9/5', sub: '234+ avaliações' },
             ].map((item, i) => (
               <div key={i} className="bg-[#242424] border border-white/06 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
                 {item.icon}
