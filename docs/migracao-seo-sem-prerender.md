@@ -384,7 +384,7 @@ E2 — enumerador de rotas: concluída
 E3 — prova de conceito: aprovada
 E4 — compatibilidade e determinismo: aprovada
 E5.0 — validação em ambiente controlado (sem produção): aprovada
-E5 — roteamento de produção: pendente (liberada para iniciar)
+E5 — roteamento de produção (152 redirects 301): implementada e validada
 Remoção do Prerender.io: pendente
 Geração das ~1.537 páginas: pendente
 Validação final: pendente
@@ -426,3 +426,32 @@ Nenhuma alteração em `vercel.json`, `middleware.js`, `index.html` ou no servi�
 E5.0 APROVADA — E5 (roteamento de produção) LIBERADA PARA INICIAR
 ```
 Pré-condições técnicas comprovadas em ambiente controlado. A E5, no escopo definido (HTML físico por rota + manter fallback SPA + Prerender.io ligado como segurança), está liberada. Continuam válidos os limites: **não** remover o rewrite `/(.*)`, **não** habilitar `cleanUrls`, e 404 HTTP real permanece fora do escopo (depende da E6).
+
+---
+
+## 13. Etapa E5 — Roteamento de produção (301 server-side)
+
+Objetivo: promover os redirects client-side a `redirects` **301 server-side** no `vercel.json`, mantendo o fallback SPA, os headers e o Prerender.io intactos. Relatório completo: **`reports/e5-implementation.md`**.
+
+### 13.1 Resultado
+- `vercel.json`: **76 → 152 redirects** (76 paginação já existentes + 76 promovidos: 69 bairros/cidades `*.html`, 1 `/pneus/:medida` dinâmico, 6 slugs legados de marca).
+- Rewrite global `/(.*) → /index.html`, `headers` e ausência de `cleanUrls`/`trailingSlash`: **preservados**.
+- Redirects client-side no `App.tsx`: **mantidos** como rede de segurança (redundância).
+
+### 13.2 Robustez / idempotência
+- **Fonte única** `scripts/manual-redirects.ts` deriva os 76 manuais das mesmas fontes de dados do `App.tsx` (sem divergência).
+- `scripts/generate-redirects.ts` reescrito: monta `[manuais, paginação]`, **preserva** manuais desconhecidos por merge (nunca apaga regras) e é **idempotente** (2 execuções → sempre 152).
+- **Correção de ambiente:** `npm run redirects`/`prebuild` migraram de `tsx` para `node scripts/run-ts.mjs` — o `tsx` saía silenciosamente sem executar neste runtime (mesmo motivo do wrapper já usado no piloto), fazendo o gerador virar no-op.
+
+### 13.3 Validação
+- Análise estática (`scripts/validate-redirects.mjs`): 152 regras, **0** duplicatas, **0** cadeias, **0** loops, todos `permanent:true`.
+- HTTP real (`scripts/e5-routing-server.mjs` + `scripts/test-redirects-http.mjs`): **152/152 → 301** com `Location` exato, sem encadeamento; rotas piloto → 200 filesystem; rota inexistente → 200 fallback (soft-404); assets → 200.
+- Navegador: `/portao.html` → SPA resolve `/bairro/portao` com H1/conteúdo (redundância client-side confirmada).
+
+### 13.4 Limites respeitados
+Sem remover o rewrite, sem `cleanUrls`/`trailingSlash`, sem tocar em `middleware.js`/Prerender.io, sem publicar em produção. 404 HTTP real segue fora do escopo (E6).
+
+### 13.5 Veredito
+```text
+E5 IMPLEMENTADA E VALIDADA — pronta para publicar
+```
