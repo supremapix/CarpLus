@@ -386,8 +386,8 @@ E4 — compatibilidade e determinismo: aprovada
 E5.0 — validação em ambiente controlado (sem produção): aprovada
 E5 — roteamento de produção (152 redirects 301): implementada e validada
 E5.5 — auditoria independente da E5: aprovada (1 observação não-bloqueante)
+E6 — geração estática em escala (1512 rotas): implementada e validada
 Remoção do Prerender.io: pendente
-Geração das ~1.537 páginas: pendente
 Validação final: pendente
 ```
 
@@ -478,4 +478,54 @@ O passo de **sitemap** do `prebuild` ainda usa `tsx` (no-op neste sandbox; funci
 ### 14.3 Veredito
 ```text
 E5.5 APROVADA — E5 confirmada correta, idempotente e sem regressão (1 observação não-bloqueante)
+```
+
+---
+
+## 15. Etapa E6 — Geração estática em escala
+
+Objetivo: escalar a geração de HTML físico de 11 rotas (piloto) para **todas as
+rotas indexáveis**, com pipeline determinística, retomável e validada — sem
+publicar em produção nem tocar em `middleware.js` / `vercel.json` / Prerender.io.
+Relatório completo: **`reports/e6-implementation.md`**.
+
+### 15.1 Resultado
+- **1512/1512 rotas geradas, 0 falhas** em 389s (3.88 rotas/s, concorrência 4).
+- **Validação global:** 1512 com arquivo, 0 problemas, 0 canonicais duplicados → APROVADO.
+- **Paridade** enumerador↔sitemap: 1512 = 1512, 0 divergências.
+- **HTTP** (redirects→filesystem→rewrite): 279/279 (200 físicas + 76 redirects 301 + soft-404).
+- **Hidratação** React sem erros/flicker em todos os tipos de rota.
+
+### 15.2 Arquitetura
+- **Fonte única** `scripts/static-routes.ts`; o sitemap passou a consumi-la →
+  paridade por construção.
+- Núcleo do piloto refatorado em `renderRouteOnPage()` (reuso sem duplicação; piloto segue passando).
+- `scripts/generate-static-all.ts`: concorrência, **checkpoint/retomada**
+  (`--fresh`, `--retry-failed`), **escrita atômica** e amostra determinística
+  **representativa** (`--limit --shuffle`).
+
+### 15.3 Correções técnicas indispensáveis
+1. **21 URLs de produto duplicadas** (defeito de dados pré-existente no `TIRES`,
+   já poluía o sitemap): dedupe por path no enumerador → 1371 → **1350** produtos.
+2. **Canonical de serviço com barra final** (`/servicos/`, `/servico/{slug}/`)
+   divergia do sitemap: corrigido (aprovado pelo usuário) em `ServicosPage.tsx`
+   e `ServiceDetail.tsx`.
+3. **Home ausente de amostras `--limit`** (defeito da pipeline): amostra passou a
+   garantir home + ≥1 rota por tipo.
+4. **Runner do sitemap** padronizado para `run-ts.mjs` (fecha a observação da E5.5).
+
+### 15.4 Observação não-bloqueante
+Similaridade máxima **0.963** entre variantes de um mesmo pneu (índices de carga
+diferentes). Esperado num catálogo; canonical/title/URL são únicos por variante.
+É estratégia de conteúdo, não defeito de pipeline.
+
+### 15.5 Limites respeitados
+`dist/` não é commitado; checkpoint/summary de runtime foram ignorados/destrackeados.
+Sem produção, sem middleware/Prerender.io, sem alterar rewrite/headers. 404 real
+segue como soft-404 (fallback SPA).
+
+### 15.6 Veredito
+```text
+E6 IMPLEMENTADA E VALIDADA — 1512/1512 rotas, 0 falhas, validação/paridade/HTTP OK.
+3 defeitos reais corrigidos, 1 observação de conteúdo. Pronta para publicar em Preview.
 ```

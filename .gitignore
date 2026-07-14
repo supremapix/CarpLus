@@ -8,3 +8,8 @@ coverage/
 .env*
 !.env.example
 .env
+
+# Artefatos de tempo de execução da geração estática (E6)
+.v0-static-checkpoint.json
+reports/e6-progress.json
+reports/e6-generation-summary.json
