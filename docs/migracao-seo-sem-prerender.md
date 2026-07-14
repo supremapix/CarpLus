@@ -392,6 +392,7 @@ E7 — Chromium serverless + build resiliente: implementada (produção Ready)
 E8 — remoção controlada do Prerender.io (kill-switch + validação local): PARCIAL (edge real pendente); bug crítico da home corrigido
 E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1)
 E8.6 — 404 HTTP real (fim do soft-404): APROVADA localmente (C4 destravado)
+E8.7 — validação no edge real da Vercel: BLOQUEADA (C1 — Preview/SSO + env vars ausentes; script pronto)
 Remoção definitiva do Prerender.io (E9): pendente (bloqueada apenas por C1 — Preview/SSO)
 Validação final: pendente
 ```
@@ -775,4 +776,40 @@ válidas não pré-geradas, então não podia simplesmente ser removido.
 E8.6 APROVADA (local) — soft-404 eliminado; rotas inexistentes retornam 404 real, válidas seguem
 200, redirects seguem 301, bots recebem 404, sem vazamento em SPA. Validação no edge real da
 Vercel permanece condicionada ao desbloqueio do Preview (SSO, critério C1). C4 destravado.
+```
+
+---
+
+## 21. Etapa E8.7 — Validação no Edge real da Vercel (BLOQUEADA)
+
+Objetivo: comprovar no edge real (Preview) que o site funciona sem depender do Prerender.io.
+Relatório: **`reports/e8.7-edge-validation.md`**; script: `scripts/e8.7-edge-audit.mjs`.
+
+### 21.1 Estado: bloqueado por ações operacionais (não-código)
+1. **Deployment Protection (SSO)** ativa — toda requisição ao Preview retorna `302 → sso-api`
+   (confirmado em `/` e `/robots.txt`). Nenhum objetivo verificável.
+2. **Env vars ausentes** — `GENERATE_STATIC` e `PRERENDER_ENABLED` não existem no projeto
+   (só `PRERENDER_TOKEN`).
+3. **Vercel CLI** instalado (54.1.0) mas com **token inválido** → v0 não gerencia env/deploy/proteção.
+
+`PRERENDER_ENABLED=false` deve ser **escopo Preview** apenas (defini-la globalmente desligaria o
+Prerender.io em produção — proibido nesta etapa).
+
+### 21.2 Desbloqueio (dono do projeto)
+1. Env vars com *Environment = Preview*: `GENERATE_STATIC=1`, `PRERENDER_ENABLED=false`.
+2. Acesso: desativar Deployment Protection para Preview **ou** gerar *Protection Bypass for
+   Automation* (`VERCEL_AUTOMATION_BYPASS_SECRET`) e fornecer.
+3. Redeploy do Preview da branch `v0/supremapix-155c8202`.
+
+### 21.3 Auditoria pronta (1 comando)
+`BASE=... [BYPASS=...] node scripts/e8.7-edge-audit.mjs` valida os 7 objetivos (rotas 200,
+inexistentes 404, amostra dos 152 redirects 301, filesystem, bots com HTML físico) e grava
+`reports/e8.7-edge-results.json`. Já testado: detecta corretamente o bloqueio de SSO (exit 3).
+
+### 21.4 Veredito
+```text
+E8.7 BLOQUEADA — edge não auditável: Preview sob SSO (302) e env vars GENERATE_STATIC/
+PRERENDER_ENABLED ausentes; token do Vercel CLI inválido. Script pronto e testado. Requer ação do
+dono (env vars escopo Preview + desativar proteção/fornecer bypass + redeploy). Nada publicado,
+removido ou mergeado. E9 não iniciada.
 ```

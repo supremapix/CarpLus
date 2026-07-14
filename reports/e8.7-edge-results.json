@@ -1,0 +1,10 @@
+{
+  "base": "https://carp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app",
+  "blocked": "SSO",
+  "probe": {
+    "status": 302,
+    "location": "https://vercel.com/sso-api?url=https%3A%2F%2Fcarp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app%2F&nonce=fcbf68b615485b570a9219a5b6fe9afb91366711cdb9b76d5dad1072ecd960a8",
+    "ct": "text/plain",
+    "body": "Redirecting...\n"
+  }
+}
