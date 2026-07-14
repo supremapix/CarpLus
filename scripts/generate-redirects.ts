@@ -81,13 +81,16 @@ function main() {
 
   const redirects = [...manual, ...unknownManual, ...pagination];
 
-  // redirects antes de rewrites (o Vercel aplica redirects primeiro).
+  // Ordem estável e determinística: buildCommand primeiro (config de deploy),
+  // depois redirects (o Vercel aplica redirects antes de rewrites), rewrites,
+  // headers e por fim quaisquer outras chaves preservadas do vercel.json.
   const ordered: Record<string, unknown> = {};
+  if (config.buildCommand !== undefined) ordered.buildCommand = config.buildCommand;
   if (redirects.length > 0) ordered.redirects = redirects;
   if (config.rewrites) ordered.rewrites = config.rewrites;
   if (config.headers) ordered.headers = config.headers;
   for (const [k, v] of Object.entries(config)) {
-    if (!['redirects', 'rewrites', 'headers'].includes(k)) ordered[k] = v;
+    if (!['buildCommand', 'redirects', 'rewrites', 'headers'].includes(k)) ordered[k] = v;
   }
 
   fs.writeFileSync(VERCEL_JSON, JSON.stringify(ordered, null, 2) + '\n');

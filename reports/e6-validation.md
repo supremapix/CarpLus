@@ -1,6 +1,6 @@
 # Validação global do HTML estático (E6)
 
-Gerado em: 2026-07-14T19:30:31.207Z
+Gerado em: 2026-07-14T20:17:06.110Z
 
 - Rotas enumeradas: **1512**
 - Com arquivo em dist: **1512**
