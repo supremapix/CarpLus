@@ -1,6 +1,6 @@
 # E6 — Paridade Enumerador ↔ Sitemaps
 
-Gerado em: 2026-07-14T18:07:33.600Z
+Gerado em: 2026-07-14T18:11:32.531Z
 
 ## Totais
 
