@@ -385,6 +385,7 @@ E3 — prova de conceito: aprovada
 E4 — compatibilidade e determinismo: aprovada
 E5.0 — validação em ambiente controlado (sem produção): aprovada
 E5 — roteamento de produção (152 redirects 301): implementada e validada
+E5.5 — auditoria independente da E5: aprovada (1 observação não-bloqueante)
 Remoção do Prerender.io: pendente
 Geração das ~1.537 páginas: pendente
 Validação final: pendente
@@ -454,4 +455,27 @@ Sem remover o rewrite, sem `cleanUrls`/`trailingSlash`, sem tocar em `middleware
 ### 13.5 Veredito
 ```text
 E5 IMPLEMENTADA E VALIDADA — pronta para publicar
+```
+
+---
+
+## 14. Etapa E5.5 — Auditoria independente da E5
+
+Objetivo: verificar de forma independente (recontagem a partir das fontes, não do relatório da E5) que a promoção a 301 está correta, idempotente e sem regressão — sem publicar em produção. Relatório completo com evidências: **`reports/e5.5-audit.md`**; inventário: **`reports/e5-redirect-inventory.csv`**.
+
+### 14.1 Confirmações
+- **Contagem:** 152 redirects = 76 paginação + 69 bairros/cidades + 1 medida + 6 marcas (recontado nas fontes). 0 duplicatas, 0 loops, 0 cadeias, todos 301.
+- **Idempotência:** `npm run redirects` 2× → `vercel.json` byte-idêntico; recuperação do zero restaura 152 regras idênticas.
+- **`run-ts.mjs`:** propaga exit code (3→3, throw→1), stdout/stderr e args corretamente; sem órfãos.
+- **HTTP:** 152/152 → 301 com `Location` exato e sem encadeamento; 14/14 controles negativos/precedência ok (`/pneus` puro = 200, filesystem tem precedência sobre rewrite, soft-404 no fallback).
+- **React/SEO:** hidratação sem erros no console, canonicals auto-referenciais (nenhum herda o da home), robots/OG/Twitter/JSON-LD presentes, 0 `localhost`.
+- **Bots:** `redirects` avaliados antes do middleware; rede de segurança Prerender.io intacta.
+- **Rollback:** via git (`git revert` dos commits da E5) ou regeneração determinística do `vercel.json`; redundância client-side no `App.tsx` permanece como segurança.
+
+### 14.2 Observação não-bloqueante
+O passo de **sitemap** do `prebuild` ainda usa `tsx` (no-op neste sandbox; funciona no build da Vercel), enquanto **redirects** usa `run-ts.mjs`. Sem impacto em produção, mas há inconsistência de runner. Recomendação (fora do escopo da E5): padronizar o sitemap para `run-ts.mjs`.
+
+### 14.3 Veredito
+```text
+E5.5 APROVADA — E5 confirmada correta, idempotente e sem regressão (1 observação não-bloqueante)
 ```
