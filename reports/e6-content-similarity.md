@@ -1,6 +1,6 @@
 # E6 — Similaridade de conteúdo (quase-duplicatas)
 
-Gerado em: 2026-07-14T18:07:10.902Z
+Gerado em: 2026-07-14T19:30:42.409Z
 Shingle=4 palavras · amostra/tipo=40 · limiar alerta=0.9
 
 ### Tipo: alternativa-centro-automotivo-portao
