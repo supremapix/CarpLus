@@ -81,6 +81,48 @@ Resultado: 100% conforme o esperado. Com o kill-switch, nenhuma chamada a `servi
 
 ---
 
+## FASE 4-7 — Validação: o que o bot recebe SEM Prerender.io (kill-switch)
+
+Como o Preview real está bloqueado por Deployment Protection (SSO — ver `e6.5-preview-validation.md`),
+a validação foi feita no **equivalente local real**: o servidor de roteamento serve o `dist`
+(filesystem → rewrite), reproduzindo exatamente o HTML físico que o Googlebot receberia quando
+`PRERENDER_ENABLED=false`. Amostra de 1 rota por tipo (`scripts/e8-bot-validate.mjs`).
+
+| Tipo de rota | status | title | canonical | h1 | JSON-LD | OG | Twitter | links | imgs |
+|---|:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| home (`/`) | 200 | Carplus Centro Automotivo – Loja de Pneu | sim | sim | 3 | sim | summary_large_image | 169 | 81 |
+| catálogo (`/pneus`) | 200 | Catálogo de Pneus em Curitiba | sim | sim | 17 | sim | summary_large_image | 135 | 30 |
+| serviços (`/servicos`) | 200 | Serviços de Oficina e Pneus em Curitiba | sim | sim | 3 | sim | summary_large_image | 119 | 5 |
+| produto (`/pneu-medida/175-65r14`) | 200 | Pneu 175/65R14 em Curitiba | sim | sim | 5 | sim | summary_large_image | 105 | 34 |
+| quem-somos | 200 | Quem Somos \| Carplus | sim | sim | 2 | sim | summary_large_image | 79 | 27 |
+| contato | 200 | Contato – Carplus | sim | sim | 2 | sim | summary_large_image | 78 | 5 |
+
+**Resultado: TODAS as rotas OK.** CSV completo em `reports/e8-bot-comparison.csv`. O HTML físico
+entrega title, description, canonical auto-referencial, `<h1>`, JSON-LD, Open Graph e Twitter Card
+sem depender de JavaScript — ou seja, o Prerender.io é dispensável para estes tipos.
+
+## FASE 8 — Bug crítico descoberto e corrigido: home não pré-renderizada
+
+Durante a Fase 4-7, o HTML físico da **home (`/`)** vinha como **shell SPA vazio** (`<div id="root"></div>`,
+sem `<h1>`, ~11 KB) enquanto as outras 1.511 páginas tinham HTML completo (~170-580 KB). Com o
+Prerender.io desligado, a home — a página mais importante para SEO — iria **vazia** ao Googlebot.
+
+**Causa raiz** (confirmada empiricamente): o filtro de "rota já concluída" no gerador
+(`generate-static-all.ts`) considerava concluída qualquer rota com checkpoint `status === 'ok'`
+**e** `fs.existsSync(outputFile)`. Para a home, `outputFile === dist/index.html` — o **mesmo**
+arquivo que `build:spa` regrava como shell SPA no início do `build:static`. Num build incremental
+(com checkpoint prévio), a home era considerada "pronta" e **pulada**, deixando o shell intacto.
+
+**Correção** (`generate-static-all.ts`): a verificação passou a exigir que o arquivo esteja de
+fato pré-renderizado, e não apenas que exista. Novo helper `isPrerenderedFile()` lê os primeiros
+2 KB do arquivo e confirma o marcador `data-prerendered` (presente na tag `<html>` de toda página
+gerada). Correção geral e cirúrgica — protege qualquer rota cujo output tenha sido regravado como shell.
+
+**Validação da correção:** reproduzido o cenário exato (checkpoint com home `ok` + `build:spa`
+regravando o shell + `generate:static:all` sem `--fresh`). Antes: `dist/index.html` = shell
+(`data-prerendered=0`, `h1=0`, 11 KB). Depois: home pré-renderizada (`data-prerendered=1`, `h1=1`,
+577 KB). Geração completa reexecutada: **1512/1512, 0 falhas.**
+
 ## FASE 9 — Plano de rollback (reativar Prerender.io em < 5 min)
 
 O kill-switch torna o rollback trivial e sem deploy de código:
@@ -97,7 +139,28 @@ Enquanto a E8/E9 não removerem o `middleware.js`, **basta a env var** — nenhu
 
 ## Resumo
 
-- FASE 1-2: auditoria completa (acima). **Nenhuma alteração** além do kill-switch.
-- FASE 3: `PRERENDER_ENABLED` implementado e verificado por execução real do middleware.
-- FASE 9: rollback por env var, < 5 min, sem tocar código.
-- FASES 4-7 (deploy Preview + validação no edge): ver `reports/e8-preview-results.md`.
+- FASE 1-2: auditoria completa do middleware + mapa de ocorrências (REAL vs SSG).
+- FASE 3: kill-switch `PRERENDER_ENABLED` implementado (default preserva produção) e verificado
+  por execução real do middleware — com `=false`, 0 chamadas ao Prerender.io.
+- FASE 4-7: validação local real (servidor serve o `dist`). Todos os 6 tipos de rota entregam
+  SEO completo no HTML físico sem JS. Edge real na Vercel PENDENTE (SSO bloqueia o Preview).
+- FASE 8: **bug crítico corrigido** — a home não era pré-renderizada (shell vazio); causa raiz no
+  filtro de checkpoint; corrigido com `isPrerenderedFile()`. Regeração: 1512/1512, 0 falhas.
+- FASE 9: rollback por env var (`PRERENDER_ENABLED=true` ou remover), < 5 min, sem tocar código.
+
+### Alterações de código nesta etapa
+1. `middleware.js` — kill-switch `PRERENDER_ENABLED` (reversível, default = produção atual).
+2. `scripts/generate-static-all.ts` — `isPrerenderedFile()` + filtro de conclusão robusto (corrige a home).
+
+Nenhuma remoção do Prerender.io foi feita; `middleware.js`, metas em `index.html`, `render-event`
+em `useSEO.ts` e o rewrite permanecem intactos. A remoção definitiva é a E9, condicionada à
+validação no edge real (desbloquear o Preview/SSO).
+
+## Veredito E8
+
+```text
+E8 PARCIAL — validação local real APROVADA (kill-switch funciona; HTML físico entrega SEO
+completo em todos os tipos; bug crítico da home corrigido e reconfirmado 1512/1512).
+PENDENTE de validação no edge real da Vercel (Preview bloqueado por Deployment Protection/SSO)
+antes de autorizar a E9 (remoção definitiva do Prerender.io).
+```

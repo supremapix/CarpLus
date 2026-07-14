@@ -388,7 +388,9 @@ E5 — roteamento de produção (152 redirects 301): implementada e validada
 E5.5 — auditoria independente da E5: aprovada (1 observação não-bloqueante)
 E6 — geração estática em escala (1512 rotas): implementada e validada
 E6.5 — build de deploy configurado e validado localmente: PARCIAL (deploy Vercel pendente)
-Remoção do Prerender.io: pendente
+E7 — Chromium serverless + build resiliente: implementada (produção Ready)
+E8 — remoção controlada do Prerender.io (kill-switch + validação local): PARCIAL (edge real pendente); bug crítico da home corrigido
+Remoção definitiva do Prerender.io (E9): pendente (condicionada à validação no edge real)
 Validação final: pendente
 ```
 
@@ -642,4 +644,50 @@ alternativa é gerar em CI/step separado e commitar o `dist`, ou reduzir a conco
 E7 IMPLEMENTADA — Chromium serverless + build resiliente. Deploy padrão seguro (SPA),
 geração completa opt-in via GENERATE_STATIC=1 e à prova de falhas (nunca quebra produção).
 Caminho serverless comprovado localmente; escala das 1.512 na Vercel PENDENTE de medição real.
+```
+
+---
+
+## 18. Etapa E8 — Remoção controlada do Prerender.io (validação local)
+
+Objetivo: confirmar que o site funciona integralmente **sem** o Prerender.io, em ambiente
+controlado e **reversível**, sem remover nada definitivamente. Relatório completo:
+**`reports/e8-prerender-removal.md`**; CSV do que o bot recebe: `reports/e8-bot-comparison.csv`.
+
+### 18.1 O que mudou (2 alterações de código, ambas seguras)
+- **Kill-switch `PRERENDER_ENABLED`** em `middleware.js`: quando `=== 'false'`, bots deixam de ir
+  ao Prerender.io e caem no **HTML físico** do build (SSG). Qualquer outro valor (inclusive
+  ausente) **preserva a produção atual**. Reversível por env var, sem deploy de código.
+- **Correção de bug crítico** em `scripts/generate-static-all.ts` (ver 18.3).
+
+### 18.2 Validado de forma REAL (local)
+- **Lógica do middleware** (execução real): com `PRERENDER_ENABLED=false`, Googlebot/Bingbot/
+  Facebook/Twitter caem no HTML físico; 0 chamadas ao `service.prerender.io`. Default e `=true`
+  mantêm o comportamento atual.
+- **HTML físico que o bot recebe** (servidor serve o `dist`): os 6 tipos de rota — home, catálogo,
+  serviços, produto, quem-somos, contato — entregam **title, description, canonical
+  auto-referencial, `<h1>`, JSON-LD, Open Graph e Twitter Card sem depender de JavaScript**.
+
+### 18.3 Bug crítico corrigido — home não pré-renderizada
+A home (`/`) vinha como **shell SPA vazio** (sem `<h1>`, ~11 KB), enquanto as outras 1.511 páginas
+tinham HTML completo. Com o Prerender.io desligado, a home iria vazia ao Googlebot. Causa raiz: o
+filtro de "rota concluída" só checava `existsSync(dist/index.html)` — o mesmo arquivo que
+`build:spa` regrava como shell — pulando a home em builds incrementais. Correção: `isPrerenderedFile()`
+exige o marcador `data-prerendered` no arquivo. Reconfirmado: home 577 KB com `<h1>`, geração
+completa **1512/1512, 0 falhas**.
+
+### 18.4 PENDENTE (bloqueia a E9)
+Validação no **edge real da Vercel** — o Preview está bloqueado por **Deployment Protection (SSO)**,
+que retorna 302 a todas as requisições (ver 16.6). É preciso desbloquear o Preview (ou fornecer
+bypass token) e rodar a auditoria de bots contra o edge antes de autorizar a remoção definitiva.
+
+### 18.5 Rollback (< 5 min, sem código)
+`PRERENDER_ENABLED=true` (ou remover a variável) + redeploy reativa o Prerender.io. O `middleware.js`,
+as metas em `index.html` e o `render-event` continuam intactos.
+
+### 18.6 Veredito
+```text
+E8 PARCIAL — validação LOCAL real APROVADA (kill-switch OK; HTML físico entrega SEO completo em
+todos os tipos; bug crítico da home corrigido e reconfirmado 1512/1512). Remoção definitiva (E9)
+PENDENTE da validação no edge real da Vercel (Preview bloqueado por SSO).
 ```
