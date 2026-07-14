@@ -1,6 +1,6 @@
 # Relatório — Prova de Conceito de Geração Estática (E2/E3)
 
-> Gerado em 2026-07-13T19:19:22.461Z
+> Gerado em 2026-07-14T16:21:04.997Z
 
 ## Veredito: **PROVA DE CONCEITO APROVADA** (11/11 rotas aprovadas)
 
@@ -8,7 +8,7 @@
 
 | Rota | Tipo | Arquivo | Title (início) | Canonical | HTML (bytes) | Texto (chars) | H1 | JSON-LD | Assets | Status |
 |------|------|---------|----------------|-----------|--------------|---------------|----|---------|--------|--------|
-| `/` | Home | `dist/index.html` | Carplus Centro Automotivo – Loja… | / | 575750 | 25764 | OFICINAEM CURITIBA | 3 | ok | APROVADA |
+| `/` | Home | `dist/index.html` | Carplus Centro Automotivo – Loja… | / | 577229 | 25764 | OFICINAEM CURITIBA | 3 | ok | APROVADA |
 | `/pneu/pneu-pirelli-175-70r13-p400-evo-82t` | Produto (pneu) | `dist/pneu/pneu-pirelli-175-70r13-p400-evo-82t/index.html` | Pirelli 175/70R13 P400 Evo 82T e… | /pneu/pneu-pirelli-175-70r13-p400-evo-82t | 171329 | 13938 | Pirelli 175/70R13 P400 Evo 8 | 5 | ok | APROVADA |
 | `/servico/venda-de-pneus` | Serviço | `dist/servico/venda-de-pneus/index.html` | Venda de Pneus em Curitiba Portã… | /servico/venda-de-pneus/ | 126660 | 9516 | Venda de Pneus em Curitiba – | 5 | ok | APROVADA |
 | `/pneu-medida/175-65r14` | Medida | `dist/pneu-medida/175-65r14/index.html` | Pneu 175/65R14 em Curitiba / Car… | /pneu-medida/175-65r14 | 173176 | 9815 | Pneu 175/65R14 | 5 | ok | APROVADA |
@@ -25,7 +25,7 @@
 ### [APROVADA] `/` — Home
 
 - [x] Arquivo HTML existe — _dist/index.html_
-- [x] Tamanho mínimo (>2KB) — _575750 bytes_
+- [x] Tamanho mínimo (>2KB) — _577229 bytes_
 - [x] Possui <title> — _Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão_
 - [x] Possui description
 - [x] Possui canonical — _https://www.carpluspneuseoficina.com.br/_

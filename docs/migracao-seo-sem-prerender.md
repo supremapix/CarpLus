@@ -27,7 +27,7 @@
 
 ### 1.4 Hospedagem e roteamento (`vercel.json`)
 - `rewrites`: `/(.*) → /index.html` (fallback global de SPA — **toda** rota cai no mesmo HTML vazio).
-- `redirects`: ~80 regras 301 de paginação (`/pneus?page=N → /landing-tematica`), geradas por `scripts/generate-redirects.ts`.
+- `redirects`: **76** regras 301 de paginação (`/pneus?page=N → /landing-tematica`), geradas por `scripts/generate-redirects.ts` (contagem confirmada no `vercel.json`).
 - `headers`: content-type/cache para sitemaps, robots, llms; headers de segurança globais.
 - Redirects adicionais (`*.html` de bairros, slugs legados de marca, `/pneus/:medida`) são feitos **client-side** via `<Navigate>` no React Router — logo, dependem de JS e do fallback do index.html.
 
@@ -217,11 +217,15 @@ npm run test:static:pilot
 Relatórios: `reports/static-pilot-report.md` e `reports/static-pilot-generation.json`. Shell original preservado em `reports/_spa-shell/index.html`.
 
 ### 10.7 Inventário de redirects client-side (para promover a 301 na etapa E5)
-Ainda **não convertidos** nesta etapa — apenas inventariados:
-- **69** redirects de bairros `*.html → /bairro/:slug` (`<Navigate>` em `src/App.tsx`).
+Ainda **não convertidos** nesta etapa — apenas inventariados (contagens reconferidas na E5.0 contra o código real):
+- **69** redirects de bairros/cidades `*.html → /bairro/:slug` (`<Navigate>` em `src/App.tsx`; `grep -c '.html" element={<Navigate' = 69`).
 - **1** redirect de rota legada `/pneus/:medida → /pneu-medida/:medida` (componente `LegacyMedidaRedirect`).
-- **3** redirects de slug legado de marca (`BRAND_PAGES[].legacySlug → slug`).
+- **6** redirects de slug legado de marca (`BRAND_PAGES[].legacySlug → slug`: Pirelli, Michelin, Goodyear, Continental, Yokohama, Bridgestone).
+- **Total client-side a promover a 301: 76** (69 + 1 + 6).
+- **Total projetado no `vercel.json` após a E5: 152 regras** = 76 de paginação já existentes + 76 client-side promovidas.
 - Todos deverão virar `redirects` 301 no `vercel.json` (ou arquivo de config) na etapa E5.
+
+> **Correção de contagem (E5.0):** versões anteriores deste inventário citavam **3** slugs legados de marca — número **desatualizado**. A releitura da fonte real (`src/data/seoLanding.ts`) confirma **6** marcas com `legacySlug`, elevando o total client-side de 73 → **76**. O grep bruto por `legacySlug` pode retornar 7 ocorrências, mas 1 é a declaração de tipo/opcional; o valor real (`BRAND_PAGES.filter(p => p.legacySlug)`) é **6**.
 
 ### 10.8 Ressalvas (status HTTP e escopo)
 - Gerar arquivos físicos **não garante sozinho** os códigos HTTP corretos na Vercel. O `vercel.json` ainda tem `rewrites: /(.*) → /index.html`, que **não foi alterado** nesta etapa. Servir o HTML por rota (e o 404 com status 404 real) será tratado na E5, após validação.
@@ -339,7 +343,7 @@ Dependência do Prerender.io durante a geração: nenhuma
 Itens **ainda não resolvidos** (fora do escopo desta etapa):
 - **Fallback global do `vercel.json`** (`rewrites: /(.*) → /index.html`) ainda ativo.
 - **Status 200 indevido** em URLs inexistentes (404 real ainda não implementado no roteamento).
-- **Redirects client-side** ainda não promovidos a 301 server-side (69 bairros `*.html`, 1 `/pneus/:medida`, 3 slugs legados de marca).
+- **Redirects client-side** ainda não promovidos a 301 server-side (69 bairros/cidades `*.html`, 1 `/pneus/:medida`, 6 slugs legados de marca = **76** no total).
 - **Dependência do Prerender.io em produção** ainda vigente.
 - **Escala para ~1.537 URLs** ainda não executada (piloto usa 11 rotas).
 - **Tempo e memória do build completo** ainda não medidos na escala real.
