@@ -15,7 +15,7 @@
 //     representativos e reproduzíveis (A=25, B=100, C=500, D=tudo).
 //   • Preserva o shell SPA original como fallback (via preserveShellBackup).
 //
-// NÃO altera vercel.json, middleware.js, index.html-fonte nem o Prerender.io.
+// NÃO altera vercel.json nem index.html-fonte.
 //
 // Flags:
 //   --limit=N          gera apenas as primeiras N rotas da seleção

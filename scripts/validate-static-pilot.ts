@@ -7,7 +7,7 @@
 //   • title / description / canonical / H1 / conteúdo principal presentes;
 //   • JSON-LD presente quando esperado;
 //   • canonical sem localhost;
-//   • sem referência ao Prerender.io no HTML;
+//   • sem referência a serviço externo de pré-renderização no HTML;
 //   • HTML diferente do shell vazio;
 //   • assets /assets referenciados existem fisicamente;
 //   • rota não herdou title/canonical da home indevidamente.
@@ -121,13 +121,12 @@ function main() {
     else add('JSON-LD presente (global do shell)', jsonLd > 0, `${jsonLd} blocos`);
     add('Canonical sem localhost', !!canonical && !/localhost|127\.0\.0\.1/.test(canonical));
     add('HTML sem localhost/porta', !/localhost|127\.0\.0\.1/.test(html));
-    // Nesta fase o Prerender.io CONTINUA configurado no shell (token + comentário).
-    // O que importa é que a GERAÇÃO não dependeu do serviço: não pode haver
-    // requisição/URL ao domínio service.prerender.io no HTML. O comentário/token
-    // estático do shell é aceitável (será removido só na etapa de corte).
+    // Guard de regressão (E9): o serviço externo foi REMOVIDO. Este teste garante
+    // que nenhuma URL de serviço externo de pré-renderização volte ao HTML — se
+    // alguém reintroduzir a integração por engano, a validação falha.
     const htmlSemComentarios = html.replace(/<!--[\s\S]*?-->/g, '');
     add(
-      'Geração sem chamada ao serviço prerender.io (URL)',
+      'HTML sem chamada a serviço externo de pré-renderização (URL)',
       !/https?:\/\/[^"'\s]*prerender\.io/i.test(htmlSemComentarios),
     );
     add('HTML não é o shell vazio (tem conteúdo no #root)', /<div id="root">\s*<[a-z]/i.test(html));
@@ -243,7 +242,7 @@ function main() {
   md += `- [${reports.filter((r) => !r.route.isHome && !r.route.isNotFound).every((r) => r.canonical !== HOME_CANONICAL) ? 'x' : ' '}] Nenhuma rota indexável herdou canonical da home\n`;
   md += `- [ ] JavaScript desativado mantém o conteúdo (validar manualmente — ver seção no doc)\n`;
   md += `- [ ] Hidratação sem quebra (validar no navegador — ver seção no doc)\n`;
-  md += `- [x] Geração sem dependência do Prerender.io\n\n`;
+  md += `- [x] Geração sem dependência de serviço externo de pré-renderização\n\n`;
 
   fs.mkdirSync(REPORTS, { recursive: true });
   fs.writeFileSync(path.join(REPORTS, 'static-pilot-report.md'), md, 'utf8');
