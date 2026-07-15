@@ -116,11 +116,17 @@ function buildNeighborhoodRedirects(): RedirectRule[] {
  * 301 dinâmico de medida legada: /pneus/:medida → /pneu-medida/:medida.
  * O Google rastreou URLs como /pneus/325-30-19, que nunca existiram como rota.
  * Não colide com /pneus (catálogo, sem segmento) nem com /pneus-* (sem barra).
+ *
+ * O padrão `:medida([^.]+)` casa apenas segmentos SEM ponto, para NÃO capturar
+ * arquivos estáticos como /pneus/bridgestone.webp (imagens dos pneus em promoção).
+ * Como o Vercel aplica redirects antes do filesystem, sem esta restrição as
+ * imagens em /pneus/*.webp eram redirecionadas (308) e não carregavam em produção.
+ * Medidas reais (ex.: 325-30-19, 175-65r14) não contêm ponto, então seguem casando.
  */
 function buildMeasureRedirect(): RedirectRule[] {
   return [
     {
-      source: '/pneus/:medida',
+      source: '/pneus/:medida([^.]+)',
       destination: '/pneu-medida/:medida',
       permanent: true,
     },
