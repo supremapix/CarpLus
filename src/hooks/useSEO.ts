@@ -13,14 +13,6 @@ interface SEOProps {
   prevUrl?: string;
   /** URL da próxima página na paginação (gera <link rel="next">). */
   nextUrl?: string;
-  /**
-   * Código HTTP a comunicar aos bots via `<meta name="prerender-status-code">`.
-   * Usado pela página 404 para que o Prerender.io responda 404 real aos
-   * crawlers (enquanto o middleware estiver ativo). Aditivo: quando ausente,
-   * nenhum meta é criado e o comportamento das demais páginas não muda. O meta
-   * é REMOVIDO no cleanup para não vazar o status em navegações SPA.
-   */
-  prerenderStatusCode?: number;
 }
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
@@ -36,7 +28,6 @@ export function useSEO({
   noindex = false,
   prevUrl,
   nextUrl,
-  prerenderStatusCode,
 }: SEOProps) {
   useEffect(() => {
     // Atualiza o título
@@ -119,23 +110,6 @@ export function useSEO({
     const prevLinkEl = setPageLink('prev', prevUrl);
     const nextLinkEl = setPageLink('next', nextUrl);
 
-    // prerender-status-code: comunica o status HTTP aos bots via Prerender.io.
-    // Só existe quando a rota o solicita (ex.: 404). Marcado como dinâmico e
-    // removido no cleanup para NUNCA persistir em navegações SPA para outras rotas.
-    let statusMetaEl: HTMLMetaElement | null = null;
-    if (prerenderStatusCode != null) {
-      statusMetaEl =
-        (document.querySelector('meta[name="prerender-status-code"]') as HTMLMetaElement | null) ??
-        (() => {
-          const el = document.createElement('meta');
-          el.setAttribute('name', 'prerender-status-code');
-          document.head.appendChild(el);
-          return el;
-        })();
-      statusMetaEl.setAttribute('content', String(prerenderStatusCode));
-      statusMetaEl.setAttribute('data-dynamic-status', 'true');
-    }
-
     // Fontes hospedadas localmente (Inter + Oswald): sem hints ao Google Fonts.
 
     // Schema.org JSON-LD
@@ -158,12 +132,10 @@ export function useSEO({
       injected.push(script);
     });
 
-    // Dispara evento para pre-render saber que renderizou
+    // Sinal confiável para a geração estática interna (E2/E3/E4):
+    // marca que a rota atual chamou useSEO com título/description/canonical/JSON-LD
+    // já aplicados ao DOM. É o mecanismo próprio do SSG (não depende de serviços externos).
     if (typeof window !== 'undefined') {
-      document.dispatchEvent(new Event('render-event'));
-      // Sinal confiável para a geração estática interna (E2/E3/E4):
-      // marca que a rota atual chamou useSEO com título/description/canonical/JSON-LD
-      // já aplicados ao DOM. Coexiste com o Prerender.io (render-event) sem substituí-lo.
       const w = window as unknown as {
         __STATIC_RENDER_READY__?: boolean;
         __STATIC_RENDER_STATUS__?: {
@@ -196,10 +168,6 @@ export function useSEO({
       injected.forEach(s => s.parentNode?.removeChild(s));
       prevLinkEl?.parentNode?.removeChild(prevLinkEl);
       nextLinkEl?.parentNode?.removeChild(nextLinkEl);
-      // Remove o meta de status para não vazar o 404 a outras rotas na navegação SPA.
-      if (statusMetaEl?.getAttribute('data-dynamic-status') === 'true') {
-        statusMetaEl.parentNode?.removeChild(statusMetaEl);
-      }
     };
-  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex, prevUrl, nextUrl, prerenderStatusCode]);
+  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex, prevUrl, nextUrl]);
 }

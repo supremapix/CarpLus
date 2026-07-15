@@ -11,9 +11,8 @@
 //        generate:static:all  →  validate:static:all
 //      Gera as 1.512 páginas estáticas usando Chromium serverless
 //      (@sparticuz/chromium) na Vercel. Se qualquer passo falhar, o build
-//      registra um AVISO e conclui com sucesso servindo o SPA — o Prerender.io
-//      continua cobrindo os bots. Assim, habilitar a flag jamais derruba a
-//      produção.
+//      registra um AVISO e conclui com sucesso servindo o SPA. Assim, habilitar
+//      a flag jamais derruba a produção.
 //
 // Para ativar a geração completa em um deploy: defina GENERATE_STATIC=1 nas
 // variáveis de ambiente do projeto na Vercel (ou no comando local).
@@ -49,7 +48,7 @@ function run(cmd, { essential }) {
     }
     console.warn(
       `[build-deploy] AVISO: passo best-effort "${cmd}" falhou (exit ${code}). ` +
-        `O deploy segue com o SPA; bots continuam cobertos pelo Prerender.io.`,
+        `O deploy segue com o SPA (bots recebem o HTML servido normalmente).`,
     );
     return false;
   }

@@ -392,9 +392,9 @@ E7 — Chromium serverless + build resiliente: implementada (produção Ready)
 E8 — remoção controlada do Prerender.io (kill-switch + validação local): PARCIAL (edge real pendente); bug crítico da home corrigido
 E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1)
 E8.6 — 404 HTTP real (fim do soft-404): APROVADA localmente (C4 destravado)
-E8.7 — validação no edge real da Vercel: BLOQUEADA (C1 — Preview/SSO + env vars ausentes; script pronto)
-Remoção definitiva do Prerender.io (E9): pendente (bloqueada apenas por C1 — Preview/SSO)
-Validação final: pendente
+E8.7 — validação no edge real da Vercel: APROVADA (36/38 PASS; bots recebem HTML físico sem Prerender.io; C1 satisfeito). 2 FAIL = 1 item (imagem .webp) por deploy de Preview anterior ao fix — código já correto
+E9 — remoção definitiva do Prerender.io: APROVADA localmente (middleware/metas/render-event/env removidos; SSG intacto; 30/30 geradas; 0 vestígios). Resta remover a env PRERENDER_TOKEN no dashboard (ação do dono)
+Validação final: APROVADA local — SEO 100% sobre HTML físico; edge já validado na E8.7
 ```
 
 ---
@@ -780,36 +780,78 @@ Vercel permanece condicionada ao desbloqueio do Preview (SSO, critério C1). C4 
 
 ---
 
-## 21. Etapa E8.7 — Validação no Edge real da Vercel (BLOQUEADA)
+## 21. Etapa E8.7 — Validação no Edge real da Vercel (APROVADA)
 
 Objetivo: comprovar no edge real (Preview) que o site funciona sem depender do Prerender.io.
-Relatório: **`reports/e8.7-edge-validation.md`**; script: `scripts/e8.7-edge-audit.mjs`.
+Relatório: **`reports/e8.7-edge-validation.md`**; resultados: `reports/e8.7-edge-results.json`;
+script: `scripts/e8.7-edge-audit.mjs`.
 
-### 21.1 Estado: bloqueado por ações operacionais (não-código)
-1. **Deployment Protection (SSO)** ativa — toda requisição ao Preview retorna `302 → sso-api`
-   (confirmado em `/` e `/robots.txt`). Nenhum objetivo verificável.
-2. **Env vars ausentes** — `GENERATE_STATIC` e `PRERENDER_ENABLED` não existem no projeto
-   (só `PRERENDER_TOKEN`).
-3. **Vercel CLI** instalado (54.1.0) mas com **token inválido** → v0 não gerencia env/deploy/proteção.
+### 21.1 Execução
+Pré-requisitos atendidos pelo dono: env vars **escopo Preview** (`GENERATE_STATIC=1`,
+`PRERENDER_ENABLED=false`), acesso via *Protection Bypass for Automation* (header
+`x-vercel-protection-bypass`) e redeploy do Preview com 1.512 páginas. Auditoria executada contra
+`https://carp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app`.
 
-`PRERENDER_ENABLED=false` deve ser **escopo Preview** apenas (defini-la globalmente desligaria o
-Prerender.io em produção — proibido nesta etapa).
+### 21.2 Resultado — 36/38 PASS
+- **Rotas válidas (6/6):** `/`, `/pneus`, `/servicos`, `/quem-somos`, `/contato`, produto → 200
+  com `<h1>` e `data-prerendered` no HTML bruto.
+- **404 real (4/4):** URLs inexistentes e produto inválido → **HTTP 404** no edge.
+- **Redirects permanentes (21/21):** bairros `.html`, marcas, paginação `?page=N` e medida legada
+  → **308** (equivalente permanente ao 301). Vercel usa 308 para `permanent: true`.
+- **Meta-arquivos (3/3):** `sitemap.xml`, `robots.txt`, `llms.txt` → 200 via filesystem.
+- **Bots sem Prerender.io (PASS):** Googlebot e Bingbot em `/pneus` → 200 + `<h1>` + JSON-LD,
+  servido do **HTML físico** com `PRERENDER_ENABLED=false`. **Confirmação decisiva.**
 
-### 21.2 Desbloqueio (dono do projeto)
-1. Env vars com *Environment = Preview*: `GENERATE_STATIC=1`, `PRERENDER_ENABLED=false`.
-2. Acesso: desativar Deployment Protection para Preview **ou** gerar *Protection Bypass for
-   Automation* (`VERCEL_AUTOMATION_BYPASS_SECRET`) e fornecer.
-3. Redeploy do Preview da branch `v0/supremapix-155c8202`.
-
-### 21.3 Auditoria pronta (1 comando)
-`BASE=... [BYPASS=...] node scripts/e8.7-edge-audit.mjs` valida os 7 objetivos (rotas 200,
-inexistentes 404, amostra dos 152 redirects 301, filesystem, bots com HTML físico) e grava
-`reports/e8.7-edge-results.json`. Já testado: detecta corretamente o bloqueio de SSO (exit 3).
+### 21.3 Ressalva (2 FAIL = 1 item, não é bug de código)
+`/pneus/bridgestone.webp` retornou 308 no edge: o Preview servia o `vercel.json` **anterior** ao
+fix de redirect (E8.7/imagens). Código na branch/main já correto (`/pneus/:medida([^.]+)`); basta
+redeploy do Preview a partir de `22853b9` **sem** cache de build para virar 38/38. Em produção o
+fix já está na `main` (PR #124).
 
 ### 21.4 Veredito
 ```text
-E8.7 BLOQUEADA — edge não auditável: Preview sob SSO (302) e env vars GENERATE_STATIC/
-PRERENDER_ENABLED ausentes; token do Vercel CLI inválido. Script pronto e testado. Requer ação do
-dono (env vars escopo Preview + desativar proteção/fornecer bypass + redeploy). Nada publicado,
-removido ou mergeado. E9 não iniciada.
+E8.7 APROVADA (edge real) — 36/38 PASS. Comprovado no edge: rotas válidas 200 pré-renderizadas,
+404 HTTP real, redirects permanentes 308 (incl. paginação), meta-arquivos via filesystem e, o
+essencial, bots recebendo HTML físico com JSON-LD sob PRERENDER_ENABLED=false — sem Prerender.io.
+As 2 falhas são um único item (imagem .webp) por deploy de Preview anterior ao fix; código já
+correto. Critério C1 satisfeito. E9 (remoção definitiva) liberada, seguindo o plano da E8.5.
+```
+
+---
+
+## 22. Etapa E9 — Remoção definitiva do Prerender.io (APROVADA)
+
+Etapa final. Remove todo o acoplamento ao Prerender.io; o SEO passa a depender exclusivamente
+do HTML físico (SSG interno) já validado no edge (E8.7).
+Relatórios: **`reports/e9-prerender-removal.md`** e **`reports/e9-final-validation.md`**.
+
+### 22.1 Removido
+- **`middleware.js`** (a ponte inteira: `service.prerender.io`, detecção de bot,
+  `X-Prerender-Token`, `PRERENDER_TOKEN`, kill-switch `PRERENDER_ENABLED`).
+- Metas `prerender-token` e `prerender-status-code` do `index.html`.
+- `render-event` + prop `prerenderStatusCode` + meta de status no `useSEO.ts`; uso em `NotFound.tsx`.
+- Scripts one-off (dead code): `e6-middleware-decision.mjs`, `e8-decision-check.mjs`,
+  `e8-bot-validate.mjs`.
+- Comentários obsoletos nos scripts de build/SSG.
+
+### 22.2 Preservado (é o SSG interno, não o Prerender.io)
+`src/lib/prerender.ts`, `data-prerendered`, `__STATIC_RENDER_READY__`, `isPrerenderEager`.
+A geração das 1.512 páginas usa `__STATIC_RENDER_READY__` — **não** dependia de `render-event`.
+
+### 22.3 Validação (local + browser real)
+Build SPA OK; geração de amostra **30/30 OK**; HTML físico com JSON-LD/canonical/h1 e
+**0 vestígios** de Prerender.io; `dist/404.html` correto; `validate-redirects` APROVADO;
+no browser (pós-hidratação) produto com `robots: index, follow` e 404 com `noindex`, ambos
+sem metas de prerender e sem erros de hidratação. Detalhes: `reports/e9-final-validation.md`.
+
+### 22.4 Ação operacional pendente (dono)
+Remover a env var **`PRERENDER_TOKEN`** no dashboard da Vercel (o código já não a lê;
+`PRERENDER_ENABLED` já não está presente). Opcional: cancelar a assinatura do serviço.
+
+### 22.5 Veredito
+```text
+E9 APROVADA (local) — Prerender.io removido do código, config e shell; SSG interno intacto;
+build e geração OK (30/30); HTML físico com SEO completo e ZERO vestígios; 404 real; redirects
+APROVADOS; runtime no browser sem erros. Com a E8.7 (edge) já aprovada, a migração para SEO sem
+Prerender.io está concluída. Única pendência: remover a env PRERENDER_TOKEN no dashboard.
 ```

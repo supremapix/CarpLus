@@ -2,8 +2,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // GERAÇÃO ESTÁTICA INTERNA (SNAPSHOT HEADLESS) — Etapas E2/E3/E4 (+ núcleo E6)
 // ─────────────────────────────────────────────────────────────────────────────
-// Substitui FUTURAMENTE o Prerender.io. Nesta etapa COEXISTE com ele:
-//   • não remove o token/meta Prerender.io do index.html;
+// Gera o HTML físico (SSG) que os bots recebem diretamente do filesystem.
 //   • não altera vercel.json;
 //   • no modo piloto aplica-se apenas às rotas piloto (static-pilot-routes.ts).
 //

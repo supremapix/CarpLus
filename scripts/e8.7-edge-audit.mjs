@@ -36,8 +36,11 @@ const REDIRECTS = vercelJson.redirects || [];
 function headers(extra = {}) {
   const h = { ...extra };
   if (BYPASS) {
+    // Apenas o header de bypass em CADA requisição. NÃO enviar
+    // 'x-vercel-set-bypass-cookie': com ele o edge responde 307 + Set-Cookie
+    // (persistindo o bypass em cookie) em vez de servir o conteúdo direto,
+    // o que quebra a leitura de status/HTML por requisição.
     h['x-vercel-protection-bypass'] = BYPASS;
-    h['x-vercel-set-bypass-cookie'] = 'true';
   }
   return h;
 }
@@ -92,20 +95,44 @@ async function main() {
     record(1, `GET ${p}`, r.status === 200 && temH1, `status=${r.status} h1=${temH1} data-prerendered=${prerender}`);
   }
 
-  // Objetivo 3: redirects 301 (amostra + verificação de destino)
-  console.log('\nOBJETIVO 3 — redirects 301 (amostra de 20 dos ' + REDIRECTS.length + ')');
-  const step = Math.max(1, Math.floor(REDIRECTS.length / 20));
-  const sample = REDIRECTS.filter((_, i) => i % step === 0).slice(0, 20);
+  // Objetivo 3: redirects permanentes (amostra + verificação de destino).
+  // A Vercel emite 308 para redirects permanentes (equivalente a 301, preserva
+  // o método). Aceitamos 301 OU 308 como permanente. Redirects dinâmicos (com
+  // ':param' no source) não podem ser testados pelo source literal — testamos
+  // o caso legado /pneus/<medida> com um valor concreto e ignoramos os demais.
+  console.log('\nOBJETIVO 3 — redirects permanentes 301/308 (amostra de 20 dos ' + REDIRECTS.length + ')');
+  const estaticos = REDIRECTS.filter(r => !r.source.includes(':') && !r.source.includes('('));
+  const step = Math.max(1, Math.floor(estaticos.length / 20));
+  const sample = estaticos.filter((_, i) => i % step === 0).slice(0, 20);
+  const permanentOk = (status, rd) => {
+    const wantsPermanent = (rd.statusCode ?? (rd.permanent ? 308 : 302)) !== 302;
+    return wantsPermanent ? (status === 301 || status === 308) : status === 302 || status === 307;
+  };
+  // Monta a URL de teste respeitando condições `has` de query (ex.: paginação
+  // /pneus?page=N). Sem a query, a request bate no catálogo /pneus (200) e
+  // parece falha — por isso a query condicional precisa ir na URL testada.
+  const buildTestUrl = (rd) => {
+    const q = (rd.has || []).filter(h => h.type === 'query').map(h => `${h.key}=${h.value}`).join('&');
+    return q ? `${rd.source}?${q}` : rd.source;
+  };
   let okRedir = 0;
   for (const rd of sample) {
-    const expected = rd.statusCode || (rd.permanent ? 301 : 302);
-    const r = await req(rd.source);
-    const destOk = (r.location || '').endsWith(rd.destination);
-    const ok = r.status === expected && destOk;
+    const url = buildTestUrl(rd);
+    const r = await req(url);
+    const destOk = (r.location || '').split('?')[0].endsWith(rd.destination);
+    const ok = permanentOk(r.status, rd) && destOk;
     if (ok) okRedir++;
-    record(3, `${rd.source}`, ok, `status=${r.status} (esperado ${expected}) → ${r.location || 'sem location'}`);
+    record(3, `${url}`, ok, `status=${r.status} → ${r.location || 'sem location'}`);
   }
-  record(3, `RESUMO redirects`, okRedir === sample.length, `${okRedir}/${sample.length} corretos`);
+  // Caso dinâmico legado: /pneus/<medida> deve redirecionar; /pneus/<img>.webp NÃO.
+  const rMedida = await req('/pneus/325-30-19');
+  const medidaOk = (rMedida.status === 301 || rMedida.status === 308) && /\/pneu-medida\/325-30-19$/.test(rMedida.location || '');
+  if (medidaOk) okRedir++;
+  record(3, `/pneus/325-30-19 (medida legada)`, medidaOk, `status=${rMedida.status} → ${rMedida.location || 'sem location'}`);
+  const rWebp = await req('/pneus/bridgestone.webp');
+  const webpOk = rWebp.status === 200 && /image\//.test(rWebp.ct || '');
+  record(3, `/pneus/bridgestone.webp (imagem NÃO redireciona)`, webpOk, `status=${rWebp.status} type=${rWebp.ct}`);
+  record(3, `RESUMO redirects`, okRedir === sample.length + 1 && webpOk, `${okRedir}/${sample.length + 1} permanentes + imagem servida`);
 
   // Objetivo 2: URLs inexistentes → 404 real
   console.log('\nOBJETIVO 2 — URLs inexistentes retornam 404 real');
