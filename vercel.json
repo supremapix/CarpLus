@@ -347,7 +347,7 @@
       "permanent": true
     },
     {
-      "source": "/pneus/:medida",
+      "source": "/pneus/:medida([^.]+)",
       "destination": "/pneu-medida/:medida",
       "permanent": true
     },
@@ -1296,7 +1296,35 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/pneus-promocao",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneu-promocao/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/trocas-e-devolucoes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bairro/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/servico/:slug",
       "destination": "/index.html"
     }
   ],

@@ -85,8 +85,10 @@ if (chains === 0) ok('nenhuma cadeia ou loop detectado');
 // 5. Medida não colide com catálogo/landings de marca
 console.log('\n5. Coerência do redirect dinâmico de medida');
 const m = medida[0];
-if (m && m.source === '/pneus/:medida' && m.destination === '/pneu-medida/:medida') {
-  ok('/pneus/:medida → /pneu-medida/:medida (1 segmento; não afeta /pneus nem /pneus-*)');
+// O padrão inclui ([^.]+) para NÃO capturar arquivos estáticos como
+// /pneus/bridgestone.webp (imagens dos pneus em promoção).
+if (m && m.source === '/pneus/:medida([^.]+)' && m.destination === '/pneu-medida/:medida') {
+  ok('/pneus/:medida([^.]+) → /pneu-medida/:medida (1 segmento sem ponto; não afeta /pneus, /pneus-* nem imagens /pneus/*.webp)');
 } else {
   fail('redirect de medida inesperado: ' + JSON.stringify(m));
 }

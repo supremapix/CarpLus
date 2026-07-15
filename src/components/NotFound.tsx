@@ -41,6 +41,9 @@ export default function NotFound() {
     title: 'Página não encontrada (404) | Carplus Pneus e Oficina Curitiba',
     description: 'A página que você procura não existe. Conheça os pneus e serviços da Carplus Centro Automotivo no Portão, Curitiba.',
     noindex: true,
+    // Bots via Prerender.io recebem 404 real (enquanto o middleware estiver ativo).
+    // No edge, a Vercel já serve /404.html com HTTP 404 para não-bots.
+    prerenderStatusCode: 404,
   });
 
   return (

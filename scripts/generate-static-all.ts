@@ -50,6 +50,27 @@ import {
 const PROGRESS_FILE = path.join(REPORTS, 'e6-progress.json');
 const SUMMARY_JSON = path.join(REPORTS, 'e6-generation-summary.json');
 
+/**
+ * Confirma que um arquivo de saída é uma página realmente pré-renderizada, e não
+ * o shell SPA vazio. Todo HTML gerado recebe o atributo `data-prerendered` no
+ * <html> (ver generate-static-pages). Lê apenas o início do arquivo (o marcador
+ * fica no topo, dentro da tag <html>), evitando custo de ler arquivos grandes.
+ */
+function isPrerenderedFile(file: string): boolean {
+  try {
+    const fd = fs.openSync(file, 'r');
+    try {
+      const buf = Buffer.alloc(2048);
+      const bytes = fs.readSync(fd, buf, 0, buf.length, 0);
+      return buf.toString('utf8', 0, bytes).includes('data-prerendered');
+    } finally {
+      fs.closeSync(fd);
+    }
+  } catch {
+    return false;
+  }
+}
+
 interface Args {
   limit: number | null;
   shuffle: boolean;
@@ -210,7 +231,13 @@ export async function main() {
   } else {
     queue = selected.filter((r) => {
       const e = cp.entries[r.path];
-      const doneOk = e?.status === 'ok' && fs.existsSync(outputFileFor(r));
+      const out = outputFileFor(r);
+      // Uma rota só conta como concluída se o arquivo existir E estiver de fato
+      // pré-renderizado. Verificar apenas existsSync é insuficiente para a home,
+      // cujo output é dist/index.html — o mesmo arquivo que `build:spa` regrava
+      // como shell SPA vazio. Sem esta checagem, um checkpoint 'ok' prévio faria
+      // a home ser pulada, deixando o shell sem conteúdo (bug de SEO na raiz).
+      const doneOk = e?.status === 'ok' && fs.existsSync(out) && isPrerenderedFile(out);
       return !doneOk;
     });
   }

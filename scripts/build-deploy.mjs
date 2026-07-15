@@ -18,6 +18,24 @@
 // Para ativar a geração completa em um deploy: defina GENERATE_STATIC=1 nas
 // variáveis de ambiente do projeto na Vercel (ou no comando local).
 import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Emite dist/404.html a partir do shell SPA limpo (dist/index.html logo após
+// build:spa, ANTES da geração estática sobrescrever a home). A Vercel serve
+// /404.html com HTTP 404 real para qualquer rota não resolvida por
+// redirects → filesystem → rewrites. O React então renderiza <NotFound> (noindex).
+function emit404() {
+  const dist = path.join(process.cwd(), 'dist');
+  const shell = path.join(dist, 'index.html');
+  const out = path.join(dist, '404.html');
+  if (!fs.existsSync(shell)) {
+    console.warn('[build-deploy] AVISO: dist/index.html ausente; nao foi possivel emitir 404.html.');
+    return;
+  }
+  fs.copyFileSync(shell, out);
+  console.log('[build-deploy] 404.html emitido (shell SPA → HTTP 404 real em rotas desconhecidas).');
+}
 
 function run(cmd, { essential }) {
   const tag = essential ? 'ESSENCIAL' : 'best-effort';
@@ -46,6 +64,9 @@ console.log(`[build-deploy] GENERATE_STATIC: ${process.env.GENERATE_STATIC ?? '(
 run('npm run sitemap', { essential: true });
 run('npm run redirects', { essential: true });
 run('npm run build:spa', { essential: true });
+
+// 404 real: captura o shell SPA limpo agora, antes de qualquer geração estática.
+emit404();
 
 // Camada 2 — opt-in, best-effort.
 if (process.env.GENERATE_STATIC === '1') {

@@ -21,6 +21,12 @@ export default async function middleware(request) {
   const userAgent = request.headers.get('user-agent')?.toLowerCase() || '';
   const url = new URL(request.url);
 
+  // Kill-switch controlado (E8): quando PRERENDER_ENABLED === 'false', o middleware
+  // NÃO envia bots ao Prerender.io — eles caem no HTML físico gerado no build (SSG).
+  // Qualquer outro valor (inclusive ausente) preserva o comportamento atual de produção.
+  // Isso permite validar o site sem Prerender.io em Preview, sem remover nada.
+  const prerenderEnabled = process.env.PRERENDER_ENABLED !== 'false';
+
   // Check if request is from a bot
   const isBot = BOT_AGENTS.some((bot) => userAgent.includes(bot));
 
@@ -33,7 +39,7 @@ export default async function middleware(request) {
   // Skip for assets
   const isAsset = url.pathname.startsWith('/assets/') || url.pathname.startsWith('/images/');
 
-  if (!isBot || isStaticFile || isMetaFile || isAsset) {
+  if (!prerenderEnabled || !isBot || isStaticFile || isMetaFile || isAsset) {
     return;
   }
 
