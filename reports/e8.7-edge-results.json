@@ -1,10 +1,236 @@
 {
   "base": "https://carp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app",
-  "blocked": "SSO",
-  "probe": {
-    "status": 302,
-    "location": "https://vercel.com/sso-api?url=https%3A%2F%2Fcarp-lus-git-v0-supremapix-155c8202-supremapixs-projects.vercel.app%2F&nonce=fcbf68b615485b570a9219a5b6fe9afb91366711cdb9b76d5dad1072ecd960a8",
-    "ct": "text/plain",
-    "body": "Redirecting...\n"
-  }
+  "bypass": true,
+  "total": 38,
+  "fails": 2,
+  "results": [
+    {
+      "objetivo": 1,
+      "nome": "GET /",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 1,
+      "nome": "GET /pneus",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 1,
+      "nome": "GET /servicos",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 1,
+      "nome": "GET /quem-somos",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 1,
+      "nome": "GET /contato",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 1,
+      "nome": "GET /pneu-medida/175-65r14",
+      "ok": true,
+      "detalhe": "status=200 h1=true data-prerendered=true"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/taboao.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/taboao"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/campo-comprido.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/campo-comprido"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/conquista.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/conquista"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/jardim-botanico.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/jardim-botanico"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/lamenha-pequena.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/lamenha-pequena"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pilarzinho.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/pilarzinho"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/sao-lourenco.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/sao-lourenco"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/vila-sandra.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/vila-sandra"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/bigorrilho.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/bigorrilho"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/araucaria.html",
+      "ok": true,
+      "detalhe": "status=308 → /bairro/araucaria"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneu-michelin-curitiba",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-michelin-curitiba"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=4",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-bridgestone-curitiba?page=4"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=11",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-bridgestone-curitiba?page=11"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=19",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-continental-curitiba?page=19"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=26",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-continental-curitiba?page=26"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=33",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-continental-curitiba?page=33"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=42",
+      "ok": true,
+      "detalhe": "status=308 → /pneu-firestone-curitiba?page=42"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=50",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-pirelli-curitiba?page=50"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=57",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-pirelli-curitiba?page=57"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus?page=64",
+      "ok": true,
+      "detalhe": "status=308 → /pneus-pirelli-curitiba?page=64"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus/325-30-19 (medida legada)",
+      "ok": true,
+      "detalhe": "status=308 → /pneu-medida/325-30-19"
+    },
+    {
+      "objetivo": 3,
+      "nome": "/pneus/bridgestone.webp (imagem NÃO redireciona)",
+      "ok": false,
+      "detalhe": "status=308 type=text/plain"
+    },
+    {
+      "objetivo": 3,
+      "nome": "RESUMO redirects",
+      "ok": false,
+      "detalhe": "21/21 permanentes + imagem servida"
+    },
+    {
+      "objetivo": 2,
+      "nome": "GET /pagina-que-nao-existe",
+      "ok": true,
+      "detalhe": "status=404"
+    },
+    {
+      "objetivo": 2,
+      "nome": "GET /xyz/abc/123",
+      "ok": true,
+      "detalhe": "status=404"
+    },
+    {
+      "objetivo": 2,
+      "nome": "GET /pneu-medida/000-00r00",
+      "ok": true,
+      "detalhe": "status=404"
+    },
+    {
+      "objetivo": 2,
+      "nome": "GET /pneu/slug-invalido-999",
+      "ok": true,
+      "detalhe": "status=404"
+    },
+    {
+      "objetivo": 4,
+      "nome": "GET /sitemap.xml",
+      "ok": true,
+      "detalhe": "status=200 type=application/xml"
+    },
+    {
+      "objetivo": 4,
+      "nome": "GET /robots.txt",
+      "ok": true,
+      "detalhe": "status=200 type=text/plain; charset=utf-8"
+    },
+    {
+      "objetivo": 4,
+      "nome": "GET /llms.txt",
+      "ok": true,
+      "detalhe": "status=200 type=text/plain; charset=utf-8"
+    },
+    {
+      "objetivo": 5,
+      "nome": "Googlebot GET /pneus",
+      "ok": true,
+      "detalhe": "status=200 h1=true json-ld=true filesystem=true"
+    },
+    {
+      "objetivo": 5,
+      "nome": "Bingbot GET /pneus",
+      "ok": true,
+      "detalhe": "status=200 h1=true json-ld=true filesystem=true"
+    }
+  ]
 }
