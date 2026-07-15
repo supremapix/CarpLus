@@ -393,8 +393,8 @@ E8 — remoção controlada do Prerender.io (kill-switch + validação local): P
 E8.5 — plano de remoção definitiva (inventário/ordem/riscos/monitoramento/critérios): PARCIAL (plano pronto; execução bloqueada por C1)
 E8.6 — 404 HTTP real (fim do soft-404): APROVADA localmente (C4 destravado)
 E8.7 — validação no edge real da Vercel: APROVADA (36/38 PASS; bots recebem HTML físico sem Prerender.io; C1 satisfeito). 2 FAIL = 1 item (imagem .webp) por deploy de Preview anterior ao fix — código já correto
-Remoção definitiva do Prerender.io (E9): liberada para execução (critérios atendidos; seguir plano E8.5)
-Validação final: pendente
+E9 — remoção definitiva do Prerender.io: APROVADA localmente (middleware/metas/render-event/env removidos; SSG intacto; 30/30 geradas; 0 vestígios). Resta remover a env PRERENDER_TOKEN no dashboard (ação do dono)
+Validação final: APROVADA local — SEO 100% sobre HTML físico; edge já validado na E8.7
 ```
 
 ---
@@ -815,4 +815,43 @@ E8.7 APROVADA (edge real) — 36/38 PASS. Comprovado no edge: rotas válidas 200
 essencial, bots recebendo HTML físico com JSON-LD sob PRERENDER_ENABLED=false — sem Prerender.io.
 As 2 falhas são um único item (imagem .webp) por deploy de Preview anterior ao fix; código já
 correto. Critério C1 satisfeito. E9 (remoção definitiva) liberada, seguindo o plano da E8.5.
+```
+
+---
+
+## 22. Etapa E9 — Remoção definitiva do Prerender.io (APROVADA)
+
+Etapa final. Remove todo o acoplamento ao Prerender.io; o SEO passa a depender exclusivamente
+do HTML físico (SSG interno) já validado no edge (E8.7).
+Relatórios: **`reports/e9-prerender-removal.md`** e **`reports/e9-final-validation.md`**.
+
+### 22.1 Removido
+- **`middleware.js`** (a ponte inteira: `service.prerender.io`, detecção de bot,
+  `X-Prerender-Token`, `PRERENDER_TOKEN`, kill-switch `PRERENDER_ENABLED`).
+- Metas `prerender-token` e `prerender-status-code` do `index.html`.
+- `render-event` + prop `prerenderStatusCode` + meta de status no `useSEO.ts`; uso em `NotFound.tsx`.
+- Scripts one-off (dead code): `e6-middleware-decision.mjs`, `e8-decision-check.mjs`,
+  `e8-bot-validate.mjs`.
+- Comentários obsoletos nos scripts de build/SSG.
+
+### 22.2 Preservado (é o SSG interno, não o Prerender.io)
+`src/lib/prerender.ts`, `data-prerendered`, `__STATIC_RENDER_READY__`, `isPrerenderEager`.
+A geração das 1.512 páginas usa `__STATIC_RENDER_READY__` — **não** dependia de `render-event`.
+
+### 22.3 Validação (local + browser real)
+Build SPA OK; geração de amostra **30/30 OK**; HTML físico com JSON-LD/canonical/h1 e
+**0 vestígios** de Prerender.io; `dist/404.html` correto; `validate-redirects` APROVADO;
+no browser (pós-hidratação) produto com `robots: index, follow` e 404 com `noindex`, ambos
+sem metas de prerender e sem erros de hidratação. Detalhes: `reports/e9-final-validation.md`.
+
+### 22.4 Ação operacional pendente (dono)
+Remover a env var **`PRERENDER_TOKEN`** no dashboard da Vercel (o código já não a lê;
+`PRERENDER_ENABLED` já não está presente). Opcional: cancelar a assinatura do serviço.
+
+### 22.5 Veredito
+```text
+E9 APROVADA (local) — Prerender.io removido do código, config e shell; SSG interno intacto;
+build e geração OK (30/30); HTML físico com SEO completo e ZERO vestígios; 404 real; redirects
+APROVADOS; runtime no browser sem erros. Com a E8.7 (edge) já aprovada, a migração para SEO sem
+Prerender.io está concluída. Única pendência: remover a env PRERENDER_TOKEN no dashboard.
 ```
