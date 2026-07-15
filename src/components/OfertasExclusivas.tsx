@@ -44,11 +44,11 @@ const DIFERENCIAIS = [
 export default function OfertasExclusivas() {
   return (
     <section className="py-20 bg-neutral-950 relative overflow-hidden">
-      {/* Imagem de fundo - oficina Carplus */}
+      {/* Imagem de fundo - loja Carplus Autos (compra e venda de veículos) */}
       <div className="absolute inset-0">
         <img
           loading="lazy"
-          src="/images/loja/troca-de-pneus-portao-carplus.webp"
+          src="/images/loja/carplus-autos-compra-venda-veiculos.webp"
           alt=""
           width={1920}
           height={1280}
