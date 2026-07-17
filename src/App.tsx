@@ -12,6 +12,7 @@ import {
   COMPARISON_PAGES,
 } from './data/seoLanding';
 import { CENTRO_AUTOMOTIVO_PAGES } from './data/centroAutomotivoSeo';
+import { OFICINA_MARCA_PAGES } from './data/oficinaMarcas';
 
 // ───── Code-splitting: cada rota vira um chunk carregado sob demanda ─────
 const Home = lazy(() => import('./components/Home'));
@@ -39,6 +40,7 @@ const PneusMedidasHub = lazy(() => import('./components/PneusMedidasHub'));
 const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDeMim'));
 const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
 const CentroAutomotivoSeoPage = lazy(() => import('./components/CentroAutomotivoSeoPage'));
+const OficinaMarcaPage = lazy(() => import('./components/OficinaMarcaPage'));
 
 // Landing pages SEO (todas no mesmo módulo)
 const AroLandingPage = lazy(() =>
@@ -132,6 +134,11 @@ export default function App() {
       {/* ───── Landing pages SEO de Centro Automotivo ───── */}
       {CENTRO_AUTOMOTIVO_PAGES.map((p) => (
         <Route key={p.slug} path={`/${p.slug}`} element={<CentroAutomotivoSeoPage slug={p.slug} />} />
+      ))}
+
+      {/* ───── Landing pages SEO de Oficina por Marca ───── */}
+      {OFICINA_MARCA_PAGES.map((p) => (
+        <Route key={p.slug} path={`/oficina/${p.slug}`} element={<OficinaMarcaPage slug={p.slug} />} />
       ))}
 
       {/* ───── Hub SEO de Pneus ───── */}
