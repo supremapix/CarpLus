@@ -26,6 +26,7 @@ import {
   MEASURE_SEO,
 } from '../src/data/seoLanding';
 import { CENTRO_AUTOMOTIVO_PAGES } from '../src/data/centroAutomotivoSeo';
+import { OFICINA_MARCA_PAGES } from '../src/data/oficinaMarcas';
 import { SERVICE_CATEGORIES } from '../src/data/services';
 import { INDEXABLE_NEIGHBORHOOD_SLUGS } from '../src/data/indexableNeighborhoods';
 
@@ -233,6 +234,23 @@ export function getStaticRoutes(): StaticRoute[] {
         genPriority: 10,
       });
     }
+  }
+
+  // 4e) Landings de Oficina por Marca (prefixo /oficina/).
+  for (const p of OFICINA_MARCA_PAGES) {
+    const path = `/oficina/${p.slug}`;
+    routes.push({
+      path,
+      type: 'landing-comercial',
+      id: p.slug,
+      dataSource: 'src/data/oficinaMarcas.ts (OFICINA_MARCA_PAGES)',
+      indexable: true,
+      expectedCanonical: abs(path),
+      sitemap: 'sitemap-servicos.xml',
+      priority: '0.8',
+      changefreq: 'weekly',
+      genPriority: 10,
+    });
   }
 
   // ─── DEDUPE por path (correção técnica indispensável) ──────────────────────
