@@ -221,7 +221,7 @@ export default function ServicosPage() {
             "@id": "https://www.carpluspneuseoficina.com.br/servicos#webpage",
             "url": "https://www.carpluspneuseoficina.com.br/servicos",
             "name": "Serviços de Pneus e Oficina Mecânica em Curitiba | Carplus",
-            "isPartOf": {"@id": "https://www.carpluspneuseoficina.com.br/#business"},
+            "isPartOf": {"@id": "https://www.carpluspneuseoficina.com.br/#website"},
             "breadcrumb": {
               "@type": "BreadcrumbList",
               "itemListElement": [

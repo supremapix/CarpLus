@@ -390,6 +390,12 @@ export default function ServiceDetail() {
             `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`,
           ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
+          // As keywords por servico ja existiam em SEO_CONTENT mas nunca chegavam
+          // ao useSEO. Passamos aqui para cada pagina ter seu proprio conjunto.
+          keywords: seoContent?.keywords ?? [
+            `${service.title.toLowerCase()} curitiba`,
+            `${service.title.toLowerCase()} portão`,
+          ],
           schemaJSON: [
             {
               "@context": "https://schema.org",
