@@ -83,7 +83,7 @@ export default function PneusPromocao() {
         {/* Cabeçalho */}
         <div className="text-center mb-12 [animation:var(--animate-fade-in-up)]">
           <h2 className="font-accent font-bold uppercase text-neutral-900 text-4xl sm:text-5xl md:text-6xl tracking-tight text-balance">
-            Pneus em <span className="text-primary">Promoção</span>
+            Onde Comprar Pneus em <span className="text-primary">Curitiba</span>
           </h2>
 
           {/* Chamada para consulta rápida pelo WhatsApp */}

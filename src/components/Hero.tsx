@@ -117,16 +117,23 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
         <div className="max-w-2xl">
-          <h1 className="text-[3.2rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-3 leading-[0.95] font-bold text-center md:text-left tracking-tighter">
+          {/* H1 semantico da Home: alvo das buscas de alta intencao comercial
+              ("loja/distribuidora de pneus em Curitiba com instalacao"). Fica em
+              sr-only para NAO alterar o layout nem o efeito maquina de escrever,
+              que segue identico logo abaixo como h2. */}
+          <h1 className="sr-only">
+            Loja e Distribuidora de Pneus em Curitiba com Instalação, Alinhamento e Balanceamento
+          </h1>
+          <h2 className="text-[3.2rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-3 leading-[0.95] font-bold text-center md:text-left tracking-tighter">
             <span className="inline-flex items-center justify-center md:justify-start min-h-[1.1em] w-full">
               <Typewriter />
             </span>
             <br />
             <span className="text-white">EM CURITIBA</span>
-          </h1>
-          <h2 className="text-base sm:text-lg md:text-3xl text-white font-display font-bold uppercase tracking-tight mb-6 text-center md:text-left">
-            OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
           </h2>
+          <p className="text-base sm:text-lg md:text-3xl text-white font-display font-bold uppercase tracking-tight mb-6 text-center md:text-left">
+            OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
+          </p>
           
           <HeroPhrasesLoop />
 
