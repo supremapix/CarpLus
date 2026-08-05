@@ -44,16 +44,17 @@ export default function TireMeasuresSection() {
       <h2
         className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'}`}
       >
-        <span className="text-white">Como entender as </span>
-        <span className="text-amber-500">medidas</span>
-        <span className="text-white"> do pneu?</span>
+        <span className="text-white">Como saber a </span>
+        <span className="text-amber-500">medida certa</span>
+        <span className="text-white"> do pneu do meu carro?</span>
       </h2>
 
       {/* Description */}
       <p
         className={`text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-6 md:mb-8 leading-relaxed px-2 transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2.5'}`}
       >
-        Entenda o significado dos numeros na lateral do seu pneu e escolha o modelo certo.
+        Entenda o significado dos números na lateral do pneu (largura, perfil e aro) e descubra a
+        medida correta para o seu veículo antes de comprar.
       </p>
 
       {/* Infographic Image */}

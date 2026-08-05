@@ -25,11 +25,31 @@ const PneusPorAroSection = lazy(() => import('./PneusPorAroSection'));
 
 export default function Home() {
   useSEO({
-    title: 'Carplus Centro Automotivo – Loja de Pneus e Oficina em Curitiba, Portão',
-    description: 'Loja de pneus Pirelli, Michelin, Goodyear, Continental e Yokohama em Curitiba. Alinhamento 3D, troca de óleo, suspensão e freios. No Portão – (41) 3082-7282.',
+    title: 'Loja e Distribuidora de Pneus em Curitiba | Instalação e Alinhamento | Carplus',
+    description: 'Onde comprar e instalar pneus em Curitiba: Michelin, Pirelli, Goodyear, Bridgestone e Continental com montagem e balanceamento inclusos, em até 10x sem juros. Alinhamento 3D no Portão – (41) 3082-7282.',
     canonical: 'https://www.carpluspneuseoficina.com.br/',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
-    keywords: ['loja de pneus Curitiba', 'pneus Portão Curitiba', 'oficina mecânica Portão', 'alinhamento 3D Curitiba', 'Carplus Centro Automotivo', 'pneu aro 14', 'pneu aro 15', 'pneu aro 16', 'pneu aro 17', 'pneu aro 18', 'pneu aro 19', 'pneu aro 20', 'pneu aro 21', 'pneu aro 22', 'pneu aro 23'],
+    keywords: [
+      // Intencao comercial primaria (compra e instalacao)
+      'onde instalar pneus em Curitiba', 'onde trocar pneus em Curitiba', 'onde comprar pneus em Curitiba',
+      'distribuidora de pneus em Curitiba', 'loja de pneus em Curitiba', 'comprar pneus em Curitiba',
+      'pneus em Curitiba', 'troca de pneus Curitiba', 'instalação de pneus Curitiba',
+      'pneus com instalação', 'pneus com montagem', 'montagem de pneus',
+      // Centro automotivo / auto center
+      'centro automotivo Curitiba', 'auto center Curitiba', 'melhor loja de pneus em Curitiba',
+      'loja de pneus Portão', 'centro automotivo Portão', 'oficina mecânica Portão',
+      // Condicoes comerciais
+      'pneus parcelados', 'pneus em até 10x', 'pneus com garantia', 'pneus originais',
+      // Marcas
+      'pneus Michelin Curitiba', 'pneus Pirelli Curitiba', 'pneus Goodyear Curitiba',
+      'pneus Bridgestone Curitiba', 'pneus Continental Curitiba', 'pneus Yokohama Curitiba',
+      'pneus Prinx Curitiba', 'pneus Delinte Curitiba',
+      // Servicos relacionados
+      'alinhamento 3D Curitiba', 'balanceamento de pneus', 'rodízio de pneus', 'conserto de pneus',
+      // Aros
+      'pneu aro 14', 'pneu aro 15', 'pneu aro 16', 'pneu aro 17', 'pneu aro 18',
+      'pneu aro 19', 'pneu aro 20', 'pneu aro 21', 'pneu aro 22', 'pneu aro 23',
+    ],
   });
 
   return (

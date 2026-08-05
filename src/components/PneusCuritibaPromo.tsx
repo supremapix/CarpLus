@@ -70,11 +70,12 @@ export default function PneusCuritibaPromo() {
             Ofertas Exclusivas
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-normal">
-            <span className="text-dark">Pneus em Curitiba e </span>
-            <span className="text-primary italic">Promoção!</span>
+            <span className="text-dark">Onde Trocar Pneus em Curitiba com </span>
+            <span className="text-primary italic">Montagem Grátis</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Os melhores preços em pneus no bairro Portão. Condições imperdíveis para você trocar seus pneus com segurança e economia.
+            Somos loja e distribuidora de pneus no bairro Portão, em Curitiba: pneus novos e originais das
+            melhores marcas com montagem, balanceamento e alinhamento inclusos, em até 10x sem juros.
           </p>
         </div>
 

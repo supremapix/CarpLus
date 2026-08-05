@@ -197,45 +197,23 @@ export default function ServicosPage() {
         "@context": "https://schema.org",
         "@graph": [
           {
+            // Mesmo @id da entidade declarada no index.html. Antes esta pagina usava
+            // "#business" com geo, horario de sabado e aggregateRating diferentes dos
+            // do index.html — dois "negocios" contraditorios para a mesma empresa.
+            // Nota, coordenadas e horarios ficam declarados apenas na fonte unica.
             "@type": "AutoRepair",
-            "@id": "https://www.carpluspneuseoficina.com.br/#business",
+            "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
             "name": "Carplus Centro Automotivo",
             "alternateName": "Carplus Pneus e Oficina Mecânica",
-            "url": "https://www.carpluspneuseoficina.com.br",
-            "telephone": "+554130827282",
+            "url": "https://www.carpluspneuseoficina.com.br/",
+            "telephone": "+55-41-3082-7282",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Av. Presidente Arthur da Silva Bernardes, 1323",
+              "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
               "addressLocality": "Curitiba",
               "addressRegion": "PR",
               "postalCode": "80320-300",
               "addressCountry": "BR"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": -25.4853,
-              "longitude": -49.2872
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                "opens": "08:00",
-                "closes": "18:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "08:00",
-                "closes": "12:00"
-              }
-            ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "234",
-              "bestRating": "5",
-              "worstRating": "1"
             }
           },
           {
@@ -243,7 +221,7 @@ export default function ServicosPage() {
             "@id": "https://www.carpluspneuseoficina.com.br/servicos#webpage",
             "url": "https://www.carpluspneuseoficina.com.br/servicos",
             "name": "Serviços de Pneus e Oficina Mecânica em Curitiba | Carplus",
-            "isPartOf": {"@id": "https://www.carpluspneuseoficina.com.br/#business"},
+            "isPartOf": {"@id": "https://www.carpluspneuseoficina.com.br/#website"},
             "breadcrumb": {
               "@type": "BreadcrumbList",
               "itemListElement": [

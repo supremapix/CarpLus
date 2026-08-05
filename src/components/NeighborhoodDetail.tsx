@@ -73,11 +73,17 @@ export default function NeighborhoodDetail() {
           ogImage: '/images/loja/carplus-oficina-portao-fachada-curitiba.jpg',
           schemaJSON: [
             {
+              // Mesma entidade do index.html, referenciada por @id. Antes cada pagina
+              // de bairro declarava um LocalBusiness proprio com "url" diferente e
+              // aggregateRating repetido — 15+ negocios aparentes no mesmo endereco,
+              // padrao que o Google trata como doorway page. Aqui apenas ampliamos o
+              // areaServed da entidade unica; a nota/avaliacoes ficam declaradas em
+              // um unico lugar (index.html) para nao haver contagens divergentes.
               "@context": "https://schema.org",
+              "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
               "@type": "LocalBusiness",
               "name": "Carplus Centro Automotivo",
-              "description": seoContent.metaDescription,
-              "url": `https://www.carpluspneuseoficina.com.br/bairro/${slugForUrl}`,
+              "url": "https://www.carpluspneuseoficina.com.br/",
               "telephone": "+55-41-3082-7282",
               "address": {
                 "@type": "PostalAddress",
@@ -93,13 +99,7 @@ export default function NeighborhoodDetail() {
                 { "@type": "Neighborhood", "name": bairro.name }
               ],
               "priceRange": "$$",
-              "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "234",
-                "bestRating": "5"
-              }
+              "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"]
             },
             {
               "@context": "https://schema.org",
@@ -115,6 +115,7 @@ export default function NeighborhoodDetail() {
               "@type": "Service",
               "serviceType": "Venda e instalação de pneus",
               "provider": {
+                "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
                 "@type": "LocalBusiness",
                 "name": "Carplus Centro Automotivo"
               },
