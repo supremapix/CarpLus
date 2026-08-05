@@ -28,14 +28,14 @@ export default function CentroAutomotivoCTA() {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                Centro Automotivo Completo no{' '}
-                <span className="text-amber-500">Portão</span>
+                Onde Instalar Pneus em Curitiba:{' '}
+                <span className="text-amber-500">Centro Automotivo no Portão</span>
               </h2>
 
               <p className="text-neutral-300 text-lg mb-6 leading-relaxed">
-                Pneus das melhores marcas, mecânica especializada, alinhamento 3D e atendimento 
-                de confiança. Tudo que seu carro precisa em um só lugar, com mais de 35 anos 
-                de experiência no mercado automotivo.
+                Compre e instale seus pneus no mesmo lugar: pneus das melhores marcas com instalação,
+                balanceamento e alinhamento 3D feitos por mecânicos especializados. Somos um centro
+                automotivo completo em Curitiba, com mais de 35 anos de experiência e garantia total.
               </p>
 
               {/* Features */}

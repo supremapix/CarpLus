@@ -117,8 +117,11 @@ export default function TireDetail() {
   useSEO(
     tire
       ? {
-          title: `${tire.nome} em Curitiba | Carplus Centro Automotivo – Portao`,
-          description: `Compre ${tire.nome} (medida ${tire.medida}) na Carplus em Curitiba. Montagem inclusa, parcelamento em ate 10x sem juros, garantia de fabrica. Ligue: (41) 3082-7282.`,
+          // Title enxuto: o nome do pneu (marca + medida) vem primeiro porque e o
+          // que o usuario digita no Google. O sufixo antigo estourava ~79 caracteres
+          // e era truncado na SERP, escondendo a cidade.
+          title: `Pneu ${tire.nome} em Curitiba | Carplus`,
+          description: `Pneu ${tire.nome} na medida ${tire.medida} em Curitiba com montagem e balanceamento inclusos, em ate 10x sem juros e garantia de fabrica. Retire no Portao: (41) 3082-7282.`,
           canonical: indexDecision?.canonicalUrl ?? `${BASE_URL}/pneu/${tire.slug}`,
           noindex: indexDecision ? !indexDecision.index : false,
           ogImage: tire.imagemGrande,

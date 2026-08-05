@@ -318,6 +318,45 @@ const SERVICOS_COMPLEMENTARES: Record<string, { nome: string; slug: string }[]> 
   ],
 };
 
+// Title e description EXCLUSIVOS por servico. Sem isso, todas as paginas de
+// servico caem no mesmo template generico, o que gera concorrencia interna
+// (varias URLs disputando a mesma query) e snippets pouco atrativos no Google.
+// Title alvo: ate ~60 caracteres. Description: 120-158 caracteres.
+const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'montagem-de-pneu': {
+    title: 'Montagem de Pneus em Curitiba | Grátis na Compra | Carplus',
+    description: 'Montagem de pneus em Curitiba com balanceamento incluso e grátis na compra dos pneus. Equipamento computadorizado, pronto em até 1 hora. Portão – (41) 3082-7282.',
+  },
+  'alinhamento-e-balanceamento': {
+    title: 'Alinhamento e Balanceamento em Curitiba | Alinhamento 3D | Carplus',
+    description: 'Alinhamento 3D computadorizado e balanceamento de rodas em Curitiba. Corrige volante torto, puxada para o lado e desgaste irregular dos pneus. Agende: (41) 3082-7282.',
+  },
+  'rodizio-de-pneus': {
+    title: 'Rodízio de Pneus em Curitiba | A Cada 10.000 km | Carplus',
+    description: 'Rodízio de pneus em Curitiba para uniformizar o desgaste e aumentar a vida útil dos seus pneus. Recomendado a cada 10.000 km. Portão – (41) 3082-7282.',
+  },
+  'conserto-de-pneu': {
+    title: 'Conserto de Pneu em Curitiba | Reparo Rápido | Carplus',
+    description: 'Conserto e reparo de pneu furado em Curitiba com avaliação gratuita. Serviço rápido no bairro Portão, com estoque para pronta entrega. Ligue (41) 3082-7282.',
+  },
+  'manutencao-e-calibragem-de-pneus': {
+    title: 'Calibragem de Pneus em Curitiba | Gratuita | Carplus',
+    description: 'Calibragem de pneus gratuita para clientes em Curitiba, com pressão correta para o seu veículo. Economize combustível e evite desgaste irregular. Portão – (41) 3082-7282.',
+  },
+  'venda-de-pneus': {
+    title: 'Venda de Pneus em Curitiba | Montagem Inclusa | Carplus',
+    description: 'Pneus novos Michelin, Pirelli, Goodyear, Bridgestone e Continental em Curitiba, com montagem e balanceamento inclusos em até 10x sem juros. Portão – (41) 3082-7282.',
+  },
+  'loja-de-pneus': {
+    title: 'Loja de Pneus em Curitiba | Aro 13 ao 22 | Carplus',
+    description: 'Loja de pneus no Portão, em Curitiba, com as melhores marcas do aro 13 ao aro 22 para carros, SUVs e picapes. Montagem inclusa e garantia de fábrica. (41) 3082-7282.',
+  },
+  'alinhamento-3d': {
+    title: 'Alinhamento 3D em Curitiba | Computadorizado | Carplus',
+    description: 'Alinhamento 3D computadorizado em Curitiba com precisão milimétrica. Corrige a geometria da suspensão e evita o desgaste prematuro dos pneus. (41) 3082-7282.',
+  },
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   // Try to find in old SERVICES first, then in new ALL_NEW_SERVICES
@@ -343,8 +382,12 @@ export default function ServiceDetail() {
   useSEO(
     service
       ? {
-          title: `${service.title} em Curitiba Portão | Carplus Centro Automotivo`,
-          description: `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
+          title:
+            SERVICE_SEO_OVERRIDES[service.slug]?.title ??
+            `${service.title} em Curitiba Portão | Carplus Centro Automotivo`,
+          description:
+            SERVICE_SEO_OVERRIDES[service.slug]?.description ??
+            `${service.description} na Carplus, bairro Portão em Curitiba. Agende: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`,
           ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
           schemaJSON: [
@@ -354,7 +397,10 @@ export default function ServiceDetail() {
               "name": service.title,
               "description": service.description,
               "provider": {
-                "@type": "AutoPartsStore",
+                // @id aponta para a entidade unica declarada no index.html, para o
+                // Google consolidar os sinais em um mesmo negocio local.
+                "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
+                "@type": "AutoRepair",
                 "name": "Carplus Centro Automotivo",
                 "telephone": "+55-41-3082-7282",
                 "url": "https://www.carpluspneuseoficina.com.br/",
@@ -368,15 +414,15 @@ export default function ServiceDetail() {
                 }
               },
               "areaServed": { "@type": "City", "name": "Curitiba" },
-              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/`
+              "url": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}`
             },
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.carpluspneuseoficina.com.br/" },
-                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/servicos/" },
-                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}/` }
+                { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://www.carpluspneuseoficina.com.br/servicos" },
+                { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://www.carpluspneuseoficina.com.br/servico/${service.slug}` }
               ]
             },
             // FAQPage Schema para Rich Snippets no Google - 12 perguntas por servico

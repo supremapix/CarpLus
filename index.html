@@ -112,15 +112,17 @@
           }
         },
         {
-          "@type": ["AutoRepair", "TireShop", "LocalBusiness"],
+          "@type": ["AutoRepair", "TireShop", "Store", "LocalBusiness"],
           "@id": "https://www.carpluspneuseoficina.com.br/#localbusiness",
           "name": "Carplus Centro Automotivo",
-          "alternateName": "Carplus Curitiba",
-          "description": "Loja de pneus e oficina mecânica em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental, Yokohama. Alinhamento 3D, troca de óleo, suspensão, freios e mais.",
+          "alternateName": ["Carplus Curitiba", "Carplus Pneus e Oficina"],
+          "description": "Loja e distribuidora de pneus em Curitiba com instalação inclusa. Pneus Michelin, Pirelli, Goodyear, Bridgestone, Continental e Yokohama com montagem, balanceamento e alinhamento 3D. Centro automotivo completo no bairro Portão.",
           "url": "https://www.carpluspneuseoficina.com.br/",
           "telephone": "+55-41-3082-7282",
           "email": "contato@carpluspneuseoficina.com.br",
           "priceRange": "$$",
+          "currenciesAccepted": "BRL",
+          "paymentAccepted": "Cash, Credit Card, Debit Card, PIX",
           "image": "https://www.carpluspneuseoficina.com.br/images/loja/loja-de-pneus-curitiba.webp",
           "logo": "https://www.carpluspneuseoficina.com.br/carplus-pneus-oficina-mecanica-full-service-horizontal.svg",
           "parentOrganization": { "@id": "https://www.carpluspneuseoficina.com.br/#organization" },
@@ -170,58 +172,56 @@
               "name": "Paraná",
               "addressCountry": "BR"
             }
+          },
+          "brand": [
+            { "@type": "Brand", "name": "Michelin" },
+            { "@type": "Brand", "name": "Pirelli" },
+            { "@type": "Brand", "name": "Goodyear" },
+            { "@type": "Brand", "name": "Bridgestone" },
+            { "@type": "Brand", "name": "Continental" },
+            { "@type": "Brand", "name": "Yokohama" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pneus e Serviços Automotivos em Curitiba",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Venda e Instalação de Pneus",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Michelin" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Pirelli" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Goodyear" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Bridgestone" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Continental" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pneus Yokohama" } }
+                ]
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Serviços de Pneus",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montagem e instalação de pneus" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alinhamento 3D computadorizado" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Balanceamento de rodas" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rodízio de pneus" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto e reparo de pneus" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Calibragem com nitrogênio" } }
+                ]
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Oficina Mecânica",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de óleo e filtros" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensão e amortecedores" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Freios e pastilhas" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico computadorizado" } }
+                ]
+              }
+            ]
           }
         }
-      ]
-    }
-    </script>
-
-    <!-- Google Shopping / Rich Snippets — Store (nome + imagem + cidade para os cards do Google) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Store",
-      "@id": "https://www.carpluspneuseoficina.com.br/#store",
-      "name": "Carplus Pneus e Oficina",
-      "alternateName": "Carplus Centro Automotivo",
-      "url": "https://www.carpluspneuseoficina.com.br",
-      "image": "https://www.carpluspneuseoficina.com.br/og-image.jpg",
-      "logo": "https://www.carpluspneuseoficina.com.br/favicon.png",
-      "telephone": "+55-41-3082-7282",
-      "priceRange": "$$",
-      "currenciesAccepted": "BRL",
-      "paymentAccepted": "Cash, Credit Card, Debit Card, PIX",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Arthur da Silva Bernardes, 1323",
-        "addressLocality": "Curitiba",
-        "addressRegion": "PR",
-        "postalCode": "80320-300",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -25.4770,
-        "longitude": -49.2845
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Curitiba",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Paraná",
-          "addressCountry": "BR"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "227",
-        "bestRating": "5"
-      },
-      "sameAs": [
-        "https://www.instagram.com/carpluscwb",
-        "https://www.facebook.com/carpluscwb"
       ]
     }
     </script>
