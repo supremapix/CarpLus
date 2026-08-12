@@ -6,10 +6,10 @@ import { SERVICE_CATEGORIES } from '../data/services';
 export default function Footer() {
   return (
     <>
-    <footer className="bg-dark text-white pt-24 pb-4">
+    <footer className="bg-dark pb-4 pt-14 text-white md:pt-20">
       {/* Pre-footer CTA */}
-      <div className="max-w-7xl mx-auto px-4 mb-20 relative z-10">
-         <div className="bg-primary p-10 md:p-14 rounded-[32px] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl shadow-primary/30">
+      <div className="relative z-10 mx-auto mb-12 max-w-7xl px-4 md:mb-16">
+         <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-primary p-6 shadow-xl shadow-primary/20 sm:p-8 lg:flex-row">
             <div className="text-center lg:text-left">
                <h2 className="text-4xl lg:text-5xl mb-3 leading-tight font-black"><span className="text-white">Precisa de Pneus</span> <br /> <span className="text-black italic">ou Oficina?</span></h2>
                <p className="text-black/70 text-base font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
@@ -31,17 +31,17 @@ export default function Footer() {
          </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 text-center md:text-left items-center md:items-start">
+      <div className="mx-auto mb-16 grid max-w-7xl grid-cols-1 items-start gap-10 px-4 text-left sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
          {/* About */}
-         <div className="space-y-10 flex flex-col items-center md:items-start w-full">
+         <div className="flex w-full flex-col items-start gap-6">
             <img loading="lazy" 
               src="/images/logos/logo-vertical.svg" 
               width={957}
               height={1025}
-              className="h-56 md:h-64 drop-shadow-2xl" 
+              className="h-36 w-auto drop-shadow-xl md:h-44"
               alt="Carplus" 
             />
-            <p className="text-white/60 text-xl leading-relaxed max-w-sm mx-auto md:mx-0 font-medium">
+            <p className="max-w-sm text-base font-medium leading-relaxed text-white/65">
               Referência em Curitiba para quem busca segurança, tecnologia de ponta e o melhor atendimento para seu veículo.
             </p>
          </div>
@@ -180,7 +180,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-white/40 text-sm">
          <div className="text-center md:text-left space-y-1">
             <p className="font-bold">Carplus Centro Automotivo © 2025</p>
-            <p className="text-xs">CNPJ 22.345.678/0001-90 · Todos os direitos reservados</p>
+            <p className="text-xs">Todos os direitos reservados</p>
          </div>
          
          <a 

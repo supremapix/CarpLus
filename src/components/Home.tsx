@@ -25,8 +25,8 @@ const PneusPorAroSection = lazy(() => import('./PneusPorAroSection'));
 
 export default function Home() {
   useSEO({
-    title: 'Loja e Distribuidora de Pneus em Curitiba | Instalação e Alinhamento | Carplus',
-    description: 'Onde comprar e instalar pneus em Curitiba: Michelin, Pirelli, Goodyear, Bridgestone e Continental com montagem e balanceamento inclusos, em até 10x sem juros. Alinhamento 3D no Portão – (41) 3082-7282.',
+    title: 'Oficina Mecânica e Pneus em Curitiba | Carplus Centro Automotivo',
+    description: 'Oficina mecânica e pneus em Curitiba: alinhamento e balanceamento 3D, freios, suspensão, troca de óleo, diagnóstico e pneus com instalação no Portão.',
     canonical: 'https://www.carpluspneuseoficina.com.br/',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: [

@@ -1,13 +1,13 @@
 # E6 — Paridade Enumerador ↔ Sitemaps
 
-Gerado em: 2026-07-14T20:09:29.566Z
+Gerado em: 2026-08-12T17:04:14.639Z
 
 ## Totais
 
-- Enumerador (rotas indexáveis): **1512**
-- Sitemaps (URLs somadas): **1512**
-- URLs únicas no enumerador: 1512
-- URLs únicas nos sitemaps: 1512
+- Enumerador (rotas indexáveis): **1524**
+- Sitemaps (URLs somadas): **1524**
+- URLs únicas no enumerador: 1524
+- URLs únicas nos sitemaps: 1524
 
 ## Divergências
 

@@ -142,12 +142,31 @@
   @apply font-accent uppercase tracking-wider;
 }
 
-/* Single line buttons */
-button, a {
-  @apply whitespace-nowrap overflow-hidden text-ellipsis;
+/* Botões permanecem em uma linha; links podem quebrar naturalmente em telas estreitas. */
+button {
+  @apply whitespace-nowrap;
 }
 
-/* Footer service links - override global a styles */
+a {
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  line-height: 1.5;
+}
+
+/* Footer service links */
 .footer-service-link {
   color: rgba(255, 255, 255, 0.8) !important;
   white-space: normal !important;

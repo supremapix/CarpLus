@@ -16,6 +16,7 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://www.carpluspneuseoficina.com.br';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-carplus.webp`;
 
 export function useSEO({ 
   title, 
@@ -56,21 +57,28 @@ export function useSEO({
       setMeta('meta[name="keywords"]', 'content', keywords.join(', '));
     }
 
+    const canonicalUrl = canonical || `${BASE_URL}${window.location.pathname}`;
+    const fullImageUrl = ogImage
+      ? (ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`)
+      : DEFAULT_OG_IMAGE;
+
+    // Remove keywords residuais quando a rota atual não as define.
+    const keywordsEl = document.querySelector('meta[name="keywords"]');
+    if (keywords.length === 0) keywordsEl?.remove();
+
     // Open Graph
     setMeta('meta[property="og:title"]', 'content', title);
     setMeta('meta[property="og:description"]', 'content', description);
     setMeta('meta[property="og:type"]', 'content', ogType);
-    setMeta('meta[property="og:url"]', 'content', canonical || window.location.href);
+    setMeta('meta[property="og:url"]', 'content', canonicalUrl);
     setMeta('meta[property="og:site_name"]', 'content', 'Carplus Pneus e Oficina');
     setMeta('meta[property="og:locale"]', 'content', 'pt_BR');
 
-    if (ogImage) {
-      const fullImageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`;
-      setMeta('meta[property="og:image"]', 'content', fullImageUrl);
-      setMeta('meta[property="og:image:width"]', 'content', '1200');
-      setMeta('meta[property="og:image:height"]', 'content', '630');
-      setMeta('meta[name="twitter:image"]', 'content', fullImageUrl);
-    }
+    setMeta('meta[property="og:image"]', 'content', fullImageUrl);
+    setMeta('meta[property="og:image:width"]', 'content', '1200');
+    setMeta('meta[property="og:image:height"]', 'content', '630');
+    setMeta('meta[property="og:image:alt"]', 'content', `${title} — Carplus Centro Automotivo`);
+    setMeta('meta[name="twitter:image"]', 'content', fullImageUrl);
 
     // Twitter Card
     setMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
@@ -79,14 +87,12 @@ export function useSEO({
 
     // Canonical URL
     let canonicalEl = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) {
-      if (!canonicalEl) {
-        canonicalEl = document.createElement('link');
-        canonicalEl.rel = 'canonical';
-        document.head.appendChild(canonicalEl);
-      }
-      canonicalEl.href = canonical;
+    if (!canonicalEl) {
+      canonicalEl = document.createElement('link');
+      canonicalEl.rel = 'canonical';
+      document.head.appendChild(canonicalEl);
     }
+    canonicalEl.href = canonicalUrl;
 
     // rel="prev" / rel="next" para paginação (reforça sinais ao Google).
     const setPageLink = (rel: 'prev' | 'next', href?: string): HTMLLinkElement | null => {

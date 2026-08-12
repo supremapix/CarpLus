@@ -26,12 +26,24 @@ export default function Navbar() {
       }
       if (e.key === 'Escape') {
         setIsSearchOpen(false);
+        setIsMobileMenuOpen(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { name: 'Início', href: '/#inicio' },
@@ -56,10 +68,10 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Top bar */}
       <div className="bg-primary text-white py-1.5 px-4 text-[10px] md:text-xs font-medium">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1"><MapPin size={12} /> Portão, Curitiba</span>
-            <span className="flex items-center gap-1"><Phone size={12} /> (41) 3082-7282</span>
+            <a href="tel:+554130827282" className="hidden items-center gap-1 sm:flex"><Phone size={12} /> (41) 3082-7282</a>
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden sm:flex items-center gap-1"><Clock size={12} /> Seg-Sex 8h-18h | Sáb 8h-12h</span>
@@ -121,18 +133,31 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile toggle + search */}
-          <div className="lg:hidden flex items-center gap-2">
+          {/* Mobile: uma ação prioritária, busca e menu */}
+          <div className="flex items-center gap-1.5 lg:hidden">
+            <a
+              href="https://wa.me/554130827282"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-2.5 text-[10px] font-bold uppercase text-dark min-[360px]:flex min-[400px]:px-3 min-[400px]:text-xs"
+            >
+              WhatsApp
+            </a>
             <button
+              type="button"
               onClick={() => setIsSearchOpen(true)}
-              className="text-white p-2 bg-white/5 rounded-full"
-              aria-label="Buscar"
+              className="flex size-11 items-center justify-center rounded-full bg-white/10 text-white"
+              aria-label="Abrir busca"
             >
               <Search size={20} />
             </button>
             <button
-              className="text-white p-2"
+              type="button"
+              className="flex size-11 items-center justify-center rounded-full text-white"
               onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Abrir menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <Menu className="text-white" />
             </button>
@@ -142,11 +167,15 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-[60] bg-dark text-white p-6 flex flex-col transition-transform duration-300 ease-out will-change-transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}
+        id="mobile-navigation"
+        className={`fixed inset-0 z-[60] flex flex-col overflow-hidden bg-white p-4 text-dark transition-transform duration-300 ease-out will-change-transform sm:p-6 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}
         aria-hidden={!isMobileMenuOpen}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu principal"
       >
             {/* Header do drawer com logo local */}
-            <div className="flex justify-between items-center mb-8 bg-black/30 p-4 rounded-3xl border border-white/5">
+            <div className="mb-5 flex items-center justify-between rounded-2xl bg-dark p-3">
               <img loading="lazy"
                 src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
                 alt="Carplus Centro Automotivo"
@@ -154,20 +183,20 @@ export default function Navbar() {
                 height={708}
                 className="h-10"
               />
-              <button onClick={() => setIsMobileMenuOpen(false)} className="bg-white/10 p-2 rounded-xl">
-                <X size={32} />
+              <button type="button" onClick={() => setIsMobileMenuOpen(false)} className="flex size-11 items-center justify-center rounded-xl bg-white/10 text-white" aria-label="Fechar menu">
+                <X size={24} />
               </button>
             </div>
 
-            <div className="flex flex-col gap-8 overflow-y-auto pb-12">
-              <div className="space-y-4">
-                <p className="text-primary font-bold text-xs uppercase tracking-widest pl-2">Menu Principal</p>
+            <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
+              <div className="flex flex-col gap-1">
+                <p className="px-2 pb-2 text-xs font-bold uppercase tracking-widest text-primary">Menu principal</p>
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.href}
                     onClick={(e: any) => handleLinkClick(e, link.href)}
-                    className="font-display text-2xl font-bold uppercase block hover:text-primary transition-colors py-2 border-l-4 border-transparent hover:border-primary pl-2"
+                    className="flex min-h-12 items-center rounded-xl px-3 font-display text-xl font-bold uppercase transition-colors hover:bg-gray-100 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {link.name}
                   </Link>
@@ -182,20 +211,20 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              <div className="pt-8 border-t border-white/10 space-y-6">
+              <div className="flex flex-col gap-4 border-t border-gray-200 pt-5">
                 <p className="text-primary font-bold text-xs uppercase tracking-widest pl-2">Informações de Contato</p>
 
                 <div className="grid grid-cols-1 gap-4">
                   <a
                     href="tel:+554130827282"
-                    className="bg-white/5 p-6 rounded-3xl border border-white/10 flex items-center gap-6 group hover:bg-white/10 transition-all"
+                    className="flex min-h-16 items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 transition-colors hover:border-primary"
                   >
                     <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-black">
                       <Phone size={32} />
                     </div>
                     <div>
-                      <p className="text-white font-black text-2xl leading-none mb-1">(41) 3082-7282</p>
-                      <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Ligar Agora</p>
+                      <p className="text-xl font-black leading-none text-dark">(41) 3082-7282</p>
+                      <p className="mt-1 text-xs font-bold uppercase tracking-widest text-gray-500">Ligar agora</p>
                     </div>
                   </a>
 
@@ -208,7 +237,7 @@ export default function Navbar() {
                     </div>
                     <div>
                       <p className="text-[#25D366] font-black text-2xl leading-none mb-1">WhatsApp</p>
-                      <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Falar com Consultor</p>
+                      <p className="mt-1 text-xs font-bold uppercase tracking-widest text-gray-500">Falar com consultor</p>
                     </div>
                   </a>
                 </div>

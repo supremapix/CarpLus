@@ -88,7 +88,7 @@ function HeroPhrasesLoop() {
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-dark">
+    <section id="inicio" className="relative flex min-h-[760px] items-center overflow-hidden bg-dark md:min-h-screen">
       {/* Background Image - Mobile */}
       <div className="absolute inset-0 md:hidden">
         <img 
@@ -115,24 +115,21 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 pt-36 pb-24 md:pt-40 md:pb-28">
+      <div className="relative mx-auto w-full max-w-7xl px-4 pb-24 pt-36 sm:px-6 md:pb-28 md:pt-40 lg:px-8">
         <div className="max-w-2xl">
-          {/* H1 semantico da Home: alvo das buscas de alta intencao comercial
-              ("loja/distribuidora de pneus em Curitiba com instalacao"). Fica em
-              sr-only para NAO alterar o layout nem o efeito maquina de escrever,
-              que segue identico logo abaixo como h2. */}
-          <h1 className="sr-only">
-            Loja e Distribuidora de Pneus em Curitiba com Instalação, Alinhamento e Balanceamento
+          <p className="mb-4 text-center font-accent text-xs font-bold uppercase tracking-[0.2em] text-primary md:text-left">
+            Pneus, mecânica e cuidado completo
+          </p>
+          <h1 className="text-balance text-center text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-left md:text-6xl lg:text-7xl">
+            Oficina Mecânica e Pneus em Curitiba
+            <span className="mt-2 block text-primary">Carplus Centro Automotivo</span>
           </h1>
-          <h2 className="text-[3.2rem] sm:text-6xl md:text-7xl lg:text-8xl text-white mb-3 leading-[0.95] font-bold text-center md:text-left tracking-tighter">
-            <span className="inline-flex items-center justify-center md:justify-start min-h-[1.1em] w-full">
-              <Typewriter />
-            </span>
-            <br />
-            <span className="text-white">EM CURITIBA</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-3xl text-white font-display font-bold uppercase tracking-tight mb-6 text-center md:text-left">
-            OFICINA MECÂNICA <span className="text-primary italic">FULL SERVICE</span>
+          <div className="mt-5 flex min-h-10 items-center justify-center font-display text-xl font-bold uppercase text-white md:justify-start md:text-2xl" aria-hidden="true">
+            <Typewriter />
+            <span className="ml-2">em Curitiba</span>
+          </div>
+          <p className="mb-6 mt-3 text-center text-base font-bold uppercase tracking-tight text-white md:text-left md:text-xl">
+            Oficina mecânica <span className="text-primary italic">Full Service</span>
           </p>
           
           <HeroPhrasesLoop />
