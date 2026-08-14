@@ -8,9 +8,10 @@ import TireMeasuresSection from './TireMeasuresSection';
 import PneusCuritibaPromo from './PneusCuritibaPromo';
 import Footer from './Footer';
 import DeferredSection from './DeferredSection';
-import { MessageSquare } from 'lucide-react';
+import { ArrowRight, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
+import SectionTitle from './SectionTitle';
 
 // Componentes abaixo da dobra: carregados sob demanda (lazy) para manter o
 // chunk "motion" fora do caminho critico do carregamento inicial da Home.
@@ -59,19 +60,26 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section className="bg-white py-12" aria-labelledby="home-local-services">
-          <div className="mx-auto max-w-5xl px-4 text-center">
-            <h2 id="home-local-services" className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
-              Pneus e manutenção automotiva no Portão, em Curitiba
-            </h2>
-            <p className="mx-auto mb-6 max-w-3xl text-base leading-relaxed text-gray-600">
+        <section className="-mb-16 bg-white py-16 md:-mb-24 md:py-24" aria-labelledby="home-local-services">
+          <div className="mx-auto max-w-7xl px-4">
+            <div id="home-local-services">
+              <SectionTitle
+                prefix="PNEUS E MANUTENÇÃO AUTOMOTIVA"
+                highlight="NO PORTÃO, EM CURITIBA"
+                className="!mb-4 !max-w-none !text-left [&_h2]:text-balance"
+              />
+            </div>
+            <p className="mb-8 max-w-[60ch] text-left text-base font-light leading-relaxed text-gray-600 sm:text-lg md:text-xl">
               A Carplus atende Curitiba com pneus, alinhamento, balanceamento, suspensão, freios e manutenção automotiva. Nossa oficina fica no bairro Portão e reúne serviços para cuidar da segurança e do desempenho do seu veículo.
             </p>
-            <nav className="flex flex-wrap justify-center gap-3" aria-label="Principais serviços da Carplus">
-              <Link to="/servico/alinhamento-3d" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Alinhamento 3D em Curitiba</Link>
-              <Link to="/servico/conserto-de-rodas" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Conserto de rodas em Curitiba</Link>
-              <Link to="/servico/alinhamento-e-balanceamento" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Alinhamento e balanceamento</Link>
-              <Link to="/servicos" className="rounded-full bg-gray-900 px-4 py-2 font-bold text-white transition-colors hover:bg-primary hover:text-gray-900">Ver todos os serviços</Link>
+            <nav className="flex flex-wrap items-center justify-start gap-3" aria-label="Principais serviços da Carplus">
+              <Link to="/servico/alinhamento-3d" className="flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full bg-gray-100 px-4 py-2 text-xs font-bold uppercase tracking-tight text-gray-600 transition-all hover:bg-gray-200">Alinhamento 3D em Curitiba</Link>
+              <Link to="/servico/conserto-de-rodas" className="flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full bg-gray-100 px-4 py-2 text-xs font-bold uppercase tracking-tight text-gray-600 transition-all hover:bg-gray-200">Conserto de rodas em Curitiba</Link>
+              <Link to="/servico/alinhamento-e-balanceamento" className="flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full bg-gray-100 px-4 py-2 text-xs font-bold uppercase tracking-tight text-gray-600 transition-all hover:bg-gray-200">Alinhamento e balanceamento</Link>
+              <Link to="/servicos" className="flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-bold uppercase tracking-tight text-black shadow-lg shadow-primary/20 transition-colors hover:bg-yellow-400">
+                Ver todos os serviços
+                <ArrowRight size={16} />
+              </Link>
             </nav>
           </div>
         </section>
