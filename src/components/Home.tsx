@@ -9,6 +9,7 @@ import PneusCuritibaPromo from './PneusCuritibaPromo';
 import Footer from './Footer';
 import DeferredSection from './DeferredSection';
 import { MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 
 // Componentes abaixo da dobra: carregados sob demanda (lazy) para manter o
@@ -57,6 +58,23 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+
+        <section className="bg-white py-12" aria-labelledby="home-local-services">
+          <div className="mx-auto max-w-5xl px-4 text-center">
+            <h2 id="home-local-services" className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+              Pneus e manutenção automotiva no Portão, em Curitiba
+            </h2>
+            <p className="mx-auto mb-6 max-w-3xl text-base leading-relaxed text-gray-600">
+              A Carplus atende Curitiba com pneus, alinhamento, balanceamento, suspensão, freios e manutenção automotiva. Nossa oficina fica no bairro Portão e reúne serviços para cuidar da segurança e do desempenho do seu veículo.
+            </p>
+            <nav className="flex flex-wrap justify-center gap-3" aria-label="Principais serviços da Carplus">
+              <Link to="/servico/alinhamento-3d" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Alinhamento 3D em Curitiba</Link>
+              <Link to="/servico/conserto-de-rodas" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Conserto de rodas em Curitiba</Link>
+              <Link to="/servico/alinhamento-e-balanceamento" className="rounded-full bg-gray-100 px-4 py-2 font-bold text-gray-800 transition-colors hover:bg-primary">Alinhamento e balanceamento</Link>
+              <Link to="/servicos" className="rounded-full bg-gray-900 px-4 py-2 font-bold text-white transition-colors hover:bg-primary hover:text-gray-900">Ver todos os serviços</Link>
+            </nav>
+          </div>
+        </section>
 
         <DeferredSection minHeight={800}>
           <Suspense fallback={null}>

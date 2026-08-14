@@ -58,8 +58,8 @@ export default function ComoChegar() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useSEO({
-    title: 'Como Chegar na Carplus – Pneus e Oficina no Portão, Curitiba',
-    description: 'Como chegar na Carplus Centro Automotivo: Av. Arthur da Silva Bernardes, 1323 – Portão, Curitiba. Rotas, tempo e estacionamento próprio. (41) 3082-7282.',
+    title: 'Carplus Curitiba: Endereço, Como Chegar e Horários',
+    description: 'Encontre a Carplus Pneus e Oficina em Curitiba. Veja endereço, rota, horário de atendimento e fale com nossa equipe.',
     canonical: 'https://www.carpluspneuseoficina.com.br/como-chegar',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: ['como chegar Carplus', 'oficina Portão Curitiba', 'endereço Carplus Curitiba', 'pneus perto do Shopping Palladium'],
@@ -88,10 +88,10 @@ export default function ComoChegar() {
             <span className="text-gray-600">Como Chegar</span>
           </nav>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-gray-900 leading-none mb-4 italic text-center">
-            Como <span className="text-primary">Chegar</span>
+            Carplus Curitiba: <span className="text-primary">endereço e como chegar</span>
           </h1>
           <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-center">
-            Estamos no coração do Portão, de fácil acesso de toda Curitiba e região metropolitana.
+            Consulte endereço, rotas, horários e contatos da Carplus Pneus e Oficina no bairro Portão, em Curitiba.
           </p>
         </div>
       </section>
