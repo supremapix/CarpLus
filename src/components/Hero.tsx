@@ -121,7 +121,7 @@ export default function Hero() {
             Pneus, mecânica e cuidado completo
           </p>
           <h1 className="text-balance text-center text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-left md:text-6xl lg:text-7xl">
-            Oficina Mecânica e Pneus em Curitiba
+            Pneus e Oficina Mecânica em Curitiba
             <span className="mt-2 block text-primary">Carplus Centro Automotivo</span>
           </h1>
           <div className="mt-5 flex min-h-10 items-center justify-center font-display text-xl font-bold uppercase text-white md:justify-start md:text-2xl" aria-hidden="true">

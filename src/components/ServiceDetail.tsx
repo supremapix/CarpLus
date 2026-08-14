@@ -352,8 +352,12 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     description: 'Loja de pneus no Portão, em Curitiba, com as melhores marcas do aro 13 ao aro 22 para carros, SUVs e picapes. Montagem inclusa e garantia de fábrica. (41) 3082-7282.',
   },
   'alinhamento-3d': {
-    title: 'Alinhamento 3D em Curitiba | Computadorizado | Carplus',
-    description: 'Alinhamento 3D computadorizado em Curitiba com precisão milimétrica. Corrige a geometria da suspensão e evita o desgaste prematuro dos pneus. (41) 3082-7282.',
+    title: 'Alinhamento 3D em Curitiba | Carplus Pneus e Oficina',
+    description: 'Seu carro está puxando para um lado? Faça alinhamento 3D em Curitiba com equipamentos especializados. Agende sua avaliação.',
+  },
+  'conserto-de-rodas': {
+    title: 'Conserto de Rodas em Curitiba | Carplus Pneus e Oficina',
+    description: 'Roda amassada ou danificada? Faça uma avaliação especializada na Carplus em Curitiba. Consulte nossa equipe.',
   },
 };
 
@@ -462,6 +466,11 @@ export default function ServiceDetail() {
   );
 
   const Icon = getIcon(service.icon);
+  const primaryHeading = slug === 'conserto-de-rodas'
+    ? 'Conserto de Rodas em Curitiba'
+    : slug === 'alinhamento-3d'
+      ? 'Alinhamento 3D em Curitiba'
+      : `${service.title} em Curitiba – Bairro Portão`;
 
   return (
     <div className="min-h-screen bg-dark">
@@ -479,7 +488,7 @@ export default function ServiceDetail() {
                  <Icon size={48} />
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 italic uppercase tracking-tight font-bold leading-tight">{service.title} <span className="text-primary">em Curitiba</span> – Bairro Portão</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 italic uppercase tracking-tight font-bold leading-tight">{primaryHeading}</h1>
               <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
                 A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
               </p>
@@ -539,6 +548,32 @@ export default function ServiceDetail() {
               </div>
            </div>
         </section>
+
+        {(slug === 'conserto-de-rodas' || slug === 'alinhamento-3d') && (
+          <section className="border-y border-gray-100 bg-white py-12" aria-label="Serviços relacionados">
+            <div className="mx-auto max-w-4xl px-4 text-center">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                {slug === 'conserto-de-rodas' ? 'Avaliação de rodas no Portão, em Curitiba' : 'Quando fazer o alinhamento 3D?'}
+              </h2>
+              <p className="mx-auto mb-6 max-w-3xl leading-relaxed text-gray-600">
+                {slug === 'conserto-de-rodas'
+                  ? 'Procure uma avaliação ao perceber amassados, trincas, fissuras, riscos, vazamentos ou vibração. O reparo adequado recupera a geometria da roda, favorece o balanceamento e pode evitar a substituição da peça quando o dano permite uma recuperação segura.'
+                  : 'Volante torto, carro puxando para um lado e desgaste irregular dos pneus são sinais de desalinhamento. A medição 3D verifica os ângulos das rodas com precisão para melhorar estabilidade, dirigibilidade e aproveitamento dos pneus.'}
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {slug === 'conserto-de-rodas' ? (
+                  <Link to="/servico/alinhamento-3d" className="font-bold text-primary hover:underline">Conheça o alinhamento 3D em Curitiba</Link>
+                ) : (
+                  <>
+                    <Link to="/pneus" className="font-bold text-primary hover:underline">Encontre pneus em Curitiba</Link>
+                    <span className="text-gray-300" aria-hidden="true">•</span>
+                    <Link to="/servico/alinhamento-e-balanceamento" className="font-bold text-primary hover:underline">Veja alinhamento e balanceamento</Link>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* SEO Content Section - Conte��do otimizado para Google e Bing */}
         {seoContent && (

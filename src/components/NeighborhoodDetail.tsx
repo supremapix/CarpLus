@@ -575,6 +575,13 @@ export default function NeighborhoodDetail() {
             <p className="text-center text-gray-400 text-sm mt-8">
               A Carplus Centro Automotivo atende {bairro.name} e toda Curitiba com pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e mais.
             </p>
+            <nav className="mt-6 flex flex-wrap justify-center gap-3" aria-label={`Serviços relacionados para ${bairro.name}`}>
+              <Link to="/servico/alinhamento-3d" className="font-bold text-primary hover:underline">Alinhamento 3D em Curitiba</Link>
+              <span className="text-gray-300" aria-hidden="true">•</span>
+              <Link to="/servico/conserto-de-rodas" className="font-bold text-primary hover:underline">Conserto de rodas em Curitiba</Link>
+              <span className="text-gray-300" aria-hidden="true">•</span>
+              <Link to="/servicos" className="font-bold text-primary hover:underline">Serviços da oficina Carplus</Link>
+            </nav>
           </div>
         </section>
 
