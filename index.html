@@ -256,5 +256,89 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- =========================================================
+         Rastreamento de conversões GA4 — Carplus Centro Automotivo
+         Cole este bloco logo ANTES do fechamento </body>
+         Requer a tag gtag.js (G-VHK6RGQ6SH) já instalada no <head>
+         ========================================================= -->
+    <script>
+    (function () {
+
+      function ga(nome, params) {
+        if (typeof gtag === 'function') gtag('event', nome, params || {});
+      }
+
+      // Descobre em que seção da página o clique aconteceu
+      function contexto(el) {
+        var s = el.closest ? el.closest('section, header, footer, nav') : null;
+        if (!s) return 'sem_secao';
+        if (s.id) return s.id;
+        var h = s.querySelector('h1, h2, h3');
+        return h ? h.innerText.trim().slice(0, 50) : s.tagName.toLowerCase();
+      }
+
+      // Extrai o nome do produto da mensagem pré-preenchida do WhatsApp
+      // (seus links usam *NOME DO PNEU* entre asteriscos)
+      function produtoDoLink(href) {
+        try {
+          var t = new URL(href, location.href).searchParams.get('text') || '';
+          var m = t.match(/\*(.+?)\*/);
+          return m ? m[1].slice(0, 100) : '';
+        } catch (e) { return ''; }
+      }
+
+      // --- Cliques em links (delegação: funciona nos 24 botões e em novos) ---
+      document.addEventListener('click', function (e) {
+        var alvo = e.target;
+        if (!alvo || !alvo.closest) return;
+        var a = alvo.closest('a[href]');
+        if (!a) return;
+
+        var href = a.getAttribute('href') || '';
+        var rotulo = (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+
+        if (/wa\.me|api\.whatsapp\.com|web\.whatsapp\.com/i.test(href)) {
+          ga('clique_whatsapp', {
+            local: contexto(a),
+            texto_botao: rotulo,
+            produto: produtoDoLink(a.href),
+            pagina: location.pathname
+          });
+
+        } else if (/^tel:/i.test(href)) {
+          ga('clique_telefone', {
+            local: contexto(a),
+            numero: href.replace(/^tel:/i, ''),
+            texto_botao: rotulo,
+            pagina: location.pathname
+          });
+
+        } else if (/^mailto:/i.test(href)) {
+          ga('clique_email', {
+            local: contexto(a),
+            pagina: location.pathname
+          });
+
+        } else if (/maps\.google|goo\.gl\/maps|google\.[a-z.]+\/maps/i.test(href)) {
+          ga('clique_rota', {
+            local: contexto(a),
+            pagina: location.pathname
+          });
+        }
+      }, true);
+
+      // --- Envio de formulário (caso você adicione um no futuro) ---
+      document.addEventListener('submit', function (e) {
+        var f = e.target;
+        if (!f || f.tagName !== 'FORM') return;
+        ga('envio_formulario', {
+          form_id: f.id || f.getAttribute('name') || 'sem_id',
+          pagina: location.pathname
+        });
+      }, true);
+
+    })();
+    </script>
   </body>
 </html>
