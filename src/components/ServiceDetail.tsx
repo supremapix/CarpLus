@@ -355,9 +355,13 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     title: 'Alinhamento 3D em Curitiba | Carplus Pneus e Oficina',
     description: 'Seu carro está puxando para um lado? Faça alinhamento 3D em Curitiba com equipamentos especializados. Agende sua avaliação.',
   },
+  'manutencao-de-freios': {
+    title: 'Manutenção de Freios em Curitiba | Avaliação Carplus',
+    description: 'Manutenção de freios em Curitiba, no Portão. Avaliação de pastilhas, discos e fluido para dirigir com segurança. Agende pelo WhatsApp.',
+  },
   'conserto-de-rodas': {
-    title: 'Conserto de Rodas em Curitiba | Carplus Pneus e Oficina',
-    description: 'Roda amassada ou danificada? Faça uma avaliação especializada na Carplus em Curitiba. Consulte nossa equipe.',
+    title: 'Conserto de Rodas em Curitiba | Avaliação Carplus',
+    description: 'Conserto de rodas amassadas ou danificadas em Curitiba. Faça uma avaliação especializada na Carplus, no Portão. Consulte nossa equipe.',
   },
 };
 

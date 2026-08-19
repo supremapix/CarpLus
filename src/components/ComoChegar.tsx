@@ -58,8 +58,8 @@ export default function ComoChegar() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useSEO({
-    title: 'Carplus Curitiba: Endereço, Como Chegar e Horários',
-    description: 'Encontre a Carplus Pneus e Oficina em Curitiba. Veja endereço, rota, horário de atendimento e fale com nossa equipe.',
+    title: 'Carplus Curitiba: Endereço, Rotas e Horários',
+    description: 'Veja como chegar à Carplus no Portão, em Curitiba, com endereço, rotas, estacionamento e horários. Abra o mapa ou fale com nossa equipe.',
     canonical: 'https://www.carpluspneuseoficina.com.br/como-chegar',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: ['como chegar Carplus', 'oficina Portão Curitiba', 'endereço Carplus Curitiba', 'pneus perto do Shopping Palladium'],

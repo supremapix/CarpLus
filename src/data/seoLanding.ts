@@ -2061,9 +2061,9 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     tipo: 'loja',
     bairro: 'Portão',
     h1: 'Loja de Pneus no Portão, Curitiba',
-    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Centro Automotivo',
+    metaTitle: 'Loja de Pneus no Portão, Curitiba | Carplus',
     metaDescription:
-      'Loja de pneus no Portão, em Curitiba: Carplus Centro Automotivo. Pneus de várias marcas, oficina mecânica completa, alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Loja de pneus no Portão, em Curitiba, com várias marcas, montagem inclusa e oficina completa. Consulte preços e disponibilidade pelo WhatsApp.',
     intro:
       'A Carplus Centro Automotivo é a loja de pneus e oficina mecânica completa do bairro Portão, em Curitiba. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios, suspensão e troca de óleo no mesmo lugar.',
     faq: [
@@ -2190,9 +2190,9 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus Baratos · Curitiba',
     h1: 'Pneus Baratos em Curitiba',
     highlight: 'Baratos',
-    metaTitle: 'Pneus Baratos em Curitiba | Carplus Centro Automotivo – Portão',
+    metaTitle: 'Pneus Baratos em Curitiba | Montagem Inclusa | Carplus',
     metaDescription:
-      'Pneus baratos em Curitiba com qualidade na Carplus, bairro Portão. Opções econômicas e premium, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneus baratos em Curitiba com qualidade, montagem inclusa e até 10x sem juros. Compare opções no Portão e peça seu orçamento pelo WhatsApp.',
     intro:
       'Pneu barato não precisa ser pneu ruim. Na Carplus, no bairro Portão em Curitiba, você encontra opções econômicas com boa procedência, além de linhas premium, sempre com montagem inclusa e parcelamento.',
     tags: ['Econômico', 'Custo-benefício', 'Montagem inclusa', '10x sem juros'],

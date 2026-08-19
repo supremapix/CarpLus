@@ -266,7 +266,10 @@
     (function () {
 
       function ga(nome, params) {
-        if (typeof gtag === 'function') gtag('event', nome, params || {});
+        var dados = params || {};
+        dados.page_location = location.href;
+        dados.page_path = location.pathname + location.search;
+        if (typeof gtag === 'function') gtag('event', nome, dados);
       }
 
       // Descobre em que seção da página o clique aconteceu
@@ -320,8 +323,11 @@
             pagina: location.pathname
           });
 
-        } else if (/maps\.google|goo\.gl\/maps|google\.[a-z.]+\/maps/i.test(href)) {
-          ga('clique_rota', {
+        } else if (
+          /\/como-chegar(?:[?#]|$)/i.test(href) ||
+          /maps\.google|maps\.app\.goo\.gl|goo\.gl\/maps|google\.[a-z.]+\/maps|(?:ul\.|www\.)?waze\.com/i.test(href)
+        ) {
+          ga('clique_como_chegar', {
             local: contexto(a),
             pagina: location.pathname
           });
