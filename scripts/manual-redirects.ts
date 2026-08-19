@@ -3,11 +3,11 @@
 // FONTE ÚNICA DOS REDIRECTS MANUAIS (promovidos na etapa E5)
 // ─────────────────────────────────────────────────────────────────────────────
 // Estes 301 eram, até a E5, aplicados apenas no cliente (via <Navigate> no
-// src/App.tsx). A E5 os promove a redirects server-side no vercel.json, mantendo
-// os <Navigate> como redundância de segurança (removíveis só na E9).
+// src/App.tsx). A E5 os promove a redirects server-side no vercel.json. Desde a
+// E9, esses redirects existem exclusivamente na camada da Vercel.
 //
-// São 76 regras, organizadas em 3 grupos:
-//   • 69 bairros/cidades legados: /<slug>.html      → /bairro/<slug>
+// São 78 regras, organizadas em 3 grupos:
+//   • 71 bairros/cidades legados: /<slug>.html      → /bairro/<slug>
 //   •  1 medida legada (dinâmica): /pneus/:medida     → /pneu-medida/:medida
 //   •  6 slugs legados de marca:   /<legacySlug>       → /<slug>   (derivados de BRAND_PAGES)
 //
@@ -25,12 +25,12 @@ export interface RedirectRule {
 }
 
 /**
- * 69 bairros e cidades da RMC cujas URLs legadas `.html` foram rastreadas pelo
+ * 71 bairros e cidades da RMC cujas URLs legadas `.html` foram rastreadas pelo
  * Google. O basename do arquivo `.html` coincide com o slug de `/bairro/<slug>`.
- * Lista histórica fixa (URLs antigas) — espelha exatamente os <Navigate> do App.tsx.
+ * Lista histórica fixa (URLs antigas) usada para gerar os redirects da Vercel.
  */
 export const LEGACY_NEIGHBORHOOD_SLUGS: string[] = [
-  // ── Bairros de Curitiba (61) ──
+  // ── Bairros de Curitiba (63) ──
   'taboao',
   'agua-verde',
   'alto-da-rua-xv',
@@ -92,6 +92,8 @@ export const LEGACY_NEIGHBORHOOD_SLUGS: string[] = [
   'cajuru',
   'portao',
   'santa-quiteria',
+  'seminario',
+  'xaxim',
   // ── Cidades da Região Metropolitana (8) ──
   'sao-jose-dos-pinhais',
   'colombo',

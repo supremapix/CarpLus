@@ -307,6 +307,16 @@
       "permanent": true
     },
     {
+      "source": "/seminario.html",
+      "destination": "/bairro/seminario",
+      "permanent": true
+    },
+    {
+      "source": "/xaxim.html",
+      "destination": "/bairro/xaxim",
+      "permanent": true
+    },
+    {
       "source": "/sao-jose-dos-pinhais.html",
       "destination": "/bairro/sao-jose-dos-pinhais",
       "permanent": true
