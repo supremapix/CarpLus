@@ -172,16 +172,16 @@ export default function ServicesGrid() {
     <section id="servicos" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
+        <div className="flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left mb-8 md:mb-12 gap-5 md:gap-6">
           <div className="max-w-2xl">
-            <SectionTitle prefix="NOSSOS" highlight="SERVIÇOS" />
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light text-left">
-              Oficina mecânica completa para todas as marcas nacionais e importadas.
+            <SectionTitle prefix="NOSSOS" highlight="SERVIÇOS" className="!mb-3 md:!text-left" />
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light text-pretty">
+              Oficina mecânica completa no Portão, em Curitiba, para marcas nacionais e importadas.
             </p>
           </div>
           <Link 
             to="/servicos"
-            className="flex items-center gap-2 bg-primary text-black px-5 py-3 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/20"
+            className="flex min-h-11 items-center gap-2 bg-primary text-black px-5 rounded-full font-bold text-sm uppercase tracking-tight hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/20"
           >
             Ver Todos os Serviços
             <ArrowRight size={16} />

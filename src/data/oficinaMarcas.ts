@@ -158,7 +158,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Por que escolher uma oficina especializada em Fiat',
         conteudo:
-          'Os veículos Fiat têm soluções de engenharia próprias — como o câmbio automatizado Dualogic e os motores da família Firefly — que exigem scanner compatível e experiência de quem já resolveu esses problemas centenas de vezes. Uma oficina generalista pode até fazer a troca de óleo, mas dificilmente domina a calibração do Dualogic ou a leitura correta dos módulos Fiat. Com mais de 35 anos de estrada, a equipe da Carplus trata cada Fiat com o cuidado técnico que a marca pede, evitando trocas desnecessárias e indo direto à causa do problema.',
+          'Os veículos Fiat têm soluções de engenharia próprias — como o câmbio automatizado Dualogic e os motores da família Firefly — que exigem scanner compatível e experiência de quem já resolveu esses problemas centenas de vezes. Uma oficina generalista pode até fazer a troca de óleo, mas dificilmente domina a calibração do Dualogic ou a leitura correta dos módulos Fiat. A equipe da Carplus trata cada Fiat com o cuidado técnico que a marca pede, evitando trocas desnecessárias e indo direto à causa do problema.',
       },
       {
         titulo: 'Revisão do seu Fiat sem perder a garantia de fábrica',
@@ -324,7 +324,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Conhecimento técnico da linha Chevrolet',
         conteudo:
-          'O Onix é um dos carros mais vendidos do Brasil, e junto com Tracker, Spin e S10 forma a base da frota Chevrolet em Curitiba. Esses modelos têm particularidades — como a corrente de comando dos motores 1.0/1.4 e o histórico de superaquecimento do Cruze — que pedem uma oficina que já resolveu esses casos muitas vezes. A Carplus reúne mais de 35 anos de experiência e scanner compatível para tratar cada Chevrolet com precisão, indo direto à causa do problema.',
+          'O Onix é um dos carros mais vendidos do Brasil, e junto com Tracker, Spin e S10 forma a base da frota Chevrolet em Curitiba. Esses modelos têm particularidades — como a corrente de comando dos motores 1.0/1.4 e o histórico de superaquecimento do Cruze — que pedem uma oficina que já resolveu esses casos muitas vezes. A Carplus reúne experiência e scanner compatível para tratar cada Chevrolet com precisão, indo direto à causa do problema.',
       },
       {
         titulo: 'Revisão Chevrolet sem perder a garantia',
@@ -407,7 +407,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Especialistas na linha Hyundai',
         conteudo:
-          'O HB20 é um dos hatches mais populares do país e o Creta lidera vendas entre os SUVs compactos — o que faz da Hyundai uma marca muito presente nas ruas de Curitiba. Esses modelos têm pontos de atenção conhecidos, como o desgaste de embreagem do HB20 e o comportamento do câmbio automático do Creta. Na Carplus, a experiência de mais de 35 anos e o scanner compatível permitem diagnosticar e resolver esses casos com segurança.',
+          'O HB20 é um dos hatches mais populares do país e o Creta lidera vendas entre os SUVs compactos — o que faz da Hyundai uma marca muito presente nas ruas de Curitiba. Esses modelos têm pontos de atenção conhecidos, como o desgaste de embreagem do HB20 e o comportamento do câmbio automático do Creta. Na Carplus, a experiência da equipe e o scanner compatível permitem diagnosticar e resolver esses casos com segurança.',
       },
       {
         titulo: 'Revisão Hyundai mantendo a garantia',
@@ -573,7 +573,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Conhecimento técnico da linha Renault',
         conteudo:
-          'O Kwid e o Sandero estão entre os carros mais econômicos do mercado, e o Duster é um dos SUVs mais versáteis — todos com boa presença em Curitiba. Esses modelos têm características próprias, como o comportamento das bobinas de ignição e do câmbio automatizado, que pedem uma oficina experiente. A Carplus reúne mais de 35 anos de estrada e scanner compatível para diagnosticar e resolver esses casos com precisão.',
+          'O Kwid e o Sandero estão entre os carros mais econômicos do mercado, e o Duster é um dos SUVs mais versáteis — todos com boa presença em Curitiba. Esses modelos têm características próprias, como o comportamento das bobinas de ignição e do câmbio automatizado, que pedem uma oficina experiente. A Carplus reúne experiência e scanner compatível para diagnosticar e resolver esses casos com precisão.',
       },
       {
         titulo: 'Revisão Renault mantendo a garantia',
@@ -974,7 +974,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Não saber em qual oficina confiar',
         solucao:
-          'A Carplus tem nota 4,9 no Google, mais de 35 anos de experiência e diagnóstico antes do orçamento, com total transparência.',
+          'A Carplus tem nota 4,9 no Google e diagnóstico antes do orçamento, com total transparência.',
       },
       {
         problema: 'Orçamento com valores escondidos',
@@ -998,7 +998,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     intro:
-      'Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com mais de 35 anos de experiência, nota 4,9 no Google e garantia em todos os serviços. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.',
+      'Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com nota 4,9 no Google e garantia em todos os serviços. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.',
     secoes: [
       {
         titulo: 'Um centro automotivo completo em Curitiba',
@@ -1022,7 +1022,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: 'A Carplus é uma das oficinas mais bem avaliadas de Curitiba, com nota 4,9 no Google, mais de 35 anos de experiência, diagnóstico computadorizado e garantia em todos os serviços.' },
+      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: 'A Carplus é uma das oficinas mais bem avaliadas de Curitiba, com nota 4,9 no Google, diagnóstico computadorizado e garantia em todos os serviços.' },
       { pergunta: 'A oficina atende toda Curitiba?', resposta: 'Sim. Embora nossa estrutura fique no Portão, atendemos motoristas de toda Curitiba e da região metropolitana.' },
       { pergunta: 'Quais serviços a oficina oferece?', resposta: 'Revisão, freios, suspensão, injeção eletrônica, câmbio automático e manual, reparo elétrico, bateria, ar-condicionado, escapamento, pneus e alinhamento 3D.' },
       { pergunta: 'O orçamento é gratuito?', resposta: 'Sim, o orçamento é sem compromisso. Fazemos o diagnóstico e apresentamos os valores antes de qualquer serviço, com total transparência.' },
@@ -1062,7 +1062,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Não achar oficina de confiança perto de casa',
         solucao:
-          'Estamos no coração do Portão, com nota 4,9 no Google e mais de 35 anos de experiência, pertinho de quem mora e trabalha na região.',
+          'Estamos no coração do Portão, com nota 4,9 no Google, pertinho de quem mora e trabalha na região.',
       },
       {
         problema: 'Perder tempo indo a oficinas distantes',
@@ -1106,7 +1106,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Confiança, garantia e transparência',
         conteudo:
-          'Com mais de 35 anos de experiência e nota 4,9 no Google, a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia em todos os serviços, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.',
+          'Com nota 4,9 no Google, a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia em todos os serviços, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.',
       },
     ],
     faq: [

@@ -35,7 +35,7 @@ export default function CentroAutomotivoCTA() {
               <p className="text-neutral-300 text-lg mb-6 leading-relaxed">
                 Compre e instale seus pneus no mesmo lugar: pneus das melhores marcas com instalação,
                 balanceamento e alinhamento 3D feitos por mecânicos especializados. Somos um centro
-                automotivo completo em Curitiba, com mais de 35 anos de experiência e garantia total.
+                automotivo completo em Curitiba, com garantia em todos os serviços.
               </p>
 
               {/* Features */}

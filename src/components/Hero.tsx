@@ -5,9 +5,9 @@ import { isPrerenderEager } from '../lib/prerender';
 
 // Frases da descrição da Hero — conteúdo real do site (preços, serviços e oficina)
 const HERO_PHRASES = [
-  'Pneus das melhores marcas a partir de R$ 239,00 à vista, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros.',
-  'Oficina Full Service: alinhamento e balanceamento 3D, troca de óleo, freios, suspensão e direção com garantia em todos os serviços.',
-  'Referência no Portão, em Curitiba — diagnóstico antes do orçamento, conserto e reforma de rodas e atendimento rápido pelo WhatsApp.',
+  'Centro automotivo completo no Portão, em Curitiba: venda e montagem de pneus, alinhamento 3D, balanceamento, freios e suspensão.',
+  'Pneus aro 13 a 22 das principais marcas, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros.',
+  'Oficina mecânica com diagnóstico antes do orçamento e garantia em todos os serviços. Atende Portão e bairros próximos.',
 ];
 
 // Palavras que rodam em efeito máquina de escrever antes de "EM CURITIBA"
@@ -70,12 +70,12 @@ function HeroPhrasesLoop() {
   }, []);
 
   return (
-    <div className="relative mb-8 max-w-xl mx-auto md:mx-0 min-h-[6rem] sm:min-h-[5rem] md:min-h-[4.5rem]">
+    <div className="relative mb-8 mt-5 w-full max-w-xl min-h-[5.5rem] sm:min-h-[5rem] md:min-h-[4.5rem]">
       {HERO_PHRASES.map((phrase, i) => (
         <p
           key={i}
           aria-hidden={i !== index}
-          className={`absolute inset-0 text-[0.95rem] sm:text-base md:text-lg text-white/80 font-medium text-center md:text-left leading-relaxed transition-opacity duration-700 ${
+          className={`absolute inset-0 text-[0.95rem] sm:text-base md:text-lg text-white/80 font-medium text-center md:text-left leading-relaxed text-pretty transition-opacity duration-700 ${
             i === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
@@ -88,7 +88,7 @@ function HeroPhrasesLoop() {
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative flex min-h-[760px] items-center overflow-hidden bg-dark md:min-h-screen">
+    <section id="inicio" className="relative flex min-h-[680px] items-center overflow-hidden bg-dark md:min-h-screen">
       {/* Background Image - Mobile */}
       <div className="absolute inset-0 md:hidden">
         <img 
@@ -115,54 +115,52 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 pb-24 pt-36 sm:px-6 md:pb-28 md:pt-40 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="mb-4 text-center font-accent text-xs font-bold uppercase tracking-[0.2em] text-primary md:text-left">
-            Pneus, mecânica e cuidado completo
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-32 sm:px-6 md:pb-28 md:pt-40 lg:px-8">
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center md:mx-0 md:items-start md:text-left">
+          <p className="mb-4 font-accent text-[11px] font-bold uppercase tracking-[0.2em] text-primary sm:text-xs">
+            Carplus Pneus e Oficina · Portão, Curitiba
           </p>
-          <h1 className="text-balance text-center text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-left md:text-6xl lg:text-7xl">
-            Pneus e Oficina Mecânica em Curitiba
-            <span className="mt-2 block text-primary">Carplus Centro Automotivo</span>
+          <h1 className="text-balance text-[2rem] font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Oficina Mecânica e Loja de Pneus no Portão
+            <span className="mt-2 block text-primary">em Curitiba</span>
           </h1>
-          <div className="mt-5 flex min-h-10 items-center justify-center font-display text-xl font-bold uppercase text-white md:justify-start md:text-2xl" aria-hidden="true">
+          <div className="mt-4 hidden min-h-10 items-center font-display text-xl font-bold uppercase text-white sm:flex md:text-2xl" aria-hidden="true">
             <Typewriter />
             <span className="ml-2">em Curitiba</span>
           </div>
-          <p className="mb-6 mt-3 text-center text-base font-bold uppercase tracking-tight text-white md:text-left md:text-xl">
-            Oficina mecânica <span className="text-primary italic">Full Service</span>
-          </p>
-          
+
           <HeroPhrasesLoop />
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-12 justify-center md:justify-start px-4 sm:px-0">
+          <div className="mb-10 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:justify-start">
             <a
               href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
               target="_blank"
-              className="bg-white hover:bg-gray-100 text-dark px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] uppercase tracking-tight shadow-lg"
+              rel="noopener noreferrer"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-tight text-dark shadow-lg transition-colors hover:bg-yellow-400 sm:min-w-[200px]"
             >
               <Navigation size={18} /> Ir até a Carplus
             </a>
             <a
               href="tel:+554130827282"
-              className="bg-surface/40 backdrop-blur-sm hover:bg-gray-700 text-white px-6 py-3.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] uppercase tracking-tight border border-white/20"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-w-[200px]"
             >
-              <Phone size={18} /> Ligar agora
+              <Phone size={18} /> (41) 3082-7282
             </a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 md:gap-y-6 mt-4 md:mt-6">
+          <ul className="grid w-full grid-cols-2 gap-x-4 gap-y-3 text-left md:grid-cols-4 md:gap-y-6" aria-label="Destaques">
             {[
-              { icon: Star, text: 'Referência em Curitiba' },
               { icon: MapPin, text: 'Portão – Curitiba' },
+              { icon: Wrench, text: 'Oficina Full Service' },
               { icon: CreditCard, text: 'Pneus em até 10x' },
-              { icon: Wrench, text: 'Full Service' },
+              { icon: Star, text: 'Montagem e alinhamento' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-white/80 border-l border-primary pl-4 py-1 md:py-2">
-                <item.icon size={18} className="text-primary" />
-                <span className="text-xs font-accent uppercase tracking-widest leading-tight">{item.text}</span>
-              </div>
+              <li key={i} className="flex items-center gap-2 border-l border-primary py-1 pl-3 text-white/80 md:py-2 md:pl-4">
+                <item.icon size={16} className="shrink-0 text-primary" />
+                <span className="font-accent text-[11px] uppercase leading-tight tracking-wider sm:text-xs">{item.text}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 

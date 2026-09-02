@@ -21,6 +21,7 @@ import {
   getTiresByBrand,
   getTiresByVehicle,
   getMeasuresForTires,
+  getBrandsForTires,
   getFeaturedTires,
 } from '../data/seoLandingFilters';
 
@@ -39,7 +40,14 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
   if (!page) return <NotFound />;
 
   const tires = getTiresByAro(page.aro);
-  const measures = getMeasuresForTires(tires).slice(0, 8);
+  const allMeasures = getMeasuresForTires(tires);
+  const measures = allMeasures.slice(0, 8);
+
+  // Marcas com produto REAL neste aro; linka para a página da marca quando ela existe.
+  const brandsInAro = getBrandsForTires(tires).map((name) => {
+    const bp = BRAND_PAGES.find((b) => b.marca === name);
+    return { name, to: bp ? `/${bp.slug}` : undefined };
+  });
 
   const relatedLinks = [
     ...ARO_PAGES.filter((a) => a.aro !== page.aro).map((a) => ({
@@ -48,6 +56,32 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
     })),
     ...measures.map((m) => ({ label: `Pneu ${m}`, to: `/pneu-medida/${measureToSlug(m)}` })),
   ];
+
+  // FAQ em formato de consulta (Google/LLMs), com fatos do catálogo — sem inventar estoque.
+  const queryFaq = [
+    {
+      question: `Onde comprar pneu aro ${page.aro} em Curitiba?`,
+      answer: `Na Carplus Pneus e Oficina, no bairro Portão, em Curitiba (Av. Presidente Arthur da Silva Bernardes, 1323). Temos ${tires.length} ${tires.length === 1 ? 'modelo' : 'modelos'} de pneu aro ${page.aro} no catálogo, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros. Telefone: (41) 3082-7282.`,
+    },
+    ...(brandsInAro.length > 0
+      ? [{
+          question: `Quais marcas de pneu aro ${page.aro} a Carplus vende?`,
+          answer: `No aro ${page.aro} trabalhamos com ${brandsInAro.map((b) => b.name).join(', ')}. Todos os pneus são originais, com nota fiscal e garantia do fabricante.`,
+        }]
+      : []),
+    ...(allMeasures.length > 0
+      ? [{
+          question: `Quais medidas de pneu aro ${page.aro} estão disponíveis?`,
+          answer: `As medidas de aro ${page.aro} em catálogo são ${allMeasures.slice(0, 10).join(', ')}${allMeasures.length > 10 ? ', entre outras' : ''}. Se a sua medida não estiver na lista, consulte a disponibilidade pelo WhatsApp.`,
+        }]
+      : []),
+    {
+      question: `Posso comprar pneu aro ${page.aro} e fazer alinhamento no mesmo lugar?`,
+      answer: `Sim. A Carplus é loja de pneus e oficina mecânica no mesmo endereço, no Portão. Na troca de pneus aro ${page.aro}, a montagem e o balanceamento já estão inclusos e o alinhamento 3D pode ser feito na mesma visita.`,
+    },
+  ];
+  const seenQ = new Set(queryFaq.map((f) => f.question.toLowerCase()));
+  const faq = [...queryFaq, ...page.faq.filter((f) => !seenQ.has(f.question.toLowerCase()))];
 
   return (
     <SeoTireLanding
@@ -69,7 +103,8 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
         },
       ]}
       tires={tires}
-      faq={page.faq}
+      faq={faq}
+      aroCluster={{ aro: page.aro, measures: allMeasures.slice(0, 12), brands: brandsInAro }}
       breadcrumb={[HOME_CRUMB, HUB_CRUMB, { name: `Aro ${page.aro}`, path: `/${page.slug}` }]}
       relatedLinksTitle="Pneus por aro e medida"
       relatedLinks={relatedLinks}

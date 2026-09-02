@@ -1,54 +1,56 @@
 import { Link } from 'react-router-dom';
 import { ARO_PAGES } from '../data/seoLanding';
 
-// Seção SEO da Home — "Pneus por Aro em Curitiba".
-// Reaproveita as landing pages de aro já existentes e indexadas
-// (/pneu-aro-XX-curitiba) como destino dos links internos, reforçando a
-// relevância para buscas como "pneu aro 15" sem criar conteúdo duplicado.
-const AROS = ARO_PAGES.map((p) => ({ aro: p.aro, slug: p.slug })).sort((a, b) => a.aro - b.aro);
+// Seção "Pneus por Aro em Curitiba" da Home.
+// Grid estático (sem slider) com links rastreáveis para as landing pages de aro
+// já existentes (/pneu-aro-XX-curitiba). Exibe apenas aros com catálogo real
+// (13 ao 22); o aro 23 tem poucas medidas e segue acessível pela página do hub.
+export const HOME_AROS = ARO_PAGES.filter((p) => p.aro >= 13 && p.aro <= 22)
+  .map((p) => ({ aro: p.aro, slug: p.slug }))
+  .sort((a, b) => a.aro - b.aro);
 
 export default function PneusPorAroSection() {
   return (
-    <section className="py-16 md:py-20 bg-gray-50" aria-labelledby="home-pneus-aro-titulo">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
-            Pneus por Medida
+    <section className="bg-gray-50 py-14 md:py-20" aria-labelledby="home-pneus-aro-titulo">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto mb-8 max-w-2xl text-center md:mb-10">
+          <span className="mb-4 inline-block rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-widest text-black">
+            Pneus por Aro
           </span>
-          <h2 id="home-pneus-aro-titulo" className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-balance">
+          <h2 id="home-pneus-aro-titulo" className="mb-3 text-balance text-3xl font-bold uppercase tracking-tight md:text-4xl">
             Pneus por Aro em Curitiba
           </h2>
-          <p className="text-gray-600 leading-relaxed text-pretty">
-            A Carplus Pneus trabalha com pneus aro 13, aro 14, aro 15, aro 16, aro 17, aro 18,
-            aro 19, aro 20, aro 21, aro 22 e aro 23 das principais marcas nacionais e importadas,
-            como Michelin, Pirelli, Bridgestone, Goodyear, Continental e Yokohama. Encontre o aro
-            do seu veículo com montagem, balanceamento e alinhamento no bairro Portão.
+          <p className="text-pretty text-base leading-relaxed text-gray-600">
+            Escolha o aro do seu veículo e veja as medidas e marcas disponíveis na Carplus, no Portão. Montagem, balanceamento e alinhamento 3D no mesmo endereço.
           </p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 max-w-4xl mx-auto">
-          {AROS.map(({ aro, slug }) => (
-            <Link
-              key={aro}
-              to={`/${slug}`}
-              className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary transition-all py-5 flex flex-col items-center justify-center"
-            >
-              <span className="text-2xl font-bold text-black group-hover:text-primary transition-colors">
-                {aro}
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                Aro
-              </span>
-            </Link>
+        <ul className="mx-auto grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-5" aria-label="Pneus por aro">
+          {HOME_AROS.map(({ aro, slug }) => (
+            <li key={aro}>
+              <Link
+                to={`/${slug}`}
+                className="group flex min-h-20 flex-col items-center justify-center rounded-2xl border border-gray-200 bg-white py-4 shadow-sm transition-all hover:border-primary hover:shadow-lg"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Pneus</span>
+                <span className="text-xl font-bold text-black transition-colors group-hover:text-primary">Aro {aro}</span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="text-center mt-10">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-10">
+          <Link
+            to="/medidas-de-pneus-curitiba"
+            className="flex min-h-12 w-full items-center justify-center rounded-full bg-surface px-6 text-sm font-bold uppercase tracking-tight text-white shadow-lg transition-colors hover:bg-black sm:w-auto"
+          >
+            Buscar por medida
+          </Link>
           <Link
             to="/pneus"
-            className="inline-flex items-center justify-center bg-surface text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-transform"
+            className="flex min-h-12 w-full items-center justify-center rounded-full border border-gray-300 px-6 text-sm font-bold uppercase tracking-tight text-gray-800 transition-colors hover:border-primary hover:text-primary sm:w-auto"
           >
-            Ver Catálogo Completo de Pneus
+            Catálogo completo
           </Link>
         </div>
       </div>
