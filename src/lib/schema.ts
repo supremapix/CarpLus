@@ -134,11 +134,19 @@ export function generateProductSchema(props: ProductSchemaProps): object {
     },
     // Última revisão de conteúdo da página (sinal de frescor para o Google)
     dateModified: dateModified ?? todayISO(),
-    offers: {
+  };
+
+  // Offer só é incluída quando há PREÇO REAL.
+  // Emitir um objeto `offers` sem `price` gera o erro crítico do Google
+  // ("O campo 'price' não foi encontrado (em 'offers')") e torna o produto
+  // inelegível para Merchant Listings. Sem preço, omitimos a oferta inteira —
+  // o Product permanece válido (offers passa a ser apenas recomendação).
+  if (typeof price === "number" && price > 0) {
+    schema.offers = {
       "@type": "Offer",
       url,
       priceCurrency: currency,
-      ...(price && { price: price.toFixed(2) }),
+      price: price.toFixed(2),
       // Validade do preço dinâmica: 30 dias a partir de hoje
       priceValidUntil: addDays(30),
       itemCondition: "https://schema.org/NewCondition",
@@ -146,8 +154,8 @@ export function generateProductSchema(props: ProductSchemaProps): object {
       seller: CARPLUS_SELLER,
       hasMerchantReturnPolicy: CARPLUS_RETURN_POLICY,
       shippingDetails: CARPLUS_SHIPPING,
-    },
-  };
+    };
+  }
 
   // AggregateRating — só insere se tiver dados reais
   if (ratingValue && reviewCount && reviewCount > 0) {
