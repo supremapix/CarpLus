@@ -133,24 +133,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile: uma ação prioritária, busca e menu */}
-          <div className="flex items-center gap-1.5 lg:hidden">
-            <a
-              href="https://wa.me/554130827282"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-2.5 text-[10px] font-bold uppercase text-dark min-[360px]:flex min-[400px]:px-3 min-[400px]:text-xs"
-            >
-              WhatsApp
-            </a>
-            <button
-              type="button"
-              onClick={() => setIsSearchOpen(true)}
-              className="flex size-11 items-center justify-center rounded-full bg-white/10 text-white"
-              aria-label="Abrir busca"
-            >
-              <Search size={20} />
-            </button>
+          {/* Mobile: header minimalista — apenas logo + menu (WhatsApp fica no drawer, footer e CTAs) */}
+          <div className="flex items-center lg:hidden">
             <button
               type="button"
               className="flex size-11 items-center justify-center rounded-full text-white"
@@ -189,6 +173,14 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
+              <button
+                type="button"
+                onClick={() => { setIsMobileMenuOpen(false); setIsSearchOpen(true); }}
+                className="flex min-h-12 w-full items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 px-4 text-left text-sm text-gray-500"
+              >
+                <Search size={18} className="shrink-0 text-gray-400" />
+                Buscar pneus e serviços
+              </button>
               <div className="flex flex-col gap-1">
                 <p className="px-2 pb-2 text-xs font-bold uppercase tracking-widest text-primary">Menu principal</p>
                 {navLinks.map((link) => (
@@ -242,15 +234,15 @@ export default function Navbar() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-3xl border border-white/10 mt-6">
-                  <MapPin className="text-primary" size={32} />
+                <address className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 not-italic">
+                  <MapPin className="shrink-0 text-primary" size={28} />
                   <div>
-                    <p className="text-white font-bold text-base leading-tight">Portão – Curitiba</p>
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Av. Arthur Bernardes, 1323</p>
-                </div>
+                    <p className="text-base font-bold leading-tight text-dark">Portão – Curitiba</p>
+                    <p className="mt-1 text-xs font-bold uppercase tracking-widest text-gray-500">Av. Pres. Arthur da Silva Bernardes, 1323</p>
+                  </div>
+                </address>
               </div>
             </div>
-          </div>
       </div>
 
       {/* Global Search Modal — montado (e o catalogo carregado) apenas apos abrir a busca */}

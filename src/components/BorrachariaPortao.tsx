@@ -121,7 +121,7 @@ export default function BorrachariaPortao() {
                     <Shield size={14} /> Garantia Total
                   </span>
                   <span className="flex items-center gap-2 bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-full text-sm">
-                    <Award size={14} /> +35 Anos
+                    <Award size={14} /> Garantia
                   </span>
                 </div>
 

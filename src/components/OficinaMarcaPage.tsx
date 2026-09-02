@@ -35,7 +35,7 @@ interface Props {
 const DIFERENCIAIS = [
   { icon: BadgeCheck, title: 'Diagnóstico antes do orçamento', description: 'Fazemos o diagnóstico computadorizado com scanner antes de qualquer serviço, para um orçamento preciso.' },
   { icon: Shield, title: 'Garantia em todos os serviços', description: 'Peças de qualidade e nota fiscal em tudo, com garantia em cada atendimento.' },
-  { icon: Award, title: '+35 anos de experiência', description: 'Mais de três décadas cuidando de carros nacionais e importados em Curitiba.' },
+  { icon: Award, title: 'Nacionais e importados', description: 'Cuidamos de carros nacionais e importados em Curitiba, com diagnóstico antes do orçamento.' },
   { icon: CreditCard, title: 'Até 10x sem juros', description: 'Parcelamos os serviços em até 10x sem juros. Aceitamos cartão, débito, dinheiro e PIX.' },
   { icon: FileText, title: 'Nota fiscal em tudo', description: 'Emitimos nota fiscal de peças e serviços, mantendo a garantia de fábrica do seu veículo.' },
   { icon: Star, title: 'Nota 4,9 no Google', description: 'Mais de 234 avaliações de clientes satisfeitos que confiam na Carplus.' },
@@ -217,7 +217,7 @@ export default function OficinaMarcaPage({ slug }: Props) {
             <div className="flex flex-wrap gap-3 mb-8">
               {[
                 { icon: Star, label: '4,9 no Google' },
-                { icon: Award, label: '+35 anos' },
+                { icon: Award, label: 'Garantia' },
                 { icon: Shield, label: 'Garantia total' },
                 { icon: FileText, label: 'Nota fiscal' },
               ].map((b, i) => {

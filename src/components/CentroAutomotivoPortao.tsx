@@ -75,7 +75,7 @@ const SERVICOS = [
 // Diferenciais
 const DIFERENCIAIS = [
   { titulo: 'Pirelli Performance Center', descricao: 'Centro certificado Pirelli com equipamentos de última geração', icone: Award },
-  { titulo: '+35 Anos de Experiência', descricao: 'Equipe liderada por especialista com 35 anos em diagnóstico automotivo', icone: Users },
+  { titulo: 'Diagnóstico Especializado', descricao: 'Equipe especializada em diagnóstico automotivo com scanner e equipamentos modernos', icone: Users },
   { titulo: 'Localização Privilegiada', descricao: 'No coração do Portão, fácil acesso de toda região sul de Curitiba', icone: MapPin },
   { titulo: 'Atendimento Personalizado', descricao: 'Diagnóstico honesto e transparente, sem surpresas no orçamento', icone: Shield },
 ];
@@ -495,7 +495,7 @@ export default function CentroAutomotivoPortao() {
                   Pneus Lideram Panes no Verão, Alerta Carplus
                 </h3>
                 <p className="text-neutral-400 text-sm mb-4">
-                  Em entrevista à Gazeta do Povo, nosso especialista Maurício Rocha, com 35 anos de experiência, 
+                  Em entrevista à Gazeta do Povo, nosso especialista Maurício Rocha 
                   alertou que pneus e freios lideram as falhas no verão. Calor e tráfego intenso elevam riscos. 
                   A matéria traz checklist essencial antes de viajar.
                 </p>

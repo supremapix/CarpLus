@@ -94,7 +94,7 @@ const SERVICOS_PADRAO: Service[] = [
 
 const DIFERENCIAIS_PADRAO: Differential[] = [
   { icon: 'award', title: 'Pirelli Performance Center', description: 'Centro certificado com equipamentos de última geração e equipe treinada.' },
-  { icon: 'users', title: '+35 Anos de Experiência', description: 'Equipe liderada por especialista com mais de três décadas em diagnóstico automotivo.' },
+  { icon: 'users', title: 'Diagnóstico Especializado', description: 'Equipe especializada em diagnóstico automotivo com scanner e equipamentos modernos.' },
   { icon: 'shield', title: 'Orçamento Transparente', description: 'Diagnóstico honesto e detalhado, sem surpresas no valor final.' },
   { icon: 'badgeCheck', title: 'Garantia em Todos os Serviços', description: 'Peças de qualidade e nota fiscal com garantia em cada atendimento.' },
 ];
@@ -283,7 +283,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Por que escolher a Carplus na região',
         content:
-          'Além da localização estratégica, oferecemos o que mais importa: orçamento transparente, garantia em todos os serviços e mais de 35 anos de experiência em diagnóstico automotivo. Somos um Pirelli Performance Center certificado, com equipamentos modernos e equipe treinada. Para quem trabalha ou mora perto da João Bettega, isso significa resolver os problemas do carro perto de casa, com a confiança de uma das oficinas mais bem avaliadas de Curitiba.',
+          'Além da localização estratégica, oferecemos o que mais importa: orçamento transparente, garantia em todos os serviços e diagnóstico automotivo especializado. Somos um Pirelli Performance Center certificado, com equipamentos modernos e equipe treinada. Para quem trabalha ou mora perto da João Bettega, isso significa resolver os problemas do carro perto de casa, com a confiança de uma das oficinas mais bem avaliadas de Curitiba.',
       },
     ],
     testimonials: DEPOIMENTOS_PADRAO,
@@ -335,7 +335,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Os diferenciais reais da Carplus',
         content:
-          'A Carplus é um Pirelli Performance Center certificado, com equipamentos modernos e equipe liderada por um especialista com mais de 35 anos de experiência em diagnóstico automotivo. Oferecemos orçamento transparente — explicamos o que é urgente e o que pode esperar — e garantia em todos os serviços, sempre com nota fiscal. Reunimos mecânica completa, alinhamento 3D, balanceamento, diagnóstico eletrônico e a venda e montagem de pneus das melhores marcas em um só endereço.',
+          'A Carplus é um Pirelli Performance Center certificado, com equipamentos modernos e equipe especializada em diagnóstico automotivo. Oferecemos orçamento transparente — explicamos o que é urgente e o que pode esperar — e garantia em todos os serviços, sempre com nota fiscal. Reunimos mecânica completa, alinhamento 3D, balanceamento, diagnóstico eletrônico e a venda e montagem de pneus das melhores marcas em um só endereço.',
       },
       {
         title: 'Atendimento transparente e bem avaliado',
@@ -351,7 +351,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
     testimonials: DEPOIMENTOS_PADRAO,
     faq: [
       { question: 'A Carplus tem vínculo com outras empresas mencionadas?', answer: 'Não. Esta página tem caráter exclusivamente comparativo e informativo. A Carplus é uma empresa independente, sem qualquer vínculo com outras oficinas citadas.' },
-      { question: 'Quais os diferenciais da Carplus?', answer: 'Certificação Pirelli Performance Center, mais de 35 anos de experiência, orçamento transparente, garantia em todos os serviços e estrutura completa de mecânica e pneus.' },
+      { question: 'Quais os diferenciais da Carplus?', answer: 'Certificação Pirelli Performance Center, orçamento transparente, garantia em todos os serviços e estrutura completa de mecânica e pneus.' },
       { question: 'Onde fica a Carplus?', answer: 'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, em Curitiba.' },
       { question: 'O orçamento é gratuito?', answer: 'Sim, o orçamento é sem compromisso. Avaliamos o veículo e apresentamos os valores antes de qualquer serviço.' },
       { question: 'Quais serviços a Carplus oferece?', answer: 'Revisão preventiva, troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico e pneus.' },
@@ -402,7 +402,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Garantia, experiência e transparência',
         content:
-          'Mais de 35 anos de experiência em diagnóstico automotivo dão à nossa equipe a segurança de identificar problemas com precisão e resolver na primeira tentativa. Todos os serviços têm garantia, com nota fiscal e peças de qualidade. E, antes de qualquer reparo, apresentamos um orçamento detalhado e transparente — você só autoriza o que faz sentido para o seu carro e para o seu bolso. Essa postura honesta é o que mantém nossa avaliação em 4,9 no Google.',
+          'A experiência da nossa equipe em diagnóstico automotivo dá a segurança de identificar problemas com precisão e resolver na primeira tentativa. Todos os serviços têm garantia, com nota fiscal e peças de qualidade. E, antes de qualquer reparo, apresentamos um orçamento detalhado e transparente — você só autoriza o que faz sentido para o seu carro e para o seu bolso. Essa postura honesta é o que mantém nossa avaliação em 4,9 no Google.',
       },
       {
         title: 'Visite a Carplus e compare',
@@ -413,7 +413,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
     testimonials: DEPOIMENTOS_PADRAO,
     faq: [
       { question: 'A Carplus tem vínculo com outras empresas mencionadas?', answer: 'Não. Esta página tem caráter comparativo e informativo. A Carplus é uma empresa independente, sem qualquer vínculo comercial com outras oficinas citadas.' },
-      { question: 'O que torna a Carplus uma boa opção?', answer: 'Certificação Pirelli Performance Center, mais de 35 anos de experiência, garantia em todos os serviços, orçamento transparente e estrutura completa de mecânica e pneus.' },
+      { question: 'O que torna a Carplus uma boa opção?', answer: 'Certificação Pirelli Performance Center, garantia em todos os serviços, orçamento transparente e estrutura completa de mecânica e pneus.' },
       { question: 'Quais serviços a Carplus oferece?', answer: 'Troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico, revisão preventiva e pneus.' },
       { question: 'Onde fica a Carplus?', answer: 'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, em Curitiba.' },
       { question: 'Os serviços têm garantia?', answer: 'Sim, todos os serviços têm garantia, com nota fiscal e peças de qualidade.' },
@@ -462,7 +462,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
     ],
     differentials: [
       { icon: 'award', title: 'Estrutura Especializada', description: 'Equipamentos modernos preparados para veículos robustos.' },
-      { icon: 'users', title: '+35 Anos de Experiência', description: 'Especialista em diagnóstico com mais de três décadas de atuação.' },
+      { icon: 'users', title: 'Diagnóstico Especializado', description: 'Equipe especializada em diagnóstico automotivo antes do orçamento.' },
       { icon: 'shield', title: 'Orçamento Transparente', description: 'Avaliação detalhada antes de qualquer serviço, sem surpresas.' },
       { icon: 'gauge', title: 'Diagnóstico de Precisão', description: 'Scanner eletrônico para identificar falhas com exatidão.' },
     ],

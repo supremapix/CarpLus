@@ -115,6 +115,19 @@ export interface SeoTireLandingProps {
   whatsappMsg: string;
   /** Quando informado, exibe a galeria de fotos da oficina/serviços com alt e schema localizados (ex.: "Curitiba", "Portão"). */
   galleryLocal?: string;
+  /**
+   * Cluster semântico Aro → Medida → Marca (somente dados reais do catálogo).
+   * Renderiza um bloco compacto com links HTML rastreáveis para medidas e marcas do aro.
+   */
+  aroCluster?: {
+    aro: number;
+    measures: string[];
+    brands: { name: string; to?: string }[];
+  };
+}
+
+function measureSlug(medida: string): string {
+  return medida.toLowerCase().replace(/\//g, '-');
 }
 
 function FaqAccordion({ faq }: { faq: FaqItem[] }) {
@@ -189,6 +202,7 @@ export default function SeoTireLanding({
   relatedLinks,
   whatsappMsg,
   galleryLocal,
+  aroCluster,
 }: SeoTireLandingProps) {
   const displayTires = tires.slice(0, 12);
   const brands = [...new Set(tires.filter((t) => t && t.marca).map((t) => t.marca))];
@@ -278,12 +292,12 @@ export default function SeoTireLanding({
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
           </div>
 
-          <div className="relative z-10 p-7 md:p-12">
+          <div className="relative z-10 p-6 sm:p-8 md:p-12">
             <span className="inline-flex items-center gap-2 bg-primary text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-5">
               <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
               {badge}
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter italic leading-none mb-5 text-balance [text-shadow:_0_2px_12px_rgb(0_0_0_/_55%)]">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tighter italic leading-none mb-5 text-balance break-words [text-shadow:_0_2px_12px_rgb(0_0_0_/_55%)]">
               {highlight ? (
                 <>
                   {h1Before}
@@ -294,7 +308,7 @@ export default function SeoTireLanding({
                 h1
               )}
             </h1>
-            <p className="text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-3xl text-pretty [text-shadow:_0_1px_8px_rgb(0_0_0_/_50%)]">{intro}</p>
+            <p className="text-base sm:text-lg md:text-xl text-white/80 font-medium leading-relaxed max-w-3xl text-pretty [text-shadow:_0_1px_8px_rgb(0_0_0_/_50%)]">{intro}</p>
 
             {tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-6">
@@ -310,18 +324,18 @@ export default function SeoTireLanding({
             )}
 
             {/* CTA principal */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <a
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-900/40"
+                className="flex min-h-12 items-center justify-center gap-3 bg-[#25D366] text-white px-6 sm:px-8 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-900/40"
               >
                 <MessageSquare size={22} /> Orçamento no WhatsApp
               </a>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                className="flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all"
+                className="flex min-h-12 items-center justify-center gap-3 bg-white text-black px-6 sm:px-8 rounded-full font-bold text-sm sm:text-base hover:bg-gray-100 transition-all"
               >
                 <Phone size={20} /> {PHONE_DISPLAY}
               </a>
@@ -349,12 +363,86 @@ export default function SeoTireLanding({
           ))}
         </section>
 
+        {/* Cluster semântico: Pneus → Aro → Medida → Marca → Montagem/Balanceamento/Alinhamento */}
+        {aroCluster && (aroCluster.measures.length > 0 || aroCluster.brands.length > 0) && (
+          <section className="mb-14 rounded-[2rem] border border-gray-100 bg-white p-6 shadow-sm sm:p-8" aria-labelledby={`aro-cluster-${aroCluster.aro}`}>
+            <h2 id={`aro-cluster-${aroCluster.aro}`} className="text-2xl font-bold uppercase tracking-tighter italic sm:text-3xl">
+              Onde comprar pneu aro {aroCluster.aro} <span className="text-primary">em Curitiba</span>
+            </h2>
+            <p className="mt-3 max-w-3xl text-pretty leading-relaxed text-gray-600">
+              A Carplus Pneus e Oficina vende pneus aro {aroCluster.aro} em Curitiba, com loja e oficina na Av. Presidente
+              Arthur da Silva Bernardes, 1323, no bairro Portão. A compra inclui montagem e balanceamento, e o alinhamento
+              3D pode ser feito na mesma visita.
+              {aroCluster.brands.length > 0 && (
+                <> Marcas disponíveis neste aro: {aroCluster.brands.map((b) => b.name).join(', ')}.</>
+              )}
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+              {aroCluster.measures.length > 0 && (
+                <div>
+                  <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">Medidas aro {aroCluster.aro} no catálogo</h3>
+                  <ul className="flex flex-wrap gap-2">
+                    {aroCluster.measures.map((m) => (
+                      <li key={m}>
+                        <Link
+                          to={`/pneu-medida/${measureSlug(m)}`}
+                          className="flex min-h-10 items-center rounded-full border border-gray-200 bg-gray-50 px-4 text-sm font-bold text-dark transition-colors hover:border-primary hover:bg-primary/10"
+                        >
+                          {m}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {aroCluster.brands.length > 0 && (
+                <div>
+                  <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">Marcas com pneu aro {aroCluster.aro}</h3>
+                  <ul className="flex flex-wrap gap-2">
+                    {aroCluster.brands.map((b) =>
+                      b.to ? (
+                        <li key={b.name}>
+                          <Link
+                            to={b.to}
+                            className="flex min-h-10 items-center rounded-full bg-dark px-4 text-sm font-bold text-white transition-colors hover:bg-black"
+                          >
+                            {b.name} aro {aroCluster.aro}
+                          </Link>
+                        </li>
+                      ) : (
+                        <li key={b.name} className="flex min-h-10 items-center rounded-full border border-gray-200 px-4 text-sm font-bold text-gray-600">
+                          {b.name} aro {aroCluster.aro}
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <ul className="mt-6 flex flex-wrap gap-2 border-t border-gray-100 pt-5" aria-label="Serviços incluídos ou combinados">
+              {[
+                { label: 'Montagem de pneu', to: '/servico/montagem-de-pneu' },
+                { label: 'Balanceamento', to: '/servico/alinhamento-e-balanceamento' },
+                { label: 'Alinhamento 3D', to: '/servico/alinhamento-3d' },
+              ].map((s) => (
+                <li key={s.to}>
+                  <Link to={s.to} className="flex min-h-10 items-center gap-2 rounded-full bg-primary/10 px-4 text-sm font-bold text-dark transition-colors hover:bg-primary">
+                    <CheckCircle2 size={15} className="text-primary" /> {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Conteúdo / Seções */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {sections.map((s) => (
-            <div key={s.title} className="bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100">
-              <h2 className="text-2xl font-bold uppercase tracking-tighter italic mb-4">{s.title}</h2>
-              <p className="text-gray-600 leading-relaxed">{s.content}</p>
+            <div key={s.title} className="bg-white rounded-[2rem] p-6 sm:p-8 shadow-sm border border-gray-100">
+              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tighter italic mb-4 text-balance">{s.title}</h2>
+              <p className="text-gray-600 leading-relaxed text-pretty">{s.content}</p>
             </div>
           ))}
         </section>
@@ -364,7 +452,7 @@ export default function SeoTireLanding({
           <section className="mb-16">
             <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter italic">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tighter italic text-balance">
                   Modelos <span className="text-primary">disponíveis</span>
                 </h2>
                 <p className="text-gray-500 font-medium mt-1">
@@ -405,12 +493,12 @@ export default function SeoTireLanding({
         )}
 
         {/* Relação com alinhamento e balanceamento */}
-        <section className="bg-dark text-white rounded-[2.5rem] p-8 md:p-12 mb-16 relative overflow-hidden">
+        <section className="bg-dark text-white rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 mb-16 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Target size={160} />
           </div>
           <div className="relative z-10 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter italic mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tighter italic mb-4 text-balance">
               Pneu novo pede <span className="text-primary">alinhamento e balanceamento</span>
             </h2>
             <p className="text-white/70 leading-relaxed mb-8">
@@ -439,13 +527,13 @@ export default function SeoTireLanding({
         </section>
 
         {/* FAQ */}
-        <section className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl mb-16">
-          <div className="flex items-center gap-4 mb-10">
+        <section className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 shadow-xl mb-16">
+          <div className="flex items-center gap-4 mb-8">
             <div className="bg-primary p-3 rounded-2xl">
               <HelpCircle className="text-black" size={28} />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter italic">Perguntas Frequentes</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tighter italic text-balance">Perguntas Frequentes</h2>
               <p className="text-gray-500 text-sm font-medium">Tudo o que você precisa saber antes de comprar</p>
             </div>
           </div>
@@ -459,7 +547,7 @@ export default function SeoTireLanding({
               <Wrench className="text-primary" size={28} />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter italic">Serviços Relacionados</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tighter italic text-balance">Serviços Relacionados</h2>
               <p className="text-gray-500 text-sm font-medium">Tudo o que seu carro precisa, no mesmo lugar — no Portão, em Curitiba</p>
             </div>
           </div>
