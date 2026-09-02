@@ -252,17 +252,9 @@
     }
     </script>
 
-    <!-- Dados estruturados gerenciados pela Localo -->
-    <script>
-      fetch("https://api.localo.com/api/structured_data/ygoFn0wRuWccCc4bE80C7FOe14oMNHTkbo_Ybzk3wsg/local_business")
-        .then((response) => response.json())
-        .then((data) => {
-          const script = document.createElement("script");
-          script.type = "application/ld+json";
-          script.textContent = JSON.stringify(data);
-          document.head.appendChild(script);
-        });
-    </script>
+    <!-- Schema LocalBusiness é servido inline no @graph acima (fonte única da entidade).
+         O injetor remoto da Localo foi removido: duplicava o @id com nome, região e
+         avaliações divergentes, gerando conflito de entidade. -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

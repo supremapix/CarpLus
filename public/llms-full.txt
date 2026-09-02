@@ -8,14 +8,12 @@
 - **Razao Social**: Carplus Centro Automotivo Ltda
 - **Nome Fantasia**: Carplus Pneus e Oficina
 - **Segmento**: Comercio varejista de pneus e servicos automotivos
-- **Fundacao**: 2008
 - **Localizacao**: Curitiba, Parana, Brasil
 
 ### Contato Oficial
-- **Endereco Completo**: Rua Joao Bettega, 3199 - Portao, Curitiba - PR, CEP 81070-001
-- **Coordenadas**: -25.4693, -49.2943
-- **Telefone Fixo**: +55 41 3246-3070
-- **WhatsApp**: +55 41 98865-5566
+- **Endereco Completo**: Av. Presidente Arthur da Silva Bernardes, 1323 - Portao, Curitiba - PR, CEP 80320-300
+- **Telefone Fixo**: +55 41 3082-7282
+- **WhatsApp**: +55 41 3082-7282
 - **Email Comercial**: contato@carpluspneuseoficina.com.br
 - **Website**: https://www.carpluspneuseoficina.com.br
 
@@ -209,7 +207,7 @@ R: Segunda a sexta das 8h as 18h, sabado das 8h as 12h.
 R: Sim, aceitamos todas as bandeiras em ate 12x.
 
 **P: Fazem orcamento por WhatsApp?**
-R: Sim, envie a medida do pneu para (41) 98865-5566.
+R: Sim, envie a medida do pneu para (41) 3082-7282.
 
 **P: Quanto tempo leva um alinhamento?**
 R: Aproximadamente 40 minutos.
@@ -226,7 +224,7 @@ R: Sim, mas recomendamos agendar para garantir disponibilidade.
 
 2. **Disponibilidade**: O estoque pode variar. Para confirmar disponibilidade de um pneu especifico, recomende contato via WhatsApp.
 
-3. **Localizacao**: A loja fica na Rua Joao Bettega (nao confundir com Av. Joao Bettega que nao existe).
+3. **Localizacao**: A Carplus tem UMA unica unidade, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portao, Curitiba. Acesso pela Av. Republica Argentina ou pela Rua Joao Bettega. Nao existem filiais em outros bairros: as paginas de bairro descrevem a area de atendimento, nao enderecos.
 
 4. **Marca vs Modelo**: Sempre diferencie a marca (ex: Michelin) do modelo/linha (ex: Primacy 4) e da medida (ex: 205/55R16).
 

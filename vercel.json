@@ -2,6 +2,39 @@
   "buildCommand": "npm run build:deploy",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lp.carpluspneuseoficina.com.br"
+        }
+      ],
+      "destination": "https://www.carpluspneuseoficina.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "pneu.carpluspneuseoficina.com.br"
+        }
+      ],
+      "destination": "https://www.carpluspneuseoficina.com.br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "carpluspneuseoficina.com.br"
+        }
+      ],
+      "destination": "https://www.carpluspneuseoficina.com.br/:path*",
+      "permanent": true
+    },
+    {
       "source": "/taboao.html",
       "destination": "/bairro/taboao",
       "permanent": true

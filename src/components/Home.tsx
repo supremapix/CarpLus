@@ -9,6 +9,7 @@ import PneusCuritibaPromo from './PneusCuritibaPromo';
 import Footer from './Footer';
 import DeferredSection from './DeferredSection';
 import HomeFAQ, { getHomeFaqSchema } from './HomeFAQ';
+import PneusPorAroSection from './PneusPorAroSection';
 import { ArrowRight, MessageSquare, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';

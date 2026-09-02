@@ -19,9 +19,26 @@ import { BRAND_PAGES } from '../src/data/seoLanding';
 
 export interface RedirectRule {
   source: string;
-  has?: { type: 'query'; key: string; value: string }[];
+  has?: { type: 'query' | 'host'; key?: string; value: string }[];
   destination: string;
   permanent: boolean;
+}
+
+/**
+ * Consolidação de domínio: subdomínios legados (lp., pneu.) e o apex sem www
+ * apontam para o host canônico. Evita conteúdo duplicado entre hosts e
+ * concentra a autoridade da entidade em um único domínio.
+ */
+const CANONICAL_HOST = 'www.carpluspneuseoficina.com.br';
+const LEGACY_HOSTS = ['lp.carpluspneuseoficina.com.br', 'pneu.carpluspneuseoficina.com.br', 'carpluspneuseoficina.com.br'];
+
+function buildHostRedirects(): RedirectRule[] {
+  return LEGACY_HOSTS.map((host) => ({
+    source: '/:path*',
+    has: [{ type: 'host' as const, value: host }],
+    destination: `https://${CANONICAL_HOST}/:path*`,
+    permanent: true,
+  }));
 }
 
 /**
@@ -146,13 +163,11 @@ function buildBrandRedirects(): RedirectRule[] {
 
 /** Todos os 76 redirects manuais promovidos na E5, na ordem: bairros → medida → marcas. */
 export function getManualRedirects(): RedirectRule[] {
-  return [...buildNeighborhoodRedirects(), ...buildMeasureRedirect(), ...buildBrandRedirects()];
+  return [...buildHostRedirects(), ...buildNeighborhoodRedirects(), ...buildMeasureRedirect(), ...buildBrandRedirects()];
 }
-
-/** Chave estável para deduplicação (source + query normalizada). */
 export function redirectKey(r: RedirectRule): string {
   const q = (r.has ?? [])
-    .map((h) => `${h.type}:${h.key}=${h.value}`)
+    .map((h) => `${h.type}:${h.key ?? ''}=${h.value}`)
     .sort()
     .join('&');
   return `${r.source}::${q}`;

@@ -136,8 +136,8 @@ export default function Footer() {
          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 text-left">
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Pneus por Aro</h4>
-               <ul className="space-y-2 text-xs font-medium text-white/50">
-                  {['13','14','15','16','17','18'].map((aro) => (
+               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium text-white/50">
+                  {['13','14','15','16','17','18','19','20','21','22'].map((aro) => (
                     <li key={aro}>
                       <Link to={`/pneu-aro-${aro}-curitiba`} className="hover:text-primary transition-colors">Pneu Aro {aro}</Link>
                     </li>
