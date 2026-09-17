@@ -1,125 +1,87 @@
-# Carplus Pneus e Oficina - Oficina Mecanica e Loja de Pneus no Portao, Curitiba
+# Carplus Pneus e Oficina - Oficina Mecânica e Loja de Pneus no Portão, Curitiba
 
-> Centro automotivo com unica unidade no bairro Portao, Curitiba (PR). Venda e montagem de pneus, alinhamento 3D, balanceamento, freios, suspensao, direcao, troca de oleo e diagnostico. Atende Portao e bairros proximos (Vila Izabel, Agua Verde, Guaira, Fanny, Lindoia, Novo Mundo, Seminario, Santa Quiteria, Fazendinha, Capao Raso).
+> Centro automotivo com unidade única no bairro Portão, em Curitiba (PR). Venda e montagem de pneus, alinhamento 3D, balanceamento de rodas, freios, suspensão, troca de óleo e filtros, e diagnóstico automotivo. Atende clientes de Curitiba e Região Metropolitana.
 
-## Informacoes da Empresa
+## Informações da Empresa
 
-- **Nome**: Carplus Centro Automotivo
-- **Endereco**: Av. Presidente Arthur da Silva Bernardes, 1323 - Portao, Curitiba - PR, CEP 80320-300
+- **Nome**: Carplus Pneus e Oficina (Carplus Centro Automotivo)
+- **Endereço**: Av. Presidente Arthur da Silva Bernardes, 1323 - Portão, Curitiba - PR, CEP 80320-300
 - **Telefone**: (41) 3082-7282
 - **WhatsApp**: (41) 3082-7282
 - **Email**: contato@carpluspneuseoficina.com.br
-- **Horario**: Segunda a Sexta 08:00-18:00, Sabado 08:00-12:00
+- **Horário de Funcionamento**: Segunda a Sexta das 08:00 às 18:00 | Sábado das 08:00 às 12:00 | Domingo e Feriados: Fechado
 - **Website**: https://www.carpluspneuseoficina.com.br
 
-## Sobre Nos
+## Sobre a Empresa
 
-Carplus Centro Automotivo e uma loja de pneus e oficina mecanica localizada no bairro Portao em Curitiba. Unica unidade, no Portao. Oferecemos:
+A Carplus Pneus e Oficina é uma loja de pneus e oficina mecânica com loja física localizada na Av. Presidente Arthur da Silva Bernardes, 1323, no bairro Portão, em Curitiba (PR). Possui ampla estrutura para atendimento automotivo, com equipe técnica especializada em serviços de pneus e mecânica preventiva.
 
-- Venda de pneus das marcas Pirelli, Michelin, Goodyear, Bridgestone, Continental, Firestone, Yokohama, Prinx e Delinte
-- Servicos de alinhamento computadorizado 3D
-- Balanceamento de rodas
-- Troca de oleo e filtros
-- Revisao automotiva completa
-- Suspensao e freios
-- Ar condicionado automotivo
-- Injecao eletronica
-- Cambagem e caster
+## Marcas de Pneus Comercializadas
 
-## Catalogo de Pneus
+Trabalhamos com pneus novos das principais marcas do mercado:
+- **Pirelli** (Cinturato P1/P7, Scorpion, Chrono, P400 Evo)
+- **Michelin** (Primacy 4, Pilot Sport, Agilis, LTX Force)
+- **Goodyear** (EfficientGrip, Wrangler, Assurance, Direction)
+- **Continental** (PowerContact 2, ContiCrossContact, UltraContact, VanContact)
+- **Bridgestone** (Turanza, Dueler, Ecopia)
+- **Firestone** (F-700, Destination, CV5000)
+- **Yokohama** (BluEarth, Geolandar, Advan)
+- **Prinx** (HiCity, Fortune, Aquila)
+- **Delinte** (DH2, DS8, DX10, Bandit)
 
-Temos mais de 2.600 modelos de pneus em estoque, incluindo:
+## Categorias e Medidas de Pneus
 
-### Marcas Premium
-- Michelin (Primacy, Pilot Sport, CrossClimate, Energy)
-- Pirelli (Cinturato, P Zero, Scorpion, P7)
-- Continental (ContiSportContact, EcoContact, CrossContact, PowerContact)
-- Goodyear (EfficientGrip, Eagle, Wrangler, Assurance)
-- Bridgestone (Turanza, Potenza, Dueler, Ecopia)
+- Pneus para veículos de passeio, hatches e sedãs
+- Pneus para SUVs, crossovers e picapes (H/T, A/T)
+- Pneus para vans e utilitários de carga leve
+- Aros disponíveis: Aro 13, 14, 15, 16, 17, 18, 19, 20, 21 e 22
 
-### Marcas Performance
-- Yokohama (ADVAN, GEOLANDAR, BluEarth, NEOVA)
-- Dunlop (SP Sport, Grandtrek, Direzza)
-- Hankook (Ventus, Kinergy, Dynapro)
-- Toyo (Proxes, Open Country)
-- Nitto (NT555, Terra Grappler)
+## Serviços Automotivos Realizados na Loja
 
-### Marcas Custo-Beneficio
-- Kumho, GT Radial, Kenda, Laufenn, Maxxis, Nexen
-- Sailun, Triangle, Westlake, Achilles, Aptany
-- Linglong, Goodride, Haida, Hifly, Landsail
-
-### Categorias de Pneus
-- Pneus para carros de passeio (aro 13 a 22)
-- Pneus para SUV e caminhonetes
-- Pneus para veiculos utilitarios e vans
-- Pneus off-road e todo-terreno (A/T, M/T)
-- Pneus esportivos e alta performance
-- Pneus run-flat
-
-## Servicos Automotivos
-
-### Pneus e Rodas
+### Pneus e Geometria
+- Venda e instalação de pneus
 - Alinhamento computadorizado 3D
 - Balanceamento de rodas
-- Troca e montagem de pneus
-- Rodizio de pneus
-- Reparo de pneus
-- Calibragem com nitrogenio
+- Rodízio de pneus
+- Conserto de furos em pneus (manchão interno a frio)
+- Cambagem e cáster
 
-### Mecanica Geral
-- Troca de oleo e filtros
-- Revisao de freios (pastilhas, discos, fluido)
-- Suspensao (amortecedores, molas, pivos, buchas)
-- Embreagem
-- Correia dentada
-- Sistema de arrefecimento
+### Mecânica Preventiva e Revisão
+- Troca de óleo de motor e filtros (óleo, ar, combustível e cabine)
+- Revisão do sistema de freios (pastilhas, discos, lonas, tambores e fluido de freio)
+- Revisão e manutenção de suspensão (amortecedores, molas, pivôs, bieletas e buchas)
+- Revisão de sistema de direção
+- Troca de correia dentada e correia de acessórios
+- Diagnóstico computadorizado com scanner automotivo
 
-### Servicos Especializados
-- Injecao eletronica
-- Ar condicionado automotivo
-- Diagnostico computadorizado
-- Scanner automotivo
-- Geometria de suspensao (cambagem, caster, convergencia)
+## Localização e Região Atendida
 
-## Areas Atendidas
-
-### Curitiba - Bairros
-Portao, Agua Verde, Batel, Centro, Bigorrilho, Champagnat, Cristo Rei, Juveve, Merces, Reboucas, Santa Felicidade, Seminario, Alto da Gloria, Alto da XV, Bacacheri, Bom Retiro, Cabral, Cajuru, Campo Comprido, Capao Raso, CIC, Fazendinha, Hauer, Hugo Lange, Jardim Botanico, Jardim das Americas, Jardim Social, Lindoia, Novo Mundo, Orleans, Parolin, Pilarzinho, Pinheirinho, Prado Velho, Santa Quiteria, Santo Inacio, Sao Braz, Sao Lourenco, Sitio Cercado, Taruma, Tingui, Uberaba, Vila Izabel, Vista Alegre, Xaxim
-
-### Regiao Metropolitana
-Sao Jose dos Pinhais, Colombo, Araucaria, Campo Largo, Pinhais, Fazenda Rio Grande, Almirante Tamandare, Piraquara, Quatro Barras, Campo Magro, Campina Grande do Sul, Bocaiuva do Sul, Contenda, Mandirituba, Lapa
+A loja física situa-se no bairro Portão em Curitiba (PR). Atende motoristas de toda a cidade de Curitiba, com destaque para bairros vizinhos como:
+- Portão, Água Verde, Vila Izabel, Fazendinha, Novo Mundo, Santa Quitéria, Capão Raso, Fanny, Lindóia, Guaíra, Parolin, Seminário, Campo Comprido e Pinheirinho.
+- Clientes de cidades vizinhas da Região Metropolitana: São José dos Pinhais, Araucária, Campo Largo e Fazenda Rio Grande.
 
 ## Estrutura do Site
 
-- `/` - Pagina inicial
-- `/pneus` - Catalogo completo de pneus com filtros
-- `/pneus-curitiba` - Central de pneus em Curitiba (hub por aro, marca, veiculo e bairro)
-- `/pneu/[slug]` - Pagina individual de cada pneu
-- `/pneu-aro-[13..20]-curitiba` - Pneus por aro em Curitiba (ex: /pneu-aro-15-curitiba)
-- `/pneu-[marca]-curitiba` - Pneus por marca (pirelli, michelin, goodyear, continental, yokohama)
-- `/pneu-para-[veiculo]-curitiba` - Pneus por veiculo (hb20, onix, corolla, civic, compass, renegade, t-cross, creta, argo, kwid)
-- `/pneu-medida/[medida]` - Pneus por medida (ex: /pneu-medida/175-65-14)
-- `/servicos` - Lista de todos os servicos
-- `/servico/[slug]` - Pagina individual de cada servico
-- `/bairros` - Bairros e cidades atendidas
-- `/bairro/[slug]` - Pagina por bairro/cidade
-- `/contato` - Informacoes de contato e formulario
-- `/sobre` - Sobre a empresa
-- `/sitemap` - Mapa do site visual
-- `/sitemap.xml` - Sitemap XML para buscadores
+- `/` - Página inicial com vitrine de pneus e serviços
+- `/pneus` - Catálogo completo de pneus com busca e filtros
+- `/pneus-promocao` - Lista de ofertas e destaques
+- `/pneu/[slug]` - Página técnica de cada modelo de pneu
+- `/pneu-medida/[medida]` - Pneus agrupados por medida
+- `/pneu-aro-[aro]-curitiba` - Pneus agrupados por aro
+- `/pneu-[marca]-curitiba` - Pneus agrupados por fabricante
+- `/pneu-para-[veiculo]-curitiba` - Pneus recomendados por veículo
+- `/servicos` - Catálogo de serviços mecânicos e de borracharia
+- `/servico/[slug]` - Detalhes de cada serviço oferecido
+- `/bairros` - Regiões e bairros atendidos em Curitiba
+- `/bairro/[slug]` - Páginas de atendimento local
+- `/quem-somos` - História e estrutura da Carplus
+- `/como-chegar` - Mapa, rotas e orientações de acesso à loja
+- `/faq` - Perguntas frequentes sobre pneus e mecânica
+- `/contato` - Telefones, WhatsApp e endereço
+- `/sitemap.xml` - Índice de sitemaps para motores de busca
 
-## Contato
+## Atendimento e Orçamentos
 
-Para orcamentos e agendamentos:
-- WhatsApp: (41) 3082-7282 (mais rapido)
+- WhatsApp oficial: (41) 3082-7282 (https://wa.me/554130827282)
 - Telefone: (41) 3082-7282
-- Email: contato@carpluspneuseoficina.com.br
-- Visite nossa loja: Av. Presidente Arthur da Silva Bernardes, 1323 - Portao, Curitiba
-
-## Links Uteis
-
-- Catalogo de Pneus: https://www.carpluspneuseoficina.com.br/pneus
-- Servicos: https://www.carpluspneuseoficina.com.br/servicos
-- Contato: https://www.carpluspneuseoficina.com.br/contato
-- WhatsApp Direto: https://wa.me/554130827282
+- Endereço para atendimento presencial: Av. Presidente Arthur da Silva Bernardes, 1323 - Portão, Curitiba - PR

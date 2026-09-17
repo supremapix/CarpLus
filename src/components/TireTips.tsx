@@ -229,7 +229,7 @@ export default function TireTips({ tireName, categoria }: TireTipsProps) {
               </div>
             </div>
             <a
-              href="https://wa.me/5541991677282?text=Olá! Gostaria de agendar um serviço para meus pneus."
+              href="https://wa.me/554130827282?text=Olá! Gostaria de agendar um serviço para meus pneus."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#F7941D] hover:bg-[#e8850f] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#F7941D]/30 whitespace-nowrap"

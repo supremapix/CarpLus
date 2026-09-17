@@ -81,7 +81,7 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
         type: 'bairro',
         title: neighborhood.name,
         description: `${zonaLabel} - ${neighborhood.tempo} da Carplus`,
-        url: `/bairro/${neighborhood.slug || neighborhood.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`,
+        url: `/bairro/${(neighborhood as { slug?: string; name: string }).slug || neighborhood.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`,
         icon: <MapPin size={16} className="text-primary" />
       });
     });

@@ -7,6 +7,7 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "sitemap": "node scripts/run-ts.mjs scripts/generate-sitemap.ts",
     "redirects": "node scripts/run-ts.mjs scripts/generate-redirects.ts",
+    "validate:redirects": "node scripts/validate-redirects.mjs",
     "prebuild": "node scripts/run-ts.mjs scripts/generate-sitemap.ts && node scripts/run-ts.mjs scripts/generate-redirects.ts",
     "build": "vite build",
     "build:spa": "vite build",
@@ -43,6 +44,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
     "esbuild": "^0.28.1",
     "puppeteer": "^25.3.0",

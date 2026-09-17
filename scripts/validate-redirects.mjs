@@ -21,8 +21,8 @@ console.log('# Validação estática dos redirects (vercel.json)\n');
 
 // 1. Contagem
 console.log('1. Contagem');
-if (redirects.length === 152) ok(`152 redirects (esperado)`);
-else fail(`esperado 152, encontrado ${redirects.length}`);
+if (redirects.length === 157) ok(`157 redirects (esperado)`);
+else fail(`esperado 157, encontrado ${redirects.length}`);
 
 const bairro = redirects.filter((r) => r.source.endsWith('.html'));
 const medida = redirects.filter((r) => r.source.includes(':medida'));
@@ -33,13 +33,13 @@ const pag = redirects.filter((r) => Array.isArray(r.has));
 console.log(
   `   grupos → bairros:${bairro.length} medida:${medida.length} marcas:${brand.length} paginação:${pag.length}`,
 );
-if (bairro.length === 69) ok('69 bairros/cidades');
+if (bairro.length === 71) ok('71 bairros/cidades');
 else fail(`bairros: ${bairro.length}`);
 if (medida.length === 1) ok('1 medida dinâmica');
 else fail(`medida: ${medida.length}`);
 if (brand.length === 6) ok('6 marcas legadas');
 else fail(`marcas: ${brand.length}`);
-if (pag.length === 76) ok('76 paginação');
+if (pag.length === 79) ok('79 paginação');
 else fail(`paginação: ${pag.length}`);
 
 // 2. Todos permanentes (301)
