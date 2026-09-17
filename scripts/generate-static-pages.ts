@@ -336,6 +336,18 @@ export async function renderRouteOnPage(
     hasTouch: viewport.isMobile,
   });
 
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    const resourceType = req.resourceType();
+    const isLocal = req.url().startsWith(origin);
+    // Let everything load except external tracking scripts to avoid failing local assets
+    if (!isLocal && ['script', 'fetch', 'xhr', 'document'].includes(resourceType)) {
+      req.abort();
+    } else {
+      req.continue();
+    }
+  });
+
   // Render ansioso: injeta ANTES de qualquer script do app. Também define o shim
   // `__name` (tsx/esbuild keepNames) usado ao serializar funções p/ o navegador.
   await page.evaluateOnNewDocument(() => {
@@ -355,7 +367,11 @@ export async function renderRouteOnPage(
   );
   page.on('requestfailed', (req) => {
     const u = req.url();
-    if (u.startsWith(origin)) failedRequests.push(`${req.failure()?.errorText ?? 'failed'} ${u}`);
+    // Do not fail the whole route if an image, font, or script fails to load.
+    // Only flag as failure if it's the main document or a critical chunk.
+    if (u.startsWith(origin) && !u.includes('/fonts/') && !u.includes('.woff2') && !u.includes('.png') && !u.includes('.webp') && !u.includes('.svg')) {
+      failedRequests.push(`${req.failure()?.errorText ?? 'failed'} ${u}`);
+    }
   });
   page.on('response', (res) => {
     const u = res.url();

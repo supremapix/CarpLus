@@ -9,7 +9,7 @@
     "redirects": "node scripts/run-ts.mjs scripts/generate-redirects.ts",
     "validate:redirects": "node scripts/validate-redirects.mjs",
     "prebuild": "node scripts/run-ts.mjs scripts/generate-sitemap.ts && node scripts/run-ts.mjs scripts/generate-redirects.ts",
-    "build": "vite build",
+    "build": "node scripts/build-deploy.mjs",
     "build:spa": "vite build",
     "generate:static:pilot": "node scripts/run-ts.mjs scripts/generate-static-pages.entry.ts",
     "build:static:pilot": "npm run build:spa && npm run generate:static:pilot",
@@ -21,7 +21,7 @@
     "generate:static:25": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --limit=25 --shuffle",
     "generate:static:100": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --limit=100 --shuffle",
     "generate:static:500": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --limit=500 --shuffle",
-    "generate:static:all": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts",
+    "generate:static:all": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --fresh --concurrency=4",
     "generate:static:retry": "node scripts/run-ts.mjs scripts/generate-static-all.entry.ts --retry-failed",
     "validate:static:all": "node scripts/run-ts.mjs scripts/validate-static-all.ts",
     "build:static": "npm run sitemap && npm run redirects && npm run build:spa && npm run generate:static:all && npm run validate:static:all",
@@ -52,7 +52,6 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "typescript": "~5.8.2"
   }
 }
