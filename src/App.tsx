@@ -96,11 +96,12 @@ export default function App() {
   }, []);
 
   // Scroll to top and track page_view on route change (delayed to ensure document.title updated by useSEO)
+  // Dispara uma ÚNICA visualização por abertura de página diretamente via gtag
   useEffect(() => {
     window.scrollTo(0, 0);
     if (typeof window !== 'undefined') {
       const timer = setTimeout(() => {
-        const w = window as unknown as { gtag?: (type: string, name: string, params: object) => void; dataLayer?: unknown[] };
+        const w = window as unknown as { gtag?: (type: string, name: string, params: object) => void };
         if (typeof w.gtag === 'function') {
           w.gtag('event', 'page_view', {
             page_path: pathname,
@@ -108,13 +109,6 @@ export default function App() {
             page_title: document.title,
           });
         }
-        w.dataLayer = w.dataLayer || [];
-        w.dataLayer.push({
-          event: 'page_view',
-          page_path: pathname,
-          page_location: window.location.href,
-          page_title: document.title,
-        });
       }, 100);
       return () => clearTimeout(timer);
     }

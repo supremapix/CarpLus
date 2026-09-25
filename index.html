@@ -7,7 +7,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-VHK6RGQ6SH');
+      // send_page_view: false evita page_view duplicado no load inicial do SPA.
+      // O evento page_view único e com title/URL corretos é gerenciado pelo React Router no App.tsx.
+      gtag('config', 'G-VHK6RGQ6SH', { send_page_view: false });
     </script>
 
     <!-- Google Tag Manager: carregado de forma diferida via AnalyticsLoader (Delayed Analytics). -->
@@ -284,38 +286,31 @@
         return false;
       }
 
-      function ga(nome, params) {
+      function ga(nome, params, ehLead) {
         var dados = params || {};
         dados.page_location = window.location.href;
         dados.page_path = window.location.pathname + window.location.search;
         dados.page_title = document.title;
         dados.pagina_origem = window.location.pathname;
 
-        // Dispara no GA4 via gtag
+        // Dispara no GA4 via gtag diretamente (canal único oficial para G-VHK6RGQ6SH),
+        // evitando que gtag e Google Tag Manager enviem o mesmo evento duas vezes no DebugView.
         if (typeof window.gtag === 'function') {
           window.gtag('event', nome, dados);
-          // Dispara também o evento padrão recomendado generate_lead (sem valor monetário de compra)
-          window.gtag('event', 'generate_lead', {
-            method: dados.metodo_contato || nome,
-            pagina_origem: dados.pagina_origem,
-            local: dados.local || 'geral',
-            page_location: dados.page_location,
-            page_title: dados.page_title,
-            value: 0
-          });
-        }
 
-        // Garante sincronização com o dataLayer (consumido pelo GTM se ativo)
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(Object.assign({ event: nome }, dados));
-        window.dataLayer.push(Object.assign({ 
-          event: 'generate_lead', 
-          method: dados.metodo_contato || nome,
-          pagina_origem: dados.pagina_origem,
-          page_location: dados.page_location,
-          page_title: dados.page_title,
-          value: 0 
-        }, dados));
+          // Dispara generate_lead exclusivamente para contatos comerciais (WhatsApp, telefone, formulário).
+          // NUNCA dispara generate_lead ao clicar em "como chegar".
+          if (ehLead) {
+            window.gtag('event', 'generate_lead', {
+              method: dados.metodo_contato || nome,
+              pagina_origem: dados.pagina_origem,
+              local: dados.local || 'geral',
+              page_location: dados.page_location,
+              page_title: dados.page_title,
+              value: 0
+            });
+          }
+        }
       }
 
       // Descobre em que seção da página o clique aconteceu
@@ -355,7 +350,7 @@
             texto_botao: rotulo,
             produto: produtoDoLink(a.href),
             link_destino: href
-          });
+          }, true);
 
         } else if (/^tel:/i.test(href)) {
           if (ehDuplicado('telefone', href)) return;
@@ -366,7 +361,7 @@
             numero: href.replace(/^tel:/i, ''),
             texto_botao: rotulo,
             link_destino: href
-          });
+          }, true);
 
         } else if (/^mailto:/i.test(href)) {
           if (ehDuplicado('email', href)) return;
@@ -375,18 +370,19 @@
             pagina_origem: window.location.pathname,
             local: contexto(a),
             link_destino: href
-          });
+          }, true);
 
         } else if (
           /\/como-chegar(?:[?#]|$)/i.test(href) ||
           /maps\.google|maps\.app\.goo\.gl|goo\.gl\/maps|google\.[a-z.]+\/maps|(?:ul\.|www\.)?waze\.com/i.test(href)
         ) {
           if (ehDuplicado('como_chegar', href)) return;
+          // Cliques em "como chegar" registram navegação/endereço, NUNCA generate_lead
           ga('clique_como_chegar', {
             pagina_origem: window.location.pathname,
             local: contexto(a),
             link_destino: href
-          });
+          }, false);
         }
       }, true);
 
@@ -399,7 +395,7 @@
         ga('envio_formulario', {
           form_id: formId,
           pagina_origem: window.location.pathname
-        });
+        }, true);
       }, true);
 
     })();

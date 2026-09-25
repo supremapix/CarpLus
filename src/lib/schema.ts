@@ -83,7 +83,7 @@ export interface ProductSchemaProps {
   brand?: string;
   price?: number;
   currency?: string;
-  availability: "InStock" | "OutOfStock" | "PreOrder";
+  availability?: "InStock" | "OutOfStock" | "PreOrder";
   url: string;
   ratingValue?: number;
   reviewCount?: number;
@@ -150,7 +150,7 @@ export function generateProductSchema(props: ProductSchemaProps): object {
       // Validade do preço dinâmica: 30 dias a partir de hoje
       priceValidUntil: addDays(30),
       itemCondition: "https://schema.org/NewCondition",
-      availability: availabilityMap[availability] || "https://schema.org/InStock",
+      availability: (availability && availabilityMap[availability]) || "https://schema.org/InStock",
       seller: CARPLUS_SELLER,
       hasMerchantReturnPolicy: CARPLUS_RETURN_POLICY,
       shippingDetails: CARPLUS_SHIPPING,

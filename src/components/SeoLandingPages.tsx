@@ -249,9 +249,9 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
     ? [
         ...page.sections,
         {
-          title: 'Opções econômicas com preços confirmados em Curitiba',
+          title: 'Opções econômicas para o seu carro em Curitiba',
           content:
-            'Na Carplus você encontra modelos novos com procedência garantida e preços promocionais a partir de R$ 239,00 (como Comforser 185/60R14 a R$ 239, JK Tyre 175/70R13 a R$ 269, Tornel 175/70R14 a R$ 279, Linglong 195/60R15 a R$ 289, Maxtrek 185/65R15 a R$ 299 e Delinte 185/60R15 a R$ 329). Todos incluem montagem e balanceamento e podem ser parcelados em até 10x sem juros.',
+            'Na Carplus você encontra modelos novos com procedência garantida das principais marcas e medidas (como Comforser, JK Tyre, Tornel, Linglong, Maxtrek, Delinte, Pirelli e Goodyear). Consulte as condições promocionais e a disponibilidade para a medida do seu veículo diretamente pelo WhatsApp (41) 3082-7282. Os serviços incluem montagem e balanceamento, com opção de parcelamento em até 10x sem juros.',
         },
         {
           title: 'Facilidade para pedir orçamento da sua medida',

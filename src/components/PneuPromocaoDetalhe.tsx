@@ -86,7 +86,7 @@ export default function PneuPromocaoDetalhe() {
         },
         {
           q: `A montagem e o balanceamento estão inclusos?`,
-          a: `Sim. Na Carplus a montagem, o balanceamento e a calibragem são realizados por técnicos certificados, com a roda pronta em cerca de 40 minutos.`,
+          a: `Sim. Na Carplus a montagem, o balanceamento e a calibragem são realizados por técnicos experientes na loja do Portão.`,
         },
         {
           q: `O pneu ${tire.marca} ${tire.medida} tem garantia?`,
@@ -107,6 +107,10 @@ export default function PneuPromocaoDetalhe() {
       ]
     : [];
 
+  // Google Merchant / Product Schema: o preço em Product.offers só deve ser declarado
+  // quando o mesmo valor estiver visível ao visitante na página e tiver sido confirmado pela Carplus.
+  // Como as cotações dependem de confirmação de estoque e distribuidor pelo WhatsApp,
+  // omitimos 'offers' e não declaramos InStock sem confirmação de estoque.
   const productSchema = tire
     ? generateProductSchema({
         name: `Pneu ${tire.marca} ${tire.nome}`,
@@ -114,9 +118,6 @@ export default function PneuPromocaoDetalhe() {
         image: [tire.imagem],
         sku: tire.slug,
         brand: tire.marca,
-        price: tire.precoNumero,
-        currency: 'BRL',
-        availability: 'InStock',
         url: pageUrl,
         dateModified: modifiedISO,
       })
@@ -409,7 +410,7 @@ export default function PneuPromocaoDetalhe() {
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span>Pronta Entrega no Portão</span>
+                    <span>Consulte Estoque no Portão</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <ShieldCheck size={14} className="text-primary" />
@@ -417,7 +418,7 @@ export default function PneuPromocaoDetalhe() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock size={14} className="text-primary" />
-                    <span>Montagem em 40 min</span>
+                    <span>Montagem Especializada</span>
                   </div>
                 </div>
               </motion.div>
