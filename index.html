@@ -272,6 +272,7 @@
          Medição separada de WhatsApp e Telefone com anti-duplicação (cooldown 1,5s),
          identificação da página de origem e sincronização com dataLayer e gtag.
          IMPORTANTE: Registrado como lead/contato, NUNCA como 'purchase' (venda).
+         clique_geral: demais links e botões (engajamento, não é lead nem evento principal).
          ========================================================= -->
     <script>
     (function () {
@@ -335,13 +336,27 @@
       document.addEventListener('click', function (e) {
         var alvo = e.target;
         if (!alvo || !alvo.closest) return;
-        var a = alvo.closest('a[href]');
+        var a = alvo.closest('a[href], button, [role="button"], [data-track]');
         if (!a) return;
 
         var href = a.getAttribute('href') || '';
-        var rotulo = (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+        var rotulo = (a.innerText || a.getAttribute('aria-label') || a.getAttribute('title') || '')
+          .replace(/\s+/g, ' ').trim().slice(0, 60);
+        var track = a.getAttribute('data-track') || '';
+        if (track === 'whatsapp' && !href) href = 'whatsapp:botao';
+        if (track === 'telefone' && !href) href = 'tel:botao';
 
-        if (/wa\.me|api\.whatsapp\.com|web\.whatsapp\.com/i.test(href)) {
+        if (!href || /^(#|javascript:)/i.test(href)) {
+          // Botões e âncoras internas: clique geral (engajamento, NUNCA lead)
+          if (ehDuplicado('geral', rotulo)) return;
+          ga('clique_geral', {
+            tipo_elemento: a.tagName.toLowerCase(),
+            local: contexto(a),
+            texto_botao: rotulo,
+            link_destino: href || '(botao)'
+          }, false);
+
+        } else if (/^whatsapp:/i.test(href) || /wa\.me|api\.whatsapp\.com|web\.whatsapp\.com/i.test(href)) {
           if (ehDuplicado('whatsapp', href)) return;
           ga('clique_whatsapp', {
             metodo_contato: 'whatsapp',
@@ -381,6 +396,16 @@
           ga('clique_como_chegar', {
             pagina_origem: window.location.pathname,
             local: contexto(a),
+            link_destino: href
+          }, false);
+
+        } else {
+          // Demais links (menu, cards, produtos, links externos): clique geral
+          if (ehDuplicado('geral', href)) return;
+          ga('clique_geral', {
+            tipo_elemento: a.tagName.toLowerCase(),
+            local: contexto(a),
+            texto_botao: rotulo,
             link_destino: href
           }, false);
         }
