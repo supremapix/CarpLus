@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import {
   Car, Wrench, Shield, Award, MapPin, Star, BadgeCheck, Clock,
   Phone, ChevronRight, ChevronDown, MessageCircle, CreditCard, FileText,
@@ -135,39 +135,35 @@ export default function OficinaMarcaPage({ slug }: Props) {
     ],
   };
 
+  // SEO e Metadados via useSEO (fonte única para títulos, canonical e schema, sem duplicar com o shell)
+  useSEO({
+    title: page.titleTag,
+    description: page.metaDescription,
+    canonical,
+    ogImage: ogImageFull,
+    keywords: page.keywordsSecundarias,
+    schemaJSON: schemaGraph,
+  });
+
+  // Garante de forma imediata e determinística a unicidade do <title> da página de oficina
+  useEffect(() => {
+    if (page?.titleTag) {
+      document.title = page.titleTag;
+      const titles = Array.from(document.querySelectorAll('title'));
+      if (titles.length > 0) {
+        titles[0].textContent = page.titleTag;
+        for (let i = 1; i < titles.length; i++) {
+          titles[i].remove();
+        }
+      }
+    }
+  }, [page?.titleTag]);
+
   // "Veja também": demais páginas + páginas existentes do site.
   const relacionadas = OFICINA_MARCA_PAGES.filter((p) => p.slug !== page.slug).slice(0, 6);
 
   return (
     <div className="min-h-screen bg-neutral-950">
-      <Helmet>
-        <title>{page.titleTag}</title>
-        <meta name="description" content={page.metaDescription} />
-        <meta name="keywords" content={page.keywordsSecundarias.join(', ')} />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <meta name="geo.region" content="BR-PR" />
-        <meta name="geo.placename" content="Curitiba" />
-        <meta name="geo.position" content={`${GEO_LAT};${GEO_LNG}`} />
-        <link rel="canonical" href={canonical} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={page.titleTag} />
-        <meta property="og:description" content={page.metaDescription} />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content={ogImageFull} />
-        <meta property="og:site_name" content="Carplus Pneus e Oficina" />
-        <meta property="og:locale" content="pt_BR" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={page.titleTag} />
-        <meta name="twitter:description" content={page.metaDescription} />
-        <meta name="twitter:image" content={ogImageFull} />
-
-        <script type="application/ld+json">{JSON.stringify(schemaGraph)}</script>
-      </Helmet>
-
       <Navbar />
 
       {/* Hero */}

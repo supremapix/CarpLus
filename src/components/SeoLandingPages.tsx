@@ -225,6 +225,7 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
   const page = getIntentPage(slug);
   if (!page) return <NotFound />;
 
+  const isPneusBaratos = page.slug === 'pneus-baratos-curitiba';
   const tires = getFeaturedTires(12);
 
   // Links internos exigidos: pneus, hub, serviços principais, contato + demais do cluster
@@ -244,6 +245,36 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
   const aroLinks = ARO_PAGES.slice(0, 5).map((a) => ({ label: `Aro ${a.aro}`, to: `/${a.slug}` }));
   const relatedLinks = [...serviceLinks, ...clusterLinks, ...aroLinks];
 
+  const sections = isPneusBaratos
+    ? [
+        ...page.sections,
+        {
+          title: 'Opções econômicas com preços confirmados em Curitiba',
+          content:
+            'Na Carplus você encontra modelos novos com procedência garantida e preços promocionais a partir de R$ 239,00 (como Comforser 185/60R14 a R$ 239, JK Tyre 175/70R13 a R$ 269, Tornel 175/70R14 a R$ 279, Linglong 195/60R15 a R$ 289, Maxtrek 185/65R15 a R$ 299 e Delinte 185/60R15 a R$ 329). Todos incluem montagem e balanceamento e podem ser parcelados em até 10x sem juros.',
+        },
+        {
+          title: 'Facilidade para pedir orçamento da sua medida',
+          content:
+            'Não sabe a medida do seu carro? Veja os números gravados na lateral do pneu atual (ex: 175/65R14 ou 195/55R15) ou envie o modelo e ano do veículo pelo nosso WhatsApp (41) 3082-7282. Nossa equipe consulta o estoque no mesmo instante e passa as opções mais baratas disponíveis.',
+        },
+      ]
+    : page.sections;
+
+  const aroCluster = isPneusBaratos
+    ? {
+        aro: 14,
+        measures: ['175/70R13', '175/65R14', '185/60R14', '185/65R15', '195/55R15', '205/55R16'],
+        brands: [
+          { name: 'Comforser', to: '/pneus' },
+          { name: 'JK Tyre', to: '/pneus' },
+          { name: 'Delinte', to: '/pneus-delinte-curitiba' },
+          { name: 'Prinx', to: '/pneus-prinx-curitiba' },
+          { name: 'Pirelli', to: '/pneus-pirelli-curitiba' },
+        ],
+      }
+    : undefined;
+
   return (
     <SeoTireLanding
       badge={page.badge}
@@ -254,7 +285,7 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
       canonicalPath={`/${page.slug}`}
       intro={page.intro}
       tags={page.tags}
-      sections={page.sections}
+      sections={sections}
       tires={tires}
       faq={page.faq}
       breadcrumb={[HOME_CRUMB, HUB_CRUMB, { name: page.h1, path: `/${page.slug}` }]}
@@ -262,6 +293,7 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
       relatedLinks={relatedLinks}
       whatsappMsg={page.whatsappMsg}
       galleryLocal="Curitiba"
+      aroCluster={aroCluster}
     />
   );
 }

@@ -95,9 +95,29 @@ export default function App() {
     }
   }, []);
 
-  // Scroll to top on route change
+  // Scroll to top and track page_view on route change (delayed to ensure document.title updated by useSEO)
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      const timer = setTimeout(() => {
+        const w = window as unknown as { gtag?: (type: string, name: string, params: object) => void; dataLayer?: unknown[] };
+        if (typeof w.gtag === 'function') {
+          w.gtag('event', 'page_view', {
+            page_path: pathname,
+            page_location: window.location.href,
+            page_title: document.title,
+          });
+        }
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({
+          event: 'page_view',
+          page_path: pathname,
+          page_location: window.location.href,
+          page_title: document.title,
+        });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
   }, [pathname]);
 
   return (

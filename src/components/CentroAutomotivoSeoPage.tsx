@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import {
   Clock, Users, Wrench, Shield, Award, MapPin, Star, BadgeCheck,
@@ -55,37 +55,17 @@ export default function CentroAutomotivoSeoPage({ slug }: Props) {
     { name: page.breadcrumbName, url: canonical },
   ]);
 
+  useSEO({
+    title: page.metaTitle,
+    description: page.metaDescription,
+    canonical,
+    ogImage: ogImageFull,
+    keywords: page.keywords,
+    schemaJSON: [schemaFaq, schemaBreadcrumb],
+  });
+
   return (
     <div className="min-h-screen bg-neutral-950">
-      <Helmet>
-        <title>{page.metaTitle}</title>
-        <meta name="description" content={page.metaDescription} />
-        <meta name="keywords" content={page.keywords.join(', ')} />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <meta name="geo.region" content="BR-PR" />
-        <meta name="geo.placename" content="Curitiba" />
-        <link rel="canonical" href={canonical} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={page.metaTitle} />
-        <meta property="og:description" content={page.metaDescription} />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content={ogImageFull} />
-        <meta property="og:site_name" content="Carplus Pneus e Oficina" />
-        <meta property="og:locale" content="pt_BR" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={page.metaTitle} />
-        <meta name="twitter:description" content={page.metaDescription} />
-        <meta name="twitter:image" content={ogImageFull} />
-
-        {/* JSON-LD: FAQPage + BreadcrumbList (LocalBusiness vem da fonte única no index.html) */}
-        <script type="application/ld+json">{JSON.stringify(schemaFaq)}</script>
-        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
-      </Helmet>
-
       <Navbar />
 
       {/* Hero */}

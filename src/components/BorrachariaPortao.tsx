@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useSEO } from '../hooks/useSEO';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
@@ -66,21 +66,16 @@ export default function BorrachariaPortao() {
     }))
   };
 
+  useSEO({
+    title: 'Borracharia no Portão Curitiba | Conserto e Troca de Pneus | Carplus',
+    description: 'Borracharia completa no bairro Portão em Curitiba. Troca de pneus, conserto de furos, alinhamento 3D e balanceamento. Ligue (41) 3082-7282.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/borracharia-portao',
+    keywords: ['borracharia portao', 'borracharia curitiba', 'troca de pneus portao', 'conserto pneu furado', 'alinhamento portao', 'balanceamento curitiba', 'pneu furado portao'],
+    schemaJSON: schemaFAQ,
+  });
+
   return (
     <>
-      <Helmet>
-        <title>Borracharia no Portão Curitiba - Troca de Pneus e Conserto | Carplus</title>
-        <meta name="description" content="Borracharia completa no bairro Portão em Curitiba. Troca de pneus, conserto de furos, alinhamento 3D e balanceamento. Melhor preço da região! (41) 3082-7282" />
-        <meta name="keywords" content="borracharia portao, borracharia curitiba, troca de pneus portao, conserto pneu furado, alinhamento portao, balanceamento curitiba, pneu furado portao" />
-        <link rel="canonical" href="https://carpluspneuseoficina.com.br/borracharia-portao" />
-        <meta property="og:title" content="Borracharia no Portão Curitiba - Carplus Pneus" />
-        <meta property="og:description" content="Borracharia completa no Portão. Troca de pneus, conserto de furos, alinhamento e balanceamento. Melhor preço da região!" />
-        <meta property="og:url" content="https://carpluspneuseoficina.com.br/borracharia-portao" />
-        <meta property="og:type" content="business.business" />
-        {/* LocalBusiness vem da fonte unica (index.html). Aqui apenas FAQ. */}
-        <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
-      </Helmet>
-
       <Navbar />
 
       <main className="bg-neutral-950 min-h-screen">

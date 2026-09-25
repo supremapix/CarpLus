@@ -31,8 +31,19 @@ export function useSEO({
   nextUrl,
 }: SEOProps) {
   useEffect(() => {
-    // Atualiza o título
+    // Atualiza o título garantindo que exista apenas uma tag <title> no <head>
     document.title = title;
+    const titleElements = Array.from(document.querySelectorAll('title'));
+    if (titleElements.length === 0) {
+      const t = document.createElement('title');
+      t.textContent = title;
+      document.head.appendChild(t);
+    } else {
+      titleElements[0].textContent = title;
+      for (let i = 1; i < titleElements.length; i++) {
+        titleElements[i].remove();
+      }
+    }
 
     // Helper para criar/atualizar meta tags
     const setMeta = (selector: string, attr: string, value: string) => {

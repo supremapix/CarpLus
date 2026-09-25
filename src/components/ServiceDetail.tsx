@@ -70,25 +70,44 @@ const SEO_CONTENT: Record<string, {
     ],
     keywords: ['alinhamento 3d curitiba', 'alinhamento computadorizado curitiba', 'alinhamento hunter curitiba', 'alinhamento portão', 'geometria curitiba']
   },
-  'troca-de-oleo': {
-    intro: 'A troca de óleo é a manutenção mais importante para a longevidade do motor do seu carro. Na Carplus Centro Automotivo em Curitiba, realizamos troca de óleo com lubrificantes das melhores marcas: Mobil, Shell Helix, Castrol, Petronas e Selenia. Trabalhamos com óleos minerais, semi-sintéticos e 100% sintéticos para todos os tipos de motor.',
+  'alinhamento-e-balanceamento': {
+    intro: 'O serviço mecânico de alinhamento 3D e balanceamento computadorizado na Carplus foi desenvolvido para motoristas que precisam de ajuste de geometria e balanceamento das rodas do seu veículo em Curitiba. Se o volante está torto, o carro puxa para a direita ou esquerda em linha reta, ou se há trepidação no volante acima de 60 a 80 km/h, nossa equipe realiza o diagnóstico da suspensão, corrige os ângulos de cáster, câmber e convergência com tecnologia 3D e equilibra as rodas com precisão digital. (Se você deseja comprar pneus novos com montagem inclusa, confira nosso pacote de pneus com alinhamento e balanceamento).',
     detalhes: [
-      'Óleos das marcas Mobil 1, Shell Helix Ultra, Castrol Edge e Petronas Syntium',
-      'Troca de filtro de óleo sempre inclusa no serviço',
-      'Verificação de nível de todos os fluidos do veículo sem custo adicional',
-      'Etiqueta de próxima troca colada no para-brisa',
-      'Óleos especiais para carros com DPF (filtro de partículas diesel)',
-      'Descarte ecológico do óleo usado conforme normas ambientais'
+      'Alinhamento computadorizado 3D de alta precisão (ajuste de convergência, cáster e câmber)',
+      'Balanceamento dinâmico das 4 rodas para eliminar trepidações e vibrações no volante',
+      'Diagnóstico prévio gratuito da suspensão, buchas, pivôs e terminais de direção',
+      'Serviço rápido e com agendamento prévio: média de 40 a 50 minutos de execução',
+      'Atendimento no bairro Portão (Av. Pres. Arthur Bernardes, 1323) com estacionamento',
+      'Emissão de laudo com os valores geométricos antes e após o ajuste'
     ],
     perguntas: [
-      { pergunta: 'De quanto em quanto tempo devo trocar o óleo?', resposta: 'Para óleo mineral: a cada 5.000 km ou 6 meses. Para semi-sintético: a cada 7.500 km ou 6 meses. Para sintético: a cada 10.000 km ou 12 meses. Sempre prevalece o que acontecer primeiro. Em Curitiba, com muito trânsito, recomendamos intervalos menores.' },
-      { pergunta: 'Qual óleo é melhor: mineral, semi-sintético ou sintético?', resposta: 'O sintético oferece melhor proteção, especialmente em partidas a frio (comum em Curitiba). Porém, o manual do veículo indica a especificação mínima. Carros mais novos geralmente exigem sintético. Nossa equipe consulta a especificação correta para seu modelo.' },
-      { pergunta: 'Vocês trocam óleo de câmbio automático?', resposta: 'Sim! Realizamos troca de óleo de câmbio automático e CVT com fluidos específicos para cada marca. É um serviço especializado que muitas oficinas não fazem. Recomendado a cada 60.000 km.' }
+      { pergunta: 'Como saber se meu carro precisa de alinhamento ou de balanceamento?', resposta: 'O balanceamento corrige a distribuição de peso do conjunto roda/pneu — o sintoma clássico é o volante trepidando ou vibrando em velocidades médias e altas (60 a 80 km/h). Já o alinhamento corrige a geometria das rodas em relação ao veículo — o sintoma é o carro puxando para um dos lados ou volante torto em linha reta. Na Carplus realizamos os dois serviços em conjunto para máxima estabilidade e durabilidade dos pneus.' },
+      { pergunta: 'Este serviço é para quem já tem os pneus no carro?', resposta: 'Sim! Esta página é dedicada exclusivamente ao serviço de oficina mecânica de alinhamento 3D e balanceamento para veículos em circulação. Se você pretende comprar pneus novos agora, confira nosso pacote de compra com instalação inclusa na página de Pneus com Alinhamento e Balanceamento.' },
+      { pergunta: 'Quanto tempo dura o serviço de alinhamento e balanceamento?', resposta: 'O tempo médio para o alinhamento 3D e balanceamento das 4 rodas é de 40 a 50 minutos na Carplus Portão. Você pode aguardar na nossa sala de espera ou agendar previamente pelo WhatsApp (41) 3082-7282 para atendimento sem espera.' },
+      { pergunta: 'De quanto em quanto tempo devo alinhar e balancear?', resposta: 'Recomendamos a verificação a cada 10.000 km, após cair em buracos ou impactos fortes no asfalto, ou sempre que notar vibrações ou puxadas no volante.' }
     ],
-    keywords: ['troca de óleo curitiba', 'óleo sintético curitiba', 'troca óleo portão', 'mobil curitiba', 'shell helix curitiba', 'castrol curitiba'],
+    keywords: ['alinhamento e balanceamento curitiba', 'alinhamento 3d curitiba', 'balanceamento de rodas curitiba', 'geometria veicular portao', 'volante vibrando curitiba', 'carro puxando para o lado']
+  },
+  'troca-de-oleo': {
+    intro: 'A troca de óleo e filtros na Carplus Centro Automotivo, no bairro Portão em Curitiba, é rápida, transparente e executada rigorosamente de acordo com as especificações do manual do seu veículo. Trabalhamos com óleos sintéticos, semissintéticos e minerais das marcas líderes mundiais (Mobil, Shell Helix, Castrol, Petronas e Selênia), nas viscosidades 0W-20, 5W-30, 5W-40, 10W-40 e 15W-40, sempre acompanhados de filtro de óleo novo, checagem gratuita dos fluidos essenciais e etiqueta de revisão.',
+    detalhes: [
+      'Execução rápida em 30 a 45 minutos com dreno completo e descarte ecológico certificado',
+      'Óleos 100% originais com homologação das montadoras: Mobil, Shell Helix, Castrol, Petronas',
+      'Troca do filtro de óleo em todas as trocas e opção de troca de filtros de ar, combustível e cabine',
+      'Verificação cortesia dos níveis de arrefecimento, fluido de freio, direção e limpador',
+      'Etiqueta de próxima troca com data e quilometragem afixada no para-brisa',
+      'Localização de fácil acesso na Av. Pres. Arthur Bernardes, 1323 – Portão, Curitiba'
+    ],
+    perguntas: [
+      { pergunta: 'Quanto tempo leva a troca de óleo na Carplus?', resposta: 'A troca de óleo com substituição do filtro leva em média de 30 a 45 minutos na nossa oficina no Portão. Você pode agendar pelo WhatsApp (41) 3082-7282 para garantir atendimento imediato na chegada.' },
+      { pergunta: 'Como sei qual é o óleo correto para o meu carro?', resposta: 'Nossa equipe técnica consulta a especificação exata homologada no manual do fabricante do seu veículo (viscosidade SAE como 0W-20, 5W-30, 5W-40 e normas API/ACEA). Basta informar o modelo e o ano do carro no WhatsApp.' },
+      { pergunta: 'O filtro de óleo precisa ser trocado toda vez?', resposta: 'Sim! Colocar óleo novo mantendo o filtro saturado contamina imediatamente o lubrificante novo com impurezas retidas, reduzindo a vida útil do motor. Na Carplus a troca do filtro é sempre feita em conjunto.' },
+      { pergunta: 'Com que frequência devo trocar o óleo em Curitiba?', resposta: 'Em condições urbanas com trânsito intenso e partidas a frio frequentes no clima de Curitiba, o recomendável é seguir o intervalo severo: a cada 5.000 km ou 6 meses para mineral, 7.500 km ou 6 meses para semissintético, e 10.000 km ou 12 meses para 100% sintético (o que ocorrer primeiro).' }
+    ],
+    keywords: ['troca de óleo curitiba', 'troca de oleo portao', 'troca de oleo rapida curitiba', 'oleo 5w30 curitiba', 'oleo sintetico curitiba', 'troca de filtro curitiba'],
     temVideo: true,
     videoUrl: 'TY8qfETXlJQ',
-    videoBadge: 'Video Explicativo Premium'
+    videoBadge: 'Vídeo Explicativo'
   },
   'scanner-automotivo': {
     intro: 'O diagnóstico por scanner automotivo é fundamental para identificar problemas eletrônicos no seu veículo. Na Carplus Centro Automotivo, utilizamos scanners multiprotocolo de última geração que leem todos os módulos do carro: motor, câmbio, ABS, airbag, direção elétrica e muito mais. Atendemos todas as marcas nacionais e importadas.',
@@ -332,8 +351,12 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     description: 'Montagem de pneus em Curitiba com balanceamento incluso e grátis na compra dos pneus. Equipamento computadorizado, pronto em até 1 hora. Portão – (41) 3082-7282.',
   },
   'alinhamento-e-balanceamento': {
-    title: 'Alinhamento e Balanceamento em Curitiba | Alinhamento 3D | Carplus',
-    description: 'Alinhamento 3D computadorizado e balanceamento de rodas em Curitiba. Corrige volante torto, puxada para o lado e desgaste irregular dos pneus. Agende: (41) 3082-7282.',
+    title: 'Alinhamento 3D e Balanceamento em Curitiba | Serviço Mecânico | Carplus Portão',
+    description: 'Serviço de oficina de alinhamento 3D e balanceamento de rodas no Portão, Curitiba. Elimine vibrações no volante e desgaste irregular. Agende pelo WhatsApp: (41) 3082-7282.',
+  },
+  'troca-de-oleo': {
+    title: 'Troca de Óleo em Curitiba no Portão | Rápida com Filtro | Carplus',
+    description: 'Troca de óleo rápida (30 a 45 min) com troca de filtro e descarte ecológico no Portão, Curitiba. Sintético e semissintético no manual. WhatsApp: (41) 3082-7282.',
   },
   'rodizio-de-pneus': {
     title: 'Rodízio de Pneus em Curitiba | A Cada 10.000 km | Carplus',
@@ -556,6 +579,36 @@ export default function ServiceDetail() {
               </div>
            </div>
         </section>
+
+        {slug === 'alinhamento-e-balanceamento' && (
+          <section className="border-y border-amber-100 bg-amber-50/60 py-10" aria-label="Diferenciação de intenção">
+            <div className="mx-auto max-w-4xl px-4 text-center">
+              <span className="inline-block rounded-full bg-primary/20 px-4 py-1 text-xs font-bold uppercase tracking-wider text-black mb-3">
+                Intenção de Busca
+              </span>
+              <h2 className="mb-3 text-2xl font-bold text-gray-900">
+                Alinhar o veículo atual ou comprar pneus novos?
+              </h2>
+              <p className="mx-auto mb-6 max-w-2xl leading-relaxed text-gray-700 text-sm md:text-base">
+                Esta página é exclusiva para o <strong>serviço de oficina mecânica de alinhamento 3D e balanceamento</strong> para veículos em circulação (elimina vibrações no volante, volante torto e carro puxando). Se você quer <strong>adquirir pneus novos</strong> para o seu carro, acesse nosso pacote com pneus e instalação completa.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link
+                  to="/pneus-com-alinhamento-e-balanceamento-curitiba"
+                  className="inline-flex items-center gap-2 rounded-full bg-dark px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-black"
+                >
+                  Ver Pacote: Comprar Pneus + Alinhamento e Balanceamento
+                </Link>
+                <Link
+                  to="/pneus"
+                  className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-6 py-2.5 text-sm font-bold text-gray-800 transition-colors hover:bg-gray-100"
+                >
+                  Catálogo de Pneus em Curitiba
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {(slug === 'conserto-de-rodas' || slug === 'alinhamento-3d') && (
           <section className="border-y border-gray-100 bg-white py-12" aria-label="Serviços relacionados">

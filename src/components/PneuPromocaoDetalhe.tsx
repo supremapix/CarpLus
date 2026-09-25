@@ -114,6 +114,8 @@ export default function PneuPromocaoDetalhe() {
         image: [tire.imagem],
         sku: tire.slug,
         brand: tire.marca,
+        price: tire.precoNumero,
+        currency: 'BRL',
         availability: 'InStock',
         url: pageUrl,
         dateModified: modifiedISO,

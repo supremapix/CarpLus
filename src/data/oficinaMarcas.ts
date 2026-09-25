@@ -114,7 +114,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-fiat-curitiba',
     marca: 'Fiat',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Fiat em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Fiat em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Fiat no Portão, Curitiba. Revisão, câmbio Dualogic, injeção e diagnóstico com garantia. Orçamento no WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Fiat em Curitiba',
@@ -197,7 +197,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-volkswagen-curitiba',
     marca: 'Volkswagen',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Volkswagen em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Volkswagen em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Volkswagen no Portão, Curitiba. Revisão, motores TSI, câmbio e diagnóstico com garantia. Orçamento no WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Volkswagen em Curitiba',
@@ -280,7 +280,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-chevrolet-curitiba',
     marca: 'Chevrolet',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Chevrolet em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Chevrolet em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Chevrolet no Portão, Curitiba. Revisão do Onix, motores 1.0/1.4, câmbio e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Chevrolet em Curitiba',
@@ -363,7 +363,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-hyundai-curitiba',
     marca: 'Hyundai',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Hyundai em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Hyundai em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Hyundai no Portão, Curitiba. Revisão do HB20, Creta, câmbio automático e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Hyundai em Curitiba',
@@ -446,7 +446,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-toyota-curitiba',
     marca: 'Toyota',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Toyota em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Toyota em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Toyota no Portão, Curitiba. Revisão do Corolla e Hilux, câmbio CVT e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Toyota em Curitiba',
@@ -529,7 +529,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-renault-curitiba',
     marca: 'Renault',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Renault em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Renault em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Renault no Portão, Curitiba. Revisão do Kwid, Duster, câmbio e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Renault em Curitiba',
@@ -612,7 +612,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-honda-curitiba',
     marca: 'Honda',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Honda em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Honda em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Honda no Portão, Curitiba. Revisão do Civic e HR-V, câmbio CVT e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Honda em Curitiba',
@@ -695,7 +695,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-jeep-curitiba',
     marca: 'Jeep',
     tipo: 'marca',
-    titleTag: 'Oficina Especializada Jeep em Curitiba | Carplus – Portão',
+    titleTag: 'Oficina Especializada Jeep em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em Jeep no Portão, Curitiba. Revisão do Renegade e Compass, câmbio automático e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Jeep em Curitiba',
@@ -778,7 +778,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-especializada-cambio-automatico-curitiba',
     marca: 'Câmbio Automático',
     tipo: 'servico',
-    titleTag: 'Câmbio Automático em Curitiba | Oficina Especializada Carplus',
+    titleTag: 'Oficina de Câmbio Automático em Curitiba | Carplus',
     metaDescription:
       'Oficina especializada em câmbio automático em Curitiba: troca de óleo AT, CVT e DCT com equipamento adequado e diagnóstico. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Câmbio Automático em Curitiba',
@@ -866,7 +866,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'revisao-automotiva-curitiba',
     marca: 'Revisão Automotiva',
     tipo: 'servico',
-    titleTag: 'Revisão Automotiva em Curitiba | Oficina Carplus – Portão',
+    titleTag: 'Revisão Automotiva em Curitiba | Carplus Portão',
     metaDescription:
       'Revisão automotiva completa em Curitiba, multimarcas, mantendo a garantia de fábrica. Checklist, nota fiscal e preço justo. WhatsApp (41) 3082-7282.',
     h1: 'Revisão Automotiva em Curitiba',
@@ -954,7 +954,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     slug: 'oficina-mecanica-curitiba',
     marca: 'Oficina Mecânica',
     tipo: 'servico',
-    titleTag: 'Oficina Mecânica em Curitiba | Centro Automotivo Carplus',
+    titleTag: 'Oficina Mecânica em Curitiba | Carplus Portão',
     metaDescription:
       'Oficina mecânica de confiança em Curitiba: revisão, freios, suspensão, injeção, câmbio e diagnóstico com garantia. Centro automotivo no Portão. (41) 3082-7282.',
     h1: 'Oficina Mecânica em Curitiba',

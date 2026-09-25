@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from './Navbar';
@@ -107,41 +107,17 @@ export default function CentroAutomotivoPortao() {
     ]
   };
 
+  useSEO({
+    title: 'Centro Automotivo no Portão Curitiba | Carplus',
+    description: 'Centro Automotivo completo no bairro Portão em Curitiba. Pneus das melhores marcas, alinhamento 3D, balanceamento, troca de óleo, freios e suspensão. Ligue (41) 3082-7282.',
+    canonical: 'https://www.carpluspneuseoficina.com.br/centro-automotivo-portao',
+    ogImage: 'https://www.carpluspneuseoficina.com.br/images/centro-automotivo/mecanico-elevador.webp',
+    keywords: ['centro automotivo portão', 'centro automotivo curitiba portão', 'oficina mecânica portão', 'loja de pneus portão', 'alinhamento portão curitiba', 'balanceamento portão', 'troca de óleo portão', 'mecânica portão curitiba', 'carplus portão'],
+    schemaJSON: [schemaFAQ, schemaBreadcrumb],
+  });
+
   return (
     <div className="min-h-screen bg-neutral-950">
-      <Helmet>
-        <title>Centro Automotivo no Portão Curitiba | Carplus - Pneus, Mecânica e Mais</title>
-        <meta name="description" content="Centro Automotivo completo no bairro Portão em Curitiba. Pneus das melhores marcas, alinhamento 3D, balanceamento, troca de óleo, freios, suspensão. Pirelli Performance Center. Ligue (41) 3082-7282." />
-        <meta name="keywords" content="centro automotivo portão, centro automotivo curitiba portão, oficina mecânica portão, loja de pneus portão, alinhamento portão curitiba, balanceamento portão, troca de óleo portão, mecânica portão curitiba, carplus portão" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="geo.region" content="BR-PR" />
-        <meta name="geo.placename" content="Portão, Curitiba" />
-        <link rel="canonical" href="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Centro Automotivo no Portão Curitiba | Carplus Centro Automotivo" />
-        <meta property="og:description" content="Centro Automotivo completo no bairro Portão. Pneus, alinhamento, balanceamento, troca de óleo, freios, suspensão e diagnóstico. Pirelli Performance Center certificado." />
-        <meta property="og:url" content="https://www.carpluspneuseoficina.com.br/centro-automotivo-portao" />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/mecanico-elevador.webp" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="business:contact_data:street_address" content="Av. Presidente Arthur da Silva Bernardes, 1323" />
-        <meta property="business:contact_data:locality" content="Curitiba" />
-        <meta property="business:contact_data:region" content="PR" />
-        <meta property="business:contact_data:postal_code" content="81020-010" />
-        <meta property="business:contact_data:country_name" content="Brasil" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Centro Automotivo no Portão Curitiba | Carplus" />
-        <meta name="twitter:description" content="Centro Automotivo completo no Portão. Pneus, mecânica, alinhamento, balanceamento. Pirelli Performance Center." />
-        <meta name="twitter:image" content="https://carpluspneuseoficina.com.br/images/centro-automotivo/mecanico-elevador.webp" />
-
-        {/* Schema.org - LocalBusiness vem da fonte unica (index.html). Aqui apenas FAQ + Breadcrumb. */}
-        <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
-        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
-      </Helmet>
-
       <Navbar />
 
       {/* Hero Section */}

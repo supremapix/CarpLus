@@ -120,6 +120,8 @@ export function generateProductSchema(props: ProductSchemaProps): object {
     PreOrder: "https://schema.org/PreOrder",
   };
 
+  const hasValidPrice = typeof price === "number" && price > 0;
+
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -134,20 +136,26 @@ export function generateProductSchema(props: ProductSchemaProps): object {
     },
     // Última revisão de conteúdo da página (sinal de frescor para o Google)
     dateModified: dateModified ?? todayISO(),
-    offers: {
+  };
+
+  // Regra Google Merchant/Product: NUNCA declare 'offers' sem preço público confiável
+  // e confirmado. Se não houver preço, 'offers' é omitido para não gerar o erro fatal
+  // "Missing field 'price' (in 'offers')" nem anunciar disponibilidade sem confirmação.
+  if (hasValidPrice) {
+    schema.offers = {
       "@type": "Offer",
       url,
+      price: price.toFixed(2),
       priceCurrency: currency,
-      ...(price && { price: price.toFixed(2) }),
       // Validade do preço dinâmica: 30 dias a partir de hoje
       priceValidUntil: addDays(30),
       itemCondition: "https://schema.org/NewCondition",
-      availability: availabilityMap[availability],
+      availability: availabilityMap[availability] || "https://schema.org/InStock",
       seller: CARPLUS_SELLER,
       hasMerchantReturnPolicy: CARPLUS_RETURN_POLICY,
       shippingDetails: CARPLUS_SHIPPING,
-    },
-  };
+    };
+  }
 
   // AggregateRating — só insere se tiver dados reais
   if (ratingValue && reviewCount && reviewCount > 0) {

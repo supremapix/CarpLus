@@ -266,40 +266,77 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- =========================================================
-         Rastreamento de conversões GA4 — Carplus Centro Automotivo
-         Cole este bloco logo ANTES do fechamento </body>
-         Requer a tag gtag.js (G-VHK6RGQ6SH) já instalada no <head>
+         Rastreamento de contatos e conversões GA4 — Carplus Centro Automotivo
+         Medição separada de WhatsApp e Telefone com anti-duplicação (cooldown 1,5s),
+         identificação da página de origem e sincronização com dataLayer e gtag.
+         IMPORTANTE: Registrado como lead/contato, NUNCA como 'purchase' (venda).
          ========================================================= -->
     <script>
     (function () {
+      var ultimoDisparo = { tipo: '', url: '', tempo: 0 };
+
+      function ehDuplicado(tipo, url) {
+        var agora = Date.now();
+        if (ultimoDisparo.tipo === tipo && ultimoDisparo.url === url && (agora - ultimoDisparo.tempo) < 1500) {
+          return true;
+        }
+        ultimoDisparo = { tipo: tipo, url: url, tempo: agora };
+        return false;
+      }
 
       function ga(nome, params) {
         var dados = params || {};
-        dados.page_location = location.href;
-        dados.page_path = location.pathname + location.search;
-        if (typeof gtag === 'function') gtag('event', nome, dados);
+        dados.page_location = window.location.href;
+        dados.page_path = window.location.pathname + window.location.search;
+        dados.page_title = document.title;
+        dados.pagina_origem = window.location.pathname;
+
+        // Dispara no GA4 via gtag
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', nome, dados);
+          // Dispara também o evento padrão recomendado generate_lead (sem valor monetário de compra)
+          window.gtag('event', 'generate_lead', {
+            method: dados.metodo_contato || nome,
+            pagina_origem: dados.pagina_origem,
+            local: dados.local || 'geral',
+            page_location: dados.page_location,
+            page_title: dados.page_title,
+            value: 0
+          });
+        }
+
+        // Garante sincronização com o dataLayer (consumido pelo GTM se ativo)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(Object.assign({ event: nome }, dados));
+        window.dataLayer.push(Object.assign({ 
+          event: 'generate_lead', 
+          method: dados.metodo_contato || nome,
+          pagina_origem: dados.pagina_origem,
+          page_location: dados.page_location,
+          page_title: dados.page_title,
+          value: 0 
+        }, dados));
       }
 
       // Descobre em que seção da página o clique aconteceu
       function contexto(el) {
         var s = el.closest ? el.closest('section, header, footer, nav') : null;
-        if (!s) return 'sem_secao';
+        if (!s) return 'geral';
         if (s.id) return s.id;
         var h = s.querySelector('h1, h2, h3');
         return h ? h.innerText.trim().slice(0, 50) : s.tagName.toLowerCase();
       }
 
       // Extrai o nome do produto da mensagem pré-preenchida do WhatsApp
-      // (seus links usam *NOME DO PNEU* entre asteriscos)
       function produtoDoLink(href) {
         try {
-          var t = new URL(href, location.href).searchParams.get('text') || '';
+          var t = new URL(href, window.location.href).searchParams.get('text') || '';
           var m = t.match(/\*(.+?)\*/);
           return m ? m[1].slice(0, 100) : '';
         } catch (e) { return ''; }
       }
 
-      // --- Cliques em links (delegação: funciona nos 24 botões e em novos) ---
+      // Cliques em links com delegação de eventos
       document.addEventListener('click', function (e) {
         var alvo = e.target;
         if (!alvo || !alvo.closest) return;
@@ -310,45 +347,58 @@
         var rotulo = (a.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60);
 
         if (/wa\.me|api\.whatsapp\.com|web\.whatsapp\.com/i.test(href)) {
+          if (ehDuplicado('whatsapp', href)) return;
           ga('clique_whatsapp', {
+            metodo_contato: 'whatsapp',
+            pagina_origem: window.location.pathname,
             local: contexto(a),
             texto_botao: rotulo,
             produto: produtoDoLink(a.href),
-            pagina: location.pathname
+            link_destino: href
           });
 
         } else if (/^tel:/i.test(href)) {
+          if (ehDuplicado('telefone', href)) return;
           ga('clique_telefone', {
+            metodo_contato: 'telefone',
+            pagina_origem: window.location.pathname,
             local: contexto(a),
             numero: href.replace(/^tel:/i, ''),
             texto_botao: rotulo,
-            pagina: location.pathname
+            link_destino: href
           });
 
         } else if (/^mailto:/i.test(href)) {
+          if (ehDuplicado('email', href)) return;
           ga('clique_email', {
+            metodo_contato: 'email',
+            pagina_origem: window.location.pathname,
             local: contexto(a),
-            pagina: location.pathname
+            link_destino: href
           });
 
         } else if (
           /\/como-chegar(?:[?#]|$)/i.test(href) ||
           /maps\.google|maps\.app\.goo\.gl|goo\.gl\/maps|google\.[a-z.]+\/maps|(?:ul\.|www\.)?waze\.com/i.test(href)
         ) {
+          if (ehDuplicado('como_chegar', href)) return;
           ga('clique_como_chegar', {
+            pagina_origem: window.location.pathname,
             local: contexto(a),
-            pagina: location.pathname
+            link_destino: href
           });
         }
       }, true);
 
-      // --- Envio de formulário (caso você adicione um no futuro) ---
+      // Envio de formulário
       document.addEventListener('submit', function (e) {
         var f = e.target;
         if (!f || f.tagName !== 'FORM') return;
+        var formId = f.id || f.getAttribute('name') || 'form_contato';
+        if (ehDuplicado('form', formId)) return;
         ga('envio_formulario', {
-          form_id: f.id || f.getAttribute('name') || 'sem_id',
-          pagina: location.pathname
+          form_id: formId,
+          pagina_origem: window.location.pathname
         });
       }, true);
 

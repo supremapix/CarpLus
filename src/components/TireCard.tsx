@@ -126,8 +126,8 @@ function TireCard({ tire, index }: TireCardProps) {
         
         <div className="flex flex-wrap gap-2 mb-8">
             <span className="bg-gray-50 text-gray-400 px-3 py-1.5 rounded-xl text-[10px] font-black uppercase italic border border-gray-100">Aro {tire.aro}</span>
-            <span className="flex items-center gap-1.5 text-[#00C853] text-[10px] font-black uppercase">
-              <div className="w-2 h-2 rounded-full bg-[#00C853] animate-pulse" /> Em estoque
+            <span className="flex items-center gap-1.5 text-gray-600 text-[10px] font-bold uppercase">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Sob consulta
             </span>
         </div>
 

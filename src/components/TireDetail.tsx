@@ -345,8 +345,8 @@ export default function TireDetail() {
 
                         <div className="flex flex-wrap items-center gap-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                <span>Pronta Entrega no Portão</span>
+                                <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                <span>Disponibilidade sob consulta</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <ShieldCheck size={14} className="text-primary" />

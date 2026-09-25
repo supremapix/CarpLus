@@ -213,13 +213,30 @@ export function isCriticalError(text: string): boolean {
   );
 }
 
-// Sanitiza qualquer vazamento de localhost/porta do servidor temporário.
+// Sanitiza qualquer vazamento de localhost/porta do servidor temporário e dedup de <title>.
 export function sanitizeHtml(html: string, origin: string): string {
   const escaped = origin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(escaped, 'g');
   let out = html.replace(re, BASE_URL);
   out = out.replace(/https?:\/\/127\.0\.0\.1:\d+/g, BASE_URL);
   out = out.replace(/https?:\/\/localhost:\d+/g, BASE_URL);
+
+  // Garante estritamente apenas um <title> no HTML final, eliminando concatenações com o shell
+  const titleMatches = Array.from(out.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/gi));
+  if (titleMatches.length > 1) {
+    const shellTitleText = 'Oficina Mecânica e Loja de Pneus no Portão, Curitiba | Carplus';
+    const specificMatch =
+      titleMatches.find((m) => !m[1].includes(shellTitleText)) || titleMatches[0];
+    let replaced = false;
+    out = out.replace(/<title[^>]*>[\s\S]*?<\/title>/gi, () => {
+      if (!replaced) {
+        replaced = true;
+        return `<title>${specificMatch[1].trim()}</title>`;
+      }
+      return '';
+    });
+  }
+
   if (!/^<!doctype html>/i.test(out)) out = '<!doctype html>\n' + out;
   return out;
 }
@@ -449,6 +466,18 @@ export async function renderRouteOnPage(
         const nodes = Array.from(document.head.querySelectorAll(selector));
         for (let i = 0; i < nodes.length - 1; i++) nodes[i].remove();
       };
+
+      // Dedup de title: garante exatamente um <title>, priorizando o título específico da rota
+      const titleNodes = Array.from(document.head.querySelectorAll('title'));
+      if (titleNodes.length > 1) {
+        const shellTitleText = 'Oficina Mecânica e Loja de Pneus no Portão, Curitiba | Carplus';
+        const specificNode =
+          titleNodes.find((n) => (n.textContent || '').trim() !== shellTitleText) || titleNodes[0];
+        titleNodes.forEach((n) => {
+          if (n !== specificNode) n.remove();
+        });
+      }
+
       [
         'link[rel="canonical"]',
         'meta[name="description"]',

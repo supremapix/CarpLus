@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from './Navbar';
@@ -134,41 +134,17 @@ export default function LojaDePneusPertoDeMim() {
     ],
   };
 
+  useSEO({
+    title: 'Loja de Pneus em Curitiba Perto de Mim | Carplus Portão',
+    description: 'Procurando loja de pneus perto de você em Curitiba? A Carplus, no Portão, tem pneus de todas as marcas com pronta entrega, montagem e 10x sem juros. (41) 3082-7282.',
+    canonical,
+    ogImage: 'https://www.carpluspneuseoficina.com.br/images/centro-automotivo/carplus-oficina-portao-fachada.jpg',
+    keywords: ['loja de pneus perto de mim', 'loja de pneus curitiba perto de mim', 'pneus perto de mim', 'borracharia perto de mim curitiba', 'loja de pneus curitiba', 'pneus curitiba portão', 'onde comprar pneus em curitiba'],
+    schemaJSON: [schemaFAQ, schemaBreadcrumb],
+  });
+
   return (
     <div className="min-h-screen bg-neutral-950 pb-20 md:pb-0">
-      <Helmet>
-        <title>Loja de Pneus em Curitiba Perto de Mim | Carplus - Portão</title>
-        <meta
-          name="description"
-          content="Procurando loja de pneus perto de você em Curitiba? A Carplus, no Portão, tem pneus de todas as marcas com pronta entrega, montagem e 10x sem juros. Trace a rota e venha! (41) 3082-7282."
-        />
-        <meta
-          name="keywords"
-          content="loja de pneus perto de mim, loja de pneus curitiba perto de mim, pneus perto de mim, borracharia perto de mim curitiba, loja de pneus curitiba, pneus curitiba portão, onde comprar pneus em curitiba"
-        />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="geo.region" content="BR-PR" />
-        <meta name="geo.placename" content="Portão, Curitiba" />
-        <meta name="geo.position" content="-25.46364;-49.30287" />
-        <meta name="ICBM" content="-25.46364, -49.30287" />
-        <link rel="canonical" href={canonical} />
-
-        <meta property="og:title" content="Loja de Pneus em Curitiba Perto de Mim | Carplus" />
-        <meta property="og:description" content="Loja de pneus perto de você em Curitiba. Todas as marcas, pronta entrega, montagem inclusa e 10x sem juros no Portão." />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:image" content="https://www.carpluspneuseoficina.com.br/images/centro-automotivo/carplus-oficina-portao-fachada.jpg" />
-        <meta property="og:locale" content="pt_BR" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Loja de Pneus em Curitiba Perto de Mim | Carplus" />
-        <meta name="twitter:description" content="Loja de pneus perto de você no Portão, Curitiba. Todas as marcas, montagem inclusa e 10x sem juros." />
-        <meta name="twitter:image" content="https://www.carpluspneuseoficina.com.br/images/centro-automotivo/carplus-oficina-portao-fachada.jpg" />
-
-        <script type="application/ld+json">{JSON.stringify(schemaFAQ)}</script>
-        <script type="application/ld+json">{JSON.stringify(schemaBreadcrumb)}</script>
-      </Helmet>
-
       <Navbar />
 
       {/* Hero */}

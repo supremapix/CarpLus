@@ -2187,45 +2187,55 @@ export const INTENT_PAGES: IntentPage[] = [
   },
   {
     slug: 'pneus-baratos-curitiba',
-    badge: 'Pneus Baratos · Curitiba',
-    h1: 'Pneus Baratos em Curitiba',
+    badge: 'Pneus Baratos com Procedência · Curitiba',
+    h1: 'Pneus Baratos em Curitiba com Montagem Inclusa',
     highlight: 'Baratos',
-    metaTitle: 'Pneus Baratos em Curitiba | Montagem Inclusa | Carplus',
+    metaTitle: 'Pneus Baratos em Curitiba | Montagem Inclusa | Carplus Portão',
     metaDescription:
-      'Pneus baratos em Curitiba com qualidade, montagem inclusa e até 10x sem juros. Compare opções no Portão e peça seu orçamento pelo WhatsApp.',
+      'Pneus baratos em Curitiba com procedência, garantia e montagem inclusa. Consulte valores por medida e opções econômicas no Portão pelo WhatsApp: (41) 3082-7282.',
     intro:
-      'Pneu barato não precisa ser pneu ruim. Na Carplus, no bairro Portão em Curitiba, você encontra opções econômicas com boa procedência, além de linhas premium, sempre com montagem inclusa e parcelamento.',
-    tags: ['Econômico', 'Custo-benefício', 'Montagem inclusa', '10x sem juros'],
+      'Economia de verdade é comprar pneu novo com procedência, nota fiscal e montagem inclusa, sem cair em armadilhas de pneus remold ou usados. Na Carplus (Portão, Curitiba), você encontra opções econômicas de marcas confiáveis (como Delinte, Prinx, Comforser, JK Tyre, Tornel, Linglong e linhas de entrada da Pirelli e Continental), com parcelamento em até 10x sem juros e desconto no PIX.',
+    tags: ['Novos com Garantia', 'Montagem Inclusa', '10x Sem Juros', 'Não Vendemos Remold'],
     sections: [
       {
-        title: 'Pneu barato com procedência',
+        title: 'Como escolher pneus baratos sem abrir mão da segurança',
         content:
-          'Selecionamos linhas econômicas de marcas reconhecidas, que entregam segurança e durabilidade por um preço acessível. Você economiza sem comprometer a segurança do seu carro.',
+          'Pneu barato confiável deve ser novo de fábrica, certificado pelo Inmetro e com nota fiscal. Pneus remoldados ou riscados desgastam rápido, aumentam a distância de frenagem na chuva curitibana e podem falhar na pista. Na Carplus comercializamos exclusivamente pneus novos com procedência garantida e durabilidade comprovada.',
       },
       {
-        title: 'Economia que continua depois da troca',
+        title: 'Montagem, balanceamento e calibragem inclusos na loja',
         content:
-          'Calibragem correta, balanceamento e alinhamento 3D prolongam a vida útil do pneu e reduzem o consumo de combustível — economia que se mantém no dia a dia.',
+          'Muitos locais anunciam preços baixos e depois cobram à parte pela montagem, balanceamento e válvulas. Na Carplus, os serviços essenciais de montagem e balanceamento são realizados na nossa loja no bairro Portão por técnicos experientes, sem custos ocultos no orçamento.',
+      },
+      {
+        title: 'Consulte o valor exato para a sua medida',
+        content:
+          'O preço do pneu varia conforme o aro e as medidas do seu veículo (largura, perfil e índice de carga). Para receber a cotação atualizada das opções mais baratas disponíveis em estoque para o seu carro, confira os modelos com preço confirmado abaixo ou envie sua medida no WhatsApp.',
       },
     ],
     faq: [
       {
-        question: 'Pneu barato é seguro?',
+        question: 'Os pneus baratos vendidos na Carplus são novos ou remoldados?',
         answer:
-          'Sim, desde que tenha procedência. Na Carplus trabalhamos apenas com marcas reconhecidas, inclusive nas linhas econômicas, garantindo segurança e nota fiscal.',
+          'Trabalhamos EXCLUSIVAMENTE com pneus novos de fábrica, com certificação do Inmetro, etiqueta nacional de eficiência energética e garantia de fábrica contra defeitos. Não vendemos pneus remold, usados ou riscados.',
       },
       {
-        question: 'Qual o pneu mais barato para o meu carro?',
+        question: 'A montagem e o balanceamento já estão inclusos no preço?',
         answer:
-          'Depende da medida e do modelo. Envie a medida pelo WhatsApp (41) 3082-7282 que indicamos a opção mais econômica disponível para o seu veículo.',
+          'Sim! Na Carplus, comprando seus pneus na loja física no Portão, a montagem, o balanceamento computadorizado e a calibragem já estão inclusos no atendimento.',
       },
       {
-        question: 'Pneu barato também tem montagem inclusa?',
+        question: 'Quais são as marcas com melhor custo-benefício disponíveis?',
         answer:
-          'Sim. Independente da linha escolhida, a montagem, o balanceamento e a calibragem já estão inclusos no valor.',
+          'Temos opções de excelente custo-benefício como Comforser, JK Tyre, Tornel, Linglong, Delinte e Prinx, além de linhas econômicas de grandes marcas como Pirelli Formula e Firestone. Consulte a disponibilidade para a sua medida no WhatsApp (41) 3082-7282.',
+      },
+      {
+        question: 'Como faço para saber o preço para o meu carro?',
+        answer:
+          'Basta conferir a numeração gravada na lateral do seu pneu atual (ex.: 175/70R13, 175/65R14, 185/60R14, 185/65R15, 195/55R15, 205/55R16) e nos enviar pelo WhatsApp. Nossa equipe envia as opções mais econômicas disponíveis em estoque no mesmo instante.',
       },
     ],
-    whatsappMsg: 'Olá! Quero pneus baratos em Curitiba. Pode me passar as opções econômicas?',
+    whatsappMsg: 'Olá! Estou pesquisando pneus baratos em Curitiba e gostaria de cotação para o meu carro. Minha medida é:',
   },
   {
     slug: 'maior-estoque-de-pneus-curitiba',
@@ -2565,45 +2575,55 @@ export const INTENT_PAGES: IntentPage[] = [
   },
   {
     slug: 'pneus-com-alinhamento-e-balanceamento-curitiba',
-    badge: 'Pneus + Alinhamento · Curitiba',
-    h1: 'Pneus com Alinhamento e Balanceamento em Curitiba',
-    highlight: 'Alinhamento e Balanceamento',
-    metaTitle: 'Pneus com Alinhamento e Balanceamento em Curitiba | Carplus Centro Automotivo',
+    badge: 'Pacote Compra + Instalação · Curitiba',
+    h1: 'Comprar Pneus com Alinhamento 3D e Balanceamento em Curitiba',
+    highlight: 'Alinhamento 3D e Balanceamento',
+    metaTitle: 'Comprar Pneus com Alinhamento e Balanceamento em Curitiba | Carplus',
     metaDescription:
-      'Pneus com alinhamento e balanceamento em Curitiba na Carplus, bairro Portão. Troca completa com alinhamento 3D, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Compre pneus novos com pacote completo de montagem, balanceamento e alinhamento 3D no Portão, Curitiba. Até 10x sem juros e nota fiscal. WhatsApp: (41) 3082-7282.',
     intro:
-      'Pneu novo pede alinhamento e balanceamento. Na Carplus, no bairro Portão em Curitiba, você faz a troca completa: pneus com montagem inclusa, balanceamento computadorizado e alinhamento 3D no mesmo lugar.',
-    tags: ['Alinhamento 3D', 'Balanceamento computadorizado', 'Troca completa', 'Portão · Curitiba'],
+      'Procurando pneus novos com instalação e geometria completa em Curitiba? Na Carplus (bairro Portão), você adquire pneus novos de marcas consagradas e já sai com montagem, balanceamento computadorizado e alinhamento 3D realizados na mesma visita. Se você já tem os pneus e busca apenas o serviço mecânico para seu veículo atual, acesse nossa página de Serviço de Alinhamento e Balanceamento.',
+    tags: ['Compra de Pneus Novos', 'Alinhamento 3D', 'Balanceamento Computadorizado', '10x Sem Juros'],
     sections: [
       {
-        title: 'Por que alinhar e balancear ao trocar pneus',
+        title: 'Pacote completo: pneu novo com geometria 3D na hora',
         content:
-          'O alinhamento 3D corrige a geometria das rodas, evitando desgaste irregular e reduzindo o consumo. O balanceamento elimina vibrações no volante. Juntos, prolongam a vida útil dos pneus e aumentam a segurança.',
+          'Comprar pneus novos e rodar em um veículo desalinhado causa desgaste irregular imediato nas bandas de rodagem. Ao comprar seus pneus na Carplus, oferecemos o pacote completo para que seu jogo novo tenha máxima durabilidade, estabilidade e aderência desde o primeiro quilômetro.',
       },
       {
-        title: 'Tudo na mesma visita',
+        title: 'Montagem, balanceamento e alinhamento no mesmo endereço',
         content:
-          'Como a Carplus é loja de pneus e oficina mecânica, você resolve pneu, alinhamento e balanceamento de uma só vez, com equipamento computadorizado de precisão e garantia com nota fiscal.',
+          'Você não precisa comprar os pneus em um lugar e procurar uma oficina mecânica em outro. Nossa estrutura na Av. Presidente Arthur Bernardes, 1323 (Portão) reúne loja de pneus com centro automotivo equipado com alinhador 3D Hunter e balanceadoras dinâmicas.',
+      },
+      {
+        title: 'Precisa apenas do serviço mecânico no seu carro atual?',
+        content:
+          'Se você não precisa comprar pneus novos e está apenas sentindo o volante vibrar ou o carro puxar para o lado, nós também realizamos o serviço mecânico avulso de geometria veicular. Acesse nosso Serviço de Alinhamento e Balanceamento para agendar sem fila.',
       },
     ],
     faq: [
       {
-        question: 'Preciso alinhar e balancear ao trocar os pneus?',
+        question: 'O pacote inclui a montagem dos pneus novos?',
         answer:
-          'Sim, é altamente recomendado. O balanceamento já está incluso na montagem, e o alinhamento 3D garante que os pneus novos durem mais e o carro fique estável.',
+          'Sim! Na compra dos pneus na Carplus, a montagem, o balanceamento e a calibragem já estão inclusos. O alinhamento 3D é adicionado com condição especial para garantir que seu jogo novo não sofra desgaste prematuro.',
       },
       {
-        question: 'Qual a diferença entre alinhamento e balanceamento?',
+        question: 'Posso parcelar os pneus e os serviços juntos?',
         answer:
-          'O alinhamento ajusta a geometria das rodas em relação ao solo; o balanceamento distribui o peso da roda para eliminar vibrações. Os dois se complementam.',
+          'Sim. Você pode parcelar a compra dos pneus novos junto com o alinhamento 3D e outros serviços em até 10x sem juros no cartão de crédito.',
       },
       {
-        question: 'Vocês fazem os dois no mesmo lugar dos pneus?',
+        question: 'Qual a diferença desta página para a página de serviço de alinhamento?',
         answer:
-          'Sim. A Carplus faz pneus, alinhamento 3D e balanceamento computadorizado no mesmo endereço, no bairro Portão.',
+          'Esta página é voltada para quem deseja COMPRAR pneus novos e instalar o conjunto completo com alinhamento e balanceamento. Para quem já possui pneus e deseja apenas a manutenção corretiva de geometria ou balanceamento no carro atual, oferecemos a rota dedicada /servico/alinhamento-e-balanceamento.',
+      },
+      {
+        question: 'Vocês têm pneus a pronta entrega no Portão?',
+        answer:
+          'Sim, trabalhamos com ampla variedade de medidas (aros 13 ao 22) das marcas Pirelli, Michelin, Goodyear, Continental, Bridgestone, Firestone, Delinte e Prinx para instalação imediata.',
       },
     ],
-    whatsappMsg: 'Olá! Quero trocar os pneus com alinhamento e balanceamento em Curitiba.',
+    whatsappMsg: 'Olá! Gostaria de um orçamento para comprar pneus novos com alinhamento e balanceamento na Carplus Portão.',
   },
   {
     slug: 'centro-automotivo-para-troca-de-pneus-curitiba',
