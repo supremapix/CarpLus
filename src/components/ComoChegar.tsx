@@ -50,7 +50,7 @@ const ROTAS = [
 
 const FAQ_ITEMS = [
   { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Centro Automotivo fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300. Referência: próximo ao Shopping Palladium e ao Parque do Barigüi.' },
-  { q: 'Tem estacionamento na Carplus?', a: 'Sim! A Carplus tem estacionamento próprio gratuito. Você pode deixar o carro enquanto realizamos o serviço sem preocupação com rotativo ou tempo limitado.' },
+  { q: 'Tem estacionamento na Carplus?', a: 'Sim! Há acesso fácil e vagas para clientes deixarem o veículo enquanto o serviço é realizado, sem preocupação com rotativo pago na região.' },
   { q: 'Qual o horário de funcionamento da Carplus?', a: 'Atendemos de Segunda a Sexta das 8h às 18h e aos Sábados das 8h às 12h. Domingos e feriados fechado.' },
   { q: 'Como chegar na Carplus vindo do Shopping Palladium?', a: 'Do Shopping Palladium são apenas 3 minutos de carro. Saia pelo acesso Sul, siga pela Av. Vereador Toaldo Túlio, cruze a Av. República Argentina e chegue na Av. Arthur da Silva Bernardes, 1323.' },
   { q: 'A Carplus fica perto do Terminal do Portão?', a: 'O Terminal do Portão fica a aproximadamente 950m da Carplus (cerca de 12 minutos a pé ou 3 minutos de carro).' },
@@ -239,8 +239,8 @@ export default function ComoChegar() {
           <div className="bg-[#FFD600]/10 border border-[#FFD600]/40 rounded-2xl p-6 flex items-center gap-5">
             <span className="text-4xl shrink-0">🅿️</span>
             <div>
-              <h3 className="font-display text-xl font-black text-gray-900 mb-1">Estacionamento Gratuito</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">A Carplus possui espaço próprio para você deixar o carro enquanto o serviço é realizado. Sem preocupações com estacionamento rotativo.</p>
+              <h3 className="font-display text-xl font-black text-gray-900 mb-1">Acesso Fácil & Vagas</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">A Carplus conta com vagas em frente à loja para você deixar o carro com tranquilidade enquanto o serviço é realizado, sem zona de EstaR pago.</p>
             </div>
           </div>
         </div>
@@ -276,10 +276,10 @@ export default function ComoChegar() {
       {/* CTA Final Padronizado */}
       <FinalCTA
         title="Venha até a Carplus no Portão"
-        subtitle="Estamos na Av. Pres. Arthur da Silva Bernardes, 1323. Estacionamento gratuito, técnicos qualificados e atendimento de segunda a sábado."
+        subtitle="Estamos na Av. Pres. Arthur da Silva Bernardes, 1323. Vagas para clientes, técnicos qualificados e atendimento de segunda a sábado."
         whatsappMessage="Olá! Estou indo para a Carplus e gostaria de confirmar o atendimento."
         primaryActionText="Avisar no WhatsApp"
-        badge="Portão, Curitiba · Estacionamento Gratuito"
+        badge="Portão, Curitiba · Vagas para Clientes"
       />
 
       <Footer />

@@ -84,7 +84,7 @@ export default function FinalCTA({
             Seg–Sex 8h–18h · Sáb 8h–12h
           </span>
           <span className="hidden sm:inline opacity-30">•</span>
-          <span>Estacionamento gratuito no local</span>
+          <span>Acesso fácil com vagas para clientes</span>
         </div>
       </div>
     </section>

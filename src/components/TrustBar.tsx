@@ -26,8 +26,8 @@ export default function TrustBar({ className = '', variant = 'light' }: TrustBar
     },
     {
       icon: Star,
-      title: '5.0 ★ no Google',
-      desc: 'Mais de 234 avaliações reais',
+      title: '4.9 ★ no Google',
+      desc: 'Mais de 200 avaliações de clientes',
     },
   ];
 

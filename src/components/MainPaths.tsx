@@ -36,7 +36,7 @@ export default function MainPaths() {
       tag: 'Fácil Acesso no Portão',
       title: 'Como Chegar',
       description:
-        'Localização central na Av. Pres. Arthur da Silva Bernardes, 1323, no Portão. Estacionamento próprio gratuito e acesso rápido para bairros vizinhos.',
+        'Localização central na Av. Pres. Arthur da Silva Bernardes, 1323, no Portão. Acesso fácil com vagas em frente à loja e rotas rápidas para bairros vizinhos.',
       primaryTo: '/como-chegar',
       primaryLabel: 'Rotas e horários',
       secondaryHref: 'https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7',
