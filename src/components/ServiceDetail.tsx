@@ -5,6 +5,8 @@ import { getServiceFaqs } from '../data/serviceFaqs';
 import { ArrowLeft, MessageSquare, CircleCheck as CheckCircle, Star, ChevronRight, MapPin, Clock, Shield, Award, Play, OctagonX, FlaskConical, Trophy, AlertTriangle, Droplet, Timer, Wrench, Settings, Phone } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import TrustBar from './TrustBar';
+import FinalCTA from './FinalCTA';
 import { motion } from 'motion/react';
 import { getIcon } from './iconMap';
 import LiteYouTube from './LiteYouTube';
@@ -509,33 +511,49 @@ export default function ServiceDetail() {
       
       <main className="bg-white">
         {/* Hero */}
-        <section className="relative pt-[120px] md:pt-[108px] pb-24 bg-dark text-white overflow-hidden">
+        <section className="relative pt-[120px] md:pt-[108px] pb-20 bg-dark text-white overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-              <Link to="/#servicos" className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs mb-8 hover:transform hover:translate-x-[-4px] transition-all">
-                 <ArrowLeft size={16} /> Voltar para serviços
-              </Link>
+              {/* Breadcrumb */}
+              <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex items-center justify-center gap-2">
+                <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+                <span className="opacity-40">/</span>
+                <Link to="/servicos" className="hover:text-primary transition-colors">Serviços</Link>
+                <span className="opacity-40">/</span>
+                <span className="text-white font-medium">{service.title}</span>
+              </nav>
               
-              <div className="w-24 h-24 bg-primary text-black rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-primary/40">
-                 <Icon size={48} />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-primary text-black rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-primary/40">
+                 <Icon size={44} />
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 italic uppercase tracking-tight font-bold leading-tight">{primaryHeading}</h1>
-              <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl mx-auto mb-12">
-                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> na região sul de Curitiba, oferecendo tecnologia de ponta e atendimento especializado.
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 italic uppercase tracking-tight font-bold leading-tight max-w-4xl mx-auto">{primaryHeading}</h1>
+              <p className="text-base sm:text-lg md:text-2xl text-white/70 font-light max-w-3xl mx-auto mb-8 leading-relaxed">
+                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> no Portão, Curitiba, com equipamentos modernos, laudo prévio e garantia em todos os serviços.
               </p>
 
-              <div className="flex justify-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
                  <motion.a 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={`https://wa.me/554130827282?text=Olá! Preciso de orçamento para ${service.title}`}
-                  className="bg-primary text-black px-7 py-3 rounded-full font-bold flex items-center gap-3 text-sm hover:bg-yellow-600 transition-all shadow-xl uppercase tracking-tight"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  href={`https://wa.me/554130827282?text=${encodeURIComponent(`Olá! Gostaria de agendar uma avaliação para o serviço de *${service.title}* na Carplus Portão.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto flex-1 min-h-12 bg-[#25D366] hover:bg-green-600 text-white px-7 py-3 rounded-full font-bold flex items-center justify-center gap-3 text-sm shadow-xl uppercase tracking-tight transition-colors"
                  >
-                    <MessageSquare size={20} /> Agendar Serviço
+                    <MessageSquare size={18} /> Agendar avaliação
                  </motion.a>
+                 <a
+                  href="tel:+554130827282"
+                  className="w-full sm:w-auto min-h-12 border border-white/20 bg-white/5 hover:bg-white/15 text-white px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 text-sm uppercase tracking-tight transition-colors backdrop-blur-sm"
+                 >
+                    <Phone size={16} /> (41) 3082-7282
+                 </a>
               </div>
            </div>
         </section>
+
+        {/* Barra de Confiança padronizada */}
+        <TrustBar variant="light" />
 
         {/* Content */}
         <section className="py-24 max-w-7xl mx-auto px-4">
@@ -1735,6 +1753,15 @@ export default function ServiceDetail() {
             </div>
           </div>
         </section>
+
+        {/* CTA Final Padronizado */}
+        <FinalCTA
+          title={`Agende sua avaliação para ${service.title} no Portão`}
+          subtitle="Diagnóstico com scanner, orçamento transparente e garantia em todos os serviços executados pela equipe Carplus."
+          whatsappMessage={`Olá! Gostaria de agendar uma avaliação para o serviço de *${service.title}* na Carplus Portão.`}
+          primaryActionText="Agendar avaliação"
+          badge="Atendimento na Oficina · Portão, Curitiba"
+        />
       </main>
 
       {/* WhatsApp Flutuante */}

@@ -2,9 +2,11 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Clock, Star, Navigation, ChevronDown, ChevronUp } from 'lucide-react';
+import { MapPin, Phone, Clock, Star, Navigation, ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import TrustBar from './TrustBar';
+import FinalCTA from './FinalCTA';
 import { useSEO } from '../hooks/useSEO';
 
 const ROTAS = [
@@ -79,22 +81,54 @@ export default function ComoChegar() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-4 bg-white text-center relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
-        <div className="max-w-3xl mx-auto">
-          <nav className="text-xs text-gray-500 mb-6 flex items-center justify-center gap-2">
-            <Link to="/" className="hover:text-gray-800 transition-colors">Home</Link>
-            <span className="text-gray-300">›</span>
-            <span className="text-gray-600">Como Chegar</span>
+      <section className="pt-32 pb-14 px-4 bg-dark text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img
+            loading="lazy"
+            src="/images/loja/carplus-oficina-portao-fachada-curitiba.jpg"
+            width={1200}
+            height={800}
+            className="w-full h-full object-cover"
+            alt="Fachada Carplus"
+          />
+        </div>
+        <div className="max-w-3xl mx-auto relative z-10">
+          <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex items-center justify-center gap-2">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="opacity-40">/</span>
+            <span className="text-white font-medium">Como Chegar</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-gray-900 leading-none mb-4 italic text-center">
-            Carplus Curitiba: <span className="text-primary">endereço e como chegar</span>
+          <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
+            Fácil Acesso no Portão
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-none mb-4 italic text-center">
+            Carplus Curitiba: <span className="text-primary">endereço e rotas</span>
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-center">
-            Consulte endereço, rotas, horários e contatos da Carplus Pneus e Oficina no bairro Portão, em Curitiba.
+          <p className="text-base md:text-lg text-white/70 max-w-xl mx-auto leading-relaxed text-center mb-8">
+            Consulte endereço, rotas dos bairros, horários de atendimento e mapa da Carplus Pneus e Oficina no bairro Portão.
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+            <a
+              href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20como%20chegar%20na%20Carplus."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto flex-1 min-h-11 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 text-white font-bold text-xs sm:text-sm uppercase tracking-tight px-6 py-3 rounded-full transition-colors shadow-lg shadow-green-900/40"
+            >
+              <MessageSquare size={16} /> Falar no WhatsApp
+            </a>
+            <a
+              href="tel:+554130827282"
+              className="w-full sm:w-auto min-h-11 flex items-center justify-center gap-2 border border-white/25 bg-white/5 hover:bg-white/15 text-white font-bold text-xs sm:text-sm uppercase tracking-tight px-5 py-3 rounded-full transition-colors backdrop-blur-sm"
+            >
+              <Phone size={15} /> (41) 3082-7282
+            </a>
+          </div>
         </div>
       </section>
+
+      {/* Barra de Confiança padronizada */}
+      <TrustBar variant="light" />
 
       {/* Address card */}
       <section className="py-10 px-4 bg-white">
@@ -238,6 +272,15 @@ export default function ComoChegar() {
           </div>
         </div>
       </section>
+
+      {/* CTA Final Padronizado */}
+      <FinalCTA
+        title="Venha até a Carplus no Portão"
+        subtitle="Estamos na Av. Pres. Arthur da Silva Bernardes, 1323. Estacionamento gratuito, técnicos qualificados e atendimento de segunda a sábado."
+        whatsappMessage="Olá! Estou indo para a Carplus e gostaria de confirmar o atendimento."
+        primaryActionText="Avisar no WhatsApp"
+        badge="Portão, Curitiba · Estacionamento Gratuito"
+      />
 
       <Footer />
     </div>

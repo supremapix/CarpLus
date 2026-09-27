@@ -331,7 +331,7 @@ export default function SeoTireLanding({
                 rel="noopener noreferrer"
                 className="flex min-h-12 items-center justify-center gap-3 bg-[#25D366] text-white px-6 sm:px-8 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all shadow-2xl shadow-green-900/40"
               >
-                <MessageSquare size={22} /> Orçamento no WhatsApp
+                <MessageSquare size={22} /> Enviar medida no WhatsApp
               </a>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}

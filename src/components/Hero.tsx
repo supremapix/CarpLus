@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
-import { Star, MapPin, CreditCard, Wrench, Navigation, Phone } from 'lucide-react';
+import { Star, MapPin, CreditCard, Wrench, Navigation, Phone, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { isPrerenderEager } from '../lib/prerender';
 
 // Frases da descrição da Hero — conteúdo real do site (preços, serviços e oficina)
@@ -133,19 +134,25 @@ export default function Hero() {
 
           <div className="mb-10 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:justify-start">
             <a
-              href="https://maps.app.goo.gl/75ZjiqbsPe9QWrPs7"
+              href="https://wa.me/554130827282?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Carplus%20e%20gostaria%20de%20um%20atendimento%20no%20Port%C3%A3o."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-tight text-dark shadow-lg transition-colors hover:bg-yellow-400 sm:min-w-[200px]"
+              className="flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-6 text-sm font-bold uppercase tracking-tight text-white shadow-xl shadow-green-900/40 transition-transform hover:scale-[1.02] active:scale-[0.98] sm:min-w-[190px]"
             >
-              <Navigation size={18} /> Ir até a Carplus
+              <MessageSquare size={18} /> Chamar no WhatsApp
             </a>
             <a
               href="tel:+554130827282"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-w-[200px]"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-w-[160px]"
             >
-              <Phone size={18} /> (41) 3082-7282
+              <Phone size={17} /> (41) 3082-7282
             </a>
+            <Link
+              to="/como-chegar"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary hover:bg-yellow-400 px-5 text-sm font-bold uppercase tracking-tight text-dark shadow-lg transition-colors sm:min-w-[150px]"
+            >
+              <Navigation size={17} /> Como Chegar
+            </Link>
           </div>
 
           <ul className="grid w-full grid-cols-2 gap-x-4 gap-y-3 text-left md:grid-cols-4 md:gap-y-6" aria-label="Destaques">

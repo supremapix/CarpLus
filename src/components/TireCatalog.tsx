@@ -1,12 +1,14 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront, Ruler, BadgeCheck, ChevronDown } from 'lucide-react';
+import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront, Ruler, BadgeCheck, ChevronDown, Phone } from 'lucide-react';
 import { Link, Navigate, useSearchParams } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
 import { ARO_PAGES } from '../data/seoLanding';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import TireCard from './TireCard';
+import TrustBar from './TrustBar';
+import FinalCTA from './FinalCTA';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema, generateProductSchema } from '../lib/schema';
 import { detectDominantProfile, resolveThematicLanding, REDIRECT_THRESHOLD } from '../lib/seoIndexing';
@@ -369,6 +371,13 @@ export default function TireCatalog() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
+            {/* Breadcrumb */}
+            <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex items-center justify-center gap-2">
+              <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+              <span className="opacity-40">/</span>
+              <span className="text-white font-medium">Catálogo de Pneus</span>
+            </nav>
+
             <span className="inline-block bg-primary text-black px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 tracking-widest">
               Revendedor Multimarcas
             </span>
@@ -379,6 +388,24 @@ export default function TireCatalog() {
             <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto font-medium text-center">
               Encontre o pneu ideal para seu carro com filtros avançados por medida, aro, categoria e modelo de veículo. Montagem técnica gratuita no Portão.
             </p>
+
+            {/* CTAs de Conversão na Hero */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+              <a
+                href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20pneus%20e%20enviar%20minha%20medida%20para%20a%20Carplus."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-[#25D366] hover:bg-green-600 px-6 text-sm font-bold uppercase tracking-tight text-white shadow-xl shadow-green-900/40 transition-colors"
+              >
+                <MessageSquare size={18} /> Enviar medida no WhatsApp
+              </a>
+              <a
+                href="tel:+554130827282"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 hover:bg-white/15 px-5 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors"
+              >
+                <Phone size={16} /> (41) 3082-7282
+              </a>
+            </div>
           </motion.div>
         </div>
 
@@ -403,6 +430,9 @@ export default function TireCatalog() {
           }
         `}</style>
       </section>
+
+      {/* Barra de Confiança padronizada */}
+      <TrustBar variant="light" />
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -651,6 +681,15 @@ export default function TireCatalog() {
         </div>
       </main>
       
+      {/* CTA Final Padronizado */}
+      <FinalCTA
+        title="Não encontrou a sua medida no catálogo?"
+        subtitle="Nosso estoque no Portão recebe novos modelos regularmente. Envie a medida do seu carro pelo WhatsApp que confirmamos a disponibilidade e passamos as melhores opções com montagem inclusa."
+        whatsappMessage="Olá! Gostaria de consultar se vocês têm a minha medida de pneu em estoque na Carplus."
+        primaryActionText="Enviar medida no WhatsApp"
+        badge="Consulta Rápida · Portão, Curitiba"
+      />
+
       {/* Footer is handled globally or per page */}
       <Footer />
 
