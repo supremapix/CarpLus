@@ -167,7 +167,7 @@ export default function HomeFAQ() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {HOME_FAQ_GROUPS.map((group) => (
-            <div key={group.id} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+            <div key={group.id} className="rounded-lg border border-white/10 bg-white/[0.03] p-5 sm:p-6 shadow-sm">
               <h3 className="mb-4 flex items-center gap-3 text-base font-bold uppercase tracking-widest text-primary">
                 <group.icon size={18} aria-hidden="true" />
                 {group.title}
@@ -195,13 +195,13 @@ export default function HomeFAQ() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             to="/faq"
-            className="flex min-h-12 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-tight text-black transition-colors hover:bg-yellow-400 sm:w-auto"
+            className="flex min-h-12 w-full items-center justify-center rounded-md bg-primary px-6 text-sm font-bold uppercase tracking-tight text-black transition-colors hover:bg-yellow-400 sm:w-auto"
           >
             Ver todas as perguntas
           </Link>
           <Link
             to="/como-chegar"
-            className="flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 px-6 text-sm font-bold uppercase tracking-tight text-white transition-colors hover:bg-white/10 sm:w-auto"
+            className="flex min-h-12 w-full items-center justify-center rounded-md border border-white/20 px-6 text-sm font-bold uppercase tracking-tight text-white transition-colors hover:bg-white/10 sm:w-auto"
           >
             Como chegar
           </Link>

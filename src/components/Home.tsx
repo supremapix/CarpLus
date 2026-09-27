@@ -137,12 +137,11 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale conosco no WhatsApp"
-        className="fixed bottom-6 right-6 z-[900] bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 group overflow-hidden border-4 border-white/20 transition-transform hover:scale-110 active:scale-90"
+        className="fixed bottom-6 right-6 z-[900] bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 rounded-lg shadow-xl flex items-center gap-2 group border border-emerald-400/30 transition-colors"
       >
-        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-        <MessageSquare size={24} className="relative z-10" />
-        <span className="max-w-0 group-hover:max-w-xs transition-all duration-500 overflow-hidden whitespace-nowrap font-bold text-sm relative z-10">
-          Dúvidas? Chame aqui
+        <MessageSquare size={22} className="relative z-10" />
+        <span className="hidden sm:inline-block font-bold text-xs uppercase tracking-wider relative z-10">
+          WhatsApp
         </span>
       </a>
     </div>

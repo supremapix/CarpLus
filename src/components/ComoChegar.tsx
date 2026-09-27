@@ -113,15 +113,15 @@ export default function ComoChegar() {
               href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20como%20chegar%20na%20Carplus."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex-1 min-h-11 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 text-white font-bold text-xs sm:text-sm uppercase tracking-tight px-6 py-3 rounded-full transition-colors shadow-lg shadow-green-900/40"
+              className="w-full sm:w-auto flex-1 min-h-12 flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 rounded-md transition-colors border border-emerald-500/20 shadow-sm whitespace-nowrap"
             >
-              <MessageSquare size={16} /> Falar no WhatsApp
+              <MessageSquare size={17} /> Falar no WhatsApp
             </a>
             <a
               href="tel:+554130827282"
-              className="w-full sm:w-auto min-h-11 flex items-center justify-center gap-2 border border-white/25 bg-white/5 hover:bg-white/15 text-white font-bold text-xs sm:text-sm uppercase tracking-tight px-5 py-3 rounded-full transition-colors backdrop-blur-sm"
+              className="w-full sm:w-auto min-h-12 flex items-center justify-center gap-2 border border-white/20 bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors whitespace-nowrap"
             >
-              <Phone size={15} /> (41) 3082-7282
+              <Phone size={16} /> (41) 3082-7282
             </a>
           </div>
         </div>

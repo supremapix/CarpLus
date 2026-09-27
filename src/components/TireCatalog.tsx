@@ -395,13 +395,13 @@ export default function TireCatalog() {
                 href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20pneus%20e%20enviar%20minha%20medida%20para%20a%20Carplus."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-[#25D366] hover:bg-green-600 px-6 text-sm font-bold uppercase tracking-tight text-white shadow-xl shadow-green-900/40 transition-colors"
+                className="flex min-h-12 items-center justify-center gap-2.5 rounded-md bg-[#25D366] hover:bg-[#20bd5a] px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-white border border-emerald-500/20 shadow-sm transition-colors whitespace-nowrap"
               >
                 <MessageSquare size={18} /> Enviar medida no WhatsApp
               </a>
               <a
                 href="tel:+554130827282"
-                className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 hover:bg-white/15 px-5 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors"
+                className="flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 hover:bg-white/20 px-5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-colors whitespace-nowrap"
               >
                 <Phone size={16} /> (41) 3082-7282
               </a>

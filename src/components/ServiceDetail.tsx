@@ -532,19 +532,17 @@ export default function ServiceDetail() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
-                 <motion.a 
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
+                 <a 
                   href={`https://wa.me/554130827282?text=${encodeURIComponent(`Olá! Gostaria de agendar uma avaliação para o serviço de *${service.title}* na Carplus Portão.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto flex-1 min-h-12 bg-[#25D366] hover:bg-green-600 text-white px-7 py-3 rounded-full font-bold flex items-center justify-center gap-3 text-sm shadow-xl uppercase tracking-tight transition-colors"
+                  className="w-full sm:w-auto flex-1 min-h-12 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-3 rounded-md font-bold flex items-center justify-center gap-2.5 text-xs sm:text-sm shadow-sm uppercase tracking-wider transition-colors border border-emerald-500/20 whitespace-nowrap"
                  >
                     <MessageSquare size={18} /> Agendar avaliação
-                 </motion.a>
+                 </a>
                  <a
                   href="tel:+554130827282"
-                  className="w-full sm:w-auto min-h-12 border border-white/20 bg-white/5 hover:bg-white/15 text-white px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 text-sm uppercase tracking-tight transition-colors backdrop-blur-sm"
+                  className="w-full sm:w-auto min-h-12 border border-white/20 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-md font-bold flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wider transition-colors whitespace-nowrap"
                  >
                     <Phone size={16} /> (41) 3082-7282
                  </a>

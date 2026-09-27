@@ -90,7 +90,7 @@ export default function HomeServicesCompact() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3.5 py-1 rounded-full inline-block mb-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm inline-block mb-3 border border-primary/20">
               Oficina Especializada · Portão, Curitiba
             </span>
             <div id="home-servicos-titulo">
@@ -104,18 +104,18 @@ export default function HomeServicesCompact() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               to="/servicos"
-              className="flex min-h-11 items-center justify-center gap-2 bg-dark hover:bg-black text-white px-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-tight transition-colors shadow-md"
+              className="flex min-h-11 items-center justify-center gap-2 bg-dark hover:bg-black text-white px-5 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-sm"
             >
               Ver todos os serviços
-              <ArrowRight size={16} />
+              <ArrowRight size={15} />
             </Link>
             <a
               href="https://wa.me/554130827282?text=Olá! Gostaria de agendar uma avaliação mecânica na Carplus."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-11 items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 text-white px-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-tight transition-colors shadow-md shadow-green-900/30"
+              className="flex min-h-11 items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors border border-emerald-500/20 shadow-sm"
             >
-              <MessageSquare size={16} />
+              <MessageSquare size={15} />
               Agendar avaliação
             </a>
           </div>
@@ -131,14 +131,14 @@ export default function HomeServicesCompact() {
             return (
               <div
                 key={serv.id}
-                className="bg-gray-50 border border-gray-200/80 rounded-2xl p-6 hover:bg-white hover:border-primary hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:bg-white hover:border-primary/60 transition-colors flex flex-col justify-between group shadow-xs"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-dark group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-colors shadow-xs">
-                      <Icon size={22} />
+                    <div className="w-11 h-11 rounded-md bg-white border border-gray-200 flex items-center justify-center text-dark group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-colors shadow-xs">
+                      <Icon size={20} />
                     </div>
-                    <span className="text-[11px] font-bold text-gray-500 bg-white border border-gray-200/70 px-2.5 py-1 rounded-full">
+                    <span className="text-[11px] font-bold text-gray-500 bg-white border border-gray-200 px-2 py-0.5 rounded-sm">
                       ⏱ {serv.time}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ export default function HomeServicesCompact() {
                     {serv.description}
                   </p>
 
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 mb-5 bg-white/70 p-2 rounded-lg border border-gray-150">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 mb-5 bg-white/70 p-2 rounded-md border border-gray-200/60">
                     <CheckCircle2 size={14} className="text-green-600 shrink-0" />
                     <span className="truncate">{serv.highlight}</span>
                   </div>
@@ -162,7 +162,7 @@ export default function HomeServicesCompact() {
                 <div className="pt-4 border-t border-gray-200/70 flex items-center justify-between gap-3">
                   <Link
                     to={`/servico/${serv.slug}`}
-                    className="text-xs font-bold uppercase tracking-tight text-gray-700 hover:text-primary flex items-center gap-1 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-gray-700 hover:text-primary flex items-center gap-1 transition-colors"
                   >
                     Ver detalhes <ArrowRight size={13} />
                   </Link>
@@ -171,7 +171,7 @@ export default function HomeServicesCompact() {
                     href={waUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold uppercase tracking-tight text-[#25D366] hover:text-green-700 flex items-center gap-1 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-[#25D366] hover:text-green-700 flex items-center gap-1 transition-colors"
                   >
                     <MessageSquare size={13} /> Agendar
                   </a>
@@ -182,7 +182,7 @@ export default function HomeServicesCompact() {
         </div>
 
         {/* Semantic GEO & Local Coverage Card (Critical for SEO & Local LLMs) */}
-        <div className="bg-dark text-white rounded-3xl p-6 sm:p-8 md:p-10 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="bg-dark text-white rounded-lg p-6 sm:p-8 md:p-10 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest mb-2">
               <MapPin size={16} />
@@ -199,7 +199,7 @@ export default function HomeServicesCompact() {
               {BAIRROS_PROXIMOS.map((b) => (
                 <span
                   key={b}
-                  className="text-[11px] font-medium text-white/80 bg-white/10 px-2.5 py-0.5 rounded-full"
+                  className="text-[11px] font-medium text-white/80 bg-white/10 px-2.5 py-0.5 rounded-sm border border-white/10"
                 >
                   {b}
                 </span>
@@ -210,13 +210,13 @@ export default function HomeServicesCompact() {
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
             <Link
               to="/como-chegar"
-              className="flex min-h-11 items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-black px-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-tight transition-colors"
+              className="flex min-h-11 items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-black px-6 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors"
             >
               Como Chegar
             </Link>
             <Link
               to="/centro-automotivo-portao"
-              className="flex min-h-11 items-center justify-center gap-2 border border-white/20 hover:bg-white/10 text-white px-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-tight transition-colors"
+              className="flex min-h-11 items-center justify-center gap-2 border border-white/20 hover:bg-white/10 text-white px-5 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors"
             >
               Sobre a Oficina
             </Link>

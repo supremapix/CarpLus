@@ -80,7 +80,7 @@ export default function StoreSection() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className="flex min-h-10 items-center gap-1 rounded-full border border-white/15 px-4 text-xs font-bold uppercase tracking-tight text-white/85 transition-colors hover:border-primary hover:text-primary"
+                    className="flex min-h-10 items-center gap-1 rounded-md border border-white/15 px-3.5 text-xs font-bold uppercase tracking-wider text-white/85 transition-colors hover:border-primary hover:text-primary"
                   >
                     {l.label}
                     <ArrowRight size={14} aria-hidden="true" />
@@ -92,7 +92,7 @@ export default function StoreSection() {
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Link
                 to="/pneus"
-                className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-tight text-black shadow-lg transition-colors hover:bg-yellow-400"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-black shadow-sm transition-colors hover:bg-yellow-400"
               >
                 Ver pneus
               </Link>
@@ -100,9 +100,9 @@ export default function StoreSection() {
                 href="https://wa.me/554130827282?text=Ola! Gostaria de consultar a disponibilidade de pneus na Carplus."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 text-sm font-bold uppercase tracking-tight text-white transition-colors hover:bg-white/10"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-colors"
               >
-                <MessageSquare size={18} aria-hidden="true" />
+                <MessageSquare size={17} aria-hidden="true" />
                 Consultar medida no WhatsApp
               </a>
             </div>

@@ -50,7 +50,7 @@ export default function MainPaths() {
     <section className="py-12 md:py-16 bg-gray-50 border-b border-gray-100" aria-label="Acesso rápido: Pneus, Oficina e Localização">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3.5 py-1 rounded-full inline-block mb-3">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-sm inline-block mb-3 border border-primary/20">
             O que você precisa hoje?
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-gray-900 leading-tight">
@@ -68,14 +68,14 @@ export default function MainPaths() {
             return (
               <div
                 key={idx}
-                className={`bg-white rounded-3xl p-6 sm:p-8 border border-gray-150 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group ${p.accentBorder}`}
+                className={`bg-white rounded-lg p-6 sm:p-7 border border-gray-200 shadow-sm hover:border-primary/60 transition-colors flex flex-col justify-between group ${p.accentBorder}`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-13 h-13 rounded-2xl bg-dark text-primary flex items-center justify-center group-hover:scale-105 transition-transform shadow-md">
-                      <Icon size={26} />
+                    <div className="w-12 h-12 rounded-md bg-dark text-primary flex items-center justify-center shadow-sm">
+                      <Icon size={24} />
                     </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 bg-gray-100 px-2.5 py-1 rounded-sm border border-gray-200/60">
                       {p.tag}
                     </span>
                   </div>
@@ -92,7 +92,7 @@ export default function MainPaths() {
                 <div className="space-y-2.5 pt-4 border-t border-gray-100">
                   <Link
                     to={p.primaryTo}
-                    className="flex min-h-11 items-center justify-center gap-2 rounded-xl bg-dark hover:bg-black text-white text-xs sm:text-sm font-bold uppercase tracking-tight px-4 py-2.5 transition-colors w-full"
+                    className="flex min-h-11 items-center justify-center gap-2 rounded-md bg-dark hover:bg-black text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2.5 transition-colors w-full"
                   >
                     <span>{p.primaryLabel}</span>
                     <ArrowRight size={15} />
@@ -102,7 +102,7 @@ export default function MainPaths() {
                     href={p.secondaryHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex min-h-10 items-center justify-center gap-2 rounded-xl border border-gray-200 hover:border-primary hover:text-black text-gray-700 text-xs font-bold uppercase tracking-tight px-4 py-2 transition-colors w-full"
+                    className="flex min-h-10 items-center justify-center gap-2 rounded-md border border-gray-200 hover:border-primary hover:text-black text-gray-700 text-xs font-bold uppercase tracking-wider px-4 py-2 transition-colors w-full"
                   >
                     <SecIcon size={14} className="text-primary" />
                     <span>{p.secondaryLabel}</span>

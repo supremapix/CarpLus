@@ -353,7 +353,7 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
   return (
     <div 
       onClick={onClick}
-      className="bg-white p-4 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-shadow flex-shrink-0 w-full border border-gray-100 cursor-pointer"
+      className="bg-white p-4 rounded-lg shadow-xs hover:shadow-md transition-shadow flex-shrink-0 w-full border border-gray-200 cursor-pointer"
     >
       {/* Header estilo Google Maps */}
       <div className="flex items-center justify-between mb-3">
@@ -496,13 +496,13 @@ export default function Reviews() {
         {/* Cabeçalho desktop */}
         <div className="hidden md:block text-center md:text-left max-w-[640px] mb-14 mx-auto md:mx-0">
           {/* Badge estilo Google */}
-          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm px-5 py-2.5 rounded-full mb-6 mx-auto md:mx-0">
+          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-xs px-4 py-2 rounded-md mb-6 mx-auto md:mx-0">
             <GoogleLogo />
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
-            <span className="text-[#202124] font-semibold text-sm">4,9 DE 5 ESTRELAS</span>
-            <span className="flex items-center gap-1 text-[#70757a] text-sm">
+            <span className="text-[#202124] font-semibold text-xs tracking-wider uppercase">4,9 DE 5 ESTRELAS</span>
+            <span className="flex items-center gap-1 text-[#70757a] text-xs">
               • {TOTAL_REVIEWS} avaliações
               <motion.span
                 aria-label="Avaliações em alta"
@@ -556,16 +556,16 @@ export default function Reviews() {
             />
             
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white w-full max-w-2xl rounded-[2rem] shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="relative bg-white w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden border border-gray-200"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Botão Fechar */}
               <button 
                 onClick={closeReview}
-                className="absolute top-6 right-6 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors z-20"
+                className="absolute top-5 right-5 p-2 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors z-20"
               >
                 <X size={20} className="text-gray-600" />
               </button>

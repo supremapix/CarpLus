@@ -47,24 +47,24 @@ export default function TrustBar({ className = '', variant = 'light' }: TrustBar
             return (
               <li
                 key={idx}
-                className={`flex items-center gap-3 p-2.5 sm:p-3 rounded-xl transition-colors ${
+                className={`flex items-center gap-3 p-2.5 sm:p-3 rounded-md transition-colors ${
                   isDark ? 'hover:bg-white/5' : 'hover:bg-gray-50'
                 }`}
               >
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                  className={`w-10 h-10 rounded-md flex items-center justify-center shrink-0 ${
                     isDark ? 'bg-primary/20 text-primary' : 'bg-primary/15 text-neutral-900'
                   }`}
                   aria-hidden="true"
                 >
-                  <Icon size={20} className={isDark ? 'text-primary' : 'text-neutral-800'} />
+                  <Icon size={19} className={isDark ? 'text-primary' : 'text-neutral-800'} />
                 </div>
                 <div className="min-w-0">
-                  <p className="font-bold text-xs sm:text-sm leading-snug truncate">
+                  <p className="font-bold text-xs sm:text-sm leading-tight truncate">
                     {item.title}
                   </p>
                   <p
-                    className={`text-[11px] sm:text-xs truncate ${
+                    className={`text-[11px] sm:text-xs truncate mt-0.5 ${
                       isDark ? 'text-white/60' : 'text-gray-500'
                     }`}
                   >

@@ -62,15 +62,15 @@ export default function TireSearchBar() {
           {/* Mobile Toggle Button */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="md:hidden w-full bg-white/10 border-2 border-white/20 rounded-2xl px-5 py-4 flex items-center justify-between mb-4"
+            className="md:hidden w-full bg-white/10 border border-white/20 rounded-md px-5 py-3.5 flex items-center justify-between mb-4 transition-colors hover:bg-white/15"
           >
-            <span className="flex items-center gap-3 text-white font-bold">
-              <SlidersHorizontal size={20} className="text-primary" />
+            <span className="flex items-center gap-2.5 text-white font-bold text-sm uppercase tracking-wider">
+              <SlidersHorizontal size={18} className="text-primary" />
               Pesquise seu pneu pelo aro
             </span>
             <ChevronDown 
-              size={20} 
-              className={`text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
+              size={18} 
+              className={`text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} 
             />
           </button>
 
@@ -87,12 +87,12 @@ export default function TireSearchBar() {
             </div>
 
             {/* Search Fields */}
-            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/10 rounded-3xl p-4 md:p-6">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 items-end">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg p-4 md:p-6 shadow-xl">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 items-end">
                 
                 {/* ARO Select */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 ml-0.5">
                     Aro
                   </label>
                   <div className="relative">
@@ -103,20 +103,20 @@ export default function TireSearchBar() {
                         setLargura(null);
                         setAltura(null);
                       }}
-                      className="w-full appearance-none bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 pr-12 font-bold text-lg focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300"
+                      className="w-full appearance-none bg-white border border-gray-200 rounded-md px-4 py-3.5 pr-10 font-bold text-base focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300 text-dark"
                     >
                       <option value="">Escolha o aro</option>
                       {aros.map(a => (
                         <option key={a} value={a}>Aro {a}</option>
                       ))}
                     </select>
-                    <ChevronDown size={20} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    <ChevronDown size={18} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* LARGURA Select */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 ml-0.5">
                     Largura
                   </label>
                   <div className="relative">
@@ -127,20 +127,20 @@ export default function TireSearchBar() {
                         setAltura(null);
                       }}
                       disabled={!aro}
-                      className="w-full appearance-none bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 pr-12 font-bold text-lg focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100"
+                      className="w-full appearance-none bg-white border border-gray-200 rounded-md px-4 py-3.5 pr-10 font-bold text-base focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100 text-dark"
                     >
                       <option value="">Escolha a largura</option>
                       {larguras.map(l => (
                         <option key={l} value={l}>{l}</option>
                       ))}
                     </select>
-                    <ChevronDown size={20} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    <ChevronDown size={18} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* ALTURA Select */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-black uppercase tracking-widest text-white/70 ml-1">
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 ml-0.5">
                     Altura
                   </label>
                   <div className="relative">
@@ -148,35 +148,35 @@ export default function TireSearchBar() {
                       value={altura || ''}
                       onChange={(e) => setAltura(e.target.value ? Number(e.target.value) : null)}
                       disabled={!largura}
-                      className="w-full appearance-none bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 pr-12 font-bold text-lg focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100"
+                      className="w-full appearance-none bg-white border border-gray-200 rounded-md px-4 py-3.5 pr-10 font-bold text-base focus:border-primary focus:outline-none transition-colors cursor-pointer hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100 text-dark"
                     >
                       <option value="">Escolha a altura</option>
                       {alturas.map(a => (
                         <option key={a} value={a}>{a}</option>
                       ))}
                     </select>
-                    <ChevronDown size={20} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    <ChevronDown size={18} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* Search Button */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   {hasFilters && (
                     <button
                       onClick={clearFilters}
-                      className="w-14 h-14 md:h-[58px] flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-2xl transition-transform hover:scale-105 active:scale-95 shrink-0 [animation:var(--animate-pop-in)]"
+                      className="w-12 h-12 md:h-[50px] flex items-center justify-center bg-white/20 hover:bg-white/30 text-white rounded-md transition-colors shrink-0"
                       title="Limpar filtros"
                     >
-                      <X size={20} className="text-gray-600" />
+                      <X size={18} />
                     </button>
                   )}
                   <button
                     onClick={handleSearch}
                     disabled={!aro}
-                    className="flex-1 bg-primary hover:bg-yellow-400 disabled:bg-gray-300 disabled:cursor-not-allowed text-black px-6 py-4 rounded-2xl font-black text-base uppercase tracking-tight flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20 disabled:shadow-none"
+                    className="flex-1 min-h-12 bg-primary hover:bg-yellow-400 disabled:bg-gray-400 disabled:cursor-not-allowed text-black px-5 py-3.5 rounded-md font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
                   >
-                    <Search size={20} />
-                    <span className="hidden md:inline">Pesquisar</span>
+                    <Search size={18} />
+                    <span>Pesquisar Pneus</span>
                   </button>
                 </div>
               </div>

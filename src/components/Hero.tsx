@@ -137,21 +137,21 @@ export default function Hero() {
               href="https://wa.me/554130827282?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Carplus%20e%20gostaria%20de%20um%20atendimento%20no%20Port%C3%A3o."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-6 text-sm font-bold uppercase tracking-tight text-white shadow-xl shadow-green-900/40 transition-transform hover:scale-[1.02] active:scale-[0.98] sm:min-w-[190px]"
+              className="flex min-h-12 items-center justify-center gap-2.5 rounded-md bg-[#25D366] hover:bg-[#20bd5a] px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-white border border-emerald-500/20 shadow-sm transition-colors sm:min-w-[190px]"
             >
-              <MessageSquare size={18} /> Chamar no WhatsApp
+              <MessageSquare size={17} /> Chamar no WhatsApp
             </a>
             <a
               href="tel:+554130827282"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 text-sm font-bold uppercase tracking-tight text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:min-w-[160px]"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 hover:bg-white/20 px-5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white transition-colors sm:min-w-[160px]"
             >
-              <Phone size={17} /> (41) 3082-7282
+              <Phone size={16} /> (41) 3082-7282
             </a>
             <Link
               to="/como-chegar"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary hover:bg-yellow-400 px-5 text-sm font-bold uppercase tracking-tight text-dark shadow-lg transition-colors sm:min-w-[150px]"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-primary hover:bg-yellow-400 px-5 text-xs sm:text-sm font-bold uppercase tracking-wider text-dark shadow-sm transition-colors sm:min-w-[150px]"
             >
-              <Navigation size={17} /> Como Chegar
+              <Navigation size={16} /> Como Chegar
             </Link>
           </div>
 
@@ -162,7 +162,7 @@ export default function Hero() {
               { icon: CreditCard, text: 'Pneus em até 10x' },
               { icon: Star, text: 'Montagem e alinhamento' },
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-2 border-l border-primary py-1 pl-3 text-white/80 md:py-2 md:pl-4">
+              <li key={i} className="flex items-center gap-2 border-l-2 border-primary py-1 pl-3 text-white/85 md:py-2 md:pl-4">
                 <item.icon size={16} className="shrink-0 text-primary" />
                 <span className="font-accent text-[11px] uppercase leading-tight tracking-wider sm:text-xs">{item.text}</span>
               </li>

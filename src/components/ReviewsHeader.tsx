@@ -25,7 +25,7 @@ export default function ReviewsHeader({ reviewCount = 234 }: ReviewsHeaderProps)
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-[0_2px_16px_rgba(0,0,0,0.07)]"
+        className="flex items-center gap-4 rounded-lg border border-gray-200 bg-white px-5 py-4 shadow-xs"
       >
         {/* Esquerda: logo Google */}
         <GoogleLogo />

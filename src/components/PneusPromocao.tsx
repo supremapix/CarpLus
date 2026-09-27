@@ -18,7 +18,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
   const whatsappUrl = `https://wa.me/554130827282?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <div className="group flex w-[230px] sm:w-[260px] flex-shrink-0 flex-col rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-primary/70 hover:shadow-[0_8px_28px_rgba(245,156,0,0.22)]">
+    <div className="group flex w-[230px] sm:w-[260px] flex-shrink-0 flex-col rounded-lg border border-neutral-200 bg-white overflow-hidden shadow-xs transition-colors hover:border-primary">
       <Link to={`/pneu-promocao/${tire.slug}`} className="relative aspect-square bg-white p-1 flex items-center justify-center overflow-hidden">
         <img
           src={tire.imagem}
@@ -32,9 +32,9 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
           }}
-          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-102"
         />
-        <span className="absolute top-3 left-3 bg-black text-white text-[11px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+        <span className="absolute top-2.5 left-2.5 bg-black text-white text-[10px] font-accent font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm">
           Promoção
         </span>
       </Link>
@@ -45,7 +45,7 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
         </Link>
         <p className="mt-1.5 text-neutral-600 text-sm leading-snug min-h-[2.5rem]">{tire.nome}</p>
 
-        <p className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-neutral-700 text-xs leading-snug">
+        <p className="mt-3 rounded-md bg-primary/10 px-3 py-2 text-neutral-700 text-xs leading-snug border border-primary/20">
           Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp.
         </p>
 
@@ -53,18 +53,18 @@ const TireCard: FC<{ tire: PromoTire }> = ({ tire }) => {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wide !text-white text-sm transition-colors hover:bg-neutral-800"
+          className="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-black px-4 py-2.5 font-accent font-bold uppercase tracking-wider !text-white text-xs transition-colors hover:bg-neutral-800"
         >
-          <MessageCircle size={16} strokeWidth={2.5} />
+          <MessageCircle size={15} strokeWidth={2.5} />
           Pedir orçamento
         </a>
 
         <Link
           to={`/pneu-promocao/${tire.slug}`}
-          className="mt-2 inline-flex items-center justify-center gap-1 rounded-xl border border-neutral-200 px-4 py-2 font-accent font-bold uppercase tracking-wide text-neutral-700 text-xs transition-colors hover:border-primary hover:text-primary"
+          className="mt-2 inline-flex items-center justify-center gap-1 rounded-md border border-neutral-200 px-4 py-2 font-accent font-bold uppercase tracking-wider text-neutral-700 text-xs transition-colors hover:border-primary hover:text-primary"
         >
           Saiba mais
-          <ArrowRight size={14} strokeWidth={2.5} />
+          <ArrowRight size={13} strokeWidth={2.5} />
         </Link>
       </div>
     </div>
@@ -78,29 +78,34 @@ export default function PneusPromocao() {
   const track = [...destaquePromo, ...destaquePromo];
 
   return (
-    <section id="promocao" className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section id="promocao" className="relative bg-white py-14 md:py-20 overflow-hidden border-b border-gray-100">
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Cabeçalho */}
-        <div className="text-center mb-12 [animation:var(--animate-fade-in-up)]">
-          <h2 className="font-accent font-bold uppercase text-neutral-900 text-4xl sm:text-5xl md:text-6xl tracking-tight text-balance">
+        <div className="text-center mb-10 [animation:var(--animate-fade-in-up)]">
+          <h2 className="font-accent font-bold uppercase text-neutral-900 text-3xl sm:text-4xl md:text-5xl tracking-tight text-balance">
             Onde Comprar Pneus em <span className="text-primary">Curitiba</span>
           </h2>
 
           {/* Chamada para consulta rápida pelo WhatsApp */}
-          <div className="mt-6 inline-flex flex-col items-center">
-            <span className="text-neutral-900 font-accent font-bold uppercase tracking-[0.2em] text-lg sm:text-xl">
+          <div className="mt-5 inline-flex flex-col items-center">
+            <span className="text-neutral-700 font-accent font-bold uppercase tracking-wider text-sm sm:text-base">
               Consulte o pneu certo para o seu carro
             </span>
             <a
               href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20o%20pneu%20certo%20para%20o%20meu%20carro."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 flex items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-7 py-4 shadow-[0_0_30px_rgba(245,156,0,0.30)] [animation:var(--animate-pulse-scale)] will-change-transform transition-colors hover:bg-primary/20"
+              className="mt-3 flex items-center gap-3.5 rounded-md border border-gray-200 bg-white hover:border-primary/80 px-6 py-3.5 shadow-sm transition-colors text-dark"
             >
-              <MessageCircle size={36} className="text-primary" strokeWidth={2.5} />
-              <span className="font-accent font-bold text-neutral-900 text-2xl sm:text-3xl leading-tight text-left">
-                Atendimento rápido<br />pelo WhatsApp
-              </span>
+              <div className="w-10 h-10 rounded-md bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                <MessageCircle size={22} strokeWidth={2.5} />
+              </div>
+              <div className="text-left">
+                <span className="block font-bold text-dark text-sm sm:text-base leading-tight uppercase tracking-tight">
+                  Atendimento rápido pelo WhatsApp
+                </span>
+                <span className="text-xs text-gray-500 font-medium">Consulte medidas e valores com a equipe no Portão</span>
+              </div>
             </a>
           </div>
         </div>
