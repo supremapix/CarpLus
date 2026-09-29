@@ -41,8 +41,13 @@ function emit404() {
   html = html.replace(/<meta name="robots" content=".*?" \/>/i, '<meta name="robots" content="noindex, follow" />');
   // Remove canonical da home para não gerar soft 404
   html = html.replace(/<link rel="canonical" href=".*?" \/>/i, '');
-  // Substitui OpenGraph Title
+  // Substitui OpenGraph Title e remove og:url apontando para a home
   html = html.replace(/<meta property="og:title" content=".*?" \/>/i, '<meta property="og:title" content="Página não encontrada | Carplus Pneus e Oficina" />');
+  html = html.replace(/<meta property="og:url" content=".*?" \/>/i, '');
+  // Adiciona prerender-status-code=404 para crawlers e middlewares
+  if (!html.includes('prerender-status-code')) {
+    html = html.replace('</head>', '  <meta name="prerender-status-code" content="404" />\n  </head>');
+  }
 
   fs.writeFileSync(out, html, 'utf-8');
   console.log('[build-deploy] 404.html emitido com title, noindex e sem canonical da home.');

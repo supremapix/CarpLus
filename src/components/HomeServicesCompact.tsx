@@ -75,7 +75,7 @@ const CORE_SERVICES = [
   {
     id: 'scanner',
     title: 'Diagnóstico com Scanner',
-    slug: 'diagnostico-eletronico',
+    slug: 'scanner-automotivo',
     icon: Cpu,
     description: 'Scanner profissional para leitura de injeção, reset de luzes de painel, módulos ABS e airbag.',
     highlight: 'Multiprotocolo nacionais e importados',

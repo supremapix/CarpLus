@@ -411,8 +411,40 @@
   status = 301
   force = true
 
-# SPA catch-all — SEMPRE POR ULTIMO
 [[redirects]]
-  from = "/*"
+  from = "/servico/diagnostico-eletronico/"
+  to = "/servico/scanner-automotivo"
+  status = 301
+  force = true
+
+# SPA fallback para rotas válidas conhecidas
+[[redirects]]
+  from = "/servico/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/bairro/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pneu/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pneu-medida/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/oficina/*"
+  to = "/index.html"
+  status = 200
+
+# 404 real para rotas desconhecidas
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

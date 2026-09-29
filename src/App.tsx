@@ -133,6 +133,8 @@ export default function App() {
       {/* Redirect 301 de rota legada rastreada pelo Google */}
       <Route path="/pneus/:medida" element={<LegacyMedidaRedirect />} />
       <Route path="/bairro/:slug" element={<NeighborhoodDetail />} />
+      {/* Redirect permanente de serviço legado consolidado */}
+      <Route path="/servico/diagnostico-eletronico" element={<Navigate to="/servico/scanner-automotivo" replace />} />
       <Route path="/servico/:slug" element={<ServiceDetail />} />
       <Route path="/quem-somos" element={<AboutUs />} />
       <Route path="/contato" element={<Contact />} />
@@ -158,7 +160,6 @@ export default function App() {
 
       {/* ───── Hubs Principais de Serviços e Pneus ───── */}
       <Route path="/manutencao-automotiva-curitiba" element={<ManutencaoAutomotivaHub />} />
-      <Route path="/servico/diagnostico-eletronico" element={<Navigate to="/servico/scanner-automotivo" replace />} />
       <Route path="/catalogo" element={<Navigate to="/pneus" replace />} />
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
       <Route path="/medidas-de-pneus-curitiba" element={<PneusMedidasHub />} />

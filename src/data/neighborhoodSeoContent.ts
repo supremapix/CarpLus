@@ -498,7 +498,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
     h1: 'Pneus e Oficina para o Centro de Curitiba',
     heroSubtitle: 'Do Centro ao Portão em 12 minutos — fuja do trânsito, venha para a Carplus',
     introText: 'Quem trabalha ou mora no Centro de Curitiba sabe que encontrar uma oficina de confiança pode ser um desafio. A Carplus está a apenas 12 minutos e oferece tudo que você precisa: pneus, alinhamento, balanceamento e revisão.',
-    localContext: 'O Centro de Curitiba é movimentado e nem sempre tem estacionamento fácil. Na Carplus, você encontra estacionamento próprio, atendimento rápido e pode resolver tudo em uma só visita.',
+    localContext: 'O Centro de Curitiba é movimentado e nem sempre tem estacionamento fácil. Na Carplus, você encontra acesso fácil com vagas para clientes em frente à loja, atendimento rápido e pode resolver tudo em uma só visita.',
     servicesHighlight: [
       'Pneus para todos os modelos',
       'Alinhamento 3D computadorizado',

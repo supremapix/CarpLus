@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { SERVICES, TIRES, NEIGHBORHOODS } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
 import { getServiceFaqs } from '../data/serviceFaqs';
@@ -442,6 +442,12 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
 
 export default function ServiceDetail() {
   const { slug } = useParams();
+
+  // Redirect permanente de serviço legado consolidado em /servico/scanner-automotivo
+  if (slug === 'diagnostico-eletronico') {
+    return <Navigate to="/servico/scanner-automotivo" replace />;
+  }
+
   // Try to find in old SERVICES first, then in new ALL_NEW_SERVICES
   const oldService = SERVICES.find(s => s.slug === slug);
   const newService = ALL_NEW_SERVICES.find(s => s.slug === slug);

@@ -169,17 +169,22 @@ function buildServiceRedirects(): RedirectRule[] {
       destination: '/servico/scanner-automotivo',
       permanent: true,
     },
+    {
+      source: '/servico/diagnostico-eletronico/',
+      destination: '/servico/scanner-automotivo',
+      permanent: true,
+    },
   ];
 }
 
-/** Todos os redirects manuais gerenciados (hosts, bairros, medida, marcas e serviços). */
+/** Todos os redirects manuais gerenciados (hosts, serviços, bairros, medida e marcas). */
 export function getManualRedirects(): RedirectRule[] {
   return [
     ...buildHostRedirects(),
+    ...buildServiceRedirects(),
     ...buildNeighborhoodRedirects(),
     ...buildMeasureRedirect(),
     ...buildBrandRedirects(),
-    ...buildServiceRedirects(),
   ];
 }
 export function redirectKey(r: RedirectRule): string {

@@ -35,6 +35,16 @@
       "permanent": true
     },
     {
+      "source": "/servico/diagnostico-eletronico",
+      "destination": "/servico/scanner-automotivo",
+      "permanent": true
+    },
+    {
+      "source": "/servico/diagnostico-eletronico/",
+      "destination": "/servico/scanner-automotivo",
+      "permanent": true
+    },
+    {
       "source": "/taboao.html",
       "destination": "/bairro/taboao",
       "permanent": true
@@ -422,11 +432,6 @@
     {
       "source": "/pneu-bridgestone-curitiba",
       "destination": "/pneus-bridgestone-curitiba",
-      "permanent": true
-    },
-    {
-      "source": "/servico/diagnostico-eletronico",
-      "destination": "/servico/scanner-automotivo",
       "permanent": true
     },
     {
@@ -1344,7 +1349,99 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/pneus",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneus-curitiba",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/manutencao-automotiva-curitiba",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/medidas-de-pneus-curitiba",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/loja-de-pneus-curitiba-perto-de-mim",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/servicos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/quem-somos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contato",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/como-chegar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bairros",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/centro-automotivo-portao",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/borracharia-portao",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneus-promocao",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneu-promocao/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/trocas-e-devolucoes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bairro/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/servico/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneu/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pneu-medida/:medida",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/oficina/:slug",
       "destination": "/index.html"
     }
   ],
