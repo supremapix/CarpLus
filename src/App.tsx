@@ -28,7 +28,7 @@ const ReturnPolicy = lazy(() => import('./components/Institutional/ReturnPolicy'
 const AboutUs = lazy(() => import('./components/Institutional/AboutUs'));
 const Contact = lazy(() => import('./components/Institutional/Contact'));
 const Sitemap = lazy(() => import('./components/Sitemap'));
-const NotFound = lazy(() => import('./components/NotFound'));
+import NotFound from './components/NotFound';
 const ServicosPage = lazy(() => import('./components/ServicosPage'));
 const ComoChegar = lazy(() => import('./components/ComoChegar'));
 const BairrosPage = lazy(() => import('./components/BairrosPage'));
@@ -159,6 +159,7 @@ export default function App() {
       {/* ───── Hubs Principais de Serviços e Pneus ───── */}
       <Route path="/manutencao-automotiva-curitiba" element={<ManutencaoAutomotivaHub />} />
       <Route path="/servico/diagnostico-eletronico" element={<Navigate to="/servico/scanner-automotivo" replace />} />
+      <Route path="/catalogo" element={<Navigate to="/pneus" replace />} />
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
       <Route path="/medidas-de-pneus-curitiba" element={<PneusMedidasHub />} />
       <Route path="/loja-de-pneus-curitiba-perto-de-mim" element={<LojaDePneusPertoDeMim />} />

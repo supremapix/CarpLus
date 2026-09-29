@@ -425,6 +425,11 @@
       "permanent": true
     },
     {
+      "source": "/servico/diagnostico-eletronico",
+      "destination": "/servico/scanner-automotivo",
+      "permanent": true
+    },
+    {
       "source": "/pneus",
       "has": [
         {

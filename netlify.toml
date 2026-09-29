@@ -405,6 +405,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/servico/diagnostico-eletronico"
+  to = "/servico/scanner-automotivo"
+  status = 301
+  force = true
+
 # SPA catch-all — SEMPRE POR ULTIMO
 [[redirects]]
   from = "/*"

@@ -161,9 +161,26 @@ function buildBrandRedirects(): RedirectRule[] {
   }));
 }
 
-/** Todos os 76 redirects manuais promovidos na E5, na ordem: bairros → medida → marcas. */
+/** 301 de rotas legadas de serviço → páginas canônicas oficiais. */
+function buildServiceRedirects(): RedirectRule[] {
+  return [
+    {
+      source: '/servico/diagnostico-eletronico',
+      destination: '/servico/scanner-automotivo',
+      permanent: true,
+    },
+  ];
+}
+
+/** Todos os redirects manuais gerenciados (hosts, bairros, medida, marcas e serviços). */
 export function getManualRedirects(): RedirectRule[] {
-  return [...buildHostRedirects(), ...buildNeighborhoodRedirects(), ...buildMeasureRedirect(), ...buildBrandRedirects()];
+  return [
+    ...buildHostRedirects(),
+    ...buildNeighborhoodRedirects(),
+    ...buildMeasureRedirect(),
+    ...buildBrandRedirects(),
+    ...buildServiceRedirects(),
+  ];
 }
 export function redirectKey(r: RedirectRule): string {
   const q = (r.has ?? [])

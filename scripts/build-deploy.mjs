@@ -32,8 +32,20 @@ function emit404() {
     console.warn('[build-deploy] AVISO: dist/index.html ausente; nao foi possivel emitir 404.html.');
     return;
   }
-  fs.copyFileSync(shell, out);
-  console.log('[build-deploy] 404.html emitido (shell SPA → HTTP 404 real em rotas desconhecidas).');
+  let html = fs.readFileSync(shell, 'utf-8');
+  // Substitui Title
+  html = html.replace(/<title>.*?<\/title>/i, '<title>Página não encontrada | Carplus Pneus e Oficina</title>');
+  // Substitui meta description
+  html = html.replace(/<meta name="description" content=".*?" \/>/i, '<meta name="description" content="A página que você procura não foi encontrada. Conheça nosso catálogo de pneus novos e serviços de manutenção automotiva no bairro Portão em Curitiba." />');
+  // Garante robots noindex
+  html = html.replace(/<meta name="robots" content=".*?" \/>/i, '<meta name="robots" content="noindex, follow" />');
+  // Remove canonical da home para não gerar soft 404
+  html = html.replace(/<link rel="canonical" href=".*?" \/>/i, '');
+  // Substitui OpenGraph Title
+  html = html.replace(/<meta property="og:title" content=".*?" \/>/i, '<meta property="og:title" content="Página não encontrada | Carplus Pneus e Oficina" />');
+
+  fs.writeFileSync(out, html, 'utf-8');
+  console.log('[build-deploy] 404.html emitido com title, noindex e sem canonical da home.');
 }
 
 function run(cmd, { essential }) {

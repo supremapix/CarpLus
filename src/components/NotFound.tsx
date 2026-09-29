@@ -21,6 +21,15 @@ import TrustBar from './TrustBar';
 import { useSEO } from '../hooks/useSEO';
 import { WHATSAPP_NUMBER, PHONE_DISPLAY, ADDRESS_FULL } from '../data/seoLanding';
 
+const RECOMMENDED_LINKS = [
+  { label: 'Página Inicial', path: '/' },
+  { label: 'Todos os Serviços', path: '/servicos' },
+  { label: 'Manutenção Automotiva no Portão', path: '/manutencao-automotiva-curitiba' },
+  { label: 'Pneus em Curitiba', path: '/pneus-curitiba' },
+  { label: 'Catálogo de Pneus', path: '/catalogo' },
+  { label: 'Como Chegar (Rotas)', path: '/como-chegar' },
+];
+
 const POPULAR_SIZES = [
   { label: '195/55R15', path: '/pneu-medida/195-55r15' },
   { label: '205/55R16', path: '/pneu-medida/205-55r16' },
@@ -35,43 +44,43 @@ const POPULAR_SIZES = [
 const MAIN_SECTIONS = [
   {
     icon: Disc3,
-    title: 'Catálogo de Pneus',
-    description: 'Pneus aro 13 ao 22 das principais marcas: Pirelli, Michelin, Goodyear, Continental e Bridgestone com montagem e balanceamento no Portão.',
-    link: '/pneus',
-    ctaText: 'Ver Pneus Novos'
+    title: 'Pneus em Curitiba',
+    description: 'Catálogo completo do aro 13 ao aro 22 com marcas consagradas (Pirelli, Michelin, Goodyear, Continental, Bridgestone) e montagem no Portão.',
+    link: '/pneus-curitiba',
+    ctaText: 'Ver Pneus em Curitiba'
   },
   {
     icon: Wrench,
     title: 'Manutenção Automotiva',
-    description: 'Oficina mecânica completa: scanner automotivo, alinhamento 3D, balanceamento, freios, suspensão e troca de óleo com laudo prévio.',
+    description: 'Oficina mecânica especializada: scanner automotivo, alinhamento 3D, balanceamento, revisão de freios, suspensão e troca de óleo com laudo prévio.',
     link: '/manutencao-automotiva-curitiba',
-    ctaText: 'Ver Serviços da Oficina'
+    ctaText: 'Ver Serviços Automotivos'
   },
   {
     icon: MapPin,
-    title: 'Loja e Oficina no Portão',
-    description: `${ADDRESS_FULL}. Acesso fácil com vagas para clientes em frente à loja e atendimento sem complicação.`,
+    title: 'Oficina no Portão, Curitiba',
+    description: `${ADDRESS_FULL}. Acesso fácil com vagas para clientes em frente à loja para atendimento ágil e sem complicação.`,
     link: '/como-chegar',
-    ctaText: 'Como Chegar (Rotas)'
+    ctaText: 'Como Chegar na Loja'
   },
   {
     icon: MessageSquare,
     title: 'Atendimento via WhatsApp',
-    description: 'Consulte medidas em estoque, valores de instalação, agendamento de revisão e orçamentos sem compromisso direto com nossos técnicos.',
-    link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Estava navegando no site da Carplus e gostaria de tirar uma dúvida.')}`,
+    description: 'Consulte medidas disponíveis em estoque, tire dúvidas sobre serviços mecânicos e solicite seu orçamento sem compromisso.',
+    link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Estava navegando na Carplus e gostaria de tirar uma dúvida sobre pneus e serviços.')}`,
     isExternal: true,
-    ctaText: 'Chamar no WhatsApp'
+    ctaText: 'Falar no WhatsApp'
   }
 ];
 
 const FAQ_ITEMS = [
   {
     q: 'Onde fica a Carplus Pneus e Oficina?',
-    a: `Estamos localizados na ${ADDRESS_FULL}. Ponto de acesso fácil próximo aos bairros Água Verde, Vila Izabel, Novo Mundo, Santa Quitéria e Fazendinha, com vagas para clientes em frente à loja.`
+    a: `Estamos localizados na ${ADDRESS_FULL}. Ponto de acesso fácil com vagas para clientes em frente à loja, atendendo motoristas do Portão, Água Verde, Vila Izabel, Novo Mundo, Santa Quitéria, Fazendinha e toda Curitiba.`
   },
   {
     q: 'Qual o horário de funcionamento?',
-    a: 'Atendemos de segunda a sexta-feira das 08h às 18h e aos sábados das 08h às 12h. Domingos e feriados fechado.'
+    a: 'Atendemos de segunda a sexta-feira das 08h às 18h e aos sábados das 08h às 12h. Domingos e feriados: fechado.'
   },
   {
     q: 'Quais marcas e medidas de pneus vocês vendem?',
@@ -79,11 +88,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Quais serviços a oficina realiza no local?',
-    a: 'Oficina e centro automotivo completo: montagem de pneus, balanceamento dinâmico, alinhamento 3D computadorizado, scanner eletrônico multiprotocolo, revisão de freios, suspensão, amortecedores e troca de óleo com filtros homologados.'
+    a: 'Oficina mecânica e centro automotivo completo: montagem de pneus, balanceamento dinâmico, alinhamento 3D computadorizado, scanner eletrônico multiprotocolo, revisão de freios, suspensão, amortecedores e troca de óleo com filtros homologados.'
   },
   {
     q: 'Como solicitar um orçamento ou tirar dúvidas?',
-    a: `Você pode falar diretamente com nossa equipe técnica pelo WhatsApp ${PHONE_DISPLAY}, ligar no fixo da loja ou comparecer presencialmente sem necessidade de agendamento prévio.`
+    a: `Você pode falar diretamente com nossa equipe técnica pelo WhatsApp ${PHONE_DISPLAY}, ligar no fixo da loja ou comparecer presencialmente. Nota fiscal e garantia conforme serviço/produto.`
   }
 ];
 
@@ -93,7 +102,7 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   useSEO({
-    title: 'Página não encontrada (404) | Carplus Pneus e Oficina Curitiba',
+    title: 'Página não encontrada | Carplus Pneus e Oficina',
     description: 'A página que você procura não foi encontrada. Conheça nosso catálogo de pneus novos e serviços de manutenção automotiva no bairro Portão em Curitiba.',
     noindex: true
   });
@@ -114,7 +123,7 @@ export default function NotFound() {
 
       <main className="flex-1">
         {/* Hero 404 Section */}
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-dark text-white overflow-hidden border-b border-white/10">
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-dark text-white overflow-hidden border-b border-white/10" aria-labelledby="h1-404">
           {/* Imagem de fundo sutil da loja */}
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <img 
@@ -145,12 +154,12 @@ export default function NotFound() {
               <span>Página não encontrada</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight italic mb-4 text-balance">
-              Não encontramos a página <span className="text-primary">que você procura</span>
+            <h1 id="h1-404" className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight italic mb-4 text-balance">
+              Ops, essa página não foi encontrada
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-8 font-normal leading-relaxed text-pretty">
-              O endereço acessado pode ter sido alterado, digitado com algum erro ou não estar mais disponível. Nossa loja e oficina mecânica no Portão estão à sua disposição!
+            <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-8 font-normal leading-relaxed text-pretty">
+              O endereço pode ter mudado ou sido digitado incorretamente. Você ainda pode acessar os principais serviços da Carplus no Portão, em Curitiba.
             </p>
 
             {/* Barra de busca rápida */}
@@ -168,66 +177,96 @@ export default function NotFound() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-primary hover:bg-yellow-400 text-gray-900 font-bold px-5 sm:px-6 py-3.5 rounded-r-md text-xs sm:text-sm uppercase tracking-wider transition-colors shrink-0 shadow-sm"
+                  className="bg-primary hover:bg-yellow-400 text-gray-900 font-bold px-5 sm:px-6 py-3.5 rounded-r-md text-xs sm:text-sm uppercase tracking-wider transition-colors shrink-0 shadow-sm cursor-pointer"
                 >
                   Buscar
                 </button>
               </form>
             </div>
 
-            {/* Botões de Ação Principais */}
+            {/* 5 Botões Obrigatórios com Hierarquia Visual Impecável */}
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/"
                 className="inline-flex min-h-11 items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-gray-900 font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors shadow-sm"
               >
                 <Home size={16} />
-                <span>Página Inicial</span>
-              </Link>
-              <Link
-                to="/pneus"
-                className="inline-flex min-h-11 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors"
-              >
-                <Disc3 size={16} />
-                <span>Catálogo de Pneus</span>
+                <span>Voltar para início</span>
               </Link>
               <Link
                 to="/manutencao-automotiva-curitiba"
                 className="inline-flex min-h-11 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors"
               >
                 <Wrench size={16} />
-                <span>Serviços da Oficina</span>
+                <span>Ver serviços automotivos</span>
+              </Link>
+              <Link
+                to="/pneus-curitiba"
+                className="inline-flex min-h-11 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors"
+              >
+                <Disc3 size={16} />
+                <span>Ver pneus em Curitiba</span>
               </Link>
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Caí na página 404 e gostaria de tirar uma dúvida sobre pneus e serviços.')}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de tirar uma dúvida sobre serviços e pneus na Carplus Portão.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors shadow-sm border border-emerald-500/20"
               >
                 <MessageSquare size={16} />
-                <span>WhatsApp Loja</span>
+                <span>Falar no WhatsApp</span>
               </a>
+              <Link
+                to="/como-chegar"
+                className="inline-flex min-h-11 items-center justify-center gap-2 bg-white/5 hover:bg-white/15 border border-white/15 text-white/90 font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors"
+              >
+                <Navigation size={16} />
+                <span>Como chegar</span>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* TrustBar Institucional */}
+        {/* TrustBar Institucional (4.9 ★ no Google / Mais de 250 avaliações de clientes) */}
         <TrustBar variant="light" />
 
-        {/* Medidas Populares */}
+        {/* Links Recomendados e Acesso Rápido */}
         <section className="py-8 bg-gray-50 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-primary">Links Recomendados</span>
+                <h3 className="font-bold text-sm sm:text-base text-gray-900">Acesse Diretamente as Principais Páginas:</h3>
+              </div>
+              <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2">
+                {RECOMMENDED_LINKS.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="text-xs font-semibold bg-white border border-gray-200 hover:border-primary text-gray-700 hover:text-primary px-3 py-1.5 rounded-md transition-colors shadow-2xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Medidas Populares */}
+        <section className="py-6 bg-white border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-primary">Acesso Rápido</span>
-                <h3 className="font-bold text-sm sm:text-base text-gray-900">Medidas de Pneus Mais Buscadas:</h3>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">Catálogo Rápido</span>
+                <h4 className="font-bold text-xs sm:text-sm text-gray-800">Medidas de Pneus em Destaque:</h4>
               </div>
               <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2">
                 {POPULAR_SIZES.map((size) => (
                   <Link
                     key={size.label}
                     to={size.path}
-                    className="text-xs font-semibold bg-white border border-gray-200 hover:border-primary text-gray-700 hover:text-primary px-3 py-1.5 rounded-md transition-colors shadow-2xs"
+                    className="text-xs font-semibold bg-gray-50 border border-gray-200 hover:border-primary text-gray-600 hover:text-primary px-2.5 py-1 rounded transition-colors"
                   >
                     {size.label}
                   </Link>
@@ -238,7 +277,7 @@ export default function NotFound() {
         </section>
 
         {/* Grade de Seções Principais da Empresa */}
-        <section className="py-14 md:py-20 bg-white" aria-labelledby="principais-destinos">
+        <section className="py-14 md:py-20 bg-gray-50" aria-labelledby="principais-destinos">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <header className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Navegação</span>
@@ -246,7 +285,7 @@ export default function NotFound() {
                 O Que Você Procura na <span className="text-primary font-bold">Carplus</span>?
               </h2>
               <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Selecione abaixo para ir direto aos setores mais procurados da nossa loja e centro automotivo.
+                Selecione abaixo para ir direto aos setores mais procurados da nossa loja e centro automotivo no Portão.
               </p>
             </header>
 
@@ -257,7 +296,7 @@ export default function NotFound() {
                 return (
                   <div 
                     key={idx}
-                    className="bg-gray-50 border border-gray-200 rounded-lg p-6 flex flex-col justify-between hover:border-primary/60 hover:shadow-md transition-all group"
+                    className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col justify-between hover:border-primary/60 hover:shadow-md transition-all group"
                   >
                     <div>
                       <div className="w-12 h-12 rounded-md bg-primary/10 text-gray-900 group-hover:bg-primary group-hover:text-black transition-colors flex items-center justify-center mb-4">
@@ -271,7 +310,7 @@ export default function NotFound() {
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-gray-200">
+                    <div className="pt-4 border-t border-gray-100">
                       {isExt ? (
                         <a
                           href={sec.link}
@@ -300,24 +339,24 @@ export default function NotFound() {
         </section>
 
         {/* Card de Contato Direto & Localização */}
-        <section className="py-12 bg-gray-50 border-t border-b border-gray-200">
+        <section className="py-12 bg-white border-t border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-xs">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 sm:p-8 shadow-xs">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                 {/* Telefone e WhatsApp */}
                 <div className="flex items-start gap-4 pt-4 md:pt-0">
-                  <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                     <Phone size={20} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Atendimento Imediato</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">Atendimento Imediato</span>
                     <h4 className="font-bold text-sm sm:text-base text-gray-900 mt-0.5">{PHONE_DISPLAY}</h4>
                     <p className="text-xs text-gray-500 mt-1">WhatsApp e ligações com nossa equipe técnica.</p>
                     <a
                       href={`https://wa.me/${WHATSAPP_NUMBER}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-700 mt-2"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 hover:text-emerald-800 mt-2"
                     >
                       <span>Conversar no WhatsApp</span>
                       <ChevronRight size={13} />
@@ -327,16 +366,16 @@ export default function NotFound() {
 
                 {/* Localização */}
                 <div className="flex items-start gap-4 pt-6 md:pt-0 md:pl-6">
-                  <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Endereço no Portão</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">Endereço no Portão</span>
                     <h4 className="font-bold text-sm sm:text-base text-gray-900 mt-0.5">Av. Pres. Arthur Bernardes, 1323</h4>
-                    <p className="text-xs text-gray-500 mt-1">Bairro Portão, Curitiba – PR. Vagas para clientes.</p>
+                    <p className="text-xs text-gray-500 mt-1">Bairro Portão, Curitiba – PR. Vagas para clientes em frente à loja.</p>
                     <Link
                       to="/como-chegar"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-700 mt-2"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 hover:text-blue-800 mt-2"
                     >
                       <Navigation size={12} />
                       <span>Ver mapa e rotas</span>
@@ -346,11 +385,11 @@ export default function NotFound() {
 
                 {/* Horários */}
                 <div className="flex items-start gap-4 pt-6 md:pt-0 md:pl-6">
-                  <div className="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Horário de Funcionamento</span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">Horário de Funcionamento</span>
                     <h4 className="font-bold text-sm sm:text-base text-gray-900 mt-0.5">Seg a Sex: 08h às 18h</h4>
                     <p className="text-xs text-gray-500 mt-1">Sábados das 08h às 12h. Atendimento ágil.</p>
                     <span className="inline-block text-[11px] font-medium text-gray-400 mt-2">
@@ -364,7 +403,7 @@ export default function NotFound() {
         </section>
 
         {/* FAQ - Perguntas Frequentes */}
-        <section className="py-14 md:py-20 bg-white" aria-labelledby="faq-404-titulo">
+        <section className="py-14 md:py-20 bg-gray-50" aria-labelledby="faq-404-titulo">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <header className="text-center mb-10">
               <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Dúvidas Rápidas</span>

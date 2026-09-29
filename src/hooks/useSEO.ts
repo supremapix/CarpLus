@@ -98,12 +98,17 @@ export function useSEO({
 
     // Canonical URL
     let canonicalEl = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonicalEl) {
-      canonicalEl = document.createElement('link');
-      canonicalEl.rel = 'canonical';
-      document.head.appendChild(canonicalEl);
+    if (noindex) {
+      // Em páginas noindex (ex.: 404), remove qualquer link canonical para evitar apontar para a home
+      canonicalEl?.remove();
+    } else {
+      if (!canonicalEl) {
+        canonicalEl = document.createElement('link');
+        canonicalEl.rel = 'canonical';
+        document.head.appendChild(canonicalEl);
+      }
+      canonicalEl.href = canonicalUrl;
     }
-    canonicalEl.href = canonicalUrl;
 
     // rel="prev" / rel="next" para paginação (reforça sinais ao Google).
     const setPageLink = (rel: 'prev' | 'next', href?: string): HTMLLinkElement | null => {

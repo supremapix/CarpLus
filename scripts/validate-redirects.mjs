@@ -21,17 +21,18 @@ console.log('# Validação estática dos redirects (vercel.json)\n');
 
 // 1. Contagem
 console.log('1. Contagem');
-if (redirects.length === 157) ok(`157 redirects (esperado)`);
-else fail(`esperado 157, encontrado ${redirects.length}`);
+if (redirects.length === 158) ok(`158 redirects (esperado)`);
+else fail(`esperado 158, encontrado ${redirects.length}`);
 
 const bairro = redirects.filter((r) => r.source.endsWith('.html'));
 const medida = redirects.filter((r) => r.source.includes(':medida'));
+const servico = redirects.filter((r) => r.source.startsWith('/servico/'));
 const brand = redirects.filter(
-  (r) => !r.has && !r.source.endsWith('.html') && !r.source.includes(':medida'),
+  (r) => !r.has && !r.source.endsWith('.html') && !r.source.includes(':medida') && !r.source.startsWith('/servico/'),
 );
 const pag = redirects.filter((r) => Array.isArray(r.has));
 console.log(
-  `   grupos → bairros:${bairro.length} medida:${medida.length} marcas:${brand.length} paginação:${pag.length}`,
+  `   grupos → bairros:${bairro.length} medida:${medida.length} marcas:${brand.length} servicos:${servico.length} paginação:${pag.length}`,
 );
 if (bairro.length === 71) ok('71 bairros/cidades');
 else fail(`bairros: ${bairro.length}`);
@@ -39,6 +40,8 @@ if (medida.length === 1) ok('1 medida dinâmica');
 else fail(`medida: ${medida.length}`);
 if (brand.length === 6) ok('6 marcas legadas');
 else fail(`marcas: ${brand.length}`);
+if (servico.length === 1) ok('1 serviço legado (/servico/diagnostico-eletronico → /servico/scanner-automotivo)');
+else fail(`servicos: ${servico.length}`);
 if (pag.length === 79) ok('79 paginação');
 else fail(`paginação: ${pag.length}`);
 
