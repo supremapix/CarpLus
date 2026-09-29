@@ -129,19 +129,19 @@ const SEO_CONTENT: Record<string, {
     keywords: ['scanner automotivo curitiba', 'scanner para carros curitiba', 'passar scanner no carro curitiba', 'diagnóstico eletrônico automotivo', 'luz de injeção acesa curitiba', 'falhas no motor curitiba']
   },
   'manutencao-de-freios': {
-    intro: 'A manutenção de freios na Carplus Centro Automotivo, no bairro Portão em Curitiba, é essencial para a sua segurança. Se você notou barulho ao frear, pedal baixo, chiado metálico ou trepidação no volante durante a frenagem, realizamos a revisão completa de pastilhas de freio, discos de freio, retífica especializada, cilindros, pinças e substituição do fluido de freio DOT4 com sangria completa.',
+    intro: 'A manutenção de freios na Carplus Centro Automotivo, no bairro Portão em Curitiba, é essencial para a sua segurança. Se você notou barulho ao frear, pedal baixo, chiado metálico ou trepidação no volante durante a frenagem, realizamos a avaliação criteriosa de discos, pastilhas e fluido de freio, com substituição de peças desgastadas e sangria completa do fluido DOT4.',
     detalhes: [
       'Revisão completa do sistema de freios: pastilhas, discos, lonas e tambores',
       'Diagnóstico de barulho ao frear, chiados e pedal baixo ou esponjoso',
       'Troca de fluido de freio DOT 3 / DOT 4 com sangria técnica do sistema',
-      'Retífica de disco de freio em torno mecânico próprio de alta precisão',
+      'Avaliação criteriosa de desgaste e empenamento de discos e pastilhas',
       'Verificação do sistema antitravamento ABS e sensores de roda',
-      'Peças com garantia de procedência e nota fiscal no bairro Portão'
+      'Peças e serviços com garantia e nota fiscal conforme o caso'
     ],
     perguntas: [
       { pergunta: 'Quando devo fazer a revisão de freios?', resposta: 'Recomendamos a revisão a cada 10.000 km ou imediatamente se notar barulho ao frear, pedal baixo ou perda de eficiência na frenagem.' },
       { pergunta: 'Como saber se a pastilha de freio está gasta?', resposta: 'Chiados agudos metálicos, pedal mais baixo e aumento da distância de frenagem indicam pastilhas no limite de segurança.' },
-      { pergunta: 'É sempre necessário trocar os discos junto com as pastilhas?', resposta: 'Não necessariamente. Se o disco estiver dentro da espessura mínima de segurança e sem trincas, pode ser retificado ou mantido.' }
+      { pergunta: 'É sempre necessário trocar os discos junto com as pastilhas?', resposta: 'Não necessariamente. Se o disco estiver dentro da espessura mínima de segurança e sem trincas ou sulcos profundos, pode ser mantido. Caso contrário, a substituição é recomendada.' }
     ],
     keywords: ['manutenção de freios curitiba', 'revisão de freios curitiba', 'barulho ao frear curitiba', 'pedal baixo curitiba', 'pastilhas de freio curitiba', 'oficina de freios portao']
   },
@@ -163,21 +163,21 @@ const SEO_CONTENT: Record<string, {
     keywords: ['suspensão automotiva curitiba', 'revisão de suspensão curitiba', 'barulho na suspensão curitiba', 'carro batendo seco curitiba', 'amortecedores curitiba', 'oficina de suspensão portao']
   },
   'suspensao-e-freios': {
-    intro: 'A suspensão e os freios são sistemas críticos para a segurança do seu veículo. Na Carplus Centro Automotivo, oferecemos serviço completo de revisão e reparo de amortecedores, molas, pivôs, buchas, pastilhas, discos e todo o sistema de frenagem. Utilizamos peças de qualidade com garantia e mão de obra especializada.',
+    intro: 'A suspensão e os freios trabalham em conjunto para garantir o controle e a segurança do seu veículo. Na Carplus Centro Automotivo, no Portão em Curitiba, oferecemos revisão combinada de amortecedores, molas, buchas, pivôs, pastilhas e discos. Para serviços específicos, acesse nossas páginas dedicadas de Manutenção de Freios ou Suspensão Automotiva.',
     detalhes: [
-      'Troca de amortecedores das marcas Cofap, Monroe, Kayaba e originais',
-      'Substituição de pastilhas e discos de freio com peças de primeira linha',
-      'Reparo de sistema de freio ABS com diagnóstico eletrônico',
-      'Troca de pivôs, bandejas, buchas e batentes de suspensão',
-      'Sangria e troca de fluido de freio DOT 4',
-      'Teste de eficiência de frenagem em equipamento específico'
+      'Avaliação conjunta de amortecedores, molas, pastilhas e discos de freio',
+      'Diagnóstico de trepidações, ruídos metálicos e perda de estabilidade',
+      'Verificação de componentes de desgaste: buchas, pivôs, batentes e mangueiras',
+      'Avaliação do sistema de freio ABS com scanner automotivo multiprotocolo',
+      'Troca de fluido de freio DOT4 e sangria técnica quando necessário',
+      'Peças com nota fiscal e garantia conforme o caso no bairro Portão'
     ],
     perguntas: [
       { pergunta: 'Como saber se os amortecedores estão ruins?', resposta: 'Sinais de amortecedores gastos: carro balança muito em lombadas, instabilidade em curvas, pneus com desgaste irregular nas bordas, ruídos ao passar em buracos e aumento da distância de frenagem. Recomendamos trocar a cada 50.000 km ou quando apresentar vazamento.' },
       { pergunta: 'Quando devo trocar as pastilhas de freio?', resposta: 'As pastilhas devem ser verificadas a cada 20.000 km. Sinais de desgaste: ruído metálico ao frear, pedal mais baixo que o normal, carro puxando para um lado ao frear. A maioria dos carros tem sensor que acende luz no painel quando as pastilhas estão no limite.' },
       { pergunta: 'É seguro trocar só as pastilhas sem trocar os discos?', resposta: 'Depende do estado dos discos. Se estiverem dentro da medida mínima e sem ranhuras profundas, podem ser reaproveitados. Fazemos medição com paquímetro e avaliamos visualmente. Discos muito finos ou danificados devem ser trocados junto com as pastilhas.' }
     ],
-    keywords: ['suspensão curitiba', 'amortecedor curitiba', 'freio curitiba', 'pastilha de freio curitiba', 'disco de freio curitiba', 'troca amortecedor portão']
+    keywords: ['suspensão e freios curitiba', 'amortecedor e freio portao', 'revisão combinada curitiba', 'oficina no portão curitiba']
   },
   'ar-condicionado': {
     intro: 'O ar-condicionado automotivo é essencial para o conforto em Curitiba, tanto no verão quanto no inverno úmido. Na Carplus Centro Automotivo, realizamos todos os serviços de manutenção do sistema de climatização: carga de gás, higienização, reparo de compressor, troca de filtro de cabine e diagnóstico completo do sistema.',
@@ -410,6 +410,10 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     title: 'Suspensão Automotiva em Curitiba | Revisão de Suspensão | Carplus',
     description: 'Suspensão automotiva em Curitiba no Portão. Revisão de amortecedores, molas, buchas, pivôs, barra estabilizadora e diagnóstico completo na Carplus.',
   },
+  'suspensao-e-freios': {
+    title: 'Revisão de Suspensão e Freios em Curitiba | Carplus Portão',
+    description: 'Revisão combinada de suspensão e freios em Curitiba no Portão. Avaliação técnica de amortecedores, pastilhas e discos na Carplus. Chame no WhatsApp.',
+  },
   'rodizio-de-pneus': {
     title: 'Rodízio de Pneus em Curitiba | A Cada 10.000 km | Carplus',
     description: 'Rodízio de pneus em Curitiba para uniformizar o desgaste e aumentar a vida útil dos seus pneus. Recomendado a cada 10.000 km. Portão – (41) 3082-7282.',
@@ -554,7 +558,9 @@ export default function ServiceDetail() {
               ? 'Manutenção de Freios em Curitiba'
               : slug === 'revisao-de-suspensao'
                 ? 'Suspensão Automotiva em Curitiba'
-                : slug === 'conserto-de-rodas'
+                : slug === 'suspensao-e-freios'
+                  ? 'Revisão de Suspensão e Freios em Curitiba'
+                  : slug === 'conserto-de-rodas'
                   ? 'Conserto de Rodas em Curitiba'
                   : `${service.title} em Curitiba – Bairro Portão`;
 
@@ -581,7 +587,7 @@ export default function ServiceDetail() {
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 italic uppercase tracking-tight font-bold leading-tight max-w-4xl mx-auto">{primaryHeading}</h1>
               <p className="text-base sm:text-lg md:text-2xl text-white/70 font-light max-w-3xl mx-auto mb-8 leading-relaxed">
-                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> no Portão, Curitiba, com equipamentos modernos, laudo prévio e garantia em todos os serviços.
+                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> no Portão, Curitiba, com equipamentos modernos, laudo prévio e garantia conforme o serviço.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
@@ -798,8 +804,8 @@ export default function ServiceDetail() {
                     </div>
                     <div className="p-5 bg-white rounded-xl border border-gray-100 shadow-sm">
                       <Shield className="w-8 h-8 text-primary mb-3" />
-                      <h4 className="font-bold text-gray-900 mb-1">Garantia Total</h4>
-                      <p className="text-sm text-gray-600">Todos os serviços com garantia por escrito. Peças com nota fiscal.</p>
+                      <h4 className="font-bold text-gray-900 mb-1">Nota Fiscal e Garantia</h4>
+                      <p className="text-sm text-gray-600">Serviços com nota fiscal e garantia conforme avaliação.</p>
                     </div>
                     <div className="p-5 bg-white rounded-xl border border-gray-100 shadow-sm">
                       <Award className="w-8 h-8 text-primary mb-3" />
@@ -1150,8 +1156,8 @@ export default function ServiceDetail() {
                   },
                   { 
                     icon: <Shield className="w-8 h-8" />, 
-                    title: 'Garantia Total', 
-                    desc: 'Servico realizado com nota fiscal, fluidos de primeira linha e garantia completa. Sua seguranca e nossa prioridade.',
+                    title: 'Nota Fiscal e Garantia', 
+                    desc: 'Serviço realizado com nota fiscal, fluidos homologados e garantia conforme o caso. Sua segurança é nossa prioridade.',
                     color: 'primary'
                   },
                 ].map((item, i) => (
@@ -1344,8 +1350,8 @@ export default function ServiceDetail() {
                   },
                   { 
                     icon: <Shield className="w-8 h-8" />, 
-                    title: 'Garantia Total', 
-                    desc: 'Servico realizado com nota fiscal, oleos de primeira linha e garantia completa. Descarte ecologico do oleo usado.',
+                    title: 'Nota Fiscal e Garantia', 
+                    desc: 'Serviço realizado com nota fiscal, óleos homologados e garantia conforme o caso. Descarte ecológico do óleo usado.',
                     color: 'primary'
                   },
                 ].map((item, i) => (
@@ -1549,7 +1555,7 @@ export default function ServiceDetail() {
               >
                 {[
                   { icon: <Award size={28} />, title: 'Pecas de Qualidade', desc: 'Trabalhamos com as melhores marcas: Cofap, Monroe, Kayaba, Bosch e pecas originais.', color: 'primary' },
-                  { icon: <Shield size={28} />, title: 'Garantia Total', desc: 'Todos os servicos de suspensao e freios tem garantia de 6 meses ou 10.000 km.', color: 'primary' },
+                  { icon: <Shield size={28} />, title: 'Nota Fiscal e Garantia', desc: 'Serviços com nota fiscal e garantia conforme o caso.', color: 'primary' },
                   { icon: <MapPin size={28} />, title: 'Facil Acesso', desc: 'Estamos no Portao, Curitiba. Atendemos toda a regiao metropolitana com qualidade.', color: 'primary' },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-primary/30 transition-colors">
@@ -1815,7 +1821,7 @@ export default function ServiceDetail() {
         {/* CTA Final Padronizado */}
         <FinalCTA
           title={`Agende sua avaliação para ${service.title} no Portão`}
-          subtitle="Diagnóstico com scanner, orçamento transparente e garantia em todos os serviços executados pela equipe Carplus."
+          subtitle="Diagnóstico com scanner, orçamento transparente e garantia conforme o serviço executado pela equipe Carplus."
           whatsappMessage={`Olá! Gostaria de agendar uma avaliação para o serviço de *${service.title}* na Carplus Portão.`}
           primaryActionText="Agendar avaliação"
           badge="Atendimento na Oficina · Portão, Curitiba"

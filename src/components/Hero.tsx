@@ -8,7 +8,7 @@ import { isPrerenderEager } from '../lib/prerender';
 const HERO_PHRASES = [
   'Centro automotivo completo no Portão, em Curitiba: venda e montagem de pneus, alinhamento 3D, balanceamento, freios e suspensão.',
   'Pneus aro 13 a 22 das principais marcas, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros.',
-  'Oficina mecânica com diagnóstico antes do orçamento e garantia em todos os serviços. Atende Portão e bairros próximos.',
+  'Oficina mecânica com diagnóstico antes do orçamento e nota fiscal com garantia conforme o serviço. Atende Portão e bairros próximos.',
 ];
 
 // Palavras que rodam em efeito máquina de escrever antes de "EM CURITIBA"

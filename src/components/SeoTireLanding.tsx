@@ -347,9 +347,9 @@ export default function SeoTireLanding({
         <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
           {[
             { icon: CreditCard, title: '10x sem juros', sub: 'Nos pneus' },
-            { icon: ShieldCheck, title: 'Garantia total', sub: 'Nota fiscal' },
+            { icon: ShieldCheck, title: 'Nota fiscal e garantia', sub: 'Conforme produto' },
             { icon: Clock, title: 'Montagem rápida', sub: 'No mesmo dia' },
-            { icon: Star, title: '4,9 no Google', sub: '+234 avaliações' },
+            { icon: Star, title: '4.9 ★ no Google', sub: '+250 avaliações' },
           ].map((b) => (
             <div key={b.title} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-3">
               <div className="bg-primary/10 text-primary p-2.5 rounded-xl">

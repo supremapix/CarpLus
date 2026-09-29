@@ -19,7 +19,7 @@ export const ADDRESS_POSTAL = '80320-300';
 export const GEO_LAT = -25.477;
 export const GEO_LNG = -49.2845;
 export const RATING_VALUE = 4.9;
-export const REVIEW_COUNT = 234;
+export const REVIEW_COUNT = 250;
 export const INSTAGRAM_URL = 'https://www.instagram.com/carpluscwb/';
 export const MAPS_EMBED =
   'https://www.google.com/maps?q=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Curitiba+PR&output=embed';
@@ -119,7 +119,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       'Oficina especializada em Fiat no Portão, Curitiba. Revisão, câmbio Dualogic, injeção e diagnóstico com garantia. Orçamento no WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Fiat em Curitiba',
     heroSubtitulo:
-      'Revisão, mecânica e diagnóstico computadorizado para veículos Fiat no bairro Portão, em Curitiba. Peças de qualidade, nota fiscal e garantia em todos os serviços.',
+      'Revisão, mecânica e diagnóstico computadorizado para veículos Fiat no bairro Portão, em Curitiba. Peças de qualidade, nota fiscal e garantia conforme avaliação.',
     eyebrow: 'Especialista Fiat • Portão, Curitiba',
     modelosAtendidos: ['Argo', 'Mobi', 'Strada', 'Toro', 'Pulse', 'Fastback', 'Cronos', 'Uno', 'Palio', 'Fiorino'],
     servicosDestaque: servicosPorMarca('Fiat'),
@@ -151,7 +151,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Fiat. Atendemos veículos Fiat com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Na prática, você tem o mesmo cuidado técnico de uma autorizada, com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Fiat. Atendemos veículos Fiat com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Na prática, você tem o mesmo cuidado técnico de uma autorizada, com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Encontrar uma oficina especializada em Fiat em Curitiba que una conhecimento técnico da marca, equipamento certo e preço justo faz toda a diferença para quem roda com Argo, Mobi, Strada, Toro, Pulse ou qualquer outro modelo da linha. Na Carplus, no bairro Portão, somos referência no atendimento a veículos Fiat: conhecemos a fundo as particularidades dos motores Firefly e E.torQ, do câmbio Dualogic e da parte elétrica que costuma dar dor de cabeça nesses carros. Antes de qualquer orçamento, fazemos um diagnóstico computadorizado para identificar exatamente o que o seu Fiat precisa.',
     secoes: [
@@ -173,7 +173,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Atendimento no Portão para toda Curitiba',
         conteudo:
-          'Nossa oficina fica na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para quem vem da Água Verde, Novo Mundo, Fazendinha, Santa Quitéria, Capão Raso e de toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Traga seu Fiat para uma avaliação sem compromisso e descubra por que somos uma das oficinas mais bem avaliadas da cidade.',
+          'Nossa oficina fica na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para quem vem da Água Verde, Novo Mundo, Fazendinha, Santa Quitéria, Capão Raso e de toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Traga seu Fiat para uma avaliação sem compromisso e descubra por que somos uma das oficinas mais bem avaliadas da cidade.',
       },
     ],
     faq: [
@@ -234,7 +234,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Volkswagen. Atendemos veículos VW com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Você tem o mesmo rigor técnico de uma autorizada, com preço em média mais acessível e atendimento mais ágil, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Volkswagen. Atendemos veículos VW com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Você tem o mesmo rigor técnico de uma autorizada, com preço em média mais acessível e atendimento mais ágil, aqui no Portão em Curitiba.',
     intro:
       'Se você procura uma oficina especializada em Volkswagen em Curitiba, a Carplus, no Portão, é a escolha inteligente para cuidar do seu Polo, Virtus, T-Cross, Nivus, Gol e demais modelos da marca. Conhecemos a fundo os motores TSI e MSI, o câmbio automatizado I-Motion e os pontos de atenção elétricos e mecânicos que a linha VW costuma apresentar. Todo atendimento começa com um diagnóstico computadorizado, para que o orçamento seja preciso e você pague apenas pelo que o carro realmente precisa.',
     secoes: [
@@ -256,7 +256,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina VW no Portão, fácil acesso em Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para quem vem da Água Verde, Fazendinha, Novo Mundo, Capão Raso e de toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Volkswagen e conte com uma das oficinas mais bem avaliadas da cidade.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para quem vem da Água Verde, Fazendinha, Novo Mundo, Capão Raso e de toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Volkswagen e conte com uma das oficinas mais bem avaliadas da cidade.',
       },
     ],
     faq: [
@@ -317,7 +317,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Chevrolet/GM. Atendemos veículos Chevrolet com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Chevrolet/GM. Atendemos veículos Chevrolet com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Procurando uma oficina especializada em Chevrolet em Curitiba? A Carplus, no Portão, é a alternativa inteligente para cuidar do seu Onix, Tracker, S10, Spin, Cruze e demais modelos GM. Conhecemos os motores 1.0 e 1.4 turbo, o comportamento da corrente de comando e os pontos de atenção elétricos e de arrefecimento que a linha Chevrolet costuma apresentar. Cada atendimento começa com diagnóstico computadorizado, garantindo um orçamento preciso e sem surpresas.',
     secoes: [
@@ -339,7 +339,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Chevrolet no Portão para toda Curitiba',
         conteudo:
-          'Ficamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com acesso rápido para Água Verde, Novo Mundo, Fazendinha, Capão Raso, Santa Quitéria e toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Traga seu Chevrolet para uma avaliação sem compromisso.',
+          'Ficamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com acesso rápido para Água Verde, Novo Mundo, Fazendinha, Capão Raso, Santa Quitéria e toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Traga seu Chevrolet para uma avaliação sem compromisso.',
       },
     ],
     faq: [
@@ -400,7 +400,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Hyundai. Atendemos veículos Hyundai com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Hyundai. Atendemos veículos Hyundai com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Se você tem um HB20, Creta, Tucson ou outro Hyundai e procura uma oficina especializada em Curitiba, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos as particularidades da linha Hyundai — da embreagem do HB20 ao câmbio automático do Creta — e usamos diagnóstico computadorizado para acertar de primeira. Assim, você economiza sem abrir mão da qualidade e mantém a garantia de fábrica do seu carro.',
     secoes: [
@@ -422,7 +422,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Hyundai no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Hyundai e conte com uma das oficinas mais bem avaliadas da cidade.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Hyundai e conte com uma das oficinas mais bem avaliadas da cidade.',
       },
     ],
     faq: [
@@ -483,7 +483,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Toyota. Atendemos veículos Toyota com diagnóstico computadorizado, óleo e fluidos na especificação correta, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Toyota. Atendemos veículos Toyota com diagnóstico computadorizado, óleo e fluidos na especificação correta, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Dono de Corolla, Hilux, Yaris ou SW4 sabe que a Toyota é sinônimo de durabilidade — mas a revisão na concessionária costuma pesar no bolso. A Carplus, no Portão em Curitiba, é a oficina especializada em Toyota que oferece a mesma qualidade técnica com preço mais justo, seguindo à risca o plano de revisão programada do manual e usando óleo e fluidos na especificação correta, para manter a garantia de fábrica.',
     secoes: [
@@ -505,7 +505,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Toyota no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Toyota sem compromisso.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Toyota sem compromisso.',
       },
     ],
     faq: [
@@ -566,7 +566,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Renault. Atendemos veículos Renault com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Renault. Atendemos veículos Renault com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Se você procura uma oficina especializada em Renault em Curitiba para cuidar do seu Kwid, Sandero, Logan, Duster ou Captur, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos os pontos de atenção da linha Renault — de bobinas de ignição ao câmbio automatizado — e usamos diagnóstico computadorizado para acertar de primeira, com preço justo e garantia mantida.',
     secoes: [
@@ -588,7 +588,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Renault no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Renault sem compromisso.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Renault sem compromisso.',
       },
     ],
     faq: [
@@ -649,7 +649,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Honda. Atendemos veículos Honda com diagnóstico computadorizado, fluidos na especificação correta, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Honda. Atendemos veículos Honda com diagnóstico computadorizado, fluidos na especificação correta, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'Dono de Honda valoriza a confiabilidade da marca, mas a manutenção fora da garantia costuma sair cara na concessionária. A Carplus, no Portão em Curitiba, é a oficina especializada em Honda que entrega a mesma qualidade técnica com preço mais justo, cuidando de Civic, City, Fit, HR-V e CR-V com atenção especial ao câmbio CVT — um dos pontos mais sensíveis da marca.',
     secoes: [
@@ -671,7 +671,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Honda no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Honda sem compromisso.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Honda sem compromisso.',
       },
     ],
     faq: [
@@ -732,7 +732,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Jeep. Atendemos veículos Jeep com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal em tudo, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Jeep. Atendemos veículos Jeep com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
     intro:
       'O Jeep Renegade e o Compass estão entre os SUVs mais desejados do Brasil, e por compartilharem a plataforma Stellantis com a Fiat, a Carplus tem grande sinergia técnica para atendê-los. No Portão em Curitiba, somos a oficina especializada em Jeep que cuida do seu SUV com diagnóstico computadorizado, atenção ao câmbio automático e ao sistema de arrefecimento, mantendo a garantia de fábrica e com preço mais justo que a concessionária.',
     secoes: [
@@ -754,7 +754,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Jeep no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Agende a avaliação do seu Jeep sem compromisso.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Jeep sem compromisso.',
       },
     ],
     faq: [
@@ -959,7 +959,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       'Oficina mecânica de confiança em Curitiba: revisão, freios, suspensão, injeção, câmbio e diagnóstico com garantia. Centro automotivo no Portão. (41) 3082-7282.',
     h1: 'Oficina Mecânica em Curitiba',
     heroSubtitulo:
-      'Centro automotivo full service no Portão, em Curitiba: revisão, mecânica, injeção, câmbio, freios, suspensão e diagnóstico eletrônico. Garantia e nota fiscal em tudo.',
+      'Centro automotivo full service no Portão, em Curitiba: revisão, mecânica, injeção, câmbio, freios, suspensão e diagnóstico eletrônico. Garantia e nota fiscal conforme o caso.',
     eyebrow: 'Oficina Mecânica • Portão, Curitiba',
     modelosAtendidos: ['Carros nacionais', 'Carros importados', 'SUVs', 'Picapes', 'Utilitários leves', 'Todas as marcas'],
     servicosDestaque: [
@@ -998,7 +998,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     intro:
-      'Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com nota 4,9 no Google e garantia em todos os serviços. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.',
+      'Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com nota 4,9 no Google e garantia conforme avaliação. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.',
     secoes: [
       {
         titulo: 'Um centro automotivo completo em Curitiba',
@@ -1018,11 +1018,11 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Localização e atendimento no Portão',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para toda Curitiba e região metropolitana. Funcionamos de segunda a sexta das 8h às 18h e aos sábados das 8h às 12h. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia em todos os serviços. Traga seu carro para uma avaliação sem compromisso.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para toda Curitiba e região metropolitana. Funcionamos de segunda a sexta das 8h às 18h e aos sábados das 8h às 12h. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Traga seu carro para uma avaliação sem compromisso.',
       },
     ],
     faq: [
-      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: 'A Carplus é uma das oficinas mais bem avaliadas de Curitiba, com nota 4,9 no Google, diagnóstico computadorizado e garantia em todos os serviços.' },
+      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: 'A Carplus é uma das oficinas mais bem avaliadas de Curitiba, com nota 4,9 no Google, diagnóstico computadorizado e garantia conforme avaliação.' },
       { pergunta: 'A oficina atende toda Curitiba?', resposta: 'Sim. Embora nossa estrutura fique no Portão, atendemos motoristas de toda Curitiba e da região metropolitana.' },
       { pergunta: 'Quais serviços a oficina oferece?', resposta: 'Revisão, freios, suspensão, injeção eletrônica, câmbio automático e manual, reparo elétrico, bateria, ar-condicionado, escapamento, pneus e alinhamento 3D.' },
       { pergunta: 'O orçamento é gratuito?', resposta: 'Sim, o orçamento é sem compromisso. Fazemos o diagnóstico e apresentamos os valores antes de qualquer serviço, com total transparência.' },
@@ -1086,7 +1086,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     intro:
-      'Se você mora ou trabalha no Portão e procura uma oficina mecânica de confiança pertinho de casa, a Carplus é a escolha certa. Estamos no coração do bairro, na Avenida Presidente Arthur da Silva Bernardes, 1323, atendendo com mecânica completa, diagnóstico computadorizado e garantia em todos os serviços. Perto de você, sem precisar atravessar a cidade para cuidar do seu carro.',
+      'Se você mora ou trabalha no Portão e procura uma oficina mecânica de confiança pertinho de casa, a Carplus é a escolha certa. Estamos no coração do bairro, na Avenida Presidente Arthur da Silva Bernardes, 1323, atendendo com mecânica completa, diagnóstico computadorizado e garantia conforme avaliação. Perto de você, sem precisar atravessar a cidade para cuidar do seu carro.',
     secoes: [
       {
         titulo: 'A oficina mecânica do seu bairro, no Portão',
@@ -1106,7 +1106,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Confiança, garantia e transparência',
         conteudo:
-          'Com nota 4,9 no Google, a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia em todos os serviços, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.',
+          'Com nota 4,9 no Google, a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia conforme avaliação, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.',
       },
     ],
     faq: [

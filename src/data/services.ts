@@ -29,12 +29,12 @@ export const BUSINESS_INFO = {
   whatsapp: "5541308272822",
   website: "https://www.carpluspneuseoficina.com.br",
   hours: "Seg–Sex 8h–18h | Sáb 8h–12h",
-  rating: 5.0,
-  totalReviews: 234,
+  rating: 4.9,
+  totalReviews: 250,
   stats: [
-    { value: "5,0/5", label: "Avaliações Google", icon: "Star" },
-    { value: "234+", label: "Avaliações Verificadas", icon: "Trophy" },
-    { value: "Garantia", label: "Em Todos os Serviços", icon: "ShieldCheck" },
+    { value: "4.9 ★", label: "No Google", icon: "Star" },
+    { value: "+250", label: "Avaliações de Clientes", icon: "Trophy" },
+    { value: "Garantia", label: "Conforme Avaliação", icon: "ShieldCheck" },
     { value: "10x", label: "Sem Juros nos Pneus", icon: "CreditCard" },
   ]
 };

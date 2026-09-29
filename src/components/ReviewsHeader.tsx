@@ -17,7 +17,7 @@ interface ReviewsHeaderProps {
   reviewCount?: number;
 }
 
-export default function ReviewsHeader({ reviewCount = 234 }: ReviewsHeaderProps) {
+export default function ReviewsHeader({ reviewCount }: ReviewsHeaderProps) {
   return (
     <div className="mx-auto w-full max-w-[380px]">
       {/* Card superior */}
@@ -37,7 +37,7 @@ export default function ReviewsHeader({ reviewCount = 234 }: ReviewsHeaderProps)
               <Star key={i} size={18} fill="#FACC15" color="#FACC15" aria-hidden="true" />
             ))}
           </div>
-          <span className="text-[13px] font-medium text-[#202124]">4,9 de 5 estrelas</span>
+          <span className="text-[13px] font-medium text-[#202124]">4.9 ★ no Google</span>
         </div>
 
         {/* Separador: ponto */}
@@ -45,7 +45,7 @@ export default function ReviewsHeader({ reviewCount = 234 }: ReviewsHeaderProps)
 
         {/* Direita: total de avaliações com seta verde subindo */}
         <span className="flex flex-shrink-0 items-center gap-1 text-[13px] text-gray-500">
-          {reviewCount} avaliações
+          +250 avaliações
           <motion.span
             aria-label="Avaliações em alta"
             animate={{ y: [2, -3, 2], opacity: [0.7, 1, 0.7] }}

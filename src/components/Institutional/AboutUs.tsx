@@ -50,7 +50,7 @@ export default function AboutUs() {
                 <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
               ))}
             </div>
-            <span className="text-white font-bold">+234 avaliacoes 5 estrelas no Google</span>
+            <span className="text-white font-bold">Mais de 250 avaliações de clientes no Google</span>
           </motion.div>
         </section>
 
@@ -181,9 +181,9 @@ export default function AboutUs() {
                 <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
                   <Star className="w-7 h-7 text-amber-500" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">215 clientes nao mentem</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Avaliações que comprovam</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Mais de 234 avaliacoes 5 estrelas no Google. Cada uma e a historia de um cliente que saiu satisfeito.
+                  Mais de 250 avaliações de clientes no Google com nota 4.9 ★. Cada uma é a história de um cliente que saiu satisfeito.
                 </p>
               </motion.div>
 
@@ -254,7 +254,7 @@ export default function AboutUs() {
                 O que nossos clientes dizem
               </h2>
               <div className="inline-flex items-center gap-2 text-amber-500 text-xl font-medium">
-                <span>234 avaliacoes</span>
+                <span>Mais de 250 avaliações de clientes</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />

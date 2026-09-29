@@ -323,7 +323,7 @@ const ALL_REVIEWS = [
 ];
 
 // Total de avaliações reais no Google (exibido ao usuário)
-const TOTAL_REVIEWS = 234;
+const TOTAL_REVIEWS = 250;
 
 const AVATAR_COLORS = [
   { bg: '#4285f4', text: '#fff' }, // azul Google
@@ -501,9 +501,9 @@ export default function Reviews() {
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
             </div>
-            <span className="text-[#202124] font-semibold text-xs tracking-wider uppercase">4,9 DE 5 ESTRELAS</span>
+            <span className="text-[#202124] font-semibold text-xs tracking-wider uppercase">4.9 ★ NO GOOGLE</span>
             <span className="flex items-center gap-1 text-[#70757a] text-xs">
-              • {TOTAL_REVIEWS} avaliações
+              • Mais de 250 avaliações de clientes
               <motion.span
                 aria-label="Avaliações em alta"
                 animate={{ y: [2, -3, 2], opacity: [0.7, 1, 0.7] }}

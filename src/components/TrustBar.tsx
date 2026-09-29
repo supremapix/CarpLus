@@ -21,13 +21,13 @@ export default function TrustBar({ className = '', variant = 'light' }: TrustBar
     },
     {
       icon: ShieldCheck,
-      title: 'Garantia & Nota Fiscal',
-      desc: 'Em peças e serviços',
+      title: 'Nota fiscal e garantia',
+      desc: 'Conforme serviço/produto',
     },
     {
       icon: Star,
       title: '4.9 ★ no Google',
-      desc: 'Mais de 200 avaliações de clientes',
+      desc: 'Mais de 250 avaliações de clientes',
     },
   ];
 

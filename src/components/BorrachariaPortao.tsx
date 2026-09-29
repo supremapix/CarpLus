@@ -113,7 +113,7 @@ export default function BorrachariaPortao() {
                     <DollarSign size={14} /> Melhor Preço
                   </span>
                   <span className="flex items-center gap-2 bg-blue-500/20 text-blue-400 px-3 py-1.5 rounded-full text-sm">
-                    <Shield size={14} /> Garantia Total
+                    <Shield size={14} /> Nota Fiscal e Garantia
                   </span>
                   <span className="flex items-center gap-2 bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-full text-sm">
                     <Award size={14} /> Garantia
@@ -127,8 +127,8 @@ export default function BorrachariaPortao() {
                       <Star key={i} size={20} className="fill-amber-500 text-amber-500" />
                     ))}
                   </div>
-                  <span className="text-white font-bold">4.9</span>
-                  <span className="text-neutral-500">+234 avaliações no Google</span>
+                  <span className="text-white font-bold">4.9 ★</span>
+                  <span className="text-neutral-500">Mais de 250 avaliações de clientes</span>
                 </div>
 
                 {/* CTAs */}

@@ -23,7 +23,7 @@ export function getFaqBairro(nome: string, tempo: string, via: string): FaqItem[
     },
     {
       question: `Vale a pena sair do ${nome} para trocar pneu na Carplus?`,
-      answer: `Sim, e muitos clientes do ${nome} confirmam nas nossas avaliações (4,9 estrelas no Google com 234+ avaliações). Com apenas ${tempo} de deslocamento, você tem acesso às melhores marcas de pneus, serviço profissional com garantia de fábrica e parcelamento em até 10x sem juros. A economia compensa!`,
+      answer: `Sim, e muitos clientes do ${nome} confirmam nas nossas avaliações (4.9 ★ no Google com mais de 250 avaliações de clientes). Com apenas ${tempo} de deslocamento, você tem acesso às melhores marcas de pneus, serviço profissional com garantia de fábrica e parcelamento em até 10x sem juros. A economia compensa!`,
     },
     {
       question: `A Carplus faz alinhamento e balanceamento para quem vem do ${nome}?`,
@@ -103,7 +103,7 @@ const faqExtra: Record<string, FaqItem[]> = {
   'centro': [
     {
       question: 'Vale a pena sair do Centro de Curitiba para ir à Carplus?',
-      answer: 'Com certeza! Em 12 minutos você chega à Carplus no Portão e encontra: estacionamento gratuito (ao contrário do Centro), atendimento sem fila, preços de atacado e parcelamento em até 10x. A economia compensa o deslocamento.',
+      answer: 'Com certeza! Em 12 minutos você chega à Carplus no Portão e encontra: acesso fácil com vagas em frente à loja (ao contrário do Centro), atendimento sem fila, preços de atacado e parcelamento em até 10x. A economia compensa o deslocamento.',
     },
   ],
   'colombo': [

@@ -35,7 +35,7 @@ export default function CentroAutomotivoCTA() {
               <p className="text-neutral-300 text-lg mb-6 leading-relaxed">
                 Compre e instale seus pneus no mesmo lugar: pneus das melhores marcas com instalação,
                 balanceamento e alinhamento 3D feitos por mecânicos especializados. Somos um centro
-                automotivo completo em Curitiba, com garantia em todos os serviços.
+                automotivo completo em Curitiba, com nota fiscal e garantia conforme serviço.
               </p>
 
               {/* Features */}
@@ -50,7 +50,7 @@ export default function CentroAutomotivoCTA() {
                   <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-2">
                     <Shield className="w-6 h-6 text-amber-500" />
                   </div>
-                  <p className="text-white text-sm font-medium">Garantia Total</p>
+                  <p className="text-white text-sm font-medium">Garantia & NF</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-2">
@@ -100,7 +100,7 @@ export default function CentroAutomotivoCTA() {
                             <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
                           ))}
                         </div>
-                        <p className="text-white/80 text-sm">+234 avaliações no Google</p>
+                        <p className="text-white/80 text-sm">Mais de 250 avaliações de clientes</p>
                       </div>
                     </div>
                   </div>

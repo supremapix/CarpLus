@@ -275,11 +275,11 @@ export default function ServicesGrid() {
             <p className="text-xs text-gray-500 uppercase tracking-wider">Serviços</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl md:text-3xl font-bold text-primary">5.0</p>
-            <p className="text-xs text-gray-500 uppercase tracking-wider">Avaliação Google</p>
+            <p className="text-2xl md:text-3xl font-bold text-primary">4.9</p>
+            <p className="text-xs text-gray-500 uppercase tracking-wider">No Google</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl md:text-3xl font-bold text-dark">234+</p>
+            <p className="text-2xl md:text-3xl font-bold text-dark">+250</p>
             <p className="text-xs text-gray-500 uppercase tracking-wider">Avaliações</p>
           </div>
           <div className="text-center">

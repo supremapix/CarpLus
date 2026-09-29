@@ -218,7 +218,7 @@ export default function PneusCuritibaHub() {
               {
                 icon: MapPin,
                 title: 'Loja Física no Portão',
-                description: 'Localização de fácil acesso na Avenida Presidente Arthur da Silva Bernardes, 1323, com estacionamento próprio no local para sua comodidade.'
+                description: 'Localização de fácil acesso na Avenida Presidente Arthur da Silva Bernardes, 1323, com vagas para clientes em frente à loja para sua comodidade.'
               },
               {
                 icon: Ruler,

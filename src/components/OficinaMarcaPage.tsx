@@ -34,11 +34,11 @@ interface Props {
 // Diferenciais fixos (padrão Carplus).
 const DIFERENCIAIS = [
   { icon: BadgeCheck, title: 'Diagnóstico antes do orçamento', description: 'Fazemos o diagnóstico computadorizado com scanner antes de qualquer serviço, para um orçamento preciso.' },
-  { icon: Shield, title: 'Garantia em todos os serviços', description: 'Peças de qualidade e nota fiscal em tudo, com garantia em cada atendimento.' },
+  { icon: Shield, title: 'Nota fiscal e garantia', description: 'Peças e serviços com garantia e nota fiscal conforme o caso.' },
   { icon: Award, title: 'Nacionais e importados', description: 'Cuidamos de carros nacionais e importados em Curitiba, com diagnóstico antes do orçamento.' },
   { icon: CreditCard, title: 'Até 10x sem juros', description: 'Parcelamos os serviços em até 10x sem juros. Aceitamos cartão, débito, dinheiro e PIX.' },
-  { icon: FileText, title: 'Nota fiscal em tudo', description: 'Emitimos nota fiscal de peças e serviços, mantendo a garantia de fábrica do seu veículo.' },
-  { icon: Star, title: 'Nota 4,9 no Google', description: 'Mais de 234 avaliações de clientes satisfeitos que confiam na Carplus.' },
+  { icon: FileText, title: 'Nota fiscal eletrônica', description: 'Emitimos nota fiscal de peças e serviços, com transparência em cada atendimento.' },
+  { icon: Star, title: '4.9 ★ no Google', description: 'Mais de 250 avaliações de clientes satisfeitos que confiam na Carplus.' },
 ];
 
 export default function OficinaMarcaPage({ slug }: Props) {
@@ -254,7 +254,7 @@ export default function OficinaMarcaPage({ slug }: Props) {
         <div className="container mx-auto px-4 py-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              { icon: Star, label: '234+ avaliações no Google' },
+              { icon: Star, label: '+250 avaliações no Google' },
               { icon: BadgeCheck, label: 'Diagnóstico antes do orçamento' },
               { icon: CreditCard, label: 'Até 10x sem juros' },
               { icon: Clock, label: 'Seg-Sáb' },
@@ -306,7 +306,7 @@ export default function OficinaMarcaPage({ slug }: Props) {
               {isMarca ? `Serviços em destaque para ${page.marca}` : 'Serviços em destaque'}
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Tecnologia, peças de qualidade e garantia em todos os serviços.
+              Tecnologia, peças de qualidade e nota fiscal com garantia conforme o serviço.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -454,8 +454,8 @@ export default function OficinaMarcaPage({ slug }: Props) {
                   <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
                 ))}
               </span>
-              <span className="font-medium">4,9 de 5</span>
-              <span className="text-neutral-500">• 234+ avaliações no Google</span>
+              <span className="font-medium">4.9 ★ no Google</span>
+              <span className="text-neutral-500">• Mais de 250 avaliações de clientes</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

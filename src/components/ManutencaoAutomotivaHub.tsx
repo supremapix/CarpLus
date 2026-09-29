@@ -26,49 +26,53 @@ import TrustBar from './TrustBar';
 import StoreSection from './StoreSection';
 import Reviews from './Reviews';
 import { useSEO } from '../hooks/useSEO';
-import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
+import { generateBreadcrumbSchema, generateFaqSchema, generateLocalBusinessSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
 
 const HUB_FAQS = [
   {
     question: 'A Carplus faz manutenção automotiva em Curitiba?',
-    answer: 'Sim! A Carplus é um centro automotivo completo no bairro Portão, especializado em manutenção preventiva e corretiva, injeção eletrônica, freios, suspensão, alinhamento, balanceamento, troca de óleo e venda de pneus para carros nacionais e importados.'
+    answer: 'Sim! A Carplus é uma loja de pneus e centro automotivo completo no bairro Portão, especializada em manutenção preventiva e corretiva, diagnóstico eletrônico por scanner, freios, suspensão, alinhamento, balanceamento, troca de óleo e venda de pneus no mesmo endereço.'
   },
   {
     question: 'A Carplus passa scanner em carros?',
-    answer: 'Sim. Contamos com scanner automotivo multiprotocolo profissional de última geração para diagnóstico eletrônico computadorizado. Realizamos a leitura e análise de falhas no motor, câmbio, injeção eletrônica, ABS, airbag, além de reset de luzes de alerta no painel.'
+    answer: 'Sim. Contamos com scanner automotivo multiprotocolo profissional para diagnóstico eletrônico computadorizado. Realizamos a leitura e análise de falhas no motor, injeção eletrônica, câmbio, ABS, airbag, além de reset de luzes de alerta no painel após a identificação da causa.'
+  },
+  {
+    question: 'Quando devo passar scanner no carro?',
+    answer: 'Você deve passar o scanner automotivo sempre que a luz de injeção ou qualquer aviso de alerta acender no painel, ou se o motor apresentar falhas, engasgos, perda de rendimento ou consumo aumentado. O scanner identifica o código exato da falha sem troca de peças por tentativa.'
   },
   {
     question: 'Quando devo fazer alinhamento e balanceamento?',
-    answer: 'O alinhamento e o balanceamento são recomendados a cada 10.000 km, na troca de pneus, após impactos fortes em buracos ou sempre que notar o volante puxando para um lado ou vibrando em velocidades médias/altas.'
+    answer: 'O alinhamento e o balanceamento são recomendados a cada 10.000 km, na troca de pneus, após fortes impactos em buracos ou sempre que notar o volante puxando para um lado ou vibrando em velocidades médias/altas.'
+  },
+  {
+    question: 'Qual a diferença entre alinhamento e alinhamento 3D?',
+    answer: 'O alinhamento convencional utiliza réguas ou sensores ópticos comuns. O alinhamento 3D computadorizado utiliza câmeras tridimensionais de alta precisão que medem simultaneamente todos os ângulos das 4 rodas (convergência, câmber e cáster) com base nos parâmetros de fábrica do seu veículo.'
   },
   {
     question: 'A Carplus faz troca de óleo?',
-    answer: 'Sim. Realizamos troca de óleo com lubrificantes sintéticos, semissintéticos e minerais de marcas homologadas pelas montadoras, com substituição do filtro de óleo, filtro de ar, filtro de combustível e filtro de cabine, conforme o manual do seu veículo.'
+    answer: 'Sim. Realizamos troca de óleo com lubrificantes sintéticos, semissintéticos e minerais com especificações homologadas pelas montadoras, com substituição do filtro de óleo, filtro de ar, filtro de combustível e filtro de cabine, conforme o manual do seu veículo.'
   },
   {
-    question: 'A Carplus revisa freios?',
-    answer: 'Sim. Fazemos inspeção detalhada de todo o sistema de freios: avaliação do desgaste de pastilhas e discos, retífica de discos de freio, troca de fluido de freio DOT 3 / DOT 4 com sangria completa e verificação do sistema ABS.'
+    question: 'A Carplus faz manutenção de freios?',
+    answer: 'Sim. Fazemos a avaliação completa de discos, pastilhas e fluido de freio. Substituímos componentes desgastados com peças de qualidade, realizamos troca de fluido DOT 3 / DOT 4 com sangria técnica e verificamos o sistema antitravamento ABS.'
   },
   {
     question: 'A Carplus faz revisão de suspensão?',
-    answer: 'Sim! Diagnosticamos e substituímos amortecedores, molas, buchas, pivôs, terminais de direção, coxins e barras estabilizadoras, eliminando ruídos e garantindo estabilidade e conforto ao dirigir.'
+    answer: 'Sim! Avaliamos e substituímos amortecedores, molas, buchas, pivôs, terminais de direção, coxins e barras estabilizadoras, eliminando ruídos e garantindo estabilidade e conforto ao dirigir.'
   },
   {
-    question: 'Posso trocar pneus e fazer alinhamento no mesmo lugar?',
-    answer: 'Com certeza! Essa é uma das principais conveniências da Carplus. Você pode escolher pneus novos para seu carro e já realizar montagem, balanceamento e alinhamento 3D no mesmo local e no mesmo atendimento.'
+    question: 'Posso trocar pneus e fazer manutenção no mesmo lugar?',
+    answer: 'Com certeza! Essa é uma das principais comodidades da Carplus. Você pode escolher pneus novos para seu carro e já realizar montagem, balanceamento, alinhamento 3D e revisão preventiva no mesmo endereço.'
   },
   {
     question: 'Preciso agendar atendimento?',
-    answer: 'Não é obrigatório agendar: atendemos por ordem de chegada com excelente agilidade na oficina. No entanto, agendando previamente pelo WhatsApp você garante horário reservado e atendimento prioritário.'
+    answer: 'Não é obrigatório agendar: atendemos por ordem de chegada com agilidade na oficina. No entanto, agendando previamente pelo WhatsApp você garante horário reservado.'
   },
   {
-    question: 'A oficina fica em qual bairro de Curitiba?',
-    answer: 'Estamos localizados na Avenida Presidente Arthur da Silva Bernardes, 1323, no bairro Portão, em Curitiba. Ponto de fácil acesso com vagas para clientes no local.'
-  },
-  {
-    question: 'Como falar com a Carplus pelo WhatsApp?',
-    answer: 'Basta clicar nos botões de WhatsApp do site ou enviar uma mensagem para o número (41) 3082-7282. Nossa equipe técnica atende prontamente para tirar dúvidas, agendar avaliações e passar orçamentos.'
+    question: 'Onde fica a oficina da Carplus?',
+    answer: 'Estamos localizados na Avenida Presidente Arthur da Silva Bernardes, 1323, no bairro Portão, em Curitiba. Ponto de acesso fácil no Portão com vagas para clientes em frente à loja.'
   }
 ];
 
@@ -91,7 +95,7 @@ const SERVICOS_PRINCIPAIS = [
     icon: Layers,
     title: 'Alinhamento 3D Computadorizado',
     slug: '/servico/alinhamento-3d',
-    benefit: 'Aferição tridimensional com precisão milimétrica para ajuste de cáster, câmber e convergência em padrões rigorosos de fábrica.',
+    benefit: 'Aferição tridimensional com precisão para ajuste de cáster, câmber e convergência em padrões originais de fábrica.',
     tag: 'Tecnologia 3D'
   },
   {
@@ -105,7 +109,7 @@ const SERVICOS_PRINCIPAIS = [
     icon: ShieldAlert,
     title: 'Manutenção de Freios',
     slug: '/servico/manutencao-de-freios',
-    benefit: 'Revisão e troca de pastilhas, discos, fluido de freio DOT4 e retífica, garantindo máxima segurança e resposta imediata na frenagem.',
+    benefit: 'Avaliação criteriosa de pastilhas, discos e fluido de freio DOT4 com sangria completa, garantindo máxima segurança e resposta imediata na frenagem.',
     tag: 'Segurança Ativa'
   },
   {
@@ -134,7 +138,7 @@ const SERVICOS_PRINCIPAIS = [
 const SINAIS_OFICINA = [
   {
     titulo: 'Luz de injeção acesa no painel',
-    descricao: 'Indica falha no gerenciamento do motor, sonda lambda, bicos injetores ou ignição detectada pela central.',
+    descricao: 'Indica falha no gerenciamento do motor, sonda lambda, bicos injetores ou ignição detectada pela central eletrônica.',
     servico: 'Scanner Automotivo',
     link: '/servico/scanner-automotivo'
   },
@@ -152,8 +156,14 @@ const SINAIS_OFICINA = [
   },
   {
     titulo: 'Barulho ou chiado ao frear',
-    descricao: 'Ruído metálico indica pastilhas gastas no fim da vida útil ou discos com ranhuras que exigem revisão.',
+    descricao: 'Ruído metálico indica pastilhas gastas no fim da vida útil ou atrito nos discos que exigem revisão.',
     servico: 'Revisão de Freios',
+    link: '/servico/manutencao-de-freios'
+  },
+  {
+    titulo: 'Pedal de freio baixo ou esponjoso',
+    descricao: 'Sensação de perda de firmeza no pedal pode indicar ar no sistema hidráulico ou fluido de freio vencido.',
+    servico: 'Manutenção de Freios',
     link: '/servico/manutencao-de-freios'
   },
   {
@@ -164,25 +174,25 @@ const SINAIS_OFICINA = [
   },
   {
     titulo: 'Óleo vencido ou escurecido',
-    descricao: 'Lubrificante fora do prazo ou da viscosidade perde a capacidade de proteção e pode fundir componentes internos.',
+    descricao: 'Lubrificante fora do prazo ou da viscosidade perde a capacidade de proteção e pode desgastar componentes internos.',
     servico: 'Troca de Óleo',
     link: '/servico/troca-de-oleo'
   },
   {
     titulo: 'Suspensão batendo seco',
-    descricao: 'Pancadas em quebra-molas ou asfalto irregular apontam amortecedores estourados ou buchas danificadas.',
+    descricao: 'Pancadas em quebra-molas ou asfalto irregular apontam amortecedores com vazamento ou buchas danificadas.',
     servico: 'Suspensão',
     link: '/servico/revisao-de-suspensao'
   },
   {
-    titulo: 'Consumo aumentado de combustível',
-    descricao: 'Filtros sujos, velas desgastadas, sensores descalibrados ou pneus murchos elevam o consumo drasticamente.',
+    titulo: 'Consumo elevado de combustível',
+    descricao: 'Filtros saturados, velas desgastadas, sensores descalibrados ou pneus com pressão baixa elevam o consumo.',
     servico: 'Revisão Geral',
     link: '/servico/revisao-geral'
   },
   {
     titulo: 'Dificuldade na partida do motor',
-    descricao: 'Partida pesada ou engasgos sugerem problemas na bateria, motor de partida, velas ou alimentação de combustível.',
+    descricao: 'Partida pesada ou engasgos sugerem problemas na bateria, motor de partida, velas ou alimentação.',
     servico: 'Diagnóstico Técnico',
     link: '/servico/scanner-automotivo'
   }
@@ -210,27 +220,7 @@ export default function ManutencaoAutomotivaHub() {
         { name: 'Manutenção Automotiva em Curitiba', url: `${BASE_URL}/manutencao-automotiva-curitiba` },
       ]),
       generateFaqSchema(HUB_FAQS),
-      {
-        '@context': 'https://schema.org',
-        '@type': 'AutoRepair',
-        '@id': `${BASE_URL}/#localbusiness`,
-        name: 'Carplus Pneus e Centro Automotivo',
-        description: 'Centro automotivo especializado em manutenção preventiva, corretiva, freios, suspensão, scanner e pneus no Portão, Curitiba.',
-        telephone: '+55-41-3082-7282',
-        url: `${BASE_URL}/manutencao-automotiva-curitiba`,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Av. Presidente Arthur da Silva Bernardes, 1323',
-          addressLocality: 'Curitiba',
-          addressRegion: 'PR',
-          postalCode: '80320-300',
-          addressCountry: 'BR'
-        },
-        areaServed: {
-          '@type': 'City',
-          name: 'Curitiba'
-        }
-      }
+      generateLocalBusinessSchema(),
     ]
   });
 
@@ -472,10 +462,10 @@ export default function ManutencaoAutomotivaHub() {
 
               <div className="space-y-3 text-xs sm:text-sm text-white/80 border-t border-white/10 pt-4">
                 <div className="flex items-center gap-2 font-bold text-white">
-                  <CheckCircle2 size={15} className="text-primary" /> Garantia e nota fiscal em todos os serviços
+                  <CheckCircle2 size={15} className="text-primary" /> Nota fiscal e garantia conforme serviço/produto
                 </div>
                 <div className="flex items-center gap-2 font-bold text-white">
-                  <CheckCircle2 size={15} className="text-primary" /> Equipamentos homologados de alta tecnologia
+                  <CheckCircle2 size={15} className="text-primary" /> Equipamentos de precisão e equipe experiente
                 </div>
                 <div className="flex items-center gap-2 font-bold text-white">
                   <CheckCircle2 size={15} className="text-primary" /> Condições em até 10x sem juros nos cartões
@@ -502,7 +492,7 @@ export default function ManutencaoAutomotivaHub() {
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
                 <h4 className="font-bold text-xs uppercase tracking-widest text-neutral-800 mb-3">Atendimento Próximo Aos Bairros:</h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-4 text-xs sm:text-sm text-gray-600">
-                  {['Portão', 'Água Verde', 'Vila Izabel', 'Novo Mundo', 'Fazendinha', 'Santa Quitéria', 'Campo Comprido', 'Capão Raso', 'Lindóia'].map((bairro, idx) => (
+                  {['Portão', 'Água Verde', 'Vila Izabel', 'Novo Mundo', 'Fazendinha', 'Santa Quitéria', 'Campo Comprido', 'Capão Raso', 'Lindóia', 'Guaíra'].map((bairro, idx) => (
                     <span key={idx} className="flex items-center gap-1.5 font-medium">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                       {bairro}
@@ -513,11 +503,11 @@ export default function ManutencaoAutomotivaHub() {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs sm:text-sm text-gray-600">
                 <span className="flex items-center gap-1.5 font-bold text-gray-800">
-                  <CheckCircle2 size={16} className="text-primary" /> Estacionamento próprio gratuito no local
+                  <CheckCircle2 size={16} className="text-primary" /> Acesso fácil com vagas para clientes
                 </span>
                 <span className="hidden sm:inline text-gray-300">•</span>
                 <span className="flex items-center gap-1.5 font-bold text-gray-800">
-                  <CheckCircle2 size={16} className="text-primary" /> Vagas exclusivas para clientes
+                  <CheckCircle2 size={16} className="text-primary" /> Diagnóstico com scanner antes do orçamento
                 </span>
               </div>
             </div>
