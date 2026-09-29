@@ -345,6 +345,16 @@ export default function PneusCuritibaHub() {
                     </div>
                   </div>
                 ))}
+
+                <div className="pt-4 border-t border-gray-200 mt-2">
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    Aproveite a visita para fazer também a revisão preventiva do veículo. Conheça nossa página de{' '}
+                    <Link to="/manutencao-automotiva-curitiba" className="text-neutral-900 font-bold hover:text-primary underline">
+                      manutenção automotiva em Curitiba
+                    </Link>{' '}
+                    com scanner, freios, suspensão e troca de óleo no Portão.
+                  </p>
+                </div>
               </div>
             </div>
 

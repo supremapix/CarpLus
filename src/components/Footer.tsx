@@ -64,8 +64,9 @@ export default function Footer() {
                  ))
                )}
             </ul>
-            <div className="pt-4 mt-4 border-t border-white/10">
-               <Link to="/pneus" className="font-bold text-primary hover:text-white transition-colors text-sm uppercase tracking-tight">Ver Todos os Pneus</Link>
+            <div className="pt-4 mt-4 border-t border-white/10 flex flex-col gap-2">
+               <Link to="/manutencao-automotiva-curitiba" className="font-bold text-primary hover:text-white transition-colors text-sm uppercase tracking-tight">Manutenção Automotiva em Curitiba</Link>
+               <Link to="/pneus" className="font-bold text-white/70 hover:text-white transition-colors text-xs uppercase tracking-tight">Ver Todos os Pneus</Link>
             </div>
          </div>
 
@@ -167,10 +168,11 @@ export default function Footer() {
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Atendimento Local</h4>
                <ul className="space-y-2 text-xs font-medium text-white/50">
+                  <li><Link to="/manutencao-automotiva-curitiba" className="hover:text-primary transition-colors font-bold text-primary">Manutenção Automotiva</Link></li>
                   <li><Link to="/pneus-curitiba" className="hover:text-primary transition-colors font-bold text-primary/80">Central de Pneus</Link></li>
+                  <li><Link to="/centro-automotivo-portao" className="hover:text-primary transition-colors">Centro Automotivo Portão</Link></li>
                   <li><Link to="/loja-de-pneus-portao-curitiba" className="hover:text-primary transition-colors">Loja de Pneus Portão</Link></li>
                   <li><Link to="/pneu-aro-15-portao-curitiba" className="hover:text-primary transition-colors">Pneu Aro 15 Portão</Link></li>
-                  <li><Link to="/pneu-aro-16-agua-verde-curitiba" className="hover:text-primary transition-colors">Pneu Aro 16 Água Verde</Link></li>
                   <li><Link to="/bairros" className="hover:text-primary transition-colors">Bairros Atendidos</Link></li>
                </ul>
             </div>

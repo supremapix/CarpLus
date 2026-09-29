@@ -251,9 +251,17 @@ export default function ServicosPage() {
             Oficina mecânica full service e loja de pneus no Portão, Curitiba. Tudo em um só lugar.
           </p>
           
-          <div className="mt-6 inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-bold">
-            <Wrench size={16} />
-            {totalServices} Serviços Disponíveis
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/manutencao-automotiva-curitiba"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-yellow-400 text-gray-900 px-5 py-2.5 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors shadow-xs"
+            >
+              <Wrench size={16} />
+              Hub de Manutenção Automotiva no Portão
+            </Link>
+            <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2.5 rounded-md text-xs sm:text-sm font-semibold">
+              {totalServices} Serviços Disponíveis
+            </div>
           </div>
         </div>
       </section>

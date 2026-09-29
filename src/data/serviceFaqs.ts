@@ -396,10 +396,30 @@ export const SERVICE_FAQS: Record<string, FaqItem[]> = {
     { pergunta: 'Retífica ou troca de disco, o que é melhor?', resposta: 'Se o disco ainda tem vida útil após retífica, é mais econômico retificar. Se estiver no limite ou com trincas, a troca é mais segura. Na Carplus Curitiba orientamos a melhor opção.' },
     { pergunta: 'Vocês retificam disco de carro importado?', resposta: 'Sim! Atendemos discos de todas as marcas e tamanhos. BMW, Mercedes, Audi, Porsche - todos são bem-vindos na Carplus Portão.' },
     { pergunta: 'Disco de freio pode trincar?', resposta: 'Sim, por superaquecimento (frenagem muito forte), defeito de fabricação ou impacto. Disco trincado NUNCA deve ser retificado nem usado. Na Carplus Curitiba verificamos antes de qualquer serviço.' }
+  ],
+
+  'alinhamento-3d': [
+    { pergunta: 'Qual a diferença entre alinhamento 3D e o comum?', resposta: 'O alinhamento 3D utiliza câmeras digitais de alta resolução e alvos refletores fixados nas rodas para medir cáster, câmber e convergência tridimensionalmente em tempo real, eliminando erros mecânicos.' },
+    { pergunta: 'Quando devo fazer alinhamento 3D em Curitiba?', resposta: 'Recomendamos a cada 10.000 km, ao colocar pneus novos, após impactos em buracos ou se o volante estiver torto e o carro puxando para um dos lados.' },
+    { pergunta: 'Quanto tempo leva o alinhamento 3D?', resposta: 'O alinhamento 3D na Carplus Portão leva em média de 30 a 40 minutos com laudo impresso antes e depois do ajuste.' },
+    { pergunta: 'Preciso alinhar após trocar a suspensão?', resposta: 'Sim! Qualquer alteração em buchas, pivôs, terminais ou amortecedores altera os ângulos da geometria e exige novo alinhamento 3D.' }
+  ],
+
+  'scanner-automotivo': [
+    { pergunta: 'O que o scanner automotivo identifica no carro?', resposta: 'O scanner multiprotocolo lê os códigos de falha armazenados nos módulos eletrônicos do veículo: injeção eletrônica, motor, câmbio, ABS, airbag, direção elétrica e sensores de oxigênio.' },
+    { pergunta: 'Luz de injeção acesa: o que fazer?', resposta: 'A luz de injeção no painel indica que a central detectou uma anomalia. Recomendamos passar o scanner para identificar o código exato antes que o problema se agrave.' },
+    { pergunta: 'A Carplus passa scanner em carros importados?', resposta: 'Sim! Nosso scanner profissional atende veículos nacionais e importados (BMW, Mercedes, Audi, Jeep, Volvo, Toyota, Honda, VW, GM, Fiat, Hyundai e outras).' },
+    { pergunta: 'Vocês apagam as luzes de erro do painel?', resposta: 'Sim. Após diagnosticar e solucionar a causa raiz do problema, realizamos o reset completo das falhas e luzes de advertência no painel.' }
   ]
 };
 
 // Função helper para obter FAQs de um serviço pelo slug
 export function getServiceFaqs(slug: string): FaqItem[] {
+  if (slug === 'scanner-automotivo') {
+    return SERVICE_FAQS['scanner-automotivo'] || SERVICE_FAQS['diagnostico-eletronico'] || [];
+  }
+  if (slug === 'alinhamento-3d') {
+    return SERVICE_FAQS['alinhamento-3d'] || SERVICE_FAQS['alinhamento-e-balanceamento'] || [];
+  }
   return SERVICE_FAQS[slug] || [];
 }

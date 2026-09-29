@@ -71,6 +71,16 @@ export default function Sitemap() {
                  <Wrench size={24} className="text-primary" /> Nossos Servicos
                </h2>
                <ul className="space-y-3 font-medium text-gray-600">
+                  <li>
+                    <Link to="/manutencao-automotiva-curitiba" className="hover:text-primary transition-colors font-bold text-gray-900 flex items-center gap-1.5">
+                      <ChevronRight size={14} className="text-primary" /> Manutenção Automotiva em Curitiba (Hub)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/servicos" className="hover:text-primary transition-colors font-semibold text-gray-700 flex items-center gap-1.5">
+                      <ChevronRight size={14} className="text-primary" /> Todos os Serviços
+                    </Link>
+                  </li>
                   {SERVICES.map(s => (
                      <li key={s.slug}><Link to={`/servico/${s.slug}`} className="hover:text-primary transition-colors">{s.title}</Link></li>
                   ))}
@@ -176,6 +186,11 @@ export default function Sitemap() {
                 </h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>
+                    <Link to="/manutencao-automotiva-curitiba" className="hover:text-primary transition-colors flex items-center gap-1 font-bold text-gray-900">
+                      <ChevronRight size={12} className="text-primary" /> Manutenção Automotiva Curitiba (Hub)
+                    </Link>
+                  </li>
+                  <li>
                     <Link to="/pneus-curitiba" className="hover:text-primary transition-colors flex items-center gap-1 font-bold">
                       <ChevronRight size={12} className="text-primary" /> Pneus em Curitiba (Hub)
                     </Link>
@@ -208,6 +223,12 @@ export default function Sitemap() {
               <Wrench size={24} className="text-primary" /> Centro Automotivo e Oficina
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-sm text-gray-600">
+              <Link
+                to="/manutencao-automotiva-curitiba"
+                className="hover:text-primary transition-colors flex items-center gap-1 font-bold text-gray-900 col-span-full mb-1"
+              >
+                <ChevronRight size={14} className="text-primary shrink-0" /> Hub Principal: Manutenção Automotiva em Curitiba no Portão
+              </Link>
               {CENTRO_AUTOMOTIVO_PAGES.map(p => (
                 <Link
                   key={p.slug}

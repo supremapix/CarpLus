@@ -41,6 +41,7 @@ const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDe
 const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
 const CentroAutomotivoSeoPage = lazy(() => import('./components/CentroAutomotivoSeoPage'));
 const OficinaMarcaPage = lazy(() => import('./components/OficinaMarcaPage'));
+const ManutencaoAutomotivaHub = lazy(() => import('./components/ManutencaoAutomotivaHub'));
 
 // Landing pages SEO (todas no mesmo módulo)
 const AroLandingPage = lazy(() =>
@@ -155,7 +156,9 @@ export default function App() {
         <Route key={p.slug} path={`/oficina/${p.slug}`} element={<OficinaMarcaPage slug={p.slug} />} />
       ))}
 
-      {/* ───── Hub SEO de Pneus ───── */}
+      {/* ───── Hubs Principais de Serviços e Pneus ───── */}
+      <Route path="/manutencao-automotiva-curitiba" element={<ManutencaoAutomotivaHub />} />
+      <Route path="/servico/diagnostico-eletronico" element={<Navigate to="/servico/scanner-automotivo" replace />} />
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
       <Route path="/medidas-de-pneus-curitiba" element={<PneusMedidasHub />} />
       <Route path="/loja-de-pneus-curitiba-perto-de-mim" element={<LojaDePneusPertoDeMim />} />

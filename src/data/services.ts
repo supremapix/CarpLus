@@ -58,13 +58,23 @@ export const SERVICE_CATEGORIES: Category[] = [
       },
       {
         id: "alinhamento-balanceamento",
-        name: "Alinhamento e Balanceamento 3D",
+        name: "Alinhamento e Balanceamento",
         slug: "alinhamento-e-balanceamento",
-        shortDescription: "Alinhamento computadorizado 3D com equipamento de alta precisão. Evita desgaste irregular, melhora estabilidade e reduz consumo de combustível.",
-        fullDescription: "O alinhamento de pneus na Carplus é realizado com equipamento 3D computadorizado de última geração, garantindo precisão milimétrica. A regulagem correta dos ângulos das rodas evita desgaste irregular dos pneus, melhora a estabilidade em curvas, proporciona mais conforto e reduz o consumo de combustível. O balanceamento computadorizado elimina vibrações e prolonga a vida útil dos pneus. Atendemos todos os modelos de veículos sem necessidade de agendamento.",
-        highlights: ["Equipamento 3D computadorizado", "Resultado em 30–40 minutos", "Todos os modelos de veículos", "Sem necessidade de agendamento", "Ajuste de cambagem e caster"],
+        shortDescription: "Alinhamento e balanceamento computadorizado com equipamento de alta precisão. Evita desgaste irregular e melhora estabilidade.",
+        fullDescription: "O alinhamento e balanceamento na Carplus é realizado com equipamento computadorizado de alta precisão. A regulagem correta dos ângulos das rodas evita desgaste irregular dos pneus, melhora a estabilidade em curvas, proporciona mais conforto e reduz o consumo de combustível. O balanceamento computadorizado elimina vibrações no volante e prolonga a vida útil dos pneus. Atendemos todos os modelos de veículos sem necessidade de agendamento.",
+        highlights: ["Equipamento computadorizado", "Elimina vibrações no volante", "Resultado em 30–40 minutos", "Todos os modelos de veículos", "Sem necessidade de agendamento"],
         estimatedTime: "30–40 min",
         icon: "Target"
+      },
+      {
+        id: "alinhamento-3d",
+        name: "Alinhamento 3D Computadorizado",
+        slug: "alinhamento-3d",
+        shortDescription: "Aferição tridimensional com câmeras de precisão milimétrica para ajuste fino de cáster, câmber e convergência.",
+        fullDescription: "O alinhamento 3D computadorizado na Carplus utiliza câmeras tridimensionais de última geração para leitura simultânea de todos os ângulos das 4 rodas. Permite ajuste milimétrico de convergência, câmber e cáster conforme os parâmetros exatos do fabricante do seu veículo. Fornecemos laudo impresso antes e depois do serviço.",
+        highlights: ["Tecnologia 3D tridimensional", "Precisão de 0,01 grau", "Ajuste de convergência, câmber e cáster", "Laudo impresso antes e depois", "Todos os modelos nacionais e importados"],
+        estimatedTime: "30–45 min",
+        icon: "Layers"
       },
       {
         id: "montagem-pneu",
@@ -377,12 +387,12 @@ export const SERVICE_CATEGORIES: Category[] = [
     emoji: "⚡",
     services: [
       {
-        id: "diagnostico-eletronico",
-        name: "Diagnóstico Eletrônico",
-        slug: "diagnostico-eletronico",
-        shortDescription: "Scanner multiprotocolo avançado para leitura de todos os códigos DTC. Motor, ABS, airbag, câmbio. Reset de luzes.",
-        fullDescription: "O diagnóstico eletrônico na Carplus utiliza scanner automotivo multiprotocolo de última geração para leitura de todos os códigos de falha (DTC) do veículo. Diagnosticamos motor, injeção eletrônica, ABS, airbag, câmbio automático e todos os módulos eletrônicos. Resetamos luzes de painel e emitimos relatório completo do diagnóstico. Compatível com veículos nacionais e importados de todas as marcas.",
-        highlights: ["Scanner multiprotocolo", "Motor, ABS, airbag e câmbio", "Reset de todas as luzes", "Relatório de diagnóstico", "Nacionais e importados"],
+        id: "scanner-automotivo",
+        name: "Scanner Automotivo (Diagnóstico Eletrônico)",
+        slug: "scanner-automotivo",
+        shortDescription: "Scanner multiprotocolo para diagnóstico eletrônico computadorizado, luz de injeção acesa e reset de códigos DTC.",
+        fullDescription: "O scanner automotivo na Carplus utiliza equipamento multiprotocolo profissional de última geração para diagnóstico eletrônico de todos os sistemas do veículo. Lemos códigos de falha (DTC) do motor, injeção eletrônica, freios ABS, airbags e transmissão automática. Resetamos alertas de painel com transparência e laudo técnico detalhado. Compatível com carros nacionais e importados.",
+        highlights: ["Scanner multiprotocolo profissional", "Diagnóstico de luz de injeção", "Motor, ABS, airbag e câmbio", "Reset de códigos DTC", "Carros nacionais e importados"],
         estimatedTime: "30–60 min",
         icon: "Monitor"
       },

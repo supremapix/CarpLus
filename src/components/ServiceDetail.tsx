@@ -112,21 +112,55 @@ const SEO_CONTENT: Record<string, {
     videoBadge: 'Vídeo Explicativo'
   },
   'scanner-automotivo': {
-    intro: 'O diagnóstico por scanner automotivo é fundamental para identificar problemas eletrônicos no seu veículo. Na Carplus Centro Automotivo, utilizamos scanners multiprotocolo de última geração que leem todos os módulos do carro: motor, câmbio, ABS, airbag, direção elétrica e muito mais. Atendemos todas as marcas nacionais e importadas.',
+    intro: 'O scanner automotivo é a principal ferramenta de diagnóstico eletrônico automotivo para identificar com precisão falhas no motor, câmbio, injeção eletrônica, ABS e airbags. Na Carplus Centro Automotivo, no bairro Portão em Curitiba, utilizamos scanner para carros multiprotocolo de nível profissional. Se a luz de injeção acendeu no painel ou o motor apresentou falhas e engasgos, passar o scanner no carro permite diagnosticar a causa exata sem trocas de peças por tentativa.',
     detalhes: [
-      'Scanner multiprotocolo compatível com mais de 80 marcas de veículos',
-      'Leitura e apagamento de códigos de falha (DTCs) de todos os módulos',
-      'Reset de luz de óleo, airbag, ABS e demais indicadores do painel',
-      'Teste de atuadores para diagnóstico preciso de componentes',
-      'Relatório detalhado impresso com todas as falhas encontradas',
-      'Diagnóstico de injeção eletrônica, ignição e sensores'
+      'Scanner para carros e diagnóstico eletrônico automotivo multiprotocolo',
+      'Diagnóstico de luz de injeção acesa no painel e leitura de falhas no motor',
+      'Leitura e reset de códigos de falha (DTC) de injeção, ABS, airbag e transmissão',
+      'Análise de parâmetros de sensores (sonda lambda, MAP, temperatura) em tempo real',
+      'Diagnóstico prévio transparente com laudo técnico antes do orçamento',
+      'Compatível com veículos nacionais e importados de todas as marcas'
     ],
     perguntas: [
       { pergunta: 'O que significa a luz de injeção acesa no painel?', resposta: 'A luz de injeção (check engine) indica que o sistema de gerenciamento do motor detectou uma falha. Pode ser desde algo simples como tampa do tanque mal fechada at���� problemas mais sérios. O scanner lê o código exato e indica o componente com defeito.' },
       { pergunta: 'O scanner resolve todos os problemas do carro?', resposta: 'O scanner é uma ferramenta de diagnóstico que identifica a causa do problema. Após a leitura, nossa equipe analisa os códigos e propõe a solução. Em muitos casos, como reset de luz de óleo ou adaptação de peças novas, o próprio scanner resolve.' },
       { pergunta: 'Vocês fazem diagnóstico de carros importados?', resposta: 'Sim! Temos scanners específicos para BMW, Mercedes, Audi, VW, Volvo, Land Rover, Jeep e outras marcas premium. Conseguimos acessar módulos que scanners genéricos não alcançam.' }
     ],
-    keywords: ['scanner automotivo curitiba', 'diagnóstico eletrônico curitiba', 'luz injeção curitiba', 'check engine curitiba', 'scanner portão']
+    keywords: ['scanner automotivo curitiba', 'scanner para carros curitiba', 'passar scanner no carro curitiba', 'diagnóstico eletrônico automotivo', 'luz de injeção acesa curitiba', 'falhas no motor curitiba']
+  },
+  'manutencao-de-freios': {
+    intro: 'A manutenção de freios na Carplus Centro Automotivo, no bairro Portão em Curitiba, é essencial para a sua segurança. Se você notou barulho ao frear, pedal baixo, chiado metálico ou trepidação no volante durante a frenagem, realizamos a revisão completa de pastilhas de freio, discos de freio, retífica especializada, cilindros, pinças e substituição do fluido de freio DOT4 com sangria completa.',
+    detalhes: [
+      'Revisão completa do sistema de freios: pastilhas, discos, lonas e tambores',
+      'Diagnóstico de barulho ao frear, chiados e pedal baixo ou esponjoso',
+      'Troca de fluido de freio DOT 3 / DOT 4 com sangria técnica do sistema',
+      'Retífica de disco de freio em torno mecânico próprio de alta precisão',
+      'Verificação do sistema antitravamento ABS e sensores de roda',
+      'Peças com garantia de procedência e nota fiscal no bairro Portão'
+    ],
+    perguntas: [
+      { pergunta: 'Quando devo fazer a revisão de freios?', resposta: 'Recomendamos a revisão a cada 10.000 km ou imediatamente se notar barulho ao frear, pedal baixo ou perda de eficiência na frenagem.' },
+      { pergunta: 'Como saber se a pastilha de freio está gasta?', resposta: 'Chiados agudos metálicos, pedal mais baixo e aumento da distância de frenagem indicam pastilhas no limite de segurança.' },
+      { pergunta: 'É sempre necessário trocar os discos junto com as pastilhas?', resposta: 'Não necessariamente. Se o disco estiver dentro da espessura mínima de segurança e sem trincas, pode ser retificado ou mantido.' }
+    ],
+    keywords: ['manutenção de freios curitiba', 'revisão de freios curitiba', 'barulho ao frear curitiba', 'pedal baixo curitiba', 'pastilhas de freio curitiba', 'oficina de freios portao']
+  },
+  'revisao-de-suspensao': {
+    intro: 'A revisão de suspensão automotiva na Carplus, no bairro Portão em Curitiba, elimina barulhos na suspensão e devolve o conforto e a estabilidade direcional do seu veículo. Se você sente o carro batendo seco ao passar em desníveis, instabilidade em curvas ou desgaste irregular dos pneus, nossa equipe avalia amortecedores, molas, buchas, pivôs, terminais de direção e barras estabilizadoras com diagnóstico prévio transparente.',
+    detalhes: [
+      'Diagnóstico técnico de barulho na suspensão e carro batendo seco',
+      'Inspeção detalhada de amortecedores, molas, batentes e coxins',
+      'Substituição de buchas de bandeja, pivôs e terminais de direção',
+      'Avaliação de bieletas, barra estabilizadora e alinhamento do chassi',
+      'Recomendação de alinhamento 3D após qualquer intervenção na suspensão',
+      'Garantia em peças e serviços com laudo antes do orçamento'
+    ],
+    perguntas: [
+      { pergunta: 'Quais os sintomas de suspensão danificada?', resposta: 'Carro batendo seco ao passar em lombadas, barulho metálico ou rangidos, instabilidade em alta velocidade e desgaste irregular dos pneus.' },
+      { pergunta: 'De quanto em quanto tempo devo revisar a suspensão?', resposta: 'Recomendamos uma inspeção preventiva a cada 10.000 a 15.000 km, ou sempre que notar ruídos anormais ao rodar em vias irregulares.' },
+      { pergunta: 'Por que é preciso alinhar após mexer na suspensão?', resposta: 'A troca de amortecedores, buchas ou pivôs altera os ângulos geométricos das rodas. O alinhamento 3D é indispensável para evitar que os pneus desgastem de forma torta.' }
+    ],
+    keywords: ['suspensão automotiva curitiba', 'revisão de suspensão curitiba', 'barulho na suspensão curitiba', 'carro batendo seco curitiba', 'amortecedores curitiba', 'oficina de suspensão portao']
   },
   'suspensao-e-freios': {
     intro: 'A suspensão e os freios são sistemas críticos para a segurança do seu veículo. Na Carplus Centro Automotivo, oferecemos serviço completo de revisão e reparo de amortecedores, molas, pivôs, buchas, pastilhas, discos e todo o sistema de frenagem. Utilizamos peças de qualidade com garantia e mão de obra especializada.',
@@ -353,12 +387,28 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     description: 'Montagem de pneus em Curitiba com balanceamento incluso e grátis na compra dos pneus. Equipamento computadorizado, pronto em até 1 hora. Portão – (41) 3082-7282.',
   },
   'alinhamento-e-balanceamento': {
-    title: 'Alinhamento 3D e Balanceamento em Curitiba | Serviço Mecânico | Carplus Portão',
-    description: 'Serviço de oficina de alinhamento 3D e balanceamento de rodas no Portão, Curitiba. Elimine vibrações no volante e desgaste irregular. Agende pelo WhatsApp: (41) 3082-7282.',
+    title: 'Alinhamento e Balanceamento em Curitiba | Carplus Portão',
+    description: 'Alinhamento e balanceamento em Curitiba no bairro Portão. Ajuste 3D computadorizado, correção de geometria e equilíbrio dinâmico de rodas na Carplus.',
+  },
+  'alinhamento-3d': {
+    title: 'Alinhamento 3D em Curitiba | Carplus Pneus e Oficina',
+    description: 'Alinhamento 3D em Curitiba no Portão. Equipamento computadorizado de alta precisão para correção de cambagem, cáster e convergência na Carplus.',
   },
   'troca-de-oleo': {
-    title: 'Troca de Óleo em Curitiba no Portão | Rápida com Filtro | Carplus',
-    description: 'Troca de óleo rápida (30 a 45 min) com troca de filtro e descarte ecológico no Portão, Curitiba. Sintético e semissintético no manual. WhatsApp: (41) 3082-7282.',
+    title: 'Troca de Óleo em Curitiba | Óleo e Filtros | Carplus',
+    description: 'Troca de óleo em Curitiba no bairro Portão. Óleos sintéticos, semissintéticos, filtros de óleo, ar, cabine e revisão preventiva na Carplus.',
+  },
+  'scanner-automotivo': {
+    title: 'Scanner Automotivo em Curitiba | Diagnóstico Eletrônico | Carplus',
+    description: 'Scanner automotivo em Curitiba no Portão. Diagnóstico eletrônico computadorizado, leitura de falhas, luz de injeção acesa e reset de módulos na Carplus.',
+  },
+  'manutencao-de-freios': {
+    title: 'Manutenção de Freios em Curitiba | Revisão de Freios | Carplus',
+    description: 'Manutenção e revisão de freios em Curitiba no Portão. Troca de pastilhas, discos, retífica, sangria e fluido de freio com diagnóstico técnico na Carplus.',
+  },
+  'revisao-de-suspensao': {
+    title: 'Suspensão Automotiva em Curitiba | Revisão de Suspensão | Carplus',
+    description: 'Suspensão automotiva em Curitiba no Portão. Revisão de amortecedores, molas, buchas, pivôs, barra estabilizadora e diagnóstico completo na Carplus.',
   },
   'rodizio-de-pneus': {
     title: 'Rodízio de Pneus em Curitiba | A Cada 10.000 km | Carplus',
@@ -379,14 +429,6 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
   'loja-de-pneus': {
     title: 'Loja de Pneus em Curitiba | Aro 13 ao 22 | Carplus',
     description: 'Loja de pneus no Portão, em Curitiba, com as melhores marcas do aro 13 ao aro 22 para carros, SUVs e picapes. Montagem inclusa e garantia de fábrica. (41) 3082-7282.',
-  },
-  'alinhamento-3d': {
-    title: 'Alinhamento 3D em Curitiba | Carplus Pneus e Oficina',
-    description: 'Seu carro está puxando para um lado? Faça alinhamento 3D em Curitiba com equipamentos especializados. Agende sua avaliação.',
-  },
-  'manutencao-de-freios': {
-    title: 'Manutenção de Freios em Curitiba | Avaliação Carplus',
-    description: 'Manutenção de freios em Curitiba, no Portão. Avaliação de pastilhas, discos e fluido para dirigir com segurança. Agende pelo WhatsApp.',
   },
   'conserto-de-rodas': {
     title: 'Conserto de Rodas em Curitiba | Avaliação Carplus',
@@ -499,11 +541,22 @@ export default function ServiceDetail() {
   );
 
   const Icon = getIcon(service.icon);
-  const primaryHeading = slug === 'conserto-de-rodas'
-    ? 'Conserto de Rodas em Curitiba'
-    : slug === 'alinhamento-3d'
-      ? 'Alinhamento 3D em Curitiba'
-      : `${service.title} em Curitiba – Bairro Portão`;
+  const primaryHeading =
+    slug === 'scanner-automotivo'
+      ? 'Scanner Automotivo em Curitiba'
+      : slug === 'alinhamento-e-balanceamento'
+        ? 'Alinhamento e Balanceamento em Curitiba'
+        : slug === 'alinhamento-3d'
+          ? 'Alinhamento 3D em Curitiba'
+          : slug === 'troca-de-oleo'
+            ? 'Troca de Óleo em Curitiba'
+            : slug === 'manutencao-de-freios'
+              ? 'Manutenção de Freios em Curitiba'
+              : slug === 'revisao-de-suspensao'
+                ? 'Suspensão Automotiva em Curitiba'
+                : slug === 'conserto-de-rodas'
+                  ? 'Conserto de Rodas em Curitiba'
+                  : `${service.title} em Curitiba – Bairro Portão`;
 
   return (
     <div className="min-h-screen bg-dark">
@@ -514,10 +567,10 @@ export default function ServiceDetail() {
         <section className="relative pt-[120px] md:pt-[108px] pb-20 bg-dark text-white overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
               {/* Breadcrumb */}
-              <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex items-center justify-center gap-2">
+              <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex flex-wrap items-center justify-center gap-2">
                 <Link to="/" className="hover:text-primary transition-colors">Home</Link>
                 <span className="opacity-40">/</span>
-                <Link to="/servicos" className="hover:text-primary transition-colors">Serviços</Link>
+                <Link to="/manutencao-automotiva-curitiba" className="hover:text-primary transition-colors">Manutenção Automotiva</Link>
                 <span className="opacity-40">/</span>
                 <span className="text-white font-medium">{service.title}</span>
               </nav>
@@ -546,6 +599,13 @@ export default function ServiceDetail() {
                  >
                     <Phone size={16} /> (41) 3082-7282
                  </a>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/10 text-xs text-white/70 flex flex-wrap items-center justify-center gap-2">
+                <span>Centro automotivo no Portão:</span>
+                <Link to="/manutencao-automotiva-curitiba" className="text-primary font-bold hover:underline inline-flex items-center gap-1">
+                  ver todos os serviços de manutenção automotiva em Curitiba <ChevronRight size={14} />
+                </Link>
               </div>
            </div>
         </section>
