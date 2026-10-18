@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageSquare } from 'lucide-react';
-import LiteYouTube from './LiteYouTube';
 
 const evidence = [
   { title: 'Pneus e oficina no mesmo endereço', text: 'Venda e montagem de pneus, alinhamento, freios e suspensão no Portão, em Curitiba.', image: '/images/galeria/oficina-carros.webp', alt: 'Área da Carplus com veículos nos elevadores', link: '/servicos', action: 'Conhecer os serviços' },
@@ -28,12 +27,12 @@ export default function HomeTrust() {
       </div>
       <div className="mt-8 grid md:grid-cols-2 items-center overflow-hidden rounded-xl bg-dark text-white">
         <div className="relative aspect-video bg-black">
-          <LiteYouTube videoId="xlwso3EmUog" title="Vídeo da Carplus: preparação para viagens" poster="/images/video/carplus-revisao-poster.jpg" params="mute=1&controls=1&rel=0&playsinline=1" />
+          <a href="https://www.youtube.com/watch?v=xlwso3EmUog" target="_blank" rel="noopener noreferrer" aria-label="Assistir ao vídeo da Carplus no YouTube" className="block relative h-full"><img src="/images/video/carplus-revisao-poster.jpg" alt="Capa do vídeo da Carplus sobre preparação para viagens" loading="lazy" width={480} height={360} className="h-full w-full object-cover" /><span className="absolute bottom-4 left-4 rounded-md bg-black/85 px-4 py-2 text-sm font-bold text-white">Assistir no YouTube</span></a>
         </div>
         <div className="p-6 md:p-8">
           <h3 className="text-2xl md:text-3xl font-bold mb-3">Vídeo da Carplus: preparação para viagens</h3>
           <p className="text-white/80 leading-relaxed mb-3">Assista ao conteúdo da Carplus sobre revisão e preparação do carro para viagens.</p>
-          <p className="text-sm text-white/60 mb-6">O vídeo só carrega quando você dá play. Os controles permitem ativar o som quando quiser.</p>
+          <p className="text-sm text-white/60 mb-6">O vídeo abre no YouTube em uma nova aba. Nenhum player externo é carregado nesta página.</p>
           <a href="https://wa.me/554130827282?text=Ol%C3%A1!%20Vi%20a%20estrutura%20da%20Carplus%20no%20site%20e%20gostaria%20de%20conversar%20sobre%20meu%20carro." target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 font-bold text-sm text-dark hover:bg-[#20bd5a]"><MessageSquare size={18} aria-hidden="true" />Conversar sobre meu carro</a>
           <p className="text-sm text-white/70 mt-4">Atendemos também carros antigos. Informe o modelo do carro e o que precisa. Para pneus, envie também a medida.</p>
         </div>

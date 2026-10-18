@@ -4,8 +4,6 @@ import { Play } from 'lucide-react';
 interface LiteYouTubeProps {
   /** ID do vídeo do YouTube (ex: "TY8qfETXlJQ"). */
   videoId: string;
-  /** Optional local poster avoids third-party requests before play. */
-  poster?: string;
   /** Título acessível do vídeo. */
   title: string;
   /**
@@ -30,7 +28,6 @@ interface LiteYouTubeProps {
  */
 export default function LiteYouTube({
   videoId,
-  poster,
   title,
   params = '',
   className = 'absolute inset-0 w-full h-full',
@@ -42,7 +39,7 @@ export default function LiteYouTube({
   // maxresdefault não existe para todos os vídeos; caímos para hqdefault.
   const thumbSrc = thumbErrored
     ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-    : (poster ?? `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`);
+    : `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
 
   if (activated) {
     const query = `autoplay=1${params ? `&${params}` : ''}`;

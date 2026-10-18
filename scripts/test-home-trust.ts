@@ -34,13 +34,13 @@ async function main() {
     await page.setViewport({width:390,height:844});
     await page.goto(origin,{waitUntil:'networkidle0'}); await page.waitForSelector('#por-que-confiar');
     const oldText=await page.$eval('#inicio',el=>el.textContent); await new Promise(r=>setTimeout(r,4500)); assert.equal(await page.$eval('#inicio',el=>el.textContent),oldText);
-    await page.click('#por-que-confiar button[aria-label^="Reproduzir vídeo"]');
-    const frame=await page.$eval('#por-que-confiar iframe',el=>({src:el.getAttribute('src'),title:el.getAttribute('title')}));
-    assert(frame.src?.includes('mute=1'));assert(frame.src?.includes('controls=1'));assert(frame.src?.includes('xlwso3EmUog'));assert.equal(frame.title,'Vídeo da Carplus: preparação para viagens');
+    const videoLink=await page.$eval('#por-que-confiar a[href*="youtube.com/watch"]',el=>({href:el.getAttribute('href'),target:el.getAttribute('target'),rel:el.getAttribute('rel')}));
+    assert(videoLink.href?.includes('xlwso3EmUog'));assert.equal(videoLink.target,'_blank');assert(videoLink.rel?.includes('noopener'));
+    assert.equal(await page.$$eval('#por-que-confiar iframe',els=>els.length),0);
     await page.evaluate(()=>scrollTo(0,document.body.scrollHeight)); await new Promise(r=>setTimeout(r,1000));
     assert.equal(errors.length,0,errors.join('\n'));
     for(const file of ['src/components/Reviews.tsx','src/components/ReviewsHeader.tsx']) {const text=fs.readFileSync(file,'utf8');assert(!text.includes('getTimeAgo'));assert(!text.includes('TIME_OPTIONS'));assert(!text.includes('4.9 ★'));assert(!text.includes('+250'));}
-    console.log('PASS: 360/390/768/1440px, CTA within 844px fold, stable hero, local visual proof, video click-only/muted/controls, no synthetic dates or page errors. Playback and Carplus identity confirmed separately in authenticated browser.');
+    console.log('PASS: 360/390/768/1440px, CTA within 844px fold, stable hero, local visual proof, explicit YouTube link without black embedded player, no synthetic dates or page errors. YouTube standalone identity verified; embedded playback failed QA, so no iframe is used.');
   } finally {await browser.close(); await new Promise<void>(resolve=>server.close(()=>resolve()));}
 }
 main().catch(e=>{console.error(e);process.exit(1)});
