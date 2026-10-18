@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     pergunta: 'Qual o horário de funcionamento do Centro Automotivo?',
-    resposta: 'Funcionamos de segunda a sexta das 8h às 18h e aos sábados das 8h às 13h. Atendemos com hora marcada para maior comodidade ou por ordem de chegada.'
+    resposta: 'Funcionamos de segunda a sexta das 8h às 18h e aos sábados das 8h às 12h. Atendemos com hora marcada para maior comodidade ou por ordem de chegada.'
   },
   {
     pergunta: 'A Carplus atende todas as marcas de veículos?',
@@ -197,7 +197,7 @@ export default function CentroAutomotivoPortao() {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                 <Clock className="w-6 h-6 text-amber-500 mb-2" />
                 <p className="text-white font-medium">Seg-Sex: 8h-18h</p>
-                <p className="text-neutral-400 text-sm">Sáb: 8h-13h</p>
+                <p className="text-neutral-400 text-sm">Sáb: 8h-12h</p>
               </div>
             </div>
           </motion.div>

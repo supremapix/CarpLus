@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
-import TrustBar from './TrustBar';
+import HomeTrust from './HomeTrust';
 import MainPaths from './MainPaths';
 import HomeServicesCompact from './HomeServicesCompact';
 import TireSearchBar from './TireSearchBar';
@@ -85,8 +85,8 @@ export default function Home() {
         {/* 1. Hero claro com Oficina Mecânica e Loja de Pneus no Portão, Curitiba */}
         <Hero />
 
-        {/* 2. Bloco curto de confiança: Portão, 10x, garantia, nota fiscal e avaliação Google */}
-        <TrustBar variant="light" />
+        {/* 2. Provas visuais reais e contato antes de explorar o catálogo. */}
+        <HomeTrust />
 
         {/* 3. Três caminhos principais: Comprar pneus, Agendar serviço, Como chegar */}
         <MainPaths />
@@ -118,9 +118,9 @@ export default function Home() {
         {/* 8. CTA final de conversão */}
         <FinalCTA
           title="Oficina Mecânica e Loja de Pneus no Portão, Curitiba"
-          subtitle="Atendimento rápido com diagnóstico antes do orçamento, pneus das principais marcas e equipe qualificada para cuidar do seu carro."
+          subtitle="Pneus, alinhamento, freios e suspensão no mesmo endereço. Conte o que seu carro precisa e consulte os próximos passos com a equipe."
           whatsappMessage="Olá! Vi o site da Carplus e gostaria de solicitar um orçamento no Portão."
-          primaryActionText="Chamar no WhatsApp"
+          primaryActionText="Conversar sobre meu carro"
         />
 
         {/* Marcas parceiras discretas */}

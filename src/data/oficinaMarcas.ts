@@ -16,10 +16,11 @@ export const ADDRESS_STREET = 'Av. Presidente Arthur da Silva Bernardes, 1323';
 export const ADDRESS_FULL =
   'Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR';
 export const ADDRESS_POSTAL = '80320-300';
-export const GEO_LAT = -25.477;
-export const GEO_LNG = -49.2845;
+// Pino e avaliações conferidos no Perfil da Empresa Google em 18/10/2026.
+export const GEO_LAT = -25.4636;
+export const GEO_LNG = -49.3003;
 export const RATING_VALUE = 4.9;
-export const REVIEW_COUNT = 250;
+export const REVIEW_COUNT = 262;
 export const INSTAGRAM_URL = 'https://www.instagram.com/carpluscwb/';
 export const MAPS_EMBED =
   'https://www.google.com/maps?q=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Curitiba+PR&output=embed';

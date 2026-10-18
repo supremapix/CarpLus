@@ -263,8 +263,8 @@ export function generateLocalBusinessSchema(): object {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: -25.4654,
-      longitude: -49.2914,
+      latitude: -25.4636,
+      longitude: -49.3003,
     },
     openingHoursSpecification: [
       {
@@ -277,13 +277,13 @@ export function generateLocalBusinessSchema(): object {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Saturday"],
         opens: "08:00",
-        closes: "13:00",
+        closes: "12:00",
       },
     ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "250",
+      reviewCount: "262",
       bestRating: "5",
       worstRating: "1",
     },

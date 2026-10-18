@@ -224,7 +224,7 @@ export default function LojaDePneusPertoDeMim() {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
                 <Clock className="w-6 h-6 text-amber-500 mb-2" />
                 <p className="text-white font-medium">Seg-Sex: 8h-18h</p>
-                <p className="text-neutral-400 text-sm">Sáb: 8h-13h</p>
+                <p className="text-neutral-400 text-sm">Sáb: 8h-12h</p>
               </div>
             </div>
           </motion.div>

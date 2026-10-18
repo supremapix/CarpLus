@@ -56,6 +56,7 @@ async function main() {
     await page.goto(`${origin}/blog`, { waitUntil: 'networkidle0' });
     const menu = await page.$('button[aria-label="Abrir menu"]');
     assert(menu, 'Mobile menu trigger missing'); await menu.click();
+    await page.waitForSelector('#mobile-navigation a[href="/blog"]', { visible: true });
     await page.click('#mobile-navigation a[href="/blog"]');
     await page.waitForFunction(() => document.body.style.overflow !== 'hidden');
     await page.click('a[href="/blog/calibragem-pneus-frios-carga"]');

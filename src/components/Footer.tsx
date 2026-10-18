@@ -12,7 +12,7 @@ export default function Footer() {
          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-primary p-6 shadow-xl shadow-primary/20 sm:p-8 lg:flex-row">
             <div className="text-center lg:text-left">
                <h2 className="text-4xl lg:text-5xl mb-3 leading-tight font-black"><span className="text-white">Precisa de Pneus</span> <br /> <span className="text-black italic">ou Oficina?</span></h2>
-               <p className="text-black/70 text-base font-medium">Entre em contato agora – atendimento rápido e preço justo garantido.</p>
+               <p className="text-black/70 text-base font-medium">Conte o que seu carro precisa e consulte o atendimento com a equipe.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
                <a
@@ -38,11 +38,11 @@ export default function Footer() {
               src="/images/logos/logo-vertical.svg" 
               width={957}
               height={1025}
-              className="h-36 w-auto drop-shadow-xl md:h-44"
+              className="h-auto w-[200px] max-w-full self-center object-contain drop-shadow-xl md:h-44 md:w-auto md:self-start"
               alt="Carplus" 
             />
             <p className="max-w-sm text-base font-medium leading-relaxed text-white/65">
-              Referência em Curitiba para quem busca segurança, tecnologia de ponta e o melhor atendimento para seu veículo.
+              Pneus e serviços de manutenção automotiva no Portão, em Curitiba. Conheça a estrutura e converse com a equipe.
             </p>
          </div>
 
@@ -116,10 +116,10 @@ export default function Footer() {
             
             <div className="grid grid-cols-1 gap-6 max-w-xs mx-auto md:mx-0">
                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">
-                  <Star className="text-accent" size={32} fill="currentColor" />
+                  <MapPin className="text-primary" size={32} />
                   <div>
-                    <p className="font-bold text-lg leading-tight">4.9 ★ no Google</p>
-                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">Mais de 250 avaliações de clientes</p>
+                    <Link to="/quem-somos" className="font-bold text-lg leading-tight underline underline-offset-4">Conheça nossa estrutura</Link>
+                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">Veja fotos da Carplus</p>
                   </div>
                </div>
                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">
