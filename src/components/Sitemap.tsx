@@ -1,3 +1,4 @@
+import { BLOG_POSTS } from '../data/blogPosts';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { NEIGHBORHOODS, CITIES, POPULAR_REGIONS, SERVICES, TIRES } from '../data';
@@ -59,6 +60,8 @@ export default function Sitemap() {
                   <li><Link to="/" className="hover:text-primary transition-colors">Pagina Inicial</Link></li>
                   <li><Link to="/quem-somos" className="hover:text-primary transition-colors">Quem Somos</Link></li>
                   <li><Link to="/contato" className="hover:text-primary transition-colors">Contato</Link></li>
+                  <li><Link to="/blog" className="hover:text-primary">Blog Carplus</Link></li>
+                  {BLOG_POSTS.map(post => <li key={post.slug}><Link to={`/blog/${post.slug}`} className="hover:text-primary">{post.title}</Link></li>)}
                   <li><Link to="/faq" className="hover:text-primary transition-colors">Perguntas Frequentes (FAQ)</Link></li>
                   <li><Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">Politica de Privacidade</Link></li>
                   <li><Link to="/trocas-e-devolucoes" className="hover:text-primary transition-colors">Trocas e Devolucoes</Link></li>

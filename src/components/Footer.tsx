@@ -66,6 +66,7 @@ export default function Footer() {
             </ul>
             <div className="pt-4 mt-4 border-t border-white/10 flex flex-col gap-2">
                <Link to="/manutencao-automotiva-curitiba" className="font-bold text-primary hover:text-white transition-colors text-sm uppercase tracking-tight">Manutenção Automotiva em Curitiba</Link>
+               <Link to="/blog" className="font-bold text-white/70 hover:text-white transition-colors text-xs uppercase tracking-tight">Blog: dicas e cuidados</Link>
                <Link to="/pneus" className="font-bold text-white/70 hover:text-white transition-colors text-xs uppercase tracking-tight">Ver Todos os Pneus</Link>
             </div>
          </div>

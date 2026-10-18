@@ -100,9 +100,9 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "conserto-pneu",
         name: "Conserto de Pneu",
         slug: "conserto-de-pneu",
-        shortDescription: "Reparo de furos simples e laterais a frio e a quente com materiais de alta qualidade. Carros, SUVs, pickups e motos.",
-        fullDescription: "O conserto de pneu na Carplus é rápido, eficiente e seguro. Realizamos o reparo de furo simples e lateral, com técnicas a frio e a quente, utilizando materiais de alta qualidade que garantem vedação perfeita e durabilidade. Atendemos carros, SUVs, pickups, vans e motos. Em caso de danos irreparáveis, orientamos sobre a melhor substituição.",
-        highlights: ["Furo simples e lateral", "Técnica a frio e a quente", "Materiais de alta qualidade", "Carros, SUVs, pickups e motos"],
+        shortDescription: "Inspeção do pneu para avaliar a possibilidade de reparar furos, conforme o dano e as orientações do fabricante.",
+        fullDescription: "A possibilidade de conserto depende da localização e extensão do dano, do estado interno do pneu e das orientações do fabricante. A inspeção deve ocorrer antes de definir o reparo. Bolhas e danos estruturais não devem ser tratados como um furo simples: nesses casos, orientamos sobre a substituição adequada.",
+        highlights: ["Avaliação do dano", "Reparo quando tecnicamente indicado", "Materiais de alta qualidade", "Carros, SUVs, pickups e motos"],
         estimatedTime: "20–40 min",
         icon: "Wrench"
       },

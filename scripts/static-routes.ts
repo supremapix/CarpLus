@@ -15,6 +15,7 @@
 // A ordem de emissão espelha 1:1 a ordem histórica do sitemap, garantindo
 // paridade byte-a-byte das URLs.
 
+import { BLOG_POSTS } from '../src/data/blogPosts';
 import { getIndexableTireSlugs, isMeasureIndexable } from '../src/lib/seoIndexing';
 import {
   ARO_PAGES,
@@ -40,6 +41,7 @@ export type SitemapSegment =
   | 'sitemap-servicos.xml';
 
 export type RouteType =
+  | 'blog'
   | 'home'
   | 'produto'
   | 'medida'
@@ -155,6 +157,7 @@ export function getStaticRoutes(): StaticRoute[] {
     { path: '/quem-somos', priority: '0.7', changefreq: 'monthly', type: 'institucional' },
     { path: '/contato', priority: '0.7', changefreq: 'monthly', type: 'institucional' },
     { path: '/como-chegar', priority: '0.7', changefreq: 'monthly', type: 'institucional' },
+    { path: '/blog', priority: '0.7', changefreq: 'weekly', type: 'hub' },
     { path: '/faq', priority: '0.6', changefreq: 'weekly', type: 'institucional' },
     { path: '/bairros', priority: '0.7', changefreq: 'weekly', type: 'hub' },
   ];
@@ -172,6 +175,11 @@ export function getStaticRoutes(): StaticRoute[] {
       genPriority: sp.path === '/' ? 0 : 5,
       isHome: sp.path === '/',
     });
+  }
+
+  for (const post of BLOG_POSTS) {
+    const path = `/blog/${post.slug}`;
+    routes.push({ path, type: 'blog', id: post.slug, dataSource: 'src/data/blogPosts.ts', indexable: true, expectedCanonical: abs(path), sitemap: 'sitemap-servicos.xml', priority: '0.6', changefreq: 'monthly', genPriority: 6 });
   }
 
   // 4b) Serviços (ordem de iteração do Set, como no sitemap atual).

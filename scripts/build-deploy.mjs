@@ -84,6 +84,9 @@ run('npm run build:spa', { essential: true });
 // 404 real: captura o shell SPA limpo agora, antes de qualquer geração estática.
 emit404();
 
+// Blog must always ship complete HTML, independent of full-site prerendering.
+run('node scripts/run-ts.mjs scripts/generate-static-blog.ts', { essential: true });
+
 // Camada 2 — opt-in, best-effort.
 if (process.env.GENERATE_STATIC === '1') {
   console.log('\n[build-deploy] GENERATE_STATIC=1 → gerando as 1.512 páginas estáticas.');
@@ -94,7 +97,7 @@ if (process.env.GENERATE_STATIC === '1') {
 } else {
   console.log(
     '\n[build-deploy] GENERATE_STATIC != 1 → pulando geração estática. ' +
-      'Publicando apenas o SPA (comportamento seguro). Defina GENERATE_STATIC=1 para gerar as páginas.',
+      'Blog com HTML estático; demais rotas permanecem como SPA. Defina GENERATE_STATIC=1 para gerar todas as páginas.',
   );
 }
 
