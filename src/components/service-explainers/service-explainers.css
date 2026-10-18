@@ -13,6 +13,12 @@
 .se-weight, .se-pad { fill: #f5a623; stroke: #9c5600; stroke-width: 2; }
 .se-caliper { fill: none; stroke: #536b7d; stroke-width: 8; stroke-linejoin: round; }
 .se-label { font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; fill: #334b5d; }
+.se-spring-line { fill: none; stroke: #9c5600; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.se-damper-rod { fill: none; stroke: #698192; stroke-width: 6; }
+.se-filter-medium { fill: #fff0d4; stroke: #9c5600; stroke-width: 2; }
+.se-filter-fold { fill: none; stroke: #c66e00; stroke-width: 1.5; }
+.se-particle { fill: #526879; }
+.se-flow { fill: none; stroke: #9c5600; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .se-caption { padding: 0 14px 14px; }
 .se-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; font-size: 10px; color: #475569; }
 .se-controls > span { max-width: 85px; }
@@ -50,6 +56,11 @@
 .service-explainer[data-active='true'] .se-pad-left { animation-name: se-pad-left; }
 .service-explainer[data-active='true'] .se-pad-right { animation-name: se-pad-right; }
 .service-explainer[data-active='true'] .se-brake-spin { animation-name: se-brake-spin; }
+.service-explainer[data-active='true'] .se-spring { animation-name: se-spring; }
+.service-explainer[data-active='true'] .se-suspension-wheel { animation-name: se-suspension-wheel; }
+.service-explainer[data-active='true'] .se-filter-particles { animation-name: se-filter-particles; }
+.service-explainer[data-active='true'] .se-filter-flow { animation-name: se-filter-flow; }
+.service-explainer[data-active='true'] .se-diagnostic-data { animation-name: se-diagnostic-data; }
 @keyframes se-align-left { 0%, 24% { transform: rotate(-14deg); } 68%, 100% { transform: rotate(0); } }
 @keyframes se-align-right { 0%, 24% { transform: rotate(14deg); } 68%, 100% { transform: rotate(0); } }
 @keyframes se-balance-spin { 0%, 44% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
@@ -57,6 +68,12 @@
 @keyframes se-pad-left { 0%, 15% { transform: translateX(-17px); } 48%, 100% { transform: translateX(0); } }
 @keyframes se-pad-right { 0%, 15% { transform: translateX(17px); } 48%, 100% { transform: translateX(0); } }
 @keyframes se-brake-spin { 0% { transform: rotate(0); } 30% { transform: rotate(240deg); } 60%, 100% { transform: rotate(360deg); } }
+/* Spring length is 85 SVG units: every scale endpoint matches the lower mount's translation. */
+@keyframes se-spring { 0%, 8% { transform: scaleY(1); } 25% { transform: scaleY(.8); } 45% { transform: scaleY(1.1); } 65% { transform: scaleY(.95); } 85%, 100% { transform: scaleY(1); } }
+@keyframes se-suspension-wheel { 0%, 8% { transform: translateY(0); } 25% { transform: translateY(-17px); } 45% { transform: translateY(8.5px); } 65% { transform: translateY(-4.25px); } 85%, 100% { transform: translateY(0); } }
+@keyframes se-filter-particles { 0%, 12% { transform: translateX(-78px); } 68%, 100% { transform: translateX(0); } }
+@keyframes se-filter-flow { 0%, 12% { transform: translateX(-49px); } 86%, 100% { transform: translateX(0); } }
+@keyframes se-diagnostic-data { 0%, 12% { transform: translateX(-52px); } 80%, 100% { transform: translateX(0); } }
 @media (prefers-reduced-motion: reduce) {
   .service-explainer .se-motion { animation: none !important; transform: none !important; }
 }

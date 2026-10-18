@@ -1,5 +1,5 @@
 /** Small educational diagrams, not a diagnosis, specification or repair tutorial. */
-export type ServiceExplainerKind = 'alignment' | 'balance' | 'brakes';
+export type ServiceExplainerKind = 'alignment' | 'balance' | 'brakes' | 'suspension' | 'filter' | 'diagnostics';
 
 export interface ServiceExplainerContent {
   title: string;
@@ -47,13 +47,53 @@ export const SERVICE_EXPLAINERS: Record<ServiceExplainerKind, ServiceExplainerCo
       url: 'https://www.boschaftermarket.com/gb/en/parts/products/braking-systems/',
     },
   },
+  suspension: {
+    title: 'Suspensão: mola e amortecedor',
+    summary: 'A mola permite o movimento da suspensão. O amortecedor controla suas oscilações. A revisão avalia o conjunto, não apenas uma peça.',
+    steps: ['Mola se comprime e se estende', 'Amortecedor controla o movimento', 'Avaliação considera o conjunto'],
+    cardNote: 'Movimento ilustrativo, não um teste de desgaste.',
+    caveat: 'Esquema simplificado de mola e amortecedor, sem representar toda a suspensão ou a direção. O movimento não permite diagnosticar desgaste nem indica peças a substituir.',
+    diagramDescription: 'Uma mola e um amortecedor ligam uma roda ao suporte superior. A mola muda de comprimento enquanto a roda oscila com amplitude decrescente. Os rótulos explicam o papel de cada componente mesmo sem movimento.',
+    source: {
+      name: 'Monroe: função de molas e amortecedores',
+      url: 'https://www.monroe.com/technical-resources/shocks-101/shocks-vs-struts.html',
+    },
+  },
+  filter: {
+    title: 'Filtro de óleo: retenção de partículas',
+    summary: 'O filtro de óleo retém partículas presentes no lubrificante. O filtro adequado e o intervalo de troca dependem das recomendações do fabricante do veículo.',
+    steps: ['Óleo passa pelo meio filtrante', 'Partículas ficam retidas', 'Troca conforme o fabricante'],
+    cardNote: 'Exemplo de filtro de óleo; outros filtros são diferentes.',
+    caveat: 'Fluxo e partículas ilustrativos, não um corte de um modelo específico nem um procedimento de troca. Filtros de ar, combustível e cabine têm outras aplicações; cada item segue a especificação e o plano de manutenção do veículo.',
+    diagramDescription: 'Setas mostram o óleo atravessando um meio filtrante. Partículas se deslocam até o filtro e ficam retidas antes da saída. A legenda identifica o exemplo como filtro de óleo, com fluxo simplificado.',
+    source: {
+      name: 'MANN-FILTER: filtros de óleo',
+      url: 'https://www.mann-filter.com/us-en/parts/oil-filter.html',
+    },
+  },
+  diagnostics: {
+    title: 'Scanner: dados para a avaliação',
+    summary: 'O scanner lê dados e códigos dos módulos compatíveis do veículo. Essas informações orientam a avaliação profissional, mas não definem sozinhas a peça a trocar.',
+    steps: ['Comunicar com o módulo compatível', 'Ler dados e códigos disponíveis', 'Interpretar e realizar os testes necessários'],
+    cardNote: 'Leitura de códigos não substitui o diagnóstico.',
+    caveat: 'Acesso a módulos e funções varia conforme o veículo e o equipamento. O desenho não indica uma falha real; a leitura de um código ou a remoção de um alerta não comprova que o problema foi resolvido.',
+    diagramDescription: 'Um módulo eletrônico está ligado a um scanner. Marcadores percorrem a ligação para representar a comunicação. A tela identifica dados e códigos, sem apontar uma peça defeituosa ou mostrar uma conclusão automática.',
+    source: {
+      name: 'Bosch: leitura de códigos e dados (manual em PDF)',
+      url: 'https://www.boschdiagnostics.com/sites/default/files/2025-01/OBD%201200%20User%20Manual.pdf',
+    },
+  },
 };
 
-/** Deliberately bounded pilot. Unknown services render no generic/misleading diagram. */
+/** Explicit service mapping. Unknown services render no generic/misleading diagram. */
 export const SERVICE_EXPLAINER_ROUTES: Record<string, readonly ServiceExplainerKind[]> = {
   'alinhamento-3d': ['alignment'],
   'alinhamento-e-balanceamento': ['alignment', 'balance'],
   'manutencao-de-freios': ['brakes'],
+  'revisao-de-suspensao': ['suspension'],
+  'troca-de-oleo': ['filter'],
+  'troca-de-filtros': ['filter'],
+  'scanner-automotivo': ['diagnostics'],
 };
 
 export function getServiceExplainers(slug: string): readonly ServiceExplainerKind[] {
