@@ -1,0 +1,62 @@
+/* Scoped, dependency-free SVG explainers. The base is the useful static end state. */
+.service-explainer { --se-ink: #263646; --se-accent: #c66e00; margin: 0; min-width: 0; width: 100%; color: var(--se-ink); background: #f8fafb; border: 1px solid #dce3e8; border-radius: 12px; overflow: hidden; }
+.se-heading { padding: 14px 14px 0; font-size: 12px; line-height: 1.5; font-weight: 700; }
+.se-canvas { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: radial-gradient(ellipse at center, #fff 15%, #f0f4f6 100%); }
+.se-diagram { display: block; width: 100%; height: 100%; color: #788b9b; }
+.se-guide { fill: none; stroke: #b1bdc8; stroke-width: 1.5; stroke-dasharray: 4 5; }
+.se-line { fill: none; stroke: #526879; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.se-body { fill: #e0e8ee; stroke: #60788b; stroke-width: 2; }
+.se-glass { fill: #fff; stroke: #a0b1bf; stroke-width: 1.5; }
+.se-tire { fill: #273642; stroke: #15202b; stroke-width: 2; }
+.se-tread { fill: none; stroke: #c6d3dc; stroke-width: 2; }
+.se-rim { fill: #e4ebef; stroke: #698192; stroke-width: 2; }
+.se-weight, .se-pad { fill: #f5a623; stroke: #9c5600; stroke-width: 2; }
+.se-caliper { fill: none; stroke: #536b7d; stroke-width: 8; stroke-linejoin: round; }
+.se-label { font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; fill: #334b5d; }
+.se-caption { padding: 0 14px 14px; }
+.se-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; font-size: 10px; color: #475569; }
+.se-controls > span { max-width: 85px; }
+.se-control { display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; min-height: 44px; min-width: 126px; padding: 8px; border: 1px solid #c4d0d9; border-radius: 7px; background: #fff; color: #263646; font-family: inherit; font-size: 11px; font-weight: 600; cursor: pointer; }
+.se-control:hover:not(:disabled) { background: #fff2d9; border-color: #b56c00; }
+.se-control:focus-visible { outline: 3px solid #9b5200; outline-offset: 2px; }
+.se-control:disabled { cursor: default; color: #526171; background: #f1f5f9; }
+.se-summary { margin: 8px 0 0; font-size: 12px; line-height: 1.65; }
+.se-card-note { margin: 8px 0 0; font-size: 10px; line-height: 1.6; color: #526171; }
+.se-steps { display: grid; gap: 12px; padding: 0; margin: 20px 0; list-style: none; }
+.se-steps li { display: flex; align-items: center; gap: 10px; font-size: 14px; line-height: 1.5; }
+.se-steps li > span { display: inline-grid; place-items: center; width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; font-size: 12px; font-weight: 700; background: #fff0d4; color: #754000; }
+.se-caveat { margin: 0 0 12px; font-size: 12px; line-height: 1.7; color: #526171; }
+.se-source { display: inline-block; font-size: 12px; line-height: 1.6; color: #34556d; text-decoration: underline; text-underline-offset: 3px; }
+.service-explainer--detail { max-width: 680px; margin: 0 auto; }
+.service-explainer--detail .se-heading { font-size: 17px; padding: 20px 20px 0; }
+.service-explainer--detail .se-canvas { max-width: 390px; margin: 0 auto; }
+.service-explainer--detail .se-caption { padding: 0 20px 22px; }
+.service-explainer--detail .se-summary { font-size: 15px; }
+.se-section { padding: 56px 16px; border-block: 1px solid #e4e9ed; background: #fff; }
+.se-section-inner { max-width: 1120px; margin: 0 auto; }
+.se-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #8f5000; text-align: center; }
+.se-section h2 { margin: 0 auto 16px; max-width: 700px; font-size: clamp(24px, 4vw, 36px); text-align: center; color: #182530; }
+.se-intro { max-width: 680px; margin: 0 auto 28px; text-align: center; color: #526171; font-size: 15px; line-height: 1.7; }
+.se-detail-grid { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 768px) { .se-detail-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* All motion is finite, transform-only, and paused offscreen/in hidden tabs. */
+.service-explainer[data-active='true'] .se-motion { animation-duration: var(--se-duration); animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-fill-mode: both; animation-play-state: paused; }
+.service-explainer[data-running='true'] .se-motion { animation-play-state: running; }
+.service-explainer[data-active='true'] .se-align-left { animation-name: se-align-left; }
+.service-explainer[data-active='true'] .se-align-right { animation-name: se-align-right; }
+.service-explainer[data-active='true'] .se-balance-spin { animation-name: se-balance-spin; }
+.service-explainer[data-active='true'] .se-balance-weight { animation-name: se-balance-weight; }
+.service-explainer[data-active='true'] .se-pad-left { animation-name: se-pad-left; }
+.service-explainer[data-active='true'] .se-pad-right { animation-name: se-pad-right; }
+.service-explainer[data-active='true'] .se-brake-spin { animation-name: se-brake-spin; }
+@keyframes se-align-left { 0%, 24% { transform: rotate(-14deg); } 68%, 100% { transform: rotate(0); } }
+@keyframes se-align-right { 0%, 24% { transform: rotate(14deg); } 68%, 100% { transform: rotate(0); } }
+@keyframes se-balance-spin { 0%, 44% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+@keyframes se-balance-weight { 0%, 18% { transform: translateY(20px); } 38%, 100% { transform: translateY(0); } }
+@keyframes se-pad-left { 0%, 15% { transform: translateX(-17px); } 48%, 100% { transform: translateX(0); } }
+@keyframes se-pad-right { 0%, 15% { transform: translateX(17px); } 48%, 100% { transform: translateX(0); } }
+@keyframes se-brake-spin { 0% { transform: rotate(0); } 30% { transform: rotate(240deg); } 60%, 100% { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .service-explainer .se-motion { animation: none !important; transform: none !important; }
+}

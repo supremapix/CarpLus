@@ -27,7 +27,9 @@
     "build:static": "npm run sitemap && npm run redirects && npm run build:spa && npm run generate:static:all && npm run validate:static:all",
     "build:deploy": "node scripts/build-deploy.mjs",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test:service-explainers": "node scripts/run-ts.mjs scripts/test-service-explainers.tsx",
+    "test:service-explainers:browser": "node scripts/run-ts.mjs scripts/test-service-explainers-browser.ts"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",
