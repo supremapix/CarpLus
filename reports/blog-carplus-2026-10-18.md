@@ -43,3 +43,8 @@ O Chromium do sistema não iniciou neste sandbox (socket/crashpad). O teste foi 
 Em 18/10/2026, `/servico/correia-dentada` respondeu HTTP 200 com canonical da home no HTML inicial (SPA); a versão `/servico/correia-dentada/` respondeu 404. Isso não comprova canonical final após JavaScript nem reproduz o estado histórico reportado pelo Search Console. As cinco páginas novas não têm esse problema no HTML gerado. Não foi feita migração global das 1.500+ rotas nesta revisão.
 
 Produção só deve ser atualizada depois de confirmar o projeto Vercel vinculado ao domínio e validar o preview do commit correspondente. Este relatório não declara que ocorreu publicação.
+
+## Investigação do aviso de validação da home
+O preview inicial concluiu 1531 capturas sem falhas, porém o validador global sinalizou a home por `title == shell`. Reproduzido localmente com a home original: HTML de 407110 bytes, 17692 caracteres de texto, H1, main, 2 JSON-LD, canonical próprio e marca de prerender. O validador anterior rejeita esse HTML completo unicamente porque o título da home é intencionalmente igual ao título do index.html.
+
+A correção não muda título/conteúdo nem ignora o erro: mantém o guard de título-shell fora de `/` e exige na home aplicação renderizada, H1 no main, no mínimo 500 caracteres de texto principal e três seções, além de todos os checks anteriores de SEO/prerender. Função extraída para testes. Doze regressões passaram, incluindo shell bruto, marcador falso, fallback de loading, root ausente/vazio, pouco texto, seções ausentes, canonical incorreto, título e marcador ausentes. Build/lint local aprovados. Geração completa local iniciada para confirmar todas as 1531 rotas; resultado completo e novo preview devem ser verificados antes de merge.
