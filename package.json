@@ -32,7 +32,12 @@
     "test:service-explainers:browser": "node scripts/run-ts.mjs scripts/test-service-explainers-browser.ts",
     "generate:static:comparison-guide": "node scripts/run-ts.mjs scripts/generate-static-comparison-guide.ts",
     "test:comparison-guide": "node scripts/run-ts.mjs scripts/test-comparison-guide.tsx",
-    "test:comparison-guide:browser": "node scripts/run-ts.mjs scripts/test-comparison-guide-browser.ts"
+    "test:comparison-guide:browser": "node scripts/run-ts.mjs scripts/test-comparison-guide-browser.ts",
+    "generate:static:existing-pages": "node scripts/run-ts.mjs scripts/generate-static-existing-pages.ts",
+    "validate:static:existing-pages": "node scripts/run-ts.mjs scripts/validate-static-existing-pages.ts",
+    "test:existing-routes": "node scripts/run-ts.mjs scripts/test-existing-routes.ts",
+    "test:existing-routes:browser": "node scripts/run-ts.mjs scripts/test-existing-routes-browser.ts",
+    "test:global-schema": "node scripts/run-ts.mjs scripts/test-global-schema.ts"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",

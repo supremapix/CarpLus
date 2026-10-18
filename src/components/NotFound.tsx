@@ -26,7 +26,7 @@ const RECOMMENDED_LINKS = [
   { label: 'Todos os Serviços', path: '/servicos' },
   { label: 'Manutenção Automotiva no Portão', path: '/manutencao-automotiva-curitiba' },
   { label: 'Pneus em Curitiba', path: '/pneus-curitiba' },
-  { label: 'Catálogo de Pneus', path: '/catalogo' },
+  { label: 'Catálogo de Pneus', path: '/pneus' },
   { label: 'Como Chegar (Rotas)', path: '/como-chegar' },
 ];
 

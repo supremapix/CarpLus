@@ -177,10 +177,20 @@ function buildServiceRedirects(): RedirectRule[] {
   ];
 }
 
-/** Todos os redirects manuais gerenciados (hosts, serviços, bairros, medida e marcas). */
+/** Alias já aceito pelo React: entrada direta deve resolver sem carregar o app. */
+function buildCatalogRedirects(): RedirectRule[] {
+  return ['/catalogo', '/catalogo/'].map(source => ({
+    source,
+    destination: '/pneus',
+    permanent: true,
+  }));
+}
+
+/** Todos os redirects manuais gerenciados (hosts, catálogo, serviços, bairros, medida e marcas). */
 export function getManualRedirects(): RedirectRule[] {
   return [
     ...buildHostRedirects(),
+    ...buildCatalogRedirects(),
     ...buildServiceRedirects(),
     ...buildNeighborhoodRedirects(),
     ...buildMeasureRedirect(),

@@ -35,6 +35,16 @@
       "permanent": true
     },
     {
+      "source": "/catalogo",
+      "destination": "/pneus",
+      "permanent": true
+    },
+    {
+      "source": "/catalogo/",
+      "destination": "/pneus",
+      "permanent": true
+    },
+    {
       "source": "/servico/diagnostico-eletronico",
       "destination": "/servico/scanner-automotivo",
       "permanent": true
