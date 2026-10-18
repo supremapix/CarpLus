@@ -11,6 +11,7 @@ import { motion } from 'motion/react';
 import { getIcon } from './iconMap';
 import LiteYouTube from './LiteYouTube';
 import { useSEO } from '../hooks/useSEO';
+import { ServiceExplainerSection } from './service-explainers/ServiceExplainer';
 
 // Flatten all services from new categories
 const ALL_NEW_SERVICES = SERVICE_CATEGORIES.flatMap(cat => 
@@ -56,15 +57,8 @@ const SEO_CONTENT: Record<string, {
     keywords: ['loja de pneus curitiba', 'pneus portão curitiba', 'pneu pirelli curitiba', 'pneu michelin curitiba', 'comprar pneus curitiba', 'pneus baratos curitiba']
   },
   'alinhamento-3d': {
-    intro: 'O alinhamento 3D computadorizado é essencial para a segurança e economia do seu veículo. Na Carplus Centro Automotivo, utilizamos equipamento de alinhamento Hunter 3D de última geração, o mesmo utilizado pelas concessionárias premium. O alinhamento corrige a geometria das rodas, evitando desgaste irregular dos pneus e melhorando a estabilidade do veículo.',
-    detalhes: [
-      'Equipamento Hunter 3D com precisão de 0,01 grau - padrão internacional',
-      'Alinhamento das 4 rodas com ajuste de câmber, cáster e convergência',
-      'Laudo técnico impresso com valores antes e depois do serviço',
-      'Tempo médio de 30 a 40 minutos para alinhamento completo',
-      'Verificação gratuita da suspensão antes do alinhamento',
-      'Compatível com todos os veículos: nacionais, importados, SUVs e picapes'
-    ],
+    intro: ALL_NEW_SERVICES.find(service => service.slug === 'alinhamento-3d')!.fullDescription,
+    detalhes: ALL_NEW_SERVICES.find(service => service.slug === 'alinhamento-3d')!.highlights,
     perguntas: [
       { pergunta: 'Como saber se meu carro precisa de alinhamento?', resposta: 'Os sinais mais comuns são: volante torto com o carro em linha reta, carro puxando para um lado, desgaste irregular dos pneus (mais de um lado que do outro) e vibração no volante. Recomendamos verificar o alinhamento a cada 10.000 km ou 6 meses.' },
       { pergunta: 'Qual a diferença entre alinhamento 3D e convencional?', resposta: 'O alinhamento 3D usa câmeras de alta precisão que medem todos os ângulos simultaneamente em três dimensões. Isso garante resultado muito mais preciso que o sistema convencional, especialmente em veículos modernos com suspensão multilink.' },
@@ -73,15 +67,8 @@ const SEO_CONTENT: Record<string, {
     keywords: ['alinhamento 3d curitiba', 'alinhamento computadorizado curitiba', 'alinhamento hunter curitiba', 'alinhamento portão', 'geometria curitiba']
   },
   'alinhamento-e-balanceamento': {
-    intro: 'O serviço mecânico de alinhamento 3D e balanceamento computadorizado na Carplus foi desenvolvido para motoristas que precisam de ajuste de geometria e balanceamento das rodas do seu veículo em Curitiba. Se o volante está torto, o carro puxa para a direita ou esquerda em linha reta, ou se há trepidação no volante acima de 60 a 80 km/h, nossa equipe realiza o diagnóstico da suspensão, corrige os ângulos de cáster, câmber e convergência com tecnologia 3D e equilibra as rodas com precisão digital. (Se você deseja comprar pneus novos com montagem inclusa, confira nosso pacote de pneus com alinhamento e balanceamento).',
-    detalhes: [
-      'Alinhamento computadorizado 3D de alta precisão (ajuste de convergência, cáster e câmber)',
-      'Balanceamento dinâmico das 4 rodas para eliminar trepidações e vibrações no volante',
-      'Diagnóstico prévio gratuito da suspensão, buchas, pivôs e terminais de direção',
-      'Serviço rápido e com agendamento prévio: média de 40 a 50 minutos de execução',
-      'Atendimento no bairro Portão (Av. Pres. Arthur Bernardes, 1323) com estacionamento',
-      'Emissão de laudo com os valores geométricos antes e após o ajuste'
-    ],
+    intro: ALL_NEW_SERVICES.find(service => service.slug === 'alinhamento-e-balanceamento')!.fullDescription,
+    detalhes: ALL_NEW_SERVICES.find(service => service.slug === 'alinhamento-e-balanceamento')!.highlights,
     perguntas: [
       { pergunta: 'Como saber se meu carro precisa de alinhamento ou de balanceamento?', resposta: 'O balanceamento corrige a distribuição de peso do conjunto roda/pneu — o sintoma clássico é o volante trepidando ou vibrando em velocidades médias e altas (60 a 80 km/h). Já o alinhamento corrige a geometria das rodas em relação ao veículo — o sintoma é o carro puxando para um dos lados ou volante torto em linha reta. Na Carplus realizamos os dois serviços em conjunto para máxima estabilidade e durabilidade dos pneus.' },
       { pergunta: 'Este serviço é para quem já tem os pneus no carro?', resposta: 'Sim! Esta página é dedicada exclusivamente ao serviço de oficina mecânica de alinhamento 3D e balanceamento para veículos em circulação. Se você pretende comprar pneus novos agora, confira nosso pacote de compra com instalação inclusa na página de Pneus com Alinhamento e Balanceamento.' },
@@ -129,15 +116,8 @@ const SEO_CONTENT: Record<string, {
     keywords: ['scanner automotivo curitiba', 'scanner para carros curitiba', 'passar scanner no carro curitiba', 'diagnóstico eletrônico automotivo', 'luz de injeção acesa curitiba', 'falhas no motor curitiba']
   },
   'manutencao-de-freios': {
-    intro: 'A manutenção de freios na Carplus Centro Automotivo, no bairro Portão em Curitiba, é essencial para a sua segurança. Se você notou barulho ao frear, pedal baixo, chiado metálico ou trepidação no volante durante a frenagem, realizamos a avaliação criteriosa de discos, pastilhas e fluido de freio, com substituição de peças desgastadas e sangria completa do fluido DOT4.',
-    detalhes: [
-      'Revisão completa do sistema de freios: pastilhas, discos, lonas e tambores',
-      'Diagnóstico de barulho ao frear, chiados e pedal baixo ou esponjoso',
-      'Troca de fluido de freio DOT 3 / DOT 4 com sangria técnica do sistema',
-      'Avaliação criteriosa de desgaste e empenamento de discos e pastilhas',
-      'Verificação do sistema antitravamento ABS e sensores de roda',
-      'Peças e serviços com garantia e nota fiscal conforme o caso'
-    ],
+    intro: ALL_NEW_SERVICES.find(service => service.slug === 'manutencao-de-freios')!.fullDescription,
+    detalhes: ALL_NEW_SERVICES.find(service => service.slug === 'manutencao-de-freios')!.highlights,
     perguntas: [
       { pergunta: 'Quando devo fazer a revisão de freios?', resposta: 'Recomendamos a revisão a cada 10.000 km ou imediatamente se notar barulho ao frear, pedal baixo ou perda de eficiência na frenagem.' },
       { pergunta: 'Como saber se a pastilha de freio está gasta?', resposta: 'Chiados agudos metálicos, pedal mais baixo e aumento da distância de frenagem indicam pastilhas no limite de segurança.' },
@@ -624,6 +604,8 @@ export default function ServiceDetail() {
 
         {/* Barra de Confiança padronizada */}
         <TrustBar variant="light" />
+
+        <ServiceExplainerSection key={service.slug} slug={service.slug} />
 
         {/* Content */}
         <section className="py-24 max-w-7xl mx-auto px-4">

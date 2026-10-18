@@ -11,6 +11,7 @@ import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category, type Service } from '
 import { useSEO } from '../hooks/useSEO';
 import { getIcon } from './iconMap';
 import { isPrerenderEager } from '../lib/prerender';
+import { ServiceCardExplainer } from './service-explainers/ServiceExplainer';
 
 // Componente de contagem animada
 function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: string }) {
@@ -60,6 +61,7 @@ function ServiceCard({ service, categoryId }: { service: Service; categoryId: st
       </div>
       
       <p className="text-sm text-[#ccc] leading-relaxed">{service.shortDescription}</p>
+      <ServiceCardExplainer slug={service.slug} />
       
       <ul className="space-y-1.5 flex-grow">
         {service.highlights.slice(0, 4).map((h, i) => (

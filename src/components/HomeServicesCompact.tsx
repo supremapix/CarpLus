@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import SectionTitle from './SectionTitle';
+import { ServiceCardExplainer } from './service-explainers/ServiceExplainer';
 
 const BAIRROS_PROXIMOS = [
   'Vila Izabel',
@@ -32,27 +33,27 @@ const CORE_SERVICES = [
     title: 'Alinhamento 3D',
     slug: 'alinhamento-3d',
     icon: Crosshair,
-    description: 'Equipamento 3D de alta precisão. Corrige volante torto e evita desgaste irregular dos pneus.',
-    highlight: 'Hunter 3D de alta precisão',
-    time: '30–40 min',
+    description: 'Verificação dos ângulos das rodas. A necessidade de ajustes depende da medição e das especificações do fabricante.',
+    highlight: 'Ângulos conforme o fabricante',
+    time: null,
   },
   {
     id: 'balanceamento',
     title: 'Balanceamento de Rodas',
     slug: 'alinhamento-e-balanceamento',
     icon: Disc3,
-    description: 'Elimina trepidações e vibrações no volante em médias e altas velocidades, protegendo a suspensão.',
-    highlight: 'Digital dinâmico 4 rodas',
-    time: '20–30 min',
+    description: 'Avaliação do equilíbrio do conjunto roda e pneu. Vibrações precisam de diagnóstico antes de definir o serviço.',
+    highlight: 'Contrapesos conforme medição',
+    time: null,
   },
   {
     id: 'freios',
     title: 'Manutenção de Freios',
     slug: 'manutencao-de-freios',
     icon: ShieldAlert,
-    description: 'Troca de pastilhas, discos, fluido DOT4 e revisão completa com diagnóstico antes do orçamento.',
-    highlight: 'Peças com nota fiscal e garantia',
-    time: '45–90 min',
+    description: 'Avaliação de pastilhas, discos, fluido e demais componentes para definir a manutenção indicada para o veículo.',
+    highlight: 'Verificação do sistema de freios',
+    time: null,
   },
   {
     id: 'suspensao',
@@ -139,7 +140,7 @@ export default function HomeServicesCompact() {
                       <Icon size={20} />
                     </div>
                     <span className="text-[11px] font-bold text-gray-500 bg-white border border-gray-200 px-2 py-0.5 rounded-sm">
-                      ⏱ {serv.time}
+                      {serv.time ? `⏱ ${serv.time}` : 'Avaliação do veículo'}
                     </span>
                   </div>
 
@@ -152,6 +153,8 @@ export default function HomeServicesCompact() {
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
                     {serv.description}
                   </p>
+
+                  <ServiceCardExplainer slug={serv.slug} className="mb-4" />
 
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 mb-5 bg-white/70 p-2 rounded-md border border-gray-200/60">
                     <CheckCircle2 size={14} className="text-green-600 shrink-0" />

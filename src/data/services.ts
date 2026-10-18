@@ -60,20 +60,20 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "alinhamento-balanceamento",
         name: "Alinhamento e Balanceamento",
         slug: "alinhamento-e-balanceamento",
-        shortDescription: "Alinhamento e balanceamento computadorizado com equipamento de alta precisão. Evita desgaste irregular e melhora estabilidade.",
-        fullDescription: "O alinhamento e balanceamento na Carplus é realizado com equipamento computadorizado de alta precisão. A regulagem correta dos ângulos das rodas evita desgaste irregular dos pneus, melhora a estabilidade em curvas, proporciona mais conforto e reduz o consumo de combustível. O balanceamento computadorizado elimina vibrações no volante e prolonga a vida útil dos pneus. Atendemos todos os modelos de veículos sem necessidade de agendamento.",
-        highlights: ["Equipamento computadorizado", "Elimina vibrações no volante", "Resultado em 30–40 minutos", "Todos os modelos de veículos", "Sem necessidade de agendamento"],
-        estimatedTime: "30–40 min",
+        shortDescription: "Dois serviços diferentes: o alinhamento avalia ângulos das rodas; o balanceamento, o equilíbrio de massa do conjunto roda e pneu.",
+        fullDescription: "Alinhamento e balanceamento são avaliações diferentes. O alinhamento verifica os ângulos das rodas em relação às especificações do veículo. O balanceamento mede diferenças de massa no conjunto roda e pneu para definir a compensação com contrapesos. Vibrações podem ter outras causas, por isso a indicação do serviço depende do diagnóstico.",
+        highlights: ["Medição da geometria das rodas", "Avaliação do conjunto roda e pneu", "Ajustes conforme o fabricante", "Vibrações exigem diagnóstico"],
+        estimatedTime: null,
         icon: "Target"
       },
       {
         id: "alinhamento-3d",
         name: "Alinhamento 3D Computadorizado",
         slug: "alinhamento-3d",
-        shortDescription: "Aferição tridimensional com câmeras de precisão milimétrica para ajuste fino de cáster, câmber e convergência.",
-        fullDescription: "O alinhamento 3D computadorizado na Carplus utiliza câmeras tridimensionais de última geração para leitura simultânea de todos os ângulos das 4 rodas. Permite ajuste milimétrico de convergência, câmber e cáster conforme os parâmetros exatos do fabricante do seu veículo. Fornecemos laudo impresso antes e depois do serviço.",
-        highlights: ["Tecnologia 3D tridimensional", "Precisão de 0,01 grau", "Ajuste de convergência, câmber e cáster", "Laudo impresso antes e depois", "Todos os modelos nacionais e importados"],
-        estimatedTime: "30–45 min",
+        shortDescription: "Verificação dos ângulos das rodas. A necessidade de ajustes depende da medição e das especificações do fabricante.",
+        fullDescription: "O alinhamento verifica a geometria das rodas e compara as medições com as especificações do fabricante. Os ajustes possíveis dependem do projeto e das condições do veículo. Volante fora de centro, alterações na trajetória ou desgaste irregular precisam de avaliação; esses sinais não determinam sozinhos a causa do problema.",
+        highlights: ["Ângulos conforme o fabricante", "Avaliação da geometria das rodas", "Ajustes quando tecnicamente indicados", "Consulta conforme o veículo"],
+        estimatedTime: null,
         icon: "Layers"
       },
       {
@@ -176,10 +176,10 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "manutencao-freios",
         name: "Manutenção Completa de Freios",
         slug: "manutencao-de-freios",
-        shortDescription: "Inspeção, reparo e substituição de pastilhas, discos, lonas, cilindros e pinças. Diagnóstico completo antes do orçamento.",
-        fullDescription: "Os freios são o principal sistema de segurança do seu veículo. Na Carplus, realizamos a inspeção completa do sistema de freios, identificando e corrigindo problemas em pastilhas, discos, lonas, cilindros, pinças e mangueiras. Todo serviço inclui diagnóstico prévio detalhado e verificação do fluido. Trabalhamos com peças de alta qualidade para todas as marcas e modelos.",
-        highlights: ["Pastilhas, discos e lonas", "Cilindros, pinças e mangueiras", "Diagnóstico antes do orçamento", "Peças de qualidade com NF", "Garantia no serviço"],
-        estimatedTime: "1–3 horas",
+        shortDescription: "Avaliação de pastilhas, discos, fluido e demais componentes para definir a manutenção indicada para o veículo.",
+        fullDescription: "A avaliação dos freios considera as condições de pastilhas, discos, fluido e demais componentes do sistema. A necessidade de reparo ou substituição depende do diagnóstico e das especificações do fabricante. A ilustração do freio a disco explica um princípio de funcionamento e não representa todos os tipos de freio ou um procedimento de manutenção.",
+        highlights: ["Avaliação de discos e pastilhas", "Verificação de fluido e componentes", "Manutenção conforme o diagnóstico", "Especificações do fabricante"],
+        estimatedTime: null,
         icon: "ShieldAlert"
       },
       {
