@@ -36,7 +36,8 @@
     "generate:static:existing-pages": "node scripts/run-ts.mjs scripts/generate-static-existing-pages.ts",
     "validate:static:existing-pages": "node scripts/run-ts.mjs scripts/validate-static-existing-pages.ts",
     "test:existing-routes": "node scripts/run-ts.mjs scripts/test-existing-routes.ts",
-    "test:existing-routes:browser": "node scripts/run-ts.mjs scripts/test-existing-routes-browser.ts"
+    "test:existing-routes:browser": "node scripts/run-ts.mjs scripts/test-existing-routes-browser.ts",
+    "test:global-schema": "node scripts/run-ts.mjs scripts/test-global-schema.ts"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",
