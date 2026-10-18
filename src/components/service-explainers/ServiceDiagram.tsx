@@ -50,10 +50,82 @@ function BrakesDiagram() {
   </>;
 }
 
+function SuspensionDiagram() {
+  return <>
+    <rect x="76" y="39" width="108" height="16" rx="5" className="se-body" />
+    <text x="130" y="26" textAnchor="middle" className="se-label">Suporte do veículo</text>
+    {/* Spring scales from its fixed upper mount; the lower mount moves by the same amount. */}
+    <g transform="translate(99 55)"><g className="se-spring se-motion">
+      <path d="M0 0V8L-13 17L13 29L-13 41L13 53L-13 65L0 77V85" className="se-spring-line" />
+    </g></g>
+    <path d="M153 55V123" className="se-damper-rod" />
+    <g className="se-suspension-wheel se-motion">
+      <rect x="143" y="96" width="20" height="44" rx="4" className="se-pad" />
+      <path d="M87 140H166M126 140V156" className="se-line" />
+      <circle cx="126" cy="176" r="25" className="se-tire" /><circle cx="126" cy="176" r="13" className="se-rim" />
+    </g>
+    <path d="M46 92H79M174 106H192" className="se-line" />
+    <text x="42" y="86" textAnchor="middle" className="se-label">Mola</text>
+    <text x="196" y="101" className="se-label"><tspan x="196">Amortecedor</tspan><tspan x="196" dy="18">controla</tspan><tspan x="196" dy="18">oscilações</tspan></text>
+    <text x="160" y="225" textAnchor="middle" className="se-label">Suspensão · princípio simplificado</text>
+  </>;
+}
+
+function FilterDiagram() {
+  return <>
+    <text x="160" y="34" textAnchor="middle" className="se-label">Exemplo: filtro de óleo</text>
+    <rect x="118" y="62" width="80" height="117" rx="10" className="se-body" />
+    <rect x="145" y="72" width="28" height="97" rx="3" className="se-filter-medium" />
+    <path d="M150 78V163M156 78V163M162 78V163M168 78V163" className="se-filter-fold" />
+    <path d="M30 120H111M104 114L111 120L104 126M201 120H287M280 114L287 120L280 126" className="se-line" />
+    {/* Particles stop before the medium; none crosses to the outlet side. */}
+    <g className="se-filter-particles se-motion"><circle cx="137" cy="100" r="4" className="se-particle" /><circle cx="136" cy="120" r="3" className="se-particle" /><circle cx="137" cy="141" r="4" className="se-particle" /></g>
+    <g className="se-filter-flow se-motion"><path d="M256 112L265 120L256 128" className="se-flow" /></g>
+    <text x="61" y="151" textAnchor="middle" className="se-label">Entrada</text>
+    <text x="252" y="151" textAnchor="middle" className="se-label">Saída</text>
+    <path d="M139 164L111 192H65" className="se-line" />
+    <text x="32" y="207" className="se-label">Partículas retidas</text>
+    <text x="222" y="194" textAnchor="middle" className="se-label"><tspan x="222">Meio filtrante</tspan></text>
+    <text x="160" y="231" textAnchor="middle" className="se-label">Fluxo simplificado · não é montagem</text>
+  </>;
+}
+
+function DiagnosticsDiagram() {
+  return <>
+    <text x="68" y="52" textAnchor="middle" className="se-label">Módulo</text>
+    <rect x="31" y="72" width="74" height="78" rx="8" className="se-body" />
+    <rect x="52" y="93" width="31" height="35" rx="3" className="se-rim" />
+    <path d="M57 86V93M67 86V93M77 86V93M57 128V136M67 128V136M77 128V136M45 100H52M45 111H52M45 122H52M83 100H91M83 111H91M83 122H91" className="se-line" />
+    <path d="M105 112H204" className="se-line" />
+    <g className="se-diagnostic-data se-motion"><rect x="180" y="107" width="9" height="10" rx="2" className="se-weight" /><rect x="165" y="109" width="5" height="6" rx="1" className="se-weight" /></g>
+    <text x="249" y="52" textAnchor="middle" className="se-label">Scanner</text>
+    <rect x="204" y="67" width="89" height="100" rx="10" className="se-tire" />
+    <rect x="213" y="78" width="71" height="64" rx="3" className="se-glass" />
+    <text x="248" y="97" textAnchor="middle" className="se-label">Dados</text>
+    <path d="M222 108H231L235 102L240 114L245 108H274" className="se-line" />
+    <text x="248" y="132" textAnchor="middle" className="se-label">Códigos</text>
+    <circle cx="248" cy="154" r="4" className="se-weight" />
+    <text x="155" y="145" textAnchor="middle" className="se-label">Leitura</text>
+    <path d="M68 160V184H249V175" className="se-guide" />
+    <text x="160" y="208" textAnchor="middle" className="se-label">Informações para avaliação profissional</text>
+    <text x="160" y="229" textAnchor="middle" className="se-label">Não define a peça a trocar</text>
+  </>;
+}
+
+const DIAGRAMS = {
+  alignment: AlignmentDiagram,
+  balance: BalanceDiagram,
+  brakes: BrakesDiagram,
+  suspension: SuspensionDiagram,
+  filter: FilterDiagram,
+  diagnostics: DiagnosticsDiagram,
+} satisfies Record<ServiceExplainerKind, () => React.JSX.Element>;
+
 export default function ServiceDiagram({ kind, titleId, descriptionId }: {
   kind: ServiceExplainerKind; titleId: string; descriptionId: string;
 }) {
+  const Diagram = DIAGRAMS[kind];
   return <svg viewBox="0 0 320 240" width="320" height="240" role="img" aria-labelledby={titleId} aria-describedby={descriptionId} className="se-diagram" focusable="false">
-    {kind === 'alignment' ? <AlignmentDiagram /> : kind === 'balance' ? <BalanceDiagram /> : <BrakesDiagram />}
+    <Diagram />
   </svg>;
 }

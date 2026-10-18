@@ -6,10 +6,12 @@ import { listenOnFreePort, resolveShellHtml } from './generate-static-pages';
 import { launchBrowser } from './launch-browser';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-const screenshotDir = '/tmp/carplus-service-explainers';
+const screenshotDir = process.env.EXPLAINER_SCREENSHOTS_DIR ?? '/tmp/carplus-service-explainers';
 const routes = [
-  ['/', 3], ['/servicos', 3], ['/servico/alinhamento-3d', 1],
+  ['/', 6], ['/servicos', 7], ['/servico/alinhamento-3d', 1],
   ['/servico/alinhamento-e-balanceamento', 2], ['/servico/manutencao-de-freios', 1],
+  ['/servico/revisao-de-suspensao', 1], ['/servico/troca-de-oleo', 1],
+  ['/servico/troca-de-filtros', 1], ['/servico/scanner-automotivo', 1],
 ] as const;
 const distRoot = path.resolve('dist');
 const mimeTypes: Record<string, string> = {
@@ -81,6 +83,7 @@ async function main() {
       await page.setJavaScriptEnabled(true);
     }
     console.log(`Artifact coverage: ${generatedRoutes.length}/${routes.length} routes served original generated HTML; others used SPA fallback.`);
+    if (process.env.REQUIRE_SERVICE_EXPLAINER_SSG === '1') check(generatedRoutes.length === routes.length, 'all tested routes have original SSG artifacts');
     // Reduced motion also stabilizes screenshots without hiding essential diagram information.
     await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
     for (const width of [320, 390, 768, 1440]) {
@@ -125,7 +128,7 @@ async function main() {
           check(figure.svgWidth <= figure.containerWidth, `${route}: diagram fits container`);
           check(figure.titleExists && figure.descriptionExists && figure.text?.includes('Esquema ilustrativo'), `${route}: semantic description and visible label`);
         }
-        if ((width===390 || width===1440) && (route==='/' || route==='/servico/manutencao-de-freios' || route==='/servico/alinhamento-e-balanceamento')) {
+        if ((width===320 || width===390 || width===1440) && route!=='/servicos') {
           await page.$eval('.service-explainer', el=>el.scrollIntoView({block:'center',behavior:'instant'}));
           await sleep(150);
           await page.screenshot({path:`${screenshotDir}/${route === '/' ? 'home' : route.split('/').at(-1)}-${width}.png`});
@@ -187,23 +190,65 @@ async function main() {
     await page.tap('.se-control'); check(await page.$eval('.service-explainer',el=>(el as HTMLElement).dataset.phase)==='paused', 'touch pauses');
     await page.tap('.se-control'); check(await page.$eval('.service-explainer',el=>(el as HTMLElement).dataset.phase)==='playing', 'touch resumes');
     // SPA navigation away/back removes old observers/timers and does not leak duplicate diagrams.
-    await page.goto(`${origin}/servico/troca-de-oleo`,{waitUntil:'networkidle0'});
+    await page.goto(`${origin}/servico/reparo-eletrico`,{waitUntil:'networkidle0'});
     check(await page.$$eval('.service-explainer',els=>els.length)===0, 'unrelated service has no diagram');
     await page.goBack({waitUntil:'networkidle0'});
     check(await page.$$eval('.service-explainer',els=>els.length)===1, 'back navigation restores exactly one diagram');
-    // Capture real early/late states for all three drawings, not just static screenshots.
+    // Check each drawing separately: the six home cards no longer fit in one viewport.
     await page.setViewport({width:1440,height:1000,hasTouch:false,isMobile:false});
     await page.goto(origin,{waitUntil:'networkidle0'});
-    await page.$eval('.service-explainer',el=>el.scrollIntoView({block:'center',behavior:'instant'}));
-    await page.waitForFunction(()=>[...document.querySelectorAll<HTMLElement>('.service-explainer')].every(el=>el.dataset.running==='true'));
-    await sleep(650);
-    const motionSelectors = ['.se-align-left','.se-balance-spin','.se-brake-spin'];
-    const early = await page.evaluate(selectors=>selectors.map(s=>getComputedStyle(document.querySelector(s)!).transform),motionSelectors);
-    await page.screenshot({path:`${screenshotDir}/home-motion-early-1440.png`});
-    await sleep(2850);
-    const late = await page.evaluate(selectors=>selectors.map(s=>getComputedStyle(document.querySelector(s)!).transform),motionSelectors);
-    check(early.every((value,i)=>value!==late[i]), 'all three diagrams visibly transform during playback');
-    await page.screenshot({path:`${screenshotDir}/home-motion-late-1440.png`});
+    const motionSelectors = { alignment: '.se-align-left', balance: '.se-balance-spin', brakes: '.se-brake-spin', suspension: '.se-suspension-wheel', filter: '.se-filter-particles', diagnostics: '.se-diagnostic-data' };
+    for (const [kind, motion] of Object.entries(motionSelectors)) {
+      await page.goto(origin,{waitUntil:'networkidle0'});
+      const figure = `.service-explainer[data-explainer="${kind}"]`;
+      await page.$eval(figure,el=>el.scrollIntoView({block:'center',behavior:'instant'}));
+      await sleep(100);
+      await page.waitForFunction(s=>document.querySelector<HTMLElement>(s)?.dataset.running==='true',{},figure);
+      await sleep(650);
+      const early = await page.$eval(`${figure} ${motion}`,el=>getComputedStyle(el).transform);
+      await (await page.$(figure))!.screenshot({path:`${screenshotDir}/${kind}-motion-early-1440.png`});
+      await sleep(2850);
+      const late = await page.$eval(`${figure} ${motion}`,el=>getComputedStyle(el).transform);
+      check(early!==late, `${kind}: visible SVG transform during playback`);
+      await (await page.$(figure))!.screenshot({path:`${screenshotDir}/${kind}-motion-late-1440.png`});
+    }
+    // New concepts share keyboard, touch, offscreen pause and replay behavior on mobile.
+    await page.setViewport({width:390,height:844,hasTouch:true,isMobile:true});
+    for (const kind of ['suspension', 'filter', 'diagnostics'] as const) {
+      await page.goto(origin,{waitUntil:'networkidle0'});
+      const figure = `.service-explainer[data-explainer="${kind}"]`;
+      const button = `${figure} button`;
+      const phase = () => page.$eval(figure,el=>(el as HTMLElement).dataset.phase);
+      const transform = () => page.$eval(`${figure} ${motionSelectors[kind]}`,el=>getComputedStyle(el).transform);
+      check(await phase()==='idle', `${kind}: waits for viewport`);
+      await page.$eval(figure,el=>el.scrollIntoView({block:'center',behavior:'instant'}));
+      await page.waitForFunction(s=>document.querySelector<HTMLElement>(s)?.dataset.running==='true',{},figure);
+      const sizeBefore = await page.$eval(figure,el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height}));
+      await sleep(1600);
+      await page.focus(button); await page.keyboard.press('Enter');
+      check(await phase()==='paused', `${kind}: keyboard pauses`);
+      await sleep(100); const paused = await transform(); await sleep(250);
+      check(paused===await transform(), `${kind}: paused SVG stays still`);
+      await page.keyboard.press('Space');
+      check(await phase()==='playing', `${kind}: keyboard resumes`);
+      await page.$eval('h1',el=>el.scrollIntoView({block:'start',behavior:'instant'}));
+      await sleep(150);
+      check(await page.$eval(figure,el=>(el as HTMLElement).dataset.running)==='false', `${kind}: offscreen pauses`);
+      const offscreen = await transform(); await sleep(250);
+      check(offscreen===await transform(), `${kind}: offscreen SVG stays still`);
+      await page.$eval(figure,el=>el.scrollIntoView({block:'center',behavior:'instant'}));
+      await page.waitForFunction(s=>document.querySelector<HTMLElement>(s)?.dataset.running==='true',{},figure);
+      await page.tap(button); check(await phase()==='paused', `${kind}: touch pauses`);
+      await page.tap(button); check(await phase()==='playing', `${kind}: touch resumes`);
+      await page.waitForFunction(s=>document.querySelector<HTMLElement>(s)?.dataset.phase==='complete',{timeout:9000},figure);
+      const sizeAfter = await page.$eval(figure,el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height}));
+      check(JSON.stringify(sizeBefore)===JSON.stringify(sizeAfter), `${kind}: playback never changes component size`);
+      await page.tap(button); check(await phase()==='playing', `${kind}: touch replay`);
+      await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]); await sleep(100);
+      check(await phase()==='complete' && await page.$eval(`${figure} ${motionSelectors[kind]}`,el=>getComputedStyle(el).animationName)==='none', `${kind}: live reduced motion restores static scene`);
+      await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'no-preference'}]);
+    }
+    await page.setViewport({width:1440,height:1000,hasTouch:false,isMobile:false});
     // Production generation guard: visible diagrams must remain static for snapshots.
     await page.evaluateOnNewDocument(()=>{ (window as unknown as {__STATIC_RENDER__:boolean}).__STATIC_RENDER__=true; });
     await page.goto(`${origin}/servico/alinhamento-e-balanceamento`,{waitUntil:'networkidle0'});
@@ -217,7 +262,7 @@ async function main() {
     check(await page.$$eval('.se-summary',els=>els.every(el=>el.textContent!.length>60)), 'static snapshot retains useful explanations without page JS');
     await page.screenshot({path:`${screenshotDir}/static-no-javascript-1440.png`});
     check(errors.length===0, `no browser errors: ${errors.join('\n')}`);
-    console.log(`PASS: ${assertions} browser assertions; five routes × four widths; reduced/live motion, keyboard, touch, pause, hidden document, repeated clicks, completion/replay, stable size, routing and errors. Screenshots: ${screenshotDir}`);
+    console.log(`PASS: ${assertions} browser assertions; ${routes.length} routes × four widths; six concepts, reduced/live motion, keyboard, touch, pause, hidden document, repeated clicks, completion/replay, stable size, routing and errors. Screenshots: ${screenshotDir}`);
   } finally { await browser?.close(); await new Promise<void>(resolve=>server.close(()=>resolve())); }
 }
 main().catch(error=>{ console.error(error); process.exitCode=1; });
