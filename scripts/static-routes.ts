@@ -151,6 +151,7 @@ export function getStaticRoutes(): StaticRoute[] {
     { path: '/pneus', priority: '0.9', changefreq: 'daily', type: 'hub' },
     { path: '/pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/manutencao-automotiva-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
+    { path: '/borracharia-portao', priority: '0.9', changefreq: 'weekly', type: 'landing-comercial' },
     { path: '/medidas-de-pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/loja-de-pneus-curitiba-perto-de-mim', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/servicos', priority: '0.9', changefreq: 'weekly', type: 'hub' },
