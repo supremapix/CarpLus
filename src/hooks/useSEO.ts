@@ -5,6 +5,8 @@ interface SEOProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: string;
   keywords?: string[];
   schemaJSON?: object | object[];
@@ -23,6 +25,8 @@ export function useSEO({
   description, 
   canonical, 
   ogImage, 
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
   ogType = 'website', 
   keywords = [],
   schemaJSON,
@@ -86,8 +90,8 @@ export function useSEO({
     setMeta('meta[property="og:locale"]', 'content', 'pt_BR');
 
     setMeta('meta[property="og:image"]', 'content', fullImageUrl);
-    setMeta('meta[property="og:image:width"]', 'content', '1200');
-    setMeta('meta[property="og:image:height"]', 'content', '630');
+    setMeta('meta[property="og:image:width"]', 'content', String(ogImageWidth));
+    setMeta('meta[property="og:image:height"]', 'content', String(ogImageHeight));
     setMeta('meta[property="og:image:alt"]', 'content', `${title} — Carplus Centro Automotivo`);
     setMeta('meta[name="twitter:image"]', 'content', fullImageUrl);
 
@@ -191,5 +195,5 @@ export function useSEO({
       prevLinkEl?.parentNode?.removeChild(prevLinkEl);
       nextLinkEl?.parentNode?.removeChild(nextLinkEl);
     };
-  }, [title, description, canonical, ogImage, ogType, keywords, schemaJSON, noindex, prevUrl, nextUrl]);
+  }, [title, description, canonical, ogImage, ogImageWidth, ogImageHeight, ogType, keywords, schemaJSON, noindex, prevUrl, nextUrl]);
 }

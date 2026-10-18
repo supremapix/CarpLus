@@ -150,6 +150,7 @@ export function getStaticRoutes(): StaticRoute[] {
     { path: '/', priority: '1.0', changefreq: 'daily', type: 'home' },
     { path: '/pneus', priority: '0.9', changefreq: 'daily', type: 'hub' },
     { path: '/pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
+    { path: '/comparar-anuncios-pneus-curitiba', priority: '0.7', changefreq: 'monthly', type: 'institucional' },
     { path: '/manutencao-automotiva-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/borracharia-portao', priority: '0.9', changefreq: 'weekly', type: 'landing-comercial' },
     { path: '/medidas-de-pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },

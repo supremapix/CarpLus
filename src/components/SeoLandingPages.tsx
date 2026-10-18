@@ -243,7 +243,10 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
     to: `/${p.slug}`,
   }));
   const aroLinks = ARO_PAGES.slice(0, 5).map((a) => ({ label: `Aro ${a.aro}`, to: `/${a.slug}` }));
-  const relatedLinks = [...serviceLinks, ...clusterLinks, ...aroLinks];
+  const comparisonGuideLinks = page.slug === 'onde-comprar-pneus-curitiba'
+    ? [{ label: 'Comparar anúncios de pneus com atendimento em loja', to: '/comparar-anuncios-pneus-curitiba' }]
+    : [];
+  const relatedLinks = [...comparisonGuideLinks, ...serviceLinks, ...clusterLinks, ...aroLinks];
 
   const sections = isPneusBaratos
     ? [

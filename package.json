@@ -29,7 +29,10 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test:service-explainers": "node scripts/run-ts.mjs scripts/test-service-explainers.tsx",
-    "test:service-explainers:browser": "node scripts/run-ts.mjs scripts/test-service-explainers-browser.ts"
+    "test:service-explainers:browser": "node scripts/run-ts.mjs scripts/test-service-explainers-browser.ts",
+    "generate:static:comparison-guide": "node scripts/run-ts.mjs scripts/generate-static-comparison-guide.ts",
+    "test:comparison-guide": "node scripts/run-ts.mjs scripts/test-comparison-guide.tsx",
+    "test:comparison-guide:browser": "node scripts/run-ts.mjs scripts/test-comparison-guide-browser.ts"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",
