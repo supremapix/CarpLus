@@ -93,13 +93,13 @@ export default function NeighborhoodDetail() {
                 "postalCode": "80320-300",
                 "addressCountry": "BR"
               },
-              "geo": { "@type": "GeoCoordinates", "latitude": -25.4770, "longitude": -49.2845 },
+              "geo": { "@type": "GeoCoordinates", "latitude": -25.4636, "longitude": -49.3003 },
               "areaServed": [
                 { "@type": "City", "name": "Curitiba" },
                 { "@type": "Neighborhood", "name": bairro.name }
               ],
               "priceRange": "$$",
-              "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-13:00"]
+              "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"]
             },
             {
               "@context": "https://schema.org",

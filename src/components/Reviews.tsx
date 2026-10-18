@@ -1,28 +1,9 @@
 
-import { Star, X, ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
+import { Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import SectionTitle from './SectionTitle';
 import ReviewsHeader from './ReviewsHeader';
-
-// Função para gerar tempo aleatório entre 1 dia e 3 meses
-const TIME_OPTIONS = [
-  '1 dia atrás',
-  '2 dias atrás',
-  '3 dias atrás',
-  '4 dias atrás',
-  '5 dias atrás',
-  '6 dias atrás',
-  '1 semana atrás',
-  '2 semanas atrás',
-  '3 semanas atrás',
-  '1 mês atrás',
-  '2 meses atrás',
-  '3 meses atrás',
-];
-
-// Função para gerar timeAgo baseado no índice (para consistência)
-const getTimeAgo = (index: number) => TIME_OPTIONS[index % TIME_OPTIONS.length];
 
 const ALL_REVIEWS = [
   { 
@@ -322,8 +303,6 @@ const ALL_REVIEWS = [
   }
 ];
 
-// Total de avaliações reais no Google (exibido ao usuário)
-const TOTAL_REVIEWS = 250;
 
 const AVATAR_COLORS = [
   { bg: '#4285f4', text: '#fff' }, // azul Google
@@ -377,7 +356,7 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
           )}
           <div className="min-w-0">
             <h4 className="text-[#202124] font-medium text-sm truncate leading-tight">{review.name}</h4>
-            <p className="text-[#70757a] text-[11px] truncate leading-tight">{getTimeAgo(reviewIdx)}</p>
+
           </div>
         </div>
         <GoogleLogo />
@@ -490,33 +469,14 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Cabeçalho mobile */}
         <div className="md:hidden mb-14">
-          <ReviewsHeader reviewCount={TOTAL_REVIEWS} />
+          <ReviewsHeader />
         </div>
 
         {/* Cabeçalho desktop */}
         <div className="hidden md:block text-center md:text-left max-w-[640px] mb-14 mx-auto md:mx-0">
-          {/* Badge estilo Google */}
-          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-xs px-4 py-2 rounded-md mb-6 mx-auto md:mx-0">
-            <GoogleLogo />
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#fbbc04" color="#fbbc04" />)}
-            </div>
-            <span className="text-[#202124] font-semibold text-xs tracking-wider uppercase">4.9 ★ NO GOOGLE</span>
-            <span className="flex items-center gap-1 text-[#70757a] text-xs">
-              • Mais de 250 avaliações de clientes
-              <motion.span
-                aria-label="Avaliações em alta"
-                animate={{ y: [2, -3, 2], opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 1.4, ease: 'easeInOut', repeat: Infinity }}
-                className="inline-flex text-[#16A34A]"
-              >
-                <ArrowUp size={14} strokeWidth={3} aria-hidden="true" />
-              </motion.span>
-            </span>
-          </div>
           <div className="flex flex-col items-center md:items-start">
             <SectionTitle prefix="O QUE NOSSOS CLIENTES" highlight="DIZEM" />
-            <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light text-center md:text-left">Transparência em cada diagnóstico, satisfação em cada entrega.</p>
+            <p className="text-gray-500 text-lg sm:text-xl md:text-2xl font-light text-center md:text-left">Leia os depoimentos e consulte as avaliações atuais no Google.</p>
           </div>
         </div>
 
@@ -554,7 +514,7 @@ export default function Reviews() {
               onClick={closeReview}
               className="absolute inset-0 bg-dark/60 backdrop-blur-sm"
             />
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -597,7 +557,7 @@ export default function Reviews() {
                     <div>
                       <h4 className="text-xl font-bold text-dark">{selectedReview.review.name}</h4>
                       <p className="text-gray-500 text-sm flex items-center gap-2">
-                        <GoogleLogo /> Local Guide • {getTimeAgo(selectedReview.index)}
+                        <GoogleLogo /> Depoimento de cliente
                       </p>
                     </div>
                   </div>
@@ -623,7 +583,7 @@ export default function Reviews() {
                     Anterior
                   </button>
                   <div className="text-gray-300 font-mono text-sm">
-                    {selectedReview.index + 1} / {TOTAL_REVIEWS}
+                    {selectedReview.index + 1} / {ALL_REVIEWS.length}
                   </div>
                   <button 
                     onClick={nextReview}

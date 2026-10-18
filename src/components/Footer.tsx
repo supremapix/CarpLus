@@ -116,10 +116,10 @@ export default function Footer() {
             
             <div className="grid grid-cols-1 gap-6 max-w-xs mx-auto md:mx-0">
                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">
-                  <Star className="text-accent" size={32} fill="currentColor" />
+                  <MapPin className="text-primary" size={32} />
                   <div>
-                    <p className="font-bold text-lg leading-tight">4.9 ★ no Google</p>
-                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">Mais de 250 avaliações de clientes</p>
+                    <Link to="/quem-somos" className="font-bold text-lg leading-tight underline underline-offset-4">Conheça nossa estrutura</Link>
+                    <p className="text-xs opacity-60 uppercase font-bold tracking-widest">Veja fotos da Carplus</p>
                   </div>
                </div>
                <div className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">

@@ -37,7 +37,7 @@ const SERVICOS_BORRACHARIA = [
 // FAQ da borracharia
 const FAQ_BORRACHARIA = [
   { pergunta: 'Quanto custa consertar um pneu furado no Portão?', resposta: 'Na Carplus oferecemos o melhor preço da região para conserto de pneus furados. O valor varia conforme o tipo de reparo (manchão ou vulcanização), mas garantimos preço competitivo com qualidade superior. Consulte pelo WhatsApp (41) 3082-7282.' },
-  { pergunta: 'A Carplus atende emergências de pneu furado?', resposta: 'Sim! Atendemos clientes com pneus furados durante todo nosso horário de funcionamento, de segunda a sexta das 8h às 18h e sábados das 8h às 13h. Basta trazer seu veículo que realizamos o conserto na hora.' },
+  { pergunta: 'A Carplus atende emergências de pneu furado?', resposta: 'Consulte o atendimento na oficina de segunda a sexta das 8h às 18h e sábados das 8h às 12h. A possibilidade e o prazo do reparo dependem da avaliação do pneu. Não rode com pneu vazio ou danificado para chegar à loja; se não houver condição segura de deslocamento, pare em segurança e solicite assistência.' },
   { pergunta: 'Vocês vendem pneus novos e usados?', resposta: 'Trabalhamos exclusivamente com pneus novos de primeira linha das melhores marcas: Pirelli, Bridgestone, Continental, Michelin, Goodyear, Dunlop, Yokohama e outras. Não trabalhamos com pneus usados ou recauchutados.' },
   { pergunta: 'Qual a garantia do serviço de borracharia?', resposta: 'Todos os serviços de borracharia da Carplus têm garantia total. O conserto de furos tem garantia vitalícia, e os serviços de alinhamento e balanceamento têm garantia de 6 meses ou até a próxima revisão.' },
   { pergunta: 'Atendem carros rebaixados e importados?', resposta: 'Sim! Temos equipamentos adequados para atender todos os tipos de veículos, incluindo rebaixados, importados, SUVs, pickups e até veículos híbridos e elétricos. Somos especializados em rodas de liga leve.' },
@@ -393,7 +393,7 @@ export default function BorrachariaPortao() {
               </h2>
               <p className="text-neutral-400 text-lg mb-8">
                 Estamos na Av. Presidente Arthur da Silva Bernardes, 1323 - Portão, Curitiba.
-                Atendimento de segunda a sexta das 8h às 18h e sábados das 8h às 13h.
+                Atendimento de segunda a sexta das 8h às 18h e sábados das 8h às 12h.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
