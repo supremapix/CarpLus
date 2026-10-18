@@ -4,7 +4,7 @@
 // Objetivo: NUNCA quebrar o deploy de produção. O build tem duas camadas:
 //
 //   1. ESSENCIAL (sempre roda, falha = deploy falha):
-//        sitemap  →  redirects  →  build:spa
+//        sitemap  →  redirects  →  build:spa  →  HTML essencial validado
 //      Reproduz o build seguro conhecido-bom (SPA + sitemap + 152 redirects).
 //
 //   2. OPT-IN / BEST-EFFORT (só com GENERATE_STATIC=1):
@@ -88,6 +88,10 @@ emit404();
 run('node scripts/run-ts.mjs scripts/generate-static-blog.ts', { essential: true });
 run('node scripts/run-ts.mjs scripts/generate-static-comparison-guide.ts', { essential: true });
 
+// Serviços legados e página regional válidos precisam de HTML próprio, sem decidir consolidação
+// de URLs nem adicioná-los ao sitemap. Falha aqui impede publicar o shell.
+run('npm run generate:static:existing-pages', { essential: true });
+
 // Camada 2 — opt-in, best-effort.
 if (process.env.GENERATE_STATIC === '1') {
   console.log('\n[build-deploy] GENERATE_STATIC=1 → gerando as 1.512 páginas estáticas.');
@@ -98,8 +102,11 @@ if (process.env.GENERATE_STATIC === '1') {
 } else {
   console.log(
     '\n[build-deploy] GENERATE_STATIC != 1 → pulando geração estática. ' +
-      'Blog e guia de comparação com HTML estático; demais rotas permanecem como SPA. Defina GENERATE_STATIC=1 para gerar todas as páginas.',
+      'Blog, guia de comparação e páginas existentes prioritárias com HTML estático; demais rotas permanecem como SPA. Defina GENERATE_STATIC=1 para gerar todas as páginas.',
   );
 }
+
+// Também protege os arquivos essenciais depois da geração global opcional.
+run('npm run validate:static:existing-pages', { essential: true });
 
 console.log('\n[build-deploy] Build de deploy concluído com sucesso.');

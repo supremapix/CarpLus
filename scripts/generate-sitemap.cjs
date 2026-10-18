@@ -50,7 +50,7 @@ function extractTireMeasures(content) {
 // Static pages
 const staticPages = [
   { url: '/', priority: '1.0', changefreq: 'daily' },
-  { url: '/catalogo', priority: '0.9', changefreq: 'daily' },
+  { url: '/pneus', priority: '0.9', changefreq: 'daily' },
   { url: '/servicos', priority: '0.9', changefreq: 'weekly' },
   { url: '/quem-somos', priority: '0.8', changefreq: 'monthly' },
   { url: '/contato', priority: '0.8', changefreq: 'monthly' },

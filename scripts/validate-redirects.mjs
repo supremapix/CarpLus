@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Validação estática dos redirects do vercel.json (E5).
-// Verifica: contagem, todos 301, sources únicos (sem conflito),
+// Verifica: contagem, todos permanentes, sources únicos (sem conflito),
 // ausência de cadeias (destino que também é source) e loops.
 
 import fs from 'node:fs';
@@ -21,18 +21,20 @@ console.log('# Validação estática dos redirects (vercel.json)\n');
 
 // 1. Contagem
 console.log('1. Contagem');
-if (redirects.length === 158 || redirects.length === 159) ok(`${redirects.length} redirects (esperado)`);
-else fail(`esperado 158 ou 159, encontrado ${redirects.length}`);
+if (redirects.length === 161) ok(`${redirects.length} redirects (esperado)`);
+else fail(`esperado 161, encontrado ${redirects.length}`);
 
 const bairro = redirects.filter((r) => r.source.endsWith('.html'));
 const medida = redirects.filter((r) => r.source.includes(':medida'));
 const servico = redirects.filter((r) => r.source.startsWith('/servico/'));
+const catalog = redirects.filter((r) => ['/catalogo', '/catalogo/'].includes(r.source));
+const hosts = redirects.filter((r) => r.has?.some((h) => h.type === 'host'));
 const brand = redirects.filter(
-  (r) => !r.has && !r.source.endsWith('.html') && !r.source.includes(':medida') && !r.source.startsWith('/servico/'),
+  (r) => !r.has && !r.source.endsWith('.html') && !r.source.includes(':medida') && !r.source.startsWith('/servico/') && !catalog.includes(r),
 );
-const pag = redirects.filter((r) => Array.isArray(r.has));
+const pag = redirects.filter((r) => r.has?.some((h) => h.type === 'query' && h.key === 'page'));
 console.log(
-  `   grupos → bairros:${bairro.length} medida:${medida.length} marcas:${brand.length} servicos:${servico.length} paginação:${pag.length}`,
+  `   grupos → bairros:${bairro.length} medida:${medida.length} marcas:${brand.length} servicos:${servico.length} catálogo:${catalog.length} hosts:${hosts.length} paginação:${pag.length}`,
 );
 if (bairro.length === 71) ok('71 bairros/cidades');
 else fail(`bairros: ${bairro.length}`);
@@ -42,13 +44,17 @@ if (brand.length === 6) ok('6 marcas legadas');
 else fail(`marcas: ${brand.length}`);
 if (servico.length >= 1) ok(`${servico.length} serviço(s) legado(s) (/servico/diagnostico-eletronico → /servico/scanner-automotivo)`);
 else fail(`servicos: ${servico.length}`);
-if (pag.length === 79) ok('79 paginação');
+if (catalog.length === 2 && catalog.every((r) => !r.has && r.destination === '/pneus')) ok('2 entradas de catálogo para /pneus');
+else fail('redirects de catálogo ausentes ou incorretos');
+if (hosts.length === 3) ok('3 hosts legados');
+else fail(`hosts: ${hosts.length}`);
+if (pag.length === 76) ok('76 paginação');
 else fail(`paginação: ${pag.length}`);
 
-// 2. Todos permanentes (301)
-console.log('\n2. Status 301 (permanent)');
+// 2. Todos permanentes (308 na Vercel)
+console.log('\n2. Status permanente (308 na Vercel)');
 const notPermanent = redirects.filter((r) => r.permanent !== true);
-if (notPermanent.length === 0) ok('todos permanent:true → 301');
+if (notPermanent.length === 0) ok('todos permanent:true → 308 na Vercel');
 else fail(`${notPermanent.length} não são permanentes`);
 
 // 3. Sources únicos (sem conflito). Chave inclui query para paginação.
@@ -69,7 +75,8 @@ if (dup === 0) ok('nenhum source duplicado');
 
 // 4. Sem cadeias nem loops: nenhum destination pode ser também um source.
 console.log('\n4. Sem cadeias / loops (destino nunca é source)');
-const sourcePaths = new Set(redirects.map((r) => r.source.split('?')[0]));
+// Regras condicionais não redirecionam a entrada limpa (ex.: /pneus sem page).
+const sourcePaths = new Set(redirects.filter((r) => !r.has?.length).map((r) => r.source.split('?')[0]));
 let chains = 0;
 for (const r of redirects) {
   const destPath = r.destination.split('?')[0];
