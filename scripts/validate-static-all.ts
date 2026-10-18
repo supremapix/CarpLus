@@ -5,7 +5,8 @@
 // Reabre CADA arquivo index.html gravado em disco (independente da captura feita
 // na geração) e verifica, por rota, os invariantes de SEO/estrutura:
 //   • arquivo existe e é não-trivial;
-//   • <title> presente, não vazio e ≠ título do shell;
+//   • <title> presente; fora da home, diferente do shell;
+//   • home com aplicação e conteúdo principal renderizados;
 //   • canonical presente e IGUAL ao expectedCanonical do enumerador;
 //   • robots sem "noindex";
 //   • <h1> presente;
@@ -19,6 +20,7 @@
 // Também detecta canonicais duplicados entre rotas distintas.
 
 import fs from 'fs';
+import { validateStaticHtml } from './static-html-validation';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getStaticRoutes } from './static-routes';
@@ -38,40 +40,6 @@ function extract(html: string, re: RegExp): string | null {
   return m ? m[1].trim() : null;
 }
 
-function validateHtml(
-  routePath: string,
-  file: string,
-  expectedCanonical: string,
-  shellTitle: string,
-): string[] {
-  const problems: string[] = [];
-  if (!fs.existsSync(file)) return ['arquivo ausente em dist'];
-  const html = fs.readFileSync(file, 'utf8');
-  if (html.length < 2000) problems.push(`HTML muito pequeno (${html.length}B)`);
-
-  const title = extract(html, /<title>([^<]*)<\/title>/i);
-  if (!title) problems.push('sem <title>');
-  else if (title === shellTitle) problems.push('title == shell (render incompleto)');
-
-  const canonical = extract(html, /<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i);
-  if (!canonical) problems.push('sem canonical');
-  else if (canonical !== expectedCanonical)
-    problems.push(`canonical "${canonical}" ≠ esperado "${expectedCanonical}"`);
-
-  const robots = extract(html, /<meta[^>]+name="robots"[^>]+content="([^"]+)"/i);
-  if (robots && /noindex/i.test(robots)) problems.push(`robots noindex ("${robots}")`);
-
-  if (!/<h1[\s>]/i.test(html)) problems.push('sem <h1>');
-  if (!/application\/ld\+json/i.test(html)) problems.push('sem JSON-LD');
-  if (!/property="og:title"/i.test(html)) problems.push('sem og:title');
-  if (!/property="og:url"/i.test(html)) problems.push('sem og:url');
-  if (!/name="twitter:card"/i.test(html)) problems.push('sem twitter:card');
-  if (/localhost|127\.0\.0\.1/.test(html)) problems.push('contém localhost/127.0.0.1');
-  if (!/data-prerendered="true"/i.test(html)) problems.push('sem data-prerendered');
-
-  return problems;
-}
-
 function main() {
   const routes = getStaticRoutes();
   const shellTitle = getShellTitle(resolveShellHtml());
@@ -88,8 +56,8 @@ function main() {
 
   for (const r of present) {
     const file = outputFileFor(r);
-    const problems = validateHtml(r.path, file, r.expectedCanonical, shellTitle);
     const html = fs.readFileSync(file, 'utf8');
+    const problems = validateStaticHtml(r.path, html, r.expectedCanonical, shellTitle);
     const canonical = extract(html, /<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i);
     if (canonical) {
       const arr = canonicalMap.get(canonical) ?? [];

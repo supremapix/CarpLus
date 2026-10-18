@@ -52,6 +52,7 @@ export default function Navbar() {
     { name: 'Serviços', href: '/servicos' },
     { name: 'Como Chegar', href: '/como-chegar' },
     { name: 'FAQ', href: '/faq' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

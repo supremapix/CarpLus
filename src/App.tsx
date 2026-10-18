@@ -43,6 +43,9 @@ const CentroAutomotivoSeoPage = lazy(() => import('./components/CentroAutomotivo
 const OficinaMarcaPage = lazy(() => import('./components/OficinaMarcaPage'));
 const ManutencaoAutomotivaHub = lazy(() => import('./components/ManutencaoAutomotivaHub'));
 
+const BlogIndex = lazy(() => import('./components/Blog').then(m => ({ default: m.BlogIndex })));
+const BlogArticle = lazy(() => import('./components/Blog').then(m => ({ default: m.BlogArticle })));
+
 // Landing pages SEO (todas no mesmo módulo)
 const AroLandingPage = lazy(() =>
   import('./components/SeoLandingPages').then((m) => ({ default: m.AroLandingPage })),
@@ -125,6 +128,8 @@ export default function App() {
       <Suspense fallback={<RouteFallback />}>
         <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/blog" element={<BlogIndex />} />
+      <Route path="/blog/:slug" element={<BlogArticle />} />
       <Route path="/pneus" element={<TireCatalog />} />
       <Route path="/pneu/:slug" element={<TireDetail />} />
       <Route path="/pneus-promocao" element={<PneusPromocaoLista />} />
