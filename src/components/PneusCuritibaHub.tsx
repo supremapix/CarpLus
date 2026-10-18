@@ -258,6 +258,16 @@ export default function PneusCuritibaHub() {
         </div>
       </section>
 
+      <section className="bg-amber-50 border-y border-amber-200 py-7" aria-labelledby="comparar-ofertas-title">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h2 id="comparar-ofertas-title" className="text-xl font-bold text-neutral-950">Encontrou um anúncio de pneus?</h2>
+            <p className="text-sm text-gray-700 mt-2">Compare medida, condição, quantidade e o que está incluído na instalação.</p>
+          </div>
+          <Link to="/comparar-anuncios-pneus-curitiba" className="inline-flex min-h-11 items-center gap-2 font-bold text-neutral-950 underline underline-offset-4 hover:text-amber-800">Comparar anúncios de pneus com atendimento em loja<ChevronRight size={18} className="shrink-0" aria-hidden="true" /></Link>
+        </div>
+      </section>
+
       {/* Pneus por Medida */}
       <Section icon={Ruler} title="Pneus por Medida" subtitle="As medidas mais procuradas no catálogo Carplus Curitiba">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">

@@ -199,6 +199,11 @@ export default function Sitemap() {
                     </Link>
                   </li>
                   <li>
+                    <Link to="/comparar-anuncios-pneus-curitiba" className="hover:text-primary transition-colors flex items-center gap-1">
+                      <ChevronRight size={12} className="text-primary" /> Comparar anúncios de pneus em Curitiba
+                    </Link>
+                  </li>
+                  <li>
                     <Link to="/loja-de-pneus-curitiba-perto-de-mim" className="hover:text-primary transition-colors flex items-center gap-1 font-bold">
                       <ChevronRight size={12} className="text-primary" /> Loja de Pneus Perto de Mim
                     </Link>

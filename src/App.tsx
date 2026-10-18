@@ -36,6 +36,7 @@ const FAQPage = lazy(() => import('./components/FAQPage'));
 const CentroAutomotivoPortao = lazy(() => import('./components/CentroAutomotivoPortao'));
 const BorrachariaPortao = lazy(() => import('./components/BorrachariaPortao'));
 const PneusCuritibaHub = lazy(() => import('./components/PneusCuritibaHub'));
+const CompararAnunciosPneus = lazy(() => import('./components/CompararAnunciosPneus'));
 const PneusMedidasHub = lazy(() => import('./components/PneusMedidasHub'));
 const LojaDePneusPertoDeMim = lazy(() => import('./components/LojaDePneusPertoDeMim'));
 const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
@@ -167,6 +168,7 @@ export default function App() {
       <Route path="/manutencao-automotiva-curitiba" element={<ManutencaoAutomotivaHub />} />
       <Route path="/catalogo" element={<Navigate to="/pneus" replace />} />
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
+      <Route path="/comparar-anuncios-pneus-curitiba" element={<CompararAnunciosPneus />} />
       <Route path="/medidas-de-pneus-curitiba" element={<PneusMedidasHub />} />
       <Route path="/loja-de-pneus-curitiba-perto-de-mim" element={<LojaDePneusPertoDeMim />} />
 
