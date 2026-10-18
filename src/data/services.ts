@@ -26,7 +26,7 @@ export const BUSINESS_INFO = {
   tagline: "Oficina Mecânica Full Service",
   address: "Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, 80320-300",
   phone: "(41) 3082-7282",
-  whatsapp: "5541308272822",
+  whatsapp: "554130827282",
   website: "https://www.carpluspneuseoficina.com.br",
   hours: "Seg–Sex 8h–18h | Sáb 8h–12h",
   rating: 4.9,
@@ -102,8 +102,8 @@ export const SERVICE_CATEGORIES: Category[] = [
         slug: "conserto-de-pneu",
         shortDescription: "Inspeção do pneu para avaliar a possibilidade de reparar furos, conforme o dano e as orientações do fabricante.",
         fullDescription: "A possibilidade de conserto depende da localização e extensão do dano, do estado interno do pneu e das orientações do fabricante. A inspeção deve ocorrer antes de definir o reparo. Bolhas e danos estruturais não devem ser tratados como um furo simples: nesses casos, orientamos sobre a substituição adequada.",
-        highlights: ["Avaliação do dano", "Reparo quando tecnicamente indicado", "Materiais de alta qualidade", "Carros, SUVs, pickups e motos"],
-        estimatedTime: "20–40 min",
+        highlights: ["Avaliação do dano", "Reparo quando tecnicamente indicado", "Orientações do fabricante", "Consulta conforme o veículo"],
+        estimatedTime: null,
         icon: "Wrench"
       },
       {

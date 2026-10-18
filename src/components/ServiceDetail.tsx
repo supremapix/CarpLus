@@ -419,8 +419,8 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     description: 'Rodízio de pneus em Curitiba para uniformizar o desgaste e aumentar a vida útil dos seus pneus. Recomendado a cada 10.000 km. Portão – (41) 3082-7282.',
   },
   'conserto-de-pneu': {
-    title: 'Conserto de Pneu em Curitiba | Reparo Rápido | Carplus',
-    description: 'Conserto e reparo de pneu furado em Curitiba com avaliação gratuita. Serviço rápido no bairro Portão, com estoque para pronta entrega. Ligue (41) 3082-7282.',
+    title: 'Conserto de pneu no Portão, Curitiba | Carplus',
+    description: 'Pneu furado ou perdendo pressão? Consulte avaliação para conserto na Carplus, no Portão, Curitiba. O reparo depende do dano e das orientações do fabricante.',
   },
   'manutencao-e-calibragem-de-pneus': {
     title: 'Calibragem de Pneus em Curitiba | Gratuita | Carplus',

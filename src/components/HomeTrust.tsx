@@ -35,6 +35,7 @@ export default function HomeTrust() {
           <p className="text-sm text-white/60 mb-6">O vídeo abre no YouTube em uma nova aba. Nenhum player externo é carregado nesta página.</p>
           <a href="https://wa.me/554130827282?text=Ol%C3%A1!%20Vi%20a%20estrutura%20da%20Carplus%20no%20site%20e%20gostaria%20de%20conversar%20sobre%20meu%20carro." target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 font-bold text-sm text-dark hover:bg-[#20bd5a]"><MessageSquare size={18} aria-hidden="true" />Conversar sobre meu carro</a>
           <p className="text-sm text-white/70 mt-4">Atendemos também carros antigos. Informe o modelo do carro e o que precisa. Para pneus, envie também a medida.</p>
+          <Link to="/manutencao-automotiva-curitiba" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-primary underline underline-offset-4">Não sabe qual serviço procurar? Veja orientações por sintoma<ArrowRight size={16} aria-hidden="true" /></Link>
         </div>
       </div>
     </div>

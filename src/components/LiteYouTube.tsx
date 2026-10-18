@@ -4,6 +4,8 @@ import { Play } from 'lucide-react';
 interface LiteYouTubeProps {
   /** ID do vídeo do YouTube (ex: "TY8qfETXlJQ"). */
   videoId: string;
+  /** Poster local opcional, sem requisição ao YouTube antes do clique. */
+  poster?: string;
   /** Título acessível do vídeo. */
   title: string;
   /**
@@ -28,6 +30,7 @@ interface LiteYouTubeProps {
  */
 export default function LiteYouTube({
   videoId,
+  poster,
   title,
   params = '',
   className = 'absolute inset-0 w-full h-full',
@@ -36,10 +39,10 @@ export default function LiteYouTube({
   const [activated, setActivated] = useState(false);
   const [thumbErrored, setThumbErrored] = useState(false);
 
-  // maxresdefault não existe para todos os vídeos; caímos para hqdefault.
-  const thumbSrc = thumbErrored
+  // O poster local tem prioridade. Sem poster, há fallback para thumbnail do YouTube.
+  const thumbSrc = poster ?? (thumbErrored
     ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-    : `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
+    : `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`);
 
   if (activated) {
     const query = `autoplay=1${params ? `&${params}` : ''}`;
@@ -69,7 +72,7 @@ export default function LiteYouTube({
         decoding="async"
         width={480}
         height={360}
-        onError={() => setThumbErrored(true)}
+        onError={poster ? undefined : () => setThumbErrored(true)}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <span className="absolute inset-0 bg-black/15 transition-colors group-hover/lyt:bg-black/5" />

@@ -1,610 +1,143 @@
 import { Link } from 'react-router-dom';
-import { 
-  ChevronRight, 
-  Cpu, 
-  Target, 
-  Wrench, 
-  Droplets, 
-  ShieldAlert, 
-  Sliders, 
-  ClipboardCheck, 
-  Circle, 
-  CheckCircle2, 
-  MessageSquare, 
-  Phone, 
-  Navigation, 
-  Clock, 
-  MapPin, 
-  AlertTriangle, 
-  HelpCircle,
-  Layers,
-  Sparkles
-} from 'lucide-react';
+import { ChevronRight, MessageSquare, Navigation, Phone, AlertTriangle, MapPin, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import TrustBar from './TrustBar';
-import StoreSection from './StoreSection';
-import Reviews from './Reviews';
 import { useSEO } from '../hooks/useSEO';
-import { generateBreadcrumbSchema, generateFaqSchema, generateLocalBusinessSchema } from '../lib/schema';
+import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
+import { HUB_FAQS, HUB_SYMPTOMS } from '../data/maintenanceHub';
 
-const HUB_FAQS = [
-  {
-    question: 'A Carplus faz manutenção automotiva em Curitiba?',
-    answer: 'Sim! A Carplus é uma loja de pneus e centro automotivo completo no bairro Portão, especializada em manutenção preventiva e corretiva, diagnóstico eletrônico por scanner, freios, suspensão, alinhamento, balanceamento, troca de óleo e venda de pneus no mesmo endereço.'
-  },
-  {
-    question: 'A Carplus passa scanner em carros?',
-    answer: 'Sim. Contamos com scanner automotivo multiprotocolo profissional para diagnóstico eletrônico computadorizado. Realizamos a leitura e análise de falhas no motor, injeção eletrônica, câmbio, ABS, airbag, além de reset de luzes de alerta no painel após a identificação da causa.'
-  },
-  {
-    question: 'Quando devo passar scanner no carro?',
-    answer: 'Você deve passar o scanner automotivo sempre que a luz de injeção ou qualquer aviso de alerta acender no painel, ou se o motor apresentar falhas, engasgos, perda de rendimento ou consumo aumentado. O scanner identifica o código exato da falha sem troca de peças por tentativa.'
-  },
-  {
-    question: 'Quando devo fazer alinhamento e balanceamento?',
-    answer: 'O alinhamento e o balanceamento são recomendados a cada 10.000 km, na troca de pneus, após fortes impactos em buracos ou sempre que notar o volante puxando para um lado ou vibrando em velocidades médias/altas.'
-  },
-  {
-    question: 'Qual a diferença entre alinhamento e alinhamento 3D?',
-    answer: 'O alinhamento convencional utiliza réguas ou sensores ópticos comuns. O alinhamento 3D computadorizado utiliza câmeras tridimensionais de alta precisão que medem simultaneamente todos os ângulos das 4 rodas (convergência, câmber e cáster) com base nos parâmetros de fábrica do seu veículo.'
-  },
-  {
-    question: 'A Carplus faz troca de óleo?',
-    answer: 'Sim. Realizamos troca de óleo com lubrificantes sintéticos, semissintéticos e minerais com especificações homologadas pelas montadoras, com substituição do filtro de óleo, filtro de ar, filtro de combustível e filtro de cabine, conforme o manual do seu veículo.'
-  },
-  {
-    question: 'A Carplus faz manutenção de freios?',
-    answer: 'Sim. Fazemos a avaliação completa de discos, pastilhas e fluido de freio. Substituímos componentes desgastados com peças de qualidade, realizamos troca de fluido DOT 3 / DOT 4 com sangria técnica e verificamos o sistema antitravamento ABS.'
-  },
-  {
-    question: 'A Carplus faz revisão de suspensão?',
-    answer: 'Sim! Avaliamos e substituímos amortecedores, molas, buchas, pivôs, terminais de direção, coxins e barras estabilizadoras, eliminando ruídos e garantindo estabilidade e conforto ao dirigir.'
-  },
-  {
-    question: 'Posso trocar pneus e fazer manutenção no mesmo lugar?',
-    answer: 'Com certeza! Essa é uma das principais comodidades da Carplus. Você pode escolher pneus novos para seu carro e já realizar montagem, balanceamento, alinhamento 3D e revisão preventiva no mesmo endereço.'
-  },
-  {
-    question: 'Preciso agendar atendimento?',
-    answer: 'Não é obrigatório agendar: atendemos por ordem de chegada com agilidade na oficina. No entanto, agendando previamente pelo WhatsApp você garante horário reservado.'
-  },
-  {
-    question: 'Onde fica a oficina da Carplus?',
-    answer: 'Estamos localizados na Avenida Presidente Arthur da Silva Bernardes, 1323, no bairro Portão, em Curitiba. Ponto de acesso fácil no Portão com vagas para clientes em frente à loja.'
-  }
-];
-
-const SERVICOS_PRINCIPAIS = [
-  {
-    icon: Cpu,
-    title: 'Scanner Automotivo',
-    slug: '/servico/scanner-automotivo',
-    benefit: 'Diagnóstico eletrônico computadorizado para leitura de códigos de falha, luz de injeção acesa e análise de sensores em veículos nacionais e importados.',
-    tag: 'Diagnóstico Eletrônico'
-  },
-  {
-    icon: Target,
-    title: 'Alinhamento e Balanceamento',
-    slug: '/servico/alinhamento-e-balanceamento',
-    benefit: 'Correção de geometria veicular e eliminação de trepidações no volante, aumentando a vida útil dos pneus e garantindo estabilidade direcional.',
-    tag: 'Geometria de Rodas'
-  },
-  {
-    icon: Layers,
-    title: 'Alinhamento 3D Computadorizado',
-    slug: '/servico/alinhamento-3d',
-    benefit: 'Aferição tridimensional com precisão para ajuste de cáster, câmber e convergência em padrões originais de fábrica.',
-    tag: 'Tecnologia 3D'
-  },
-  {
-    icon: Droplets,
-    title: 'Troca de Óleo e Filtros',
-    slug: '/servico/troca-de-oleo',
-    benefit: 'Lubrificantes sintéticos e semissintéticos com especificações homologadas, troca de filtro de óleo, ar e cabine com descarte ecológico.',
-    tag: 'Lubrificação e Motor'
-  },
-  {
-    icon: ShieldAlert,
-    title: 'Manutenção de Freios',
-    slug: '/servico/manutencao-de-freios',
-    benefit: 'Avaliação criteriosa de pastilhas, discos e fluido de freio DOT4 com sangria completa, garantindo máxima segurança e resposta imediata na frenagem.',
-    tag: 'Segurança Ativa'
-  },
-  {
-    icon: Sliders,
-    title: 'Suspensão Automotiva',
-    slug: '/servico/revisao-de-suspensao',
-    benefit: 'Avaliação técnica completa de amortecedores, molas, pivôs, buchas e bandejas, eliminando barulhos secos e desgaste prematuro.',
-    tag: 'Conforto e Estabilidade'
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Revisão Preventiva Geral',
-    slug: '/servico/revisao-geral',
-    benefit: 'Checklist detalhado de itens mecânicos e de segurança antes de viagens ou revisões programadas, com laudo apresentado antes do orçamento.',
-    tag: 'Prevenção de Falhas'
-  },
-  {
-    icon: Circle,
-    title: 'Pneus e Geometria Completa',
-    slug: '/pneus-curitiba',
-    benefit: 'Amplo catálogo de pneus das melhores marcas com montagem e balanceamento no mesmo local, integrando pneus e mecânica.',
-    tag: 'Pneus em Curitiba'
-  }
-];
-
-const SINAIS_OFICINA = [
-  {
-    titulo: 'Luz de injeção acesa no painel',
-    descricao: 'Indica falha no gerenciamento do motor, sonda lambda, bicos injetores ou ignição detectada pela central eletrônica.',
-    servico: 'Scanner Automotivo',
-    link: '/servico/scanner-automotivo'
-  },
-  {
-    titulo: 'Carro puxando para um lado',
-    descricao: 'Desvio de trajetória em linha reta indica desalinhamento das rodas dianteiras ou traseiras.',
-    servico: 'Alinhamento 3D',
-    link: '/servico/alinhamento-3d'
-  },
-  {
-    titulo: 'Volante tremendo ou vibrando',
-    descricao: 'Trepidação no volante em velocidades acima de 60 km/h costuma ser causada por rodas desbalanceadas.',
-    servico: 'Balanceamento',
-    link: '/servico/alinhamento-e-balanceamento'
-  },
-  {
-    titulo: 'Barulho ou chiado ao frear',
-    descricao: 'Ruído metálico indica pastilhas gastas no fim da vida útil ou atrito nos discos que exigem revisão.',
-    servico: 'Revisão de Freios',
-    link: '/servico/manutencao-de-freios'
-  },
-  {
-    titulo: 'Pedal de freio baixo ou esponjoso',
-    descricao: 'Sensação de perda de firmeza no pedal pode indicar ar no sistema hidráulico ou fluido de freio vencido.',
-    servico: 'Manutenção de Freios',
-    link: '/servico/manutencao-de-freios'
-  },
-  {
-    titulo: 'Desgaste irregular dos pneus',
-    descricao: 'Pneu com borracha gasta apenas na borda interna ou externa é sinal claro de cambagem ou convergência incorreta.',
-    servico: 'Alinhamento & Pneus',
-    link: '/servico/alinhamento-e-balanceamento'
-  },
-  {
-    titulo: 'Óleo vencido ou escurecido',
-    descricao: 'Lubrificante fora do prazo ou da viscosidade perde a capacidade de proteção e pode desgastar componentes internos.',
-    servico: 'Troca de Óleo',
-    link: '/servico/troca-de-oleo'
-  },
-  {
-    titulo: 'Suspensão batendo seco',
-    descricao: 'Pancadas em quebra-molas ou asfalto irregular apontam amortecedores com vazamento ou buchas danificadas.',
-    servico: 'Suspensão',
-    link: '/servico/revisao-de-suspensao'
-  },
-  {
-    titulo: 'Consumo elevado de combustível',
-    descricao: 'Filtros saturados, velas desgastadas, sensores descalibrados ou pneus com pressão baixa elevam o consumo.',
-    servico: 'Revisão Geral',
-    link: '/servico/revisao-geral'
-  },
-  {
-    titulo: 'Dificuldade na partida do motor',
-    descricao: 'Partida pesada ou engasgos sugerem problemas na bateria, motor de partida, velas ou alimentação.',
-    servico: 'Diagnóstico Técnico',
-    link: '/servico/scanner-automotivo'
-  }
+const contactUrl = (classic = false) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  `${classic ? 'Olá! Quero consultar atendimento para meu carro antigo.' : 'Olá! Quero consultar uma avaliação na Carplus.'} Meu carro é [modelo], ano [ano]. Percebi [sintoma ou necessidade]. Começou [quando].`
+)}`;
+const container = 'max-w-7xl mx-auto px-4 md:px-6';
+const heading = 'text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic leading-tight';
+const primaryButton = 'inline-flex min-h-12 items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-dark font-bold text-sm px-5 py-3 rounded-md transition-colors text-center';
+const textLink = 'inline-flex min-h-11 items-center gap-1 font-bold text-sm underline underline-offset-4 hover:text-amber-700';
+const services = [
+  ['Revisão geral', '/servico/revisao-geral', 'Para organizar a manutenção do veículo.'],
+  ['Troca de óleo', '/servico/troca-de-oleo', 'Consulte a especificação e os intervalos indicados para seu carro.'],
+  ['Freios', '/servico/manutencao-de-freios', 'Avaliação do sistema de frenagem.'],
+  ['Suspensão', '/servico/revisao-de-suspensao', 'Investigação de ruídos, desgaste e alterações de comportamento.'],
+  ['Pneus', '/pneus', 'Consulte a medida adequada e a disponibilidade.'],
+  ['Conserto de pneu', '/servico/conserto-de-pneu', 'A possibilidade de reparo depende da avaliação do dano e do pneu.'],
 ];
 
 export default function ManutencaoAutomotivaHub() {
   useSEO({
-    title: 'Manutenção Automotiva em Curitiba | Centro Automotivo no Portão | Carplus',
-    description: 'Manutenção automotiva em Curitiba no bairro Portão. Scanner automotivo, alinhamento, balanceamento, troca de óleo, freios, suspensão e revisão preventiva na Carplus Pneus e Oficina.',
+    title: 'Manutenção automotiva e mecânico no Portão | Carplus Curitiba',
+    description: 'Procura um mecânico confiável em Curitiba? Conheça a Carplus no Portão, veja orientações por sintomas e consulte manutenção para carros atuais e antigos.',
     canonical: `${BASE_URL}/manutencao-automotiva-curitiba`,
     ogImage: '/images/loja/carplus-oficina-portao-fachada-curitiba.jpg',
-    keywords: [
-      'manutenção automotiva em curitiba',
-      'centro automotivo em curitiba',
-      'oficina mecânica no portão',
-      'scanner automotivo em curitiba',
-      'alinhamento e balanceamento em curitiba',
-      'troca de óleo em curitiba',
-      'revisão de freios em curitiba',
-      'suspensão automotiva em curitiba'
-    ],
     schemaJSON: [
       generateBreadcrumbSchema([
-        { name: 'Home', url: `${BASE_URL}/` },
-        { name: 'Manutenção Automotiva em Curitiba', url: `${BASE_URL}/manutencao-automotiva-curitiba` },
+        { name: 'Início', url: `${BASE_URL}/` },
+        { name: 'Manutenção automotiva', url: `${BASE_URL}/manutencao-automotiva-curitiba` },
       ]),
       generateFaqSchema(HUB_FAQS),
-      generateLocalBusinessSchema(),
-    ]
+      // The single LocalBusiness entity is maintained in index.html.
+    ],
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-dark text-white overflow-hidden border-b border-white/10" aria-labelledby="manutencao-h1">
-        <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/images/hero-fachada-carplus.webp" 
-            alt="Oficina Mecânica Carplus no Portão Curitiba"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 md:px-6 z-10">
-          {/* Breadcrumb */}
-          <nav aria-label="breadcrumb" className="text-xs text-white/50 mb-6 flex items-center gap-2 font-medium uppercase tracking-wider">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-            <ChevronRight size={12} className="opacity-40" />
-            <span className="text-white">Manutenção Automotiva em Curitiba</span>
-          </nav>
-
-          <div className="max-w-4xl">
-            <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 text-primary text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-sm mb-5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> Centro Automotivo Full Service
-            </span>
-
-            <h1 id="manutencao-h1" className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight italic leading-tight mb-5 text-balance">
-              Manutenção Automotiva em <span className="text-primary">Curitiba no Portão</span>
-            </h1>
-
-            <p className="text-sm sm:text-base md:text-lg text-white/80 font-normal leading-relaxed max-w-3xl mb-8 text-pretty">
-              A Carplus é o seu centro automotivo completo no bairro Portão: unimos oficina mecânica especializada, revisão preventiva computadorizada e venda de pneus no mesmo local. Atendimento técnico transparente com laudo prévio e sem serviços desnecessários.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-2xl">
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de um orçamento para manutenção automotiva na Carplus Portão.')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 rounded-md border border-emerald-500/20 shadow-sm transition-colors whitespace-nowrap sm:min-w-[220px]"
-              >
-                <MessageSquare size={18} className="shrink-0" />
-                <span>Falar no WhatsApp</span>
-              </a>
-              <a
-                href="#servicos-grid"
-                className="flex min-h-12 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors whitespace-nowrap sm:min-w-[170px]"
-              >
-                <Wrench size={16} className="shrink-0" />
-                <span>Ver Serviços</span>
-              </a>
-              <a
-                href={`tel:+${WHATSAPP_NUMBER}`}
-                className="flex min-h-12 items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors whitespace-nowrap sm:min-w-[150px]"
-              >
-                <Phone size={16} className="shrink-0" />
-                <span>{PHONE_DISPLAY}</span>
-              </a>
+      <main>
+        <section className="pt-32 pb-14 md:pb-20 bg-dark text-white" aria-labelledby="manutencao-h1">
+          <div className={container}>
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-white/70 mb-8">
+              <Link to="/" className="hover:text-primary">Início</Link><ChevronRight size={14} aria-hidden="true" />
+              <span aria-current="page">Manutenção automotiva</span>
+            </nav>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Carplus Pneus e Oficina</p>
+                <h1 id="manutencao-h1" className="text-3xl sm:text-4xl xl:text-5xl font-black uppercase tracking-tight italic leading-tight mb-6">Manutenção automotiva em Curitiba, <span className="text-primary">no Portão</span></h1>
+                <p className="text-base text-white/85 leading-relaxed mb-4">Procurando um mecânico confiável para cuidar do seu carro? Comece contando o que mudou: volante vibrando, carro puxando, barulho ao frear ou uma manutenção que ficou pendente. A Carplus reúne oficina mecânica e pneus no Portão, com atendimento também a carros antigos.</p>
+                <p className="text-sm text-white/80 leading-relaxed mb-6">Você não precisa chegar sabendo qual peça trocar. Informe modelo, ano e sintoma para conversar sobre a avaliação adequada ao veículo.</p>
+                <div className="flex flex-col sm:items-start gap-3">
+                  <a href={contactUrl()} target="_blank" rel="noopener noreferrer" className={primaryButton}><MessageSquare size={18} className="shrink-0" aria-hidden="true" />Descrever meu problema no WhatsApp</a>
+                  <a href="#sintomas" className="inline-flex min-h-11 items-center text-sm font-bold underline underline-offset-4 hover:text-primary">Ver orientações por sintoma</a>
+                </div>
+                <p className="text-xs text-white/70 leading-relaxed mt-4">A conversa inicial não substitui a avaliação presencial nem confirma que o veículo pode circular com segurança.</p>
+              </div>
+              <figure className="overflow-hidden rounded-lg border border-white/15 bg-white/5">
+                <img src="/images/loja/carplus-oficina-portao-fachada-curitiba.jpg" alt="Fachada da Carplus Pneus e Oficina no Portão, em Curitiba" width="1200" height="801" fetchPriority="high" className="w-full aspect-[4/3] object-cover" />
+                <figcaption className="p-4 text-sm text-white/80 flex gap-2"><MapPin size={18} className="text-primary shrink-0" aria-hidden="true" />Av. Presidente Arthur da Silva Bernardes, 1323</figcaption>
+              </figure>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* TrustBar Padronizada */}
-      <TrustBar variant="light" />
-
-      {/* Introdução Curta */}
-      <section className="py-12 md:py-16 bg-white border-b border-gray-100" aria-labelledby="intro-manutencao">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-          <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Estrutura & Agilidade</span>
-          <h2 id="intro-manutencao" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 mb-4 text-gray-900">
-            Oficina Mecânica e Centro Automotivo Integrado
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-balance">
-            Você não precisa levar o carro a diferentes locais para resolver pneus em uma loja e suspensão ou freios em outra. Na Carplus Centro Automotivo, no bairro Portão em Curitiba, reunimos profissionais qualificados, ferramental de precisão e atendimento ágil com total transparência para que seu veículo receba o cuidado certo, sem suposições e com peças de qualidade garantida.
-          </p>
-        </div>
-      </section>
-
-      {/* Grid de Serviços Principais */}
-      <section id="servicos-grid" className="py-14 md:py-20 bg-gray-50" aria-labelledby="grid-servicos-titulo">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <header className="mb-12 text-center max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Serviços Automotivos</span>
-            <h2 id="grid-servicos-titulo" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 text-gray-900">
-              Especialidades de Manutenção na <span className="text-primary font-bold">Carplus</span>
-            </h2>
-            <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed">
-              Clique no serviço para ver detalhes técnicos ou converse direto com nossa equipe no Portão.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICOS_PRINCIPAIS.map((srv, idx) => {
-              const Icon = srv.icon;
-              return (
-                <div key={idx} className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col justify-between hover:border-primary/50 transition-all shadow-xs group">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 bg-primary/10 rounded-md flex items-center justify-center text-neutral-900 group-hover:bg-primary group-hover:text-black transition-colors shrink-0">
-                        <Icon size={20} />
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 px-2.5 py-1 rounded-sm">
-                        {srv.tag}
-                      </span>
-                    </div>
-                    <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 leading-snug">
-                      {srv.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">
-                      {srv.benefit}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <Link
-                      to={srv.slug}
-                      className="text-xs font-bold text-neutral-900 hover:text-primary uppercase tracking-tight flex items-center gap-1 transition-colors"
-                    >
-                      <span>Ver detalhes</span>
-                      <ChevronRight size={14} className="text-primary" />
-                    </Link>
-                    <a
-                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de consultar o serviço de ${srv.title} na Carplus Portão.`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-bold text-emerald-700 hover:text-emerald-800 uppercase tracking-tight"
-                    >
-                      WhatsApp
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
+        <nav aria-label="Nesta página" className="bg-white border-b border-gray-200">
+          <div className={`${container} flex flex-wrap gap-x-6 gap-y-1 py-3`}>
+            {[['sintomas', 'Sintomas'], ['seguranca', 'Quando parar'], ['confianca', 'Conheça a oficina'], ['carros-antigos', 'Carros antigos'], ['servicos', 'Serviços'], ['perguntas', 'Perguntas']].map(([id, label]) => <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center text-sm font-bold hover:underline underline-offset-4">{label}</a>)}
           </div>
-        </div>
-      </section>
+        </nav>
 
-      {/* Seção "Quando procurar uma oficina?" */}
-      <section className="py-14 md:py-20 bg-white border-t border-gray-200" aria-labelledby="quando-procurar">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <header className="mb-12 text-center max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-amber-600 uppercase tracking-[0.15em] flex items-center justify-center gap-1.5">
-              <AlertTriangle size={15} /> Diagnóstico Preventivo
-            </span>
-            <h2 id="quando-procurar" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 text-gray-900">
-              Quando Procurar uma Oficina Mecânica?
-            </h2>
-            <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed">
-              Fique atento aos sintomas mais frequentes no dia a dia. Identificar o problema no início evita desgastes em cadeia e despesas maiores.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SINAIS_OFICINA.map((sinal, idx) => (
-              <div key={idx} className="bg-gray-50 border border-gray-200/80 rounded-lg p-5 flex flex-col justify-between hover:border-gray-300 transition-colors">
-                <div>
-                  <div className="flex items-center gap-2 mb-2 text-primary font-bold text-xs uppercase tracking-wider">
-                    <CheckCircle2 size={15} className="shrink-0" />
-                    <span>Sintoma Alerta</span>
-                  </div>
-                  <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-2 leading-snug">
-                    {sinal.titulo}
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed mb-4">
-                    {sinal.descricao}
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-gray-200/50 flex items-center justify-between text-xs">
-                  <span className="font-medium text-gray-500">Indicado:</span>
-                  <Link to={sinal.link} className="font-bold text-neutral-900 hover:text-primary flex items-center gap-1">
-                    {sinal.servico} <ChevronRight size={13} className="text-primary" />
-                  </Link>
-                </div>
-              </div>
-            ))}
+        <section id="sintomas" className="py-14 md:py-20 scroll-mt-28" aria-labelledby="sintomas-title">
+          <div className={container}>
+            <header className="max-w-3xl mb-9">
+              <p className="text-xs font-bold uppercase tracking-widest text-amber-700 mb-3">Comece pelo que você percebeu</p>
+              <h2 id="sintomas-title" className={heading}>O que você percebeu no carro?</h2>
+              <p className="mt-5 text-gray-600 leading-relaxed">Estes sinais ajudam a organizar o atendimento, mas podem ter mais de uma causa. Não faça testes na rua nem tente reproduzir uma falha para gravar um vídeo. Relate apenas o que já percebeu, com o veículo parado em segurança.</p>
+            </header>
+            <div className="grid md:grid-cols-2 gap-5">
+              {HUB_SYMPTOMS.map((symptom) => <article key={symptom.title} className="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">{symptom.title}</h3>
+                {symptom.paragraphs.map((paragraph) => <p key={paragraph} className="text-sm text-gray-600 leading-relaxed mb-4">{paragraph}</p>)}
+                <div className="border-t border-gray-100 pt-2 flex flex-wrap gap-x-5">{symptom.links.map((link) => <Link key={link.to} to={link.to} className={textLink}>{link.label}<ChevronRight size={14} aria-hidden="true" /></Link>)}</div>
+              </article>)}
+              <aside id="seguranca" aria-labelledby="seguranca-title" className="scroll-mt-28 bg-amber-50 border border-amber-300 rounded-lg p-6">
+                <AlertTriangle size={28} className="text-amber-800 mb-4" aria-hidden="true" />
+                <h3 id="seguranca-title" className="text-xl font-bold mb-4">Quando não continuar dirigindo</h3>
+                <p className="text-sm leading-relaxed mb-4">Se houver perda de frenagem, dificuldade para controlar a direção, instabilidade intensa ou dano visível importante no pneu, interrompa o deslocamento assim que for seguro e solicite assistência. Não dirija até a oficina para tentar resolver uma condição de risco.</p>
+                <p className="text-sm leading-relaxed">Alertas de pressão do óleo, superaquecimento e sistema de freios exigem atenção às instruções do manual do veículo. Em caso de dúvida sobre a segurança, mantenha o carro parado em local seguro e procure assistência. O WhatsApp da oficina não substitui atendimento de emergência.</p>
+              </aside>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Seção "Serviços em um só lugar" */}
-      <section className="py-14 md:py-20 bg-dark text-white relative overflow-hidden" aria-labelledby="um-so-lugar">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <section id="confianca" className="py-14 md:py-20 bg-white scroll-mt-28" aria-labelledby="confianca-title">
+          <div className={`${container} grid lg:grid-cols-2 items-center gap-10`}>
+            <figure>
+              <img src="/images/loja/carplus-oficina-interior.webp" alt="Interior da Carplus com área de oficina e serviço de alinhamento" loading="lazy" width="1001" height="1200" className="w-full rounded-lg" />
+              <figcaption className="text-xs text-gray-500 mt-3">Estrutura da Carplus no Portão, em Curitiba.</figcaption>
+            </figure>
             <div>
-              <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Mais Praticidade</span>
-              <h2 id="um-so-lugar" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 mb-6 leading-tight">
-                Todos os Serviços Mecânicos em um Só Lugar
-              </h2>
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
-                Em centros automotivos tradicionais, muitas vezes você precisa comprar o pneu em um estabelecimento, procurar outra oficina para fazer a suspensão e ainda um terceiro local para passar o scanner eletrônico. Na Carplus você resolve tudo na mesma parada:
-              </p>
-
-              <div className="space-y-3.5 mb-8">
-                {[
-                  'Troca de pneus com alinhamento 3D e balanceamento computadorizado simultâneos',
-                  'Revisão completa de freios (pastilhas, discos, fluido) sem sair da loja',
-                  'Diagnóstico por scanner multiprotocolo para leitura de luz de injeção e falhas eletrônicas',
-                  'Troca de óleo com filtros de alta qualidade específicos para o motor do seu carro',
-                  'Revisão técnica de suspensão e amortecedores com laudo apresentado antes do serviço'
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 size={17} className="text-primary shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-white/85 leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação completa na Carplus Portão.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-12 items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 rounded-md transition-colors"
-                >
-                  <MessageSquare size={17} /> Agendar Avaliação
-                </a>
-                <Link
-                  to="/como-chegar"
-                  className="flex min-h-12 items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-dark font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors shadow-sm"
-                >
-                  <Navigation size={17} /> Como Chegar
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 sm:p-8">
-              <h3 className="font-bold text-lg uppercase tracking-tight text-white mb-4 flex items-center gap-2">
-                <Wrench className="text-primary" size={20} />
-                <span>Atendimento na Oficina Carplus</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
-                Nosso compromisso é com a transparência: antes de qualquer intervenção, seu carro passa por uma avaliação criteriosa. O cliente recebe explicação detalhada do que realmente precisa de atenção urgente e do que pode ser planejado para revisões futuras.
-              </p>
-
-              <div className="space-y-3 text-xs sm:text-sm text-white/80 border-t border-white/10 pt-4">
-                <div className="flex items-center gap-2 font-bold text-white">
-                  <CheckCircle2 size={15} className="text-primary" /> Nota fiscal e garantia conforme serviço/produto
-                </div>
-                <div className="flex items-center gap-2 font-bold text-white">
-                  <CheckCircle2 size={15} className="text-primary" /> Equipamentos de precisão e equipe experiente
-                </div>
-                <div className="flex items-center gap-2 font-bold text-white">
-                  <CheckCircle2 size={15} className="text-primary" /> Condições em até 10x sem juros nos cartões
-                </div>
-              </div>
+              <h2 id="confianca-title" className={heading}>Confiança começa com informação clara</h2>
+              <p className="text-gray-600 leading-relaxed mt-6">Antes de autorizar um serviço, vale entender o que foi encontrado, quais itens serão trabalhados e como o orçamento está composto. Pergunte o que exige atenção agora e o que pode ser acompanhado depois da avaliação.</p>
+              <p className="text-gray-600 leading-relaxed mt-4">Na Carplus, o atendimento acontece na Av. Presidente Arthur da Silva Bernardes, 1323, no Portão, em Curitiba. Conheça a oficina, consulte os serviços e converse sobre a necessidade do seu veículo.</p>
+              <div className="flex flex-wrap gap-x-5 mt-5"><Link to="/quem-somos" className={textLink}>Conhecer a Carplus</Link><Link to="/como-chegar" className={textLink}>Como chegar</Link><Link to="/servicos" className={textLink}>Todos os serviços</Link></div>
+              <div className="border-t border-gray-200 mt-6 pt-5 text-sm text-gray-600 space-y-2"><p>Segunda a sexta: 08h às 18h · Sábado: 08h às 12h</p><p>Consulte a equipe antes de planejar o atendimento.</p><a href="tel:+554130827282" className={textLink}><Phone size={16} aria-hidden="true" />{PHONE_DISPLAY}</a></div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Seção Local - Bairro Portão e Regiões Vizinhas */}
-      <section className="py-14 md:py-20 bg-white" aria-labelledby="local-manutencao">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Localização Estratégica</span>
-              <h2 id="local-manutencao" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 mb-6 text-gray-900 leading-tight">
-                Oficina Mecânica no Portão, Curitiba
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
-                Estamos na <strong className="text-gray-900">Av. Presidente Arthur da Silva Bernardes, 1323 – Portão</strong>, uma das avenidas de melhor acesso em Curitiba. Atendemos com facilidade motoristas de diversos bairros próximos:
-              </p>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
-                <h4 className="font-bold text-xs uppercase tracking-widest text-neutral-800 mb-3">Atendimento Próximo Aos Bairros:</h4>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-4 text-xs sm:text-sm text-gray-600">
-                  {['Portão', 'Água Verde', 'Vila Izabel', 'Novo Mundo', 'Fazendinha', 'Santa Quitéria', 'Campo Comprido', 'Capão Raso', 'Lindóia', 'Guaíra'].map((bairro, idx) => (
-                    <span key={idx} className="flex items-center gap-1.5 font-medium">
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                      {bairro}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs sm:text-sm text-gray-600">
-                <span className="flex items-center gap-1.5 font-bold text-gray-800">
-                  <CheckCircle2 size={16} className="text-primary" /> Acesso fácil com vagas para clientes
-                </span>
-                <span className="hidden sm:inline text-gray-300">•</span>
-                <span className="flex items-center gap-1.5 font-bold text-gray-800">
-                  <CheckCircle2 size={16} className="text-primary" /> Diagnóstico com scanner antes do orçamento
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
-              <h3 className="font-bold text-base uppercase tracking-tight text-gray-900 mb-4 flex items-center gap-2">
-                <Clock size={18} className="text-primary" />
-                <span>Horários de Atendimento</span>
-              </h3>
-              <div className="space-y-3 text-xs sm:text-sm text-gray-600 mb-6">
-                <div className="flex justify-between py-2 border-b border-gray-200">
-                  <span>Segunda a Sexta-feira:</span>
-                  <span className="font-bold text-gray-900">08:00 às 18:00</span>
-                </div>
-                <div className="flex justify-between py-2 border-b border-gray-200">
-                  <span>Sábado:</span>
-                  <span className="font-bold text-gray-900">08:00 às 12:00</span>
-                </div>
-                <div className="flex justify-between py-2 text-red-600">
-                  <span>Domingos e Feriados:</span>
-                  <span className="font-medium">Fechado</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/como-chegar"
-                  className="flex-1 min-h-11 flex items-center justify-center gap-2 bg-primary hover:bg-yellow-400 text-dark font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors shadow-xs"
-                >
-                  <Navigation size={16} /> Como Chegar (Rotas)
-                </Link>
-                <a
-                  href="tel:+554130827282"
-                  className="min-h-11 flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-800 font-bold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md transition-colors"
-                >
-                  <Phone size={15} /> Ligar
-                </a>
-              </div>
-            </div>
+        <section id="carros-antigos" className="py-14 md:py-20 bg-dark text-white scroll-mt-28" aria-labelledby="antigos-title">
+          <div className={`${container} grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center`}>
+            <div><p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Manutenção e reparos</p><h2 id="antigos-title" className={heading}>Seu carro é antigo? Também atendemos</h2><p className="text-white/80 mt-6 leading-relaxed">A Carplus trabalha com manutenção e reparos de carros antigos. Seja um veículo de uso diário ou um carro que passa mais tempo guardado, conte o histórico e o que precisa de atenção.</p><Link to="/servico/carros-classicos" className="inline-flex min-h-11 items-center text-sm text-primary font-bold underline underline-offset-4 mt-4">Manutenção de carros antigos e clássicos</Link></div>
+            <div className="border border-white/15 rounded-lg p-6 bg-white/5"><Wrench size={28} className="text-primary mb-4" aria-hidden="true" /><p className="text-white/85 leading-relaxed text-sm mb-6">O atendimento considera o modelo, o ano e as condições do carro. Informe também se ele ficou parado por muito tempo ou passou por modificações. A equipe confirma o escopo da avaliação e do serviço para cada caso.</p><a href={contactUrl(true)} target="_blank" rel="noopener noreferrer" className={primaryButton}>Consultar atendimento para meu carro antigo</a></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Prova Social e Estrutura */}
-      <StoreSection />
-      <Reviews />
+        <section id="servicos" className="py-14 md:py-20 scroll-mt-28" aria-labelledby="servicos-title">
+          <div className={container}><h2 id="servicos-title" className={heading}>Já sabe do que precisa?</h2><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">{services.map(([title, to, description]) => <article key={to} className="bg-white border border-gray-200 rounded-lg p-6"><h3 className="text-lg font-bold"><Link to={to} className="inline-flex min-h-11 items-center gap-2 hover:underline underline-offset-4">{title}<ChevronRight size={18} className="text-amber-700" aria-hidden="true" /></Link></h3><p className="text-sm text-gray-600 leading-relaxed mt-2">{description}</p></article>)}</div><div className="flex flex-wrap gap-x-6 mt-5"><Link to="/servicos" className={textLink}>Ver todos os serviços</Link><Link to="/borracharia-portao" className={textLink}>Borracharia no Portão</Link></div></div>
+        </section>
 
-      {/* FAQ com 10 Perguntas Reais */}
-      <section className="bg-white py-14 md:py-20 border-t border-gray-200" aria-labelledby="faq-manutencao-titulo">
-        <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <header className="mb-10 text-center">
-            <span className="text-xs font-bold text-primary uppercase tracking-[0.15em]">Dúvidas Frequentes</span>
-            <h2 id="faq-manutencao-titulo" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic mt-2 text-gray-900">
-              Perguntas Sobre <span className="text-primary font-bold">Manutenção Automotiva</span>
-            </h2>
-            <p className="mt-3 text-xs sm:text-sm text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Tudo o que você precisa saber sobre os serviços da Carplus no bairro Portão.
-            </p>
-          </header>
+        <section id="perguntas" className="py-14 md:py-20 bg-white border-y border-gray-200 scroll-mt-28" aria-labelledby="perguntas-title">
+          <div className="max-w-4xl mx-auto px-4 md:px-6"><h2 id="perguntas-title" className={heading}>Perguntas sobre manutenção automotiva</h2><div className="mt-8 divide-y divide-gray-200 border-y border-gray-200">{HUB_FAQS.map((faq) => <details key={faq.question} className="group py-4"><summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 font-bold text-sm sm:text-base [&::-webkit-details-marker]:hidden"><span>{faq.question}</span><span aria-hidden="true" className="text-xl text-amber-700 group-open:rotate-45">+</span></summary><p className="text-sm text-gray-600 leading-relaxed pt-4 pb-2">{faq.answer}</p></details>)}</div></div>
+        </section>
 
-          <div className="flex flex-col divide-y divide-gray-200 border-t border-b border-gray-200">
-            {HUB_FAQS.map((faq, idx) => (
-              <details key={idx} className="group py-4">
-                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-left text-sm sm:text-base font-bold leading-snug text-gray-900 hover:text-primary transition-colors [&::-webkit-details-marker]:hidden">
-                  <span>{faq.question}</span>
-                  <span
-                    aria-hidden="true"
-                    className="shrink-0 text-lg sm:text-xl leading-none text-primary transition-transform group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="pb-1 pt-3 text-xs sm:text-sm leading-relaxed text-gray-600 text-pretty">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
+        <section className="py-14 md:py-20" aria-labelledby="contato-title"><div className="max-w-3xl mx-auto px-4 md:px-6 text-center"><h2 id="contato-title" className={heading}>Conte o que está acontecendo</h2><p className="text-gray-600 leading-relaxed mt-5 mb-7">Envie o modelo, o ano e o sintoma do carro. Se souber, acrescente a quilometragem, quando o problema começou e o último serviço realizado. Assim, a conversa começa com informações úteis, sem escolher uma peça por tentativa.</p><div className="flex flex-col sm:flex-row justify-center gap-3"><a href={contactUrl()} target="_blank" rel="noopener noreferrer" className={primaryButton}><MessageSquare size={18} aria-hidden="true" />Falar com a Carplus</a><Link to="/como-chegar" className="inline-flex min-h-12 items-center justify-center gap-2 border border-gray-300 rounded-md px-5 py-3 font-bold text-sm hover:bg-white"><Navigation size={18} aria-hidden="true" />Como chegar</Link></div><p className="text-xs text-gray-500 mt-5">A mensagem abre para você completar e enviar. Em caso de risco, pare em segurança e solicite assistência.</p></div></section>
 
-          <div className="mt-10 p-5 bg-gray-50 rounded-lg border border-gray-200 text-center max-w-2xl mx-auto">
-            <HelpCircle size={24} className="mx-auto text-primary mb-2" />
-            <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-1">Precisa de um diagnóstico para seu carro?</h3>
-            <p className="text-xs text-gray-500 mb-4">
-              Envie uma mensagem para nossos técnicos no Portão e tire dúvidas sobre os sintomas do seu veículo.
-            </p>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de falar com um especialista sobre manutenção automotiva na Carplus.')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-2.5 rounded-md shadow-xs border border-emerald-500/15 transition-colors"
-            >
-              <MessageSquare size={16} /> Falar Com Especialista
-            </a>
-          </div>
-        </div>
-      </section>
-
+        <section className="bg-white border-t border-gray-200 py-8" aria-labelledby="fontes-title"><div className={`${container} text-xs text-gray-600 leading-relaxed`}><h2 id="fontes-title" className="font-bold text-sm text-gray-900 mb-3">Referências para as orientações</h2><p className="mb-3">Conteúdo revisado em 18/10/2026. As referências abaixo ajudam a contextualizar os sintomas, não substituem a avaliação do veículo nem representam afiliação com a Carplus. As instruções do manual do seu carro prevalecem.</p><ul className="flex flex-wrap gap-x-6 gap-y-2 list-none">{[
+          ['Michelin: alinhamento, balanceamento e vibração', 'https://www.michelin.com.br/auto/conselhos/cuidados-com-pneus/alinhamento-de-roda-balanceamento-de-roda'],
+          ['Bosch: sinais e manutenção dos freios', 'https://am.boschcarservice.com/br/pt/nossos-servicos/sistema-de-freio/manutencao-dos-freios/'],
+          ['Monroe: componentes e ruídos da suspensão', 'https://www.monroe.com/pt-pt/support/technical-tips/lv/mounting-kits-protection-kits/value-and-importance-mounting-kits.html'],
+          ['Ford: exemplo de manual sobre luzes de advertência', 'https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2139020&Uid=G2139014&buildtype=web&countryCode=BRA&div=f&languageCode=pt&moidRef=G2130115&userMarket=BRA&vFilteringEnabled=False&variantid=9543'],
+        ].map(([label, href]) => <li key={href}><a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-gray-900">{label}</a></li>)}</ul></div></section>
+      </main>
       <Footer />
     </div>
   );
