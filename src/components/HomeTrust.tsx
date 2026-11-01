@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY as reviews } from '../data/reviewSummary';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 
@@ -16,8 +17,8 @@ export default function HomeTrust() {
         <p className="mt-5 text-lg text-gray-600 leading-relaxed">Conheça onde seu carro será atendido e fale com a equipe antes de vir. Nossa estrutura, nossos serviços e nossos canais estão aqui para você conferir.</p>
       </header>
       <div className="mb-8 rounded-xl border border-gray-200 bg-gray-50 p-5 sm:flex sm:items-center sm:justify-between sm:gap-5">
-        <div><p className="text-lg font-bold text-dark">4,9 de 5 em 262 avaliações no Google</p><p className="mt-1 text-sm text-gray-600">Dados consultados em 18/10/2026. A nota e o total podem mudar.</p></div>
-        <a href="https://maps.google.com/maps?cid=11894120831274747055" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-bold text-dark underline underline-offset-4 sm:mt-0">Ver avaliações no Google</a>
+        <div><p className="text-lg font-bold text-dark">{reviews.ratingDisplay} de 5 em {reviews.count} avaliações no Google</p><p className="mt-1 text-sm text-gray-600">Dados consultados em {reviews.checkedDateDisplay}. A nota e o total podem mudar.</p></div>
+        <a href={reviews.source} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-bold text-dark underline underline-offset-4 sm:mt-0">Ver avaliações no Google</a>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {evidence.map(item => <article key={item.title} className="rounded-xl overflow-hidden border border-gray-200 bg-gray-50">

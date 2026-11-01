@@ -71,11 +71,11 @@ export default function PneusCuritibaPromo() {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase tracking-normal">
             <span className="text-dark">Onde Trocar Pneus em Curitiba com </span>
-            <span className="text-primary italic">Montagem Grátis</span>
+            <span className="text-primary italic">Montagem sob consulta</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Somos loja e distribuidora de pneus no bairro Portão, em Curitiba: pneus novos e originais das
-            melhores marcas com montagem, balanceamento e alinhamento inclusos, em até 10x sem juros.
+            melhores marcas com montagem e balanceamento sob consulta, em até 10x sem juros.
           </p>
         </div>
 
@@ -172,8 +172,8 @@ export default function PneusCuritibaPromo() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <MapPin className="text-primary" size={24} />
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-dark">Montagem Grátis</h3>
-                <p className="text-gray-500 text-sm">Montagem, balanceamento e alinhamento gratuitos.</p>
+                <h3 className="font-bold text-lg mb-2 text-dark">Montagem sob consulta</h3>
+                <p className="text-gray-500 text-sm">Montagem e balanceamento sob consulta.</p>
               </div>
             </div>
 

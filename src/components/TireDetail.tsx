@@ -1,3 +1,4 @@
+import TireReplacementAdvice from './TireReplacementAdvice';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { MessageSquare, Phone, Navigation, ChevronRight, CircleCheck as CheckCircle2, ShieldCheck, Clock, Award, Star, ArrowLeft, CarFront, Share2, Copy, Check, MapPin } from 'lucide-react';
@@ -19,6 +20,7 @@ export default function TireDetail() {
   const navigate = useNavigate();
   const tire = TIRES.find(t => t && t.slug === slug);
   const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState('');
   const [showShareMenu, setShowShareMenu] = useState(false);
 
   const handleBack = () => {
@@ -32,21 +34,22 @@ export default function TireDetail() {
   const shareUrl = `https://www.carpluspneuseoficina.com.br/pneu/${slug}`;
 
   const handleCopyLink = async () => {
+    let success = false;
     try {
       await navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = shareUrl;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      success = true;
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = shareUrl;
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      try { success = document.execCommand('copy'); } catch { success = false; }
+      field.remove();
     }
+    setCopied(success);
+    setCopyStatus(success ? 'Link copiado.' : 'Não foi possível copiar. Selecione o endereço e copie manualmente.');
   };
 
   const handleShare = async () => {
@@ -121,7 +124,7 @@ export default function TireDetail() {
           // que o usuario digita no Google. O sufixo antigo estourava ~79 caracteres
           // e era truncado na SERP, escondendo a cidade.
           title: `Pneu ${tire.nome} em Curitiba | Carplus`,
-          description: `Pneu ${tire.nome} na medida ${tire.medida} em Curitiba com montagem e balanceamento inclusos, em ate 10x sem juros e garantia de fabrica. Retire no Portao: (41) 3082-7282.`,
+          description: `Pneu ${tire.nome} na medida ${tire.medida} em Curitiba com montagem e balanceamento sob consulta, em ate 10x sem juros e garantia de fabrica. Retire no Portao: (41) 3082-7282.`,
           canonical: indexDecision?.canonicalUrl ?? `${BASE_URL}/pneu/${tire.slug}`,
           noindex: indexDecision ? !indexDecision.index : false,
           ogImage: tire.imagemGrande,
@@ -182,11 +185,13 @@ export default function TireDetail() {
                 <div className="flex items-center gap-2 bg-gray-50 rounded-xl p-3 mb-3">
                   <input 
                     type="text" 
+                    aria-label="Endereço desta página para compartilhar"
                     value={shareUrl} 
                     readOnly 
                     className="flex-1 bg-transparent text-xs text-gray-600 outline-none truncate"
                   />
                   <button
+                    aria-label="Copiar link desta página"
                     onClick={handleCopyLink}
                     className={`p-2 rounded-lg transition-all ${copied ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'}`}
                   >
@@ -194,6 +199,7 @@ export default function TireDetail() {
                   </button>
                 </div>
 
+                <p role="status" aria-live="polite" className="text-sm mb-3">{copyStatus}</p>
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href={`https://wa.me/?text=${encodeURIComponent(`Confira o pneu ${tire?.nome} na Carplus: ${shareUrl}`)}`}
@@ -394,7 +400,7 @@ export default function TireDetail() {
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                     <CarFront size={120} />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-8 uppercase italic tracking-tight leading-snug relative z-10">Carros <br/> Compatíveis</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-8 uppercase italic tracking-tight leading-snug relative z-10">Aplicações <br/> para conferir</h2>
                 <div className="space-y-3 relative z-10">
                     {tire.carros.map((car, i) => (
                         <div key={i} className="bg-white/5 border border-white/10 p-4 rounded-xl flex items-center gap-3 hover:bg-white/10 transition-all cursor-default group">
@@ -428,7 +434,7 @@ export default function TireDetail() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                     {[
-                        "Montagem e balanceamento gratuitos",
+                        "Montagem e balanceamento sob consulta",
                         "Parcelamento em até 10x sem juros",
                         "Garantia oficial de fábrica",
                         "Instalação rápida (agendada)",
@@ -466,6 +472,7 @@ export default function TireDetail() {
         <TireTips tireName={tire.nome} categoria={tire.categoria} />
 
         {/* FAQ Section */}
+        <TireReplacementAdvice name={tire.nome} measure={tire.medida} rim={tire.aro} loadIndex={tire.indiceCarga} speedIndex={tire.indiceVelocidade} />
         <TireFAQ tire={tire} />
 
         {/* Related Products */}

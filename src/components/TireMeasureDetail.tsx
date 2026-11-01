@@ -64,7 +64,7 @@ export default function TireMeasureDetail() {
     tire
       ? {
           title: `Pneu ${normalizedMedida} em Curitiba | Carplus Centro Automotivo – Todas as Marcas`,
-          description: `Compare e compre pneu ${normalizedMedida} na Carplus em Curitiba. Várias marcas: Pirelli, Firestone, Continental. Montagem inclusa, parcelamento em até 10x sem juros. Ligue: (41) 3082-7282.`,
+          description: `Compare e compre pneu ${normalizedMedida} na Carplus em Curitiba. Várias marcas: Pirelli, Firestone, Continental. Montagem sob consulta, parcelamento em até 10x sem juros. Ligue: (41) 3082-7282.`,
           canonical: `https://www.carpluspneuseoficina.com.br/pneu-medida/${medida}`,
           noindex: !isMeasureIndexable(normalizedMedida),
           ogImage: tire.imagemGrande,
@@ -337,7 +337,7 @@ export default function TireMeasureDetail() {
                 <div className="flex flex-wrap items-center gap-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span>Pronta Entrega no Portão</span>
+                    <span>Disponibilidade sob consulta no Portão</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <ShieldCheck size={14} className="text-primary" />
@@ -385,9 +385,9 @@ export default function TireMeasureDetail() {
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <CarFront size={120} />
             </div>
-            <h2 className="text-3xl font-bold mb-4 uppercase italic tracking-tighter relative z-10">Carros <br/> Compatíveis</h2>
+            <h2 className="text-3xl font-bold mb-4 uppercase italic tracking-tighter relative z-10">Aplicações <br/> para conferir</h2>
             <p className="text-[10px] text-white/60 uppercase font-bold tracking-widest mb-6">
-              Todos os veículos compatíveis com {normalizedMedida}
+              Referências do catálogo para {normalizedMedida}: confirme ano, versão e manual antes de comprar
             </p>
             <div className="space-y-3 relative z-10 max-h-[400px] overflow-y-auto pr-2">
               {allCompatibleCars.length > 0 ? (
@@ -499,7 +499,7 @@ export default function TireMeasureDetail() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {[
-                "Montagem e balanceamento gratuitos",
+                "Montagem e balanceamento sob consulta",
                 "Parcelamento em até 10x sem juros",
                 "Garantia oficial de fábrica",
                 "Instalação rápida (agendada)",
@@ -584,7 +584,7 @@ export default function TireMeasureDetail() {
               Explore mais pneus em Curitiba
             </h2>
             <p className="text-gray-500 text-sm font-medium mb-8">
-              Navegue por aro, marca ou veículo e encontre o pneu ideal com instalação inclusa no Portão.
+              Navegue por aro, marca ou veículo e encontre o pneu ideal com instalação sob consulta no Portão.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

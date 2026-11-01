@@ -25,8 +25,8 @@ export function useSEO({
   description, 
   canonical, 
   ogImage, 
-  ogImageWidth = 1200,
-  ogImageHeight = 630,
+  ogImageWidth,
+  ogImageHeight,
   ogType = 'website', 
   keywords = [],
   schemaJSON,
@@ -51,7 +51,9 @@ export function useSEO({
 
     // Helper para criar/atualizar meta tags
     const setMeta = (selector: string, attr: string, value: string) => {
-      let el = document.querySelector(selector) as HTMLMetaElement | null;
+      const matches = Array.from(document.querySelectorAll<HTMLMetaElement>(selector));
+      let el = matches[0] ?? null;
+      matches.slice(1).forEach(duplicate => duplicate.remove());
       if (!el) {
         el = document.createElement('meta');
         const match = selector.match(/\[([^=]+)="([^"]+)"\]/);
@@ -90,8 +92,13 @@ export function useSEO({
     setMeta('meta[property="og:locale"]', 'content', 'pt_BR');
 
     setMeta('meta[property="og:image"]', 'content', fullImageUrl);
-    setMeta('meta[property="og:image:width"]', 'content', String(ogImageWidth));
-    setMeta('meta[property="og:image:height"]', 'content', String(ogImageHeight));
+    const imageWidth = ogImageWidth ?? (fullImageUrl === DEFAULT_OG_IMAGE ? 1200 : undefined);
+    const imageHeight = ogImageHeight ?? (fullImageUrl === DEFAULT_OG_IMAGE ? 960 : undefined);
+    for (const [dimension, value] of [['width', imageWidth], ['height', imageHeight]] as const) {
+      const selector = `meta[property="og:image:${dimension}"]`;
+      if (value) setMeta(selector, 'content', String(value));
+      else document.querySelectorAll(selector).forEach(el => el.remove());
+    }
     setMeta('meta[property="og:image:alt"]', 'content', `${title} — Carplus Centro Automotivo`);
     setMeta('meta[name="twitter:image"]', 'content', fullImageUrl);
 

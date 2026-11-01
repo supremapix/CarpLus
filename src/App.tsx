@@ -2,6 +2,8 @@
 import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
 import BackToTop from './components/BackToTop';
+import FloatingActions from './components/FloatingActions';
+import QuickTips from './components/QuickTips';
 import AnalyticsLoader from './components/AnalyticsLoader';
 import {
   ARO_PAGES,
@@ -124,6 +126,8 @@ export default function App() {
       {/* LocalBusiness/Organization/WebSite vivem como fonte UNICA no index.html.
           Nao injetar schema global aqui para evitar duplicacao no Search Console. */}
       <BackToTop />
+      <FloatingActions />
+      <QuickTips />
       {/* Delayed Analytics: injeta o GTM apos 5s OU scroll OU clique (nunca no load inicial). */}
       <AnalyticsLoader />
       <Suspense fallback={<RouteFallback />}>

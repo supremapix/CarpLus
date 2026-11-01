@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight, Star, Shield, Wrench } from 'lucide-react';
@@ -92,7 +93,7 @@ export default function CentroAutomotivoCTA() {
                   <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-black font-bold text-lg">4.9</span>
+                        <span className="text-black font-bold text-lg">{GOOGLE_REVIEW_SUMMARY.ratingDisplay}</span>
                       </div>
                       <div>
                         <div className="flex items-center gap-1 mb-1">
@@ -100,7 +101,7 @@ export default function CentroAutomotivoCTA() {
                             <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
                           ))}
                         </div>
-                        <p className="text-white/80 text-sm">Mais de 250 avaliações de clientes</p>
+                        <p className="text-white/80 text-sm">{GOOGLE_REVIEW_SUMMARY.count} avaliações · {GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}</p>
                       </div>
                     </div>
                   </div>

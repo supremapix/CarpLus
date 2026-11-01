@@ -24,19 +24,19 @@ export interface NeighborhoodSeoContent {
 // Conteúdo específico para cada bairro
 export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = {
   // ══════════════════════════════════════
-  // ZONA SUL - MUITO PRÓXIMOS (até 10 min)
+  // ZONA SUL - MUITO PRÓXIMOS
   // ══════════════════════════════════════
   'portao': {
     slug: 'portao',
     name: 'Portão',
-    metaTitle: 'Loja de Pneus no Portão Curitiba | Carplus Centro Automotivo - 2 min',
-    metaDescription: 'Loja de pneus no Portão, Curitiba. Pneus Pirelli, Michelin, Goodyear com montagem inclusa. Alinhamento 3D, balanceamento e troca de óleo. Estamos na sua porta!',
+    metaTitle: 'Pneus para Portão | Carplus no Portão, Curitiba',
+    metaDescription: 'Loja de pneus no Portão, Curitiba. Pneus Pirelli, Michelin, Goodyear com montagem sob consulta. Alinhamento 3D, balanceamento e troca de óleo. Estamos na sua porta!',
     h1: 'Pneus e Oficina no Portão',
-    heroSubtitle: 'A melhor loja de pneus do seu bairro, a apenas 2 minutos de você!',
+    heroSubtitle: 'Atendimento para quem vem de Portão na unidade do Portão, Curitiba',
     introText: 'Moradores do Portão têm a vantagem de contar com a Carplus Centro Automotivo literalmente a poucos passos de casa. Localizada na Av. Arthur da Silva Bernardes, 1323, somos referência em pneus e serviços automotivos na região sul de Curitiba há mais de 10 anos.',
     localContext: 'O Portão é um dos bairros mais tradicionais de Curitiba, conhecido pelo comércio forte e pela proximidade com o Shopping Palladium. Quem mora aqui sabe que praticidade é essencial — e é exatamente isso que oferecemos: serviço de qualidade sem precisar atravessar a cidade.',
     servicesHighlight: [
-      'Troca de pneus com montagem e balanceamento inclusos',
+      'Troca de pneus com montagem e balanceamento sob consulta',
       'Alinhamento computadorizado 3D de alta precisão',
       'Revisão completa para carros do dia a dia',
       'Diagnóstico eletrônico com scanner automotivo',
@@ -54,13 +54,13 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'balanceamento perto do Palladium'
     ],
     nearbyLandmarks: [
-      'Shopping Palladium (3 min)',
+      'Consulte o trajeto atualizado no mapa',
       'Supermercado Condor Portão',
       'Terminal do Portão',
       'Colégio Estadual do Paraná',
       'Praça do Portão'
     ],
-    trafficTips: 'A Carplus fica na Av. Arthur da Silva Bernardes, uma das principais vias do bairro. Acesso fácil tanto para quem vem da Av. República Argentina quanto da Av. Presidente Kennedy.',
+    trafficTips: 'Para sair de Portão, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos do Portão',
     whyChooseUs: [
       'Somos do bairro — conhecemos as necessidades dos moradores',
@@ -74,11 +74,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'agua-verde': {
     slug: 'agua-verde',
     name: 'Água Verde',
-    metaTitle: 'Loja de Pneus Água Verde Curitiba | Carplus - 5 min',
-    metaDescription: 'Pneus em Curitiba para moradores do Água Verde. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 5 minutos pela República Argentina.',
+    metaTitle: 'Pneus para Água Verde | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Água Verde. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus para Moradores do Água Verde',
-    heroSubtitle: 'Só 5 minutos pela República Argentina até a melhor loja de pneus de Curitiba',
-    introText: 'O Água Verde é conhecido pela qualidade de vida e pelo perfil exigente de seus moradores. Para quem preza por segurança e busca os melhores produtos para seu veículo, a Carplus Centro Automotivo está a apenas 5 minutos de distância.',
+    heroSubtitle: 'Atendimento para quem vem de Água Verde na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Água Verde pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Um dos bairros mais nobres e arborizados de Curitiba, o Água Verde reúne famílias que valorizam conforto e praticidade. Com fácil acesso pela Avenida República Argentina, chegar à Carplus é rápido e sem complicações.',
     servicesHighlight: [
       'Pneus premium para sedans e SUVs do Água Verde',
@@ -102,7 +102,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Parque Barigui',
       'Hospital Nossa Senhora das Graças'
     ],
-    trafficTips: 'Siga pela Av. República Argentina sentido Portão. Em aproximadamente 5 minutos você chega na Carplus, sem precisar pegar vias muito movimentadas.',
+    trafficTips: 'Para sair de Água Verde, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Água Verde',
     whyChooseUs: [
       'Variedade de pneus para SUVs e sedans executivos',
@@ -116,10 +116,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'guaira': {
     slug: 'guaira',
     name: 'Guaíra',
-    metaTitle: 'Pneus no Guaíra Curitiba | Oficina Carplus - 5 min',
-    metaDescription: 'Loja de pneus para moradores do Guaíra. Pneus Pirelli, Michelin e Goodyear. Alinhamento, balanceamento e serviços automotivos a 5 min de você.',
+    metaTitle: 'Pneus para Guaíra | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Guaíra. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Oficina e Loja de Pneus para o Guaíra',
-    heroSubtitle: 'Moradores do Guaíra: sua oficina de confiança está a 5 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Guaíra na unidade do Portão, Curitiba',
     introText: 'O Guaíra é um bairro tradicional de Curitiba, com forte presença comercial e residencial. Para quem mora aqui e precisa de pneus novos ou serviços automotivos, a Carplus oferece tudo em um só lugar, pertinho de casa.',
     localContext: 'Vizinho do Portão e com acesso direto pela Rua Kennedy, o Guaíra tem moradores que valorizam praticidade e preço justo. Nossa loja atende exatamente esse perfil: serviço de qualidade sem complicação.',
     servicesHighlight: [
@@ -145,12 +145,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Parque Barigui',
       'Shopping Palladium'
     ],
-    trafficTips: 'Do Guaíra, siga pela Rua Kennedy até a Av. República Argentina. Vire à esquerda e em poucos metros estará na Av. Arthur da Silva Bernardes.',
+    trafficTips: 'Para sair de Guaíra, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos do Guaíra',
     whyChooseUs: [
       'Próximo ao Guaíra com fácil acesso',
       'Preços de atacado para pneus',
-      'Montagem e balanceamento inclusos',
+      'Montagem e balanceamento sob consulta',
       'Garantia de fábrica em todos os pneus'
     ],
     localBenefits: 'Agende pelo WhatsApp e ganhe prioridade no atendimento. Moradores do Guaíra são nossos vizinhos e clientes frequentes!'
@@ -159,10 +159,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'parolin': {
     slug: 'parolin',
     name: 'Parolin',
-    metaTitle: 'Loja de Pneus Parolin Curitiba | Carplus Centro Automotivo - 8 min',
-    metaDescription: 'Pneus e serviços automotivos para o Parolin, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D, troca de óleo. A 8 minutos pela Getúlio Vargas.',
+    metaTitle: 'Pneus para Parolin | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Parolin. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina Mecânica para o Parolin',
-    heroSubtitle: 'Do Parolin à Carplus em apenas 8 minutos pela Getúlio Vargas',
+    heroSubtitle: 'Atendimento para quem vem de Parolin na unidade do Portão, Curitiba',
     introText: 'O Parolin, um dos bairros mais antigos de Curitiba, tem moradores que conhecem bem o valor de um serviço de qualidade. A Carplus atende a comunidade do Parolin com pneus das melhores marcas e serviços mecânicos completos.',
     localContext: 'Localizado próximo ao centro e com fácil acesso a diversas regiões de Curitiba, o Parolin é um bairro misto de residências e comércios. Quem mora aqui encontra na Carplus uma oficina completa sem precisar ir longe.',
     servicesHighlight: [
@@ -187,7 +187,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Rodoferroviária de Curitiba',
       'Centro Histórico'
     ],
-    trafficTips: 'Siga pela Av. Getúlio Vargas em direção ao Portão. A Carplus fica na Av. Arthur da Silva Bernardes, com fácil acesso.',
+    trafficTips: 'Para sair de Parolin, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Parolin',
     whyChooseUs: [
       'Trajeto rápido e sem trânsito pesado',
@@ -201,10 +201,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'campo-comprido': {
     slug: 'campo-comprido',
     name: 'Campo Comprido',
-    metaTitle: 'Pneus Campo Comprido Curitiba | Carplus - 8 min',
-    metaDescription: 'Loja de pneus para Campo Comprido, Curitiba. Pneus para SUVs e sedans. Alinhamento 3D, balanceamento. A 8 min pela Eduardo Sprada.',
+    metaTitle: 'Pneus para Campo Comprido | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Campo Comprido. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Serviços para Campo Comprido',
-    heroSubtitle: 'Campo Comprido está a apenas 8 minutos da melhor oficina de Curitiba',
+    heroSubtitle: 'Atendimento para quem vem de Campo Comprido na unidade do Portão, Curitiba',
     introText: 'O Campo Comprido é um bairro em expansão, com muitas famílias e veículos novos. Para quem precisa de pneus de qualidade ou serviços automotivos confiáveis, a Carplus oferece o melhor custo-benefício da região.',
     localContext: 'Com ruas amplas e fácil acesso pela Rua Eduardo Sprada, o Campo Comprido concentra moradores que valorizam praticidade. A Carplus atende esse público com pneus para SUVs, picapes e sedans de todas as marcas.',
     servicesHighlight: [
@@ -229,7 +229,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'UTFPR - Campus Ecoville',
       'Hospital Marcelino Champagnat'
     ],
-    trafficTips: 'Do Campo Comprido, siga pela Rua Eduardo Sprada até a Av. Affonso Camargo. O trajeto é rápido e com poucas semáforos.',
+    trafficTips: 'Para sair de Campo Comprido, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Campo Comprido',
     whyChooseUs: [
       'Especialistas em pneus para SUVs e picapes',
@@ -243,12 +243,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'novo-mundo': {
     slug: 'novo-mundo',
     name: 'Novo Mundo',
-    metaTitle: 'Loja de Pneus Novo Mundo Curitiba | Carplus - 7 min',
-    metaDescription: 'Pneus para moradores do Novo Mundo, Curitiba. Pirelli, Michelin, Goodyear. Oficina completa a 7 min pela Av. Brasília. Alinhamento 3D incluso.',
+    metaTitle: 'Pneus para Novo Mundo | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Novo Mundo. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Novo Mundo',
-    heroSubtitle: 'Novo Mundo: sua oficina de confiança está a 7 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Novo Mundo na unidade do Portão, Curitiba',
     introText: 'O Novo Mundo é um bairro consolidado de Curitiba, com forte comércio e moradores que conhecem bem a importância de manter o carro em dia. A Carplus está próxima para atender com qualidade e preço justo.',
-    localContext: 'Localizado entre o Portão e o Capão Raso, o Novo Mundo tem acesso facilitado pela Av. Brasília. Em apenas 7 minutos você chega à Carplus para trocar pneus, fazer alinhamento ou revisão completa.',
+    localContext: 'Antes de se deslocar de Novo Mundo, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos para carros populares',
       'Pneus Pirelli P400 Evo em estoque',
@@ -272,29 +272,29 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Shopping Palladium',
       'Parque Caiuá'
     ],
-    trafficTips: 'Siga pela Av. Brasília em direção ao Portão. A Carplus fica na Av. Arthur da Silva Bernardes, próxima ao cruzamento principal.',
+    trafficTips: 'Para sair de Novo Mundo, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Novo Mundo',
     whyChooseUs: [
       'Preços competitivos em pneus',
       'Atendimento rápido e sem fila',
-      'Montagem e balanceamento inclusos',
+      'Montagem e balanceamento sob consulta',
       'Garantia de fábrica'
     ],
     localBenefits: 'Venha pela manhã e aproveite para resolver outras coisas no comércio do Portão enquanto seu carro fica pronto.'
   },
 
   // ══════════════════════════════════════
-  // ZONA SUL - PRÓXIMOS (10-15 min)
+  // ZONA SUL - PRÓXIMOS
   // ══════════════════════════════════════
   'fazendinha': {
     slug: 'fazendinha',
     name: 'Fazendinha',
-    metaTitle: 'Pneus Fazendinha Curitiba | Carplus Centro Automotivo - 10 min',
-    metaDescription: 'Loja de pneus para Fazendinha, Curitiba. Pirelli, Michelin, Goodyear com instalação inclusa. Alinhamento 3D e troca de óleo a 10 min de você.',
+    metaTitle: 'Pneus para Fazendinha | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Fazendinha. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para a Fazendinha',
-    heroSubtitle: 'Da Fazendinha à Carplus em 10 minutos pela João Dembinski',
+    heroSubtitle: 'Atendimento para quem vem de Fazendinha na unidade do Portão, Curitiba',
     introText: 'A Fazendinha é um bairro residencial tradicional de Curitiba, com famílias que valorizam serviço de qualidade. A Carplus oferece pneus das melhores marcas com preço justo e atendimento diferenciado.',
-    localContext: 'Com fácil acesso pela Rua João Dembinski, a Fazendinha está bem conectada ao Portão. São apenas 10 minutos até a Carplus, onde você encontra tudo para seu veículo.',
+    localContext: 'Antes de se deslocar de Fazendinha, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros populares e familiares',
       'Alinhamento 3D de precisão',
@@ -314,7 +314,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'CIC',
       'Parque dos Tropeiros'
     ],
-    trafficTips: 'Siga pela Rua João Dembinski até a Av. Winston Churchill, depois acesse a Av. República Argentina.',
+    trafficTips: 'Para sair de Fazendinha, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Fazendinha',
     whyChooseUs: [
       'Trajeto rápido sem trânsito',
@@ -327,10 +327,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'capao-raso': {
     slug: 'capao-raso',
     name: 'Capão Raso',
-    metaTitle: 'Pneus Capão Raso Curitiba | Carplus - 10 min',
-    metaDescription: 'Loja de pneus Capão Raso, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 10 min pela Winston Churchill.',
+    metaTitle: 'Pneus para Capão Raso | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Capão Raso. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Serviços Automotivos para o Capão Raso',
-    heroSubtitle: 'Capão Raso: pneus de qualidade a 10 minutos de distância',
+    heroSubtitle: 'Atendimento para quem vem de Capão Raso na unidade do Portão, Curitiba',
     introText: 'O Capão Raso é um dos bairros mais populosos da zona sul de Curitiba. Para atender essa comunidade exigente, a Carplus oferece pneus de todas as marcas e serviços automotivos completos.',
     localContext: 'Com o Terminal do Capão Raso como referência, o bairro tem fácil acesso ao Portão pela Av. Winston Churchill. A Carplus está pronta para receber moradores que buscam qualidade e economia.',
     servicesHighlight: [
@@ -354,7 +354,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Supermercado Festval',
       'UPA Capão Raso'
     ],
-    trafficTips: 'Do Capão Raso, siga pela Av. Winston Churchill até a Av. República Argentina. A Carplus fica a poucos metros, na Arthur da Silva Bernardes.',
+    trafficTips: 'Para sair de Capão Raso, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Capão Raso',
     whyChooseUs: [
       'Próximo ao Terminal do Capão Raso',
@@ -367,7 +367,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cic': {
     slug: 'cic',
     name: 'CIC',
-    metaTitle: 'Pneus CIC Curitiba | Carplus Centro Automotivo - 15 min',
+    metaTitle: 'Pneus para CIC | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus para o CIC, Curitiba. Pneus para carros, vans e utilitários. Alinhamento 3D e serviços mecânicos. Atendemos frotas empresariais.',
     h1: 'Pneus e Oficina para o CIC (Cidade Industrial)',
     heroSubtitle: 'CIC: pneus e serviços para frotas e veículos particulares',
@@ -394,7 +394,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Via rápida Linha Verde',
       'Rodovia do Xisto'
     ],
-    trafficTips: 'Do CIC, siga pela Rodovia do Xisto até a Av. República Argentina, ou acesse pela Linha Verde.',
+    trafficTips: 'Para sair de CIC, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'trabalhadores e empresas do CIC',
     whyChooseUs: [
       'Condições especiais para frotas',
@@ -408,10 +408,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'pinheirinho': {
     slug: 'pinheirinho',
     name: 'Pinheirinho',
-    metaTitle: 'Pneus Pinheirinho Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Pinheirinho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 15 min pela Linha Verde.',
+    metaTitle: 'Pneus para Pinheirinho | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Pinheirinho. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Pinheirinho',
-    heroSubtitle: 'Do Pinheirinho à Carplus em 15 minutos pela Linha Verde',
+    heroSubtitle: 'Atendimento para quem vem de Pinheirinho na unidade do Portão, Curitiba',
     introText: 'O Pinheirinho é um dos bairros mais populosos de Curitiba, com forte comércio local. Para quem precisa de pneus novos ou serviços mecânicos, a Carplus oferece qualidade com preço justo.',
     localContext: 'Com acesso facilitado pela Linha Verde, o trajeto do Pinheirinho ao Portão é rápido e sem complicações. A Carplus está pronta para atender com agilidade.',
     servicesHighlight: [
@@ -433,7 +433,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Shopping Total',
       'Linha Verde'
     ],
-    trafficTips: 'Siga pela Linha Verde sentido centro até a saída para o Portão.',
+    trafficTips: 'Para sair de Pinheirinho, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Pinheirinho',
     whyChooseUs: [
       'Acesso rápido pela Linha Verde',
@@ -449,8 +449,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'batel': {
     slug: 'batel',
     name: 'Batel',
-    metaTitle: 'Pneus Batel Curitiba | Carplus - Pneus Premium - 8 min',
-    metaDescription: 'Pneus premium para o Batel, Curitiba. Pirelli P Zero, Michelin Pilot Sport, Continental. Alinhamento 3D. A 8 min pela Sete de Setembro.',
+    metaTitle: 'Pneus para Batel | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Batel. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus Premium para Moradores do Batel',
     heroSubtitle: 'Batel: pneus de alta performance para quem exige o melhor',
     introText: 'O Batel é referência em sofisticação em Curitiba. Para moradores que dirigem veículos premium e esportivos, a Carplus oferece pneus das linhas mais exclusivas: Pirelli P Zero, Michelin Pilot Sport e Continental SportContact.',
@@ -479,7 +479,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Praça do Japão',
       'Shopping Curitiba'
     ],
-    trafficTips: 'Do Batel, siga pela Av. Sete de Setembro até a Av. República Argentina. A Carplus fica na Arthur da Silva Bernardes, Portão.',
+    trafficTips: 'Para sair de Batel, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Batel',
     whyChooseUs: [
       'Especialistas em pneus para veículos premium',
@@ -493,11 +493,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'centro': {
     slug: 'centro',
     name: 'Centro',
-    metaTitle: 'Pneus Centro de Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus perto do Centro de Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos. A 12 min pela Visconde de Guarapuava.',
+    metaTitle: 'Pneus para Centro | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Centro. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Centro de Curitiba',
-    heroSubtitle: 'Do Centro ao Portão em 12 minutos — fuja do trânsito, venha para a Carplus',
-    introText: 'Quem trabalha ou mora no Centro de Curitiba sabe que encontrar uma oficina de confiança pode ser um desafio. A Carplus está a apenas 12 minutos e oferece tudo que você precisa: pneus, alinhamento, balanceamento e revisão.',
+    heroSubtitle: 'Atendimento para quem vem de Centro na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Centro pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'O Centro de Curitiba é movimentado e nem sempre tem estacionamento fácil. Na Carplus, você encontra acesso fácil com vagas para clientes em frente à loja, atendimento rápido e pode resolver tudo em uma só visita.',
     servicesHighlight: [
       'Pneus para todos os modelos',
@@ -520,7 +520,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Shopping Estação',
       'Mercado Municipal'
     ],
-    trafficTips: 'Siga pela Av. Visconde de Guarapuava até a Av. República Argentina. O trajeto é tranquilo fora do horário de pico.',
+    trafficTips: 'Para sair de Centro, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'trabalhadores do Centro',
     whyChooseUs: [
       'Estacionamento próprio',
@@ -533,10 +533,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'reboucas': {
     slug: 'reboucas',
     name: 'Rebouças',
-    metaTitle: 'Pneus Rebouças Curitiba | Carplus - 10 min',
-    metaDescription: 'Loja de pneus para o Rebouças, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 10 min pela Westphalen.',
+    metaTitle: 'Pneus para Rebouças | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Rebouças. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Rebouças',
-    heroSubtitle: 'Do Rebouças à Carplus em 10 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Rebouças na unidade do Portão, Curitiba',
     introText: 'O Rebouças é um bairro central de Curitiba, com fácil acesso ao Portão. Moradores e trabalhadores da região encontram na Carplus pneus de qualidade e serviços automotivos completos.',
     localContext: 'Próximo ao Centro e com bom acesso pela Rua Westphalen, o Rebouças está bem posicionado para quem precisa de uma oficina de confiança sem ir muito longe.',
     servicesHighlight: [
@@ -559,7 +559,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Batel',
       'Centro'
     ],
-    trafficTips: 'Siga pela Rua Westphalen até a Av. Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Rebouças, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Rebouças',
     whyChooseUs: [
       'Localização estratégica',
@@ -572,12 +572,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'bigorrilho': {
     slug: 'bigorrilho',
     name: 'Bigorrilho',
-    metaTitle: 'Pneus Bigorrilho Curitiba | Carplus - 10 min',
-    metaDescription: 'Pneus para moradores do Bigorrilho, Curitiba. Pirelli, Michelin. Alinhamento 3D e balanceamento. A 10 min pela Padre Agostinho.',
+    metaTitle: 'Pneus para Bigorrilho | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Bigorrilho. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Serviços para o Bigorrilho',
-    heroSubtitle: 'Bigorrilho: pneus de qualidade a 10 minutos de distância',
+    heroSubtitle: 'Atendimento para quem vem de Bigorrilho na unidade do Portão, Curitiba',
     introText: 'O Bigorrilho é um dos bairros mais valorizados de Curitiba, com moradores que prezam por qualidade em tudo. A Carplus oferece pneus premium e serviços de alto padrão para esse público exigente.',
-    localContext: 'Vizinho do Batel e com fácil acesso pela Rua Padre Agostinho, o Bigorrilho está a poucos minutos da Carplus. Atendemos veículos de todas as marcas com o cuidado que você merece.',
+    localContext: 'Antes de se deslocar de Bigorrilho, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para SUVs e sedans executivos',
       'Alinhamento 3D de precisão',
@@ -596,7 +596,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Shopping Barigui',
       'Batel'
     ],
-    trafficTips: 'Siga pela Rua Padre Agostinho até a Av. Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Bigorrilho, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Bigorrilho',
     whyChooseUs: [
       'Pneus premium em estoque',
@@ -609,12 +609,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'merces': {
     slug: 'merces',
     name: 'Mercês',
-    metaTitle: 'Pneus Mercês Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus para as Mercês, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços mecânicos. A 12 min pela Manoel Ribas.',
+    metaTitle: 'Pneus para Mercês | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Mercês. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para as Mercês',
-    heroSubtitle: 'Das Mercês à Carplus em 12 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Mercês na unidade do Portão, Curitiba',
     introText: 'As Mercês são um bairro tradicional de Curitiba, com moradores que valorizam serviço de qualidade. A Carplus oferece pneus das melhores marcas e atendimento diferenciado.',
-    localContext: 'Com fácil acesso pela Rua Manoel Ribas, as Mercês estão bem conectadas ao Portão. Em 12 minutos você chega à Carplus para resolver tudo em uma visita.',
+    localContext: 'Antes de se deslocar de Mercês, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os modelos',
       'Alinhamento 3D',
@@ -634,7 +634,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Centro Cívico',
       'Bigorrilho'
     ],
-    trafficTips: 'Siga pela Rua Manoel Ribas até a Av. Iguaçu, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Mercês, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores das Mercês',
     whyChooseUs: [
       'Trajeto rápido',
@@ -647,11 +647,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'jardim-botanico': {
     slug: 'jardim-botanico',
     name: 'Jardim Botânico',
-    metaTitle: 'Pneus Jardim Botânico Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para Jardim Botânico, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 15 min pela Omar Sabbag.',
+    metaTitle: 'Pneus para Jardim Botânico | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Jardim Botânico. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Jardim Botânico',
-    heroSubtitle: 'Do Jardim Botânico à Carplus em 15 minutos',
-    introText: 'O Jardim Botânico é o cartão-postal de Curitiba e abriga moradores que valorizam qualidade de vida. Para manter seu carro em perfeito estado, a Carplus está a apenas 15 minutos de distância.',
+    heroSubtitle: 'Atendimento para quem vem de Jardim Botânico na unidade do Portão, Curitiba',
+    introText: 'O Jardim Botânico é o cartão-postal de Curitiba e abriga moradores que valorizam qualidade de vida. O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
     localContext: 'Próximo ao famoso parque, o bairro Jardim Botânico tem acesso fácil pela Av. Pref. Omar Sabbag. A Carplus oferece pneus e serviços para todos os tipos de veículos.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
@@ -672,7 +672,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'UFPR',
       'Prado Velho'
     ],
-    trafficTips: 'Siga pela Av. Pref. Omar Sabbag até a Av. Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Jardim Botânico, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Jardim Botânico',
     whyChooseUs: [
       'Trajeto tranquilo',
@@ -688,12 +688,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'santa-felicidade': {
     slug: 'santa-felicidade',
     name: 'Santa Felicidade',
-    metaTitle: 'Pneus Santa Felicidade Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para Santa Felicidade, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 20 min pela Manoel Ribas.',
+    metaTitle: 'Pneus para Santa Felicidade | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Santa Felicidade. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Santa Felicidade',
-    heroSubtitle: 'De Santa Felicidade à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Santa Felicidade na unidade do Portão, Curitiba',
     introText: 'Santa Felicidade, o bairro italiano de Curitiba, é conhecido pela gastronomia e pela comunidade acolhedora. Moradores que buscam pneus de qualidade encontram na Carplus o melhor custo-benefício.',
-    localContext: 'Com acesso pela Av. Manoel Ribas, Santa Felicidade está a 20 minutos da Carplus. O trajeto é agradável e vale a pena pela qualidade do serviço e variedade de pneus.',
+    localContext: 'Antes de se deslocar de Santa Felicidade, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os veículos',
       'Alinhamento 3D',
@@ -713,7 +713,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Vinícolas',
       'Parque Tingui'
     ],
-    trafficTips: 'Siga pela Av. Manoel Ribas sentido centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Santa Felicidade, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Santa Felicidade',
     whyChooseUs: [
       'Vale a pena o trajeto',
@@ -726,12 +726,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cajuru': {
     slug: 'cajuru',
     name: 'Cajuru',
-    metaTitle: 'Pneus Cajuru Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Cajuru, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços mecânicos. A 20 min pela Mauricio Fruet.',
+    metaTitle: 'Pneus para Cajuru | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Cajuru. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Cajuru',
-    heroSubtitle: 'Do Cajuru à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Cajuru na unidade do Portão, Curitiba',
     introText: 'O Cajuru é um dos maiores bairros de Curitiba, com comunidade ativa e diversificada. A Carplus atende moradores do Cajuru com pneus de qualidade e preços justos.',
-    localContext: 'Com acesso pela Av. Prefeito Mauricio Fruet, o Cajuru está bem conectado ao Portão. São 20 minutos até a Carplus, onde você encontra tudo para seu veículo.',
+    localContext: 'Antes de se deslocar de Cajuru, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
       'Alinhamento 3D',
@@ -751,7 +751,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Zoológico de Curitiba',
       'Linha Verde'
     ],
-    trafficTips: 'Siga pela Av. Prefeito Mauricio Fruet até a Linha Verde, depois acesse a saída para o Portão.',
+    trafficTips: 'Para sair de Cajuru, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Cajuru',
     whyChooseUs: [
       'Acesso fácil pela Linha Verde',
@@ -764,10 +764,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'uberaba': {
     slug: 'uberaba',
     name: 'Uberaba',
-    metaTitle: 'Pneus Uberaba Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus para o Uberaba, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 18 min pela Av. das Torres.',
+    metaTitle: 'Pneus para Uberaba | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Uberaba. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Uberaba',
-    heroSubtitle: 'Do Uberaba à Carplus em 18 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Uberaba na unidade do Portão, Curitiba',
     introText: 'O Uberaba é um bairro residencial importante de Curitiba, com fácil acesso pela Av. das Torres. Moradores encontram na Carplus pneus de qualidade e serviço profissional.',
     localContext: 'Bem localizado na zona leste, o Uberaba tem acesso rápido ao Portão pela Av. das Torres. A Carplus oferece atendimento completo para todos os tipos de veículos.',
     servicesHighlight: [
@@ -789,7 +789,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Linha Verde',
       'Av. das Torres'
     ],
-    trafficTips: 'Siga pela Av. das Torres até acessar a Linha Verde ou a Av. Comendador Franco.',
+    trafficTips: 'Para sair de Uberaba, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Uberaba',
     whyChooseUs: [
       'Trajeto rápido',
@@ -802,12 +802,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'bacacheri': {
     slug: 'bacacheri',
     name: 'Bacacheri',
-    metaTitle: 'Pneus Bacacheri Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Bacacheri, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 20 min pela Erasto Gaertner.',
+    metaTitle: 'Pneus para Bacacheri | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Bacacheri. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Bacacheri',
-    heroSubtitle: 'Do Bacacheri à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Bacacheri na unidade do Portão, Curitiba',
     introText: 'O Bacacheri é um bairro tranquilo da zona norte de Curitiba, próximo ao aeroporto. Moradores encontram na Carplus pneus de todas as marcas e serviços automotivos completos.',
-    localContext: 'Com fácil acesso pela Av. Erasto Gaertner, o Bacacheri está a 20 minutos da Carplus. O trajeto é agradável e o serviço vale a viagem.',
+    localContext: 'Antes de se deslocar de Bacacheri, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os modelos',
       'Alinhamento 3D',
@@ -827,7 +827,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Parque Bacacheri',
       'Parque General Iberê de Mattos'
     ],
-    trafficTips: 'Siga pela Av. Erasto Gaertner até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Bacacheri, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Bacacheri',
     whyChooseUs: [
       'Qualidade que vale o trajeto',
@@ -840,10 +840,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'boa-vista': {
     slug: 'boa-vista',
     name: 'Boa Vista',
-    metaTitle: 'Pneus Boa Vista Curitiba | Carplus - 22 min',
-    metaDescription: 'Loja de pneus para Boa Vista, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços mecânicos. A 22 min pela Rua Holanda.',
+    metaTitle: 'Pneus para Boa Vista | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Boa Vista. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Boa Vista',
-    heroSubtitle: 'De Boa Vista à Carplus em 22 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Boa Vista na unidade do Portão, Curitiba',
     introText: 'Boa Vista é um dos bairros mais tradicionais da zona norte de Curitiba. Para moradores que buscam pneus de qualidade e serviço profissional, a Carplus oferece o melhor custo-benefício.',
     localContext: 'Com acesso pela Rua Holanda, Boa Vista está bem conectado ao centro e ao Portão. A Carplus atende com pneus de todas as marcas e serviços completos.',
     servicesHighlight: [
@@ -865,7 +865,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Terminal Boa Vista',
       'Barreirinha'
     ],
-    trafficTips: 'Siga pela Rua Holanda até a Av. Paraná, depois acesse o centro e a República Argentina.',
+    trafficTips: 'Para sair de Boa Vista, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Boa Vista',
     whyChooseUs: [
       'Qualidade garantida',
@@ -878,12 +878,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'santa-candida': {
     slug: 'santa-candida',
     name: 'Santa Cândida',
-    metaTitle: 'Pneus Santa Cândida Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para Santa Cândida, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 25 min pela Av. Paraná.',
+    metaTitle: 'Pneus para Santa Cândida | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Santa Cândida. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Santa Cândida',
-    heroSubtitle: 'De Santa Cândida à Carplus em 25 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Santa Cândida na unidade do Portão, Curitiba',
     introText: 'Santa Cândida é um bairro em crescimento na zona norte de Curitiba. Moradores que buscam pneus de qualidade encontram na Carplus variedade e preço justo.',
-    localContext: 'Com acesso pela Av. Paraná, Santa Cândida está a 25 minutos da Carplus. O trajeto é direto e vale a pena pela economia e qualidade.',
+    localContext: 'Antes de se deslocar de Santa Cândida, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
       'Alinhamento 3D',
@@ -903,7 +903,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Colombo',
       'BR-116'
     ],
-    trafficTips: 'Siga pela Av. Paraná sentido centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Santa Cândida, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Santa Cândida',
     whyChooseUs: [
       'Preços de atacado',
@@ -919,10 +919,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-jose-dos-pinhais': {
     slug: 'sao-jose-dos-pinhais',
     name: 'São José dos Pinhais',
-    metaTitle: 'Pneus São José dos Pinhais | Carplus Curitiba - 30 min',
-    metaDescription: 'Loja de pneus para São José dos Pinhais. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 30 min pela Av. das Torres.',
+    metaTitle: 'Pneus para São José dos Pinhais | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de São José dos Pinhais. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para São José dos Pinhais',
-    heroSubtitle: 'De São José dos Pinhais à Carplus em 30 minutos',
+    heroSubtitle: 'Atendimento para quem vem de São José dos Pinhais na unidade do Portão, Curitiba',
     introText: 'São José dos Pinhais é a segunda maior cidade da região metropolitana de Curitiba. Moradores encontram na Carplus pneus de qualidade com preços de atacado que compensam o deslocamento.',
     localContext: 'Com acesso pela Av. das Torres e BR-376, São José dos Pinhais está bem conectado a Curitiba. A Carplus oferece variedade de pneus e serviços que fazem valer a viagem.',
     servicesHighlight: [
@@ -945,7 +945,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Centro de SJP',
       'BR-376'
     ],
-    trafficTips: 'Siga pela Av. das Torres ou BR-376 até o contorno sul, depois acesse o Portão.',
+    trafficTips: 'Para sair de São José dos Pinhais, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de São José dos Pinhais',
     whyChooseUs: [
       'Preços de atacado que compensam o trajeto',
@@ -958,10 +958,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'colombo': {
     slug: 'colombo',
     name: 'Colombo',
-    metaTitle: 'Pneus Colombo PR | Carplus Curitiba - 30 min',
-    metaDescription: 'Loja de pneus para Colombo, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 30 min pela PR-417.',
+    metaTitle: 'Pneus para Colombo | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Colombo. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Colombo',
-    heroSubtitle: 'De Colombo à Carplus em 30 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Colombo na unidade do Portão, Curitiba',
     introText: 'Colombo é uma das maiores cidades da região metropolitana de Curitiba. Moradores encontram na Carplus pneus de qualidade e serviços que fazem valer o deslocamento.',
     localContext: 'Com acesso pela PR-417, Colombo está bem conectado a Curitiba. A Carplus oferece preços de atacado e atendimento profissional para moradores da região.',
     servicesHighlight: [
@@ -983,7 +983,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Atuba',
       'Santa Cândida'
     ],
-    trafficTips: 'Siga pela PR-417 até a Av. Paraná em Curitiba, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Colombo, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Colombo',
     whyChooseUs: [
       'Preços de atacado',
@@ -996,12 +996,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'pinhais': {
     slug: 'pinhais',
     name: 'Pinhais',
-    metaTitle: 'Pneus Pinhais PR | Carplus Curitiba - 22 min',
-    metaDescription: 'Loja de pneus para Pinhais, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços mecânicos. A 22 min pela Rodovia João Leopoldo Jacomel.',
+    metaTitle: 'Pneus para Pinhais | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Pinhais. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Pinhais',
-    heroSubtitle: 'De Pinhais à Carplus em 22 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Pinhais na unidade do Portão, Curitiba',
     introText: 'Pinhais faz divisa com Curitiba e tem acesso fácil ao Portão. Moradores encontram na Carplus pneus de qualidade e serviços profissionais pertinho de casa.',
-    localContext: 'Com acesso pela Rodovia Deputado João Leopoldo Jacomel, Pinhais está a apenas 22 minutos da Carplus. O trajeto é rápido e vale pela qualidade.',
+    localContext: 'Antes de se deslocar de Pinhais, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os veículos',
       'Alinhamento 3D',
@@ -1021,7 +1021,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Piraquara',
       'Cajuru'
     ],
-    trafficTips: 'Siga pela Rodovia João Leopoldo Jacomel até a Linha Verde ou centro de Curitiba.',
+    trafficTips: 'Para sair de Pinhais, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Pinhais',
     whyChooseUs: [
       'Proximidade com Curitiba',
@@ -1034,10 +1034,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'araucaria': {
     slug: 'araucaria',
     name: 'Araucária',
-    metaTitle: 'Pneus Araucária PR | Carplus Curitiba - 30 min',
-    metaDescription: 'Loja de pneus para Araucária, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos. A 30 min pela Rodovia do Xisto.',
+    metaTitle: 'Pneus para Araucária | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Araucária. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Araucária',
-    heroSubtitle: 'De Araucária à Carplus em 30 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Araucária na unidade do Portão, Curitiba',
     introText: 'Araucária é uma importante cidade industrial da região metropolitana. Moradores e empresas encontram na Carplus pneus de qualidade e condições especiais para frotas.',
     localContext: 'Com acesso pela Rodovia do Xisto, Araucária está bem conectada ao Portão. A Carplus oferece atendimento para veículos particulares e frotas empresariais.',
     servicesHighlight: [
@@ -1059,7 +1059,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Refinaria Getúlio Vargas',
       'CIC'
     ],
-    trafficTips: 'Siga pela Rodovia do Xisto até a Av. República Argentina.',
+    trafficTips: 'Para sair de Araucária, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores e empresas de Araucária',
     whyChooseUs: [
       'Condições especiais para frotas',
@@ -1072,12 +1072,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'campo-largo': {
     slug: 'campo-largo',
     name: 'Campo Largo',
-    metaTitle: 'Pneus Campo Largo PR | Carplus Curitiba - 35 min',
-    metaDescription: 'Loja de pneus para Campo Largo, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 35 min pela BR-277.',
+    metaTitle: 'Pneus para Campo Largo | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Campo Largo. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Campo Largo',
-    heroSubtitle: 'De Campo Largo à Carplus em 35 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Campo Largo na unidade do Portão, Curitiba',
     introText: 'Campo Largo, a capital da louça, tem moradores que conhecem qualidade. Para pneus e serviços automotivos, a Carplus oferece o melhor custo-benefício da região.',
-    localContext: 'Com acesso pela BR-277, Campo Largo está a 35 minutos da Carplus. O trajeto vale pela economia em pneus de qualidade.',
+    localContext: 'Antes de se deslocar de Campo Largo, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os veículos',
       'Alinhamento 3D',
@@ -1097,7 +1097,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Museu da Louça',
       'BR-277'
     ],
-    trafficTips: 'Siga pela BR-277 até o acesso ao Portão pela Av. República Argentina.',
+    trafficTips: 'Para sair de Campo Largo, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Campo Largo',
     whyChooseUs: [
       'Preços de atacado',
@@ -1110,12 +1110,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'almirante-tamandare': {
     slug: 'almirante-tamandare',
     name: 'Almirante Tamandaré',
-    metaTitle: 'Pneus Almirante Tamandaré PR | Carplus Curitiba - 25 min',
-    metaDescription: 'Loja de pneus para Almirante Tamandaré, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 25 min pela Rodovia dos Minérios.',
+    metaTitle: 'Pneus para Almirante Tamandaré | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Almirante Tamandaré. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Almirante Tamandaré',
-    heroSubtitle: 'De Almirante Tamandaré à Carplus em 25 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Almirante Tamandaré na unidade do Portão, Curitiba',
     introText: 'Almirante Tamandaré é uma cidade em crescimento na região metropolitana. Moradores encontram na Carplus pneus de qualidade e preços justos.',
-    localContext: 'Com acesso pela Rodovia dos Minérios, Almirante Tamandaré está a 25 minutos da Carplus. O trajeto é direto e vale a pena.',
+    localContext: 'Antes de se deslocar de Almirante Tamandaré, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
       'Alinhamento 3D',
@@ -1135,7 +1135,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Colombo',
       'Santa Cândida'
     ],
-    trafficTips: 'Siga pela Rodovia dos Minérios até a BR-476, depois acesse Curitiba.',
+    trafficTips: 'Para sair de Almirante Tamandaré, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Almirante Tamandaré',
     whyChooseUs: [
       'Preços competitivos',
@@ -1148,12 +1148,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'fazenda-rio-grande': {
     slug: 'fazenda-rio-grande',
     name: 'Fazenda Rio Grande',
-    metaTitle: 'Pneus Fazenda Rio Grande PR | Carplus Curitiba - 35 min',
-    metaDescription: 'Loja de pneus para Fazenda Rio Grande, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 35 min pela BR-116.',
+    metaTitle: 'Pneus para Fazenda Rio Grande | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Fazenda Rio Grande. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Fazenda Rio Grande',
-    heroSubtitle: 'De Fazenda Rio Grande à Carplus em 35 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Fazenda Rio Grande na unidade do Portão, Curitiba',
     introText: 'Fazenda Rio Grande é uma cidade em expansão na região sul de Curitiba. Moradores encontram na Carplus pneus de qualidade e serviços profissionais.',
-    localContext: 'Com acesso pela BR-116, Fazenda Rio Grande está a 35 minutos da Carplus. O trajeto compensa pelos preços de atacado.',
+    localContext: 'Antes de se deslocar de Fazenda Rio Grande, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os veículos',
       'Alinhamento 3D',
@@ -1173,7 +1173,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'BR-116',
       'Pinheirinho'
     ],
-    trafficTips: 'Siga pela BR-116 até o contorno sul, depois acesse o Portão.',
+    trafficTips: 'Para sair de Fazenda Rio Grande, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Fazenda Rio Grande',
     whyChooseUs: [
       'Preços de atacado',
@@ -1189,10 +1189,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sitio-cercado': {
     slug: 'sitio-cercado',
     name: 'Sítio Cercado',
-    metaTitle: 'Pneus Sítio Cercado Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Sítio Cercado, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 20 min pela Izaac Ferreira da Cruz.',
+    metaTitle: 'Pneus para Sítio Cercado | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Sítio Cercado. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Sítio Cercado',
-    heroSubtitle: 'Do Sítio Cercado à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Sítio Cercado na unidade do Portão, Curitiba',
     introText: 'O Sítio Cercado é um dos maiores bairros de Curitiba em população. Para essa comunidade que busca qualidade e economia, a Carplus oferece pneus das melhores marcas com preço justo.',
     localContext: 'Com acesso pela Rua Izaac Ferreira da Cruz, o Sítio Cercado está bem conectado à zona sul de Curitiba. A Carplus no Portão atende moradores da região com serviço profissional.',
     servicesHighlight: [
@@ -1214,7 +1214,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Pinheirinho',
       'Linha Verde'
     ],
-    trafficTips: 'Do Sítio Cercado, siga pela Rua Izaac Ferreira da Cruz até a Linha Verde, depois acesse o Portão.',
+    trafficTips: 'Para sair de Sítio Cercado, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Sítio Cercado',
     whyChooseUs: [
       'Preços de atacado',
@@ -1227,12 +1227,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'tatuquara': {
     slug: 'tatuquara',
     name: 'Tatuquara',
-    metaTitle: 'Pneus Tatuquara Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para o Tatuquara, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 25 min pela Regis Bittencourt.',
+    metaTitle: 'Pneus para Tatuquara | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Tatuquara. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Tatuquara',
-    heroSubtitle: 'Do Tatuquara à Carplus em 25 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Tatuquara na unidade do Portão, Curitiba',
     introText: 'O Tatuquara é um bairro em desenvolvimento na zona sul de Curitiba. Moradores encontram na Carplus pneus de qualidade com preços que cabem no orçamento.',
-    localContext: 'Com acesso pela Rodovia Regis Bittencourt, o Tatuquara está a 25 minutos da Carplus. O trajeto vale pela economia em pneus de qualidade.',
+    localContext: 'Antes de se deslocar de Tatuquara, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros populares',
       'Alinhamento 3D',
@@ -1251,7 +1251,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'CIC',
       'Rodovia Regis Bittencourt'
     ],
-    trafficTips: 'Do Tatuquara, siga pela Rodovia Regis Bittencourt ou pela Av. Winston Churchill até o Portão.',
+    trafficTips: 'Para sair de Tatuquara, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Tatuquara',
     whyChooseUs: [
       'Preços acessíveis',
@@ -1264,12 +1264,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'umbara': {
     slug: 'umbara',
     name: 'Umbará',
-    metaTitle: 'Pneus Umbará Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para o Umbará, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 25 min pela Nicola Pellanda.',
+    metaTitle: 'Pneus para Umbará | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Umbará. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Umbará',
-    heroSubtitle: 'Do Umbará à Carplus em 25 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Umbará na unidade do Portão, Curitiba',
     introText: 'O Umbará é um bairro residencial tranquilo na zona sul de Curitiba. Moradores que buscam pneus de qualidade encontram na Carplus variedade e bom preço.',
-    localContext: 'Com acesso pela Rua Nicola Pellanda, o Umbará está a 25 minutos da Carplus. O trajeto é direto e vale pela qualidade.',
+    localContext: 'Antes de se deslocar de Umbará, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os modelos',
       'Alinhamento 3D',
@@ -1288,7 +1288,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Pinheirinho',
       'BR-116'
     ],
-    trafficTips: 'Do Umbará, siga pela Rua Nicola Pellanda até a BR-116 ou Linha Verde.',
+    trafficTips: 'Para sair de Umbará, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Umbará',
     whyChooseUs: [
       'Qualidade garantida',
@@ -1301,12 +1301,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'centro-civico': {
     slug: 'centro-civico',
     name: 'Centro Cívico',
-    metaTitle: 'Pneus Centro Cívico Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Centro Cívico, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 15 min pela Cândido de Abreu.',
+    metaTitle: 'Pneus para Centro Cívico | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Centro Cívico. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Centro Cívico',
-    heroSubtitle: 'Do Centro Cívico à Carplus em 15 minutos',
-    introText: 'O Centro Cívico é o coração administrativo de Curitiba, próximo ao Palácio Iguaçu. Servidores e moradores encontram na Carplus pneus de qualidade a poucos minutos.',
-    localContext: 'Com fácil acesso pela Av. Cândido de Abreu, o Centro Cívico está a 15 minutos da Carplus. Ideal para quem trabalha na região e quer resolver tudo em um lugar.',
+    heroSubtitle: 'Atendimento para quem vem de Centro Cívico na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Centro Cívico pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
+    localContext: 'Antes de se deslocar de Centro Cívico, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para sedans executivos',
       'Alinhamento 3D',
@@ -1325,7 +1325,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Museu Oscar Niemeyer',
       'Bosque do Papa'
     ],
-    trafficTips: 'Do Centro Cívico, siga pela Av. Cândido de Abreu até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Centro Cívico, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'servidores e moradores do Centro Cívico',
     whyChooseUs: [
       'Localização estratégica',
@@ -1338,12 +1338,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'ahu': {
     slug: 'ahu',
     name: 'Ahú',
-    metaTitle: 'Pneus Ahú Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus para o Ahú, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 18 min pela Anita Garibaldi.',
+    metaTitle: 'Pneus para Ahú | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Ahú. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Ahú',
-    heroSubtitle: 'Do Ahú à Carplus em 18 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Ahú na unidade do Portão, Curitiba',
     introText: 'O Ahú é um bairro tradicional e arborizado de Curitiba. Moradores que valorizam qualidade encontram na Carplus pneus das melhores marcas.',
-    localContext: 'Com acesso pela Av. Anita Garibaldi, o Ahú está a 18 minutos da Carplus. Trajeto tranquilo para um atendimento de qualidade.',
+    localContext: 'Antes de se deslocar de Ahú, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
       'Alinhamento 3D',
@@ -1362,7 +1362,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Bosque do Alemão',
       'Centro Cívico'
     ],
-    trafficTips: 'Do Ahú, siga pela Av. Anita Garibaldi até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Ahú, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Ahú',
     whyChooseUs: [
       'Qualidade premium',
@@ -1375,12 +1375,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cabral': {
     slug: 'cabral',
     name: 'Cabral',
-    metaTitle: 'Pneus Cabral Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus para o Cabral, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços mecânicos. A 18 min pela Av. Paraná.',
+    metaTitle: 'Pneus para Cabral | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Cabral. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Cabral',
-    heroSubtitle: 'Do Cabral à Carplus em 18 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Cabral na unidade do Portão, Curitiba',
     introText: 'O Cabral é um bairro valorizado de Curitiba, com infraestrutura completa. Moradores exigentes encontram na Carplus pneus premium e serviço de qualidade.',
-    localContext: 'Com acesso pela Av. Paraná, o Cabral está a 18 minutos da Carplus. O trajeto é agradável e o serviço vale a visita.',
+    localContext: 'Antes de se deslocar de Cabral, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para veículos executivos',
       'Alinhamento 3D de precisão',
@@ -1399,7 +1399,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Juvevê',
       'Alto da Glória'
     ],
-    trafficTips: 'Do Cabral, siga pela Av. Paraná até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Cabral, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Cabral',
     whyChooseUs: [
       'Pneus premium em estoque',
@@ -1412,12 +1412,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'juveve': {
     slug: 'juveve',
     name: 'Juvevê',
-    metaTitle: 'Pneus Juvevê Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Juvevê, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 15 min pela João Gualberto.',
+    metaTitle: 'Pneus para Juvevê | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Juvevê. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Juvevê',
-    heroSubtitle: 'Do Juvevê à Carplus em 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Juvevê na unidade do Portão, Curitiba',
     introText: 'O Juvevê é um bairro nobre de Curitiba, conhecido pela gastronomia e qualidade de vida. Moradores encontram na Carplus pneus de alta qualidade.',
-    localContext: 'Com acesso pela Rua João Gualberto, o Juvevê está a 15 minutos da Carplus. Trajeto rápido para um atendimento premium.',
+    localContext: 'Antes de se deslocar de Juvevê, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros de luxo',
       'Alinhamento 3D',
@@ -1436,7 +1436,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Centro',
       'Cabral'
     ],
-    trafficTips: 'Do Juvevê, siga pela Rua João Gualberto até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Juvevê, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Juvevê',
     whyChooseUs: [
       'Qualidade premium',
@@ -1449,12 +1449,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'alto-da-gloria': {
     slug: 'alto-da-gloria',
     name: 'Alto da Glória',
-    metaTitle: 'Pneus Alto da Glória Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Alto da Glória, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 15 min pela Nicolau Maeder.',
+    metaTitle: 'Pneus para Alto da Glória | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Alto da Glória. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Alto da Glória',
-    heroSubtitle: 'Do Alto da Glória à Carplus em 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Alto da Glória na unidade do Portão, Curitiba',
     introText: 'O Alto da Glória é um dos bairros mais tradicionais de Curitiba, próximo ao centro. Moradores encontram na Carplus pneus de qualidade e atendimento profissional.',
-    localContext: 'Com acesso pela Rua Nicolau Maeder, o Alto da Glória está a 15 minutos da Carplus. Localização conveniente para resolver tudo rapidamente.',
+    localContext: 'Antes de se deslocar de Alto da Glória, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para sedans e hatches',
       'Alinhamento 3D',
@@ -1473,7 +1473,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Centro',
       'Juvevê'
     ],
-    trafficTips: 'Do Alto da Glória, siga pela Rua Nicolau Maeder até a Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Alto da Glória, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Alto da Glória',
     whyChooseUs: [
       'Proximidade com o centro',
@@ -1486,12 +1486,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'alto-da-rua-xv': {
     slug: 'alto-da-rua-xv',
     name: 'Alto da Rua XV',
-    metaTitle: 'Pneus Alto da XV Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Alto da Rua XV, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 15 min pela Itupava.',
+    metaTitle: 'Pneus para Alto da Rua XV | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Alto da Rua XV. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Alto da Rua XV',
-    heroSubtitle: 'Do Alto da XV à Carplus em 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Alto da Rua XV na unidade do Portão, Curitiba',
     introText: 'O Alto da Rua XV é um bairro charmoso de Curitiba, conhecido pelos bares e restaurantes. Moradores encontram na Carplus pneus de qualidade pertinho de casa.',
-    localContext: 'Com acesso pela Rua Itupava, o Alto da XV está a 15 minutos da Carplus. Aproveite para trocar os pneus e depois curtir o bairro!',
+    localContext: 'Antes de se deslocar de Alto da Rua XV, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros urbanos',
       'Alinhamento 3D',
@@ -1510,7 +1510,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Cristo Rei',
       'Centro'
     ],
-    trafficTips: 'Do Alto da XV, siga pela Rua Itupava até a Av. Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Alto da Rua XV, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Alto da Rua XV',
     whyChooseUs: [
       'Trajeto rápido',
@@ -1523,12 +1523,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cristo-rei': {
     slug: 'cristo-rei',
     name: 'Cristo Rei',
-    metaTitle: 'Pneus Cristo Rei Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para o Cristo Rei, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 15 min pela Av. São José.',
+    metaTitle: 'Pneus para Cristo Rei | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Cristo Rei. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Cristo Rei',
-    heroSubtitle: 'Do Cristo Rei à Carplus em 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Cristo Rei na unidade do Portão, Curitiba',
     introText: 'O Cristo Rei é um bairro universitário de Curitiba, próximo à PUC-PR. Estudantes e moradores encontram na Carplus pneus com bom preço.',
-    localContext: 'Com acesso pela Av. São José, o Cristo Rei está a 15 minutos da Carplus. Opção acessível para quem precisa de pneus de qualidade.',
+    localContext: 'Antes de se deslocar de Cristo Rei, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos',
       'Alinhamento 3D',
@@ -1547,7 +1547,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Jardim Botânico',
       'Alto da XV'
     ],
-    trafficTips: 'Do Cristo Rei, siga pela Av. São José até a Sete de Setembro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Cristo Rei, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'estudantes e moradores do Cristo Rei',
     whyChooseUs: [
       'Preços acessíveis',
@@ -1560,11 +1560,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'tingui': {
     slug: 'tingui',
     name: 'Tingui',
-    metaTitle: 'Pneus Tingui Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Tingui, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 20 min pela Mascarenhas de Moraes.',
+    metaTitle: 'Pneus para Tingui | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Tingui. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Tingui',
-    heroSubtitle: 'Do Tingui à Carplus em 20 minutos',
-    introText: 'O Tingui é um bairro tranquilo de Curitiba, próximo ao famoso Parque Tingui. Moradores encontram na Carplus pneus de qualidade a 20 minutos.',
+    heroSubtitle: 'Atendimento para quem vem de Tingui na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Tingui pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Com acesso pela Rua Mascarenhas de Moraes, o Tingui está bem conectado ao resto da cidade. A Carplus atende com qualidade.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
@@ -1584,7 +1584,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Bacacheri',
       'Boa Vista'
     ],
-    trafficTips: 'Do Tingui, siga pela Rua Mascarenhas de Moraes até a Av. Paraná ou Linha Verde.',
+    trafficTips: 'Para sair de Tingui, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Tingui',
     whyChooseUs: [
       'Qualidade garantida',
@@ -1597,12 +1597,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'atuba': {
     slug: 'atuba',
     name: 'Atuba',
-    metaTitle: 'Pneus Atuba Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para o Atuba, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 25 min pela BR-116.',
+    metaTitle: 'Pneus para Atuba | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Atuba. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Atuba',
-    heroSubtitle: 'Do Atuba à Carplus em 25 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Atuba na unidade do Portão, Curitiba',
     introText: 'O Atuba fica na divisa entre Curitiba e Colombo, com fácil acesso pela BR-116. Moradores encontram na Carplus pneus de qualidade.',
-    localContext: 'Com acesso pela BR-116, o Atuba está a 25 minutos da Carplus. O trajeto vale pela variedade e preço de pneus.',
+    localContext: 'Antes de se deslocar de Atuba, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para todos os veículos',
       'Alinhamento 3D',
@@ -1621,7 +1621,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Santa Cândida',
       'BR-116'
     ],
-    trafficTips: 'Do Atuba, siga pela BR-116 ou Av. Paraná sentido centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Atuba, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Atuba',
     whyChooseUs: [
       'Preços de atacado',
@@ -1634,12 +1634,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'barreirinha': {
     slug: 'barreirinha',
     name: 'Barreirinha',
-    metaTitle: 'Pneus Barreirinha Curitiba | Carplus - 22 min',
-    metaDescription: 'Loja de pneus para a Barreirinha, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 22 min pela Anita Garibaldi.',
+    metaTitle: 'Pneus para Barreirinha | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Barreirinha. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para a Barreirinha',
-    heroSubtitle: 'Da Barreirinha à Carplus em 22 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Barreirinha na unidade do Portão, Curitiba',
     introText: 'A Barreirinha é um bairro tradicional da zona norte de Curitiba. Moradores encontram na Carplus pneus de qualidade com preço acessível.',
-    localContext: 'Com acesso pela Av. Anita Garibaldi, a Barreirinha está a 22 minutos da Carplus. Trajeto direto e sem complicações.',
+    localContext: 'Antes de se deslocar de Barreirinha, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
       'Alinhamento 3D',
@@ -1658,7 +1658,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Boa Vista',
       'Santa Cândida'
     ],
-    trafficTips: 'Da Barreirinha, siga pela Av. Anita Garibaldi sentido centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de Barreirinha, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Barreirinha',
     whyChooseUs: [
       'Preços acessíveis',
@@ -1671,12 +1671,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'pilarzinho': {
     slug: 'pilarzinho',
     name: 'Pilarzinho',
-    metaTitle: 'Pneus Pilarzinho Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Pilarzinho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 20 min pela Amauri Lange Silveira.',
+    metaTitle: 'Pneus para Pilarzinho | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Pilarzinho. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Pilarzinho',
-    heroSubtitle: 'Do Pilarzinho à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Pilarzinho na unidade do Portão, Curitiba',
     introText: 'O Pilarzinho é um bairro residencial tranquilo de Curitiba. Moradores encontram na Carplus pneus de todas as marcas com preço justo.',
-    localContext: 'Com acesso pela Rua Amauri Lange Silveira, o Pilarzinho está a 20 minutos da Carplus. O trajeto é agradável.',
+    localContext: 'Antes de se deslocar de Pilarzinho, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
       'Alinhamento 3D',
@@ -1695,7 +1695,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Barreirinha',
       'Santa Felicidade'
     ],
-    trafficTips: 'Do Pilarzinho, siga pela Rua Amauri Lange Silveira até a Av. Manoel Ribas.',
+    trafficTips: 'Para sair de Pilarzinho, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Pilarzinho',
     whyChooseUs: [
       'Preços justos',
@@ -1708,11 +1708,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-lourenco': {
     slug: 'sao-lourenco',
     name: 'São Lourenço',
-    metaTitle: 'Pneus São Lourenço Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus para o São Lourenço, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento. A 18 min pela Mateus Leme.',
+    metaTitle: 'Pneus para São Lourenço | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de São Lourenço. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o São Lourenço',
-    heroSubtitle: 'Do São Lourenço à Carplus em 18 minutos',
-    introText: 'O São Lourenço é conhecido pelo famoso parque de mesmo nome. Moradores encontram na Carplus pneus de qualidade a 18 minutos.',
+    heroSubtitle: 'Atendimento para quem vem de São Lourenço na unidade do Portão, Curitiba',
+    introText: 'Quem vem de São Lourenço pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Com acesso pela Rua Mateus Leme, o São Lourenço está bem conectado ao centro e ao Portão. Trajeto rápido e fácil.',
     servicesHighlight: [
       'Pneus para todos os modelos',
@@ -1732,7 +1732,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Ahú',
       'Pilarzinho'
     ],
-    trafficTips: 'Do São Lourenço, siga pela Rua Mateus Leme até o centro, depois acesse a República Argentina.',
+    trafficTips: 'Para sair de São Lourenço, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do São Lourenço',
     whyChooseUs: [
       'Qualidade garantida',
@@ -1745,12 +1745,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'bairro-alto': {
     slug: 'bairro-alto',
     name: 'Bairro Alto',
-    metaTitle: 'Pneus Bairro Alto Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para o Bairro Alto, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 20 min pela Alberico Flores Bueno.',
+    metaTitle: 'Pneus para Bairro Alto | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Bairro Alto. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Bairro Alto',
-    heroSubtitle: 'Do Bairro Alto à Carplus em 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Bairro Alto na unidade do Portão, Curitiba',
     introText: 'O Bairro Alto é um bairro tranquilo da zona norte de Curitiba. Moradores encontram na Carplus pneus de qualidade e preço acessível.',
-    localContext: 'Com acesso pela Rua Alberico Flores Bueno, o Bairro Alto está a 20 minutos da Carplus. Trajeto direto pela zona norte.',
+    localContext: 'Antes de se deslocar de Bairro Alto, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus econômicos e intermediários',
       'Alinhamento 3D',
@@ -1769,7 +1769,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Bacacheri',
       'Tingui'
     ],
-    trafficTips: 'Do Bairro Alto, siga pela Rua Alberico Flores Bueno até a Linha Verde ou Av. Paraná.',
+    trafficTips: 'Para sair de Bairro Alto, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Bairro Alto',
     whyChooseUs: [
       'Preços acessíveis',
@@ -1785,12 +1785,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'abranches': {
     slug: 'abranches',
     name: 'Abranches',
-    metaTitle: 'Pneus Abranches Curitiba | Carplus Centro Automotivo - 18 min',
-    metaDescription: 'Loja de pneus para Abranches, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços automotivos. A 18 min de você.',
+    metaTitle: 'Pneus para Abranches | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Abranches. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Abranches',
-    heroSubtitle: 'Abranches: pneus de qualidade a 18 minutos da sua casa',
+    heroSubtitle: 'Atendimento para quem vem de Abranches na unidade do Portão, Curitiba',
     introText: 'O bairro Abranches, tradicional região norte de Curitiba, conta com a Carplus Centro Automotivo para todas as necessidades automotivas. Oferecemos pneus das melhores marcas com instalação profissional e preço justo.',
-    localContext: 'Abranches é conhecido por suas áreas verdes e tranquilidade. Moradores do bairro encontram na Carplus uma oficina completa a apenas 18 minutos, com fácil acesso pela Av. Anita Garibaldi.',
+    localContext: 'Antes de se deslocar de Abranches, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear e Yokohama',
       'Alinhamento computadorizado 3D Hunter',
@@ -1810,11 +1810,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Santa Cândida',
       'Cachoeira'
     ],
-    trafficTips: 'De Abranches, siga pela Av. Anita Garibaldi sentido centro. Continue até o Portão pela Av. República Argentina.',
+    trafficTips: 'Para sair de Abranches, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Abranches',
     whyChooseUs: [
       'Preços de atacado em todas as marcas',
-      'Montagem e balanceamento inclusos',
+      'Montagem e balanceamento sob consulta',
       'Atendimento sem agendamento',
       'Garantia de fábrica'
     ],
@@ -1824,10 +1824,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'bom-retiro': {
     slug: 'bom-retiro',
     name: 'Bom Retiro',
-    metaTitle: 'Pneus Bom Retiro Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus para Bom Retiro, Curitiba. Pirelli, Michelin, Goodyear com instalação. Alinhamento 3D e balanceamento a 15 min.',
+    metaTitle: 'Pneus para Bom Retiro | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Bom Retiro. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Bom Retiro',
-    heroSubtitle: 'Bom Retiro: sua oficina de confiança está a 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Bom Retiro na unidade do Portão, Curitiba',
     introText: 'O Bom Retiro é um bairro tradicional e bem localizado de Curitiba. Para moradores que buscam pneus de qualidade e serviços automotivos confiáveis, a Carplus Centro Automotivo oferece o melhor atendimento.',
     localContext: 'Com fácil acesso ao centro e outras regiões, o Bom Retiro tem moradores exigentes que valorizam qualidade. A Carplus atende esse perfil com pneus premium e serviços de alta qualidade.',
     servicesHighlight: [
@@ -1849,7 +1849,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Ahú',
       'Mercês'
     ],
-    trafficTips: 'Do Bom Retiro, siga em direção ao Centro Cívico e depois pela Av. República Argentina até o Portão.',
+    trafficTips: 'Para sair de Bom Retiro, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Bom Retiro',
     whyChooseUs: [
       'Qualidade premium',
@@ -1862,10 +1862,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'boqueirao': {
     slug: 'boqueirao',
     name: 'Boqueirão',
-    metaTitle: 'Pneus Boqueirão Curitiba | Carplus Centro Automotivo - 15 min',
-    metaDescription: 'Loja de pneus para o Boqueirão, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D, balanceamento e serviços. A 15 min pela Linha Verde.',
+    metaTitle: 'Pneus para Boqueirão | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Boqueirão. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Boqueirão',
-    heroSubtitle: 'Boqueirão: pneus das melhores marcas a 15 minutos de distância',
+    heroSubtitle: 'Atendimento para quem vem de Boqueirão na unidade do Portão, Curitiba',
     introText: 'O Boqueirão é um dos maiores e mais populosos bairros de Curitiba. A Carplus Centro Automotivo atende essa comunidade com pneus de todas as marcas e serviços automotivos completos, com preço justo e atendimento de qualidade.',
     localContext: 'Com forte comércio e grande população, o Boqueirão tem moradores que precisam de praticidade. A Carplus oferece estoque próprio de pneus e serviços rápidos para quem não pode perder tempo.',
     servicesHighlight: [
@@ -1889,7 +1889,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Supermercado Condor Boqueirão',
       'Av. Marechal Floriano Peixoto'
     ],
-    trafficTips: 'Do Boqueirão, siga pela Linha Verde (sentido sul) e depois acesse a Av. República Argentina. A Carplus fica na Av. Arthur da Silva Bernardes.',
+    trafficTips: 'Para sair de Boqueirão, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Boqueirão',
     whyChooseUs: [
       'Maior estoque de pneus da região',
@@ -1903,8 +1903,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'butiatuvinha': {
     slug: 'butiatuvinha',
     name: 'Butiatuvinha',
-    metaTitle: 'Pneus Butiatuvinha Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para Butiatuvinha. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos a 25 min.',
+    metaTitle: 'Pneus para Butiatuvinha | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Butiatuvinha. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Butiatuvinha',
     heroSubtitle: 'Butiatuvinha: pneus de qualidade com atendimento diferenciado',
     introText: 'Butiatuvinha é um bairro residencial na região noroeste de Curitiba. Moradores encontram na Carplus Centro Automotivo todas as soluções em pneus e serviços automotivos.',
@@ -1927,7 +1927,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Santa Felicidade',
       'Lamenha Pequena'
     ],
-    trafficTips: 'De Butiatuvinha, siga pela Av. Manoel Ribas em direção ao centro.',
+    trafficTips: 'Para sair de Butiatuvinha, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Butiatuvinha',
     whyChooseUs: [
       'Atendimento especializado',
@@ -1940,10 +1940,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'cachoeira': {
     slug: 'cachoeira',
     name: 'Cachoeira',
-    metaTitle: 'Pneus Cachoeira Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para Cachoeira, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 20 min.',
+    metaTitle: 'Pneus para Cachoeira | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Cachoeira. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Cachoeira',
-    heroSubtitle: 'Cachoeira: sua oficina de confiança está a 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Cachoeira na unidade do Portão, Curitiba',
     introText: 'O bairro Cachoeira, na zona norte de Curitiba, conta com a Carplus Centro Automotivo para todas as necessidades em pneus e serviços automotivos.',
     localContext: 'Cachoeira é um bairro tranquilo com fácil acesso à região central. A Carplus oferece pneus de qualidade e serviços profissionais.',
     servicesHighlight: [
@@ -1964,7 +1964,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Santa Cândida',
       'Barreirinha'
     ],
-    trafficTips: 'De Cachoeira, siga pela Av. Anita Garibaldi ou Rua Mateus Leme em direção ao centro.',
+    trafficTips: 'Para sair de Cachoeira, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Cachoeira',
     whyChooseUs: [
       'Qualidade garantida',
@@ -1977,12 +1977,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'campina-do-siqueira': {
     slug: 'campina-do-siqueira',
     name: 'Campina do Siqueira',
-    metaTitle: 'Pneus Campina do Siqueira | Carplus Curitiba - 10 min',
-    metaDescription: 'Loja de pneus Campina do Siqueira, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços a 10 min.',
+    metaTitle: 'Pneus para Campina do Siqueira | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Campina do Siqueira. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Campina do Siqueira',
-    heroSubtitle: 'Campina do Siqueira: pneus de qualidade a apenas 10 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Campina do Siqueira na unidade do Portão, Curitiba',
     introText: 'A Campina do Siqueira é um bairro bem localizado na região oeste de Curitiba. Moradores contam com a Carplus para pneus e serviços automotivos de qualidade.',
-    localContext: 'Com acesso fácil ao centro e outras regiões, a Campina do Siqueira está a apenas 10 minutos da Carplus. Trajeto rápido pela Rua Padre Agostinho.',
+    localContext: 'Antes de se deslocar de Campina do Siqueira, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear e Yokohama',
       'Alinhamento 3D Hunter',
@@ -2001,7 +2001,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Mercês',
       'Seminário'
     ],
-    trafficTips: 'Da Campina do Siqueira, siga pela Rua Padre Agostinho até a Av. República Argentina.',
+    trafficTips: 'Para sair de Campina do Siqueira, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Campina do Siqueira',
     whyChooseUs: [
       'Localização estratégica',
@@ -2014,8 +2014,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'campo-de-santana': {
     slug: 'campo-de-santana',
     name: 'Campo de Santana',
-    metaTitle: 'Pneus Campo de Santana Curitiba | Carplus - 25 min',
-    metaDescription: 'Loja de pneus para Campo de Santana, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 25 min.',
+    metaTitle: 'Pneus para Campo de Santana | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Campo de Santana. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Campo de Santana',
     heroSubtitle: 'Campo de Santana: pneus com instalação profissional',
     introText: 'Campo de Santana é um bairro em crescimento na região sul de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços completos para moradores do bairro.',
@@ -2038,23 +2038,23 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Ganchinho',
       'Umbará'
     ],
-    trafficTips: 'Do Campo de Santana, siga pela Av. Raimundo Blum até a Linha Verde.',
+    trafficTips: 'Para sair de Campo de Santana, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Campo de Santana',
     whyChooseUs: [
       'Preços acessíveis',
       'Qualidade garantida',
       'Parcelamento facilitado'
     ],
-    localBenefits: 'Moradores do Campo de Santana encontram na Carplus os melhores preços de Curitiba!'
+    localBenefits: 'Moradores do Campo de Santana encontram na Carplus os orçamento sob consulta!'
   },
 
   'capao-da-imbuia': {
     slug: 'capao-da-imbuia',
     name: 'Capão da Imbuia',
-    metaTitle: 'Pneus Capão da Imbuia Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus para Capão da Imbuia. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços a 20 min.',
+    metaTitle: 'Pneus para Capão da Imbuia | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Capão da Imbuia. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Capão da Imbuia',
-    heroSubtitle: 'Capão da Imbuia: pneus das melhores marcas a 20 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Capão da Imbuia na unidade do Portão, Curitiba',
     introText: 'O Capão da Imbuia é um bairro tradicional da zona leste de Curitiba. A Carplus Centro Automotivo oferece pneus de todas as marcas e serviços automotivos completos.',
     localContext: 'Com fácil acesso pela Av. Prefeito Mauricio Fruet, o Capão da Imbuia está bem conectado ao Portão. A Carplus atende moradores com qualidade e preço justo.',
     servicesHighlight: [
@@ -2076,7 +2076,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Cajuru',
       'Guabirotuba'
     ],
-    trafficTips: 'Do Capão da Imbuia, siga pela Av. Prefeito Mauricio Fruet até o Centro, depois pela Av. República Argentina até o Portão.',
+    trafficTips: 'Para sair de Capão da Imbuia, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Capão da Imbuia',
     whyChooseUs: [
       'Estoque completo de pneus',
@@ -2089,7 +2089,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'caximba': {
     slug: 'caximba',
     name: 'Caximba',
-    metaTitle: 'Pneus Caximba Curitiba | Carplus Centro Automotivo - 30 min',
+    metaTitle: 'Pneus para Caximba | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus para Caximba, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Caximba',
     heroSubtitle: 'Caximba: pneus de qualidade para sua família',
@@ -2113,10 +2113,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Umbará',
       'Campo de Santana'
     ],
-    trafficTips: 'Da Caximba, siga pela Av. Juscelino Kubitschek de Oliveira até a Linha Verde.',
+    trafficTips: 'Para sair de Caximba, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Caximba',
     whyChooseUs: [
-      'Melhores preços de Curitiba',
+      'Orçamento sob consulta',
       'Qualidade garantida',
       'Parcelamento em até 10x'
     ],
@@ -2126,8 +2126,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'ecoville': {
     slug: 'ecoville',
     name: 'Ecoville',
-    metaTitle: 'Pneus Ecoville Curitiba | Carplus Centro Automotivo - 12 min',
-    metaDescription: 'Loja de pneus Ecoville, Curitiba. Pirelli, Michelin, Continental, Yokohama. Alinhamento 3D para SUVs e sedans executivos a 12 min.',
+    metaTitle: 'Pneus para Ecoville | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Ecoville. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Ecoville',
     heroSubtitle: 'Ecoville: pneus premium para veículos de alto padrão',
     introText: 'O Ecoville é uma das regiões mais valorizadas de Curitiba, com moradores que buscam qualidade e excelência. A Carplus Centro Automotivo oferece pneus premium das melhores marcas mundiais e serviços de alta precisão.',
@@ -2153,7 +2153,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'ParkShopping Barigui',
       'Hospital Marcelino Champagnat'
     ],
-    trafficTips: 'Do Ecoville, siga pela Av. Pedro Viriato Parigot de Souza até a Av. República Argentina. Trajeto rápido de aproximadamente 12 minutos.',
+    trafficTips: 'Para sair de Ecoville, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Ecoville',
     whyChooseUs: [
       'Especialistas em pneus para veículos importados',
@@ -2167,12 +2167,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'fanny': {
     slug: 'fanny',
     name: 'Fanny',
-    metaTitle: 'Pneus Fanny Curitiba | Carplus Centro Automotivo - 8 min',
-    metaDescription: 'Loja de pneus para Fanny, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 8 min.',
+    metaTitle: 'Pneus para Fanny | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Fanny. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Fanny',
     heroSubtitle: 'Fanny: pneus de qualidade pertinho de você',
     introText: 'O bairro Fanny é uma região residencial tradicional de Curitiba. A Carplus Centro Automotivo, localizada no Portão vizinho, oferece pneus das melhores marcas com instalação profissional.',
-    localContext: 'Vizinho do Portão, o Fanny está a apenas 8 minutos da Carplus. Moradores do bairro têm a comodidade de uma oficina completa pertinho de casa.',
+    localContext: 'Antes de se deslocar de Fanny, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros populares e familiares',
       'Alinhamento 3D de precisão',
@@ -2192,7 +2192,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Lindóia',
       'Novo Mundo'
     ],
-    trafficTips: 'Do Fanny, siga pela Rua Nicola Pellanda até a Av. Arthur da Silva Bernardes.',
+    trafficTips: 'Para sair de Fanny, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos do Fanny',
     whyChooseUs: [
       'Vizinho do seu bairro',
@@ -2205,7 +2205,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'ganchinho': {
     slug: 'ganchinho',
     name: 'Ganchinho',
-    metaTitle: 'Pneus Ganchinho Curitiba | Carplus - 25 min',
+    metaTitle: 'Pneus para Ganchinho | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus para Ganchinho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Ganchinho',
     heroSubtitle: 'Ganchinho: pneus com preço justo',
@@ -2229,7 +2229,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Sítio Cercado',
       'Caximba'
     ],
-    trafficTips: 'Do Ganchinho, siga pela Linha Verde em direção ao centro.',
+    trafficTips: 'Para sair de Ganchinho, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Ganchinho',
     whyChooseUs: [
       'Melhores preços',
@@ -2242,10 +2242,10 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'guabirotuba': {
     slug: 'guabirotuba',
     name: 'Guabirotuba',
-    metaTitle: 'Pneus Guabirotuba Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus Guabirotuba, Curitiba. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e balanceamento a 15 min.',
+    metaTitle: 'Pneus para Guabirotuba | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Guabirotuba. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Guabirotuba',
-    heroSubtitle: 'Guabirotuba: pneus das melhores marcas a 15 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Guabirotuba na unidade do Portão, Curitiba',
     introText: 'O Guabirotuba é um bairro residencial da zona leste de Curitiba. A Carplus Centro Automotivo oferece pneus de todas as marcas e serviços automotivos completos para moradores do bairro.',
     localContext: 'Bem localizado entre o Centro e o Jardim Botânico, o Guabirotuba tem fácil acesso à Carplus pela Av. das Torres ou Centro.',
     servicesHighlight: [
@@ -2267,7 +2267,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Prado Velho',
       'Hauer'
     ],
-    trafficTips: 'Do Guabirotuba, siga pela Av. das Torres ou pelo Centro até a Av. República Argentina.',
+    trafficTips: 'Para sair de Guabirotuba, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Guabirotuba',
     whyChooseUs: [
       'Estoque completo',
@@ -2280,11 +2280,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'hauer': {
     slug: 'hauer',
     name: 'Hauer',
-    metaTitle: 'Pneus Hauer Curitiba | Carplus Centro Automotivo - 12 min',
-    metaDescription: 'Loja de pneus para Hauer, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 12 min.',
+    metaTitle: 'Pneus para Hauer | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Hauer. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Hauer',
-    heroSubtitle: 'Hauer: pneus de qualidade a 12 minutos da sua casa',
-    introText: 'O Hauer é um bairro tradicional de Curitiba, com forte comércio e moradores que valorizam qualidade. A Carplus Centro Automotivo está a apenas 12 minutos para atender todas as suas necessidades automotivas.',
+    heroSubtitle: 'Atendimento para quem vem de Hauer na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Hauer pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Localizado entre o Boqueirão e o Centro, o Hauer tem fácil acesso ao Portão. A Carplus oferece pneus de qualidade e serviços profissionais.',
     servicesHighlight: [
       'Pneus para carros populares e SUVs',
@@ -2305,7 +2305,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Prado Velho',
       'Guabirotuba'
     ],
-    trafficTips: 'Do Hauer, siga pela Av. Marechal Floriano Peixoto até o Rebouças, depois pela Av. República Argentina.',
+    trafficTips: 'Para sair de Hauer, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Hauer',
     whyChooseUs: [
       'Qualidade premium',
@@ -2318,8 +2318,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'hugo-lange': {
     slug: 'hugo-lange',
     name: 'Hugo Lange',
-    metaTitle: 'Pneus Hugo Lange Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus Hugo Lange, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 15 min.',
+    metaTitle: 'Pneus para Hugo Lange | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Hugo Lange. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Hugo Lange',
     heroSubtitle: 'Hugo Lange: pneus premium para veículos de alto padrão',
     introText: 'Hugo Lange é um bairro nobre de Curitiba, com moradores que valorizam qualidade. A Carplus Centro Automotivo oferece pneus premium e serviços de excelência.',
@@ -2342,7 +2342,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Cristo Rei',
       'Jardim Social'
     ],
-    trafficTips: 'De Hugo Lange, siga pelo Centro até a Av. República Argentina.',
+    trafficTips: 'Para sair de Hugo Lange, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Hugo Lange',
     whyChooseUs: [
       'Qualidade premium',
@@ -2355,12 +2355,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'jardim-das-americas': {
     slug: 'jardim-das-americas',
     name: 'Jardim das Américas',
-    metaTitle: 'Pneus Jardim das Américas Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus para Jardim das Américas. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D a 18 min.',
+    metaTitle: 'Pneus para Jardim das Américas | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Jardim das Américas. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Jardim das Américas',
     heroSubtitle: 'Jardim das Américas: pneus das melhores marcas',
     introText: 'O Jardim das Américas é um bairro tradicional de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços automotivos completos para moradores.',
-    localContext: 'Com fácil acesso pela Av. das Torres, o Jardim das Américas está a 18 minutos da Carplus. Moradores encontram pneus de todas as marcas.',
+    localContext: 'Antes de se deslocar de Jardim das Américas, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
       'Alinhamento 3D',
@@ -2379,7 +2379,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Guabirotuba',
       'Prado Velho'
     ],
-    trafficTips: 'Do Jardim das Américas, siga pela Av. das Torres em direção ao Centro.',
+    trafficTips: 'Para sair de Jardim das Américas, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Jardim das Américas',
     whyChooseUs: [
       'Variedade de pneus',
@@ -2392,7 +2392,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'jardim-social': {
     slug: 'jardim-social',
     name: 'Jardim Social',
-    metaTitle: 'Pneus Jardim Social Curitiba | Carplus - 18 min',
+    metaTitle: 'Pneus para Jardim Social | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Jardim Social, Curitiba. Pirelli, Michelin, Continental. Alinhamento 3D para veículos de alto padrão.',
     h1: 'Pneus e Oficina para Jardim Social',
     heroSubtitle: 'Jardim Social: pneus premium para seu veículo',
@@ -2416,7 +2416,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Jardim Botânico',
       'Cristo Rei'
     ],
-    trafficTips: 'Do Jardim Social, siga pelo Centro até a Av. República Argentina.',
+    trafficTips: 'Para sair de Jardim Social, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Jardim Social',
     whyChooseUs: [
       'Especialistas em pneus premium',
@@ -2429,7 +2429,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'lamenha-pequena': {
     slug: 'lamenha-pequena',
     name: 'Lamenha Pequena',
-    metaTitle: 'Pneus Lamenha Pequena Curitiba | Carplus - 22 min',
+    metaTitle: 'Pneus para Lamenha Pequena | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus para Lamenha Pequena. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Lamenha Pequena',
     heroSubtitle: 'Lamenha Pequena: pneus de qualidade',
@@ -2452,7 +2452,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Butiatuvinha',
       'São Braz'
     ],
-    trafficTips: 'De Lamenha Pequena, siga pela Av. Manoel Ribas em direção ao centro.',
+    trafficTips: 'Para sair de Lamenha Pequena, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Lamenha Pequena',
     whyChooseUs: [
       'Qualidade garantida',
@@ -2465,11 +2465,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'lindoia': {
     slug: 'lindoia',
     name: 'Lindóia',
-    metaTitle: 'Pneus Lindóia Curitiba | Carplus Centro Automotivo - 8 min',
-    metaDescription: 'Loja de pneus Lindóia, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 8 min.',
+    metaTitle: 'Pneus para Lindóia | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Lindóia. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Lindóia',
-    heroSubtitle: 'Lindóia: pneus de qualidade a 8 minutos',
-    introText: 'O Lindóia é um bairro bem localizado de Curitiba, vizinho do Portão. A Carplus Centro Automotivo está a apenas 8 minutos para atender moradores com pneus de qualidade.',
+    heroSubtitle: 'Atendimento para quem vem de Lindóia na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Lindóia pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Vizinho do Portão e Fanny, o Lindóia tem acesso direto à Carplus. Moradores encontram pneus das melhores marcas com preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2489,25 +2489,25 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Fanny',
       'Novo Mundo'
     ],
-    trafficTips: 'Do Lindóia, siga pela Rua Nicola Pellanda ou pela Av. República Argentina.',
+    trafficTips: 'Para sair de Lindóia, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos do Lindóia',
     whyChooseUs: [
       'Pertinho do seu bairro',
       'Preços de atacado',
       'Atendimento rápido'
     ],
-    localBenefits: 'O Lindóia está a poucos minutos da Carplus - visite-nos!'
+    localBenefits: 'Consulte o trajeto desde Lindóia no mapa e confirme o atendimento na unidade do Portão, em Curitiba.'
   },
 
   'mossungue': {
     slug: 'mossungue',
     name: 'Mossunguê',
-    metaTitle: 'Pneus Mossunguê Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus para Mossunguê, Curitiba. Pirelli, Michelin, Goodyear, Continental. Alinhamento 3D a 12 min.',
+    metaTitle: 'Pneus para Mossunguê | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Mossunguê. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Mossunguê',
     heroSubtitle: 'Mossunguê: pneus premium para seu veículo',
     introText: 'O Mossunguê é um bairro de alto padrão de Curitiba, próximo ao Parque Barigui. A Carplus Centro Automotivo oferece pneus premium e serviços de qualidade.',
-    localContext: 'Com moradores exigentes, o Mossunguê está a 12 minutos da Carplus. Oferecemos pneus para SUVs e sedans executivos.',
+    localContext: 'Antes de se deslocar de Mossunguê, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus premium para SUVs',
       'Alinhamento 3D de precisão',
@@ -2526,7 +2526,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Ecoville',
       'Campo Comprido'
     ],
-    trafficTips: 'Do Mossunguê, siga pela Av. Iguaçu até a Av. República Argentina.',
+    trafficTips: 'Para sair de Mossunguê, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Mossunguê',
     whyChooseUs: [
       'Pneus para veículos de alto padrão',
@@ -2539,7 +2539,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'orleans': {
     slug: 'orleans',
     name: 'Orleans',
-    metaTitle: 'Pneus Orleans Curitiba | Carplus - 15 min',
+    metaTitle: 'Pneus para Orleans | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Orleans, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Orleans',
     heroSubtitle: 'Orleans: pneus de qualidade',
@@ -2563,7 +2563,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Bigorrilho',
       'Mercês'
     ],
-    trafficTips: 'De Orleans, siga pela Rua Padre Agostinho até a Av. República Argentina.',
+    trafficTips: 'Para sair de Orleans, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Orleans',
     whyChooseUs: [
       'Preços competitivos',
@@ -2576,12 +2576,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'prado-velho': {
     slug: 'prado-velho',
     name: 'Prado Velho',
-    metaTitle: 'Pneus Prado Velho Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus Prado Velho, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
+    metaTitle: 'Pneus para Prado Velho | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Prado Velho. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Prado Velho',
-    heroSubtitle: 'Prado Velho: pneus de qualidade a 12 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Prado Velho na unidade do Portão, Curitiba',
     introText: 'O Prado Velho é um bairro bem localizado de Curitiba, próximo ao Centro e à PUCPR. A Carplus Centro Automotivo oferece pneus de qualidade.',
-    localContext: 'Com fácil acesso pela Av. das Torres, o Prado Velho está a 12 minutos da Carplus. Atendemos estudantes e moradores.',
+    localContext: 'Antes de se deslocar de Prado Velho, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros populares',
       'Alinhamento 3D',
@@ -2600,7 +2600,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Guabirotuba',
       'Parolin'
     ],
-    trafficTips: 'Do Prado Velho, siga pela Av. Marechal Floriano Peixoto até o Rebouças.',
+    trafficTips: 'Para sair de Prado Velho, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Prado Velho',
     whyChooseUs: [
       'Preços acessíveis',
@@ -2613,11 +2613,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'santa-quiteria': {
     slug: 'santa-quiteria',
     name: 'Santa Quitéria',
-    metaTitle: 'Pneus Santa Quitéria Curitiba | Carplus - 8 min',
-    metaDescription: 'Loja de pneus Santa Quitéria, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 8 min.',
+    metaTitle: 'Pneus para Santa Quitéria | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Santa Quitéria. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Santa Quitéria',
     heroSubtitle: 'Santa Quitéria: pneus de qualidade pertinho',
-    introText: 'Santa Quitéria é um bairro tradicional de Curitiba, vizinho do Portão. A Carplus Centro Automotivo está a apenas 8 minutos com pneus das melhores marcas.',
+    introText: 'Quem vem de Santa Quitéria pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Vizinho do Portão, Santa Quitéria tem acesso direto à Carplus. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2637,7 +2637,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campo Comprido',
       'Fazendinha'
     ],
-    trafficTips: 'De Santa Quitéria, siga pela Rua João Dembinski até a Av. República Argentina.',
+    trafficTips: 'Para sair de Santa Quitéria, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos de Santa Quitéria',
     whyChooseUs: [
       'Pertinho do seu bairro',
@@ -2650,12 +2650,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'santo-inacio': {
     slug: 'santo-inacio',
     name: 'Santo Inácio',
-    metaTitle: 'Pneus Santo Inácio Curitiba | Carplus - 15 min',
+    metaTitle: 'Pneus para Santo Inácio | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Santo Inácio, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Santo Inácio',
     heroSubtitle: 'Santo Inácio: pneus de qualidade',
     introText: 'Santo Inácio é um bairro da região oeste de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
-    localContext: 'Com fácil acesso ao Portão, Santo Inácio está a 15 minutos da Carplus. Moradores encontram pneus de todas as marcas.',
+    localContext: 'Antes de se deslocar de Santo Inácio, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus das melhores marcas',
       'Alinhamento 3D',
@@ -2674,7 +2674,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campo Comprido',
       'Santa Quitéria'
     ],
-    trafficTips: 'De Santo Inácio, siga pela Rua João Dembinski ou Av. Juscelino Kubitschek.',
+    trafficTips: 'Para sair de Santo Inácio, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Santo Inácio',
     whyChooseUs: [
       'Preços competitivos',
@@ -2687,7 +2687,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-braz': {
     slug: 'sao-braz',
     name: 'São Braz',
-    metaTitle: 'Pneus São Braz Curitiba | Carplus - 18 min',
+    metaTitle: 'Pneus para São Braz | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus São Braz, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento.',
     h1: 'Pneus e Oficina para São Braz',
     heroSubtitle: 'São Braz: pneus de qualidade',
@@ -2711,7 +2711,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Butiatuvinha',
       'Lamenha Pequena'
     ],
-    trafficTips: 'De São Braz, siga pela Av. Manoel Ribas em direção ao centro.',
+    trafficTips: 'Para sair de São Braz, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de São Braz',
     whyChooseUs: [
       'Qualidade',
@@ -2724,8 +2724,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-francisco': {
     slug: 'sao-francisco',
     name: 'São Francisco',
-    metaTitle: 'Pneus São Francisco Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus São Francisco, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
+    metaTitle: 'Pneus para São Francisco | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de São Francisco. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para São Francisco',
     heroSubtitle: 'São Francisco: pneus de qualidade',
     introText: 'O bairro São Francisco é uma região nobre de Curitiba. A Carplus Centro Automotivo oferece pneus premium e serviços de qualidade.',
@@ -2748,7 +2748,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Mercês',
       'Batel'
     ],
-    trafficTips: 'De São Francisco, siga pela Av. Visconde de Guarapuava até a Av. República Argentina.',
+    trafficTips: 'Para sair de São Francisco, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de São Francisco',
     whyChooseUs: [
       'Qualidade premium',
@@ -2761,7 +2761,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-joao': {
     slug: 'sao-joao',
     name: 'São João',
-    metaTitle: 'Pneus São João Curitiba | Carplus - 20 min',
+    metaTitle: 'Pneus para São João | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus São João, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para São João',
     heroSubtitle: 'São João: pneus de qualidade',
@@ -2785,7 +2785,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Boa Vista',
       'Tingui'
     ],
-    trafficTips: 'De São João, siga pela Av. Paraná em direção ao centro.',
+    trafficTips: 'Para sair de São João, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de São João',
     whyChooseUs: [
       'Preços acessíveis',
@@ -2798,7 +2798,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sao-miguel': {
     slug: 'sao-miguel',
     name: 'São Miguel',
-    metaTitle: 'Pneus São Miguel Curitiba | Carplus - 25 min',
+    metaTitle: 'Pneus para São Miguel | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus São Miguel, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para São Miguel',
     heroSubtitle: 'São Miguel: pneus com preço justo',
@@ -2822,7 +2822,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Tatuquara',
       'Pinheirinho'
     ],
-    trafficTips: 'De São Miguel, siga pela Linha Verde em direção ao centro.',
+    trafficTips: 'Para sair de São Miguel, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de São Miguel',
     whyChooseUs: [
       'Melhores preços',
@@ -2835,11 +2835,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'seminario': {
     slug: 'seminario',
     name: 'Seminário',
-    metaTitle: 'Pneus Seminário Curitiba | Carplus - 10 min',
-    metaDescription: 'Loja de pneus Seminário, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 10 min.',
+    metaTitle: 'Pneus para Seminário | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Seminário. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para o Seminário',
-    heroSubtitle: 'Seminário: pneus de qualidade a 10 minutos',
-    introText: 'O Seminário é um bairro bem localizado de Curitiba. A Carplus Centro Automotivo está a apenas 10 minutos com pneus das melhores marcas.',
+    heroSubtitle: 'Atendimento para quem vem de Seminário na unidade do Portão, Curitiba',
+    introText: 'Quem vem de Seminário pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Vizinho do Bigorrilho e Mercês, o Seminário tem fácil acesso ao Portão. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -2859,7 +2859,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Mercês',
       'Campina do Siqueira'
     ],
-    trafficTips: 'Do Seminário, siga pela Rua Padre Agostinho até a Av. República Argentina.',
+    trafficTips: 'Para sair de Seminário, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Seminário',
     whyChooseUs: [
       'Localização estratégica',
@@ -2872,7 +2872,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'taboao': {
     slug: 'taboao',
     name: 'Taboão',
-    metaTitle: 'Pneus Taboão Curitiba | Carplus - 20 min',
+    metaTitle: 'Pneus para Taboão | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Taboão, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Taboão',
     heroSubtitle: 'Taboão: pneus de qualidade',
@@ -2896,7 +2896,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Capão Raso',
       'Novo Mundo'
     ],
-    trafficTips: 'Do Taboão, siga pela Linha Verde em direção ao Portão.',
+    trafficTips: 'Para sair de Taboão, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Taboão',
     whyChooseUs: [
       'Preços justos',
@@ -2909,8 +2909,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'taruma': {
     slug: 'taruma',
     name: 'Tarumã',
-    metaTitle: 'Pneus Tarumã Curitiba | Carplus - 20 min',
-    metaDescription: 'Loja de pneus Tarumã, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 20 min.',
+    metaTitle: 'Pneus para Tarumã | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Tarumã. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Tarumã',
     heroSubtitle: 'Tarumã: pneus de qualidade',
     introText: 'O Tarumã é um bairro tradicional de Curitiba, próximo ao Parque do Tarumã. A Carplus Centro Automotivo oferece pneus de qualidade.',
@@ -2933,7 +2933,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Capão da Imbuia',
       'Cajuru'
     ],
-    trafficTips: 'Do Tarumã, siga pela Av. Prefeito Erasto Gaertner em direção ao centro.',
+    trafficTips: 'Para sair de Tarumã, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Tarumã',
     whyChooseUs: [
       'Qualidade',
@@ -2946,7 +2946,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'augusta': {
     slug: 'augusta',
     name: 'Augusta',
-    metaTitle: 'Pneus Augusta Curitiba | Carplus - 20 min',
+    metaTitle: 'Pneus para Augusta | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Augusta, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Augusta',
     heroSubtitle: 'Augusta: pneus de qualidade',
@@ -2970,7 +2970,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Boa Vista',
       'Tingui'
     ],
-    trafficTips: 'De Augusta, siga pelas principais vias em direção ao Portão.',
+    trafficTips: 'Para sair de Augusta, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Augusta',
     whyChooseUs: [
       'Qualidade',
@@ -2983,7 +2983,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'riviera': {
     slug: 'riviera',
     name: 'Riviera',
-    metaTitle: 'Pneus Riviera Curitiba | Carplus - 15 min',
+    metaTitle: 'Pneus para Riviera | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Riviera, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Riviera',
     heroSubtitle: 'Riviera: pneus de qualidade',
@@ -3007,7 +3007,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campo Comprido',
       'CIC'
     ],
-    trafficTips: 'De Riviera, siga pela Av. República Argentina em direção ao Portão.',
+    trafficTips: 'Para sair de Riviera, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Riviera',
     whyChooseUs: [
       'Preços justos',
@@ -3020,8 +3020,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'alto-boqueirao': {
     slug: 'alto-boqueirao',
     name: 'Alto Boqueirão',
-    metaTitle: 'Pneus Alto Boqueirão Curitiba | Carplus - 18 min',
-    metaDescription: 'Loja de pneus Alto Boqueirão, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 18 min.',
+    metaTitle: 'Pneus para Alto Boqueirão | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Alto Boqueirão. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Alto Boqueirão',
     heroSubtitle: 'Alto Boqueirão: pneus de qualidade',
     introText: 'O Alto Boqueirão é uma região populosa de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível para moradores.',
@@ -3044,7 +3044,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Uberaba',
       'Hauer'
     ],
-    trafficTips: 'Do Alto Boqueirão, siga pela Linha Verde em direção ao centro.',
+    trafficTips: 'Para sair de Alto Boqueirão, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Alto Boqueirão',
     whyChooseUs: [
       'Preços competitivos',
@@ -3057,7 +3057,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'caiua': {
     slug: 'caiua',
     name: 'Caiuá',
-    metaTitle: 'Pneus Caiuá Curitiba | Carplus - 15 min',
+    metaTitle: 'Pneus para Caiuá | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Caiuá, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Caiuá',
     heroSubtitle: 'Caiuá: pneus de qualidade',
@@ -3081,7 +3081,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Fazendinha',
       'Campo Comprido'
     ],
-    trafficTips: 'De Caiuá, siga pela Av. República Argentina em direção ao Portão.',
+    trafficTips: 'Para sair de Caiuá, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Caiuá',
     whyChooseUs: [
       'Preços acessíveis',
@@ -3097,12 +3097,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-izabel': {
     slug: 'vila-izabel',
     name: 'Vila Izabel',
-    metaTitle: 'Pneus Vila Izabel Curitiba | Carplus Centro Automotivo - 5 min',
-    metaDescription: 'Loja de pneus Vila Izabel, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e balanceamento a 5 min.',
+    metaTitle: 'Pneus para Vila Izabel | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Izabel. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Izabel',
     heroSubtitle: 'Vila Izabel: pneus de qualidade pertinho de você',
-    introText: 'A Vila Izabel é uma região vizinha do Portão. A Carplus Centro Automotivo está a apenas 5 minutos, oferecendo pneus das melhores marcas.',
-    localContext: 'Vizinha do Portão, a Vila Izabel tem acesso direto à Carplus. Moradores encontram qualidade e preço justo a poucos minutos de casa.',
+    introText: 'Quem vem de Vila Izabel pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
+    localContext: 'Antes de se deslocar de Vila Izabel, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear, Yokohama',
       'Alinhamento 3D Hunter',
@@ -3121,7 +3121,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Água Verde',
       'Fanny'
     ],
-    trafficTips: 'Da Vila Izabel, são apenas 5 minutos até a Carplus pela Av. Arthur da Silva Bernardes.',
+    trafficTips: 'Para sair de Vila Izabel, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos da Vila Izabel',
     whyChooseUs: [
       'Vizinho do seu bairro',
@@ -3134,8 +3134,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-hauer': {
     slug: 'vila-hauer',
     name: 'Vila Hauer',
-    metaTitle: 'Pneus Vila Hauer Curitiba | Carplus - 12 min',
-    metaDescription: 'Loja de pneus Vila Hauer, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 12 min.',
+    metaTitle: 'Pneus para Vila Hauer | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Hauer. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Hauer',
     heroSubtitle: 'Vila Hauer: pneus de qualidade',
     introText: 'A Vila Hauer é uma região tradicional de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e serviços profissionais.',
@@ -3158,7 +3158,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Boqueirão',
       'Prado Velho'
     ],
-    trafficTips: 'Da Vila Hauer, siga pela Av. Marechal Floriano Peixoto até o Rebouças.',
+    trafficTips: 'Para sair de Vila Hauer, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Hauer',
     whyChooseUs: [
       'Preços competitivos',
@@ -3171,11 +3171,11 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-guaira': {
     slug: 'vila-guaira',
     name: 'Vila Guaíra',
-    metaTitle: 'Pneus Vila Guaíra Curitiba | Carplus - 5 min',
-    metaDescription: 'Loja de pneus Vila Guaíra, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 5 min.',
+    metaTitle: 'Pneus para Vila Guaíra | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Guaíra. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Guaíra',
     heroSubtitle: 'Vila Guaíra: pneus de qualidade pertinho',
-    introText: 'A Vila Guaíra é uma região próxima ao Guaíra e Portão. A Carplus Centro Automotivo está a apenas 5 minutos com pneus das melhores marcas.',
+    introText: 'Quem vem de Vila Guaíra pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.',
     localContext: 'Vizinha do Portão, a Vila Guaíra tem acesso direto à Carplus. Moradores encontram qualidade e preço justo.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear',
@@ -3195,7 +3195,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Portão',
       'Capão Raso'
     ],
-    trafficTips: 'Da Vila Guaíra, são poucos minutos até a Carplus pela Rua Kennedy.',
+    trafficTips: 'Para sair de Vila Guaíra, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos da Vila Guaíra',
     whyChooseUs: [
       'Pertinho do seu bairro',
@@ -3208,8 +3208,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-fanny': {
     slug: 'vila-fanny',
     name: 'Vila Fanny',
-    metaTitle: 'Pneus Vila Fanny Curitiba | Carplus - 8 min',
-    metaDescription: 'Loja de pneus Vila Fanny, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 8 min.',
+    metaTitle: 'Pneus para Vila Fanny | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Fanny. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Fanny',
     heroSubtitle: 'Vila Fanny: pneus de qualidade',
     introText: 'A Vila Fanny é uma região próxima ao Fanny e Portão. A Carplus Centro Automotivo oferece pneus das melhores marcas.',
@@ -3232,7 +3232,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Portão',
       'Lindóia'
     ],
-    trafficTips: 'Da Vila Fanny, siga pela Rua Nicola Pellanda até a Carplus.',
+    trafficTips: 'Para sair de Vila Fanny, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'vizinhos da Vila Fanny',
     whyChooseUs: [
       'Preços justos',
@@ -3245,7 +3245,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-torres': {
     slug: 'vila-torres',
     name: 'Vila Torres',
-    metaTitle: 'Pneus Vila Torres Curitiba | Carplus - 12 min',
+    metaTitle: 'Pneus para Vila Torres | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Vila Torres, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Torres',
     heroSubtitle: 'Vila Torres: pneus de qualidade',
@@ -3269,7 +3269,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Centro',
       'Rebouças'
     ],
-    trafficTips: 'Da Vila Torres, siga pelo Centro até a Av. República Argentina.',
+    trafficTips: 'Para sair de Vila Torres, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Torres',
     whyChooseUs: [
       'Preços acessíveis',
@@ -3282,7 +3282,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-oficinas': {
     slug: 'vila-oficinas',
     name: 'Vila Oficinas',
-    metaTitle: 'Pneus Vila Oficinas Curitiba | Carplus - 18 min',
+    metaTitle: 'Pneus para Vila Oficinas | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Vila Oficinas, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Oficinas',
     heroSubtitle: 'Vila Oficinas: pneus de qualidade',
@@ -3306,7 +3306,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Capão da Imbuia',
       'Uberaba'
     ],
-    trafficTips: 'Da Vila Oficinas, siga pela Av. das Torres em direção ao Centro.',
+    trafficTips: 'Para sair de Vila Oficinas, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Oficinas',
     whyChooseUs: [
       'Qualidade',
@@ -3322,8 +3322,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-sandra': {
     slug: 'vila-sandra',
     name: 'Vila Sandra',
-    metaTitle: 'Pneus Vila Sandra Curitiba | Carplus - 15 min',
-    metaDescription: 'Loja de pneus Vila Sandra, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços a 15 min.',
+    metaTitle: 'Pneus para Vila Sandra | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Sandra. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Sandra',
     heroSubtitle: 'Vila Sandra: pneus de qualidade',
     introText: 'A Vila Sandra é uma comunidade de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço justo para moradores.',
@@ -3346,7 +3346,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Fazendinha',
       'Portão'
     ],
-    trafficTips: 'Da Vila Sandra, siga em direção ao Portão pela Av. República Argentina.',
+    trafficTips: 'Para sair de Vila Sandra, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Sandra',
     whyChooseUs: [
       'Preços acessíveis',
@@ -3359,7 +3359,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'neoville': {
     slug: 'neoville',
     name: 'Neoville',
-    metaTitle: 'Pneus Neoville Curitiba | Carplus Centro Automotivo - 12 min',
+    metaTitle: 'Pneus para Neoville | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Neoville, Curitiba. Pirelli, Michelin, Goodyear, Continental. Alinhamento 3D para veículos de alto padrão.',
     h1: 'Pneus e Oficina para Neoville',
     heroSubtitle: 'Neoville: pneus premium para seu veículo',
@@ -3383,7 +3383,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campo Comprido',
       'Mossunguê'
     ],
-    trafficTips: 'Do Neoville, siga pela Av. República Argentina em direção ao Portão.',
+    trafficTips: 'Para sair de Neoville, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores do Neoville',
     whyChooseUs: [
       'Especialistas em pneus premium',
@@ -3396,7 +3396,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-verde': {
     slug: 'vila-verde',
     name: 'Vila Verde',
-    metaTitle: 'Pneus Vila Verde Curitiba | Carplus - 15 min',
+    metaTitle: 'Pneus para Vila Verde | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Vila Verde, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Vila Verde',
     heroSubtitle: 'Vila Verde: pneus de qualidade',
@@ -3420,7 +3420,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campo Comprido',
       'Santa Quitéria'
     ],
-    trafficTips: 'Da Vila Verde, siga em direção ao Portão pelas principais vias.',
+    trafficTips: 'Para sair de Vila Verde, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Verde',
     whyChooseUs: [
       'Preços competitivos',
@@ -3433,8 +3433,8 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-nossa-senhora-da-luz': {
     slug: 'vila-nossa-senhora-da-luz',
     name: 'Vila Nossa Senhora da Luz',
-    metaTitle: 'Pneus Vila Nossa Senhora da Luz | Carplus Curitiba - 15 min',
-    metaDescription: 'Loja de pneus Vila Nossa Senhora da Luz, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D a 15 min.',
+    metaTitle: 'Pneus para Vila Nossa Senhora da Luz | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Vila Nossa Senhora da Luz. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Vila Nossa Senhora da Luz',
     heroSubtitle: 'Vila Nossa Senhora da Luz: pneus de qualidade',
     introText: 'A Vila Nossa Senhora da Luz é uma comunidade de Curitiba. A Carplus Centro Automotivo oferece pneus de qualidade e preço acessível.',
@@ -3457,7 +3457,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Pinheirinho',
       'Capão Raso'
     ],
-    trafficTips: 'Da Vila Nossa Senhora da Luz, siga em direção ao Portão.',
+    trafficTips: 'Para sair de Vila Nossa Senhora da Luz, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Nossa Senhora da Luz',
     whyChooseUs: [
       'Preços acessíveis',
@@ -3470,7 +3470,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vila-pantanal': {
     slug: 'vila-pantanal',
     name: 'Vila Pantanal',
-    metaTitle: 'Pneus Vila Pantanal Curitiba | Carplus - 18 min',
+    metaTitle: 'Pneus para Vila Pantanal | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Vila Pantanal, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Vila Pantanal',
     heroSubtitle: 'Vila Pantanal: pneus de qualidade',
@@ -3494,7 +3494,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Uberaba',
       'Cajuru'
     ],
-    trafficTips: 'Da Vila Pantanal, siga pela Linha Verde em direção ao Portão.',
+    trafficTips: 'Para sair de Vila Pantanal, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores da Vila Pantanal',
     whyChooseUs: [
       'Preços justos',
@@ -3507,7 +3507,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'vitoria-regia': {
     slug: 'vitoria-regia',
     name: 'Vitória Régia',
-    metaTitle: 'Pneus Vitória Régia Curitiba | Carplus - 20 min',
+    metaTitle: 'Pneus para Vitória Régia | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Vitória Régia, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços automotivos.',
     h1: 'Pneus e Oficina para Vitória Régia',
     heroSubtitle: 'Vitória Régia: pneus de qualidade',
@@ -3531,7 +3531,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Tatuquara',
       'Campo Comprido'
     ],
-    trafficTips: 'De Vitória Régia, siga em direção ao Portão pelas principais vias.',
+    trafficTips: 'Para sair de Vitória Régia, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Vitória Régia',
     whyChooseUs: [
       'Preços acessíveis',
@@ -3544,7 +3544,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'sabara': {
     slug: 'sabara',
     name: 'Sabará',
-    metaTitle: 'Pneus Sabará Curitiba | Carplus - 20 min',
+    metaTitle: 'Pneus para Sabará | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Sabará, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Sabará',
     heroSubtitle: 'Sabará: pneus de qualidade',
@@ -3568,7 +3568,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Capão Raso',
       'Tatuquara'
     ],
-    trafficTips: 'De Sabará, siga em direção ao Portão pela Rua Kennedy ou pela Linha Verde.',
+    trafficTips: 'Para sair de Sabará, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Sabará',
     whyChooseUs: [
       'Preços competitivos',
@@ -3581,7 +3581,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'santa-felicidade-norte': {
     slug: 'santa-felicidade-norte',
     name: 'Santa Felicidade Norte',
-    metaTitle: 'Pneus Santa Felicidade Norte | Carplus Curitiba - 20 min',
+    metaTitle: 'Pneus para Santa Felicidade Norte | Carplus no Portão, Curitiba',
     metaDescription: 'Loja de pneus Santa Felicidade Norte, Curitiba. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços.',
     h1: 'Pneus e Oficina para Santa Felicidade Norte',
     heroSubtitle: 'Santa Felicidade Norte: pneus de qualidade',
@@ -3605,7 +3605,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Butiatuvinha',
       'São Braz'
     ],
-    trafficTips: 'De Santa Felicidade Norte, siga pela Av. Manoel Ribas em direção ao centro.',
+    trafficTips: 'Para sair de Santa Felicidade Norte, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Santa Felicidade Norte',
     whyChooseUs: [
       'Qualidade',
@@ -3621,12 +3621,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'piraquara': {
     slug: 'piraquara',
     name: 'Piraquara',
-    metaTitle: 'Pneus Piraquara PR | Carplus Curitiba - 35 min',
-    metaDescription: 'Loja de pneus para Piraquara, PR. Pirelli, Michelin, Goodyear, Yokohama. Alinhamento 3D e serviços. A 35 min pela BR-116.',
+    metaTitle: 'Pneus para Piraquara | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Piraquara. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Piraquara',
-    heroSubtitle: 'De Piraquara à Carplus em 35 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Piraquara na unidade do Portão, Curitiba',
     introText: 'Piraquara é uma cidade da região metropolitana de Curitiba, conhecida pelos mananciais. Moradores encontram na Carplus pneus de qualidade e preços que compensam o deslocamento.',
-    localContext: 'Com acesso pela BR-116 e pela Rodovia João Leopoldo Jacomel, Piraquara está a 35 minutos da Carplus. O trajeto vale pela economia e qualidade.',
+    localContext: 'Antes de se deslocar de Piraquara, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus Pirelli, Michelin, Goodyear e Yokohama',
       'Alinhamento computadorizado 3D',
@@ -3646,7 +3646,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Pinhais',
       'Quatro Barras'
     ],
-    trafficTips: 'De Piraquara, siga pela BR-116 ou pela Rodovia João Leopoldo Jacomel em direção a Curitiba.',
+    trafficTips: 'Para sair de Piraquara, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Piraquara',
     whyChooseUs: [
       'Preços de atacado',
@@ -3660,12 +3660,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'quatro-barras': {
     slug: 'quatro-barras',
     name: 'Quatro Barras',
-    metaTitle: 'Pneus Quatro Barras PR | Carplus Curitiba - 30 min',
-    metaDescription: 'Loja de pneus para Quatro Barras, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 30 min pela BR-116.',
+    metaTitle: 'Pneus para Quatro Barras | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Quatro Barras. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Quatro Barras',
-    heroSubtitle: 'De Quatro Barras à Carplus em 30 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Quatro Barras na unidade do Portão, Curitiba',
     introText: 'Quatro Barras é uma cidade da região metropolitana de Curitiba, próxima à Serra do Mar. Moradores encontram na Carplus pneus de qualidade e excelente atendimento.',
-    localContext: 'Com acesso pela BR-116, Quatro Barras está a 30 minutos da Carplus. A viagem vale pela economia em pneus e serviços de qualidade.',
+    localContext: 'Antes de se deslocar de Quatro Barras, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus para carros e SUVs',
       'Alinhamento 3D Hunter',
@@ -3685,7 +3685,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Campina Grande do Sul',
       'Piraquara'
     ],
-    trafficTips: 'De Quatro Barras, siga pela BR-116 em direção a Curitiba.',
+    trafficTips: 'Para sair de Quatro Barras, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Quatro Barras',
     whyChooseUs: [
       'Preços justos',
@@ -3698,12 +3698,12 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
   'campina-grande-do-sul': {
     slug: 'campina-grande-do-sul',
     name: 'Campina Grande do Sul',
-    metaTitle: 'Pneus Campina Grande do Sul PR | Carplus Curitiba - 35 min',
-    metaDescription: 'Loja de pneus para Campina Grande do Sul, PR. Pirelli, Michelin, Goodyear. Alinhamento 3D e serviços. A 35 min pela BR-116.',
+    metaTitle: 'Pneus para Campina Grande do Sul | Carplus no Portão, Curitiba',
+    metaDescription: 'Pneus e serviços para quem vem de Campina Grande do Sul. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.',
     h1: 'Pneus e Oficina para Campina Grande do Sul',
-    heroSubtitle: 'De Campina Grande do Sul à Carplus em 35 minutos',
+    heroSubtitle: 'Atendimento para quem vem de Campina Grande do Sul na unidade do Portão, Curitiba',
     introText: 'Campina Grande do Sul é uma cidade da região metropolitana de Curitiba. Moradores encontram na Carplus pneus de qualidade e preços que compensam o deslocamento.',
-    localContext: 'Com acesso pela BR-116, Campina Grande do Sul está a 35 minutos da Carplus. A economia em pneus vale a viagem.',
+    localContext: 'Antes de se deslocar de Campina Grande do Sul, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.',
     servicesHighlight: [
       'Pneus das melhores marcas',
       'Alinhamento 3D',
@@ -3723,7 +3723,7 @@ export const NEIGHBORHOOD_SEO_CONTENT: Record<string, NeighborhoodSeoContent> = 
       'Quatro Barras',
       'Bocaiúva do Sul'
     ],
-    trafficTips: 'De Campina Grande do Sul, siga pela BR-116 em direção a Curitiba.',
+    trafficTips: 'Para sair de Campina Grande do Sul, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.',
     testimonialContext: 'moradores de Campina Grande do Sul',
     whyChooseUs: [
       'Preços de atacado',
@@ -3744,14 +3744,14 @@ export function generateGenericSeoContent(name: string, slug: string, tempo: str
   return {
     slug,
     name,
-    metaTitle: `Pneus ${name} | Carplus Centro Automotivo Curitiba - ${tempo}`,
-    metaDescription: `Loja de pneus para ${name}. Pirelli, Michelin, Goodyear com instalação inclusa. Alinhamento 3D e balanceamento. A ${tempo} de você.`,
+    metaTitle: `Pneus para ${name} | Carplus no Portão, Curitiba`,
+    metaDescription: `Pneus e serviços para quem vem de ${name}. Atendimento na unidade do Portão, Curitiba. Consulte medida, disponibilidade, orçamento e trajeto no mapa.`,
     h1: `Pneus e Oficina para ${name}`,
-    heroSubtitle: `${name}: sua oficina de confiança está a ${tempo}`,
-    introText: `Moradores de ${name} encontram na Carplus Centro Automotivo a melhor opção em pneus e serviços automotivos em Curitiba. Localizada no Portão, a ${tempo} de você, oferecemos pneus Pirelli, Michelin, Goodyear e Continental com montagem e balanceamento inclusos.`,
-    localContext: `${name} tem acesso fácil ao Portão via ${via}. A Carplus atende moradores da região com qualidade, preço justo e atendimento profissional há mais de 10 anos.`,
+    heroSubtitle: `Atendimento para quem vem de ${name} na unidade do Portão, Curitiba`,
+    introText: `Quem vem de ${name} pode consultar pneus e serviços na Carplus, na Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Informe ano, versão e medida do veículo para conferir as opções e os serviços necessários.`,
+    localContext: `Antes de se deslocar de ${name}, confirme a disponibilidade e a agenda. Use o mapa para escolher o trajeto até a unidade do Portão, em Curitiba.`,
     servicesHighlight: [
-      'Pneus das melhores marcas com instalação inclusa',
+      'Pneus das melhores marcas com instalação sob consulta',
       'Alinhamento computadorizado 3D',
       'Balanceamento de rodas',
       'Troca de óleo e filtros',
@@ -3767,14 +3767,14 @@ export function generateGenericSeoContent(name: string, slug: string, tempo: str
       `troca de pneu ${name}`
     ],
     nearbyLandmarks: [],
-    trafficTips: `Do ${name}, siga pela ${via} em direção ao Portão. A Carplus fica na Av. Arthur da Silva Bernardes, 1323.`,
+    trafficTips: `Para sair de ${name}, consulte o mapa com destino à Av. Arthur da Silva Bernardes, 1323, Portão, Curitiba. Rotas e tempos variam conforme o trânsito.`,
     testimonialContext: `moradores de ${name}`,
     whyChooseUs: [
       'Preços de atacado em pneus',
-      'Montagem e balanceamento inclusos',
+      'Montagem e balanceamento sob consulta',
       'Garantia de fábrica',
       'Parcelamento em até 10x sem juros'
     ],
-    localBenefits: `Moradores de ${name} são bem-vindos! Venha conhecer a Carplus e descubra por que somos a oficina mais bem avaliada do Portão.`
+    localBenefits: `Quem vem de ${name} pode consultar pneus e serviços na nossa unidade do Portão, Curitiba. Confirme as condições do atendimento antes de vir.`
   };
 }

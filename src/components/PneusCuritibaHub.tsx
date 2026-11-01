@@ -67,7 +67,7 @@ const HUB_FAQ = [
   {
     question: 'Posso comprar pneus e fazer alinhamento no mesmo local?',
     answer:
-      'Com certeza! A Carplus é um centro automotivo completo no Portão. Além de trocar seus pneus, você pode realizar alinhamento 3D computadorizado, balanceamento de rodas e revisão de suspensão e freios no mesmo dia.',
+      'Com certeza! A Carplus é um centro automotivo completo no Portão. O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
   },
   {
     question: 'A loja fica em qual bairro de Curitiba?',
@@ -233,7 +233,7 @@ export default function PneusCuritibaHub() {
               {
                 icon: Award,
                 title: 'Oficina no Mesmo Local',
-                description: 'Somos um centro automotivo completo: se precisar de revisão de freios, suspensão, amortecedores ou troca de óleo, realizamos tudo na hora.'
+                description: 'Somos um centro automotivo completo: se precisar de revisão de freios, suspensão, amortecedores ou troca de óleo, realizamos tudo mediante consulta de agenda.'
               },
               {
                 icon: Star,

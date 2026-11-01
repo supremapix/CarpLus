@@ -46,8 +46,8 @@ const MARCAS = [
 
 const DIFERENCIAIS = [
   { titulo: 'Fácil de chegar', descricao: 'No Portão, com acesso rápido pela Linha Verde, BR-116 e principais avenidas da região sul.', icone: MapPin },
-  { titulo: 'Pronta entrega', descricao: 'Grande estoque de pneus de todas as marcas e medidas para instalação no mesmo dia.', icone: CheckCircle2 },
-  { titulo: 'Montagem inclusa', descricao: 'Montagem, balanceamento e calibragem inclusos, com alinhamento 3D na própria loja.', icone: Shield },
+  { titulo: 'Disponibilidade sob consulta', descricao: 'Informe a medida, o ano e a versão do veículo para consultar o catálogo, o estoque e a agenda da unidade do Portão.', icone: CheckCircle2 },
+  { titulo: 'Montagem sob consulta', descricao: 'Montagem, balanceamento e calibragem sob consulta, com alinhamento 3D na própria loja.', icone: Shield },
   { titulo: 'Avaliação nota 5', descricao: 'Centenas de clientes da região avaliam a Carplus com nota máxima no Google.', icone: Star },
 ];
 
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   },
   {
     pergunta: 'A Carplus tem o pneu da minha medida em estoque?',
-    resposta: 'Provavelmente sim. Trabalhamos com grande estoque de pneus de todas as marcas e medidas, do aro 13 ao aro 22, para carros de passeio, SUVs e utilitários. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 que confirmamos na hora.',
+    resposta: 'Provavelmente sim. Trabalhamos com grande estoque de pneus de todas as marcas e medidas, do aro 13 ao aro 22, para carros de passeio, SUVs e utilitários. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 que confirmamos mediante consulta de agenda.',
   },
   {
     pergunta: 'Preciso agendar para trocar os pneus?',
@@ -77,7 +77,7 @@ const FAQ_ITEMS = [
   },
   {
     pergunta: 'A montagem dos pneus já está inclusa no preço?',
-    resposta: 'Sim. O valor dos pneus já inclui montagem, balanceamento e calibragem. O alinhamento 3D é feito na própria loja, garantindo segurança e maior durabilidade dos pneus.',
+    resposta: 'Consulte os valores de montagem, balanceamento e calibragem e o que está incluído no orçamento antes de contratar.',
   },
   {
     pergunta: 'Quais formas de pagamento a Carplus aceita?',
@@ -136,7 +136,7 @@ export default function LojaDePneusPertoDeMim() {
 
   useSEO({
     title: 'Loja de Pneus em Curitiba Perto de Mim | Carplus Portão',
-    description: 'Procurando loja de pneus perto de você em Curitiba? A Carplus, no Portão, tem pneus de todas as marcas com pronta entrega, montagem e 10x sem juros. (41) 3082-7282.',
+    description: 'Procurando loja de pneus perto de você em Curitiba? A Carplus, no Portão, tem pneus de todas as marcas com disponibilidade sob consulta, montagem e 10x sem juros. (41) 3082-7282.',
     canonical,
     ogImage: 'https://www.carpluspneuseoficina.com.br/images/centro-automotivo/carplus-oficina-portao-fachada.jpg',
     keywords: ['loja de pneus perto de mim', 'loja de pneus curitiba perto de mim', 'pneus perto de mim', 'borracharia perto de mim curitiba', 'loja de pneus curitiba', 'pneus curitiba portão', 'onde comprar pneus em curitiba'],
@@ -186,8 +186,8 @@ export default function LojaDePneusPertoDeMim() {
 
             <p className="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl leading-relaxed text-pretty">
               Está procurando <strong className="text-white">&quot;loja de pneus perto de mim&quot;</strong>? A Carplus está no
-              Portão, em Curitiba, com pneus de todas as marcas em pronta entrega, montagem inclusa e
-              parcelamento em até 10x sem juros. Trace a rota e venha em poucos minutos.
+              Portão, em Curitiba, com pneus de todas as marcas em disponibilidade sob consulta, montagem sob consulta e
+              parcelamento em até 10x sem juros. Consulte o trajeto no mapa antes de vir.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -424,7 +424,7 @@ export default function LojaDePneusPertoDeMim() {
                 <span className="text-amber-500 text-sm font-medium">Como chegar</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-                A poucos minutos de onde você está
+                Atendimento na unidade do Portão
               </h2>
               <p className="text-neutral-400 mb-6 leading-relaxed text-pretty">
                 Estamos na {STORE_ADDRESS}, com estacionamento fácil e acesso rápido pela Linha Verde, BR-116 e principais
@@ -530,7 +530,7 @@ export default function LojaDePneusPertoDeMim() {
               Sua loja de pneus em Curitiba está aqui pertinho
             </h2>
             <p className="text-black/70 max-w-2xl mx-auto mb-8 text-lg text-pretty">
-              Trace a rota, chame no WhatsApp e garanta seus pneus com montagem inclusa e 10x sem juros. Atendimento rápido e de confiança no Portão.
+              Trace a rota, chame no WhatsApp e garanta seus pneus com montagem sob consulta e 10x sem juros. Atendimento rápido e de confiança no Portão.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -558,7 +558,7 @@ export default function LojaDePneusPertoDeMim() {
       <Footer />
 
       {/* Barra de CTA fixa — somente mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-gray-200 px-3 py-3 flex gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+      <div className="md:hidden relative bg-white/95 backdrop-blur border-t border-gray-200 px-3 py-3 flex gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
         <button
           onClick={tracarRota}
           className="flex-1 flex items-center justify-center gap-2 bg-amber-500 text-black py-3 rounded-full font-bold text-sm disabled:opacity-70"

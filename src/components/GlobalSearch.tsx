@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Search, X, MapPin, Wrench, Car, FileText, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TIRES, SERVICES, NEIGHBORHOODS } from '../data';
@@ -42,6 +42,25 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
   const [results, setResults] = useState<SearchResult[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    inputRef.current?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const items = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled]), a[href]') ?? []);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
+    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener('keydown', trapFocus); };
+  }, [isOpen]);
 
   // Criar indice de busca com todos os dados
   const searchIndex = useMemo(() => {
@@ -80,7 +99,7 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
       index.push({
         type: 'bairro',
         title: neighborhood.name,
-        description: `${zonaLabel} - ${neighborhood.tempo} da Carplus`,
+        description: `${zonaLabel} — atendimento na loja no Portão, Curitiba`,
         url: `/bairro/${(neighborhood as { slug?: string; name: string }).slug || neighborhood.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`,
         icon: <MapPin size={16} className="text-primary" />
       });
@@ -207,9 +226,13 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
 
             {/* Modal */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Busca no site"
+              initial={reducedMotion ? false : { opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              exit={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95, y: -20 }}
               className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-[101] px-4"
             >
               <div className="bg-dark border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
@@ -218,32 +241,35 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
                   <Search size={20} className="text-primary" />
                   <input
                     ref={inputRef}
+                    aria-label="Buscar pneus, serviços, bairros e páginas"
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Buscar pneus, servicos, bairros, paginas..."
-                    className="flex-1 bg-transparent text-white text-lg placeholder:text-white/40 outline-none"
+                    className="min-w-0 flex-1 bg-transparent text-white text-lg placeholder:text-white/70 outline-none"
                   />
                   <button
                     onClick={closeSearch}
-                    className="text-white/40 hover:text-white p-1"
+                    aria-label="Fechar busca"
+                    className="flex size-11 shrink-0 items-center justify-center rounded text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-primary"
                   >
                     <X size={20} />
                   </button>
                 </div>
 
+                <p role="status" aria-live="polite" className="sr-only">{query.trim() ? `${results.length} resultados exibidos para ${query}` : 'Digite para buscar no site'}</p>
                 {/* Resultados */}
                 <div className="max-h-[60vh] overflow-y-auto">
                   {query.trim() === '' ? (
                     <div className="p-8 text-center">
                       <Search size={48} className="mx-auto text-white/20 mb-4" />
-                      <p className="text-white/40 text-sm">Digite para buscar em todo o site</p>
-                      <p className="text-white/20 text-xs mt-2">Pneus, servicos, bairros, paginas e mais</p>
+                      <p className="text-white/70 text-sm">Digite para buscar em todo o site</p>
+                      <p className="text-white/60 text-sm mt-2">Pneus, servicos, bairros, paginas e mais</p>
                     </div>
                   ) : results.length === 0 ? (
                     <div className="p-8 text-center">
-                      <p className="text-white/40">Nenhum resultado encontrado para &quot;{query}&quot;</p>
-                      <p className="text-white/20 text-sm mt-2">Tente buscar por outra palavra-chave</p>
+                      <p className="text-white/70">Nenhum resultado encontrado para &quot;{query}&quot;</p>
+                      <p className="text-white/60 text-sm mt-2">Tente buscar por outra palavra-chave</p>
                     </div>
                   ) : (
                     <div className="divide-y divide-white/5">
@@ -257,14 +283,14 @@ export default function GlobalSearch({ isOpen: externalIsOpen, onClose }: Global
                               <button
                                 key={`${result.url}-${index}`}
                                 onClick={() => handleResultClick(result.url)}
-                                className="w-full flex items-center gap-4 px-4 py-3 hover:bg-white/5 transition-colors text-left group"
+                                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-left group"
                               >
-                                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                <div className="w-10 h-10 shrink-0 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                                   {result.icon}
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-white font-medium truncate">{result.title}</p>
-                                  <p className="text-white/40 text-sm truncate">{result.description}</p>
+                                  <p className="text-white font-medium whitespace-normal break-words leading-snug">{result.title}</p>
+                                  <p className="text-white/70 text-sm whitespace-normal break-words leading-snug">{result.description}</p>
                                 </div>
                                 <ChevronRight size={16} className="text-white/20 group-hover:text-primary transition-colors" />
                               </button>

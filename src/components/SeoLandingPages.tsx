@@ -61,7 +61,7 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
   const queryFaq = [
     {
       question: `Onde comprar pneu aro ${page.aro} em Curitiba?`,
-      answer: `Na Carplus Pneus e Oficina, no bairro Portão, em Curitiba (Av. Presidente Arthur da Silva Bernardes, 1323). Temos ${tires.length} ${tires.length === 1 ? 'modelo' : 'modelos'} de pneu aro ${page.aro} no catálogo, com montagem e balanceamento inclusos e parcelamento em até 10x sem juros. Telefone: (41) 3082-7282.`,
+      answer: `Na Carplus Pneus e Oficina, no bairro Portão, em Curitiba (Av. Presidente Arthur da Silva Bernardes, 1323). Temos ${tires.length} ${tires.length === 1 ? 'modelo' : 'modelos'} de pneu aro ${page.aro} no catálogo, com montagem e balanceamento sob consulta e parcelamento em até 10x sem juros. Telefone: (41) 3082-7282.`,
     },
     ...(brandsInAro.length > 0
       ? [{
@@ -77,7 +77,7 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
       : []),
     {
       question: `Posso comprar pneu aro ${page.aro} e fazer alinhamento no mesmo lugar?`,
-      answer: `Sim. A Carplus é loja de pneus e oficina mecânica no mesmo endereço, no Portão. Na troca de pneus aro ${page.aro}, a montagem e o balanceamento já estão inclusos e o alinhamento 3D pode ser feito na mesma visita.`,
+      answer: `Sim. A Carplus é loja de pneus e oficina mecânica no mesmo endereço, no Portão. Para pneus aro ${page.aro}, consulte os valores de montagem, balanceamento e alinhamento 3D e a disponibilidade de agenda.`,
     },
   ];
   const seenQ = new Set(queryFaq.map((f) => f.question.toLowerCase()));
@@ -99,7 +99,7 @@ export function AroLandingPage({ slug: slugProp }: { slug?: string }) {
         {
           title: 'Por que comprar na Carplus',
           content:
-            'Somos loja de pneus e oficina mecânica no bairro Portão, em Curitiba. Trabalhamos apenas com marcas reconhecidas, oferecemos montagem, balanceamento e calibragem inclusos, parcelamento em até 10x sem juros e garantia com nota fiscal em todos os serviços.',
+            'Somos loja de pneus e oficina mecânica no bairro Portão, em Curitiba. Trabalhamos apenas com marcas reconhecidas, oferecemos montagem, balanceamento e calibragem sob consulta, parcelamento em até 10x sem juros e garantia com nota fiscal em todos os serviços.',
         },
       ]}
       tires={tires}
@@ -150,11 +150,11 @@ export function BrandLandingPage({ slug: slugProp }: { slug?: string }) {
         { title: `Linhas ${page.marca} disponíveis`, content: page.linhas },
         ...(page.secoesConteudo ?? []),
         {
-          title: 'Instalação completa inclusa',
+          title: 'Consulte a instalação',
           content:
             'Na compra dos pneus ' +
             page.marca +
-            ', a montagem, o balanceamento e a calibragem já estão inclusos. O alinhamento 3D é feito na própria Carplus, no Portão, e o pagamento pode ser parcelado em até 10x sem juros.',
+            ', os valores de montagem, balanceamento e calibragem são informados no orçamento. O alinhamento 3D é feito na própria Carplus, no Portão, e o pagamento pode ser parcelado em até 10x sem juros.',
         },
       ]}
       tires={tires}
@@ -204,7 +204,7 @@ export function VehicleLandingPage({ slug: slugProp }: { slug?: string }) {
           content:
             'Trocamos os pneus do seu ' +
             page.nome +
-            ' com montagem, balanceamento e calibragem inclusos. Recomendamos o alinhamento 3D a cada troca para garantir estabilidade, segurança e maior durabilidade. Parcelamos em até 10x sem juros.',
+            ' com montagem, balanceamento e calibragem sob consulta. Recomendamos o alinhamento 3D a cada troca para garantir estabilidade, segurança e maior durabilidade. Parcelamos em até 10x sem juros.',
         },
       ]}
       tires={tires}
@@ -254,7 +254,7 @@ export function IntentLandingPage({ slug: slugProp }: { slug?: string }) {
         {
           title: 'Opções econômicas para o seu carro em Curitiba',
           content:
-            'Na Carplus você encontra modelos novos com procedência garantida das principais marcas e medidas (como Comforser, JK Tyre, Tornel, Linglong, Maxtrek, Delinte, Pirelli e Goodyear). Consulte as condições promocionais e a disponibilidade para a medida do seu veículo diretamente pelo WhatsApp (41) 3082-7282. Os serviços incluem montagem e balanceamento, com opção de parcelamento em até 10x sem juros.',
+            'Na Carplus você encontra modelos novos com procedência garantida das principais marcas e medidas (como Comforser, JK Tyre, Tornel, Linglong, Maxtrek, Delinte, Pirelli e Goodyear). Consulte as condições promocionais e a disponibilidade para a medida do seu veículo diretamente pelo WhatsApp (41) 3082-7282. Consulte os valores de montagem e balanceamento e as condições de pagamento.',
         },
         {
           title: 'Facilidade para pedir orçamento da sua medida',
@@ -401,7 +401,7 @@ export function LocalComboLandingPage({ slug: slugProp }: { slug?: string }) {
         {
           title: 'Tudo no mesmo lugar',
           content:
-            'Além dos pneus, a Carplus é uma oficina mecânica completa: alinhamento 3D, balanceamento, freios, suspensão, troca de óleo e muito mais. Montagem inclusa, garantia com nota fiscal e parcelamento em até 10x sem juros.',
+            'Além dos pneus, a Carplus é uma oficina mecânica completa: alinhamento 3D, balanceamento, freios, suspensão, troca de óleo e muito mais. Montagem sob consulta, garantia com nota fiscal e parcelamento em até 10x sem juros.',
         },
       ]}
       tires={tires}

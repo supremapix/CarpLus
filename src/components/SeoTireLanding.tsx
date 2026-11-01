@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
@@ -57,7 +58,7 @@ const RELATED_SERVICES = [
   {
     icon: Droplets,
     title: 'Troca de Óleo',
-    description: 'Troca de óleo e filtros com produtos de qualidade no mesmo dia.',
+    description: 'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
     to: '/servico/troca-de-oleo',
   },
 ] as const;
@@ -78,9 +79,7 @@ function getRelatedServicesSchema(): object {
         serviceType: s.title,
         areaServed: { '@type': 'City', name: 'Curitiba' },
         provider: {
-          '@type': 'AutoRepair',
-          name: 'Carplus Centro Automotivo',
-          telephone: '+55-41-3082-7282',
+          '@id': `${BASE_URL}/#localbusiness`,
         },
       },
     })),
@@ -348,8 +347,8 @@ export default function SeoTireLanding({
           {[
             { icon: CreditCard, title: '10x sem juros', sub: 'Nos pneus' },
             { icon: ShieldCheck, title: 'Nota fiscal e garantia', sub: 'Conforme produto' },
-            { icon: Clock, title: 'Montagem rápida', sub: 'No mesmo dia' },
-            { icon: Star, title: '4.9 ★ no Google', sub: '+250 avaliações' },
+            { icon: Clock, title: 'Montagem rápida', sub: 'Consulte a agenda' },
+            { icon: Star, title: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★ no Google`, sub: `${GOOGLE_REVIEW_SUMMARY.count} avaliações · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}` },
           ].map((b) => (
             <div key={b.title} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-3">
               <div className="bg-primary/10 text-primary p-2.5 rounded-xl">
@@ -371,8 +370,7 @@ export default function SeoTireLanding({
             </h2>
             <p className="mt-3 max-w-3xl text-pretty leading-relaxed text-gray-600">
               A Carplus Pneus e Oficina vende pneus aro {aroCluster.aro} em Curitiba, com loja e oficina na Av. Presidente
-              Arthur da Silva Bernardes, 1323, no bairro Portão. A compra inclui montagem e balanceamento, e o alinhamento
-              3D pode ser feito na mesma visita.
+              Arthur da Silva Bernardes, 1323, no bairro Portão. Consulte os valores de montagem, balanceamento, calibragem e alinhamento 3D e a agenda antes de contratar.
               {aroCluster.brands.length > 0 && (
                 <> Marcas disponíveis neste aro: {aroCluster.brands.map((b) => b.name).join(', ')}.</>
               )}
@@ -598,7 +596,7 @@ export default function SeoTireLanding({
             <h2 className="text-3xl md:text-4xl font-black text-black leading-tight uppercase italic">
               Peça seu orçamento agora
             </h2>
-            <p className="text-black/70 font-medium mt-2">Atendimento rápido, preço justo e montagem inclusa.</p>
+            <p className="text-black/70 font-medium mt-2">Atendimento rápido, preço justo e montagem sob consulta.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
             <a
@@ -622,7 +620,7 @@ export default function SeoTireLanding({
       <Footer />
 
       {/* Barra de CTA fixa — somente mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-gray-200 px-3 py-3 flex gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+      <div className="md:hidden relative bg-white/95 backdrop-blur border-t border-gray-200 px-3 py-3 flex gap-2 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
         <a
           href={waHref}
           target="_blank"

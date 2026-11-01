@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const actions = fs.readFileSync('src/components/FloatingActions.tsx', 'utf8');
+for (const network of ['WhatsApp','Facebook','X','Pinterest','LinkedIn','Threads']) assert.ok(actions.includes(`['${network}',`));
+assert.ok(actions.includes('await navigator.clipboard.writeText'));
+assert.ok(actions.includes('Não foi possível copiar automaticamente'));
+assert.ok(actions.includes('aria-live="polite"'));
+assert.ok(actions.includes('title: document.title, url: window.location.href'));
+assert.ok(actions.includes('tel:+554130827282'));
+const top = fs.readFileSync('src/components/BackToTop.tsx','utf8');
+assert.ok(top.includes('window.scrollY > 300'));
+assert.ok(top.includes('prefers-reduced-motion: reduce'));
+const app = fs.readFileSync('src/App.tsx','utf8');
+assert.equal((app.match(/<FloatingActions \/>/g)??[]).length,1);
+assert.equal((app.match(/<QuickTips \/>/g)??[]).length,1);
+console.log('PASS: global actions, six networks, truthful clipboard feedback, route context, tips, reduced motion.');

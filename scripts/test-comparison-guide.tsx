@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY as reviews } from '../src/data/reviewSummary';
 // Testes sem navegador: npm run test:comparison-guide
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -42,7 +43,7 @@ for (const item of COMPARISON_CHECKLIST) check(main.includes(item.title) && main
 check(main.includes(COMPARISON_TECHNICAL_SOURCE) && main.includes('Referência técnica'), 'primary technical source next to sizing advice');
 check(main.includes('Um anúncio de peça não equivale à contratação da instalação ou ao diagnóstico'), 'piece and service are distinct');
 check(main.includes('separe peças e mão de obra antes de autorizar'), 'budget and authorization preserved');
-check(main.includes('4,9 de 5') && main.includes('262 avaliações') && main.includes('<time dateTime="2026-10-18">18/10/2026</time>'), 'dated, factual rating');
+check(main.includes(`${reviews.ratingDisplay} de 5`) && main.includes(`${reviews.count} avaliações`) && main.includes(`<time dateTime="${reviews.checkedDate}">${reviews.checkedDateDisplay}</time>`), 'dated, factual rating');
 check(main.includes('As avaliações e a quantidade podem mudar.'), 'rating caveat');
 check(main.includes(CARPLUS_GOOGLE_MAPS.replaceAll('&', '&amp;')), 'verified Google profile');
 check(main.includes(COMPARISON_MESSAGE), 'message is available without a third-party draft');

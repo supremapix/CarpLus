@@ -75,7 +75,7 @@ export const HOME_FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: 'A compra do pneu inclui montagem e balanceamento?',
-        a: 'Sim. Na Carplus a montagem e o balanceamento são realizados no ato da compra, no mesmo endereço. O alinhamento 3D é recomendado a cada troca de pneus e também é feito na loja.',
+        a: 'A montagem, o balanceamento e o alinhamento são serviços da unidade do Portão. Consulte valores, agenda e o que está incluído no orçamento antes de contratar.',
       },
       {
         q: 'Vocês parcelam pneus?',

@@ -1,0 +1,56 @@
+{
+  "business": "Carplus Pneus e Oficina Mecânica",
+  "rating": 4.9,
+  "reviewCount": 271,
+  "verifiedAt": "2026-11-01T14:56:30Z",
+  "source": "https://www.google.com/maps/place/Carplus+Pneus+e+Oficina+Mec%C3%A2nica/@-25.4636266,-49.3003007,17z/data=!3m1!5s0x94dce3743dfc9bb3:0x6078b9cd1d13cbe7!4m8!3m7!1s0x94dce31ec1ad6641:0xa51067e0d7b484af!8m2!3d-25.4636266!4d-49.3003007!9m1!1b1!16s%2Fg%2F11ykx6h9q1?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+  "reviews": [
+    {
+      "name": "Jean Carlo Worell Jean",
+      "text": "Fui muito bem atendido pela loja, em especial pela atendente Maria Caroline e toda a equipe de montagem, Jonas e o Josimar!",
+      "dateLabel": "3 semanas atrás",
+      "stars": 5,
+      "source": "https://www.google.com/maps/place/Carplus+Pneus+e+Oficina+Mec%C3%A2nica/@-25.4636266,-49.3003007,17z/data=!3m1!5s0x94dce3743dfc9bb3:0x6078b9cd1d13cbe7!4m8!3m7!1s0x94dce31ec1ad6641:0xa51067e0d7b484af!8m2!3d-25.4636266!4d-49.3003007!9m1!1b1!16s%2Fg%2F11ykx6h9q1?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "verifiedAt": "2026-11-01T14:57:10Z",
+      "textIsComplete": true,
+      "missingFromExistingCorpus": true
+    },
+    {
+      "name": "Daiane Baggio",
+      "text": "Muito bom atendimento e serviço ágil. Vinicius atendeu super bem tanto pelo whats app quanto na loja. Recomendo.",
+      "dateLabel": "2 semanas atrás",
+      "stars": 5,
+      "source": "https://www.google.com/maps/place/Carplus+Pneus+e+Oficina+Mec%C3%A2nica/@-25.4636266,-49.3003007,17z/data=!3m1!5s0x94dce3743dfc9bb3:0x6078b9cd1d13cbe7!4m8!3m7!1s0x94dce31ec1ad6641:0xa51067e0d7b484af!8m2!3d-25.4636266!4d-49.3003007!9m1!1b1!16s%2Fg%2F11ykx6h9q1?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "verifiedAt": "2026-11-01T14:57:10Z",
+      "textIsComplete": true,
+      "missingFromExistingCorpus": true
+    },
+    {
+      "name": "Dayane De Oliveira Martins",
+      "text": "Fomos muito bem antendidos pelo Vinicius Paulo. Serviço de qualidade, agradeço pela presteza.\nVolterei e indicarei para meus amigos. obrigada mesmo",
+      "dateLabel": "2 meses atrás",
+      "stars": 5,
+      "source": "https://www.google.com/maps/place/Carplus+Pneus+e+Oficina+Mec%C3%A2nica/@-25.4636266,-49.3003007,17z/data=!3m1!5s0x94dce3743dfc9bb3:0x6078b9cd1d13cbe7!4m8!3m7!1s0x94dce31ec1ad6641:0xa51067e0d7b484af!8m2!3d-25.4636266!4d-49.3003007!9m1!1b1!16s%2Fg%2F11ykx6h9q1?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "verifiedAt": "2026-11-01T14:57:10Z",
+      "textIsComplete": true,
+      "missingFromExistingCorpus": true
+    }
+  ],
+  "otherVisibleReviewMetadata": [
+    {
+      "name": "Henrique Marques",
+      "stars": 5,
+      "dateLabel": "3 meses atrás",
+      "missingFromExistingCorpus": true,
+      "reasonNotImported": "Longer review; no full republication collected."
+    },
+    {
+      "name": "Rafaela Oliveira",
+      "stars": 5,
+      "dateLabel": "4 meses atrás",
+      "missingFromExistingCorpus": true,
+      "reasonNotImported": "Longer review; no full republication collected."
+    }
+  ],
+  "limits": "Google limited signed-out view to five reviews; sort/search/all reviews requires login. No exhaustiveness claim. Individual short reviews retained as separate attributed authored works; no owner replies or photos copied."
+}

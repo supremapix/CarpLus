@@ -379,29 +379,8 @@ export default function ServicosPage() {
       </section>
 
       {/* WhatsApp Flutuante */}
-      <a
-        href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fale conosco pelo WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform"
-      >
-        <MessageSquare className="w-6 h-6 text-white" fill="white" />
-      </a>
 
       {/* Back to Top */}
-      {showBackToTop && (
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          aria-label="Voltar ao topo"
-          className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-gray-900/90 backdrop-blur border border-white/20 rounded-full flex items-center justify-center hover:bg-gray-900 transition-colors"
-        >
-          <ArrowUp className="w-5 h-5 text-white" />
-        </motion.button>
-      )}
 
       <Footer />
     </div>

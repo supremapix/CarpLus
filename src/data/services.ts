@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from './reviewSummary';
 // Dados completos de serviços da Carplus Centro Automotivo
 // Organizados por categoria conforme especificação de SEO
 
@@ -29,11 +30,11 @@ export const BUSINESS_INFO = {
   whatsapp: "554130827282",
   website: "https://www.carpluspneuseoficina.com.br",
   hours: "Seg–Sex 8h–18h | Sáb 8h–12h",
-  rating: 4.9,
-  totalReviews: 250,
+  rating: GOOGLE_REVIEW_SUMMARY.rating,
+  totalReviews: GOOGLE_REVIEW_SUMMARY.count,
   stats: [
-    { value: "4.9 ★", label: "No Google", icon: "Star" },
-    { value: "+250", label: "Avaliações de Clientes", icon: "Trophy" },
+    { value: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★`, label: "No Google", icon: "Star" },
+    { value: String(GOOGLE_REVIEW_SUMMARY.count), label: `Avaliações · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}`, icon: "Trophy" },
     { value: "Garantia", label: "Conforme Avaliação", icon: "ShieldCheck" },
     { value: "10x", label: "Sem Juros nos Pneus", icon: "CreditCard" },
   ]
@@ -50,10 +51,10 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "venda-pneus",
         name: "Venda de Pneus",
         slug: "venda-de-pneus",
-        shortDescription: "Pneus das melhores marcas nacionais e importados para todos os tipos de veículo. Montagem e balanceamento inclusos na compra.",
+        shortDescription: "Pneus das melhores marcas nacionais e importados para todos os tipos de veículo. Montagem e balanceamento sob consulta na compra.",
         fullDescription: "Na Carplus você encontra pneus das melhores marcas do mercado para todos os tipos de veículo — carros de passeio, SUVs, picapes, vans e tratores. Trabalhamos com pneus nacionais e importados com qualidade, segurança e preço justo. A montagem e o balanceamento são realizados no ato da compra. Parcelamento em até 10x sem juros.",
-        highlights: ["Pirelli, Michelin, Goodyear, Continental", "Firestone, Bridgestone, Hankook, Yokohama", "Todos os aros do 13 ao 22", "Montagem e balanceamento inclusos", "Parcelamento em até 10x sem juros"],
-        estimatedTime: "45–60 min",
+        highlights: ["Pirelli, Michelin, Goodyear, Continental", "Firestone, Bridgestone, Hankook, Yokohama", "Todos os aros do 13 ao 22", "Montagem e balanceamento sob consulta", "Parcelamento em até 10x sem juros"],
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "ShoppingCart"
       },
       {
@@ -80,10 +81,10 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "montagem-pneu",
         name: "Montagem de Pneu",
         slug: "montagem-de-pneu",
-        shortDescription: "Montagem precisa com equipamentos modernos, sem danos ao aro ou à borracha. Balanceamento e calibragem inclusos.",
+        shortDescription: "Montagem precisa com equipamentos modernos, sem danos ao aro ou à borracha. Balanceamento sob consulta.",
         fullDescription: "A montagem de pneu na Carplus é realizada com equipamentos modernos e técnicos especializados, garantindo o encaixe correto do pneu na roda sem causar danos ao aro ou à borracha. Após a montagem, realizamos o balanceamento e a calibragem para garantir segurança e durabilidade máximas ao conjunto roda-pneu.",
-        highlights: ["Equipamento moderno", "Sem danos ao aro", "Balanceamento incluso", "Todos os aros (13 ao 22)"],
-        estimatedTime: "30–45 min",
+        highlights: ["Equipamento moderno", "Sem danos ao aro", "Balanceamento sob consulta", "Todos os aros (13 ao 22)"],
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Circle"
       },
       {
@@ -93,7 +94,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Troca de posição dos pneus para distribuir o desgaste uniformemente, prolongando a vida útil e economizando na substituição.",
         fullDescription: "O rodízio de pneus consiste em mudar a posição dos pneus no veículo de forma técnica para distribuir o desgaste de forma uniforme entre os quatro pneus. Isso prolonga significativamente a vida útil dos pneus e gera economia na substituição a longo prazo. Na Carplus, realizamos o rodízio com agilidade e precisão, seguindo as recomendações de cada fabricante.",
         highlights: ["Desgaste uniforme nos 4 pneus", "Prolonga a vida útil", "Inclui calibragem", "Todos os modelos"],
-        estimatedTime: "20–30 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "RefreshCw"
       },
       {
@@ -110,10 +111,10 @@ export const SERVICE_CATEGORIES: Category[] = [
         id: "manutencao-pneus",
         name: "Manutenção e Calibragem",
         slug: "manutencao-e-calibragem-de-pneus",
-        shortDescription: "Inspeção completa, calibragem correta (inclui estepe), avaliação do desgaste e alerta preventivo de substituição.",
-        fullDescription: "A manutenção preventiva de pneus é essencial para garantir segurança e reduzir custos. Na Carplus, realizamos inspeção completa das condições do pneu, calibragem com pressão correta (inclusive pneu estepe), avaliação do desgaste e alerta sobre necessidade de substituição. Pneus calibrados corretamente reduzem o consumo de combustível e evitam acidentes.",
+        shortDescription: "Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.",
+        fullDescription: "A manutenção preventiva de pneus é essencial para garantir segurança e reduzir custos. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. Pneus calibrados corretamente reduzem o consumo de combustível e evitam acidentes.",
         highlights: ["Calibragem com pressão correta", "Inclui pneu estepe", "Avaliação do desgaste", "Alerta preventivo"],
-        estimatedTime: "15–20 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Gauge"
       }
     ]
@@ -131,7 +132,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Reparo de rodas amassadas, trincadas, riscadas ou com corrosão. Recuperação da geometria original com equipamento especializado.",
         fullDescription: "O conserto de rodas na Carplus recupera rodas amassadas por impacto, trincadas, com fissuras, riscadas, com empenamento ou oxidação. Trabalhamos com rodas de liga leve, alumínio, aço, cromadas e diamantadas de todos os aros. Utilizamos equipamento especializado de última geração para recuperar a geometria original e o acabamento perfeito, evitando a necessidade de substituição e valorizando seu veículo.",
         highlights: ["Amassadas, trincadas e riscadas", "Liga leve, alumínio e aço", "Todos os aros", "Geometria original recuperada", "Garantia em todos os reparos"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Disc"
       },
       {
@@ -141,7 +142,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Restauração completa de rodas com danos estruturais mais severos. Técnicas avançadas de usinagem, solda e pintura com garantia.",
         fullDescription: "A reforma de roda na Carplus restaura rodas com danos estruturais mais severos, devolvendo seu aspecto original ou personalizado. Com técnicas avançadas de usinagem, solda e pintura, recuperamos suas rodas com qualidade e durabilidade comprovadas. Atendemos todos os modelos de rodas para carros de passeio, SUVs e utilitários.",
         highlights: ["Usinagem, solda e pintura", "Aspecto original ou personalizado", "Todos os tipos de rodas", "Acabamento durável"],
-        estimatedTime: "2–4 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Settings"
       },
       {
@@ -151,7 +152,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Processo de usinagem de alta precisão que confere acabamento brilhante e valorizado às rodas. Renova e personaliza com estética premium.",
         fullDescription: "O diamante de roda é um processo de usinagem de alta precisão que confere às rodas um acabamento brilhante e altamente valorizado, semelhante ao cromado. Na Carplus, realizamos esse serviço especializado para renovar e personalizar suas rodas, combinando técnica e estética com a qualidade e precisão que seu veículo merece.",
         highlights: ["Usinagem de alta precisão", "Acabamento brilhante premium", "Alta valorização estética", "Personalização"],
-        estimatedTime: "2–4 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Star"
       },
       {
@@ -161,7 +162,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Pintura profissional com tintas de alta qualidade. Renova, personaliza e protege contra corrosão e desgaste.",
         fullDescription: "A pintura de roda na Carplus renova e personaliza suas rodas com acabamento profissional de alta durabilidade. Utilizamos tintas de alta qualidade e técnicas especializadas para garantir resultado estético impecável e proteção eficiente contra corrosão, oxidação e desgaste. Atendemos rodas de todos os tipos e tamanhos.",
         highlights: ["Tintas de alta qualidade", "Acabamento profissional", "Proteção anticorrosão", "Personalização de cor"],
-        estimatedTime: "3–5 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Droplet"
       }
     ]
@@ -189,7 +190,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Usinagem que restaura a superfície dos discos, eliminando ranhuras e vibrações. Solução econômica antes da troca total.",
         fullDescription: "A retífica de disco de freio na Carplus restaura as superfícies dos discos eliminando irregularidades, ranhuras e rugosidades causadas pelo desgaste. Com equipamento de usinagem de precisão próprio, devolvemos ao disco a espessura e planeza corretas, eliminando vibrações no pedal e melhorando a eficiência de frenagem. Uma alternativa econômica inteligente antes da substituição total.",
         highlights: ["Elimina vibrações e ranhuras", "Equipamento de usinagem próprio", "Mais econômico que a troca", "Resultado imediato"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Layers"
       },
       {
@@ -199,17 +200,17 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição do fluido DOT3/DOT4 com sangria completa do sistema. Garante frenagem máxima e previne corrosão interna.",
         fullDescription: "A troca de fluido de freio é uma manutenção essencial e frequentemente negligenciada. O fluido absorve umidade com o tempo e perde sua eficiência, podendo causar frenagem esponjosa, perda total da frenagem em situações de emergência e corrosão interna dos componentes hidráulicos. Na Carplus, realizamos a substituição completa com fluidos DOT3 e DOT4 de alta qualidade, incluindo sangria completa do sistema e verificação de vazamentos.",
         highlights: ["Fluido DOT3 e DOT4 premium", "Sangria completa", "Verificação de vazamentos", "Previne corrosão interna"],
-        estimatedTime: "30–60 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "FlaskConical"
       },
       {
         id: "troca-pastilha",
         name: "Troca de Pastilha de Freio",
         slug: "troca-de-pastilha-de-freio",
-        shortDescription: "Substituição com peças de alta qualidade para todos os veículos. Verificação completa do sistema de freios inclusa.",
+        shortDescription: "Substituição com peças de alta qualidade para todos os veículos. Consulte a avaliação do sistema de freios e os valores no orçamento.",
         fullDescription: "Pastilhas de freio desgastadas comprometem a distância de parada e colocam em risco a segurança de todos no veículo. Na Carplus, realizamos a troca de pastilhas com peças de alta qualidade homologadas para cada modelo de veículo, incluindo verificação completa do sistema de freios — discos, pinças e fluido — garantindo frenagem eficiente e segura.",
         highlights: ["Pastilhas para todos os modelos", "Verificação completa do sistema", "Peças de qualidade com NF", "Frenagem eficiente"],
-        estimatedTime: "45–90 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Square"
       }
     ]
@@ -227,7 +228,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Diagnóstico e reparo completo de amortecedores, molas, buchas, terminais e barra estabilizadora.",
         fullDescription: "A suspensão é responsável pelo conforto e pela estabilidade do veículo. Na Carplus, realizamos a revisão completa de todos os componentes: amortecedores, molas, buchas, terminais, barra estabilizadora e suportes. Identificamos e corrigimos problemas com precisão, garantindo estabilidade em curvas, conforto nas irregularidades do asfalto e segurança em todas as condições de uso.",
         highlights: ["Amortecedores e molas", "Buchas e terminais", "Barra estabilizadora", "Diagnóstico antes do orçamento", "Garantia"],
-        estimatedTime: "1–4 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Sliders"
       },
       {
@@ -237,7 +238,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição com peças de qualidade para todas as marcas. Estabilidade direcional e conforto restaurados.",
         fullDescription: "Amortecedores defeituosos comprometem seriamente a segurança, a estabilidade direcional e o conforto do ve��culo. Na Carplus, realizamos o diagnóstico preciso e a substituição de amortecedores com peças de qualidade para todos os modelos de carros e SUVs. Após a troca, recomendamos a realização do alinhamento para garantir o melhor desempenho.",
         highlights: ["Dianteiro e traseiro", "Peças de qualidade", "Todos os modelos", "Alinhamento recomendado pós-troca"],
-        estimatedTime: "1–3 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "MoveVertical"
       },
       {
@@ -247,7 +248,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Regulagem precisa dos ângulos de inclinação das rodas para desgaste uniforme e estabilidade perfeita na direção.",
         fullDescription: "A cambagem é o ângulo de inclinação das rodas em relação ao solo. O caster é o ângulo de inclinação do pino mestre que influencia diretamente a estabilidade e o retorno da direção ao centro. Na Carplus, ajustamos cambagem e caster com equipamento computadorizado de alta precisão, prevenindo desgaste irregular dos pneus, melhorando a estabilidade direcional e reduzindo o cansaço ao dirigir.",
         highlights: ["Equipamento computadorizado 3D", "Previne desgaste irregular", "Melhora estabilidade direcional", "Reduz o cansaço ao dirigir"],
-        estimatedTime: "30–60 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Maximize2"
       },
       {
@@ -257,7 +258,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Medição e ajuste preciso dos eixos dianteiro e traseiro. Previne desgastes e melhora a estabilidade. Essencial pós-colisão.",
         fullDescription: "A gabaritagem de eixo é o processo de medição e ajuste preciso da geometria dos eixos dianteiro e traseiro do veículo. Na Carplus, garantimos que todos os parâmetros estejam dentro da especificação do fabricante, prevenindo desgastes irregulares e melhorando a estabilidade na direção. Serviço essencial após reparos de suspensão ou colisões.",
         highlights: ["Eixo dianteiro e traseiro", "Medição computadorizada", "Especificação do fabricante", "Essencial pós-colisão"],
-        estimatedTime: "45–90 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "AlignCenter"
       },
       {
@@ -267,7 +268,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Correção de vazamentos, substituição de bomba e mangueiras. Direção suave e precisa restaurada.",
         fullDescription: "O reparo de direção hidráulica na Carplus restabelece a leveza e o controle na direção do veículo. Identificamos e corrigimos vazamentos, substituímos a bomba hidráulica, mangueiras e fluido, garantindo uma direção precisa, suave e segura. Atendemos todos os modelos com direção hidráulica convencional e eletro-hidráulica.",
         highlights: ["Correção de vazamentos", "Substituição de bomba e mangueiras", "Fluido de direção premium", "Direção suave restaurada"],
-        estimatedTime: "1–3 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "RotateCw"
       }
     ]
@@ -285,7 +286,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Inspeção completa de motor, freios, suspensão, pneus, fluidos e elétrica. Laudo técnico detalhado.",
         fullDescription: "A revisão geral na Carplus é uma inspeção completa e detalhada do seu veículo, cobrindo motor, freios, suspensão, pneus, todos os fluidos e sistema elétrico. Identificamos e corrigimos possíveis problemas antes que se tornem sérios e caros. Indicada para revisões de fábrica, pré-viagem ou simplesmente para garantir a segurança do veículo. Emitimos laudo técnico detalhado ao final.",
         highlights: ["Motor, freios, suspensão e elétrica", "Todos os fluidos", "Revisão de fábrica e preventiva", "Laudo técnico detalhado", "Peças com NF"],
-        estimatedTime: "2–4 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Clipboard"
       },
       {
@@ -294,8 +295,8 @@ export const SERVICE_CATEGORIES: Category[] = [
         slug: "troca-de-oleo",
         shortDescription: "Troca com óleos de alta qualidade (sintético, semissintético, mineral) adequados ao seu veículo. Lubrificação ideal e motor mais duradouro.",
         fullDescription: "A troca de óleo é uma das manutenções mais importantes para a saúde do motor. Na Carplus, realizamos a troca com óleos de alta qualidade — sintético, semissintético e mineral — adequados ao seu veículo e às recomendações do fabricante. Incluímos a troca do filtro de óleo e verificação dos demais fluidos (arrefecimento, direção, freio). O resultado é lubrificação ideal, menos desgaste e maior vida útil do motor.",
-        highlights: ["Sintético, semissintético e mineral", "Filtro de óleo incluso", "Verificação de todos os fluidos", "Conforme fabricante"],
-        estimatedTime: "30–45 min",
+        highlights: ["Sintético, semissintético e mineral", "Consulte o filtro e os valores", "Verificação de todos os fluidos", "Conforme fabricante"],
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Droplets"
       },
       {
@@ -305,7 +306,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição preventiva com kit completo (correia + tensor + polias). Inclui verificação da bomba d'água. Evita danos graves ao motor.",
         fullDescription: "A troca de correia dentada é uma das manutenções preventivas mais críticas do veículo. O rompimento da correia dentada pode causar danos gravíssimos ao motor, com custo de reparo muito elevado. Na Carplus, realizamos a substituição completa com kit (correia + tensor + polias) em peças de primeira linha, incluindo verificação e, quando necessário, substituição da bomba d'água. Respeitamos o intervalo recomendado pelo fabricante.",
         highlights: ["Kit completo (correia + tensor + polias)", "Verificação da bomba d'água", "Peças de primeira linha", "Garante o motor", "Garantia"],
-        estimatedTime: "3–5 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Link"
       },
       {
@@ -315,7 +316,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Diagnóstico de sensores, limpeza ultrassônica dos bicos injetores e reparo do sistema. Desempenho e economia restaurados.",
         fullDescription: "A injeção eletrônica é o sistema responsável pelo fornecimento preciso de combustível ao motor. Com o uso, os bicos injetores acumulam depósitos que reduzem a pulverização de combustível, prejudicando o desempenho e aumentando o consumo. Na Carplus, realizamos a limpeza ultrassônica de bicos injetores, diagnóstico de sensores (MAP, TPS, lambda, temperatura) e reparo completo do sistema, restaurando o desempenho e a economia do veículo.",
         highlights: ["Limpeza ultrassônica", "Diagnóstico de sensores", "Scanner avançado", "Restaura desempenho e economia"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Zap"
       },
       {
@@ -325,7 +326,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Inspeção e manutenção de radiador, bomba d'água, termostato e fluido. Previne superaquecimento e danos ao motor.",
         fullDescription: "O sistema de arrefecimento é responsável por manter a temperatura ideal do motor. Falhas nesse sistema causam superaquecimento e podem gerar danos graves como a queima da junta do cabeçote. Na Carplus, inspecionamos e realizamos a manutenção completa do sistema: radiador, bomba d'água, mangueiras, termostato e fluido de arrefecimento (aditivo), prevenindo superaquecimento e protegendo seu motor.",
         highlights: ["Radiador, bomba d'água e mangueiras", "Termostato e tampas", "Troca do fluido de arrefecimento", "Previne superaquecimento"],
-        estimatedTime: "1–3 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Thermometer"
       },
       {
@@ -335,7 +336,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição de filtros de óleo, ar do motor, combustível, cabine e ar-condicionado. Motor limpo e ar interno saudável.",
         fullDescription: "Os filtros do veículo protegem motor, combustível e ar interno de impurezas. Na Carplus, realizamos a troca de todos os tipos de filtro: óleo, ar do motor, combustível, cabine (habitáculo) e filtro do ar-condicionado. Filtros limpos melhoram o desempenho do motor, reduzem o consumo de combustível e garantem qualidade do ar dentro do veículo. Realizamos a troca conforme o plano de manutenção do fabricante.",
         highlights: ["Filtro de óleo, ar e combustível", "Filtro de cabine e ar-condicionado", "Melhora desempenho e economia"],
-        estimatedTime: "20–40 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Filter"
       },
       {
@@ -345,7 +346,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Diagnóstico e correção de falhas mecânicas, desgaste, vazamentos e falhas de compressão. Vida útil do motor restaurada.",
         fullDescription: "O reparo de motor na Carplus abrange diagnóstico completo e correção de falhas mecânicas, desgaste de peças, vazamentos de óleo e falhas de compressão. Nossa equipe especializada utiliza equipamentos de diagnóstico modernos para identificar a causa raiz do problema e realizar reparos com precisão e qualidade, prolongando a vida útil do motor do seu veículo.",
         highlights: ["Diagnóstico computadorizado", "Correção de vazamentos", "Falhas de compressão", "Peças de qualidade com NF"],
-        estimatedTime: "Conforme diagnóstico",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Cpu"
       },
       {
@@ -355,7 +356,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição do fluido ATF específico para cada modelo. Trocas de marcha suaves e longevidade garantidas.",
         fullDescription: "A troca de óleo de câmbio automático é fundamental para o bom funcionamento da transmissão. O fluido ATF (Automatic Transmission Fluid) degrada com o uso e o calor, comprometendo as trocas de marcha e podendo causar danos graves ao câmbio. Na Carplus, realizamos essa manutenção com óleos ATF específicos para cada modelo de veículo, garantindo trocas de marcha suaves e longevidade ao câmbio automático.",
         highlights: ["Fluido ATF específico", "Manual e automático", "Trocas de marcha mais suaves", "Previne danos ao câmbio"],
-        estimatedTime: "45–90 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "GitBranch"
       },
       {
@@ -365,7 +366,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Inspeção, reparo e substituição de canos, silencioso e catalisador. Reduz ruídos e garante conformidade ambiental.",
         fullDescription: "O sistema de escapamento é responsável por conduzir os gases do motor para fora do veículo, reduzindo ruídos e emissões. Na Carplus, inspecionamos e reparamos escapamentos, catalisadores e silenciosos com qualidade. Ruídos excessivos, perda de desempenho ou cheiro de gases indicam a necessidade de verificação. Mantemos o desempenho e a conformidade ambiental do seu veículo.",
         highlights: ["Canos, silencioso e catalisador", "Redução de ruídos", "Conformidade ambiental", "Melhora o desempenho"],
-        estimatedTime: "1–3 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Wind"
       },
       {
@@ -375,7 +376,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Regulagem de válvulas, ignição, velas e correia. Maior eficiência, menor consumo e longevidade ao motor.",
         fullDescription: "O ajuste de motor na Carplus otimiza o desempenho por meio da regulagem precisa de válvulas, sistema de ignição, velas, correia dentada e demais componentes. Um motor bem ajustado opera com maior eficiência, consome menos combustível, polui menos e tem vida útil prolongada. Atendemos todos os modelos nacionais e importados.",
         highlights: ["Válvulas e ignição", "Velas e partida", "Menor consumo", "Todos os modelos"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "SlidersHorizontal"
       }
     ]
@@ -393,7 +394,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Scanner multiprotocolo para diagnóstico eletrônico computadorizado, luz de injeção acesa e reset de códigos DTC.",
         fullDescription: "O scanner automotivo na Carplus utiliza equipamento multiprotocolo profissional de última geração para diagnóstico eletrônico de todos os sistemas do veículo. Lemos códigos de falha (DTC) do motor, injeção eletrônica, freios ABS, airbags e transmissão automática. Resetamos alertas de painel com transparência e laudo técnico detalhado. Compatível com carros nacionais e importados.",
         highlights: ["Scanner multiprotocolo profissional", "Diagnóstico de luz de injeção", "Motor, ABS, airbag e câmbio", "Reset de códigos DTC", "Carros nacionais e importados"],
-        estimatedTime: "30–60 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Monitor"
       },
       {
@@ -403,17 +404,17 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Diagnóstico e reparo de alternador, motor de partida, fiação, fusíveis, iluminação, sensores e módulos eletrônicos.",
         fullDescription: "O reparo elétrico na Carplus engloba diagnóstico e correção de problemas no sistema elétrico automotivo: alternador, motor de partida, fiação, fusíveis, relés, iluminação interna e externa, sensores e módulos eletrônicos. Com equipamentos de diagnóstico modernos e equipe técnica especializada, restabelecemos o funcionamento elétrico com segurança e eficiência.",
         highlights: ["Alternador e motor de partida", "Fiação, fusíveis e relés", "Iluminação e sensores", "Módulos eletrônicos"],
-        estimatedTime: "Conforme diagnóstico",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Zap"
       },
       {
         id: "bateria",
         name: "Bateria Automotiva",
         slug: "bateria-automotiva",
-        shortDescription: "Teste de carga, manutenção e substituição. Verificação do alternador inclusa. Partida confiável garantida.",
+        shortDescription: "Teste de carga, manutenção e substituição. Consulte a avaliação do alternador e as condições do serviço.",
         fullDescription: "A bateria é fundamental para o funcionamento elétrico do veículo. Na Carplus, realizamos o teste de carga completo para avaliar a real condição da bateria, limpeza dos terminais, verificação do alternador (que é responsável por carregar a bateria) e substituição quando necessário. Trabalhamos com baterias das melhores marcas para garantir partida confiável e funcionamento correto de todos os sistemas elétricos.",
         highlights: ["Teste de carga completo", "Verificação do alternador", "Melhores marcas", "Limpeza de terminais"],
-        estimatedTime: "20–40 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Battery"
       }
     ]
@@ -431,7 +432,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Eliminação de fungos, bactérias e odores. Limpeza de dutos, evaporador e filtro cabine. Ar saudável para toda a família.",
         fullDescription: "A higienização do ar-condicionado elimina fungos, bactérias, ácaros e odores desagradáveis acumulados no sistema de climatização. Na Carplus, realizamos a limpeza completa dos dutos, evaporador e filtro cabine, além da aplicação de agente antimicrobiano. O resultado é ar fresco, limpo e saudável dentro do veículo, essencial especialmente para famílias com crianças e pessoas com alergias respiratórias.",
         highlights: ["Elimina fungos, bactérias e ácaros", "Limpeza de dutos e evaporador", "Filtro cabine substituído", "Agente antimicrobiano"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Wind"
       },
       {
@@ -441,7 +442,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Carga de gás R-134a/R-1234yf, reparo de compressor, limpeza do condensador e evaporador, verificação de mangueiras.",
         fullDescription: "A manutenção completa do ar-condicionado na Carplus inclui verificação de pressão e carga de gás refrigerante (R-134a ou R-1234yf), diagnóstico e reparo do compressor, limpeza do condensador e evaporador, verificação de mangueiras e conexões. Um ar-condicionado bem mantido resfria com eficiência, consome menos combustível e dura muito mais.",
         highlights: ["Carga de gás R-134a e R-1234yf", "Reparo de compressor", "Limpeza do condensador", "Maior eficiência e economia"],
-        estimatedTime: "1–3 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Snowflake"
       }
     ]
@@ -459,7 +460,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Avaliação completa de freios, suspensão, pneus, iluminação e mecânica. Relatório detalhado. Ideal para compra de usado.",
         fullDescription: "A inspeção veicular de segurança na Carplus avalia o estado geral do veículo, verificando freios, suspensão, pneus, iluminação, sistema elétrico e todos os componentes mecânicos relevantes. Identificamos problemas antes que se tornem perigosos, garantindo que seu carro esteja dentro dos padrões de segurança para circular com tranquilidade. Ideal para compra e venda de veículos usados.",
         highlights: ["Freios, suspensão e pneus", "Iluminação e elétrica", "Mecânica geral", "Ideal para veículos usados", "Relatório detalhado"],
-        estimatedTime: "1–2 horas",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "CheckCircle"
       },
       {
@@ -469,7 +470,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Serviços completos para vans e veículos de carga leve. Pneus específicos, freios reforçados e manutenção preventiva para frotas.",
         fullDescription: "Na Carplus, oferecemos serviços completos para vans e veículos de carga leve. Realizamos manutenção preventiva e corretiva completa: troca de pneus específicos para vans, alinhamento, balanceamento, freios, suspensão, motor e inspeções gerais. Garantimos segurança e eficiência para sua van de passageiros ou frota de veículos comerciais.",
         highlights: ["Pneus específicos para vans", "Freios e suspensão reforçados", "Manutenção preventiva", "Segurança para frotas"],
-        estimatedTime: "Conforme serviço",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Truck"
       },
       {
@@ -479,7 +480,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Serviços especializados para veículos antigos com respeito à originalidade e ao valor histórico do veículo.",
         fullDescription: "A Carplus oferece serviços especializados para carros clássicos e antigos, com atenção extrema aos detalhes e respeito total pela originalidade dos veículos. Realizamos manutenção preventiva, revisão mecânica completa e reparo elétrico, garantindo que seu clássico rode com segurança e preserve todo o seu valor histórico e sentimental.",
         highlights: ["Respeito pela originalidade", "Manutenção preventiva especializada", "Revisão mecânica e elétrica", "Preserva o valor histórico"],
-        estimatedTime: "Conforme avaliação",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Clock"
       },
       {
@@ -489,7 +490,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         shortDescription: "Substituição rápida de palhetas de para-brisa para visibilidade plena na chuva. Todos os modelos nacionais e importados.",
         fullDescription: "A instalação de palhetas de para-brisa na Carplus garante visibilidade plena durante chuvas, prevenindo acidentes por falta de visão. Substituímos as palhetas desgastadas por modelos de qualidade com encaixe perfeito para o seu veículo, em um serviço rápido e sem complicações. Contamos com palhetas para todos os modelos nacionais e importados.",
         highlights: ["Palhetas para todos os modelos", "Encaixe perfeito", "Serviço rápido", "Visibilidade plena"],
-        estimatedTime: "10–15 min",
+        estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Droplet"
       }
     ]

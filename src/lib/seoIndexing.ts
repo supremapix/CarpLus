@@ -308,7 +308,7 @@ export function detectDominantProfile(
 // em mecanismos de transferência de autoridade para as landings temáticas reais
 // já indexadas. Toda paginação permanece noindex,follow; quando há um tema
 // dominante, o canonical aponta para a landing e (acima de REDIRECT_THRESHOLD)
-// aplica-se 301 permanente. É a FONTE ÚNICA usada pelo catálogo (runtime), pelo
+// NÃO redireciona: a landing não equivale à seleção paginada. É usada pelo catálogo (runtime), pelo
 // dashboard e pelo gerador de redirects (build).
 
 /** Itens por página do catálogo /pneus (espelha PER_PAGE de TireCatalog). */
@@ -370,7 +370,7 @@ export interface PaginationAnalysis {
   robots: 'noindex,follow';
   /** Canônica: landing temática quando existir, senão auto-referência a /pneus. */
   canonical: string;
-  /** True quando dominância ≥ REDIRECT_THRESHOLD e há landing → 301 permanente. */
+  /** False: preserve catalog pagination; thematic similarity is not equivalence. */
   redirect: boolean;
 }
 
@@ -388,7 +388,10 @@ export function analyzePagination(): PaginationAnalysis[] {
     const slice = ordered.slice(start, start + CATALOG_PER_PAGE);
     const profile = detectDominantProfile(slice);
     const landing = resolveThematicLanding(profile);
-    const redirect = !!landing && !!profile && profile.share >= REDIRECT_THRESHOLD;
+    // A thematic landing is not equivalent to this catalog slice. Redirecting
+    // loses pagination (and filtered query state), so preserve the requested URL.
+    // Existing noindex policy and thematic analysis remain unchanged.
+    const redirect = false;
     out.push({
       page,
       count: slice.length,
@@ -409,7 +412,7 @@ export interface PaginationRedirect {
   page: number;
 }
 
-/** Redirects 301 a aplicar (dominância ≥ REDIRECT_THRESHOLD + landing existente). */
+/** Historical API retained for tooling; catalog pagination no longer redirects. */
 export function getPaginationRedirects(): PaginationRedirect[] {
   return analyzePagination()
     .filter((p) => p.redirect && p.landing)

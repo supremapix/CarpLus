@@ -58,7 +58,7 @@ function buildIntro(tire: Tire): string {
     `Classificado na categoria ${tire.categoria}, ele foi projetado para ${purpose}.`,
     `Na prática, isso significa que o ${tire.marca} ${tire.linha} ${tire.medida} entrega uma combinação consistente entre segurança, conforto e vida útil — três fatores decisivos para quem dirige em Curitiba, onde o asfalto alterna trechos secos, dias chuvosos e variações bruscas de temperatura ao longo do ano.`,
     `${tire.descricao}`,
-    `Por ser uma medida amplamente utilizada por modelos como ${carList(tire)}, esse pneu costuma ter alta procura e boa disponibilidade de pronta entrega na ${STORE}, no bairro Portão.`,
+    `Consulte a disponibilidade da medida ${tire.medida} na ${STORE}, no bairro Portão, antes de se deslocar.`,
     `Abaixo você encontra todas as informações técnicas, aplicações, benefícios reais, indicações de uso e uma comparação honesta com modelos similares, para tomar a melhor decisão antes de trocar os pneus do seu carro.`,
   ].join(' ');
 }
@@ -69,13 +69,13 @@ function buildSections(tire: Tire): ContentSection[] {
   const aplicacoes: ContentSection = {
     heading: `Aplicações do pneu ${tire.marca} ${tire.linha} ${tire.medida}`,
     paragraphs: [
-      `A medida ${tire.medida} é homologada para uma série de veículos nacionais e importados. Entre os modelos mais comuns que utilizam essa especificação de fábrica ou como equivalente aprovado estão ${carList(tire)}.`,
+      `O catálogo associa a medida ${tire.medida} a modelos como ${carList(tire)}. Essa lista é uma referência de pesquisa, não uma confirmação de aplicação: verifique o ano, a versão e as especificações do manual do veículo.`,
       `Antes de comprar, recomendamos sempre conferir a medida correta na lateral do pneu atual ou no manual do proprietário. Montar uma medida diferente da homologada pode alterar a leitura do velocímetro, o comportamento da suspensão e até a segurança em frenagens de emergência.`,
     ],
     bullets: [
       `Indicado para: ${(tire.tipoVeiculo || []).join(', ') || 'veículos de passeio'}`,
       `Aro ${tire.aro}" — largura ${tire.largura}mm — perfil ${tire.perfil}%`,
-      `Compatível com rodas originais e aftermarket dentro da mesma medida`,
+      `Confirme a medida da roda e os índices exigidos no manual do veículo`,
     ],
   };
 
@@ -83,7 +83,7 @@ function buildSections(tire: Tire): ContentSection[] {
     heading: `Benefícios e tecnologia ${tire.marca}`,
     paragraphs: [
       `O ${tire.linha} foi desenvolvido pela ${tire.marca} para oferecer ${purpose}. O composto de borracha e o desenho dos sulcos trabalham juntos para escoar água com eficiência, reduzir o risco de aquaplanagem e manter o contato do pneu com o solo mesmo em curvas mais exigentes.`,
-      `Outro ponto importante é a durabilidade: com calibragem correta, rodízio periódico e alinhamento em dia, modelos da linha ${tire.linha} costumam entregar entre 40.000 e 60.000 km de vida útil, dependendo do estilo de condução e das condições das vias.`,
+      `A vida útil depende do uso, das condições das vias e da manutenção. Siga as orientações do fabricante para calibragem, inspeção e rodízio; não há uma quilometragem garantida para todo veículo.`,
     ],
     bullets: [
       'Boa aderência em piso seco e molhado',
@@ -144,10 +144,10 @@ function buildComparison(tire: Tire): { tire: Tire; reason: string }[] {
 
 function buildCtaLocal(tire: Tire): string {
   return [
-    `Quer comprar o pneu ${tire.nome} em Curitiba com montagem inclusa?`,
-    `A ${STORE} fica na ${ADDRESS} e atende toda a região metropolitana — Portão, Água Verde, Fazendinha, Novo Mundo, Santa Quitéria e bairros vizinhos.`,
-    `Trabalhamos com pronta entrega, parcelamento em até 10x sem juros, balanceamento computadorizado e descarte ecológico do pneu antigo já incluídos.`,
-    `Fale agora pelo WhatsApp ou ligue para ${PHONE} e garanta o melhor preço do ${tire.marca} ${tire.linha} ${tire.medida} com instalação no mesmo dia.`,
+    `Quer comprar o pneu ${tire.nome} em Curitiba com montagem sob consulta?`,
+    `A ${STORE} fica na ${ADDRESS} e atende o Portão, Água Verde, Fazendinha, Novo Mundo, Santa Quitéria e bairros vizinhos de Curitiba, além de clientes da região metropolitana.`,
+    `Consulte a disponibilidade do pneu, as condições de pagamento e os valores dos serviços de instalação, balanceamento e descarte.`,
+    `Fale agora pelo WhatsApp ou ligue para ${PHONE} e consulte o orçamento do ${tire.marca} ${tire.linha} ${tire.medida} com instalação mediante consulta de agenda.`,
   ].join(' ');
 }
 

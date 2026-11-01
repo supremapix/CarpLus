@@ -31,7 +31,7 @@ const DIFERENCIAIS = [
   },
   {
     titulo: 'Avaliação Justa',
-    descricao: 'Avaliamos o seu veículo com transparência e o melhor preço',
+    descricao: 'Avaliamos o seu veículo com transparência e o orçamento',
     Icone: Car,
   },
   {

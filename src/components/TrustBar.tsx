@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 import { MapPin, CreditCard, ShieldCheck, Star } from 'lucide-react';
 
 interface TrustBarProps {
@@ -26,8 +27,8 @@ export default function TrustBar({ className = '', variant = 'light' }: TrustBar
     },
     {
       icon: Star,
-      title: '4.9 ★ no Google',
-      desc: 'Mais de 250 avaliações de clientes',
+      title: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★ no Google`,
+      desc: `${GOOGLE_REVIEW_SUMMARY.count} avaliações · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}`,
     },
   ];
 

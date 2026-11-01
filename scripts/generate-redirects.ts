@@ -1,32 +1,9 @@
 // scripts/generate-redirects.ts
-// ─────────────────────────────────────────────────────────────────────────────
-// GERADOR DE REDIRECTS 301 DO vercel.json
-// ─────────────────────────────────────────────────────────────────────────────
-// Escreve a chave "redirects" do vercel.json a partir de DUAS origens claramente
-// separadas, preservando rewrites, headers e demais chaves:
-//
-//   1. MANUAIS  (fonte: scripts/manual-redirects.ts) — 76 regras promovidas na E5:
-//        • 69 bairros/cidades  /<slug>.html      → /bairro/<slug>
-//        •  1 medida (dinâmica) /pneus/:medida     → /pneu-medida/:medida
-//        •  6 slugs de marca    /<legacySlug>       → /<slug>
-//      São a FONTE ÚNICA versionada — sempre reescritas, nunca perdidas.
-//
-//   2. PAGINAÇÃO (fonte: src/lib/seoIndexing.ts) — 76 regras autogeradas:
-//        /pneus?page=N → /landing-tematica  (dominância ≥ REDIRECT_THRESHOLD)
-//      Reconhecidas pela forma (source "/pneus" + query "page"); regeneradas a cada run.
-//
-// Resultado esperado após a E5: 76 manuais + 76 paginação = 152 redirects.
-//
-// GARANTIA DE NÃO-PERDA: qualquer redirect já presente no vercel.json que NÃO
-// seja de paginação e NÃO esteja no conjunto manual gerenciado é PRESERVADO como
-// "manual desconhecido" (defensivo). Assim o gerador é idempotente e nunca apaga
-// regras — rodar `npm run redirects` restaura os manuais mesmo se o arquivo for
-// esvaziado, sem descartar eventuais regras adicionadas à mão.
-//
-// Ordem final no vercel.json: [manuais, manuais-desconhecidos, paginação],
-// depois rewrites (fallback SPA) e headers. O Vercel avalia redirects primeiro.
-//
-// Execução: `tsx scripts/generate-redirects.ts` (encadeado no prebuild).
+// Generates manual legacy redirects while preserving unknown manual rules.
+// Catalog query pagination is NOT an alias for a brand/size landing. The shared
+// indexing engine now returns no pagination redirects; old generated rules are
+// removed on regeneration. Existing noindex pagination policy is unchanged.
+// Expected: 85 manual redirects, 24 unchanged rewrites; no catalog-query redirects.
 
 import fs from 'fs';
 import path from 'path';

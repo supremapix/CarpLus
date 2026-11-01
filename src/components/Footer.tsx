@@ -6,7 +6,7 @@ import { SERVICE_CATEGORIES } from '../data/services';
 export default function Footer() {
   return (
     <>
-    <footer className="bg-dark pb-4 pt-14 text-white md:pt-20">
+    <footer className="bg-dark pb-24 pt-14 text-white md:pt-20 [&_a]:min-h-11 [&_a]:inline-flex [&_a]:items-center">
       {/* Pre-footer CTA */}
       <div className="relative z-10 mx-auto mb-12 max-w-7xl px-4 md:mb-16">
          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-primary p-6 shadow-xl shadow-primary/20 sm:p-8 lg:flex-row">
@@ -106,10 +106,10 @@ export default function Footer() {
          <div className="space-y-8 w-full">
             <h4 className="font-display text-xl uppercase tracking-widest mb-8 text-primary font-bold">Siga-nos</h4>
             <div className="flex justify-center md:justify-start gap-6 mb-8">
-               <a href="https://www.instagram.com/carpluscwb/" target="_blank" className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all shadow-lg">
+               <a href="https://www.instagram.com/carpluscwb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Carplus (abre em nova aba)" className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all shadow-lg">
                   <Instagram size={32} />
                </a>
-               <a href="https://wa.me/554130827282" target="_blank" className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-[#25D366] text-white transition-all shadow-lg">
+               <a href="https://wa.me/554130827282" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Carplus (abre em nova aba)" className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-[#25D366] text-white transition-all shadow-lg">
                   <MessageSquare size={32} />
                </a>
             </div>
@@ -138,7 +138,7 @@ export default function Footer() {
          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 text-left">
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Pneus por Aro</h4>
-               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs font-medium text-white/50">
+               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-white/70">
                   {['13','14','15','16','17','18','19','20','21','22'].map((aro) => (
                     <li key={aro}>
                       <Link to={`/pneu-aro-${aro}-curitiba`} className="hover:text-primary transition-colors">Pneu Aro {aro}</Link>
@@ -148,7 +148,7 @@ export default function Footer() {
             </div>
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Marcas</h4>
-               <ul className="space-y-2 text-xs font-medium text-white/50">
+               <ul className="space-y-2 text-sm font-medium text-white/70">
                   {[['pirelli','Pirelli'],['michelin','Michelin'],['goodyear','Goodyear'],['continental','Continental'],['yokohama','Yokohama']].map(([slug,name]) => (
                     <li key={slug}>
                       <Link to={`/pneus-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneus {name}</Link>
@@ -158,7 +158,7 @@ export default function Footer() {
             </div>
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Por Veículo</h4>
-               <ul className="space-y-2 text-xs font-medium text-white/50">
+               <ul className="space-y-2 text-sm font-medium text-white/70">
                   {[['hb20','HB20'],['onix','Onix'],['corolla','Corolla'],['compass','Compass'],['kwid','Kwid']].map(([slug,name]) => (
                     <li key={slug}>
                       <Link to={`/pneu-para-${slug}-curitiba`} className="hover:text-primary transition-colors">Pneu para {name}</Link>
@@ -168,7 +168,7 @@ export default function Footer() {
             </div>
             <div>
                <h4 className="font-display text-xs uppercase tracking-widest mb-4 text-primary font-black">Atendimento Local</h4>
-               <ul className="space-y-2 text-xs font-medium text-white/50">
+               <ul className="space-y-2 text-sm font-medium text-white/70">
                   <li><Link to="/manutencao-automotiva-curitiba" className="hover:text-primary transition-colors font-bold text-primary">Manutenção Automotiva</Link></li>
                   <li><Link to="/pneus-curitiba" className="hover:text-primary transition-colors font-bold text-primary/80">Central de Pneus</Link></li>
                   <li><Link to="/centro-automotivo-portao" className="hover:text-primary transition-colors">Centro Automotivo Portão</Link></li>
@@ -182,7 +182,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-white/40 text-sm">
          <div className="text-center md:text-left space-y-1">
-            <p className="font-bold">Carplus Centro Automotivo © 2025</p>
+            <p className="font-bold">Carplus Centro Automotivo © {new Date().getFullYear()}</p>
             <p className="text-xs">Todos os direitos reservados</p>
          </div>
          
@@ -193,7 +193,7 @@ export default function Footer() {
             className="group flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-full px-5 py-2.5 transition-all duration-300"
          >
             <span className="text-white/50 text-xs font-medium">Desenvolvido com</span>
-            <Heart size={12} className="text-red-500 animate-pulse" fill="currentColor" />
+            <Heart size={12} className="text-red-500 motion-safe:animate-pulse" fill="currentColor" />
             <span className="text-white/50 text-xs font-medium">por</span>
             <span className="text-white group-hover:text-primary font-bold text-xs transition-colors flex items-center gap-2">
               Suprema Sites Express
@@ -203,8 +203,8 @@ export default function Footer() {
       </div>
     </footer>
 
-    <div className="bg-black py-4 border-t border-white/5">
-       <div className="max-w-7xl mx-auto px-4 flex justify-center gap-8 text-[10px] uppercase tracking-[0.2em] font-bold text-white/20">
+    <div className="bg-black pb-24 pt-4 border-t border-white/5">
+       <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm uppercase tracking-wide font-bold text-white/70 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
           <Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
           <Link to="/trocas-e-devolucoes" className="hover:text-primary transition-colors">Garantia</Link>
           <Link to="/sitemap" className="hover:text-primary transition-colors">Sitemap</Link>

@@ -21,8 +21,8 @@ console.log('# Validação estática dos redirects (vercel.json)\n');
 
 // 1. Contagem
 console.log('1. Contagem');
-if (redirects.length === 161) ok(`${redirects.length} redirects (esperado)`);
-else fail(`esperado 161, encontrado ${redirects.length}`);
+if (redirects.length === 85) ok(`${redirects.length} redirects (esperado)`);
+else fail(`esperado 85, encontrado ${redirects.length}`);
 
 const bairro = redirects.filter((r) => r.source.endsWith('.html'));
 const medida = redirects.filter((r) => r.source.includes(':medida'));
@@ -48,7 +48,7 @@ if (catalog.length === 2 && catalog.every((r) => !r.has && r.destination === '/p
 else fail('redirects de catálogo ausentes ou incorretos');
 if (hosts.length === 3) ok('3 hosts legados');
 else fail(`hosts: ${hosts.length}`);
-if (pag.length === 76) ok('76 paginação');
+if (pag.length === 0) ok('0 paginação: catálogo preserva a página solicitada');
 else fail(`paginação: ${pag.length}`);
 
 // 2. Todos permanentes (308 na Vercel)

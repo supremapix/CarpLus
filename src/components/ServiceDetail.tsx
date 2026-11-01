@@ -1,3 +1,4 @@
+import ServiceAdvice from './ServiceAdvice';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { SERVICES, TIRES, NEIGHBORHOODS } from '../data';
 import { SERVICE_CATEGORIES } from '../data/services';
@@ -44,15 +45,15 @@ const SEO_CONTENT: Record<string, {
     detalhes: [
       'Pneus novos das melhores marcas com garantia de fábrica e nota fiscal',
       'Parcelamento em até 10x sem juros nos cartões de crédito',
-      'Montagem, balanceamento e alinhamento inclusos na compra de 4 pneus',
-      'Estoque próprio com mais de 500 pneus disponíveis para pronta entrega',
+      'Montagem e balanceamento sob consulta na compra de 4 pneus',
+      'Consulte a disponibilidade da medida antes de vir à loja',
       'Atendimento personalizado com consultores especializados em pneus',
       'Descarte ecológico dos pneus usados sem custo adicional'
     ],
     perguntas: [
       { pergunta: 'Qual o melhor pneu para meu carro em Curitiba?', resposta: 'Curitiba tem clima úmido e chuvas frequentes. Recomendamos pneus com bom desempenho em piso molhado como Pirelli Cinturato, Michelin Primacy ou Goodyear EfficientGrip. Nossa equipe analisa seu veículo e perfil de uso para indicar o pneu ideal.' },
       { pergunta: 'Vocês têm pneus para carros importados?', resposta: 'Sim! Trabalhamos com pneus para BMW, Mercedes, Audi, Volvo, Land Rover e outras marcas premium. Temos medidas especiais como Run Flat e pneus de alta performance em estoque.' },
-      { pergunta: 'Como funciona a garantia dos pneus?', resposta: 'Todos os pneus vendidos têm garantia de fábrica contra defeitos de fabricação. Além disso, oferecemos garantia própria de montagem por 90 dias. Guardamos o histórico do seu veículo para acompanhamento.' }
+      { pergunta: 'Como funciona a garantia dos pneus?', resposta: 'Consulte o manual e as condições de garantia do fabricante antes de contratar. Confirme no orçamento a cobertura, os prazos, as exclusões e a documentação aplicáveis ao pneu, às peças e aos serviços escolhidos. Não é possível garantir a cobertura sem avaliar essas condições.' }
     ],
     keywords: ['loja de pneus curitiba', 'pneus portão curitiba', 'pneu pirelli curitiba', 'pneu michelin curitiba', 'comprar pneus curitiba', 'pneus baratos curitiba']
   },
@@ -71,16 +72,16 @@ const SEO_CONTENT: Record<string, {
     detalhes: ALL_NEW_SERVICES.find(service => service.slug === 'alinhamento-e-balanceamento')!.highlights,
     perguntas: [
       { pergunta: 'Como saber se meu carro precisa de alinhamento ou de balanceamento?', resposta: 'O balanceamento corrige a distribuição de peso do conjunto roda/pneu — o sintoma clássico é o volante trepidando ou vibrando em velocidades médias e altas (60 a 80 km/h). Já o alinhamento corrige a geometria das rodas em relação ao veículo — o sintoma é o carro puxando para um dos lados ou volante torto em linha reta. Na Carplus realizamos os dois serviços em conjunto para máxima estabilidade e durabilidade dos pneus.' },
-      { pergunta: 'Este serviço é para quem já tem os pneus no carro?', resposta: 'Sim! Esta página é dedicada exclusivamente ao serviço de oficina mecânica de alinhamento 3D e balanceamento para veículos em circulação. Se você pretende comprar pneus novos agora, confira nosso pacote de compra com instalação inclusa na página de Pneus com Alinhamento e Balanceamento.' },
-      { pergunta: 'Quanto tempo dura o serviço de alinhamento e balanceamento?', resposta: 'O tempo médio para o alinhamento 3D e balanceamento das 4 rodas é de 40 a 50 minutos na Carplus Portão. Você pode aguardar na nossa sala de espera ou agendar previamente pelo WhatsApp (41) 3082-7282 para atendimento sem espera.' },
+      { pergunta: 'Este serviço é para quem já tem os pneus no carro?', resposta: 'Sim! Esta página é dedicada exclusivamente ao serviço de oficina mecânica de alinhamento 3D e balanceamento para veículos em circulação. Se você pretende comprar pneus novos agora, confira nosso pacote de compra com instalação sob consulta na página de Pneus com Alinhamento e Balanceamento.' },
+      { pergunta: 'Quanto tempo dura o serviço de alinhamento e balanceamento?', resposta: 'O prazo depende do modelo do veículo, da avaliação e da agenda da oficina. Informe os sintomas e o serviço desejado à equipe da unidade do Portão, em Curitiba, para consultar a disponibilidade e a estimativa antes de contratar.' },
       { pergunta: 'De quanto em quanto tempo devo alinhar e balancear?', resposta: 'Recomendamos a verificação a cada 10.000 km, após cair em buracos ou impactos fortes no asfalto, ou sempre que notar vibrações ou puxadas no volante.' }
     ],
     keywords: ['alinhamento e balanceamento curitiba', 'alinhamento 3d curitiba', 'balanceamento de rodas curitiba', 'geometria veicular portao', 'volante vibrando curitiba', 'carro puxando para o lado']
   },
   'troca-de-oleo': {
-    intro: 'A troca de óleo e filtros na Carplus Centro Automotivo, no bairro Portão em Curitiba, é rápida, transparente e executada rigorosamente de acordo com as especificações do manual do seu veículo. Trabalhamos com óleos sintéticos, semissintéticos e minerais das marcas líderes mundiais (Mobil, Shell Helix, Castrol, Petronas e Selênia), nas viscosidades 0W-20, 5W-30, 5W-40, 10W-40 e 15W-40, sempre acompanhados de filtro de óleo novo, checagem gratuita dos fluidos essenciais e etiqueta de revisão.',
+    intro: 'A troca de óleo e filtros na Carplus Centro Automotivo, no bairro Portão em Curitiba, é rápida, transparente e executada rigorosamente de acordo com as especificações do manual do seu veículo. Trabalhamos com óleos sintéticos, semissintéticos e minerais das marcas líderes mundiais (Mobil, Shell Helix, Castrol, Petronas e Selênia), nas viscosidades 0W-20, 5W-30, 5W-40, 10W-40 e 15W-40, sempre acompanhados de filtro de óleo novo, checagem sob consulta dos fluidos essenciais e etiqueta de revisão.',
     detalhes: [
-      'Execução rápida em 30 a 45 minutos com dreno completo e descarte ecológico certificado',
+      'Consulte os procedimentos e o prazo após avaliação do veículo',
       'Óleos 100% originais com homologação das montadoras: Mobil, Shell Helix, Castrol, Petronas',
       'Troca do filtro de óleo em todas as trocas e opção de troca de filtros de ar, combustível e cabine',
       'Verificação cortesia dos níveis de arrefecimento, fluido de freio, direção e limpador',
@@ -88,7 +89,7 @@ const SEO_CONTENT: Record<string, {
       'Localização de fácil acesso na Av. Pres. Arthur Bernardes, 1323 – Portão, Curitiba'
     ],
     perguntas: [
-      { pergunta: 'Quanto tempo leva a troca de óleo na Carplus?', resposta: 'A troca de óleo com substituição do filtro leva em média de 30 a 45 minutos na nossa oficina no Portão. Você pode agendar pelo WhatsApp (41) 3082-7282 para garantir atendimento imediato na chegada.' },
+      { pergunta: 'Quanto tempo leva a troca de óleo na Carplus?', resposta: 'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar. Você pode agendar pelo WhatsApp (41) 3082-7282 para garantir atendimento imediato na chegada.' },
       { pergunta: 'Como sei qual é o óleo correto para o meu carro?', resposta: 'Nossa equipe técnica consulta a especificação exata homologada no manual do fabricante do seu veículo (viscosidade SAE como 0W-20, 5W-30, 5W-40 e normas API/ACEA). Basta informar o modelo e o ano do carro no WhatsApp.' },
       { pergunta: 'O filtro de óleo precisa ser trocado toda vez?', resposta: 'Sim! Colocar óleo novo mantendo o filtro saturado contamina imediatamente o lubrificante novo com impurezas retidas, reduzindo a vida útil do motor. Na Carplus a troca do filtro é sempre feita em conjunto.' },
       { pergunta: 'Com que frequência devo trocar o óleo em Curitiba?', resposta: 'Em condições urbanas com trânsito intenso e partidas a frio frequentes no clima de Curitiba, o recomendável é seguir o intervalo severo: a cada 5.000 km ou 6 meses para mineral, 7.500 km ou 6 meses para semissintético, e 10.000 km ou 12 meses para 100% sintético (o que ocorrer primeiro).' }
@@ -188,7 +189,7 @@ const SEO_CONTENT: Record<string, {
     ],
     perguntas: [
       { pergunta: 'Quando devo fazer a revisão do meu carro?', resposta: 'A revisão deve seguir o plano do fabricante, geralmente a cada 10.000 ou 15.000 km. Porém, em uso urbano intenso (muito trânsito, como em Curitiba), recomendamos intervalos menores. Verificamos o manual do seu veículo e indicamos o momento certo.' },
-      { pergunta: 'Posso fazer revisão fora da concessionária sem perder garantia?', resposta: 'Sim! Desde 2019, a lei garante que você pode fazer manutenção em qualquer oficina sem perder a garantia de fábrica. Basta usar peças de qualidade equivalente e guardar as notas fiscais. Na Carplus, fornecemos toda documentação necessária.' },
+      { pergunta: 'Posso fazer revisão fora da concessionária sem perder garantia?', resposta: 'Consulte o manual e as condições de garantia do fabricante antes de contratar. Confirme no orçamento a cobertura, os prazos, as exclusões e a documentação aplicáveis ao pneu, às peças e aos serviços escolhidos. Não é possível garantir a cobertura sem avaliar essas condições.' },
       { pergunta: 'Meu carro está consumindo muito combustível. O que pode ser?', resposta: 'Consumo alto pode ter várias causas: velas gastas, filtro de ar sujo, sensores com defeito (sonda lambda, MAP, MAF), pneus murchos, alinhamento errado. Fazemos diagnóstico completo para identificar a causa e resolver o problema.' }
     ],
     keywords: ['revisão carro curitiba', 'manutenção motor curitiba', 'troca de velas curitiba', 'mecânico curitiba', 'oficina mecânica portão']
@@ -201,12 +202,12 @@ const SEO_CONTENT: Record<string, {
       'Desempeno de rodas de aço convencionais',
       'Polimento e pintura de rodas arranhadas',
       'Teste de balanceamento após o reparo para garantir o resultado',
-      'Avaliação gratuita antes do orçamento'
+      'Avaliação sob consulta antes do orçamento'
     ],
     perguntas: [
       { pergunta: 'Vale a pena consertar roda ou é melhor trocar?', resposta: 'Na maioria dos casos, o conserto custa entre 30% a 50% do valor de uma roda nova e o resultado é excelente. Avaliamos cada caso: se a roda tiver trinca estrutural grave ou estiver muito danificada, recomendamos a troca por segurança.' },
       { pergunta: 'Conserto de roda é seguro?', resposta: 'Sim, quando feito com equipamento adequado e por profissionais experientes. Utilizamos técnicas que restauram a geometria original da roda. Após o serviço, fazemos teste de balanceamento para garantir que a roda está perfeita.' },
-      { pergunta: 'Quanto tempo leva para consertar uma roda?', resposta: 'Depende do tipo de dano. Amassados simples: 1-2 horas. Trincas que precisam de solda: 1 dia (por conta do resfriamento). Pintura: 2-3 dias. Oferecemos serviço de roda reserva para não ficar sem o carro.' }
+      { pergunta: 'Quanto tempo leva para consertar uma roda?', resposta: 'O prazo depende do modelo do veículo, da avaliação e da agenda da oficina. Informe os sintomas e o serviço desejado à equipe da unidade do Portão, em Curitiba, para consultar a disponibilidade e a estimativa antes de contratar.' }
     ],
     keywords: ['conserto de rodas curitiba', 'roda amassada curitiba', 'reparo roda liga leve curitiba', 'desempeno roda curitiba', 'roda trincada curitiba']
   },
@@ -228,26 +229,26 @@ const SEO_CONTENT: Record<string, {
     keywords: ['correia dentada curitiba', 'troca correia dentada curitiba', 'kit correia dentada curitiba', 'correia gates curitiba', 'tensor correia curitiba']
   },
   'retifica-de-disco-de-freio': {
-    intro: 'A retífica de disco de freio é um serviço especializado que restaura a superfície dos discos, eliminando ranhuras, irregularidades e vibrações no pedal. Na Carplus Centro Automotivo, localizada no bairro Portão em Curitiba, somos referência em retífica de disco de freio para toda a região sul da cidade. Se você mora no Portão, Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso ou arredores, a Carplus é a sua melhor opção para este serviço premium com o melhor preço da região.',
+    intro: 'A retífica de disco de freio é um serviço especializado que restaura a superfície dos discos, eliminando ranhuras, irregularidades e vibrações no pedal. Na Carplus Centro Automotivo, localizada no bairro Portão em Curitiba, somos referência em retífica de disco de freio para toda a região sul da cidade. Se você mora no Portão, Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso ou arredores, consulte o serviço na unidade do Portão, com valores e condições informados após avaliação.',
     detalhes: [
       'Equipamento de usinagem próprio com precisão milimétrica',
       'Atendimento para moradores do Portão e toda região sul de Curitiba',
-      'Melhor preço da região com qualidade garantida',
+      'Orçamento sob consulta com qualidade garantida',
       'Medição de espessura antes e depois do serviço com laudo técnico',
       'Discos ventilados, sólidos e perfurados de todas as marcas',
       'Diagnóstico completo do sistema de freios incluso',
-      'Garantia total no serviço de usinagem',
+      'Condições de garantia informadas no orçamento',
       'Localização estratégica na Av. Presidente Arthur da Silva Bernardes'
     ],
     perguntas: [
-      { pergunta: 'Qual o preço da retífica de disco de freio no Portão?', resposta: 'Na Carplus Centro Automotivo oferecemos o melhor preço de retífica de disco de freio da região do Portão em Curitiba. O valor varia conforme o tamanho do disco, mas garantimos preço competitivo com qualidade superior. Consulte orçamento pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Qual o preço da retífica de disco de freio no Portão?', resposta: 'Na Carplus Centro Automotivo elaboramos o orçamento de retífica de disco de freio na unidade do Portão, em Curitiba. O valor varia conforme o tamanho do disco, mas o orçamento depende da avaliação da peça e do veículo. Consulte orçamento pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'A Carplus fica perto do Portão em Curitiba?', resposta: 'Sim! A Carplus está localizada na Av. Presidente Arthur da Silva Bernardes, 1323, no coração do bairro Portão. Fácil acesso para quem vem da Água Verde, Santa Quitéria, Fazendinha, Novo Mundo, Capão Raso e toda região sul de Curitiba.' },
-      { pergunta: 'Por que escolher a Carplus para retífica de disco no Portão?', resposta: 'Somos especialistas em freios com mais de 10 anos de experiência. Temos equipamento de usinagem próprio, oferecemos o melhor preço da região do Portão e garantia total no serviço. Além disso, fazemos diagnóstico completo do sistema de freios.' }
+      { pergunta: 'Por que escolher a Carplus para retífica de disco no Portão?', resposta: 'Somos especialistas em freios com mais de 10 anos de experiência. Temos equipamento de usinagem próprio, oferecemos o orçamento sob consulta e condições de garantia informadas no orçamento. Além disso, fazemos diagnóstico completo do sistema de freios.' }
     ],
-    keywords: ['retifica disco freio portao', 'retifica disco curitiba portao', 'retificar disco freio portao curitiba', 'disco freio portao', 'oficina freio portao curitiba', 'melhor preço retifica disco portao'],
+    keywords: ['retifica disco freio portao', 'retifica disco curitiba portao', 'retificar disco freio portao curitiba', 'disco freio portao', 'oficina freio portao curitiba', 'orçamento retifica disco portao'],
     temImagem: true,
     imagemDestaque: '/images/servicos/retifica-disco-freio-portao-curitiba.webp',
-    imagemAlt: 'Retífica de Disco de Freio no bairro Portão em Curitiba - Carplus Centro Automotivo - Serviço Premium com Melhor Preço da Região Sul',
+    imagemAlt: 'Retífica de Disco de Freio no bairro Portão em Curitiba - Carplus Centro Automotivo - Consulte o orçamento do serviço no Portão',
     imagemTitle: 'Retífica de Disco de Freio Portão Curitiba - Carplus Pneus e Oficina Mecânica'
   },
   'troca-de-fluido-de-freio': {
@@ -258,7 +259,7 @@ const SEO_CONTENT: Record<string, {
       'Verificação de vazamentos em cilindros, pinças e conexões',
       'Teste de umidade do fluido antigo para diagnóstico',
       'Verificação do nível e condição das pastilhas e discos',
-      'Garantia total no serviço com nota fiscal'
+      'Condições de garantia informadas no orçamento'
     ],
     perguntas: [
       { pergunta: 'Com que frequência devo trocar o fluido de freio?', resposta: 'A recomendação geral é trocar a cada 2 anos ou 40.000 km, o que ocorrer primeiro. Em Curitiba, com alta umidade, a contaminação do fluido pode ser mais rápida. Alguns fabricantes recomendam intervalos menores - consulte o manual do seu veículo.' },
@@ -277,14 +278,14 @@ const SEO_CONTENT: Record<string, {
       'Rodizio tecnico seguindo padrao X, diagonal ou dianteiro-traseiro conforme veiculo',
       'Inspecao visual completa de todos os pneus durante o servico',
       'Verificacao do desgaste e indicacao de troca quando necessario',
-      'Calibragem com pressao recomendada pelo fabricante inclusa',
+      'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       'Reaperto dos parafusos de roda com torquimetro',
-      'Servico rapido em aproximadamente 30 minutos',
+      'Prazo informado após avaliação',
       'Atendimento para carros nacionais, importados, SUVs e picapes'
     ],
     perguntas: [
       { pergunta: 'Com que frequencia devo fazer rodizio de pneus?', resposta: 'Recomendamos fazer o rodizio a cada 10.000 km ou a cada 6 meses, o que ocorrer primeiro. Em veiculos com tracao dianteira, o desgaste dos pneus dianteiros e maior, tornando o rodizio ainda mais importante para equilibrar o desgaste.' },
-      { pergunta: 'Qual o preco do rodizio de pneus na Carplus?', resposta: 'O rodizio de pneus na Carplus tem o melhor custo-beneficio da regiao do Portao. O servico inclui inspecao dos pneus e calibragem. Para clientes que compram pneus conosco, oferecemos condicoes especiais. Consulte valores pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Qual o preco do rodizio de pneus na Carplus?', resposta: 'O rodizio de pneus na Carplus tem o melhor custo-beneficio da regiao do Portao. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. Para clientes que compram pneus conosco, oferecemos condicoes especiais. Consulte valores pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'O rodizio de pneus melhora o consumo de combustivel?', resposta: 'Sim! Pneus com desgaste uniforme rolam melhor e geram menos resistencia, contribuindo para economia de combustivel. Alem disso, evita vibracoes e ruidos que indicam desgaste irregular, melhorando o conforto na direcao.' },
       { pergunta: 'Posso fazer rodizio em pneus de medidas diferentes?', resposta: 'Quando os pneus dianteiros e traseiros tem medidas diferentes (comum em carros esportivos), o rodizio so pode ser feito entre pneus do mesmo eixo (direito-esquerdo). Nossa equipe avalia seu veiculo e indica o melhor procedimento.' }
     ],
@@ -363,8 +364,8 @@ const SERVICOS_COMPLEMENTARES: Record<string, { nome: string; slug: string }[]> 
 // Title alvo: ate ~60 caracteres. Description: 120-158 caracteres.
 const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   'montagem-de-pneu': {
-    title: 'Montagem de Pneus em Curitiba | Grátis na Compra | Carplus',
-    description: 'Montagem de pneus em Curitiba com balanceamento incluso e grátis na compra dos pneus. Equipamento computadorizado, pronto em até 1 hora. Portão – (41) 3082-7282.',
+    title: 'Montagem de Pneus em Curitiba | Consulte o Orçamento | Carplus',
+    description: 'Montagem de pneus em Curitiba com balanceamento sob consulta com valores informados no orçamento. Equipamento computadorizado, prazo informado após avaliação. Portão – (41) 3082-7282.',
   },
   'alinhamento-e-balanceamento': {
     title: 'Alinhamento e Balanceamento em Curitiba | Carplus Portão',
@@ -403,16 +404,16 @@ const SERVICE_SEO_OVERRIDES: Record<string, { title: string; description: string
     description: 'Pneu furado ou perdendo pressão? Consulte avaliação para conserto na Carplus, no Portão, Curitiba. O reparo depende do dano e das orientações do fabricante.',
   },
   'manutencao-e-calibragem-de-pneus': {
-    title: 'Calibragem de Pneus em Curitiba | Gratuita | Carplus',
-    description: 'Calibragem de pneus gratuita para clientes em Curitiba, com pressão correta para o seu veículo. Economize combustível e evite desgaste irregular. Portão – (41) 3082-7282.',
+    title: 'Calibragem de Pneus em Curitiba | sob consulta | Carplus',
+    description: 'Calibragem de pneus sob consulta para clientes em Curitiba, com pressão correta para o seu veículo. Economize combustível e evite desgaste irregular. Portão – (41) 3082-7282.',
   },
   'venda-de-pneus': {
-    title: 'Venda de Pneus em Curitiba | Montagem Inclusa | Carplus',
-    description: 'Pneus novos Michelin, Pirelli, Goodyear, Bridgestone e Continental em Curitiba, com montagem e balanceamento inclusos em até 10x sem juros. Portão – (41) 3082-7282.',
+    title: 'Venda de Pneus em Curitiba | Montagem sob consulta | Carplus',
+    description: 'Pneus novos Michelin, Pirelli, Goodyear, Bridgestone e Continental em Curitiba, com montagem e balanceamento sob consulta em até 10x sem juros. Portão – (41) 3082-7282.',
   },
   'loja-de-pneus': {
     title: 'Loja de Pneus em Curitiba | Aro 13 ao 22 | Carplus',
-    description: 'Loja de pneus no Portão, em Curitiba, com as melhores marcas do aro 13 ao aro 22 para carros, SUVs e picapes. Montagem inclusa e garantia de fábrica. (41) 3082-7282.',
+    description: 'Loja de pneus no Portão, em Curitiba, com as melhores marcas do aro 13 ao aro 22 para carros, SUVs e picapes. Montagem sob consulta e garantia de fábrica. (41) 3082-7282.',
   },
   'conserto-de-rodas': {
     title: 'Conserto de Rodas em Curitiba | Avaliação Carplus',
@@ -573,7 +574,7 @@ export default function ServiceDetail() {
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 italic uppercase tracking-tight font-bold leading-tight max-w-4xl mx-auto">{primaryHeading}</h1>
               <p className="text-base sm:text-lg md:text-2xl text-white/70 font-light max-w-3xl mx-auto mb-8 leading-relaxed">
-                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> no Portão, Curitiba, com equipamentos modernos, laudo prévio e garantia conforme o serviço.
+                A Carplus Centro Automotivo é referência em <span className="text-white font-bold">{service.title}</span> no Portão, Curitiba, com avaliação e orçamento conforme o veículo e o serviço necessário.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
@@ -606,6 +607,7 @@ export default function ServiceDetail() {
         <TrustBar variant="light" />
 
         <ServiceExplainerSection key={service.slug} slug={service.slug} />
+        <ServiceAdvice slug={service.slug} />
 
         {/* Content */}
         <section className="py-24 max-w-7xl mx-auto px-4">
@@ -744,7 +746,7 @@ export default function ServiceDetail() {
                     loading="lazy"
                   />
                     <figcaption className="sr-only">
-                      {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Centro Automotivo no bairro Portão, região sul de Curitiba. Atendimento especializado com melhor preço da região.`}
+                      {seoContent.imagemAlt || `Serviço de ${service.title} realizado pela Carplus Centro Automotivo no bairro Portão, região sul de Curitiba. Atendimento especializado com orçamento sob consulta.`}
                     </figcaption>
                   </figure>
                 </motion.div>
@@ -1092,7 +1094,7 @@ export default function ServiceDetail() {
                         'Substituicao por fluido DOT3 ou DOT4 premium',
                         'Verificacao de vazamentos em todas as conexoes',
                         'Teste de pressao e resposta do pedal',
-                        'Garantia total no servico realizado',
+                        'Condições de garantia informadas no orçamento',
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
@@ -1286,7 +1288,7 @@ export default function ServiceDetail() {
                         'Abastecer com oleo de alta qualidade',
                         'Verificar nivel de todos os fluidos',
                         'Colar etiqueta de proxima troca',
-                        'Garantia total no servico realizado',
+                        'Condições de garantia informadas no orçamento',
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
@@ -1453,9 +1455,9 @@ export default function ServiceDetail() {
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { icon: <Shield className="w-6 h-6" />, title: 'Seguranca', desc: 'Frenagem precisa' },
-                      { icon: <Clock className="w-6 h-6" />, title: '1-3 horas', desc: 'Servico completo' },
+                      { icon: <Clock className="w-6 h-6" />, title: 'Consulte o prazo', desc: 'Servico completo' },
                       { icon: <Star className="w-6 h-6" />, title: 'Pecas Premium', desc: 'Cofap, Monroe' },
-                      { icon: <Trophy className="w-6 h-6" />, title: 'Garantia', desc: 'Total no servico' },
+                      { icon: <Trophy className="w-6 h-6" />, title: 'Garantia', desc: 'Consulte as condições' },
                     ].map((item, i) => (
                       <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-primary/30 transition-colors group">
                         <div className="w-11 h-11 bg-primary/15 rounded-xl flex items-center justify-center mb-3 text-primary group-hover:bg-primary/25 transition-colors">
@@ -1817,15 +1819,6 @@ export default function ServiceDetail() {
       </main>
 
       {/* WhatsApp Flutuante */}
-      <a
-        href="https://wa.me/554130827282?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fale conosco pelo WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform"
-      >
-        <MessageSquare className="w-6 h-6 text-white" fill="white" />
-      </a>
 
       <Footer />
     </div>

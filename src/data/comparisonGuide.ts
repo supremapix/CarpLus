@@ -23,7 +23,7 @@ export const COMPARISON_CHECKLIST = [
   },
   {
     title: 'Instalação',
-    text: 'Pergunte se montagem, válvula, balanceamento e eventual alinhamento estão incluídos, são cobrados separadamente ou precisam ser contratados em outro local.',
+    text: 'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
   },
   {
     title: 'Orçamento',

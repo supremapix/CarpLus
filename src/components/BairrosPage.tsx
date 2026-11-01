@@ -53,18 +53,18 @@ const BAIRROS = [
 const ZONAS = ['Todos', 'Muito Próximo', 'Próximo', 'Moderado', 'Região Metro'];
 
 const ZONA_LEGEND = [
-  { cor: '#00C853', label: 'Muito Próximo', sub: 'até 10 min' },
-  { cor: '#2196F3', label: 'Próximo', sub: '10–20 min' },
-  { cor: '#F9A825', label: 'Moderado', sub: '20–30 min' },
-  { cor: '#757575', label: 'Região Metro', sub: '30–35 min' },
+  { cor: '#00C853', label: 'Muito Próximo', sub: 'Consulte o mapa' },
+  { cor: '#2196F3', label: 'Próximo', sub: 'Consulte o mapa' },
+  { cor: '#F9A825', label: 'Moderado', sub: 'Consulte o mapa' },
+  { cor: '#757575', label: 'Região Metro', sub: 'Consulte o mapa' },
 ];
 
 const FAQ_ITEMS = [
-  { q: 'A Carplus atende todos os bairros de Curitiba?', a: 'Sim! Recebemos clientes de todos os bairros de Curitiba. Os mais próximos como Portão, Água Verde e Guaíra ficam a menos de 10 minutos. Bairros mais distantes como Cajuru e Santa Cândida ficam entre 20 e 30 minutos.' },
-  { q: 'A Carplus atende cidades da região metropolitana?', a: 'Sim! Atendemos clientes de Colombo, São José dos Pinhais, Pinhais, Araucária, Campo Largo, Fazenda Rio Grande e Almirante Tamandaré. A distância média é de 25 a 35 minutos de carro.' },
-  { q: 'Qual bairro de Curitiba fica mais perto da Carplus?', a: 'O próprio Portão fica a menos de 2 minutos. Água Verde e Guaíra são os bairros vizinhos mais próximos, a apenas 5 minutos pela Av. República Argentina.' },
-  { q: 'A Carplus faz entrega de pneus nos bairros?', a: 'No momento não realizamos entrega em domicílio. O atendimento é presencial em nossa loja no Portão, onde realizamos também a montagem e balanceamento inclusos.' },
-  { q: 'Tem oficina boa perto do Shopping Palladium?', a: 'A Carplus fica a apenas 3 minutos do Shopping Palladium! Estamos na Av. Arthur da Silva Bernardes, 1323 – Portão. Você pode trazer o carro para revisão ou troca de pneus com facilidade.' },
+  { q: 'A Carplus atende todos os bairros de Curitiba?', a: 'A Carplus tem uma unidade no Portão, em Curitiba. Quem vem dos bairros próximos ou de outras regiões pode consultar pneus, avaliação de serviços e agenda antes da visita.' },
+  { q: 'A Carplus atende cidades da região metropolitana?', a: 'Clientes de cidades da região metropolitana podem consultar o atendimento na mesma unidade do Portão. Não há filial em cada cidade listada; confira o deslocamento no mapa a partir do seu endereço.' },
+  { q: 'Qual bairro de Curitiba fica mais perto da Carplus?', a: 'A loja está no próprio bairro Portão, na Av. Presidente Arthur da Silva Bernardes, 1323. A duração do trajeto depende do seu ponto de partida e do trânsito.' },
+  { q: 'A Carplus faz entrega de pneus nos bairros?', a: 'No momento não realizamos entrega em domicílio. O atendimento é presencial em nossa loja no Portão, onde realizamos também a montagem e balanceamento sob consulta.' },
+  { q: 'Tem oficina boa perto do Shopping Palladium?', a: 'A Carplus fica na Av. Presidente Arthur da Silva Bernardes, 1323, no Portão. Consulte o mapa para planejar o trajeto desde o Shopping Palladium e confirme a agenda antes de vir.' },
 ];
 
 export default function BairrosPage() {
@@ -74,7 +74,7 @@ export default function BairrosPage() {
 
   useSEO({
     title: 'Bairros Atendidos em Curitiba e Região | Carplus Pneus e Oficina',
-    description: 'A Carplus atende todos os bairros de Curitiba e a região metropolitana a partir do Portão. Veja tempo de deslocamento e rotas até a nossa loja.',
+    description: 'A Carplus atende todos os bairros de Curitiba e a região metropolitana a partir do Portão. Conheça as regiões e consulte a rota atual até a unidade do Portão.',
     canonical: 'https://www.carpluspneuseoficina.com.br/bairros',
     ogImage: 'https://www.carpluspneuseoficina.com.br/og-carplus.webp',
     keywords: ['pneus Curitiba bairros', 'oficina mecânica Curitiba', 'pneus região metropolitana Curitiba', 'Carplus Portão'],
@@ -127,8 +127,8 @@ export default function BairrosPage() {
         <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { val: `${BAIRROS.length}+`, label: 'Bairros atendidos' },
-            { val: '2 min', label: 'Bairro mais próximo' },
-            { val: '35 min', label: 'Região mais distante' },
+            { val: 'Portão', label: 'Nossa unidade' },
+            { val: 'Mapa', label: 'Confira seu trajeto' },
             { val: '10 Anos', label: 'Atendendo Curitiba' },
           ].map((s, i) => (
             <div key={i} className="flex flex-col items-center gap-1 text-center py-2">
@@ -201,8 +201,8 @@ export default function BairrosPage() {
                       <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: b.cor }} />
                       <strong className="font-display font-black text-white text-sm leading-tight">{b.nome}</strong>
                     </div>
-                    <span className="text-xs text-white/45">⏱ {b.tempo} de carro</span>
-                    <span className="text-[11px] text-white/28">Via: {b.rota}</span>
+                    <span className="text-xs text-white/45">Atendimento na unidade do Portão</span>
+                    <span className="text-xs text-white/50">Consulte a rota atual no mapa</span>
                     <div className="flex items-center justify-between mt-1 pt-2 border-t border-white/05">
                       <Link to={`/bairro/${b.slug}`} className="text-[11px] font-bold text-primary group-hover:underline">
                         Ver página →

@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../../data/reviewSummary';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { motion } from 'motion/react';
@@ -50,7 +51,7 @@ export default function AboutUs() {
                 <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
               ))}
             </div>
-            <span className="text-white font-bold">Mais de 250 avaliações de clientes no Google</span>
+            <span className="text-white font-bold">{GOOGLE_REVIEW_SUMMARY.count} avaliações no Google · {GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}</span>
           </motion.div>
         </section>
 
@@ -183,7 +184,7 @@ export default function AboutUs() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Avaliações que comprovam</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Mais de 250 avaliações de clientes no Google com nota 4.9 ★. Cada uma é a história de um cliente que saiu satisfeito.
+                  {GOOGLE_REVIEW_SUMMARY.count} avaliações no Google, com nota {GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★, conferidas em {GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}. Consulte os relatos completos na fonte.
                 </p>
               </motion.div>
 
@@ -254,7 +255,7 @@ export default function AboutUs() {
                 O que nossos clientes dizem
               </h2>
               <div className="inline-flex items-center gap-2 text-amber-500 text-xl font-medium">
-                <span>Mais de 250 avaliações de clientes</span>
+                <span>{GOOGLE_REVIEW_SUMMARY.count} avaliações · {GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
@@ -562,15 +563,6 @@ export default function AboutUs() {
       </main>
 
       {/* WhatsApp Flutuante */}
-      <a
-        href="https://wa.me/554130827282?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fale conosco pelo WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform"
-      >
-        <MessageSquare className="w-6 h-6 text-white" fill="white" />
-      </a>
 
       <Footer />
     </div>

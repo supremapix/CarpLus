@@ -90,6 +90,9 @@ const offer = pricedProduct.offers as JsonNode;
 equal([offer['@type'], offer.price, offer.priceCurrency, offer.url, offer.availability], [
   'Offer', '123.45', 'BRL', productInput.url, 'https://schema.org/OutOfStock',
 ], 'provided offer data remains intact');
+equal(['priceValidUntil', 'shippingDetails', 'hasMerchantReturnPolicy'].filter(key => key in offer), [], 'unverified commercial policies and expiry are never generated');
+equal('availability' in (productWith({ price: 123.45 }).offers as JsonNode), false, 'price alone does not confirm stock');
+equal('mpn' in unpricedProduct, false, 'internal slug is not a manufacturer part number');
 const ratedProduct = productWith({ ratingValue: 4.5, reviewCount: 2 });
 equal(nodesOfType(ratedProduct, 'AggregateRating').map(rating => [rating.ratingValue, rating.reviewCount]), [['4.5', 2]], 'provided aggregate rating remains available');
 equal('offers' in ratedProduct, false, 'rating does not invent a price');

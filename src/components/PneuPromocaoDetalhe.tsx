@@ -1,3 +1,4 @@
+import TireReplacementAdvice from './TireReplacementAdvice';
 import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -42,23 +43,26 @@ export default function PneuPromocaoDetalhe() {
   const lastUpdated = buildDatePtBR();
 
   const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState('');
   const [showShareMenu, setShowShareMenu] = useState(false);
 
   const handleCopyLink = async () => {
+    let success = false;
     try {
       await navigator.clipboard.writeText(pageUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      success = true;
     } catch {
-      const textArea = document.createElement('textarea');
-      textArea.value = pageUrl;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      const field = document.createElement('textarea');
+      field.value = pageUrl;
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      try { success = document.execCommand('copy'); } catch { success = false; }
+      field.remove();
     }
+    setCopied(success);
+    setCopyStatus(success ? 'Link copiado.' : 'Não foi possível copiar. Selecione o endereço e copie manualmente.');
   };
 
   const handleShare = async () => {
@@ -86,7 +90,7 @@ export default function PneuPromocaoDetalhe() {
         },
         {
           q: `A montagem e o balanceamento estão inclusos?`,
-          a: `Sim. Na Carplus a montagem, o balanceamento e a calibragem são realizados por técnicos experientes na loja do Portão.`,
+          a: `Consulte os valores de montagem, balanceamento e calibragem e o que está incluído no orçamento antes de contratar.`,
         },
         {
           q: `O pneu ${tire.marca} ${tire.medida} tem garantia?`,
@@ -100,7 +104,7 @@ export default function PneuPromocaoDetalhe() {
           ? [
               {
                 q: `Quais carros usam o pneu ${tire.medida}?`,
-                a: `A medida ${tire.medida} é compatível com modelos populares como ${tire.carros.slice(0, 6).join(', ')}, entre outros. Confira a especificação na lateral do seu pneu atual ou consulte a equipe Carplus pelo WhatsApp (41) 3082-7282.`,
+                a: `A medida ${tire.medida} aparece no catálogo associada a modelos como ${tire.carros.slice(0, 6).join(', ')}, entre outros, como referência de pesquisa, sem confirmar aplicação. Verifique o ano, a versão e o manual do veículo. Confira a especificação na lateral do seu pneu atual ou consulte a equipe Carplus pelo WhatsApp (41) 3082-7282.`,
               },
             ]
           : []),
@@ -114,7 +118,7 @@ export default function PneuPromocaoDetalhe() {
   const productSchema = tire
     ? generateProductSchema({
         name: `Pneu ${tire.marca} ${tire.nome}`,
-        description: `Pneu ${tire.marca} ${tire.nome}, medida ${tire.medida}, em promoção na Carplus Centro Automotivo no Portão, Curitiba. Montagem, balanceamento e garantia de fábrica inclusos.`,
+        description: `Pneu ${tire.marca} ${tire.nome}, medida ${tire.medida}, em promoção na Carplus Centro Automotivo no Portão, Curitiba. Consulte disponibilidade, valores de montagem e condições de garantia.`,
         image: [tire.imagem],
         sku: tire.slug,
         brand: tire.marca,
@@ -148,7 +152,7 @@ export default function PneuPromocaoDetalhe() {
     tire
       ? {
           title: `Pneu ${tire.marca} ${tire.medida} em Promoção – Carplus Curitiba`,
-          description: `Pneu ${tire.marca} ${tire.nome} em promoção em Curitiba. Montagem inclusa, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Centro Automotivo, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.`,
+          description: `Pneu ${tire.marca} ${tire.nome} em promoção em Curitiba. Montagem sob consulta, parcelamento em até 10x sem juros e garantia de fábrica na Carplus Centro Automotivo, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.`,
           canonical: pageUrl,
           ogImage: tire.imagem,
           ogType: 'product',
@@ -232,19 +236,21 @@ export default function PneuPromocaoDetalhe() {
                 <div className="flex items-center gap-2 bg-gray-50 rounded-xl p-3 mb-3">
                   <input
                     type="text"
+                    aria-label="Endereço desta página para compartilhar"
                     value={pageUrl}
                     readOnly
                     className="flex-1 bg-transparent text-xs text-gray-600 outline-none truncate"
                   />
                   <button
+                    aria-label="Copiar link desta página"
                     onClick={handleCopyLink}
-                    aria-label="Copiar link"
                     className={`p-2 rounded-lg transition-all ${copied ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-600'}`}
                   >
                     {copied ? <Check size={14} /> : <Copy size={14} />}
                   </button>
                 </div>
 
+                <p role="status" aria-live="polite" className="text-sm mb-3">{copyStatus}</p>
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href={`https://wa.me/?text=${encodeURIComponent(`Confira o pneu ${tire.marca} ${tire.nome} em promoção na Carplus: ${pageUrl}`)}`}
@@ -354,9 +360,7 @@ export default function PneuPromocaoDetalhe() {
                 </h1>
 
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
-                  Pneu {tire.marca} na medida <strong>{tire.medida}</strong> com montagem, balanceamento e garantia de
-                  fábrica inclusos. Instalação rápida por técnicos certificados na Carplus Centro Automotivo, no Portão, em
-                  Curitiba.
+                  Pneu {tire.marca} na medida <strong>{tire.medida}</strong>. Consulte a disponibilidade, a aplicação por ano e versão, os valores de montagem e balanceamento e as condições de garantia na unidade do Portão, em Curitiba.
                 </p>
 
                 <p className="text-[11px] text-gray-400 font-medium mb-8 -mt-4">
@@ -383,7 +387,7 @@ export default function PneuPromocaoDetalhe() {
                   <p className="text-neutral-800 font-bold leading-relaxed">
                     Consulte o pneu certo para o seu carro no atendimento rápido pelo WhatsApp.
                   </p>
-                  <span className="mt-1 block text-gray-500 text-sm">Montagem inclusa e parcelamento em até 10x sem juros.</span>
+                  <span className="mt-1 block text-gray-500 text-sm">Montagem sob consulta e parcelamento em até 10x sem juros.</span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -429,7 +433,7 @@ export default function PneuPromocaoDetalhe() {
         {/* Benefícios */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {[
-            { icon: Truck, t: 'Montagem Inclusa', d: 'Instalação, balanceamento e calibragem por técnicos certificados.' },
+            { icon: Truck, t: 'Montagem sob consulta', d: 'Instalação, balanceamento e calibragem por técnicos certificados.' },
             { icon: CreditCard, t: 'Até 10x Sem Juros', d: 'Parcele no cartão de crédito e leve seu pneu hoje mesmo.' },
             { icon: ShieldCheck, t: 'Garantia de Fábrica', d: 'Produtos originais com garantia contra defeitos de fabricação.' },
           ].map((b) => (
@@ -444,10 +448,11 @@ export default function PneuPromocaoDetalhe() {
         </section>
 
         {/* Carros Compatíveis */}
+        <p className="max-w-7xl mx-auto px-4 py-4 text-gray-600">As associações do catálogo não confirmam a aplicação em todas as versões. Confira ano, versão, medida e índices de carga e velocidade no manual do veículo.</p>
         {tire.carros.length > 0 && (
           <section id="carros-compativeis" className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-gray-100 mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-2 uppercase italic tracking-tight flex items-center gap-3">
-              <Car className="text-primary" size={30} /> Carros compatíveis com o pneu {tire.medida}
+              <Car className="text-primary" size={30} /> Modelos associados no catálogo à medida {tire.medida}
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
               O pneu <strong>{tire.marca} {tire.medida}</strong> é indicado para os seguintes modelos mais populares no
@@ -519,8 +524,7 @@ export default function PneuPromocaoDetalhe() {
             <p>
               Com índice de carga <strong>{tire.carga}</strong> e índice de velocidade <strong>{tire.velocidade}</strong>,
               esse modelo oferece aderência em piso seco e molhado, conforto de rodagem e durabilidade no dia a dia da
-              cidade e da estrada. Toda compra inclui montagem, balanceamento e calibragem feitos por nossos técnicos
-              certificados — com a roda pronta em cerca de 40 minutos.
+              cidade e da estrada conforme as características informadas pelo fabricante. Consulte a aplicação pelo manual do veículo, os valores dos serviços e a agenda de instalação antes de comprar.
             </p>
             <p>
               Comprando na Carplus você conta com <strong>parcelamento em até 10x sem juros</strong>, garantia de fábrica
@@ -533,6 +537,7 @@ export default function PneuPromocaoDetalhe() {
           </div>
         </section>
 
+        <TireReplacementAdvice name={tire.nome} measure={tire.medida} rim={tire.aro} loadIndex={tire.carga} speedIndex={tire.velocidade} />
         {/* FAQ */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 uppercase italic tracking-tight text-center">

@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from './reviewSummary';
 // ════════════════════════════════════════════════════════════════
 // BASE DE DADOS SEO — Páginas de Centro Automotivo (Curitiba)
 // Conteúdo 100% original, focado em SEO local ético.
@@ -100,7 +101,7 @@ const DIFERENCIAIS_PADRAO: Differential[] = [
 ];
 
 const BENEFICIOS_PADRAO: Benefit[] = [
-  { icon: 'clock', title: 'Atendimento Rápido', description: 'Boa parte dos serviços é feita no mesmo dia, sem deixar o carro parado.' },
+  { icon: 'clock', title: 'Atendimento Rápido', description: 'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.' },
   { icon: 'users', title: 'Profissionais Qualificados', description: 'Mecânicos experientes e treinados para carros nacionais e importados.' },
   { icon: 'gauge', title: 'Equipamentos Modernos', description: 'Alinhamento 3D, scanner eletrônico e ferramentas de última geração.' },
   { icon: 'shield', title: 'Garantia dos Serviços', description: 'Todos os reparos têm garantia, com nota fiscal e peças de qualidade.' },
@@ -161,7 +162,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Alinhamento e balanceamento computadorizado',
         content:
-          'O alinhamento 3D computadorizado corrige os ângulos das rodas, evitando que o carro puxe para os lados e que os pneus se desgastem de forma irregular. Já o balanceamento elimina aquela vibração incômoda no volante em velocidade. Recomendamos os dois serviços a cada troca de pneus ou sempre que perceber desgaste desigual, direção tremendo ou o carro saindo de linha. No nosso centro automotivo no Portão, esses serviços são rápidos e, na maioria dos casos, feitos no mesmo dia.',
+          'O alinhamento 3D computadorizado corrige os ângulos das rodas, evitando que o carro puxe para os lados e que os pneus se desgastem de forma irregular. Já o balanceamento elimina aquela vibração incômoda no volante em velocidade. Recomendamos os dois serviços a cada troca de pneus ou sempre que perceber desgaste desigual, direção tremendo ou o carro saindo de linha. O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
       },
     ],
     testimonials: DEPOIMENTOS_PADRAO,
@@ -169,7 +170,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       { question: 'Onde fica o centro automotivo no Portão?', answer: 'A Carplus fica na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, em Curitiba, com fácil acesso de toda a região sul da cidade.' },
       { question: 'Quais serviços o centro automotivo oferece?', answer: 'Oferecemos revisão preventiva, troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico e venda e montagem de pneus.' },
       { question: 'Preciso agendar para ser atendido?', answer: 'Atendemos por ordem de chegada e também com hora marcada. Para serviços mais longos, como revisão completa, recomendamos agendar pelo WhatsApp (41) 3082-7282.' },
-      { question: 'Quanto tempo leva uma revisão?', answer: 'Serviços simples como troca de óleo e balanceamento costumam ficar prontos no mesmo dia. Revisões completas dependem do que for encontrado, mas sempre informamos o prazo antes de iniciar.' },
+      { question: 'Quanto tempo leva uma revisão?', answer: 'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar. Revisões completas dependem do que for encontrado, mas sempre informamos o prazo antes de iniciar.' },
       { question: 'Vocês atendem carros importados?', answer: 'Sim. Atendemos todas as marcas e modelos, nacionais e importados, com equipamentos e diagnóstico adequados para cada veículo.' },
       { question: 'O orçamento é gratuito?', answer: 'Sim, o orçamento é sem compromisso. Avaliamos o veículo e apresentamos os valores antes de qualquer serviço, com total transparência.' },
     ],
@@ -217,7 +218,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Garantia, transparência e avaliações reais',
         content:
-          'Trabalhamos com peças de qualidade e oferecemos garantia em todos os serviços. Antes de iniciar qualquer reparo, apresentamos um orçamento detalhado, explicando o que é urgente e o que pode esperar — sem empurrar serviços desnecessários. Essa transparência é o que sustenta nossa reputação: somos um dos centros automotivos mais bem avaliados de Curitiba, com nota média 4,9 no Google e centenas de clientes satisfeitos que voltam e indicam a Carplus.',
+          `Trabalhamos com peças de qualidade e oferecemos garantia em todos os serviços. Antes de iniciar qualquer reparo, apresentamos um orçamento detalhado, explicando o que é urgente e o que pode esperar — sem empurrar serviços desnecessários. Essa transparência é o que sustenta nossa reputação: somos um centro automotivo no Portão, em Curitiba, com nota média ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações) e centenas de clientes satisfeitos que voltam e indicam a Carplus.`,
       },
       {
         title: 'Localização e fácil acesso em Curitiba',
@@ -227,7 +228,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
     ],
     testimonials: DEPOIMENTOS_PADRAO,
     faq: [
-      { question: 'Qual o melhor centro automotivo em Curitiba?', answer: 'A Carplus é um dos centros automotivos mais bem avaliados de Curitiba, com nota 4,9 no Google, estrutura completa de mecânica e pneus e certificação Pirelli Performance Center.' },
+      { question: 'Qual o melhor centro automotivo em Curitiba?', answer: `A Carplus é um centro automotivo no Portão, em Curitiba, com nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações), estrutura completa de mecânica e pneus e certificação Pirelli Performance Center.` },
       { question: 'O centro automotivo atende toda Curitiba?', answer: 'Sim. Embora nossa loja fique no bairro Portão, atendemos motoristas de toda Curitiba e da região metropolitana.' },
       { question: 'Quais serviços estão disponíveis?', answer: 'Revisão completa, troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico e venda e montagem de pneus.' },
       { question: 'Os serviços têm garantia?', answer: 'Sim, todos os serviços têm garantia, com nota fiscal e peças de qualidade.' },
@@ -273,7 +274,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Localização estratégica e rapidez no atendimento',
         content:
-          'Nossa posição no Portão é uma vantagem para quem vive na região da João Bettega: chega-se rápido, sem enfrentar o trânsito do centro, e com acesso fácil de quem vem da CIC, Fazendinha e Novo Mundo. Sabemos que muitos clientes dependem do veículo para trabalhar, por isso priorizamos a agilidade: troca de óleo, balanceamento e reparos simples normalmente ficam prontos no mesmo dia. Quando o serviço é mais longo, informamos o prazo com antecedência e mantemos você atualizado.',
+          'Nossa posição no Portão é uma vantagem para quem vive na região da João Bettega: chega-se rápido, sem enfrentar o trânsito do centro, e com acesso fácil de quem vem da CIC, Fazendinha e Novo Mundo. O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar. Quando o serviço é mais longo, informamos o prazo com antecedência e mantemos você atualizado.',
       },
       {
         title: 'Serviços oferecidos para carros e utilitários',
@@ -283,14 +284,14 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Por que escolher a Carplus na região',
         content:
-          'Além da localização estratégica, oferecemos o que mais importa: orçamento transparente, garantia em todos os serviços e diagnóstico automotivo especializado. Somos um Pirelli Performance Center certificado, com equipamentos modernos e equipe treinada. Para quem trabalha ou mora perto da João Bettega, isso significa resolver os problemas do carro perto de casa, com a confiança de uma das oficinas mais bem avaliadas de Curitiba.',
+          'Além da localização estratégica, oferecemos o que mais importa: orçamento transparente, garantia em todos os serviços e diagnóstico automotivo especializado. Somos um Pirelli Performance Center certificado, com equipamentos modernos e equipe treinada. Para quem trabalha ou mora perto da João Bettega, isso significa resolver os problemas do carro perto de casa, com a confiança de uma oficina no Portão, em Curitiba.',
       },
     ],
     testimonials: DEPOIMENTOS_PADRAO,
     faq: [
       { question: 'O centro automotivo fica na João Bettega?', answer: 'Estamos a poucos minutos da Av. João Bettega, no bairro Portão (Av. Presidente Arthur da Silva Bernardes, 1323), com acesso fácil para quem circula pela região.' },
       { question: 'Vocês atendem utilitários de trabalho?', answer: 'Sim. Atendemos carros de passeio, SUVs e utilitários leves, com serviços de manutenção e pneus adequados a cada tipo de uso.' },
-      { question: 'O atendimento é rápido?', answer: 'Sim. Serviços como troca de óleo, balanceamento e reparos simples costumam ficar prontos no mesmo dia.' },
+      { question: 'O atendimento é rápido?', answer: 'Sim. O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.' },
       { question: 'Preciso agendar?', answer: 'Atendemos por ordem de chegada e com hora marcada. Para agilizar, recomendamos agendar pelo WhatsApp (41) 3082-7282.' },
       { question: 'Quais serviços estão disponíveis?', answer: 'Troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico, revisão preventiva e pneus.' },
       { question: 'Tem garantia nos serviços?', answer: 'Sim, todos os serviços têm garantia com nota fiscal e peças de qualidade.' },
@@ -340,7 +341,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Atendimento transparente e bem avaliado',
         content:
-          'Nossa reputação é construída sobre confiança: somos uma das oficinas mais bem avaliadas de Curitiba, com nota média 4,9 no Google. Acreditamos que um bom centro automotivo não empurra serviços desnecessários — ele explica, orienta e entrega o que foi combinado. Quando você traz o carro à Carplus, recebe um diagnóstico honesto e um orçamento detalhado antes de qualquer reparo, para que a decisão seja sempre sua.',
+          `Nossa reputação é construída sobre confiança: somos uma oficina no Portão, em Curitiba, com nota média ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações). Acreditamos que um bom centro automotivo não empurra serviços desnecessários — ele explica, orienta e entrega o que foi combinado. Quando você traz o carro à Carplus, recebe um diagnóstico honesto e um orçamento detalhado antes de qualquer reparo, para que a decisão seja sempre sua.`,
       },
       {
         title: 'Faça sua escolha com informação',
@@ -355,7 +356,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       { question: 'Onde fica a Carplus?', answer: 'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, em Curitiba.' },
       { question: 'O orçamento é gratuito?', answer: 'Sim, o orçamento é sem compromisso. Avaliamos o veículo e apresentamos os valores antes de qualquer serviço.' },
       { question: 'Quais serviços a Carplus oferece?', answer: 'Revisão preventiva, troca de óleo, freios, suspensão, alinhamento 3D, balanceamento, diagnóstico eletrônico e pneus.' },
-      { question: 'A Carplus é bem avaliada?', answer: 'Sim. A Carplus tem nota média 4,9 no Google e centenas de clientes satisfeitos em Curitiba.' },
+      { question: 'A Carplus é bem avaliada?', answer: `Sim. A Carplus tem nota média ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações) e centenas de clientes satisfeitos em Curitiba.` },
     ],
     ctaTitle: 'Conheça a Carplus e compare por conta própria',
     ctaSubtitle: 'Peça um orçamento sem compromisso e avalie nossos diferenciais. A decisão final é sempre sua.',
@@ -402,7 +403,7 @@ export const CENTRO_AUTOMOTIVO_PAGES: CentroAutomotivoPage[] = [
       {
         title: 'Garantia, experiência e transparência',
         content:
-          'A experiência da nossa equipe em diagnóstico automotivo dá a segurança de identificar problemas com precisão e resolver na primeira tentativa. Todos os serviços têm garantia, com nota fiscal e peças de qualidade. E, antes de qualquer reparo, apresentamos um orçamento detalhado e transparente — você só autoriza o que faz sentido para o seu carro e para o seu bolso. Essa postura honesta é o que mantém nossa avaliação em 4,9 no Google.',
+          `O diagnóstico automotivo permite investigar os sintomas e orientar os próximos passos da avaliação. Consulte os procedimentos, as peças e as condições de garantia no orçamento. E, antes de qualquer reparo, apresentamos um orçamento detalhado e transparente — você só autoriza o que faz sentido para o seu carro e para o seu bolso. Essa postura honesta é o que mantém nossa avaliação em ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações).`,
       },
       {
         title: 'Visite a Carplus e compare',

@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from './reviewSummary';
 // ════════════════════════════════════════════════════════════════
 // BASE DE DADOS SEO — Páginas de intenção de compra (Curitiba)
 // Conteúdo 100% baseado no catálogo real da Carplus (src/data.ts)
@@ -62,11 +63,11 @@ export const ARO_PAGES: AroPage[] = [
     aro: 13,
     slug: 'pneu-aro-13-curitiba',
     h1: 'Pneu Aro 13 em Curitiba',
-    metaTitle: 'Pneu Aro 13 em Curitiba | Carplus Centro Automotivo – Montagem Inclusa',
+    metaTitle: 'Pneu Aro 13 em Curitiba | Carplus Centro Automotivo – Montagem sob consulta',
     metaDescription:
-      'Pneu aro 13 em Curitiba na Carplus, bairro Portão. Marcas como Pirelli e Firestone para carros populares, montagem e balanceamento inclusos e até 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneu aro 13 em Curitiba na Carplus, bairro Portão. Marcas como Pirelli e Firestone para carros populares, montagem e balanceamento sob consulta e até 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'O pneu aro 13 é a medida clássica dos carros populares brasileiros. Na Carplus, no bairro Portão em Curitiba, você encontra pneus aro 13 das marcas que já trabalhamos, com montagem, balanceamento e calibragem inclusos no mesmo atendimento.',
+      'O pneu aro 13 é a medida clássica dos carros populares brasileiros. Na Carplus, no bairro Portão em Curitiba, você encontra pneus aro 13 das marcas que já trabalhamos, com montagem, balanceamento e calibragem sob consulta no mesmo atendimento.',
     aplicacoes:
       'Os pneus aro 13 equipam veículos econômicos e compactos como Chevrolet Celta, Chevrolet Classic, Fiat Uno, VW Gol G4 e Fiat Palio. São pneus voltados ao uso urbano diário, priorizando economia, durabilidade e custo-benefício.',
     perfilTipico: ['Carros populares', 'Uso urbano', 'Econômico', 'Custo-benefício'],
@@ -74,7 +75,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Quanto custa um pneu aro 13 em Curitiba?',
         answer:
-          'O preço do pneu aro 13 varia conforme a marca e a linha escolhida. Na Carplus, no Portão, o valor já inclui montagem, balanceamento e calibragem, com parcelamento em até 10x sem juros. Envie a medida exata (ex.: 175/70R13) pelo WhatsApp (41) 3082-7282 para um orçamento na hora.',
+          'O preço do pneu aro 13 varia conforme a marca e a linha escolhida. Na Carplus, no Portão, os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. Envie a medida exata (ex.: 175/70R13) pelo WhatsApp (41) 3082-7282 para um orçamento mediante consulta de agenda.',
       },
       {
         question: 'Quais carros usam pneu aro 13?',
@@ -84,7 +85,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'A troca do pneu aro 13 já inclui alinhamento e balanceamento?',
         answer:
-          'O balanceamento está incluso na montagem. O alinhamento 3D é altamente recomendado a cada troca de pneus para evitar desgaste irregular e é feito na própria Carplus, sem necessidade de agendamento.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. O alinhamento 3D é altamente recomendado a cada troca de pneus para evitar desgaste irregular e é feito na própria Carplus, sem necessidade de agendamento.',
       },
       {
         question: 'Pneu aro 13 ainda é fabricado pelas grandes marcas?',
@@ -101,7 +102,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         title: 'Marcas de pneu aro 13 disponíveis na Carplus',
         content:
-          'No aro 13, a Carplus trabalha principalmente com Pirelli e Firestone, duas marcas com forte presença no segmento popular e ampla rede de garantia no Brasil. A linha Pirelli P400 Evo é a queridinha de quem busca durabilidade e silêncio por um preço acessível, enquanto a Firestone F-600 entrega ótimo custo-benefício para uso urbano intenso. Para quem roda muito em aplicativo, indicamos modelos com carcaça reforçada e composto de borracha de maior quilometragem. Como o aro 13 tem giro alto no estoque, conseguimos manter preços competitivos e pronta entrega na maioria das medidas, sem que você precise esperar encomenda.',
+          'No aro 13, a Carplus trabalha principalmente com Pirelli e Firestone, duas marcas com forte presença no segmento popular e ampla rede de garantia no Brasil. A linha Pirelli P400 Evo é a queridinha de quem busca durabilidade e silêncio por um preço acessível, enquanto a Firestone F-600 entrega ótimo custo-benefício para uso urbano intenso. Para quem roda muito em aplicativo, indicamos modelos com carcaça reforçada e composto de borracha de maior quilometragem. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
         title: 'Como escolher o pneu aro 13 ideal',
@@ -111,7 +112,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         title: 'Pneu aro 13 em Curitiba: atendimento no Portão',
         content:
-          'A Carplus fica na Avenida Presidente Arthur da Silva Bernardes, no bairro Portão, com acesso fácil para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial e região metropolitana. Você troca o pneu aro 13 com montagem, balanceamento e calibragem inclusos no mesmo atendimento, normalmente sem precisar deixar o carro o dia todo. Aceitamos cartões com parcelamento em até 10x sem juros e emitimos nota fiscal com garantia em todos os serviços. Antes de vir, envie a medida pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e já deixar tudo separado para a sua chegada.',
+          'A Carplus fica na Avenida Presidente Arthur da Silva Bernardes, no bairro Portão, com acesso fácil para quem vem do Água Verde, Fazendinha, Novo Mundo, Cidade Industrial e região metropolitana. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Aceitamos cartões com parcelamento em até 10x sem juros e emitimos nota fiscal com garantia em todos os serviços. Antes de vir, envie a medida pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e já deixar tudo separado para a sua chegada.',
       },
     ],
   },
@@ -121,9 +122,9 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 14 em Curitiba',
     metaTitle: 'Pneu Aro 14 em Curitiba | Carplus Centro Automotivo – Pirelli e mais',
     metaDescription:
-      'Pneu aro 14 em Curitiba na Carplus Portão. Medidas como 175/65R14, 185/60R14 e 185/65R14 para hatch e sedan, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 14 em Curitiba na Carplus Portão. Medidas como 175/65R14, 185/60R14 e 185/65R14 para hatch e sedan, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'O pneu aro 14 é uma das medidas mais procuradas do Brasil, presente em grande parte dos hatchbacks e sedans compactos. A Carplus, no Portão em Curitiba, mantém pneus aro 14 com pronta entrega e instalação completa no mesmo dia.',
+      'O pneu aro 14 é uma das medidas mais procuradas do Brasil, presente em grande parte dos hatchbacks e sedans compactos. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
     aplicacoes:
       'Os pneus aro 14 equipam veículos como VW Gol G5/G6, Chevrolet Onix 1.0, Fiat Palio, Renault Logan e VW Polo. Medidas comuns incluem 175/65R14, 185/60R14 e 185/65R14, equilibrando conforto, economia e segurança no uso urbano.',
     perfilTipico: ['Hatch compacto', 'Sedan de entrada', 'Uso urbano', 'Equilíbrio conforto/economia'],
@@ -136,7 +137,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Vale a pena trocar pneu aro 14 na Carplus do Portão?',
         answer:
-          'Sim. Além do preço justo e do parcelamento em até 10x sem juros, a montagem, o balanceamento e a calibragem já estão inclusos, e o alinhamento 3D é feito na hora para prolongar a vida útil do conjunto.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
         question: 'Vocês têm pneu aro 14 de marca premium?',
@@ -146,7 +147,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Quantos quilômetros dura um pneu aro 14?',
         answer:
-          'Com calibragem correta, rodízio a cada 10.000 km e alinhamento em dia, um pneu aro 14 de uso urbano costuma durar entre 40.000 e 60.000 km. Linhas de conforto tendem a render mais. Na Carplus orientamos a manutenção certa para você extrair o máximo de cada jogo de pneus.',
+          'A vida útil varia conforme uso, manutenção e condições das vias. Siga os intervalos e as orientações do fabricante, sem assumir uma quilometragem garantida. Na Carplus orientamos a manutenção certa para você extrair o máximo de cada jogo de pneus.',
       },
     ],
     secoesConteudo: [
@@ -158,7 +159,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         title: 'Marcas de pneu aro 14 disponíveis na Carplus',
         content:
-          'O aro 14 é o que tem maior diversidade de marcas no nosso estoque, indo do econômico ao premium. Trabalhamos com Pirelli (linha P400 Evo e Cinturato), Goodyear (Assurance e Direction), Michelin (Energy XM2+), Firestone e Bridgestone, além de opções de excelente custo-benefício para quem precisa renovar os quatro pneus gastando menos. Para quem busca silêncio e maciez, o Michelin Energy XM2+ é uma referência; para durabilidade com preço justo, as linhas Pirelli e Goodyear se destacam. Como o giro do aro 14 é alto, conseguimos preços agressivos e pronta entrega praticamente o ano todo.',
+          'O aro 14 é o que tem maior diversidade de marcas no nosso estoque, indo do econômico ao premium. Trabalhamos com Pirelli (linha P400 Evo e Cinturato), Goodyear (Assurance e Direction), Michelin (Energy XM2+), Firestone e Bridgestone, além de opções de excelente custo-benefício para quem precisa renovar os quatro pneus gastando menos. Para quem busca silêncio e maciez, o Michelin Energy XM2+ é uma referência; para durabilidade com preço justo, as linhas Pirelli e Goodyear se destacam. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
         title: 'Como escolher o pneu aro 14 ideal',
@@ -166,9 +167,9 @@ export const ARO_PAGES: AroPage[] = [
           'Comece confirmando a medida exata na lateral do pneu (por exemplo, 185/60R14 82H) e mantenha os índices de carga e velocidade originais. Em seguida, defina a prioridade: economia de combustível, conforto acústico ou durabilidade. Para o trânsito urbano de Curitiba, com paradas frequentes e ruas de paralelepípedo em alguns bairros, um pneu com boa absorção de impacto faz diferença no conforto. Já quem encara a BR-116 ou a Linha Verde com frequência se beneficia de um composto com melhor estabilidade em alta. Trazemos seu carro, avaliamos o desgaste atual e indicamos sem compromisso a linha aro 14 que melhor combina com o seu uso e orçamento.',
       },
       {
-        title: 'Pneu aro 14 em Curitiba: pronta entrega no Portão',
+        title: 'Pneu aro 14 em Curitiba: disponibilidade sob consulta no Portão',
         content:
-          'Por ser a medida mais vendida, o aro 14 quase sempre tem pronta entrega na Carplus, no bairro Portão. Isso significa que você consegue trocar os quatro pneus no mesmo dia, com montagem, balanceamento e calibragem inclusos, sem deixar o carro parado. Atendemos motoristas de toda a capital e da região metropolitana — Colombo, Pinhais, São José dos Pinhais e Araucária — que buscam preço justo e serviço rápido. O pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia. Mande a medida pelo WhatsApp (41) 3082-7282 e já receba o orçamento fechado antes de sair de casa.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Atendemos motoristas de toda a capital e da região metropolitana — Colombo, Pinhais, São José dos Pinhais e Araucária — que buscam preço justo e serviço rápido. O pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia. Mande a medida pelo WhatsApp (41) 3082-7282 e já receba o orçamento fechado antes de sair de casa.',
       },
     ],
   },
@@ -178,9 +179,9 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 15 em Curitiba',
     metaTitle: 'Pneu Aro 15 em Curitiba | Carplus Centro Automotivo – Maior Estoque',
     metaDescription:
-      'Pneu aro 15 em Curitiba na Carplus Portão. Maior variedade: 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 15 em Curitiba na Carplus Portão. Maior variedade: 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'O aro 15 é a medida com a maior variedade de modelos no estoque da Carplus. No bairro Portão, em Curitiba, oferecemos pneus aro 15 econômicos, de conforto e all season, sempre com montagem e balanceamento inclusos.',
+      'O aro 15 é a medida com a maior variedade de modelos no estoque da Carplus. No bairro Portão, em Curitiba, oferecemos pneus aro 15 econômicos, de conforto e all season, sempre com montagem e balanceamento sob consulta.',
     aplicacoes:
       'O aro 15 equipa um leque enorme de veículos: Chevrolet Onix Plus, Chevrolet Cruze, Fiat Argo, Honda City, VW Virtus, VW Golf e muitos outros. As medidas mais buscadas são 185/60R15, 185/65R15, 195/55R15, 195/60R15 e 195/65R15.',
     perfilTipico: ['Hatch e sedan', 'Maior variedade de estoque', 'Conforto e economia', 'All season disponível'],
@@ -198,7 +199,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Posso comprar pneu aro 15 e instalar no mesmo dia?',
         answer:
-          'Sim. Com pronta entrega no Portão, a maioria das medidas aro 15 é instalada no mesmo dia, com balanceamento e calibragem inclusos. Agende pelo WhatsApp (41) 3082-7282.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Agende pelo WhatsApp (41) 3082-7282.',
       },
       {
         question: 'Qual a diferença entre 195/55R15 e 195/65R15?',
@@ -225,7 +226,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         title: 'Pneu aro 15 em Curitiba: maior estoque no Portão',
         content:
-          'Por concentrar a maior variedade de modelos, o aro 15 é onde a Carplus oferece o atendimento mais ágil em Curitiba. Na loja do bairro Portão, você encontra desde a opção mais econômica até linhas premium, quase sempre com pronta entrega para instalação no mesmo dia. A montagem, o balanceamento e a calibragem já estão inclusos, e o alinhamento 3D é feito na hora para preservar os pneus novos. Atendemos clientes de toda a cidade e da região metropolitana, com parcelamento em até 10x sem juros e garantia com nota fiscal. Envie sua medida pelo WhatsApp (41) 3082-7282 e compare as opções antes de fechar.',
+          'Por concentrar a maior variedade de modelos, o aro 15 é onde a Carplus oferece o atendimento mais ágil em Curitiba. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Atendemos clientes de toda a cidade e da região metropolitana, com parcelamento em até 10x sem juros e garantia com nota fiscal. Envie sua medida pelo WhatsApp (41) 3082-7282 e compare as opções antes de fechar.',
       },
     ],
   },
@@ -235,7 +236,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 16 em Curitiba',
     metaTitle: 'Pneu Aro 16 em Curitiba | Carplus Centro Automotivo – Sedan e SUV',
     metaDescription:
-      'Pneu aro 16 em Curitiba na Carplus Portão. Medidas 205/55R16, 205/60R16, 215/65R16 e mais para sedans e SUVs. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 16 em Curitiba na Carplus Portão. Medidas 205/55R16, 205/60R16, 215/65R16 e mais para sedans e SUVs. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 16 atende sedans médios, hatchbacks premium e SUVs compactos. A Carplus, no Portão em Curitiba, oferece pneus aro 16 de marcas como Michelin, Goodyear, Continental e Pirelli, com instalação completa.',
     aplicacoes:
@@ -292,7 +293,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 17 em Curitiba',
     metaTitle: 'Pneu Aro 17 em Curitiba | Carplus Centro Automotivo – Performance e SUV',
     metaDescription:
-      'Pneu aro 17 em Curitiba na Carplus Portão. Medidas 215/50R17, 215/55R17, 225/45R17, 225/50R17, 225/65R17 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 17 em Curitiba na Carplus Portão. Medidas 215/50R17, 215/55R17, 225/45R17, 225/50R17, 225/65R17 e mais. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 17 é a escolha de quem busca esportividade e presença, equipando sedans premium, hatches esportivos e SUVs. Na Carplus, no Portão em Curitiba, temos ampla variedade de pneus aro 17 com instalação especializada.',
     aplicacoes:
@@ -302,7 +303,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Pneu aro 17 é mais caro que aro 15?',
         answer:
-          'Em geral sim, pois são pneus de maior diâmetro e performance. Mas na Carplus você parcela em até 10x sem juros e a montagem e o balanceamento já estão inclusos no valor.',
+          'Em geral sim, pois são pneus de maior diâmetro e performance. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
       {
         question: 'Qual medida de pneu aro 17 para SUV?',
@@ -349,7 +350,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 18 em Curitiba',
     metaTitle: 'Pneu Aro 18 em Curitiba | Carplus Centro Automotivo – SUV e Premium',
     metaDescription:
-      'Pneu aro 18 em Curitiba na Carplus Portão. Medidas 225/45R18, 235/55R18, 235/60R18, 245/40R18, 245/45R18 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 18 em Curitiba na Carplus Portão. Medidas 225/45R18, 235/55R18, 235/60R18, 245/40R18, 245/45R18 e mais. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 18 equipa SUVs médios e veículos premium que exigem estabilidade e desempenho. A Carplus, no Portão em Curitiba, oferece pneus aro 18 de marcas como Michelin, Continental e Pirelli com montagem profissional.',
     aplicacoes:
@@ -406,7 +407,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 19 em Curitiba',
     metaTitle: 'Pneu Aro 19 em Curitiba | Carplus Centro Automotivo – SUV e Esportivo',
     metaDescription:
-      'Pneu aro 19 em Curitiba na Carplus Portão. Medidas 235/50R19, 235/55R19, 245/40R19, 245/45R19, 255/35R19 e mais. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 19 em Curitiba na Carplus Portão. Medidas 235/50R19, 235/55R19, 245/40R19, 245/45R19, 255/35R19 e mais. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 19 é destinado a SUVs premium e veículos esportivos de alta performance. A Carplus, no Portão em Curitiba, trabalha com pneus aro 19 e oferece montagem e balanceamento de alta precisão para esse tipo de conjunto.',
     aplicacoes:
@@ -463,7 +464,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 20 em Curitiba',
     metaTitle: 'Pneu Aro 20 em Curitiba | Carplus Centro Automotivo – SUV e Picape',
     metaDescription:
-      'Pneu aro 20 em Curitiba na Carplus Portão. Medidas 255/35R20, 245/40R20, 245/45R20 e mais para SUVs e picapes premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 20 em Curitiba na Carplus Portão. Medidas 255/35R20, 245/40R20, 245/45R20 e mais para SUVs e picapes premium. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 20 equipa SUVs grandes, picapes premium e veículos esportivos de luxo. A Carplus, no Portão em Curitiba, oferece pneus aro 20 com montagem especializada e balanceamento de alta precisão.',
     aplicacoes:
@@ -520,7 +521,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 21 em Curitiba',
     metaTitle: 'Pneu Aro 21 em Curitiba | Carplus Centro Automotivo – SUV Premium',
     metaDescription:
-      'Pneu aro 21 em Curitiba na Carplus Portão. Medidas 245/40R21, 275/45R21, 285/45R21, 315/40R21 e mais para SUVs e esportivos premium. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 21 em Curitiba na Carplus Portão. Medidas 245/40R21, 275/45R21, 285/45R21, 315/40R21 e mais para SUVs e esportivos premium. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 21 equipa SUVs premium de grande porte e esportivos de alto desempenho. A Carplus, no Portão em Curitiba, trabalha com pneus aro 21 de marcas como Yokohama, Continental, Bridgestone e Pirelli, com montagem especializada e balanceamento de alta precisão.',
     aplicacoes:
@@ -545,7 +546,7 @@ export const ARO_PAGES: AroPage[] = [
       {
         question: 'Quanto tempo dura um pneu aro 21?',
         answer:
-          'Por equiparem veículos pesados e potentes, os pneus aro 21 costumam ter quilometragem menor que medidas urbanas, em geral entre 25.000 e 40.000 km, dependendo do estilo de condução. Alinhamento, balanceamento e calibragem corretos prolongam essa vida útil. Na Carplus orientamos a manutenção ideal para proteger esse investimento.',
+          'A vida útil dos pneus aro 21 varia conforme o veículo, o uso e a manutenção; consulte as orientações do fabricante. Alinhamento, balanceamento e calibragem corretos prolongam essa vida útil. Na Carplus orientamos a manutenção ideal para proteger esse investimento.',
       },
     ],
     secoesConteudo: [
@@ -577,7 +578,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 22 em Curitiba',
     metaTitle: 'Pneu Aro 22 em Curitiba | Carplus Centro Automotivo – SUV de Luxo',
     metaDescription:
-      'Pneu aro 22 em Curitiba na Carplus Portão. Medidas 265/40R22, 275/40R22, 285/40R22, 315/35R22 e mais para SUVs de luxo. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 22 em Curitiba na Carplus Portão. Medidas 265/40R22, 275/40R22, 285/40R22, 315/35R22 e mais para SUVs de luxo. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 22 é destinado a SUVs de luxo e veículos premium de grande porte. A Carplus, no Portão em Curitiba, oferece pneus aro 22 das marcas que já atendemos, com montagem cuidadosa que preserva o acabamento das rodas e balanceamento de precisão.',
     aplicacoes:
@@ -634,7 +635,7 @@ export const ARO_PAGES: AroPage[] = [
     h1: 'Pneu Aro 23 em Curitiba',
     metaTitle: 'Pneu Aro 23 em Curitiba | Carplus Centro Automotivo – Alto Padrão',
     metaDescription:
-      'Pneu aro 23 em Curitiba na Carplus Portão. Medidas 275/35R23, 305/35R23, 315/30R23 e mais para SUVs de alto padrão e customizações. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 23 em Curitiba na Carplus Portão. Medidas 275/35R23, 305/35R23, 315/30R23 e mais para SUVs de alto padrão e customizações. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu aro 23 é uma medida de alto padrão, voltada a SUVs de luxo e projetos de customização. A Carplus, no Portão em Curitiba, trabalha com pneus aro 23 com montagem especializada e o máximo cuidado com rodas de alto valor.',
     aplicacoes:
@@ -719,7 +720,7 @@ export const BRAND_PAGES: BrandPage[] = [
     metaDescription:
       'Pneus Pirelli em Curitiba na Carplus Portão. Linhas P400 Evo, Cinturato P7 e P Zero com montagem, balanceamento e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'A Pirelli é uma das marcas mais tradicionais e desejadas do mundo, escolhida como equipamento original por montadoras de prestígio e parceira oficial da Fórmula 1. Na Carplus, no bairro Portão em Curitiba, os pneus Pirelli estão entre os mais vendidos: trabalhamos com linhas para uso urbano econômico, conforto, SUV e alta performance, sempre com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
+      'A Pirelli é uma das marcas mais tradicionais e desejadas do mundo, escolhida como equipamento original por montadoras de prestígio e parceira oficial da Fórmula 1. Na Carplus, no bairro Portão em Curitiba, os pneus Pirelli estão entre os mais vendidos: trabalhamos com linhas para uso urbano econômico, conforto, SUV e alta performance, sempre com montagem, balanceamento e calibragem sob consulta e parcelamento em até 10x sem juros.',
     linhas:
       'No catálogo Pirelli da Carplus você encontra a linha P400 Evo (econômica e urbana, ideal para carros populares), a Cinturato P1 e P7 (conforto, baixo ruído e desempenho para sedans e hatches médios), a Scorpion (linha SUV, com versões para asfalto e uso misto) e a P Zero (esportiva premium, inclusive em versão Run Flat), cobrindo dos carros populares aos veículos de luxo.',
     secoesConteudo: [
@@ -741,7 +742,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Pirelli disponíveis na Carplus',
         content:
-          'Na loja da Carplus, no Portão, mantemos as principais medidas Pirelli em pronta entrega, especialmente nos aros 14, 15, 16 e 17, que concentram a maior demanda em Curitiba. As linhas P400 Evo e Cinturato têm giro alto e costumam estar disponíveis para instalação no mesmo dia. Medidas de SUV (Scorpion) e esportivas (P Zero) também são trabalhadas, com encomenda ágil quando necessário. Todos os pneus Pirelli vendidos são novos, com data de fabricação recente (DOT), e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é feito na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. As linhas P400 Evo e Cinturato têm giro alto e costumam estar disponíveis para instalação mediante consulta de agenda. Medidas de SUV (Scorpion) e esportivas (P Zero) também são trabalhadas, com encomenda ágil quando necessário. Todos os pneus Pirelli vendidos são novos, com data de fabricação recente (DOT), e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é feito na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
       },
       {
         title: 'Pneus Pirelli em Curitiba: atendimento no Portão',
@@ -753,7 +754,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A Carplus é revenda Pirelli em Curitiba?',
         answer:
-          'A Carplus trabalha com pneus Pirelli e mantém as principais linhas em estoque no Portão, com montagem, balanceamento e calibragem inclusos e parcelamento em até 10x sem juros.',
+          'A Carplus trabalha com pneus Pirelli e mantém as principais linhas em estoque no Portão, com montagem, balanceamento e calibragem sob consulta e parcelamento em até 10x sem juros.',
       },
       {
         question: 'Qual a melhor linha Pirelli para meu carro?',
@@ -808,12 +809,12 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Michelin disponíveis na Carplus',
         content:
-          'Na Carplus, no Portão, mantemos as medidas Michelin de maior procura em pronta entrega, com destaque para os aros 15, 16 e 17, muito comuns em sedans e SUVs de Curitiba. A linha Energy XM2+ é a mais vendida para uso urbano, enquanto a Primacy 4 atende quem busca conforto premium. Para SUVs e esportivos, trabalhamos com Primacy SUV e Pilot Sport, com encomenda rápida quando a medida específica não está em estoque. Todos os pneus Michelin são novos, com DOT recente, e a compra inclui montagem cuidadosa, balanceamento de precisão e calibragem. O alinhamento 3D é realizado na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. A linha Energy XM2+ é a mais vendida para uso urbano, enquanto a Primacy 4 atende quem busca conforto premium. Para SUVs e esportivos, trabalhamos com Primacy SUV e Pilot Sport, com encomenda rápida quando a medida específica não está em estoque. Todos os pneus Michelin são novos, com DOT recente, e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é realizado na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
       },
       {
         title: 'Pneus Michelin em Curitiba: instalação no Portão',
         content:
-          'Comprar pneus Michelin na Carplus significa unir a qualidade premium da marca a um atendimento completo no bairro Portão, em Curitiba. Somos loja e oficina no mesmo endereço, então você adquire o pneu e já faz toda a instalação no mesmo dia, sem deslocamentos. Atendemos motoristas de toda a capital — Batel, Água Verde, Champagnat, Portão e região — além das cidades vizinhas. Por se tratar de uma marca premium, muitos clientes aproveitam o parcelamento em até 10x sem juros para renovar os quatro pneus de uma vez. Envie a medida do seu carro pelo WhatsApp (41) 3082-7282 e receba o orçamento Michelin antes de sair de casa.',
+          'Comprar pneus Michelin na Carplus significa unir a qualidade premium da marca a um atendimento completo no bairro Portão, em Curitiba. Somos loja e oficina no mesmo endereço, então você adquire o pneu e já faz toda a instalação mediante consulta de agenda, sem deslocamentos. Atendemos motoristas de toda a capital — Batel, Água Verde, Champagnat, Portão e região — além das cidades vizinhas. Por se tratar de uma marca premium, muitos clientes aproveitam o parcelamento em até 10x sem juros para renovar os quatro pneus de uma vez. Envie a medida do seu carro pelo WhatsApp (41) 3082-7282 e receba o orçamento Michelin antes de sair de casa.',
       },
     ],
     faq: [
@@ -830,7 +831,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'Pneu Michelin é mais caro? Posso parcelar?',
         answer:
-          'A Michelin é uma marca premium, mas a Carplus parcela em até 10x sem juros e já inclui montagem e balanceamento, tornando o investimento mais acessível. A alta durabilidade também reduz o custo por quilômetro.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. A alta durabilidade também reduz o custo por quilômetro.',
       },
       {
         question: 'Qual a diferença entre Energy XM2+ e Primacy 4?',
@@ -875,7 +876,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Goodyear disponíveis na Carplus',
         content:
-          'Na loja da Carplus, no Portão, trabalhamos com Goodyear nos aros de maior procura, especialmente 14, 15 e 16, que equipam grande parte dos carros de Curitiba. As linhas Assurance e Direction Touring têm boa disponibilidade e costumam permitir instalação no mesmo dia. Para medidas mais específicas ou de perfil esportivo, fazemos encomenda ágil junto aos fornecedores. Todos os pneus Goodyear são novos, com data de fabricação recente, e a compra já inclui montagem, balanceamento e calibragem. O alinhamento 3D é feito na própria oficina para prolongar a vida útil dos pneus, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
+          'Na loja da Carplus, no Portão, trabalhamos com Goodyear nos aros de maior procura, especialmente 14, 15 e 16, que equipam grande parte dos carros de Curitiba. As linhas Assurance e Direction Touring têm boa disponibilidade e costumam permitir instalação mediante consulta de agenda. Para medidas mais específicas ou de perfil esportivo, fazemos encomenda ágil junto aos fornecedores. Todos os pneus Goodyear são novos, com data de fabricação recente, e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é feito na própria oficina para prolongar a vida útil dos pneus, e o pagamento pode ser parcelado em até 10x sem juros, com nota fiscal e garantia.',
       },
       {
         title: 'Pneus Goodyear em Curitiba: atendimento no Portão',
@@ -897,7 +898,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A instalação do pneu Goodyear já está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, e o alinhamento 3D é feito na própria Carplus para prolongar a vida útil dos pneus.',
+          'Consulte os valores de montagem, balanceamento e calibragem, e o alinhamento 3D é feito na própria Carplus para prolongar a vida útil dos pneus.',
       },
       {
         question: 'Qual a diferença entre Assurance e EfficientGrip?',
@@ -918,7 +919,7 @@ export const BRAND_PAGES: BrandPage[] = [
     h1: 'Pneus Continental em Curitiba',
     metaTitle: 'Pneus Continental em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneus Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Continental em Curitiba na Carplus Portão. Tecnologia alemã com conforto e segurança, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Continental traz a engenharia alemã para o conforto, a segurança e o baixo ruído. Fornecedora original de montadoras europeias e referência em tecnologia de frenagem, a marca é escolhida por quem valoriza dirigibilidade precisa e silêncio na cabine. Na Carplus, no Portão em Curitiba, você encontra uma ampla variedade de pneus Continental para carros de passeio, sedans e SUVs, com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
@@ -942,12 +943,12 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Continental disponíveis na Carplus',
         content:
-          'A Continental está entre as marcas com maior variedade de medidas no catálogo da Carplus, no Portão, cobrindo do aro 15 aos aros maiores para SUVs. As linhas de conforto para passeio têm boa disponibilidade para pronta entrega, e as medidas de SUV (CrossContact) são trabalhadas com encomenda ágil quando necessário. Todos os pneus Continental vendidos são novos, com DOT recente, e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é realizado na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, sempre com nota fiscal e garantia.',
+          'A Continental está entre as marcas com maior variedade de medidas no catálogo da Carplus, no Portão, cobrindo do aro 15 aos aros maiores para SUVs. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Todos os pneus Continental vendidos são novos, com DOT recente, e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é realizado na própria oficina, e o pagamento pode ser parcelado em até 10x sem juros, sempre com nota fiscal e garantia.',
       },
       {
         title: 'Pneus Continental em Curitiba: atendimento no Portão',
         content:
-          'A Carplus fica no bairro Portão, em Curitiba, com acesso fácil para motoristas do Batel, Água Verde, Champagnat, Fazendinha e de toda a região metropolitana, como São José dos Pinhais e Pinhais. Por reunirmos loja e oficina no mesmo endereço, você compra o pneu Continental e já faz a instalação completa no mesmo dia. Como a marca tem grande variedade de medidas, é comum atendermos clientes com carros europeus que buscam exatamente a especificação original. Envie a medida e o modelo do seu veículo pelo WhatsApp (41) 3082-7282 para confirmarmos a disponibilidade e fechar o orçamento Continental.',
+          'A Carplus fica no bairro Portão, em Curitiba, com acesso fácil para motoristas do Batel, Água Verde, Champagnat, Fazendinha e de toda a região metropolitana, como São José dos Pinhais e Pinhais. Por reunirmos loja e oficina no mesmo endereço, você compra o pneu Continental e já faz a instalação mediante consulta de agenda. Como a marca tem grande variedade de medidas, é comum atendermos clientes com carros europeus que buscam exatamente a especificação original. Envie a medida e o modelo do seu veículo pelo WhatsApp (41) 3082-7282 para confirmarmos a disponibilidade e fechar o orçamento Continental.',
       },
     ],
     faq: [
@@ -985,7 +986,7 @@ export const BRAND_PAGES: BrandPage[] = [
     h1: 'Pneus Yokohama em Curitiba',
     metaTitle: 'Pneus Yokohama em Curitiba | Carplus Centro Automotivo – Maior Variedade',
     metaDescription:
-      'Pneus Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus Yokohama em Curitiba na Carplus Portão. Maior variedade de medidas para passeio, SUV e performance, com montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Yokohama é a marca japonesa reconhecida mundialmente por unir tecnologia de performance e ampla variedade de medidas. Presente em competições e no mercado de reposição, é a marca com o maior número de modelos no estoque da Carplus, no Portão em Curitiba. São opções para carros de passeio, SUVs e veículos de alta performance, com instalação completa e parcelamento em até 10x sem juros.',
     linhas:
@@ -999,7 +1000,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Aplicações Yokohama por tipo de veículo',
         content:
-          'A diversidade do portfólio Yokohama permite atender perfis bem distintos. Para hatches e sedans de passeio como Onix, HB20, Gol e Corolla, a linha BluEarth entrega economia de combustível e rodagem silenciosa. Quem busca esportividade em hatches e sedans mais potentes encontra na linha Advan aderência e resposta de direção de nível competitivo. Já SUVs e picapes como Compass, Hilux, Ranger, SW4 e S10 são atendidos pela Geolandar, com versões específicas para asfalto, uso misto e estrada de terra. Essa cobertura ampla, somada à variedade de medidas, faz da Yokohama uma das primeiras opções quando o cliente precisa de uma medida específica em pronta entrega.',
+          'A diversidade do portfólio Yokohama permite atender perfis bem distintos. Para hatches e sedans de passeio como Onix, HB20, Gol e Corolla, a linha BluEarth entrega economia de combustível e rodagem silenciosa. Quem busca esportividade em hatches e sedans mais potentes encontra na linha Advan aderência e resposta de direção de nível competitivo. Já SUVs e picapes como Compass, Hilux, Ranger, SW4 e S10 são atendidos pela Geolandar, com versões específicas para asfalto, uso misto e estrada de terra. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
         title: 'Vantagens de escolher pneus Yokohama',
@@ -1009,7 +1010,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Yokohama disponíveis na Carplus',
         content:
-          'A Yokohama é a marca campeã de variedade no estoque da Carplus, no Portão, cobrindo de carros populares a esportivos e SUVs, em uma faixa ampla de aros e perfis. Muitas medidas estão disponíveis para pronta entrega e instalação no mesmo dia, inclusive algumas mais difíceis de achar no mercado. As linhas BluEarth, Advan e Geolandar são trabalhadas conforme o perfil do veículo, com encomenda rápida para medidas especiais. Todos os pneus Yokohama são novos, com data de fabricação recente, e a compra inclui montagem, balanceamento e calibragem. O alinhamento 3D é feito na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+          'A Yokohama é a marca campeã de variedade no estoque da Carplus, no Portão, cobrindo de carros populares a esportivos e SUVs, em uma faixa ampla de aros e perfis. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. As linhas BluEarth, Advan e Geolandar são trabalhadas conforme o perfil do veículo, com encomenda rápida para medidas especiais. Todos os pneus Yokohama são novos, com data de fabricação recente, e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é feito na oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
       },
       {
         title: 'Pneus Yokohama em Curitiba: atendimento no Portão',
@@ -1021,7 +1022,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A Carplus tem muitas opções de pneu Yokohama?',
         answer:
-          'Sim. A Yokohama é a marca com a maior variedade de medidas no nosso catálogo, cobrindo de carros populares a SUVs e esportivos. Há grande chance de termos a sua medida em estoque para pronta entrega.',
+          'Sim. A Yokohama é a marca com a maior variedade de medidas no nosso catálogo, cobrindo de carros populares a SUVs e esportivos. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
         question: 'Pneu Yokohama é bom para performance?',
@@ -1031,7 +1032,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A montagem do pneu Yokohama está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na própria Carplus.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D disponível na própria Carplus.',
       },
       {
         question: 'A Yokohama tem pneu para SUV e picape?',
@@ -1076,12 +1077,12 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         title: 'Pneus Bridgestone disponíveis na Carplus',
         content:
-          'A Bridgestone é uma das marcas com maior estoque na Carplus, no Portão, cobrindo do aro 14 aos aros maiores para SUVs e esportivos. As linhas Ecopia e Turanza têm giro alto e costumam estar disponíveis para instalação no mesmo dia, enquanto medidas de SUV (Dueler) e esportivas (Potenza) são trabalhadas com encomenda ágil quando necessário. Todos os pneus Bridgestone são novos, com data de fabricação recente (DOT), e a compra já inclui montagem com equipamento que preserva a roda, balanceamento computadorizado e calibragem. O alinhamento 3D é feito na própria oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
+          'A Bridgestone é uma das marcas com maior estoque na Carplus, no Portão, cobrindo do aro 14 aos aros maiores para SUVs e esportivos. As linhas Ecopia e Turanza têm giro alto e costumam estar disponíveis para instalação mediante consulta de agenda, enquanto medidas de SUV (Dueler) e esportivas (Potenza) são trabalhadas com encomenda ágil quando necessário. Todos os pneus Bridgestone são novos, com data de fabricação recente (DOT), e os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento. O alinhamento 3D é feito na própria oficina, com pagamento em até 10x sem juros, nota fiscal e garantia.',
       },
       {
         title: 'Pneus Bridgestone em Curitiba: atendimento no Portão',
         content:
-          'A Carplus está localizada no bairro Portão, em Curitiba, com acesso fácil para motoristas do Água Verde, Fazendinha, Novo Mundo, Batel, Cidade Industrial e de toda a região metropolitana, incluindo São José dos Pinhais, Araucária e Colombo. Por sermos loja e oficina no mesmo endereço, você compra o pneu Bridgestone e já faz a instalação completa no mesmo dia, sem precisar procurar outro estabelecimento. Com grande estoque e ampla variedade de medidas, atendemos desde o carro popular até SUVs e esportivos. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e fechar o orçamento Bridgestone completo.',
+          'A Carplus está localizada no bairro Portão, em Curitiba, com acesso fácil para motoristas do Água Verde, Fazendinha, Novo Mundo, Batel, Cidade Industrial e de toda a região metropolitana, incluindo São José dos Pinhais, Araucária e Colombo. Por sermos loja e oficina no mesmo endereço, você compra o pneu Bridgestone e já faz a instalação mediante consulta de agenda, sem precisar procurar outro estabelecimento. Com grande estoque e ampla variedade de medidas, atendemos desde o carro popular até SUVs e esportivos. Envie a medida do seu pneu pelo WhatsApp (41) 3082-7282 para confirmarmos o estoque e fechar o orçamento Bridgestone completo.',
       },
     ],
     faq: [
@@ -1118,7 +1119,7 @@ export const BRAND_PAGES: BrandPage[] = [
     h1: 'Pneu Firestone em Curitiba',
     metaTitle: 'Pneu Firestone em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Firestone em Curitiba na Carplus Portão. Custo-benefício com qualidade Bridgestone, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Firestone em Curitiba na Carplus Portão. Custo-benefício com qualidade Bridgestone, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Firestone une tradição e custo-benefício, com a confiabilidade do grupo Bridgestone. Na Carplus, no Portão em Curitiba, você encontra pneus Firestone para uso urbano e viagens, com instalação completa e preço justo.',
     linhas:
@@ -1132,12 +1133,12 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A Carplus tem pneu Firestone para o meu carro?',
         answer:
-          'Trabalhamos com diversas medidas Firestone em estoque. Informe a medida do seu pneu atual pelo WhatsApp (41) 3082-7282 que verificamos a disponibilidade na hora.',
+          'Trabalhamos com diversas medidas Firestone em estoque. Informe a medida do seu pneu atual pelo WhatsApp (41) 3082-7282 que verificamos a disponibilidade mediante consulta de agenda.',
       },
       {
         question: 'A instalação do pneu Firestone já está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na Carplus para prolongar a vida útil dos pneus.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D disponível na Carplus para prolongar a vida útil dos pneus.',
       },
     ],
   },
@@ -1147,7 +1148,7 @@ export const BRAND_PAGES: BrandPage[] = [
     h1: 'Pneu Prinx em Curitiba',
     metaTitle: 'Pneu Prinx em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Prinx em Curitiba na Carplus Portão. Excelente custo-benefício para passeio e SUV, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Prinx em Curitiba na Carplus Portão. Excelente custo-benefício para passeio e SUV, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Prinx é uma marca em forte crescimento, reconhecida pelo excelente custo-benefício. Na Carplus, no Portão em Curitiba, ela está entre as marcas com maior estoque, com opções para carros de passeio, sedans e SUVs.',
     linhas:
@@ -1161,7 +1162,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A Carplus tem bastante pneu Prinx em estoque?',
         answer:
-          'Sim. A Prinx está entre as marcas com maior estoque na Carplus, com grande variedade de medidas para pronta entrega. Consulte pelo WhatsApp (41) 3082-7282.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
         question: 'O pneu Prinx tem garantia?',
@@ -1176,7 +1177,7 @@ export const BRAND_PAGES: BrandPage[] = [
     h1: 'Pneu Delinte em Curitiba',
     metaTitle: 'Pneu Delinte em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneu Delinte em Curitiba na Carplus Portão. Opções de performance e SUV com ótimo preço, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Delinte em Curitiba na Carplus Portão. Opções de performance e SUV com ótimo preço, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Delinte é uma marca voltada a desempenho e perfil esportivo com preço acessível. Na Carplus, no Portão em Curitiba, você encontra pneus Delinte para carros de perfil baixo, esportivos e SUVs, com instalação completa.',
     linhas:
@@ -1195,7 +1196,7 @@ export const BRAND_PAGES: BrandPage[] = [
       {
         question: 'A montagem do pneu Delinte está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D disponível na própria Carplus.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D disponível na própria Carplus.',
       },
     ],
   },
@@ -1225,9 +1226,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Hyundai HB20 em Curitiba',
     metaTitle: 'Pneu para HB20 em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Hyundai HB20 em Curitiba na Carplus Portão. Medidas originais aro 14, 15 e 16, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneu para Hyundai HB20 em Curitiba na Carplus Portão. Medidas originais aro 14, 15 e 16, montagem sob consulta e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'O Hyundai HB20 é um dos hatchbacks mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para o HB20 e o HB20S, com instalação completa no mesmo dia.',
+      'O Hyundai HB20 é um dos hatchbacks mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para o HB20 e o HB20S, com instalação mediante consulta de agenda.',
     medidasComuns:
       'Dependendo da versão e do ano, o HB20 utiliza medidas como 175/70R14, 185/65R15 e 195/55R16. Versões com rodas maiores podem usar aro 16. Confirme sempre a medida na lateral do pneu atual.',
     faq: [
@@ -1239,7 +1240,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'Quanto custa o jogo de pneus do HB20?',
         answer:
-          'O valor depende da marca e da medida escolhidas. Na Carplus, você parcela em até 10x sem juros, com montagem, balanceamento e calibragem inclusos. Peça seu orçamento no WhatsApp.',
+          'O valor depende da marca e da medida escolhidas. Na Carplus, você parcela em até 10x sem juros, com montagem, balanceamento e calibragem sob consulta. Peça seu orçamento no WhatsApp.',
       },
       {
         question: 'Preciso alinhar o HB20 ao trocar os pneus?',
@@ -1255,9 +1256,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Chevrolet Onix em Curitiba',
     metaTitle: 'Pneu para Onix em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Chevrolet Onix e Onix Plus em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Chevrolet Onix e Onix Plus em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'O Chevrolet Onix é o carro mais vendido do Brasil. Na Carplus, no Portão em Curitiba, temos os pneus ideais para o Onix e o Onix Plus, com pronta entrega e instalação no mesmo dia.',
+      'O Chevrolet Onix é o carro mais vendido do Brasil. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
     medidasComuns:
       'O Onix 1.0 costuma usar 185/65R14 ou 185/65R15, enquanto versões mais equipadas e o Onix Plus utilizam 195/60R15 e até 195/55R16. Confirme a medida original do seu carro.',
     faq: [
@@ -1267,14 +1268,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
           'O Onix usa medidas como 185/65R14, 185/65R15 e 195/60R15, dependendo da versão. O Onix Plus pode usar aro 16. Verifique na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
-        question: 'Vocês têm pneu para Onix com pronta entrega?',
+        question: 'Vocês têm pneu para Onix com disponibilidade sob consulta?',
         answer:
-          'Sim. As medidas do Onix estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+          'Sim. As medidas do Onix estão entre as mais procuradas e costumam estar em estoque no Portão para instalação mediante consulta de agenda.',
       },
       {
         question: 'A troca de pneus do Onix inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
+          'Consulte os valores de montagem, balanceamento e calibragem, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
       },
     ],
   },
@@ -1285,7 +1286,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Toyota Corolla em Curitiba',
     metaTitle: 'Pneu para Corolla em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Toyota Corolla e Corolla Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Toyota Corolla e Corolla Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Toyota Corolla é referência em conforto e durabilidade entre os sedans. Na Carplus, no Portão em Curitiba, você encontra pneus para o Corolla e o Corolla Cross, com marcas premium e instalação especializada.',
     medidasComuns:
@@ -1315,7 +1316,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Honda Civic em Curitiba',
     metaTitle: 'Pneu para Civic em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Honda Civic em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, marcas premium, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Honda Civic em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, marcas premium, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Honda Civic combina esportividade e conforto, exigindo pneus à altura. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Civic de várias gerações, com marcas premium e instalação especializada.',
     medidasComuns:
@@ -1345,7 +1346,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Jeep Compass em Curitiba',
     metaTitle: 'Pneu para Compass em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
-      'Pneu para Jeep Compass em Curitiba na Carplus Portão. Medidas aro 17, 18 e 19, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Jeep Compass em Curitiba na Carplus Portão. Medidas aro 17, 18 e 19, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Jeep Compass é um dos SUVs mais populares do país. Na Carplus, no Portão em Curitiba, você encontra pneus para o Compass de todas as versões, com marcas adequadas ao peso e ao uso do SUV.',
     medidasComuns:
@@ -1382,7 +1383,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Jeep Renegade em Curitiba',
     metaTitle: 'Pneu para Renegade em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
-      'Pneu para Jeep Renegade em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Jeep Renegade em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Jeep Renegade é um SUV compacto versátil para cidade e estrada. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Renegade adequados ao uso urbano e leve off-road.',
     medidasComuns:
@@ -1408,7 +1409,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus do Renegade inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1419,7 +1420,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para VW T-Cross em Curitiba',
     metaTitle: 'Pneu para T-Cross em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
-      'Pneu para Volkswagen T-Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Volkswagen T-Cross em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O VW T-Cross é um dos SUVs compactos mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra pneus para o T-Cross de todas as versões, com instalação completa.',
     medidasComuns:
@@ -1449,7 +1450,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Hyundai Creta em Curitiba',
     metaTitle: 'Pneu para Creta em Curitiba | Carplus Centro Automotivo – SUV',
     metaDescription:
-      'Pneu para Hyundai Creta em Curitiba na Carplus Portão. Medidas aro 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Hyundai Creta em Curitiba na Carplus Portão. Medidas aro 16 e 17, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Hyundai Creta é um SUV compacto que une conforto e robustez. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Creta com instalação completa e marcas adequadas ao SUV.',
     medidasComuns:
@@ -1475,7 +1476,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus do Creta inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1486,9 +1487,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Fiat Argo em Curitiba',
     metaTitle: 'Pneu para Argo em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Fiat Argo em Curitiba na Carplus Portão. Medidas aro 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Fiat Argo em Curitiba na Carplus Portão. Medidas aro 15 e 16, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'O Fiat Argo é um hatch moderno e econômico. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para o Argo de todas as versões, com instalação no mesmo dia.',
+      'O Fiat Argo é um hatch moderno e econômico. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para pesquisa por ano e versão do Argo, com instalação mediante consulta de agenda.',
     medidasComuns:
       'O Argo usa medidas como 185/65R15, 195/60R15 e 195/55R16 (versões mais equipadas, como o Argo Trekking). Confirme a medida original do seu Argo.',
     faq: [
@@ -1498,9 +1499,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
           'O Argo usa 185/65R15, 195/60R15 ou 195/55R16, conforme a versão. Verifique a medida na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
-        question: 'Vocês têm pneu para Argo com pronta entrega?',
+        question: 'Vocês têm pneu para Argo com disponibilidade sob consulta?',
         answer:
-          'Sim. As medidas do Argo são bastante comuns e costumam estar em estoque no Portão para instalação no mesmo dia.',
+          'Sim. As medidas do Argo são bastante comuns e costumam estar em estoque no Portão para instalação mediante consulta de agenda.',
       },
       {
         question: 'Preciso alinhar o Argo ao trocar os pneus?',
@@ -1516,7 +1517,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Renault Kwid em Curitiba',
     metaTitle: 'Pneu para Kwid em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Renault Kwid em Curitiba na Carplus Portão. Medidas aro 13 e 14, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Renault Kwid em Curitiba na Carplus Portão. Medidas aro 13 e 14, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Renault Kwid é um dos carros mais econômicos do Brasil. Na Carplus, no Portão em Curitiba, oferecemos pneus para o Kwid com foco em economia, durabilidade e segurança no uso urbano.',
     medidasComuns:
@@ -1535,7 +1536,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus do Kwid inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1546,9 +1547,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Volkswagen Gol em Curitiba',
     metaTitle: 'Pneu para Gol em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Volkswagen Gol em Curitiba na Carplus Portão. Medidas aro 13, 14 e 15, montagem inclusa e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneu para Volkswagen Gol em Curitiba na Carplus Portão. Medidas aro 13, 14 e 15, montagem sob consulta e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'O Volkswagen Gol é um dos carros mais populares da história do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus certos para todas as gerações do Gol, com pronta entrega e instalação no mesmo dia.',
+      'O Volkswagen Gol é um dos carros mais populares da história do Brasil. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
     medidasComuns:
       'Conforme a geração e a versão, o Gol usa medidas como 175/70R13, 175/65R14, 185/60R14 e 185/65R15. Confirme sempre a medida na lateral do pneu atual.',
     faq: [
@@ -1558,14 +1559,14 @@ export const VEHICLE_PAGES: VehiclePage[] = [
           'O Gol usa medidas como 175/70R13, 175/65R14 e 185/65R15, conforme a geração e a versão. Verifique na lateral do pneu e consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
-        question: 'Vocês têm pneu para Gol com pronta entrega?',
+        question: 'Vocês têm pneu para Gol com disponibilidade sob consulta?',
         answer:
-          'Sim. As medidas do Gol estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+          'Sim. As medidas do Gol estão entre as mais procuradas e costumam estar em estoque no Portão para instalação mediante consulta de agenda.',
       },
       {
         question: 'A troca de pneus do Gol inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
+          'Consulte os valores de montagem, balanceamento e calibragem, e recomendamos o alinhamento 3D a cada troca para maior durabilidade.',
       },
     ],
   },
@@ -1576,7 +1577,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Volkswagen Polo em Curitiba',
     metaTitle: 'Pneu para Polo em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Volkswagen Polo em Curitiba na Carplus Portão. Medidas aro 15, 16 e 17, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Volkswagen Polo em Curitiba na Carplus Portão. Medidas aro 15, 16 e 17, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O Volkswagen Polo é um dos hatchbacks mais vendidos do país. Na Carplus, no Portão em Curitiba, oferecemos os pneus ideais para o Polo, do econômico ao esportivo da versão GTS, com instalação completa.',
     medidasComuns:
@@ -1595,7 +1596,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus do Polo inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1606,9 +1607,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Honda HR-V em Curitiba',
     metaTitle: 'Pneu para HR-V em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Honda HR-V em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Honda HR-V em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'O Honda HR-V é um dos SUVs compactos mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra pneus para o HR-V com marcas premium e instalação especializada no mesmo dia.',
+      'O Honda HR-V é um dos SUVs compactos mais vendidos do Brasil. Na Carplus, no Portão em Curitiba, você encontra pneus para o HR-V com marcas premium e instalação mediante consulta de agenda.',
     medidasComuns:
       'Conforme a versão e o ano, o HR-V usa medidas como 215/60R16, 215/55R17 e 225/50R18 (Touring). Confirme a medida original na lateral do pneu.',
     faq: [
@@ -1625,7 +1626,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus do HR-V inclui alinhamento?',
         answer:
-          'O balanceamento está incluso na montagem, e recomendamos o alinhamento 3D a cada troca para evitar desgaste irregular. Fazemos ambos na Carplus.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. Fazemos ambos na Carplus.',
       },
     ],
   },
@@ -1636,7 +1637,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Ford Ranger em Curitiba',
     metaTitle: 'Pneu para Ranger em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
-      'Pneu para Ford Ranger em Curitiba na Carplus Portão. Medidas aro 16, 17, 18 e 20 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Ford Ranger em Curitiba na Carplus Portão. Medidas aro 16, 17, 18 e 20 para picape, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Ford Ranger é uma das picapes médias mais robustas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Ranger em uso urbano, estrada e trabalho, com instalação especializada para picapes.',
     medidasComuns:
@@ -1662,7 +1663,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A montagem de pneu da Ranger está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado para picapes a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado para picapes a cada troca.',
       },
     ],
   },
@@ -1673,7 +1674,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Toyota Hilux em Curitiba',
     metaTitle: 'Pneu para Hilux em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
-      'Pneu para Toyota Hilux em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Toyota Hilux em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Toyota Hilux é referência em durabilidade entre as picapes médias. Na Carplus, no Portão em Curitiba, você encontra pneus para a Hilux em uso urbano, estrada e trabalho pesado, com instalação especializada.',
     medidasComuns:
@@ -1699,7 +1700,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A troca de pneus da Hilux inclui balanceamento?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca para picapes.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca para picapes.',
       },
     ],
   },
@@ -1710,7 +1711,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Chevrolet S10 em Curitiba',
     metaTitle: 'Pneu para S10 em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
-      'Pneu para Chevrolet S10 em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Chevrolet S10 em Curitiba na Carplus Portão. Medidas aro 16, 17 e 18 para picape, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Chevrolet S10 é uma picape média robusta e versátil. Na Carplus, no Portão em Curitiba, oferecemos pneus para a S10 em uso urbano, estrada e trabalho, com montagem especializada para picapes.',
     medidasComuns:
@@ -1729,7 +1730,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A montagem de pneu da S10 está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1740,9 +1741,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Fiat Strada em Curitiba',
     metaTitle: 'Pneu para Strada em Curitiba | Carplus Centro Automotivo – Medidas e Preço',
     metaDescription:
-      'Pneu para Fiat Strada em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Fiat Strada em Curitiba na Carplus Portão. Medidas aro 14, 15 e 16, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Fiat Strada é a picape leve mais vendida do Brasil. Na Carplus, no Portão em Curitiba, você encontra os pneus ideais para a Strada em trabalho e uso urbano, com pronta entrega e instalação no mesmo dia.',
+      'A Fiat Strada é a picape leve mais vendida do Brasil. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
     medidasComuns:
       'Conforme a versão e o ano, a Strada usa medidas como 175/70R14, 185/65R15 e 205/60R15. Confirme a medida original na lateral do pneu.',
     faq: [
@@ -1752,9 +1753,9 @@ export const VEHICLE_PAGES: VehiclePage[] = [
           'A Strada usa medidas como 175/70R14, 185/65R15 e 205/60R15, conforme a versão. Verifique no pneu atual e consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
-        question: 'Vocês têm pneu para Strada com pronta entrega?',
+        question: 'Vocês têm pneu para Strada com disponibilidade sob consulta?',
         answer:
-          'Sim. As medidas da Strada estão entre as mais procuradas e costumam estar em estoque no Portão para instalação no mesmo dia.',
+          'Sim. As medidas da Strada estão entre as mais procuradas e costumam estar em estoque no Portão para instalação mediante consulta de agenda.',
       },
       {
         question: 'Tem pneu reforçado para a Strada que trabalha com carga?',
@@ -1770,7 +1771,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
     h1: 'Pneu para Fiat Toro em Curitiba',
     metaTitle: 'Pneu para Toro em Curitiba | Carplus Centro Automotivo – Picape',
     metaDescription:
-      'Pneu para Fiat Toro em Curitiba na Carplus Portão. Medidas aro 17, 18 e 20, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu para Fiat Toro em Curitiba na Carplus Portão. Medidas aro 17, 18 e 20, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Fiat Toro é uma das picapes intermediárias mais desejadas do mercado. Na Carplus, no Portão em Curitiba, oferecemos pneus para a Toro em uso urbano, estrada e trabalho leve, com instalação especializada.',
     medidasComuns:
@@ -1796,7 +1797,7 @@ export const VEHICLE_PAGES: VehiclePage[] = [
       {
         question: 'A montagem de pneu da Toro está inclusa?',
         answer:
-          'Sim. Montagem, balanceamento e calibragem estão inclusos, com alinhamento 3D recomendado a cada troca.',
+          'Consulte os valores de montagem, balanceamento e calibragem, com alinhamento 3D recomendado a cada troca.',
       },
     ],
   },
@@ -1992,19 +1993,19 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     h1: 'Pneu Aro 15 no Portão, Curitiba',
     metaTitle: 'Pneu Aro 15 no Portão Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Pneu aro 15 no bairro Portão, em Curitiba, na Carplus. Maior variedade de medidas, montagem inclusa e 10x sem juros. Venha à Av. Arthur da Silva Bernardes, 1323. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 15 no bairro Portão, em Curitiba, na Carplus. Maior variedade de medidas, montagem sob consulta e 10x sem juros. Venha à Av. Arthur da Silva Bernardes, 1323. WhatsApp: (41) 3082-7282.',
     intro:
       'A Carplus fica no coração do bairro Portão, em Curitiba, e é referência em pneu aro 15 na região. Aqui você encontra a maior variedade de medidas aro 15, com montagem, balanceamento e alinhamento no mesmo lugar.',
     faq: [
       {
         question: 'Onde comprar pneu aro 15 no Portão em Curitiba?',
         answer:
-          'Na Carplus Centro Automotivo, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão. Temos a maior variedade de pneus aro 15 com montagem inclusa e parcelamento em até 10x sem juros.',
+          'Na Carplus Centro Automotivo, na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão. Temos a maior variedade de pneus aro 15 com montagem sob consulta e parcelamento em até 10x sem juros.',
       },
       {
         question: 'A Carplus do Portão instala o pneu aro 15 na hora?',
         answer:
-          'Sim. Com pronta entrega, a maioria das medidas aro 15 é instalada no mesmo dia, com balanceamento e calibragem inclusos. Agende pelo WhatsApp (41) 3082-7282.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Agende pelo WhatsApp (41) 3082-7282.',
       },
     ],
   },
@@ -2016,7 +2017,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     h1: 'Pneu Aro 16 no Água Verde, Curitiba',
     metaTitle: 'Pneu Aro 16 no Água Verde Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Pneu aro 16 para quem é do Água Verde, em Curitiba. A Carplus fica ao lado, no Portão, com medidas 205/55R16 e 205/60R16, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu aro 16 para quem é do Água Verde, em Curitiba. A Carplus fica ao lado, no Portão, com medidas 205/55R16 e 205/60R16, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Quem mora ou trabalha no Água Verde, em Curitiba, tem a Carplus pertinho, no bairro Portão. Somos especialistas em pneu aro 16 para sedans e SUVs, com instalação completa e atendimento rápido.',
     faq: [
@@ -2040,14 +2041,14 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     h1: 'Pneu Michelin no Seminário, Curitiba',
     metaTitle: 'Pneu Michelin no Seminário Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Pneu Michelin para quem é do Seminário, em Curitiba. A Carplus fica no Portão, ao lado, com linhas Energy XM2, Primacy 4 e Pilot Sport 4. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Michelin para quem é do Seminário, em Curitiba. A Carplus fica no Portão, ao lado, com linhas Energy XM2, Primacy 4 e Pilot Sport 4. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Moradores do Seminário, em Curitiba, contam com a Carplus no bairro Portão, ao lado, para comprar pneu Michelin com instalação completa. Trabalhamos com as principais linhas Michelin para economia, conforto e performance.',
     faq: [
       {
         question: 'Onde comprar pneu Michelin perto do Seminário?',
         answer:
-          'Na Carplus Centro Automotivo, no bairro Portão, vizinho ao Seminário em Curitiba. Trabalhamos com pneus Michelin com montagem inclusa e parcelamento em até 10x sem juros.',
+          'Na Carplus Centro Automotivo, no bairro Portão, vizinho ao Seminário em Curitiba. Trabalhamos com pneus Michelin com montagem sob consulta e parcelamento em até 10x sem juros.',
       },
       {
         question: 'Quais linhas Michelin a Carplus tem?',
@@ -2063,7 +2064,7 @@ export const LOCAL_COMBO_PAGES: LocalComboPage[] = [
     h1: 'Loja de Pneus no Portão, Curitiba',
     metaTitle: 'Loja de Pneus no Portão, Curitiba | Carplus',
     metaDescription:
-      'Loja de pneus no Portão, em Curitiba, com várias marcas, montagem inclusa e oficina completa. Consulte preços e disponibilidade pelo WhatsApp.',
+      'Loja de pneus no Portão, em Curitiba, com várias marcas, montagem sob consulta e oficina completa. Consulte preços e disponibilidade pelo WhatsApp.',
     intro:
       'A Carplus Centro Automotivo é a loja de pneus e oficina mecânica completa do bairro Portão, em Curitiba. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios, suspensão e troca de óleo no mesmo lugar.',
     faq: [
@@ -2103,45 +2104,45 @@ export interface IntentPage {
 export const INTENT_PAGES: IntentPage[] = [
   {
     slug: 'pneus-em-curitiba-melhor-preco',
-    badge: 'Melhor Preço · Curitiba',
-    h1: 'Pneus em Curitiba com o Melhor Preço',
-    highlight: 'Melhor Preço',
-    metaTitle: 'Pneus em Curitiba com o Melhor Preço | Carplus Centro Automotivo',
+    badge: 'Orçamento · Curitiba',
+    h1: 'Pneus em Curitiba com o Orçamento',
+    highlight: 'Orçamento',
+    metaTitle: 'Pneus em Curitiba com o Orçamento | Carplus Centro Automotivo',
     metaDescription:
-      'Pneus em Curitiba com o melhor preço na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, várias marcas e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneus em Curitiba com valores e condições na Carplus, bairro Portão. Montagem, balanceamento e calibragem sob consulta, várias marcas e 10x sem juros. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'Procurando pneus em Curitiba com o melhor preço? Na Carplus, no bairro Portão, você compara marcas e medidas com valor justo, montagem inclusa e parcelamento em até 10x sem juros — tudo no mesmo atendimento.',
-    tags: ['Preço justo', 'Montagem inclusa', '10x sem juros', 'Várias marcas'],
+      'Procurando pneus em Curitiba com valores e condições? Na Carplus, no bairro Portão, você compara marcas e medidas com valor justo, montagem sob consulta e parcelamento em até 10x sem juros — tudo no mesmo atendimento.',
+    tags: ['Preço justo', 'Montagem sob consulta', '10x sem juros', 'Várias marcas'],
     sections: [
       {
-        title: 'Como conseguimos o melhor preço',
+        title: 'Como conseguimos o orçamento',
         content:
-          'Trabalhamos com compra direta e giro alto de estoque, o que nos permite oferecer pneus com preço competitivo sem abrir mão da qualidade. O valor já inclui montagem, balanceamento e calibragem, sem surpresas no fechamento.',
+          'Trabalhamos com compra direta e giro alto de estoque, o que nos permite oferecer pneus com preço competitivo sem abrir mão da qualidade. os valores de montagem, balanceamento e calibragem devem ser consultados no orçamento.',
       },
       {
         title: 'Preço com serviço completo',
         content:
-          'Na Carplus, o melhor preço vem acompanhado de garantia com nota fiscal, alinhamento 3D feito na hora e equipe técnica que indica a linha ideal para o seu carro e o seu bolso.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
     ],
     faq: [
       {
-        question: 'Como pedir o melhor preço de pneus em Curitiba?',
+        question: 'Como pedir o orçamento de pneus em Curitiba?',
         answer:
-          'Envie a medida do seu pneu (ex.: 195/55R15) pelo WhatsApp (41) 3082-7282 que enviamos um orçamento com o melhor preço, já incluindo montagem e balanceamento.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
       {
         question: 'O preço inclui montagem e balanceamento?',
         answer:
-          'Sim. Na Carplus, o preço do pneu já inclui montagem, balanceamento e calibragem. O alinhamento 3D é recomendado a cada troca e feito na própria loja.',
+          'Sim. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. O alinhamento 3D é recomendado a cada troca e feito na própria loja.',
       },
       {
         question: 'Dá para parcelar a compra dos pneus?',
         answer:
-          'Sim, parcelamos a compra dos pneus em até 10x sem juros no cartão de crédito, mantendo o melhor preço final.',
+          'Sim, parcelamos a compra dos pneus em até 10x sem juros no cartão de crédito, mantendo o orçamento final.',
       },
     ],
-    whatsappMsg: 'Olá! Quero o melhor preço de pneus em Curitiba. Pode me passar um orçamento?',
+    whatsappMsg: 'Olá! Quero o orçamento de pneus em Curitiba. Pode me passar um orçamento?',
   },
   {
     slug: 'loja-de-pneus-curitiba',
@@ -2150,7 +2151,7 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Pneus',
     metaTitle: 'Loja de Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Loja de pneus em Curitiba: Carplus Centro Automotivo, no bairro Portão. Pneus de várias marcas, oficina mecânica completa, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Loja de pneus em Curitiba: Carplus Centro Automotivo, no bairro Portão. Pneus de várias marcas, oficina mecânica completa, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'A Carplus é uma loja de pneus completa em Curitiba, no bairro Portão, que também é oficina mecânica full service. Aqui você compra pneus de várias marcas e ainda faz alinhamento, balanceamento, freios e troca de óleo no mesmo lugar.',
     tags: ['Loja física', 'Oficina completa', 'Várias marcas', 'Portão · Curitiba'],
@@ -2188,14 +2189,14 @@ export const INTENT_PAGES: IntentPage[] = [
   {
     slug: 'pneus-baratos-curitiba',
     badge: 'Pneus Baratos com Procedência · Curitiba',
-    h1: 'Pneus Baratos em Curitiba com Montagem Inclusa',
+    h1: 'Pneus Baratos em Curitiba com Montagem sob consulta',
     highlight: 'Baratos',
-    metaTitle: 'Pneus Baratos em Curitiba | Montagem Inclusa | Carplus Portão',
+    metaTitle: 'Pneus Baratos em Curitiba | Montagem sob consulta | Carplus Portão',
     metaDescription:
-      'Pneus baratos em Curitiba com procedência, garantia e montagem inclusa. Consulte valores por medida e opções econômicas no Portão pelo WhatsApp: (41) 3082-7282.',
+      'Pneus baratos em Curitiba com procedência, garantia e montagem sob consulta. Consulte valores por medida e opções econômicas no Portão pelo WhatsApp: (41) 3082-7282.',
     intro:
-      'Economia de verdade é comprar pneu novo com procedência, nota fiscal e montagem inclusa, sem cair em armadilhas de pneus remold ou usados. Na Carplus (Portão, Curitiba), você encontra opções econômicas de marcas confiáveis (como Delinte, Prinx, Comforser, JK Tyre, Tornel, Linglong e linhas de entrada da Pirelli e Continental), com parcelamento em até 10x sem juros e desconto no PIX.',
-    tags: ['Novos com Garantia', 'Montagem Inclusa', '10x Sem Juros', 'Não Vendemos Remold'],
+      'Economia de verdade é comprar pneu novo com procedência, nota fiscal e montagem sob consulta, sem cair em armadilhas de pneus remold ou usados. Na Carplus (Portão, Curitiba), você encontra opções econômicas de marcas confiáveis (como Delinte, Prinx, Comforser, JK Tyre, Tornel, Linglong e linhas de entrada da Pirelli e Continental), com parcelamento em até 10x sem juros e desconto no PIX.',
+    tags: ['Novos com Garantia', 'Montagem sob consulta', '10x Sem Juros', 'Não Vendemos Remold'],
     sections: [
       {
         title: 'Como escolher pneus baratos sem abrir mão da segurança',
@@ -2203,7 +2204,7 @@ export const INTENT_PAGES: IntentPage[] = [
           'Pneu barato confiável deve ser novo de fábrica, certificado pelo Inmetro e com nota fiscal. Pneus remoldados ou riscados desgastam rápido, aumentam a distância de frenagem na chuva curitibana e podem falhar na pista. Na Carplus comercializamos exclusivamente pneus novos com procedência garantida e durabilidade comprovada.',
       },
       {
-        title: 'Montagem, balanceamento e calibragem inclusos na loja',
+        title: 'Montagem, balanceamento e calibragem sob consulta na loja',
         content:
           'Muitos locais anunciam preços baixos e depois cobram à parte pela montagem, balanceamento e válvulas. Na Carplus, os serviços essenciais de montagem e balanceamento são realizados na nossa loja no bairro Portão por técnicos experientes, sem custos ocultos no orçamento.',
       },
@@ -2222,7 +2223,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'A montagem e o balanceamento já estão inclusos no preço?',
         answer:
-          'Sim! Na Carplus, comprando seus pneus na loja física no Portão, a montagem, o balanceamento computadorizado e a calibragem já estão inclusos no atendimento.',
+          'Sim! Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
       {
         question: 'Quais são as marcas com melhor custo-benefício disponíveis?',
@@ -2244,20 +2245,20 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Estoque',
     metaTitle: 'Maior Estoque de Pneus em Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Maior estoque de pneus em Curitiba na Carplus, bairro Portão. Aros 13 a 23, várias marcas e pronta entrega com montagem inclusa. WhatsApp: (41) 3082-7282.',
+      'Maior estoque de pneus em Curitiba na Carplus, bairro Portão. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. WhatsApp: (41) 3082-7282.',
     intro:
-      'Na Carplus, no bairro Portão em Curitiba, você encontra um dos maiores estoques de pneus da região: do aro 13 ao 23, com diversas medidas e marcas em pronta entrega para instalação no mesmo dia.',
-    tags: ['Pronta entrega', 'Aros 13 a 23', 'Várias marcas', 'Instalação no dia'],
+      'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
+    tags: ['Disponibilidade sob consulta', 'Aros 13 a 23', 'Várias marcas', 'Instalação no dia'],
     sections: [
       {
         title: 'Variedade do aro 13 ao 23',
         content:
-          'Mantemos em estoque pneus para carros populares, hatches, sedans, SUVs e veículos premium. Isso significa menos espera e mais chance de instalar o pneu no mesmo dia.',
+          'Mantemos em estoque pneus para carros populares, hatches, sedans, SUVs e veículos premium. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
       {
-        title: 'Pronta entrega e instalação rápida',
+        title: 'Disponibilidade sob consulta e instalação rápida',
         content:
-          'Com amplo estoque, a maioria das medidas é montada no mesmo dia, com balanceamento e calibragem inclusos. Caso a medida específica falte, fazemos a busca com agilidade.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Caso a medida específica falte, fazemos a busca com agilidade.',
       },
     ],
     faq: [
@@ -2274,7 +2275,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Consigo instalar o pneu no mesmo dia?',
         answer:
-          'Sim. Por termos pronta entrega, a maioria das medidas é instalada no mesmo dia, com montagem e balanceamento inclusos.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
     ],
     whatsappMsg: 'Olá! Quero saber se vocês têm a minha medida no maior estoque de pneus de Curitiba.',
@@ -2286,15 +2287,15 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Comprar Pneus',
     metaTitle: 'Onde Comprar Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Onde comprar pneus em Curitiba com segurança? Na Carplus, bairro Portão: várias marcas, montagem inclusa, garantia com nota fiscal e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Onde comprar pneus em Curitiba com segurança? Na Carplus, bairro Portão: várias marcas, montagem sob consulta, garantia com nota fiscal e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'Se você está em dúvida sobre onde comprar pneus em Curitiba, a Carplus, no bairro Portão, reúne tudo o que importa: variedade de marcas, preço justo, montagem inclusa e uma oficina mecânica completa no mesmo endereço.',
-    tags: ['Loja confiável', 'Garantia com NF', 'Montagem inclusa', 'Portão · Curitiba'],
+      'Se você está em dúvida sobre onde comprar pneus em Curitiba, a Carplus, no bairro Portão, reúne tudo o que importa: variedade de marcas, preço justo, montagem sob consulta e uma oficina mecânica completa no mesmo endereço.',
+    tags: ['Loja confiável', 'Garantia com NF', 'Montagem sob consulta', 'Portão · Curitiba'],
     sections: [
       {
         title: 'O que avaliar na hora de comprar',
         content:
-          'Procedência das marcas, garantia com nota fiscal, montagem e balanceamento inclusos e a possibilidade de alinhar na hora. A Carplus reúne todos esses pontos em um só lugar.',
+          'Procedência das marcas, garantia com nota fiscal, montagem e balanceamento sob consulta e a possibilidade de alinhar mediante consulta de agenda. A Carplus reúne todos esses pontos em um só lugar.',
       },
       {
         title: 'Comprar com instalação no mesmo lugar',
@@ -2306,7 +2307,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Onde comprar pneus em Curitiba com garantia?',
         answer:
-          'Na Carplus Centro Automotivo, no bairro Portão. Todos os pneus têm garantia e nota fiscal, com montagem e balanceamento inclusos.',
+          'Na Carplus Centro Automotivo, no bairro Portão. Todos os pneus têm garantia e nota fiscal, com montagem e balanceamento sob consulta.',
       },
       {
         question: 'Vale a pena comprar pneu em loja com oficina?',
@@ -2328,10 +2329,10 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Promoção',
     metaTitle: 'Promoção de Pneus em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Promoção de pneus em Curitiba na Carplus, bairro Portão. Condições especiais por medida, montagem inclusa e 10x sem juros. Consulte a promoção no WhatsApp: (41) 3082-7282.',
+      'Promoção de pneus em Curitiba na Carplus, bairro Portão. Condições especiais por medida, montagem sob consulta e 10x sem juros. Consulte a promoção no WhatsApp: (41) 3082-7282.',
     intro:
-      'Aproveite a promoção de pneus em Curitiba da Carplus, no bairro Portão. Temos condições especiais por medida e marca, sempre com montagem inclusa e parcelamento em até 10x sem juros.',
-    tags: ['Condições especiais', 'Montagem inclusa', '10x sem juros', 'Por medida'],
+      'Aproveite a promoção de pneus em Curitiba da Carplus, no bairro Portão. Temos condições especiais por medida e marca, sempre com montagem sob consulta e parcelamento em até 10x sem juros.',
+    tags: ['Condições especiais', 'Montagem sob consulta', '10x sem juros', 'Por medida'],
     sections: [
       {
         title: 'Promoções que mudam conforme o estoque',
@@ -2341,7 +2342,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         title: 'Promoção com serviço completo',
         content:
-          'Mesmo nas promoções, mantemos montagem, balanceamento e calibragem inclusos, além de garantia com nota fiscal e alinhamento 3D disponível na hora.',
+          'Mesmo nas promoções, mantemos montagem, balanceamento e calibragem sob consulta, além de garantia com nota fiscal e alinhamento 3D disponível mediante consulta de agenda.',
       },
     ],
     faq: [
@@ -2353,7 +2354,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'A promoção inclui montagem?',
         answer:
-          'Sim. Mesmo nas promoções, a montagem, o balanceamento e a calibragem já estão inclusos no valor.',
+          'Mesmo nas promoções, os valores de montagem, balanceamento e calibragem são informados no orçamento.',
       },
       {
         question: 'Posso parcelar na promoção?',
@@ -2370,10 +2371,10 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Oferta',
     metaTitle: 'Pneus em Oferta em Curitiba | Carplus Centro Automotivo – Portão',
     metaDescription:
-      'Pneus em oferta em Curitiba na Carplus, bairro Portão. Ofertas por medida e marca, montagem inclusa e 10x sem juros. Consulte no WhatsApp: (41) 3082-7282.',
+      'Pneus em oferta em Curitiba na Carplus, bairro Portão. Ofertas por medida e marca, montagem sob consulta e 10x sem juros. Consulte no WhatsApp: (41) 3082-7282.',
     intro:
-      'Confira os pneus em oferta em Curitiba na Carplus, no bairro Portão. Reunimos ofertas em diversas medidas e marcas, com montagem inclusa e parcelamento, para você trocar os pneus pagando menos.',
-    tags: ['Ofertas por medida', 'Várias marcas', 'Montagem inclusa', '10x sem juros'],
+      'Confira os pneus em oferta em Curitiba na Carplus, no bairro Portão. Reunimos ofertas em diversas medidas e marcas, com montagem sob consulta e parcelamento, para você trocar os pneus pagando menos.',
+    tags: ['Ofertas por medida', 'Várias marcas', 'Montagem sob consulta', '10x sem juros'],
     sections: [
       {
         title: 'Ofertas em diversas medidas',
@@ -2381,9 +2382,9 @@ export const INTENT_PAGES: IntentPage[] = [
           'Temos ofertas que abrangem desde aros populares até medidas para SUV e premium. A condição varia conforme o estoque, então vale consultar a sua medida específica.',
       },
       {
-        title: 'Oferta com tudo incluso',
+        title: 'Consulte as condições da oferta',
         content:
-          'As ofertas da Carplus já consideram montagem, balanceamento e calibragem. Você ainda pode adicionar o alinhamento 3D, feito na própria loja no mesmo dia.',
+          'As ofertas da Carplus já consideram montagem, balanceamento e calibragem. Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba.',
       },
     ],
     faq: [
@@ -2400,7 +2401,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'A oferta inclui instalação?',
         answer:
-          'Sim. Toda oferta já inclui montagem, balanceamento e calibragem no valor final.',
+          'Sim. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
     ],
     whatsappMsg: 'Olá! Quero ver os pneus em oferta em Curitiba para a minha medida.',
@@ -2412,10 +2413,10 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Parcelados',
     metaTitle: 'Pneus Parcelados em Curitiba | Carplus Centro Automotivo – 10x sem juros',
     metaDescription:
-      'Pneus parcelados em Curitiba na Carplus, bairro Portão. Até 10x sem juros no cartão, montagem inclusa e várias marcas. Orçamento no WhatsApp: (41) 3082-7282.',
+      'Pneus parcelados em Curitiba na Carplus, bairro Portão. Até 10x sem juros no cartão, montagem sob consulta e várias marcas. Orçamento no WhatsApp: (41) 3082-7282.',
     intro:
-      'Precisa trocar os pneus mas quer dividir o pagamento? Na Carplus, no bairro Portão em Curitiba, você compra pneus parcelados em até 10x sem juros no cartão, com montagem inclusa e várias marcas.',
-    tags: ['10x sem juros', 'Cartão de crédito', 'Montagem inclusa', 'Várias marcas'],
+      'Precisa trocar os pneus mas quer dividir o pagamento? Na Carplus, no bairro Portão em Curitiba, você compra pneus parcelados em até 10x sem juros no cartão, com montagem sob consulta e várias marcas.',
+    tags: ['10x sem juros', 'Cartão de crédito', 'Montagem sob consulta', 'Várias marcas'],
     sections: [
       {
         title: 'Parcelamento em até 10x sem juros',
@@ -2425,7 +2426,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         title: 'Parcelar pneu e serviços juntos',
         content:
-          'Além dos pneus, você pode incluir alinhamento, balanceamento e outros serviços de oficina no mesmo parcelamento, resolvendo tudo de uma vez.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
     ],
     faq: [
@@ -2442,44 +2443,44 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Posso parcelar pneus e serviços juntos?',
         answer:
-          'Sim. Você pode incluir alinhamento, balanceamento e demais serviços no mesmo parcelamento. Fale com a gente pelo WhatsApp (41) 3082-7282.',
+          'Sim. Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar. Fale com a gente pelo WhatsApp (41) 3082-7282.',
       },
     ],
     whatsappMsg: 'Olá! Quero comprar pneus parcelados em até 10x sem juros em Curitiba.',
   },
   {
     slug: 'melhor-loja-de-pneus-curitiba',
-    badge: 'Melhor Loja · Curitiba',
-    h1: 'Melhor Loja de Pneus em Curitiba',
-    highlight: 'Melhor Loja',
-    metaTitle: 'Melhor Loja de Pneus em Curitiba | Carplus Centro Automotivo – 4,9 no Google',
+    badge: 'Pneus · Portão, Curitiba',
+    h1: 'Como escolher uma loja de pneus em Curitiba',
+    highlight: 'Escolha informada',
+    metaTitle: 'Como escolher loja de pneus em Curitiba | Carplus Portão',
     metaDescription:
-      'Considerada uma das melhores lojas de pneus de Curitiba, a Carplus fica no Portão: 4,9 no Google, várias marcas, oficina completa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Compare medida, aplicação, orçamento e avaliações ao escolher uma loja de pneus em Curitiba. Conheça a Carplus no Portão. WhatsApp: (41) 3082-7282.',
     intro:
-      'A Carplus é reconhecida como uma das melhores lojas de pneus de Curitiba, no bairro Portão, com nota 4,9 no Google e mais de 250 avaliações de clientes. Aqui você encontra pneus de várias marcas e uma oficina mecânica completa.',
-    tags: ['4,9 no Google', '+250 avaliações', 'Oficina completa', 'Garantia com NF'],
+      `A Carplus no Portão, Curitiba, tinha ${GOOGLE_REVIEW_SUMMARY.count} avaliações e nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}. Consulte os relatos na fonte e compare os serviços e as condições do orçamento.`,
+    tags: [`${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google`, `${GOOGLE_REVIEW_SUMMARY.count} avaliações · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}`, 'Oficina completa', 'Garantia com NF'],
     sections: [
       {
         title: 'Por que somos referência em Curitiba',
         content:
-          'Atendimento técnico honesto, marcas reconhecidas, montagem e balanceamento inclusos, alinhamento 3D na hora e garantia com nota fiscal. Esse conjunto fez da Carplus uma das lojas de pneus mais bem avaliadas da cidade.',
+          'Atendimento técnico honesto, marcas reconhecidas, montagem e balanceamento sob consulta, alinhamento 3D mediante consulta de agenda e garantia com nota fiscal. Compare esses serviços e as condições do orçamento antes de decidir.',
       },
       {
         title: 'Avaliações reais de clientes',
         content:
-          'Com mais de 250 avaliações de clientes e nota 4,9 no Google, a confiança dos clientes é o nosso melhor argumento. Venha conferir o atendimento que rende essa reputação.',
+          `A Carplus no Portão, Curitiba, tinha ${GOOGLE_REVIEW_SUMMARY.count} avaliações e nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}. Consulte os relatos na fonte e compare os serviços e as condições do orçamento.`,
       },
     ],
     faq: [
       {
         question: 'Qual a melhor loja de pneus em Curitiba?',
         answer:
-          'A Carplus Centro Automotivo, no bairro Portão, é uma das mais bem avaliadas de Curitiba, com nota 4,9 no Google e mais de 250 avaliações de clientes.',
+          `A Carplus no Portão, Curitiba, tinha ${GOOGLE_REVIEW_SUMMARY.count} avaliações e nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}. Consulte os relatos na fonte e compare os serviços e as condições do orçamento.`,
       },
       {
         question: 'O que torna a Carplus a melhor opção?',
         answer:
-          'A união entre loja de pneus e oficina mecânica completa, com montagem inclusa, alinhamento 3D, garantia com nota fiscal e parcelamento em até 10x sem juros.',
+          'A união entre loja de pneus e oficina mecânica completa, com montagem sob consulta, alinhamento 3D, garantia com nota fiscal e parcelamento em até 10x sem juros.',
       },
       {
         question: 'Onde fica a Carplus?',
@@ -2487,7 +2488,7 @@ export const INTENT_PAGES: IntentPage[] = [
           'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR.',
       },
     ],
-    whatsappMsg: 'Olá! Vi que a Carplus é uma das melhores lojas de pneus de Curitiba. Quero um orçamento.',
+    whatsappMsg: 'Olá! Quero consultar pneus e serviços na Carplus do Portão. Pode preparar um orçamento?',
   },
   {
     slug: 'qual-o-melhor-pneu-curitiba',
@@ -2496,7 +2497,7 @@ export const INTENT_PAGES: IntentPage[] = [
     highlight: 'Melhor Pneu',
     metaTitle: 'Qual o Melhor Pneu para o seu Carro em Curitiba | Carplus Centro Automotivo',
     metaDescription:
-      'Qual o melhor pneu para o seu carro? A Carplus, no Portão em Curitiba, ajuda a escolher entre economia, conforto e performance. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Qual o melhor pneu para o seu carro? A Carplus, no Portão em Curitiba, ajuda a escolher entre economia, conforto e performance. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Não existe um único "melhor pneu" — existe o melhor pneu para o seu carro e o seu uso. Na Carplus, no bairro Portão em Curitiba, nossa equipe técnica ajuda você a escolher entre linhas econômicas, de conforto e de performance.',
     tags: ['Consultoria técnica', 'Economia x conforto', 'Performance', 'Sob medida'],
@@ -2536,29 +2537,29 @@ export const INTENT_PAGES: IntentPage[] = [
     badge: 'Pneus com Instalação · Curitiba',
     h1: 'Pneus com Instalação em Curitiba',
     highlight: 'Instalação',
-    metaTitle: 'Pneus com Instalação em Curitiba | Carplus Centro Automotivo – Montagem Inclusa',
+    metaTitle: 'Pneus com Instalação em Curitiba | Carplus Centro Automotivo – Montagem sob consulta',
     metaDescription:
-      'Pneus com instalação em Curitiba na Carplus, bairro Portão. Montagem, balanceamento e calibragem inclusos, alinhamento 3D na hora e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneus com instalação em Curitiba na Carplus, bairro Portão. Montagem, balanceamento e calibragem sob consulta, alinhamento 3D mediante consulta de agenda e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
-      'Na Carplus, no bairro Portão em Curitiba, você compra os pneus e já sai com tudo instalado. Montagem, balanceamento e calibragem estão inclusos, e o alinhamento 3D pode ser feito na mesma visita.',
-    tags: ['Montagem inclusa', 'Balanceamento incluso', 'Alinhamento na hora', 'No mesmo dia'],
+      'Na Carplus, no bairro Portão em Curitiba, você compra os pneus e já sai com tudo instalado. Montagem, balanceamento e calibragem sob consulta, e o alinhamento 3D pode ser feito na mesma visita.',
+    tags: ['Montagem sob consulta', 'Balanceamento sob consulta', 'Consulte a agenda', 'Consulte a agenda'],
     sections: [
       {
         title: 'Instalação completa no mesmo lugar',
         content:
-          'Você não precisa procurar outra borracharia: a Carplus faz a montagem com equipamento que preserva a roda, o balanceamento computadorizado e a calibragem, tudo incluso no valor do pneu.',
+          'Consulte os valores de montagem, balanceamento, calibragem e alinhamento e confirme o que está incluído no orçamento antes de contratar.',
       },
       {
         title: 'Alinhamento 3D na mesma visita',
         content:
-          'Como somos também oficina mecânica, fazemos o alinhamento 3D na hora, garantindo estabilidade, segurança e maior durabilidade do conjunto recém-instalado.',
+          'Como somos também oficina mecânica, fazemos o alinhamento 3D mediante consulta de agenda, garantindo estabilidade, segurança e maior durabilidade do conjunto recém-instalado.',
       },
     ],
     faq: [
       {
         question: 'A instalação dos pneus está inclusa no preço?',
         answer:
-          'Sim. A montagem, o balanceamento e a calibragem já estão inclusos no valor dos pneus na Carplus.',
+          'Sim. A montagem, balanceamento e calibragem com valores informados no orçamento dos pneus na Carplus.',
       },
       {
         question: 'Vocês fazem alinhamento na mesma hora?',
@@ -2568,10 +2569,10 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'Quanto tempo leva a instalação?',
         answer:
-          'Na maioria dos casos, a montagem com balanceamento é rápida e feita no mesmo dia. Chame pelo WhatsApp (41) 3082-7282 para confirmar.',
+          'Consulte a disponibilidade da medida, os valores dos serviços e a agenda de instalação na unidade do Portão, em Curitiba. Chame pelo WhatsApp (41) 3082-7282 para confirmar.',
       },
     ],
-    whatsappMsg: 'Olá! Quero comprar pneus com instalação inclusa em Curitiba.',
+    whatsappMsg: 'Olá! Quero comprar pneus com instalação sob consulta em Curitiba.',
   },
   {
     slug: 'pneus-com-alinhamento-e-balanceamento-curitiba',
@@ -2586,7 +2587,7 @@ export const INTENT_PAGES: IntentPage[] = [
     tags: ['Compra de Pneus Novos', 'Alinhamento 3D', 'Balanceamento Computadorizado', '10x Sem Juros'],
     sections: [
       {
-        title: 'Pacote completo: pneu novo com geometria 3D na hora',
+        title: 'Pacote completo: pneu novo com geometria 3D mediante consulta de agenda',
         content:
           'Comprar pneus novos e rodar em um veículo desalinhado causa desgaste irregular imediato nas bandas de rodagem. Ao comprar seus pneus na Carplus, oferecemos o pacote completo para que seu jogo novo tenha máxima durabilidade, estabilidade e aderência desde o primeiro quilômetro.',
       },
@@ -2605,7 +2606,7 @@ export const INTENT_PAGES: IntentPage[] = [
       {
         question: 'O pacote inclui a montagem dos pneus novos?',
         answer:
-          'Sim! Na compra dos pneus na Carplus, a montagem, o balanceamento e a calibragem já estão inclusos. O alinhamento 3D é adicionado com condição especial para garantir que seu jogo novo não sofra desgaste prematuro.',
+          'Na compra dos pneus na Carplus, os valores de montagem, balanceamento e calibragem são informados no orçamento. O alinhamento 3D é adicionado com condição especial para garantir que seu jogo novo não sofra desgaste prematuro.',
       },
       {
         question: 'Posso parcelar os pneus e os serviços juntos?',
@@ -2618,7 +2619,7 @@ export const INTENT_PAGES: IntentPage[] = [
           'Esta página é voltada para quem deseja COMPRAR pneus novos e instalar o conjunto completo com alinhamento e balanceamento. Para quem já possui pneus e deseja apenas a manutenção corretiva de geometria ou balanceamento no carro atual, oferecemos a rota dedicada /servico/alinhamento-e-balanceamento.',
       },
       {
-        question: 'Vocês têm pneus a pronta entrega no Portão?',
+        question: 'Vocês têm pneus a disponibilidade sob consulta no Portão?',
         answer:
           'Sim, trabalhamos com ampla variedade de medidas (aros 13 ao 22) das marcas Pirelli, Michelin, Goodyear, Continental, Bridgestone, Firestone, Delinte e Prinx para instalação imediata.',
       },
@@ -2719,7 +2720,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Pirelli ou Bridgestone',
     metaTitle: 'Pirelli ou Bridgestone: qual o melhor pneu? | Carplus Curitiba',
     metaDescription:
-      'Pirelli ou Bridgestone? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pirelli ou Bridgestone? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Veja modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Pirelli e Bridgestone estão entre as marcas premium mais procuradas do mercado. Ambas oferecem ótimo desempenho e durabilidade — a melhor escolha depende da medida do seu carro, do seu estilo de uso e do orçamento. Veja abaixo um comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão.',
     tags: ['Premium', 'Pirelli', 'Bridgestone', 'Comparativo imparcial'],
@@ -2738,7 +2739,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Não existe "marca melhor" universal: o ideal é comparar o modelo certo para a sua medida e necessidade. Nossa equipe técnica ajuda você a escolher entre as opções disponíveis sem compromisso. Em ambas as marcas, a montagem, o balanceamento e a calibragem já estão inclusos, com até 10x sem juros.',
+          'Não existe "marca melhor" universal: o ideal é comparar o modelo certo para a sua medida e necessidade. Nossa equipe técnica ajuda você a escolher entre as opções disponíveis sem compromisso. Em ambas as marcas, os valores de montagem, balanceamento e calibragem são informados no orçamento, com até 10x sem juros.',
       },
     ],
     faq: [
@@ -2750,7 +2751,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'Qual é mais barato, Pirelli ou Bridgestone?',
         answer:
-          'O preço varia conforme a medida e a linha de cada marca. Na Carplus você compara os valores das opções em estoque e parcela em até 10x sem juros, com montagem inclusa.',
+          'O preço varia conforme a medida e a linha de cada marca. Na Carplus você compara os valores das opções em estoque e parcela em até 10x sem juros, com montagem sob consulta.',
       },
       {
         question: 'A Carplus trabalha com as duas marcas?',
@@ -2768,7 +2769,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Pirelli ou Michelin',
     metaTitle: 'Pirelli ou Michelin: qual escolher? | Carplus Curitiba',
     metaDescription:
-      'Pirelli ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pirelli ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Pirelli e Michelin são duas das marcas mais premiadas do mundo. As duas entregam segurança e qualidade — a diferença está nas linhas e medidas disponíveis para o seu carro. Veja o comparativo e os modelos em estoque na Carplus, no Portão, em Curitiba.',
     tags: ['Premium', 'Pirelli', 'Michelin', 'Comparativo imparcial'],
@@ -2787,7 +2788,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Se a prioridade é custo-benefício, a Pirelli costuma ser muito competitiva; se o foco é máxima durabilidade ou performance, vale avaliar a Michelin. O melhor é comparar o modelo certo para a sua medida — fazemos isso com você, sem compromisso, com montagem inclusa e 10x sem juros.',
+          'Se a prioridade é custo-benefício, a Pirelli costuma ser muito competitiva; se o foco é máxima durabilidade ou performance, vale avaliar a Michelin. O melhor é comparar o modelo certo para a sua medida — fazemos isso com você, sem compromisso, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -2804,7 +2805,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'Posso parcelar a compra?',
         answer:
-          'Sim. Tanto Pirelli quanto Michelin podem ser parceladas em até 10x sem juros, com montagem, balanceamento e calibragem inclusos.',
+          'Sim. Tanto Pirelli quanto Michelin podem ser parceladas em até 10x sem juros, com montagem, balanceamento e calibragem sob consulta.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Michelin. Pode me ajudar a escolher?',
@@ -2817,7 +2818,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Pirelli ou Goodyear',
     metaTitle: 'Pirelli ou Goodyear: qual o melhor pneu? | Carplus Curitiba',
     metaDescription:
-      'Pirelli ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pirelli ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Pirelli e Goodyear são marcas tradicionais e confiáveis, presentes em milhões de carros. A escolha ideal depende da medida do seu veículo e da linha disponível. Confira o comparativo e os modelos em estoque na Carplus, no Portão.',
     tags: ['Pirelli', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
@@ -2836,7 +2837,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'As duas marcas são confiáveis para o uso cotidiano. A melhor decisão vem da comparação direta entre os modelos disponíveis para a sua medida. A equipe da Carplus faz essa comparação com você, com montagem inclusa e parcelamento em até 10x sem juros.',
+          'As duas marcas são confiáveis para o uso cotidiano. A melhor decisão vem da comparação direta entre os modelos disponíveis para a sua medida. A equipe da Carplus faz essa comparação com você, com montagem sob consulta e parcelamento em até 10x sem juros.',
       },
     ],
     faq: [
@@ -2853,7 +2854,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'A montagem está inclusa?',
         answer:
-          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos no valor dos pneus.',
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem com valores informados no orçamento dos pneus.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Pirelli e Goodyear. Pode me ajudar a escolher?',
@@ -2866,7 +2867,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Pirelli ou Yokohama',
     metaTitle: 'Pirelli ou Yokohama: qual escolher? | Carplus Curitiba',
     metaDescription:
-      'Pirelli ou Yokohama? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pirelli ou Yokohama? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Pirelli e Yokohama atendem desde o uso urbano até a performance. As duas têm boa reputação e ampla variedade de medidas. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
     tags: ['Pirelli', 'Yokohama', 'Comparativo imparcial', 'Curitiba'],
@@ -2885,7 +2886,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Se você busca uma marca consagrada e amplamente disponível, a Pirelli é forte candidata; se quer comparar performance e preço com boa variedade, vale avaliar a Yokohama. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+          'Se você busca uma marca consagrada e amplamente disponível, a Pirelli é forte candidata; se quer comparar performance e preço com boa variedade, vale avaliar a Yokohama. Comparamos as opções da sua medida com você, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -2902,7 +2903,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'Posso parcelar?',
         answer:
-          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem inclusos, em ambas as marcas.',
+          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem sob consulta, em ambas as marcas.',
       },
     ],
     whatsappMsg: 'Olá! Estou em d��vida entre Pirelli e Yokohama. Pode me ajudar a escolher?',
@@ -2915,7 +2916,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Bridgestone ou Michelin',
     metaTitle: 'Bridgestone ou Michelin: qual o melhor pneu? | Carplus Curitiba',
     metaDescription:
-      'Bridgestone ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Bridgestone ou Michelin? Comparativo imparcial das duas marcas premium na Carplus, em Curitiba. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Bridgestone e Michelin são duas marcas premium de referência mundial. As duas entregam alto padrão de qualidade — a melhor escolha depende da linha e da medida do seu carro. Veja o comparativo e os modelos disponíveis na Carplus, no Portão.',
     tags: ['Premium', 'Bridgestone', 'Michelin', 'Comparativo imparcial'],
@@ -2934,7 +2935,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'As duas são excelentes; a decisão passa por linha, medida e orçamento. Se prioriza durabilidade máxima, avalie a Michelin; se busca eficiência e conforto acústico, a Bridgestone é forte. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+          'As duas são excelentes; a decisão passa por linha, medida e orçamento. Se prioriza durabilidade máxima, avalie a Michelin; se busca eficiência e conforto acústico, a Bridgestone é forte. Comparamos as opções da sua medida com você, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -2951,7 +2952,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'A Carplus instala na hora?',
         answer:
-          'Na maioria das medidas em estoque, sim — com montagem, balanceamento e calibragem inclusos. Confirme pelo WhatsApp.',
+          'Na maioria das medidas em estoque, sim — com montagem, balanceamento e calibragem sob consulta. Confirme pelo WhatsApp.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Bridgestone e Michelin. Pode me ajudar a escolher?',
@@ -2964,7 +2965,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Bridgestone ou Goodyear',
     metaTitle: 'Bridgestone ou Goodyear: qual escolher? | Carplus Curitiba',
     metaDescription:
-      'Bridgestone ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Bridgestone ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Bridgestone e Goodyear são marcas tradicionais e confiáveis. As duas atendem bem o uso diário — a escolha depende da medida e da linha disponível para o seu carro. Confira o comparativo e os modelos em estoque na Carplus, no Portão.',
     tags: ['Bridgestone', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
@@ -2983,7 +2984,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'As duas marcas são confiáveis para o dia a dia. A melhor escolha vem da comparação direta entre os modelos disponíveis para a sua medida — feita por nossa equipe técnica, com montagem inclusa e 10x sem juros.',
+          'As duas marcas são confiáveis para o dia a dia. A melhor escolha vem da comparação direta entre os modelos disponíveis para a sua medida — feita por nossa equipe técnica, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -3000,7 +3001,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'A montagem é inclusa?',
         answer:
-          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos, com parcelamento em até 10x sem juros.',
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem sob consulta, com parcelamento em até 10x sem juros.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Bridgestone e Goodyear. Pode me ajudar a escolher?',
@@ -3013,7 +3014,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Michelin ou Goodyear',
     metaTitle: 'Michelin ou Goodyear: qual o melhor pneu? | Carplus Curitiba',
     metaDescription:
-      'Michelin ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Michelin ou Goodyear? Comparativo imparcial na Carplus, em Curitiba. Modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Michelin e Goodyear são marcas consagradas e presentes em montadoras do mundo todo. A melhor escolha depende da linha, da medida e do orçamento. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no Portão.',
     tags: ['Michelin', 'Goodyear', 'Comparativo imparcial', 'Curitiba'],
@@ -3032,7 +3033,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Se a prioridade é durabilidade máxima, a Michelin tende a se destacar; se você busca uma marca premium com preço mais acessível, a Goodyear é forte candidata. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+          'Se a prioridade é durabilidade máxima, a Michelin tende a se destacar; se você busca uma marca premium com preço mais acessível, a Goodyear é forte candidata. Comparamos as opções da sua medida com você, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -3042,14 +3043,14 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
           'A Michelin é frequentemente associada a alta durabilidade, mas o resultado depende do modelo e do uso. A Goodyear também tem linhas duráveis. Consulte pelo WhatsApp (41) 3082-7282.',
       },
       {
-        question: 'Qual tem melhor preço?',
+        question: 'Qual tem orçamento?',
         answer:
           'Na maioria das medidas, a Goodyear costuma ter preço mais acessível que a Michelin, mas isso varia por linha. Compare os valores em estoque na Carplus.',
       },
       {
         question: 'A Carplus trabalha com as duas?',
         answer:
-          'Sim, com Michelin e Goodyear, entre outras marcas, na loja do bairro Portão, em Curitiba. Montagem inclusa e 10x sem juros.',
+          'Sim, com Michelin e Goodyear, entre outras marcas, na loja do bairro Portão, em Curitiba. Montagem sob consulta e 10x sem juros.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Michelin e Goodyear. Pode me ajudar a escolher?',
@@ -3062,7 +3063,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Yokohama ou Pirelli',
     metaTitle: 'Yokohama ou Pirelli: qual escolher? | Carplus Curitiba',
     metaDescription:
-      'Yokohama ou Pirelli? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Yokohama ou Pirelli? Comparativo imparcial na Carplus, em Curitiba. Veja modelos disponíveis, montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Yokohama e Pirelli são marcas fortes com ampla variedade de medidas. As duas atendem do uso urbano à performance. Veja o comparativo e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
     tags: ['Yokohama', 'Pirelli', 'Comparativo imparcial', 'Curitiba'],
@@ -3081,7 +3082,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Se você quer comparar performance e preço com boa variedade, a Yokohama é forte; se prefere uma marca amplamente consagrada e disponível, a Pirelli é ótima opção. Comparamos as opções da sua medida com você, com montagem inclusa e 10x sem juros.',
+          'Se você quer comparar performance e preço com boa variedade, a Yokohama é forte; se prefere uma marca amplamente consagrada e disponível, a Pirelli é ótima opção. Comparamos as opções da sua medida com você, com montagem sob consulta e 10x sem juros.',
       },
     ],
     faq: [
@@ -3098,7 +3099,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'Posso parcelar a compra?',
         answer:
-          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem inclusos, em ambas as marcas.',
+          'Sim, em até 10x sem juros, com montagem, balanceamento e calibragem sob consulta, em ambas as marcas.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Yokohama e Pirelli. Pode me ajudar a escolher?',
@@ -3111,7 +3112,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Prinx ou Delinte',
     metaTitle: 'Prinx ou Delinte: qual o melhor pneu de custo-benefício? | Carplus Curitiba',
     metaDescription:
-      'Prinx ou Delinte? Comparativo imparcial de duas marcas de custo-benefício na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Prinx ou Delinte? Comparativo imparcial de duas marcas de custo-benefício na Carplus, em Curitiba. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'Prinx e Delinte são marcas que se destacam pelo custo-benefício, ideais para quem busca economia sem abrir mão de segurança. Veja o comparativo imparcial e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
     tags: ['Custo-benefício', 'Prinx', 'Delinte', 'Comparativo imparcial'],
@@ -3130,7 +3131,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Como decidir',
         content:
-          'Ambas são marcas de custo-benefício. A escolha depende da medida e do perfil do seu carro. Nossa equipe ajuda você a comparar as opções disponíveis sem compromisso, com montagem inclusa e parcelamento em até 10x sem juros.',
+          'Ambas são marcas de custo-benefício. A escolha depende da medida e do perfil do seu carro. Nossa equipe ajuda você a comparar as opções disponíveis sem compromisso, com montagem sob consulta e parcelamento em até 10x sem juros.',
       },
     ],
     faq: [
@@ -3147,7 +3148,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'A montagem está inclusa?',
         answer:
-          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem já estão inclusos, com até 10x sem juros.',
+          'Sim. Em ambas as marcas, montagem, balanceamento e calibragem sob consulta, com até 10x sem juros.',
       },
     ],
     whatsappMsg: 'Olá! Estou em dúvida entre Prinx e Delinte. Pode me ajudar a escolher?',
@@ -3160,7 +3161,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Prinx é bom',
     metaTitle: 'Pneu Prinx é bom? Vale a pena? | Carplus Curitiba',
     metaDescription:
-      'Pneu Prinx é bom? Saiba se vale a pena, suas vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Prinx é bom? Saiba se vale a pena, suas vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu Prinx é uma das opções de custo-benefício mais procuradas por quem quer economizar na troca sem abrir mão de segurança. Veja abaixo uma avaliação honesta da marca e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
     tags: ['Prinx', 'Custo-benefício', 'Avaliação', 'Curitiba'],
@@ -3179,7 +3180,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Compre com instalação na Carplus',
         content:
-          'Na Carplus, no Portão, o pneu Prinx vem com montagem, balanceamento e calibragem inclusos, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
+          'Na Carplus, no Portão, o pneu Prinx vem com montagem, balanceamento e calibragem sob consulta, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
       },
     ],
     faq: [
@@ -3209,7 +3210,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     highlight: 'Delinte é bom',
     metaTitle: 'Pneu Delinte é bom? Vale a pena? | Carplus Curitiba',
     metaDescription:
-      'Pneu Delinte é bom? Veja se vale a pena, vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem inclusa e 10x sem juros. WhatsApp: (41) 3082-7282.',
+      'Pneu Delinte é bom? Veja se vale a pena, vantagens e os modelos disponíveis na Carplus, em Curitiba. Montagem sob consulta e 10x sem juros. WhatsApp: (41) 3082-7282.',
     intro:
       'O pneu Delinte é uma opção de custo-benefício com destaque para medidas de performance e SUV. Veja abaixo uma avaliação honesta da marca e os modelos disponíveis na Carplus, no bairro Portão, em Curitiba.',
     tags: ['Delinte', 'Custo-benefício', 'Avaliação', 'Curitiba'],
@@ -3228,7 +3229,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         title: 'Compre com instalação na Carplus',
         content:
-          'Na Carplus, no Portão, o pneu Delinte vem com montagem, balanceamento e calibragem inclusos, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
+          'Na Carplus, no Portão, o pneu Delinte vem com montagem, balanceamento e calibragem sob consulta, e você ainda pode fazer o alinhamento 3D no mesmo lugar. Parcelamento em até 10x sem juros e garantia com nota fiscal.',
       },
     ],
     faq: [
@@ -3245,7 +3246,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
       {
         question: 'A Carplus instala o pneu Delinte?',
         answer:
-          'Sim. Trabalhamos com a marca Delinte e a montagem, o balanceamento e a calibragem já estão inclusos, com até 10x sem juros.',
+          'Trabalhamos com a marca Delinte e os valores de montagem, balanceamento e calibragem são informados no orçamento, com até 10x sem juros.',
       },
     ],
     whatsappMsg: 'Olá! Quero saber se o pneu Delinte é bom para o meu carro e o preço.',

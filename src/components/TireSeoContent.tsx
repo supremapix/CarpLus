@@ -170,7 +170,7 @@ export default function TireSeoContent({ tire }: TireSeoContentProps) {
         </h2>
         <p className="text-white/80 leading-relaxed mb-8">{content.ctaLocal}</p>
         <a
-          href={`https://wa.me/554130827282?text=${encodeURIComponent(`Olá! Quero o pneu ${tire.nome} com montagem inclusa.`)}`}
+          href={`https://wa.me/554130827282?text=${encodeURIComponent(`Olá! Quero o pneu ${tire.nome} com montagem sob consulta.`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition-all"

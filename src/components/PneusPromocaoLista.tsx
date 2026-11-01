@@ -75,7 +75,7 @@ export default function PneusPromocaoLista() {
   useSEO({
     title: 'Pneus em Promoção em Curitiba | Lista Completa – Carplus Portão',
     description:
-      'Lista completa de pneus em promoção em Curitiba. Veja marca, medida e carros compatíveis de cada modelo. Montagem inclusa e até 10x sem juros na Carplus, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.',
+      'Lista completa de pneus em promoção em Curitiba. Veja marca, medida e carros compatíveis de cada modelo. Montagem sob consulta e até 10x sem juros na Carplus, no Portão. Consulte o pneu certo para o seu carro pelo WhatsApp: (41) 3082-7282.',
     canonical: pageUrl,
     keywords: [
       'pneus em promoção curitiba',
@@ -280,7 +280,7 @@ export default function PneusPromocaoLista() {
                 <ShieldCheck size={22} />
               </span>
               <p className="text-sm text-gray-700 font-semibold leading-snug">
-                Montagem, balanceamento e garantia de fábrica inclusos
+                Consulte montagem, balanceamento e condições de garantia
               </p>
             </div>
             <div className="flex items-center gap-3">

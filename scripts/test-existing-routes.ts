@@ -31,7 +31,7 @@ for (const source of ['/catalogo', '/catalogo/']) {
 }
 assert(!manual.some(rule => rule.source === '/pneus' && !rule.has), 'destino limpo não redireciona novamente');
 assert.equal(new Set(config.redirects.map(redirectKey)).size, config.redirects.length);
-assert.equal(config.redirects.filter(rule => rule.has?.some(condition => condition.type === 'query' && condition.key === 'page')).length, 76);
+assert.equal(config.redirects.filter(rule => rule.has?.some(condition => condition.type === 'query' && condition.key === 'page')).length, 0);
 for (const source of ['/servico/diagnostico-eletronico', '/servico/diagnostico-eletronico/']) {
   assert.equal(manual.find(rule => rule.source === source)?.destination, '/servico/scanner-automotivo');
 }
@@ -63,8 +63,8 @@ for (const route of routes) {
 }
 
 // Executa a orquestração real com subprocessos simulados: não inicia snapshot
-// global. Prova ambos os ramos e fail-closed dos passos essenciais, inclusive
-// após falha do snapshot opcional. O teste browser cobre os arquivos reais.
+// global. Prova que flags antigas não desativam HTML obrigatório e que cada
+// falha essencial aborta antes de emitir o recibo. O teste browser cobre HTML real.
 const buildSource = fs.readFileSync('scripts/build-deploy.mjs', 'utf8').replace(/^import .*;\n/gm, '');
 const generate = 'npm run generate:static:existing-pages';
 const validate = 'npm run validate:static:existing-pages';
@@ -83,17 +83,30 @@ function runBuild(flag: string, fail?: string) {
   } catch (error) { if (!exit) throw error; }
   return { calls, exit };
 }
-for (const flag of ['0', '1']) {
+const receipt = 'node scripts/emit-build-receipt.mjs';
+const requiredPipeline = [
+  generate,
+  'node scripts/run-ts.mjs scripts/generate-static-customer-pages.ts',
+  'npm run generate:static:all',
+  'node scripts/run-ts.mjs scripts/validate-static-all.ts --require-all',
+  validate,
+  'node scripts/run-ts.mjs scripts/generate-static-customer-pages.ts --validate',
+  'node scripts/run-ts.mjs scripts/validate-static-products-required.ts',
+  receipt,
+];
+for (const flag of ['', '0', '1']) {
   const success = runBuild(flag);
   assert.equal(success.exit, 0);
-  assert(success.calls.includes(generate));
-  assert.equal(success.calls.at(-1), validate);
-  assert.equal(success.calls.includes('npm run generate:static:all'), flag === '1');
-  assert.equal(runBuild(flag, generate).exit, 9, 'geração essencial deve abortar deploy');
-  assert.equal(runBuild(flag, validate).exit, 9, 'validação final deve abortar deploy');
+  assert.equal(success.calls.at(-1), receipt, 'recibo é emitido somente depois das validações');
+  let previous = -1;
+  for (const command of requiredPipeline) {
+    const index = success.calls.indexOf(command);
+    assert(index > previous, `etapa essencial ausente ou fora de ordem: ${command}`);
+    previous = index;
+    const failure = runBuild(flag, command);
+    assert.equal(failure.exit, 9, `${command}: falha deve abortar deploy, independente de GENERATE_STATIC`);
+    assert.equal(failure.calls.at(-1), command, 'nenhuma etapa posterior é executada após falha');
+    if (command !== receipt) assert(!failure.calls.includes(receipt), 'nunca emitir recibo de build incompleto');
+  }
 }
-const optionalFailure = runBuild('1', 'npm run generate:static:all');
-assert.equal(optionalFailure.exit, 0);
-assert.equal(optionalFailure.calls.at(-1), validate, 'falha global não pode pular validação essencial');
-assert(!optionalFailure.calls.includes('npm run validate:static:all'));
-console.log('PASS: seis rotas, sitemap preservado, redirects, links diretos, HTML completo, controles negativos e build com flag 0/1 (orquestração simulada).');
+console.log('PASS: seis rotas, sitemap preservado, redirects, links diretos, HTML completo, controles negativos e build obrigatório/fail-closed com flag ausente/0/1 (orquestração simulada).');

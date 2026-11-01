@@ -51,13 +51,25 @@ function main() {
     `[validate:all] Enumeradas ${routes.length} | com arquivo ${present.length} | sem arquivo ${missing.length}`,
   );
 
-  const issues: Issue[] = [];
+  const issues: Issue[] = process.argv.includes('--require-all')
+    ? missing.map(route => ({ path: route.path, problems: ['required initial HTML missing'] }))
+    : [];
   const canonicalMap = new Map<string, string[]>();
 
   for (const r of present) {
     const file = outputFileFor(r);
     const html = fs.readFileSync(file, 'utf8');
     const problems = validateStaticHtml(r.path, html, r.expectedCanonical, shellTitle);
+    for (const [name, expression] of [
+      ['H1', /<h1\b/gi], ['title', /<title>/gi],
+      ['description', /<meta\b[^>]*name="description"/gi],
+      ['og:image', /<meta\b[^>]*property="og:image"/gi],
+    ] as const) {
+      if ([...html.matchAll(expression)].length !== 1) problems.push(`${name} ausente ou duplicado`);
+    }
+    for (const match of html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+      try { JSON.parse(match[1]); } catch { problems.push('JSON-LD inválido'); }
+    }
     const canonical = extract(html, /<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i);
     if (canonical) {
       const arr = canonicalMap.get(canonical) ?? [];

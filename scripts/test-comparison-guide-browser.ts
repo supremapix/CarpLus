@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY as reviews } from '../src/data/reviewSummary';
 /**
  * Regressão local, sem abrir serviços externos ou enviar mensagens.
  * npm run build:spa
@@ -119,7 +120,7 @@ try {
     assert.equal(state.images.length, 2);
     assert(state.images.every(image => image.loaded && image.alt && image.src?.startsWith('/images/loja/')));
     assert.deepEqual(state.externalLinks.sort(), [CARPLUS_GOOGLE_MAPS, COMPARISON_TECHNICAL_SOURCE].sort());
-    assert(/4,9 de 5/.test(state.text) && /262 avaliações/.test(state.text) && /18\/10\/2026/.test(state.text));
+    assert(state.text.includes(`${reviews.ratingDisplay} de 5`) && state.text.includes(`${reviews.count} avaliações`) && state.text.includes(reviews.checkedDateDisplay));
     assert(!/mais confiável|mais seguro que|golpe|fraude|melhor preço|garantia|1517352816|1463164947/i.test(state.text));
     assert.deepEqual(state.invalidTargets, [], 'Alvos de toque com pelo menos 44px de altura');
     assert.equal(state.unlabeledLinks, 0);

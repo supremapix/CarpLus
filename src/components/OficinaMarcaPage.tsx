@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -38,7 +39,7 @@ const DIFERENCIAIS = [
   { icon: Award, title: 'Nacionais e importados', description: 'Cuidamos de carros nacionais e importados em Curitiba, com diagnóstico antes do orçamento.' },
   { icon: CreditCard, title: 'Até 10x sem juros', description: 'Parcelamos os serviços em até 10x sem juros. Aceitamos cartão, débito, dinheiro e PIX.' },
   { icon: FileText, title: 'Nota fiscal eletrônica', description: 'Emitimos nota fiscal de peças e serviços, com transparência em cada atendimento.' },
-  { icon: Star, title: '4.9 ★ no Google', description: 'Mais de 250 avaliações de clientes satisfeitos que confiam na Carplus.' },
+  { icon: Star, title: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★ no Google`, description: `${GOOGLE_REVIEW_SUMMARY.count} avaliações no Google, conferidas em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}.` },
 ];
 
 export default function OficinaMarcaPage({ slug }: Props) {
@@ -55,61 +56,16 @@ export default function OficinaMarcaPage({ slug }: Props) {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(page.whatsappMessage)}`;
   const telHref = `tel:${PHONE_TEL}`;
 
-  // ─── JSON-LD @graph: AutoRepair + Service + FAQPage + BreadcrumbList ───
+  // LocalBusiness lives only in the global shell; reference its stable identity.
   const schemaGraph = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': ['AutoRepair', 'LocalBusiness'],
-        '@id': `${BASE_URL}/#autorepair`,
-        name: 'Carplus Centro Automotivo',
-        alternateName: 'Carplus Pneus e Oficina',
-        url: BASE_URL,
-        image: ogImageFull,
-        telephone: PHONE_TEL,
-        priceRange: '$$',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: ADDRESS_STREET,
-          addressLocality: 'Curitiba',
-          addressRegion: 'PR',
-          postalCode: ADDRESS_POSTAL,
-          addressCountry: 'BR',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: GEO_LAT,
-          longitude: GEO_LNG,
-        },
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '18:00',
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Saturday'],
-            opens: '08:00',
-            closes: '12:00',
-          },
-        ],
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: RATING_VALUE,
-          reviewCount: REVIEW_COUNT,
-          bestRating: '5',
-          worstRating: '1',
-        },
-        sameAs: [INSTAGRAM_URL],
-      },
       {
         '@type': 'Service',
         serviceType: isMarca
           ? `Manutenção e revisão de veículos ${page.marca}`
           : `${page.marca} em Curitiba`,
-        provider: { '@id': `${BASE_URL}/#autorepair` },
+        provider: { '@id': `${BASE_URL}/#localbusiness` },
         areaServed: {
           '@type': 'City',
           name: 'Curitiba e Região Metropolitana',
@@ -212,9 +168,9 @@ export default function OficinaMarcaPage({ slug }: Props) {
             {/* Badges */}
             <div className="flex flex-wrap gap-3 mb-8">
               {[
-                { icon: Star, label: '4,9 no Google' },
+                { icon: Star, label: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google` },
                 { icon: Award, label: 'Garantia' },
-                { icon: Shield, label: 'Garantia total' },
+                { icon: Shield, label: 'Consulte a garantia' },
                 { icon: FileText, label: 'Nota fiscal' },
               ].map((b, i) => {
                 const Icon = b.icon;
@@ -254,7 +210,7 @@ export default function OficinaMarcaPage({ slug }: Props) {
         <div className="container mx-auto px-4 py-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              { icon: Star, label: '+250 avaliações no Google' },
+              { icon: Star, label: `${GOOGLE_REVIEW_SUMMARY.count} avaliações no Google · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}` },
               { icon: BadgeCheck, label: 'Diagnóstico antes do orçamento' },
               { icon: CreditCard, label: 'Até 10x sem juros' },
               { icon: Clock, label: 'Seg-Sáb' },
@@ -454,8 +410,8 @@ export default function OficinaMarcaPage({ slug }: Props) {
                   <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
                 ))}
               </span>
-              <span className="font-medium">4.9 ★ no Google</span>
-              <span className="text-neutral-500">• Mais de 250 avaliações de clientes</span>
+              <span className="font-medium">{GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★ no Google</span>
+              <span className="text-neutral-500">• {GOOGLE_REVIEW_SUMMARY.count} avaliações · {GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -596,16 +552,6 @@ export default function OficinaMarcaPage({ slug }: Props) {
       <Footer />
 
       {/* Botão flutuante de WhatsApp */}
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 sm:px-5 sm:py-4 rounded-full shadow-lg transition-all hover:scale-105"
-      >
-        <MessageCircle size={22} aria-hidden="true" />
-        <span className="hidden sm:inline">WhatsApp</span>
-      </a>
     </div>
   );
 }

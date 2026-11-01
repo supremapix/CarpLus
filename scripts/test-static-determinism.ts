@@ -112,8 +112,13 @@ async function main() {
     let mobileDetail = '';
     if (m?.html) {
       const sm = seoSkeleton(m.html);
-      mobileComplete = !!sm.title && !!sm.h1 && sm.textLength > 300 && !!sm.canonical;
-      mobileDetail = `title:${sm.title ? 'ok' : 'FALTA'} h1:${sm.h1 ? 'ok' : 'FALTA'} texto:${sm.textLength} canonical:${sm.canonical ? 'ok' : 'FALTA'}`;
+      // A real 404 must not inherit the home canonical; this is the intentional
+      // negative control, not an incomplete mobile page.
+      const canonicalCorrect = route.isNotFound
+        ? !sm.canonical && /<meta[^>]+name="robots"[^>]+content="noindex/i.test(m.html)
+        : sm.canonical === `https://www.carpluspneuseoficina.com.br${route.path}`;
+      mobileComplete = !!sm.title && !!sm.h1 && sm.textLength > 300 && canonicalCorrect;
+      mobileDetail = `title:${sm.title ? 'ok' : 'FALTA'} h1:${sm.h1 ? 'ok' : 'FALTA'} texto:${sm.textLength} canonical:${canonicalCorrect ? (route.isNotFound ? 'omitida-404-correta' : 'ok') : 'INCORRETA'}`;
     } else {
       mobileDetail = 'mobile não produziu HTML';
     }

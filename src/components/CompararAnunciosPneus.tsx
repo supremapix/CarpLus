@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY as reviews } from '../data/reviewSummary';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown, ChevronRight, ClipboardList, MapPin, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
@@ -115,8 +116,8 @@ export default function CompararAnunciosPneus() {
               <h2 id="conheca-carplus-title" className={heading}>Conheça a Carplus antes de escolher</h2>
               <p className="text-gray-600 leading-relaxed mt-6">Visite a loja na Av. Presidente Arthur da Silva Bernardes, 1323, Portão, Curitiba. Veja fotos do espaço, consulte as avaliações no Google e fale diretamente com a equipe sobre o pneu ou serviço que procura.</p>
               <div className="bg-white border border-gray-200 border-l-4 border-l-primary rounded-lg p-5 my-6">
-                <p className="font-bold text-xl">Avaliação no Google: 4,9 de 5</p>
-                <p className="text-sm text-gray-600 leading-relaxed mt-2">Com 262 avaliações na consulta de <time dateTime="2026-10-18">18/10/2026</time>. As avaliações e a quantidade podem mudar.</p>
+                <p className="font-bold text-xl">Avaliação no Google: {reviews.ratingDisplay} de 5</p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-2">Com {reviews.count} avaliações na consulta de <time dateTime={reviews.checkedDate}>{reviews.checkedDateDisplay}</time>. As avaliações e a quantidade podem mudar.</p>
                 <a href={CARPLUS_GOOGLE_MAPS} target="_blank" rel="noopener noreferrer" className={`${textLink} text-sm mt-3`}>Ver avaliações no Google<span className="sr-only"> (abre em nova aba)</span></a>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-1">

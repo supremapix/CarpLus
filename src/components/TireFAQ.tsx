@@ -21,23 +21,23 @@ function generateTireFAQ(tire: Tire): FAQItem[] {
   return [
     {
       question: `Qual o preço do pneu ${brand} ${model} ${measure} em Curitiba?`,
-      answer: `O preço do pneu ${brand} ${model} medida ${measure} varia conforme promoções e condições de pagamento. Na Carplus Centro Automotivo, oferecemos parcelamento em até 10x sem juros e os melhores preços da região do Portão. Entre em contato pelo WhatsApp (41) 3082-7282 para obter um orçamento personalizado com montagem e balanceamento inclusos.`
+      answer: `O preço do pneu ${brand} ${model} medida ${measure} varia conforme promoções e condições de pagamento. Na Carplus Centro Automotivo, oferecemos parcelamento em até 10x sem juros e os orçamento sob consulta. Entre em contato pelo WhatsApp (41) 3082-7282 para obter um orçamento personalizado com montagem e balanceamento sob consulta.`
     },
     {
       question: `O pneu ${brand} ${model} ${measure} é bom para qual tipo de carro?`,
-      answer: `O pneu ${brand} ${model} na medida ${measure} (aro ${rim}) é ideal para ${tire.tipoVeiculo.join(', ').toLowerCase()}. Modelos compatíveis incluem: ${tire.carros.join(', ')}. Sempre verifique a medida original do seu veículo no manual do proprietário ou na lateral do pneu atual.`
+      answer: `O pneu ${brand} ${model} na medida ${measure} (aro ${rim}) está no catálogo para pesquisa por ${tire.tipoVeiculo.join(', ').toLowerCase()}. Modelos associados no catálogo: ${tire.carros.join(', ')}. A aplicação depende do ano e da versão, dos índices de carga e velocidade e do manual do veículo. Sempre verifique a medida original do seu veículo no manual do proprietário ou na lateral do pneu atual.`
     },
     {
       question: `O pneu ${brand} ${model} tem garantia?`,
-      answer: `Sim! O pneu ${brand} ${model} possui garantia de fábrica contra defeitos de fabricação por 5 anos ou até atingir o indicador de desgaste (TWI). A garantia não cobre danos por impacto, cortes, bolhas causadas por buracos ou falta de calibragem e alinhamento. Na Carplus, oferecemos suporte completo para acionamento da garantia.`
+      answer: `Consulte as condições de garantia do fabricante para o pneu ${brand} ${model}, incluindo prazo, cobertura, documentação e exclusões. Peça essas informações no orçamento antes de comprar.`
     },
     {
       question: `Quanto tempo dura o pneu ${brand} ${model}?`,
-      answer: `A durabilidade do pneu ${brand} ${model} ${measure} depende de fatores como: estilo de direção, condições das vias, calibragem correta e manutenção do alinhamento. Em média, pneus da linha ${model} duram entre 40.000 a 60.000 km com uso adequado. Na Carplus, oferecemos alinhamento 3D computadorizado para maximizar a vida útil dos seus pneus.`
+      answer: `A durabilidade do pneu ${brand} ${model} ${measure} depende de fatores como: estilo de direção, condições das vias, calibragem correta e manutenção do alinhamento. Não há uma quilometragem única garantida; siga as orientações do fabricante e faça inspeções periódicas. Na Carplus, oferecemos alinhamento 3D computadorizado para maximizar a vida útil dos seus pneus.`
     },
     {
       question: `Onde comprar pneu ${brand} ${model} ${measure} em Curitiba?`,
-      answer: `Você encontra o pneu ${brand} ${model} ${measure} com pronta entrega na Carplus Centro Automotivo, localizada na Av. Arthur da Silva Bernardes, 1323 - Portão, Curitiba. Atendemos de segunda a sexta das 8h às 18h e sábados das 8h às 12h. Ligue (41) 3082-7282 ou envie mensagem no WhatsApp para verificar disponibilidade e agendar a instalação.`
+      answer: `Você encontra o pneu ${brand} ${model} ${measure} com disponibilidade sob consulta na Carplus Centro Automotivo, localizada na Av. Arthur da Silva Bernardes, 1323 - Portão, Curitiba. Atendemos de segunda a sexta das 8h às 18h e sábados das 8h às 12h. Ligue (41) 3082-7282 ou envie mensagem no WhatsApp para verificar disponibilidade e agendar a instalação.`
     },
     {
       question: `Qual a diferença do pneu ${brand} ${model} para outros modelos?`,
@@ -45,11 +45,11 @@ function generateTireFAQ(tire: Tire): FAQItem[] {
     },
     {
       question: `Posso parcelar a compra do pneu ${brand} ${model}?`,
-      answer: `Sim! Na Carplus Centro Automotivo você parcela em até 10x sem juros no cartão de crédito. Também aceitamos PIX, dinheiro e transferência bancária com condições especiais. A montagem, balanceamento e descarte do pneu antigo estão inclusos no preço. Consulte condições pelo (41) 3082-7282.`
+      answer: `Sim! Na Carplus Centro Automotivo você parcela em até 10x sem juros no cartão de crédito. Também aceitamos PIX, dinheiro e transferência bancária com condições especiais. Consulte os valores de montagem, balanceamento e descarte do pneu antigo no orçamento. Consulte condições pelo (41) 3082-7282.`
     },
     {
       question: `O pneu ${brand} ${model} aro ${rim} serve no meu carro?`,
-      answer: `O pneu ${brand} ${model} ${measure} com aro ${rim}" é compatível com veículos que utilizam essa medida original ou equivalente aprovada pelo fabricante. Carros como ${tire.carros.slice(0, 3).join(', ')} geralmente utilizam essa medida. Em caso de dúvida, nossa equipe técnica pode verificar a compatibilidade gratuitamente. Envie foto do pneu atual pelo WhatsApp!`
+      answer: `A aplicação do pneu ${brand} ${model} ${measure} deve ser conferida pelo ano e versão do veículo, medida, índices de carga e velocidade e manual do fabricante. A lista de modelos do catálogo é apenas uma referência de pesquisa. Envie esses dados pelo WhatsApp para consultar a equipe antes de comprar.`
     }
   ];
 }

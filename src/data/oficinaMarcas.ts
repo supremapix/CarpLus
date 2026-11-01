@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from './reviewSummary';
 // ════════════════════════════════════════════════════════════════
 // BASE DE DADOS SEO — Páginas "Oficina Especializada por Marca / Serviço"
 // Conteúdo 100% original, focado em SEO local ético (Curitiba – Portão).
@@ -5,7 +6,7 @@
 // IMPORTANTE (regra legal/ética): a Carplus NÃO é concessionária nem
 // oficina AUTORIZADA de fábrica. Nunca afirmamos ser "autorizada". As páginas
 // posicionam a Carplus como oficina ESPECIALIZADA e INDEPENDENTE, alternativa
-// à concessionária, mantendo a garantia de fábrica conforme o CDC.
+// à concessionária, consultando as condições de garantia do fabricante.
 // ════════════════════════════════════════════════════════════════
 
 // Dados reais do negócio (reutilizados em todas as páginas).
@@ -16,11 +17,11 @@ export const ADDRESS_STREET = 'Av. Presidente Arthur da Silva Bernardes, 1323';
 export const ADDRESS_FULL =
   'Av. Presidente Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR';
 export const ADDRESS_POSTAL = '80320-300';
-// Pino e avaliações conferidos no Perfil da Empresa Google em 18/10/2026.
+// Pino mantido; avaliações usam a consulta datada centralizada.
 export const GEO_LAT = -25.4636;
 export const GEO_LNG = -49.3003;
-export const RATING_VALUE = 4.9;
-export const REVIEW_COUNT = 262;
+export const RATING_VALUE = GOOGLE_REVIEW_SUMMARY.rating;
+export const REVIEW_COUNT = GOOGLE_REVIEW_SUMMARY.count;
 export const INSTAGRAM_URL = 'https://www.instagram.com/carpluscwb/';
 export const MAPS_EMBED =
   'https://www.google.com/maps?q=Av.+Presidente+Arthur+da+Silva+Bernardes,+1323,+Curitiba+PR&output=embed';
@@ -80,7 +81,7 @@ function servicosPorMarca(marca: string): ServicoDestaque[] {
   return [
     {
       titulo: `Revisão completa ${marca}`,
-      descricao: `Revisão por quilometragem seguindo o plano do manual ${marca}, com checklist detalhado, peças adequadas e nota fiscal — mantendo a garantia de fábrica.`,
+      descricao: `Revisão por quilometragem seguindo o plano do manual ${marca}, com checklist detalhado, peças adequadas e nota fiscal — com condições de garantia a consultar no fabricante.`,
     },
     {
       titulo: 'Troca de óleo e filtros',
@@ -152,7 +153,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Fiat. Atendemos veículos Fiat com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Na prática, você tem o mesmo cuidado técnico de uma autorizada, com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Fiat. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
       'Encontrar uma oficina especializada em Fiat em Curitiba que una conhecimento técnico da marca, equipamento certo e preço justo faz toda a diferença para quem roda com Argo, Mobi, Strada, Toro, Pulse ou qualquer outro modelo da linha. Na Carplus, no bairro Portão, somos referência no atendimento a veículos Fiat: conhecemos a fundo as particularidades dos motores Firefly e E.torQ, do câmbio Dualogic e da parte elétrica que costuma dar dor de cabeça nesses carros. Antes de qualquer orçamento, fazemos um diagnóstico computadorizado para identificar exatamente o que o seu Fiat precisa.',
     secoes: [
@@ -162,9 +163,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'Os veículos Fiat têm soluções de engenharia próprias — como o câmbio automatizado Dualogic e os motores da família Firefly — que exigem scanner compatível e experiência de quem já resolveu esses problemas centenas de vezes. Uma oficina generalista pode até fazer a troca de óleo, mas dificilmente domina a calibração do Dualogic ou a leitura correta dos módulos Fiat. A equipe da Carplus trata cada Fiat com o cuidado técnico que a marca pede, evitando trocas desnecessárias e indo direto à causa do problema.',
       },
       {
-        titulo: 'Revisão do seu Fiat sem perder a garantia de fábrica',
+        titulo: 'Revisão do seu Fiat: consulte manual e garantia',
         conteudo:
-          'Muitos donos de Fiat acreditam que precisam revisar o carro só na concessionária para não perder a garantia. Isso é mito: o Código de Defesa do Consumidor garante que você pode fazer a revisão em qualquer oficina de sua confiança, desde que sejam seguidos o plano do manual e usadas peças adequadas, com nota fiscal. A Carplus emite nota fiscal de tudo e segue rigorosamente o cronograma de revisão do seu Fiat — 10.000, 20.000, 30.000 km e assim por diante — normalmente a um custo bem menor que o da rede autorizada.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Diagnóstico eletrônico e injeção Fiat',
@@ -174,11 +175,11 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Atendimento no Portão para toda Curitiba',
         conteudo:
-          'Nossa oficina fica na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para quem vem da Água Verde, Novo Mundo, Fazendinha, Santa Quitéria, Capão Raso e de toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Traga seu Fiat para uma avaliação sem compromisso e descubra por que somos uma das oficinas mais bem avaliadas da cidade.',
+          'Nossa oficina fica na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para quem vem da Água Verde, Novo Mundo, Fazendinha, Santa Quitéria, Capão Raso e de toda a região sul e central de Curitiba. Trabalhamos com parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Traga seu Fiat para uma avaliação sem compromisso e descubra por que somos uma oficina no Portão, em Curitiba.',
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Fiat?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, você pode revisar o Fiat fora da concessionária sem perder a garantia, desde que seja seguido o plano do manual e usadas peças adequadas, com nota fiscal. A Carplus emite nota fiscal de todos os serviços e peças.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Fiat?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Fiat em Curitiba?', resposta: 'O valor depende do modelo e da quilometragem (10.000, 20.000, 30.000 km etc.). Fazemos um diagnóstico e apresentamos o orçamento detalhado antes de iniciar, normalmente com preço mais acessível que a concessionária. Peça um orçamento sem compromisso pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Fiat?', resposta: 'Sim. Contamos com scanner automotivo profissional que lê injeção eletrônica, ABS, airbag e módulos Fiat, incluindo o câmbio Dualogic, além de reset de painel e limpeza de bicos.' },
       { pergunta: 'Vocês resolvem problema de câmbio Dualogic?', resposta: 'Sim. Fazemos leitura do módulo, calibração do ponto de embreagem, troca do fluido correto e avaliação do atuador para corrigir trepidação e demora nas trocas do Dualogic.' },
@@ -235,7 +236,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Volkswagen. Atendemos veículos VW com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor. Você tem o mesmo rigor técnico de uma autorizada, com preço em média mais acessível e atendimento mais ágil, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Volkswagen. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
       'Se você procura uma oficina especializada em Volkswagen em Curitiba, a Carplus, no Portão, é a escolha inteligente para cuidar do seu Polo, Virtus, T-Cross, Nivus, Gol e demais modelos da marca. Conhecemos a fundo os motores TSI e MSI, o câmbio automatizado I-Motion e os pontos de atenção elétricos e mecânicos que a linha VW costuma apresentar. Todo atendimento começa com um diagnóstico computadorizado, para que o orçamento seja preciso e você pague apenas pelo que o carro realmente precisa.',
     secoes: [
@@ -245,9 +246,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'Os motores turbo TSI trouxeram muito desempenho para a linha Volkswagen, mas também demandam manutenção correta: óleo na especificação exata, atenção à carbonização das válvulas de admissão e cuidado com a corrente de comando do EA211. A Carplus domina esses detalhes e usa scanner compatível para acompanhar a saúde do motor. Assim, evitamos que um problema pequeno — como uma bobina de ignição fraca — evolua para uma pane cara e deixe você na mão.',
       },
       {
-        titulo: 'Revisão Volkswagen mantendo a garantia de fábrica',
+        titulo: 'Revisão Volkswagen com condições de garantia a consultar no fabricante',
         conteudo:
-          'Você não precisa ir à concessionária para manter a garantia do seu Volkswagen. O Código de Defesa do Consumidor permite revisar o carro em qualquer oficina de confiança, desde que se siga o plano de manutenção do manual e se usem peças adequadas, com nota fiscal. A Carplus segue exatamente o cronograma VW por quilometragem, emite nota fiscal de todos os serviços e, na maioria dos casos, oferece um custo bem mais atrativo que o da rede autorizada, sem abrir mão da qualidade.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Câmbio, injeção e parte elétrica VW',
@@ -257,11 +258,11 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina VW no Portão, fácil acesso em Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para quem vem da Água Verde, Fazendinha, Novo Mundo, Capão Raso e de toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Volkswagen e conte com uma das oficinas mais bem avaliadas da cidade.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, ponto de fácil acesso para quem vem da Água Verde, Fazendinha, Novo Mundo, Capão Raso e de toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Volkswagen e conte com uma oficina no Portão, em Curitiba.',
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Volkswagen?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal — o que a Carplus emite em todos os serviços.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Volkswagen?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Volkswagen em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos um orçamento detalhado antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Volkswagen?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos VW, incluindo o câmbio automatizado I-Motion, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Resolvem carbonização de motor TSI?', resposta: 'Sim. Fazemos a descarbonização das válvulas de admissão e a limpeza do sistema, recuperando potência e consumo dos motores TSI.' },
@@ -318,7 +319,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Chevrolet/GM. Atendemos veículos Chevrolet com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Chevrolet/GM. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
       'Procurando uma oficina especializada em Chevrolet em Curitiba? A Carplus, no Portão, é a alternativa inteligente para cuidar do seu Onix, Tracker, S10, Spin, Cruze e demais modelos GM. Conhecemos os motores 1.0 e 1.4 turbo, o comportamento da corrente de comando e os pontos de atenção elétricos e de arrefecimento que a linha Chevrolet costuma apresentar. Cada atendimento começa com diagnóstico computadorizado, garantindo um orçamento preciso e sem surpresas.',
     secoes: [
@@ -328,9 +329,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'O Onix é um dos carros mais vendidos do Brasil, e junto com Tracker, Spin e S10 forma a base da frota Chevrolet em Curitiba. Esses modelos têm particularidades — como a corrente de comando dos motores 1.0/1.4 e o histórico de superaquecimento do Cruze — que pedem uma oficina que já resolveu esses casos muitas vezes. A Carplus reúne experiência e scanner compatível para tratar cada Chevrolet com precisão, indo direto à causa do problema.',
       },
       {
-        titulo: 'Revisão Chevrolet sem perder a garantia',
+        titulo: 'Revisão Chevrolet: consulte manual e garantia',
         conteudo:
-          'Manter a garantia do seu Chevrolet não obriga você a ir à concessionária. Pelo Código de Defesa do Consumidor, a revisão pode ser feita em qualquer oficina de confiança, desde que se siga o plano do manual e se usem peças adequadas, com nota fiscal. A Carplus cumpre à risca o cronograma GM por quilometragem, emite nota fiscal de tudo e costuma oferecer um custo bem menor que o da rede autorizada, com a mesma qualidade técnica.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Diagnóstico, arrefecimento e injeção GM',
@@ -344,7 +345,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Chevrolet?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal, que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Chevrolet?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Chevrolet em Curitiba?', resposta: 'O valor depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, geralmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Chevrolet?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos GM, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Resolvem superaquecimento do Cruze?', resposta: 'Sim. Testamos válvula termostática, bomba d\u2019água, radiador e sensores para corrigir a causa do superaquecimento antes que danifique o motor.' },
@@ -401,9 +402,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Hyundai. Atendemos veículos Hyundai com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Hyundai. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Se você tem um HB20, Creta, Tucson ou outro Hyundai e procura uma oficina especializada em Curitiba, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos as particularidades da linha Hyundai — da embreagem do HB20 ao câmbio automático do Creta — e usamos diagnóstico computadorizado para acertar de primeira. Assim, você economiza sem abrir mão da qualidade e mantém a garantia de fábrica do seu carro.',
+      'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
     secoes: [
       {
         titulo: 'Especialistas na linha Hyundai',
@@ -411,9 +412,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'O HB20 é um dos hatches mais populares do país e o Creta lidera vendas entre os SUVs compactos — o que faz da Hyundai uma marca muito presente nas ruas de Curitiba. Esses modelos têm pontos de atenção conhecidos, como o desgaste de embreagem do HB20 e o comportamento do câmbio automático do Creta. Na Carplus, a experiência da equipe e o scanner compatível permitem diagnosticar e resolver esses casos com segurança.',
       },
       {
-        titulo: 'Revisão Hyundai mantendo a garantia',
+        titulo: 'Revisão Hyundai: consulte manual e garantia',
         conteudo:
-          'Você pode revisar seu Hyundai fora da concessionária sem perder a garantia de fábrica. O Código de Defesa do Consumidor assegura esse direito, desde que se siga o plano do manual e se usem peças adequadas, com nota fiscal. A Carplus segue o cronograma de revisão Hyundai por quilometragem, emite nota fiscal de tudo e costuma oferecer um custo menor que o da rede autorizada.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Câmbio automático e diagnóstico Hyundai',
@@ -423,11 +424,11 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Oficina Hyundai no Portão, Curitiba',
         conteudo:
-          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Hyundai e conte com uma das oficinas mais bem avaliadas da cidade.',
+          'Estamos na Avenida Presidente Arthur da Silva Bernardes, 1323, no Portão, com fácil acesso para toda Curitiba e região metropolitana. Oferecemos parcelamento em até 10x sem juros, diagnóstico antes do orçamento e garantia conforme avaliação. Agende a avaliação do seu Hyundai e conte com uma oficina no Portão, em Curitiba.',
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Hyundai?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Hyundai?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Hyundai em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Hyundai?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Hyundai, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Fazem troca de óleo do câmbio automático do Creta?', resposta: 'Sim. Fazemos a troca do fluido de câmbio automático com equipamento adequado e leitura do módulo para suavizar as trocas.' },
@@ -465,7 +466,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Revisão cara na concessionária',
         solucao:
-          'Seguimos o plano de revisão programada do manual Toyota com preço mais acessível, mantendo a garantia e emitindo nota fiscal de tudo.',
+          'Consulte o plano de manutenção Toyota e as condições de garantia do fabricante. Confirme os procedimentos e os valores da revisão no orçamento.',
       },
       {
         problema: 'Óleo fora da especificação em revisões anteriores',
@@ -484,14 +485,14 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Toyota. Atendemos veículos Toyota com diagnóstico computadorizado, óleo e fluidos na especificação correta, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Toyota. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Dono de Corolla, Hilux, Yaris ou SW4 sabe que a Toyota é sinônimo de durabilidade — mas a revisão na concessionária costuma pesar no bolso. A Carplus, no Portão em Curitiba, é a oficina especializada em Toyota que oferece a mesma qualidade técnica com preço mais justo, seguindo à risca o plano de revisão programada do manual e usando óleo e fluidos na especificação correta, para manter a garantia de fábrica.',
+      'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
     secoes: [
       {
-        titulo: 'Revisão Toyota mais econômica, sem perder a garantia',
+        titulo: 'Revisão Toyota: consulte manual e garantia',
         conteudo:
-          'A grande dúvida de quem tem Toyota é: posso revisar fora da concessionária sem perder a garantia? A resposta é sim. O Código de Defesa do Consumidor garante esse direito, desde que se siga o plano de manutenção do manual e se usem peças e fluidos adequados, com nota fiscal. A Carplus cumpre exatamente o cronograma de revisão programada da Toyota, emite nota fiscal de tudo e oferece um custo consideravelmente menor que o da rede autorizada.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Câmbio CVT com a especificação correta',
@@ -510,7 +511,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Toyota?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usados peças e fluidos adequados, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Toyota?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Toyota em Curitiba?', resposta: 'Depende do modelo e da quilometragem, mas normalmente é mais acessível que na concessionária. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Toyota?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Toyota, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Fazem a troca de fluido do câmbio CVT?', resposta: 'Sim. Fazemos a troca do fluido de CVT com equipamento adequado e a especificação Toyota correta, preservando o câmbio.' },
@@ -567,9 +568,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Renault. Atendemos veículos Renault com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Renault. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Se você procura uma oficina especializada em Renault em Curitiba para cuidar do seu Kwid, Sandero, Logan, Duster ou Captur, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos os pontos de atenção da linha Renault — de bobinas de ignição ao câmbio automatizado — e usamos diagnóstico computadorizado para acertar de primeira, com preço justo e garantia mantida.',
+      'Se você procura uma oficina especializada em Renault em Curitiba para cuidar do seu Kwid, Sandero, Logan, Duster ou Captur, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos os pontos de atenção da linha Renault — de bobinas de ignição ao câmbio automatizado — e usamos diagnóstico computadorizado para investigar a causa do problema, com preço justo e garantia mantida.',
     secoes: [
       {
         titulo: 'Conhecimento técnico da linha Renault',
@@ -577,9 +578,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'O Kwid e o Sandero estão entre os carros mais econômicos do mercado, e o Duster é um dos SUVs mais versáteis — todos com boa presença em Curitiba. Esses modelos têm características próprias, como o comportamento das bobinas de ignição e do câmbio automatizado, que pedem uma oficina experiente. A Carplus reúne experiência e scanner compatível para diagnosticar e resolver esses casos com precisão.',
       },
       {
-        titulo: 'Revisão Renault mantendo a garantia',
+        titulo: 'Revisão Renault: consulte manual e garantia',
         conteudo:
-          'Você pode revisar seu Renault fora da concessionária sem perder a garantia de fábrica. O Código de Defesa do Consumidor assegura esse direito, desde que se siga o plano do manual e se usem peças adequadas, com nota fiscal. A Carplus segue o cronograma de revisão Renault por quilometragem, emite nota fiscal de tudo e oferece um custo mais acessível que o da rede autorizada.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Injeção, câmbio e suspensão Renault',
@@ -593,7 +594,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Renault?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Renault?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Renault em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Renault?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Renault, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Resolvem trancos do câmbio automatizado?', resposta: 'Sim. Fazemos leitura de módulo, calibração e avaliação do atuador para suavizar as trocas do câmbio automatizado Renault.' },
@@ -650,9 +651,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Honda. Atendemos veículos Honda com diagnóstico computadorizado, fluidos na especificação correta, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Honda. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Dono de Honda valoriza a confiabilidade da marca, mas a manutenção fora da garantia costuma sair cara na concessionária. A Carplus, no Portão em Curitiba, é a oficina especializada em Honda que entrega a mesma qualidade técnica com preço mais justo, cuidando de Civic, City, Fit, HR-V e CR-V com atenção especial ao câmbio CVT — um dos pontos mais sensíveis da marca.',
+      'Dono de Honda valoriza a confiabilidade da marca, mas a manutenção fora da garantia costuma sair cara na concessionária. A Carplus, no Portão em Curitiba, é a oficina especializada em Honda que entrega a avaliação e orçamento conforme o veículo, cuidando de Civic, City, Fit, HR-V e CR-V com atenção especial ao câmbio CVT — um dos pontos mais sensíveis da marca.',
     secoes: [
       {
         titulo: 'Especialistas no câmbio CVT Honda',
@@ -662,7 +663,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Revisão Honda fora da garantia com economia',
         conteudo:
-          'Quando o carro sai da garantia de fábrica, não faz sentido continuar pagando os preços da concessionária. A Carplus segue o plano de manutenção da Honda com o mesmo rigor técnico, usando peças de qualidade e emitindo nota fiscal de tudo, por um custo bem mais acessível. E se o seu Honda ainda estiver na garantia, o Código de Defesa do Consumidor permite revisá-lo aqui sem perder esse direito.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Mecânica e diagnóstico completos',
@@ -676,12 +677,12 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Honda?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças e fluidos adequados, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Honda?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Honda em Curitiba?', resposta: 'Depende do modelo e da quilometragem, mas normalmente é mais acessível que na concessionária, especialmente fora da garantia. Fazemos o diagnóstico e apresentamos o orçamento antes. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Honda?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Honda, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Fazem a troca de fluido do câmbio CVT Honda?', resposta: 'Sim. Fazemos a troca do fluido de CVT com equipamento adequado e a especificação Honda correta, evitando trancos e desgaste.' },
       { pergunta: 'Atendem qual região de Curitiba?', resposta: 'Estamos no Portão e atendemos toda Curitiba e região metropolitana, com fácil acesso para Água Verde, Novo Mundo, Fazendinha, Capão Raso e demais bairros.' },
-      { pergunta: 'Vale a pena revisar o Honda fora da concessionária?', resposta: 'Sim, especialmente fora da garantia. Mantemos o mesmo rigor técnico com preço mais acessível e nota fiscal de tudo.' },
+      { pergunta: 'Vale a pena revisar o Honda fora da concessionária?', resposta: 'Compare os procedimentos e os valores do orçamento com o plano de manutenção do seu Honda. Antes de escolher a oficina, confira as condições de garantia do fabricante e a documentação necessária.' },
       { pergunta: 'É possível parcelar os serviços?', resposta: 'Sim, parcelamos em até 10x sem juros e aceitamos cartão, débito, dinheiro e PIX.' },
       { pergunta: 'Usam peças originais Honda?', resposta: 'Usamos peças de qualidade — genuínas ou de primeira linha equivalentes — na especificação de fábrica, com nota fiscal e garantia.' },
     ],
@@ -733,9 +734,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     alternativaAutorizada:
-      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Jeep. Atendemos veículos Jeep com diagnóstico computadorizado, scanner específico, peças de qualidade e nota fiscal de peças e serviços, mantendo a garantia de fábrica conforme o Código de Defesa do Consumidor — com preço em média mais acessível e atendimento mais rápido, aqui no Portão em Curitiba.',
+      'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Jeep. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'O Jeep Renegade e o Compass estão entre os SUVs mais desejados do Brasil, e por compartilharem a plataforma Stellantis com a Fiat, a Carplus tem grande sinergia técnica para atendê-los. No Portão em Curitiba, somos a oficina especializada em Jeep que cuida do seu SUV com diagnóstico computadorizado, atenção ao câmbio automático e ao sistema de arrefecimento, mantendo a garantia de fábrica e com preço mais justo que a concessionária.',
+      'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
     secoes: [
       {
         titulo: 'Sinergia técnica com a plataforma Stellantis',
@@ -743,9 +744,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
           'Renegade, Compass e Commander compartilham motores e soluções de engenharia com a linha Fiat, dentro do grupo Stellantis. Isso significa que a experiência acumulada da Carplus com motores e câmbios dessa plataforma se aplica diretamente ao seu Jeep. Conhecemos os pontos de atenção do câmbio automático de 6 e 9 marchas, do sistema de arrefecimento e da parte eletrônica, resolvendo com precisão o que outras oficinas demoram para diagnosticar.',
       },
       {
-        titulo: 'Revisão Jeep mantendo a garantia',
+        titulo: 'Revisão Jeep: consulte manual e garantia',
         conteudo:
-          'Você pode revisar seu Jeep fora da concessionária sem perder a garantia de fábrica. O Código de Defesa do Consumidor assegura esse direito, desde que se siga o plano do manual e se usem peças adequadas, com nota fiscal. A Carplus segue o cronograma de revisão Jeep por quilometragem, emite nota fiscal de tudo e oferece um custo mais acessível que o da rede autorizada.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'Câmbio automático, arrefecimento e diagnóstico',
@@ -759,7 +760,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Jeep?', resposta: 'Sim. Pelo Código de Defesa do Consumidor, a revisão pode ser feita fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Jeep?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão do Jeep em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Jeep?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Jeep, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Fazem a troca de óleo do câmbio automático do Compass?', resposta: 'Sim. Fazemos a troca do fluido do câmbio automático com equipamento adequado e leitura do módulo para suavizar as trocas.' },
@@ -869,10 +870,10 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     tipo: 'servico',
     titleTag: 'Revisão Automotiva em Curitiba | Carplus Portão',
     metaDescription:
-      'Revisão automotiva completa em Curitiba, multimarcas, mantendo a garantia de fábrica. Checklist, nota fiscal e preço justo. WhatsApp (41) 3082-7282.',
+      'Revisão automotiva completa em Curitiba, multimarcas, com condições de garantia a consultar no fabricante. Checklist, nota fiscal e preço justo. WhatsApp (41) 3082-7282.',
     h1: 'Revisão Automotiva em Curitiba',
     heroSubtitulo:
-      'Revisão completa multimarcas por quilometragem, mantendo a garantia de fábrica. Checklist detalhado, nota fiscal e preço mais acessível que a concessionária.',
+      'Revisão completa multimarcas por quilometragem, com condições de garantia a consultar no fabricante. Checklist detalhado, nota fiscal e orçamento conforme o serviço necessário.',
     eyebrow: 'Revisão Multimarcas • Portão, Curitiba',
     modelosAtendidos: ['Revisão 10.000 km', 'Revisão 20.000 km', 'Revisão 30.000 km', 'Revisão 40.000 km', 'Revisão pré-viagem', 'Todas as marcas'],
     servicosDestaque: [
@@ -887,7 +888,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Medo de perder a garantia revisando fora da concessionária',
         solucao:
-          'Pelo Código de Defesa do Consumidor, você mantém a garantia revisando em oficina de confiança, seguindo o manual e com nota fiscal — que a Carplus emite em tudo.',
+          'Consulte o plano de manutenção do manual e as condições de garantia do fabricante. Confirme quais procedimentos e documentos são necessários antes de contratar a revisão.',
       },
       {
         problema: 'Revisão na concessionária muito cara',
@@ -911,12 +912,12 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     intro:
-      'A revisão automotiva preventiva é o melhor investimento para quem quer evitar panes, gastos altos e imprevistos na estrada. A Carplus, no Portão em Curitiba, faz revisão completa multimarcas seguindo exatamente o plano do manual de cada veículo, por quilometragem, com checklist detalhado, peças de qualidade e nota fiscal de tudo — mantendo a garantia de fábrica e por um preço mais acessível que o da concessionária.',
+      'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
     secoes: [
       {
         titulo: 'Revisão fora da concessionária mantém a garantia',
         conteudo:
-          'Este é o maior receio de quem tem carro novo, e a boa notícia é clara: a Lei nº 8.078 (Código de Defesa do Consumidor) assegura que o consumidor pode fazer a revisão fora da concessionária sem perder a garantia de fábrica, desde que siga o plano de manutenção do manual, use peças adequadas e guarde a nota fiscal dos serviços. A Carplus cumpre rigorosamente esse plano e emite nota fiscal de tudo, garantindo o seu direito e a sua economia ao mesmo tempo.',
+          'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.',
       },
       {
         titulo: 'O que é verificado em uma revisão completa',
@@ -931,11 +932,11 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Revisão pré-viagem e transparência total',
         conteudo:
-          'Antes de pegar a estrada — seja para o litoral, a serra ou uma viagem longa pela BR-116 — vale fazer a revisão pré-viagem, com checklist reforçado de segurança: pneus, freios, fluidos, suspensão e iluminação. Em todos os atendimentos, apresentamos um orçamento transparente, explicando o que é urgente e o que pode esperar. Nunca empurramos serviços desnecessários — é assim que construímos uma nota média 4,9 no Google.',
+          `Antes de pegar a estrada — seja para o litoral, a serra ou uma viagem longa pela BR-116 — vale fazer a revisão pré-viagem, com checklist reforçado de segurança: pneus, freios, fluidos, suspensão e iluminação. Em todos os atendimentos, apresentamos um orçamento transparente, explicando o que é urgente e o que pode esperar. Nunca empurramos serviços desnecessários — é assim que construímos uma nota média ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações).`,
       },
     ],
     faq: [
-      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica?', resposta: 'Sim. Pelo Código de Defesa do Consumidor (Lei nº 8.078), você pode revisar o carro fora da concessionária sem perder a garantia, desde que seguido o plano do manual e usadas peças adequadas, com nota fiscal — o que a Carplus emite em tudo.' },
+      { pergunta: 'A revisão na Carplus mantém a garantia de fábrica?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
       { pergunta: 'Quanto custa a revisão automotiva em Curitiba?', resposta: 'Depende do modelo e da quilometragem, mas normalmente é mais acessível que na concessionária. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar. Peça pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês fazem revisão de qualquer marca?', resposta: 'Sim. Fazemos revisão completa multimarcas, nacionais e importadas, seguindo o plano do manual de cada veículo.' },
       { pergunta: 'O que é verificado na revisão?', resposta: 'Óleo e filtros, correias, arrefecimento, freios, suspensão, direção, pneus, bateria, iluminação e leitura eletrônica com scanner, entre outros itens do checklist.' },
@@ -964,7 +965,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     eyebrow: 'Oficina Mecânica • Portão, Curitiba',
     modelosAtendidos: ['Carros nacionais', 'Carros importados', 'SUVs', 'Picapes', 'Utilitários leves', 'Todas as marcas'],
     servicosDestaque: [
-      { titulo: 'Revisão e manutenção preventiva', descricao: 'Checklist completo por quilometragem, mantendo a garantia de fábrica e evitando panes.' },
+      { titulo: 'Revisão e manutenção preventiva', descricao: 'Checklist completo por quilometragem, com condições de garantia a consultar no fabricante e evitando panes.' },
       { titulo: 'Freios e suspensão', descricao: 'Pastilhas, discos, fluido, amortecedores, molas e buchas para segurança e conforto.' },
       { titulo: 'Injeção eletrônica', descricao: 'Diagnóstico e limpeza de bicos, correção de falhas de injeção e marcha lenta irregular.' },
       { titulo: 'Câmbio automático e manual', descricao: 'Troca de óleo de câmbio, reparo de embreagem e calibração de câmbios automatizados.' },
@@ -975,7 +976,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Não saber em qual oficina confiar',
         solucao:
-          'A Carplus tem nota 4,9 no Google e diagnóstico antes do orçamento, com total transparência.',
+          `A Carplus tem nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações) e diagnóstico antes do orçamento, com total transparência.`,
       },
       {
         problema: 'Orçamento com valores escondidos',
@@ -985,7 +986,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Carro parado por muito tempo na oficina',
         solucao:
-          'Boa parte dos serviços é feita no mesmo dia; quando o prazo é maior, informamos com antecedência e mantemos você atualizado.',
+          'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
       },
       {
         problema: 'Troca de peças desnecessárias',
@@ -999,7 +1000,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     intro:
-      'Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com nota 4,9 no Google e garantia conforme avaliação. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.',
+      `Encontrar uma oficina mecânica de confiança em Curitiba, que reúna mecânica completa, diagnóstico moderno e preço justo, faz toda a diferença na rotina de quem depende do carro. A Carplus é um centro automotivo full service no bairro Portão, com nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações) e garantia conforme avaliação. Aqui você resolve tudo em um só lugar, com diagnóstico computadorizado antes do orçamento.`,
     secoes: [
       {
         titulo: 'Um centro automotivo completo em Curitiba',
@@ -1023,7 +1024,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
-      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: 'A Carplus é uma das oficinas mais bem avaliadas de Curitiba, com nota 4,9 no Google, diagnóstico computadorizado e garantia conforme avaliação.' },
+      { pergunta: 'Qual a melhor oficina mecânica em Curitiba?', resposta: `A Carplus é uma oficina no Portão, em Curitiba, com nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações), diagnóstico computadorizado e garantia conforme avaliação.` },
       { pergunta: 'A oficina atende toda Curitiba?', resposta: 'Sim. Embora nossa estrutura fique no Portão, atendemos motoristas de toda Curitiba e da região metropolitana.' },
       { pergunta: 'Quais serviços a oficina oferece?', resposta: 'Revisão, freios, suspensão, injeção eletrônica, câmbio automático e manual, reparo elétrico, bateria, ar-condicionado, escapamento, pneus e alinhamento 3D.' },
       { pergunta: 'O orçamento é gratuito?', resposta: 'Sim, o orçamento é sem compromisso. Fazemos o diagnóstico e apresentamos os valores antes de qualquer serviço, com total transparência.' },
@@ -1052,7 +1053,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     eyebrow: 'Bairro Portão • Curitiba',
     modelosAtendidos: ['Portão', 'Água Verde', 'Novo Mundo', 'Fazendinha', 'Vila Izabel', 'Capão Raso', 'Santa Quitéria', 'Lindóia', 'Seminário'],
     servicosDestaque: [
-      { titulo: 'Revisão e manutenção preventiva', descricao: 'Checklist completo por quilometragem, mantendo a garantia de fábrica, pertinho de casa.' },
+      { titulo: 'Revisão e manutenção preventiva', descricao: 'Checklist completo por quilometragem, com condições de garantia a consultar no fabricante, pertinho de casa.' },
       { titulo: 'Freios e suspensão', descricao: 'Pastilhas, discos, amortecedores e buchas — essenciais para as ruas e paralelepípedos do Portão.' },
       { titulo: 'Injeção e diagnóstico', descricao: 'Scanner profissional para leitura de falhas de injeção, ABS e airbag, com laudo antes do orçamento.' },
       { titulo: 'Câmbio automático e manual', descricao: 'Troca de óleo de câmbio, reparo de embreagem e calibração de câmbios automatizados.' },
@@ -1063,12 +1064,12 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Não achar oficina de confiança perto de casa',
         solucao:
-          'Estamos no coração do Portão, com nota 4,9 no Google, pertinho de quem mora e trabalha na região.',
+          `Estamos no coração do Portão, com nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações), pertinho de quem mora e trabalha na região.`,
       },
       {
         problema: 'Perder tempo indo a oficinas distantes',
         solucao:
-          'Resolvemos tudo em um só endereço no Portão, com boa parte dos serviços feitos no mesmo dia.',
+          'O prazo depende da avaliação do veículo e da agenda da oficina; confirme com a equipe antes de se deslocar.',
       },
       {
         problema: 'Suspensão castigada pelas ruas do bairro',
@@ -1107,7 +1108,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Confiança, garantia e transparência',
         conteudo:
-          'Com nota 4,9 no Google, a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia conforme avaliação, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.',
+          `Com nota ${GOOGLE_REVIEW_SUMMARY.ratingDisplay} no Google (conferido em ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}; ${GOOGLE_REVIEW_SUMMARY.count} avaliações), a Carplus construiu sua reputação no atendimento honesto. Fazemos diagnóstico computadorizado antes do orçamento, explicamos o que é urgente e o que pode esperar e oferecemos garantia conforme avaliação, com nota fiscal e parcelamento em até 10x sem juros. Traga seu carro para uma avaliação sem compromisso, aqui no Portão.`,
       },
     ],
     faq: [

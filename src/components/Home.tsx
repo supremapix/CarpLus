@@ -132,18 +132,6 @@ export default function Home() {
       <Footer />
 
       {/* Floating WhatsApp */}
-      <a
-        href="https://wa.me/554130827282"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Fale conosco no WhatsApp"
-        className="fixed bottom-6 right-6 z-[900] bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 rounded-lg shadow-xl flex items-center gap-2 group border border-emerald-400/30 transition-colors"
-      >
-        <MessageSquare size={22} className="relative z-10" />
-        <span className="hidden sm:inline-block font-bold text-xs uppercase tracking-wider relative z-10">
-          WhatsApp
-        </span>
-      </a>
     </div>
   );
 }

@@ -251,16 +251,16 @@ export default function TireCatalog() {
     // Página de paginação com padrão forte → intenção de busca real + canonical
     // apontando para a landing temática indexável (consolida o link equity).
     seoTitle = `${thematicLanding.label} | Carplus Pneus`;
-    seoDescription = `${thematicLanding.label} na Carplus, no bairro Portão. Confira modelos, medidas e preços com montagem inclusa e até 10x sem juros. Orçamento no WhatsApp (41) 3082-7282.`;
+    seoDescription = `${thematicLanding.label} na Carplus, no bairro Portão. Confira modelos, medidas e preços com montagem sob consulta e até 10x sem juros. Orçamento no WhatsApp (41) 3082-7282.`;
     seoCanonical = `${BASE_URL}/${thematicLanding.slug}`;
   } else if (safePage > 1) {
     // Sem padrão forte: mantém genérica, porém noindex e fora do sitemap.
     seoTitle = "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
-    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem gratuita, até 10x sem juros.";
+    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem sob consulta, até 10x sem juros.";
     seoCanonical = `${BASE_URL}/pneus`;
   } else {
     seoTitle = "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
-    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem gratuita, até 10x sem juros.";
+    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem sob consulta, até 10x sem juros.";
     seoCanonical = `${BASE_URL}/pneus`;
   }
 
@@ -386,7 +386,7 @@ export default function TireCatalog() {
               em Curitiba
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto font-medium text-center">
-              Encontre o pneu ideal para seu carro com filtros avançados por medida, aro, categoria e modelo de veículo. Montagem técnica gratuita no Portão.
+              Encontre o pneu ideal para seu carro com filtros avançados por medida, aro, categoria e modelo de veículo. Montagem sob consulta no Portão.
             </p>
 
             {/* CTAs de Conversão na Hero */}
@@ -684,7 +684,7 @@ export default function TireCatalog() {
       {/* CTA Final Padronizado */}
       <FinalCTA
         title="Não encontrou a sua medida no catálogo?"
-        subtitle="Nosso estoque no Portão recebe novos modelos regularmente. Envie a medida do seu carro pelo WhatsApp que confirmamos a disponibilidade e passamos as melhores opções com montagem inclusa."
+        subtitle="Nosso estoque no Portão recebe novos modelos regularmente. Envie a medida do seu carro pelo WhatsApp que confirmamos a disponibilidade e passamos as melhores opções com montagem sob consulta."
         whatsappMessage="Olá! Gostaria de consultar se vocês têm a minha medida de pneu em estoque na Carplus."
         primaryActionText="Enviar medida no WhatsApp"
         badge="Consulta Rápida · Portão, Curitiba"
@@ -971,8 +971,7 @@ function PopularMeasuresBlock() {
       </h2>
       <p className="text-gray-600 leading-relaxed mb-6 text-pretty">
         As medidas de pneu mais buscadas em Curitiba para hatches, sedans e SUVs. Clique na medida
-        do seu veículo para ver os modelos disponíveis, aplicações e o melhor preço com montagem
-        inclusa na Carplus.
+        do seu veículo para pesquisar modelos e consultar aplicação, disponibilidade e valores dos serviços na Carplus.
       </p>
       <div className="flex flex-wrap gap-2">
         {POPULAR_MEASURES.map((m) => (

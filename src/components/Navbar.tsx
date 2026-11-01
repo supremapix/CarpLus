@@ -1,6 +1,6 @@
 
 import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
 // Carrega o modal de busca (e o catalogo de pneus que ele usa) somente sob demanda.
@@ -10,6 +10,14 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
+  const searchTriggerRef = useRef<HTMLElement | null>(null);
+  const openSearch = () => {
+    searchTriggerRef.current = document.activeElement as HTMLElement | null;
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -22,7 +30,7 @@ export default function Navbar() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        setIsSearchOpen(true);
+        if (!isSearchOpen) openSearch();
       }
       if (e.key === 'Escape') {
         setIsSearchOpen(false);
@@ -32,18 +40,39 @@ export default function Navbar() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isSearchOpen]);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    menuRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
     document.body.style.overflow = 'hidden';
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', trapFocus);
+      menuTriggerRef.current?.focus();
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isSearchOpen) return;
+    return () => {
+      const trigger = searchTriggerRef.current;
+      if (trigger?.isConnected && trigger.getClientRects().length) trigger.focus();
+      else menuTriggerRef.current?.focus();
+    };
+  }, [isSearchOpen]);
 
   const navLinks = [
     { name: 'Início', href: '/#inicio' },
@@ -60,7 +89,7 @@ export default function Navbar() {
       e.preventDefault();
       const id = href.replace('/#', '');
       const element = document.getElementById(id);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      if (element) element.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
     setIsMobileMenuOpen(false);
   };
@@ -81,32 +110,33 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <nav className={`transition-all duration-300 px-4 ${isScrolled ? 'bg-dark shadow-xl py-2' : 'bg-dark py-3'}`}>
+      <nav aria-label="Navegação principal" className={`transition-all duration-300 px-4 ${isScrolled ? 'bg-dark shadow-xl py-2' : 'bg-dark py-3'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="flex-shrink-1">
+          <Link to="/" className="min-w-0 max-w-[calc(100%-60px)] shrink-0">
             {/* Desktop: logo externa / Mobile: SVG local */}
             <img loading="lazy"
               src="/images/logos/logo-horizontal.svg"
               alt="Carplus Centro Automotivo"
               width={1182}
               height={168}
-              className={`hidden lg:block transition-all duration-300 w-auto ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
+              className={`hidden 2xl:block transition-all duration-300 w-64 max-w-full object-contain ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'}`}
             />
             <img loading="lazy"
               src="/carplus-pneus-oficina-mecanica-full-service-horizontal.svg"
               alt="Carplus Centro Automotivo"
               width={2952}
               height={708}
-              className={`lg:hidden transition-all duration-300 w-auto ${isScrolled ? 'h-9' : 'h-11'}`}
+              className={`2xl:hidden transition-all duration-300 w-auto max-w-full object-contain ${isScrolled ? 'h-9' : 'h-11'}`}
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden 2xl:flex items-center gap-3 whitespace-nowrap">
             {/* Botao de busca */}
             <button
-              onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-md px-3.5 py-2 transition-colors group"
+              onClick={openSearch}
+              aria-label="Buscar pneus e serviços"
+              className="flex min-h-11 items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-md px-3.5 py-2 transition-colors group"
             >
               <Search size={14} className="text-white/40 group-hover:text-primary transition-colors" />
               <span className="text-white/40 text-xs">Buscar...</span>
@@ -120,7 +150,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.href}
                 onClick={(e: any) => handleLinkClick(e, link.href)}
-                className="font-display text-sm uppercase tracking-tight hover:text-primary transition-colors text-white"
+                className="inline-flex min-h-11 items-center whitespace-nowrap font-display text-sm uppercase tracking-tight hover:text-primary transition-colors text-white"
               >
                 {link.name}
               </Link>
@@ -128,18 +158,20 @@ export default function Navbar() {
             <a
               href="https://wa.me/554130827282"
               target="_blank"
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2 rounded-md font-bold flex items-center gap-2 transition-colors text-xs uppercase tracking-wider border border-emerald-400/20 shadow-sm"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white min-h-11 px-4 py-2 rounded-md font-bold flex items-center gap-2 transition-colors text-xs uppercase tracking-wider border border-emerald-400/20 shadow-sm"
             >
               <MessageSquare size={15} /> WhatsApp
             </a>
           </div>
 
           {/* Mobile: header minimalista — apenas logo + menu (WhatsApp fica no drawer, footer e CTAs) */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center 2xl:hidden">
             <button
               type="button"
               className="flex size-11 items-center justify-center rounded-md bg-white/10 hover:bg-white/15 border border-white/10 text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
+              ref={menuTriggerRef}
               aria-label="Abrir menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
@@ -151,9 +183,10 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Drawer */}
-      <div
+      {isMobileMenuOpen && <div
+        ref={menuRef}
         id="mobile-navigation"
-        className={`fixed inset-0 z-[60] flex flex-col overflow-hidden bg-white p-4 text-dark transition-transform duration-300 ease-out will-change-transform sm:p-6 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}
+        className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-white p-4 text-dark sm:p-6"
         aria-hidden={!isMobileMenuOpen}
         role="dialog"
         aria-modal="true"
@@ -166,9 +199,9 @@ export default function Navbar() {
                 alt="Carplus Centro Automotivo"
                 width={2952}
                 height={708}
-                className="h-9 w-auto"
+                className="h-9 w-auto max-w-[calc(100%-56px)] object-contain"
               />
-              <button type="button" onClick={() => setIsMobileMenuOpen(false)} className="flex size-10 items-center justify-center rounded-md bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Fechar menu">
+              <button type="button" onClick={() => setIsMobileMenuOpen(false)} className="flex size-11 shrink-0 items-center justify-center rounded-md bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Fechar menu">
                 <X size={22} />
               </button>
             </div>
@@ -176,7 +209,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-6 overflow-y-auto overscroll-contain pb-8">
               <button
                 type="button"
-                onClick={() => { setIsMobileMenuOpen(false); setIsSearchOpen(true); }}
+                onClick={openSearch}
                 className="flex min-h-12 w-full items-center gap-3 rounded-md border border-gray-200 bg-gray-50 px-4 text-left text-sm text-gray-600 hover:border-primary transition-colors"
               >
                 <Search size={18} className="shrink-0 text-gray-400" />
@@ -205,7 +238,7 @@ export default function Navbar() {
               </div>
 
               <div className="flex flex-col gap-3 border-t border-gray-200 pt-5">
-                <p className="text-primary font-bold text-[11px] uppercase tracking-widest px-2">Atendimento Imediato</p>
+                <p className="text-primary font-bold text-[11px] uppercase tracking-widest px-2">Fale com a equipe</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <a
@@ -246,11 +279,11 @@ export default function Navbar() {
                 </address>
               </div>
             </div>
-      </div>
+      </div>}
 
       {/* Global Search Modal — montado (e o catalogo carregado) apenas apos abrir a busca */}
       {isSearchOpen && (
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-6 text-white" role="dialog" aria-modal="true" aria-label="Carregando busca"><div><p role="status">Carregando busca de pneus e serviços…</p><button autoFocus type="button" onKeyDown={(event) => { if (event.key === 'Tab') event.preventDefault(); }} className="mt-4 min-h-11 rounded border border-white px-4" onClick={() => setIsSearchOpen(false)}>Cancelar busca</button></div></div>}>
           <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </Suspense>
       )}

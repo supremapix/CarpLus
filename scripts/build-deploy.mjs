@@ -1,21 +1,9 @@
 #!/usr/bin/env node
-// Build de deploy da Vercel — resiliente e opt-in.
-//
-// Objetivo: NUNCA quebrar o deploy de produção. O build tem duas camadas:
-//
-//   1. ESSENCIAL (sempre roda, falha = deploy falha):
-//        sitemap  →  redirects  →  build:spa  →  HTML essencial validado
-//      Reproduz o build seguro conhecido-bom (SPA + sitemap + 152 redirects).
-//
-//   2. OPT-IN / BEST-EFFORT (só com GENERATE_STATIC=1):
-//        generate:static:all  →  validate:static:all
-//      Gera as 1.512 páginas estáticas usando Chromium serverless
-//      (@sparticuz/chromium) na Vercel. Se qualquer passo falhar, o build
-//      registra um AVISO e conclui com sucesso servindo o SPA. Assim, habilitar
-//      a flag jamais derruba a produção.
-//
-// Para ativar a geração completa em um deploy: defina GENERATE_STATIC=1 nas
-// variáveis de ambiente do projeto na Vercel (ou no comando local).
+// Required initial HTML for the exact existing 1533 indexed URLs plus existing
+// customer/legacy extras. The previous opt-in could silently serve home metadata
+// on catalog URLs if GENERATE_STATIC was absent or failed. Publication now fails
+// closed rather than replacing already-indexable initial content with the SPA.
+// This changes delivery guarantees only, never sitemap identities/indexability.
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -74,7 +62,7 @@ function run(cmd, { essential }) {
 
 console.log('[build-deploy] Iniciando build de deploy resiliente.');
 console.log(`[build-deploy] Ambiente Vercel: ${process.env.VERCEL ? 'sim' : 'nao'}`);
-console.log(`[build-deploy] GENERATE_STATIC: ${process.env.GENERATE_STATIC ?? '(nao definido)'}`);
+console.log('[build-deploy] HTML inicial obrigatório para todo o inventário indexado existente.');
 
 // Camada 1 — essencial.
 run('npm run sitemap', { essential: true });
@@ -92,21 +80,18 @@ run('node scripts/run-ts.mjs scripts/generate-static-comparison-guide.ts', { ess
 // de URLs nem adicioná-los ao sitemap. Falha aqui impede publicar o shell.
 run('npm run generate:static:existing-pages', { essential: true });
 
-// Camada 2 — opt-in, best-effort.
-if (process.env.GENERATE_STATIC === '1') {
-  console.log('\n[build-deploy] GENERATE_STATIC=1 → gerando as 1.512 páginas estáticas.');
-  const generated = run('npm run generate:static:all', { essential: false });
-  if (generated) {
-    run('npm run validate:static:all', { essential: false });
-  }
-} else {
-  console.log(
-    '\n[build-deploy] GENERATE_STATIC != 1 → pulando geração estática. ' +
-      'Blog, guia de comparação e páginas existentes prioritárias com HTML estático; demais rotas permanecem como SPA. Defina GENERATE_STATIC=1 para gerar todas as páginas.',
-  );
-}
+// All 40 existing indexed services, promotions, policies and HTML sitemap must not ship the home shell.
+run('node scripts/run-ts.mjs scripts/generate-static-customer-pages.ts', { essential: true });
 
-// Também protege os arquivos essenciais depois da geração global opcional.
+// Every existing indexed URL is required, independently of environment flags.
+run('npm run generate:static:all', { essential: true });
+run('node scripts/run-ts.mjs scripts/validate-static-all.ts --require-all', { essential: true });
+
+// Validate extra routes again after full generation, and enforce product identity/schema.
 run('npm run validate:static:existing-pages', { essential: true });
+run('node scripts/run-ts.mjs scripts/generate-static-customer-pages.ts --validate', { essential: true });
+run('node scripts/run-ts.mjs scripts/validate-static-products-required.ts', { essential: true });
+
+run('node scripts/emit-build-receipt.mjs', { essential: true });
 
 console.log('\n[build-deploy] Build de deploy concluído com sucesso.');

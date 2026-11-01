@@ -66,3 +66,17 @@ Principais áreas de atendimento e tráfego direto:
 - **Formas de Pagamento**: Aceita cartões de crédito (com opção de parcelamento em até 10x sem juros), cartões de débito, PIX e dinheiro.
 - **Orçamentos**: Podem ser solicitados sem compromisso pelo WhatsApp (41) 3082-7282 ou presencialmente na oficina.
 - **Garantia**: Pneus novos contam com garantia de fabricação padrão dos respectivos fabricantes contra defeitos de fábrica. Serviços mecânicos contam com garantia legal e suporte técnico direto da equipe da oficina.
+
+## Perguntas para decidir com segurança
+
+### Como pedir uma cotação de pneus?
+Informe a medida e os índices do manual, o ano e a versão do veículo e o uso pretendido. Consulte valor, disponibilidade e itens incluídos. O catálogo apresenta opções técnicas; não representa confirmação de estoque nem compatibilidade universal.
+
+### Um sintoma identifica a peça que deve ser trocada?
+Não. Ruídos, vibração, desgaste irregular e luzes de alerta podem ter diferentes causas. Descreva quando o problema aparece e solicite avaliação antes de autorizar peças ou serviços. Não use conteúdo do site para executar reparos de segurança por conta própria.
+
+### Há uma unidade em cada bairro citado?
+Não. A Carplus possui uma unidade no Portão, em Curitiba, no endereço informado acima. O conteúdo regional ajuda motoristas dos bairros próximos e de outras localidades a planejar a visita. Consulte a rota atual no mapa e confirme o atendimento.
+
+### Onde encontrar orientações específicas de cada serviço?
+As páginas `/servico/[slug]` apresentam sintomas, cuidados e perguntas específicas do serviço. O orçamento e o procedimento dependem do veículo e da avaliação da equipe. Consulte o índice em https://www.carpluspneuseoficina.com.br/servicos.

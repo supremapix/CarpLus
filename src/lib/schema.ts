@@ -25,39 +25,8 @@ export const CARPLUS_SELLER = {
   address: CARPLUS_ADDRESS,
 } as const;
 
-/** Política de devolução — exigida pelo Google Rich Results (Merchant Listings). */
-export const CARPLUS_RETURN_POLICY = {
-  "@type": "MerchantReturnPolicy",
-  applicableCountry: "BR",
-  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-  merchantReturnDays: 7,
-  returnMethod: "https://schema.org/ReturnInStore",
-  returnFees: "https://schema.org/FreeReturn",
-} as const;
-
-/** Informações de entrega — exigidas pelo Google Rich Results (Merchant Listings). */
-export const CARPLUS_SHIPPING = {
-  "@type": "OfferShippingDetails",
-  shippingDestination: {
-    "@type": "DefinedRegion",
-    addressCountry: "BR",
-  },
-  deliveryTime: {
-    "@type": "ShippingDeliveryTime",
-    handlingTime: {
-      "@type": "QuantitativeValue",
-      minValue: 0,
-      maxValue: 1,
-      unitCode: "DAY",
-    },
-    transitTime: {
-      "@type": "QuantitativeValue",
-      minValue: 1,
-      maxValue: 7,
-      unitCode: "DAY",
-    },
-  },
-} as const;
+// Do not infer shipping times or return fees from a generic catalog entry.
+// Such policies need verified merchant data before being added to an Offer.
 
 /**
  * Retorna uma data ISO (YYYY-MM-DD) somando `days` à data de build.
@@ -129,7 +98,7 @@ export function generateProductSchema(props: ProductSchemaProps): object {
     description,
     image: Array.isArray(image) ? image : [image],
     sku,
-    mpn: sku,
+    url,
     brand: {
       "@type": "Brand",
       name: brand,
@@ -147,13 +116,9 @@ export function generateProductSchema(props: ProductSchemaProps): object {
       url,
       price: price.toFixed(2),
       priceCurrency: currency,
-      // Validade do preço dinâmica: 30 dias a partir de hoje
-      priceValidUntil: addDays(30),
       itemCondition: "https://schema.org/NewCondition",
-      availability: (availability && availabilityMap[availability]) || "https://schema.org/InStock",
+      ...(availability ? { availability: availabilityMap[availability] } : {}),
       seller: CARPLUS_SELLER,
-      hasMerchantReturnPolicy: CARPLUS_RETURN_POLICY,
-      shippingDetails: CARPLUS_SHIPPING,
     };
   }
 
@@ -280,13 +245,6 @@ export function generateLocalBusinessSchema(): object {
         closes: "12:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "262",
-      bestRating: "5",
-      worstRating: "1",
-    },
     priceRange: "$$",
     currenciesAccepted: "BRL",
     paymentAccepted: "Cash, Credit Card, Debit Card, PIX",

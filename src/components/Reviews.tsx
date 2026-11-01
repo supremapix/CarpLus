@@ -1,11 +1,16 @@
+import verifiedGoogleReviews from '../data/googleReviewsVerified.json';
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 
 import { Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import SectionTitle from './SectionTitle';
 import ReviewsHeader from './ReviewsHeader';
 
-const ALL_REVIEWS = [
+interface ReviewEntry { name: string; text: string; stars: number; avatar: string | null; avatarColorIdx?: number; }
+
+const ALL_REVIEWS: ReviewEntry[] = [
+  ...verifiedGoogleReviews.reviews.map(review => ({ name: review.name, text: review.text, stars: review.stars, avatar: null, avatarColorIdx: 0 })),
   { 
     name: 'Isaac Coelho', 
     text: 'Fui muito bem atendido na loja. Iniciei meu atendimento após uma pesquisa na internet e foi tudo pelo WhatsApp. O Vinicius foi muito profissional no atendimento e interessado em ajudar e fechar o negócio. A loja tem água, café, banheiros limpos e até uma área kids. Recomendo a loja sem medo de arrependimento.', 
@@ -332,6 +337,10 @@ function ReviewCard({ review, colorIdx, reviewIdx, onClick }: { review: typeof A
   return (
     <div 
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      aria-label={`Ler avaliação de ${review.name}`}
+      onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onClick(); } }}
       className="bg-white p-4 rounded-lg shadow-xs hover:shadow-md transition-shadow flex-shrink-0 w-full border border-gray-200 cursor-pointer"
     >
       {/* Header estilo Google Maps */}
@@ -401,7 +410,7 @@ function ReviewColumn({ reviews, duration, delay = 0, offset = 0, onReviewClick 
             review={r} 
             colorIdx={(i + offset) % 6} 
             reviewIdx={i} 
-            onClick={() => onReviewClick(r, i % reviews.length)}
+            onClick={() => onReviewClick(r, ALL_REVIEWS.indexOf(r))}
           />
         ))}
       </div>
@@ -423,7 +432,27 @@ const [COL1, COL2, COL3, COL4] = getColumns();
 export default function Reviews() {
   const [selectedReview, setSelectedReview] = useState<{ review: typeof ALL_REVIEWS[0], index: number } | null>(null);
 
+  const modalRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const hasSelectedReview = selectedReview !== null;
+  useEffect(() => {
+    if (!hasSelectedReview) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    modalRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const items = Array.from(modalRef.current?.querySelectorAll<HTMLElement>('button, a[href]') ?? []);
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
+    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener('keydown', trapFocus); if (triggerRef.current?.isConnected) triggerRef.current.focus(); };
+  }, [hasSelectedReview]);
+
   const openReview = (review: typeof ALL_REVIEWS[0], index: number) => {
+    triggerRef.current = document.activeElement as HTMLElement | null;
     setSelectedReview({ review, index });
   };
 
@@ -496,6 +525,7 @@ export default function Reviews() {
           <a
             href="https://www.google.com/search?q=carplus+auto+center+curitiba+avaliacoes"
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#1a73e8] hover:underline font-medium text-sm"
           >
             <GoogleLogo /> Ver Todas as Avaliações no Google
@@ -519,33 +549,38 @@ export default function Reviews() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative bg-white w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden border border-gray-200"
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="review-modal-author"
+              className="relative bg-white w-full max-w-2xl max-h-[85dvh] overflow-y-auto rounded-lg shadow-2xl border border-gray-200"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Botão Fechar */}
               <button 
                 onClick={closeReview}
-                className="absolute top-5 right-5 p-2 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors z-20"
+                aria-label="Fechar avaliação"
+                className="absolute top-3 right-3 flex min-h-11 min-w-11 items-center justify-center bg-gray-100 hover:bg-gray-200 rounded-md transition-colors z-20"
               >
                 <X size={20} className="text-gray-600" />
               </button>
 
               {/* Conteúdo do Modal */}
-              <div className="p-8 sm:p-12">
+              <div className="p-5 pt-16 sm:p-10 sm:pt-16">
                 <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-center gap-3">
                     {selectedReview.review.avatar ? (
             <img loading="lazy"
               src={selectedReview.review.avatar}
               alt={selectedReview.review.name}
               width={64}
               height={64}
-              className="w-16 h-16 rounded-full object-cover shadow-md"
+              className="w-12 h-12 shrink-0 rounded-full object-cover shadow-md"
               crossOrigin="anonymous"
             />
                     ) : (
                       <div
-                        className="w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl uppercase shadow-md"
+                        className="w-12 h-12 shrink-0 rounded-full flex items-center justify-center font-bold text-2xl uppercase shadow-md"
                         style={{ 
                           backgroundColor: AVATAR_COLORS[selectedReview.review.avatarColorIdx || 0].bg, 
                           color: AVATAR_COLORS[selectedReview.review.avatarColorIdx || 0].text 
@@ -555,8 +590,8 @@ export default function Reviews() {
                       </div>
                     )}
                     <div>
-                      <h4 className="text-xl font-bold text-dark">{selectedReview.review.name}</h4>
-                      <p className="text-gray-500 text-sm flex items-center gap-2">
+                      <h4 id="review-modal-author" className="text-xl font-bold text-dark break-words">{selectedReview.review.name}</h4>
+                      <p className="text-gray-500 text-sm flex flex-wrap items-center gap-2">
                         <GoogleLogo /> Depoimento de cliente
                       </p>
                     </div>
@@ -573,21 +608,22 @@ export default function Reviews() {
                   "{selectedReview.review.text}"
                 </p>
 
+                <a href={GOOGLE_REVIEW_SUMMARY.source} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm underline">Fonte: avaliações da Carplus no Google</a>
                 {/* Navegação */}
-                <div className="flex items-center justify-between mt-12 pt-8 border-t border-gray-100">
+                <div className="flex flex-wrap gap-2 items-center justify-between mt-8 pt-5 border-t border-gray-100">
                   <button 
                     onClick={prevReview}
-                    className="flex items-center gap-2 text-gray-500 hover:text-primary font-bold transition-colors group"
+                    className="flex min-h-11 items-center gap-1 text-gray-600 hover:text-primary font-bold transition-colors group"
                   >
                     <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
                     Anterior
                   </button>
-                  <div className="text-gray-300 font-mono text-sm">
+                  <div className="text-gray-600 font-mono text-sm">
                     {selectedReview.index + 1} / {ALL_REVIEWS.length}
                   </div>
                   <button 
                     onClick={nextReview}
-                    className="flex items-center gap-2 text-gray-500 hover:text-primary font-bold transition-colors group"
+                    className="flex min-h-11 items-center gap-1 text-gray-600 hover:text-primary font-bold transition-colors group"
                   >
                     Próximo
                     <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />

@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_SUMMARY } from '../data/reviewSummary';
 
 import { useState } from 'react';
 import { motion } from 'motion/react';
@@ -9,51 +10,14 @@ import TrustBar from './TrustBar';
 import FinalCTA from './FinalCTA';
 import { useSEO } from '../hooks/useSEO';
 
-const ROTAS = [
-  {
-    origem: 'Água Verde / Batel',
-    tempo: '5–8 min',
-    via: 'Av. República Argentina',
-    passos: ['Siga pela Av. República Argentina sentido Sul', 'Vire à direita na Rua Carlos Klemtz', 'Continue até a Av. Arthur da Silva Bernardes', 'Carplus no número 1.323, lado direito'],
-  },
-  {
-    origem: 'Centro / Rebouças',
-    tempo: '12–15 min',
-    via: 'Av. Sete de Setembro',
-    passos: ['Siga pela Av. Sete de Setembro sentido Sul/Portão', 'Cruze a Rua João Bettega', 'Vire na Av. Arthur da Silva Bernardes', 'Carplus no número 1.323'],
-  },
-  {
-    origem: 'Campo Comprido / CIC',
-    tempo: '8–12 min',
-    via: 'Av. Affonso Camargo',
-    passos: ['Siga pela Av. Affonso Camargo sentido Leste', 'Entre na Av. República Argentina sentido Sul', 'Vire na Av. Arthur da Silva Bernardes', 'Carplus no número 1.323'],
-  },
-  {
-    origem: 'Shopping Palladium',
-    tempo: '3 min',
-    via: 'Av. Vereador Toaldo Túlio',
-    passos: ['Saia pelo estacionamento Sul do Shopping', 'Entre na Av. Vereador Toaldo Túlio', 'Cruze a Av. República Argentina', 'Carplus na Arthur da Silva Bernardes, 1.323'],
-  },
-  {
-    origem: 'Linha Verde / Cajuru',
-    tempo: '15–20 min',
-    via: 'Linha Verde → Portão',
-    passos: ['Siga pela Linha Verde (BR-116) sentido Sul', 'Saída Portão pela Av. Winston Churchill', 'Entre na Av. Arthur da Silva Bernardes', 'Carplus no número 1.323'],
-  },
-  {
-    origem: 'Região Metropolitana',
-    tempo: '25–35 min',
-    via: 'BR-476 → Linha Verde',
-    passos: ['Siga pela BR-476 (Contorno Sul) sentido Curitiba', 'Acesse a Linha Verde sentido Norte', 'Saída Portão pela Av. Winston Churchill', 'Av. Arthur da Silva Bernardes, 1.323'],
-  },
-];
+const ROTAS = ['Água Verde / Batel', 'Centro / Rebouças', 'Campo Comprido / CIC', 'Shopping Palladium', 'Linha Verde / Cajuru', 'Região Metropolitana'];
 
 const FAQ_ITEMS = [
-  { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Centro Automotivo fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300. Referência: próximo ao Shopping Palladium e ao Parque do Barigüi.' },
+  { q: 'Qual o endereço exato da Carplus em Curitiba?', a: 'A Carplus Centro Automotivo fica na Av. Presid. Arthur da Silva Bernardes, 1323 – Portão, Curitiba – PR, CEP 80320-300.' },
   { q: 'Tem estacionamento na Carplus?', a: 'Sim! Há acesso fácil e vagas para clientes deixarem o veículo enquanto o serviço é realizado, sem preocupação com rotativo pago na região.' },
   { q: 'Qual o horário de funcionamento da Carplus?', a: 'Atendemos de Segunda a Sexta das 8h às 18h e aos Sábados das 8h às 12h. Domingos e feriados fechado.' },
-  { q: 'Como chegar na Carplus vindo do Shopping Palladium?', a: 'Do Shopping Palladium são apenas 3 minutos de carro. Saia pelo acesso Sul, siga pela Av. Vereador Toaldo Túlio, cruze a Av. República Argentina e chegue na Av. Arthur da Silva Bernardes, 1323.' },
-  { q: 'A Carplus fica perto do Terminal do Portão?', a: 'O Terminal do Portão fica a aproximadamente 950m da Carplus (cerca de 12 minutos a pé ou 3 minutos de carro).' },
+  { q: 'Como chegar na Carplus vindo do Shopping Palladium?', a: 'Abra o Google Maps ou o Waze, informe seu ponto de partida e use como destino a Av. Presid. Arthur da Silva Bernardes, 1323, Portão, Curitiba. O trajeto depende do trânsito e do acesso utilizado.' },
+  { q: 'A Carplus fica perto do Terminal do Portão?', a: 'Consulte no mapa a distância e o trajeto desde o Terminal do Portão até a Av. Presid. Arthur da Silva Bernardes, 1323. O tempo depende do meio de transporte e das condições do percurso.' },
 ];
 
 export default function ComoChegar() {
@@ -160,7 +124,7 @@ export default function ComoChegar() {
               { icon: <Clock size={20} className="text-primary" />, title: 'Seg–Sex', sub: '8h às 18h' },
               { icon: <Clock size={20} className="text-primary" />, title: 'Sábado', sub: '8h às 12h' },
               { icon: <Phone size={20} className="text-primary" />, title: 'Telefone', sub: '(41) 3082-7282', href: 'tel:+554130827282' },
-              { icon: <Star size={20} className="text-primary" />, title: '4.9 ★', sub: '+250 avaliações' },
+              { icon: <Star size={20} className="text-primary" />, title: `${GOOGLE_REVIEW_SUMMARY.ratingDisplay} ★`, sub: `${GOOGLE_REVIEW_SUMMARY.count} avaliações · ${GOOGLE_REVIEW_SUMMARY.checkedDateDisplay}` },
             ].map((item, i) => (
               <div key={i} className="bg-[#242424] border border-white/06 rounded-xl p-4 flex flex-col items-center text-center gap-1.5">
                 {item.icon}
@@ -178,13 +142,13 @@ export default function ComoChegar() {
       {/* Map */}
       <section className="py-8 px-4 bg-white">
         <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl" style={{ height: 420 }}>
-          <iframe 
+          <iframe title="Mapa da Carplus no Portão, Curitiba"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.240580658666!2d-49.30287292373215!3d-25.46364093422533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce31ec1ad6641%3A0xa51067e0d7b484af!2sCarplus%20Pneus%20e%20Oficina%20Mec%C3%A2nica!5e0!3m2!1spt-BR!2sbr!4v1779235735934!5m2!1spt-BR!2sbr"
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
@@ -207,20 +171,11 @@ export default function ComoChegar() {
                 className="bg-[#1a1a1a] border border-white/07 border-t-2 border-t-primary rounded-xl p-5 flex flex-col gap-3"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className="font-display font-black text-white text-base leading-tight">{r.origem}</span>
-                  <span className="bg-primary/15 text-primary text-[11px] font-bold px-2 py-0.5 rounded whitespace-nowrap shrink-0">⏱ {r.tempo}</span>
+                  <span className="font-display font-black text-white text-base leading-tight">{r}</span>
                 </div>
-                <span className="text-[#FFD600] text-xs font-semibold">Via: {r.via}</span>
-                <ol className="space-y-1.5">
-                  {r.passos.map((p, j) => (
-                    <li key={j} className="text-xs text-white/55 leading-relaxed flex gap-2">
-                      <span className="w-4 h-4 bg-primary text-black rounded-full text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5">{j + 1}</span>
-                      {p}
-                    </li>
-                  ))}
-                </ol>
+                <p className="text-sm text-white/70">Consulte o mapa a partir do seu endereço. Rotas e tempos variam conforme o trânsito.</p>
                 <a
-                  href={`https://www.google.com/maps/dir/${encodeURIComponent(r.origem + ', Curitiba, PR')}/Carplus+Auto+Center,+Av.+Arthur+da+Silva+Bernardes,+1323,+Portão,+Curitiba`}
+                  href={`https://www.google.com/maps/dir/${encodeURIComponent(r === 'Região Metropolitana' ? '' : r + ', Curitiba, PR')}/Carplus+Auto+Center,+Av.+Arthur+da+Silva+Bernardes,+1323,+Portão,+Curitiba`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto text-xs text-white/40 border border-white/10 rounded-lg px-3 py-2 flex items-center justify-center gap-2 hover:bg-primary hover:text-black hover:border-primary transition-all font-bold"

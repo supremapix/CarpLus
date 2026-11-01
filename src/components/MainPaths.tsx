@@ -8,7 +8,7 @@ export default function MainPaths() {
       tag: 'Loja de Pneus',
       title: 'Comprar Pneus',
       description:
-        'Pneus aro 13 ao 22 das melhores marcas: Pirelli, Michelin, Goodyear, Continental e mais. Montagem e balanceamento inclusos e até 10x sem juros.',
+        'Pneus aro 13 ao 22 das melhores marcas: Pirelli, Michelin, Goodyear, Continental e mais. Montagem e balanceamento sob consulta e até 10x sem juros.',
       primaryTo: '/pneus',
       primaryLabel: 'Ver catálogo de pneus',
       secondaryHref:

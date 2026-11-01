@@ -419,16 +419,6 @@ export default function CentroAutomotivoSeoPage({ slug }: Props) {
       <Footer />
 
       {/* Botão flutuante de WhatsApp (mobile e desktop) */}
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-3 sm:px-5 sm:py-4 rounded-full shadow-lg transition-all hover:scale-105"
-      >
-        <MessageCircle size={22} aria-hidden="true" />
-        <span className="hidden sm:inline">WhatsApp</span>
-      </a>
     </div>
   );
 }
