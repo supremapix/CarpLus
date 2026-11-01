@@ -40,7 +40,8 @@
     "test:global-schema": "node scripts/run-ts.mjs scripts/test-global-schema.ts",
     "test:suprema": "node scripts/test-suprema-navigation.mjs && node scripts/run-ts.mjs scripts/test-suprema-actions.tsx && node scripts/run-ts.mjs scripts/test-suprema-seo.ts && node scripts/run-ts.mjs scripts/test-service-advice.ts && node scripts/run-ts.mjs scripts/test-tire-replacement-advice.tsx && node scripts/run-ts.mjs scripts/test-review-summary.ts && node scripts/run-ts.mjs scripts/test-review-preservation.ts",
     "test:suprema:browser": "node scripts/run-ts.mjs scripts/test-suprema-browser.ts",
-    "test:suprema:seo-html": "node scripts/run-ts.mjs scripts/test-route-family-seo.ts"
+    "test:suprema:seo-html": "node scripts/run-ts.mjs scripts/test-route-family-seo.ts",
+    "test:catalog-pagination:browser": "node scripts/run-ts.mjs scripts/test-catalog-pagination-browser.ts"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",

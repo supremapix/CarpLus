@@ -52,3 +52,7 @@ QA de interface usa o Chromium automatizado já suportado pelo repositório (`sc
 ## Resultado local da versão candidata
 
 Build completo em 736 segundos (12 min 16 s), com 1.533/1.533 páginas geradas, zero falhas e zero canonicals duplicadas. Os 1.350 produtos e as páginas extras passaram na validação final. Também passaram os 66 testes de HTML por família, incluindo os 45 serviços, e os testes de fonte/conteúdo/interface descritos acima. A publicação é uma etapa distinta: conferir o commit remoto, checks Vercel e o recibo no domínio final antes de afirmar que esta versão está no ar.
+
+## Regressão de paginação em JavaScript
+
+A checagem posterior em navegador encontrou um segundo redirecionamento independente no catálogo, além das regras HTTP já removidas. A correção mantém a página selecionada, título de página N e navegação anterior/próxima; a página temática é apenas um link opcional. O teste `test:catalog-pagination:browser` passou com páginas 1/2/3 distintas, histórico, recarregamento e combinações de filtros. Agora esse teste é uma etapa obrigatória do build, antes da geração integral. Nenhuma URL de sitemap, política de noindex ou registro de produto foi alterado nessa correção.

@@ -33,3 +33,8 @@ const shell = fs.readFileSync('index.html', 'utf8');
 assert.equal([...shell.matchAll(/property="og:image"/g)].length, 1);
 for (const asset of ['favicon.svg', 'favicon-96x96.png', 'favicon.ico', 'apple-touch-icon.png', 'site.webmanifest', 'og-carplus.webp']) assert.ok(fs.existsSync(`public/${asset}`), asset);
 console.log('Suprema SEO: catalog pagination, query headers, manual routing, 1533 sitemap URLs, 64 customer/service routes and share assets passed.');
+
+const catalogSource = fs.readFileSync('src/components/TireCatalog.tsx', 'utf8');
+assert.ok(!/<Navigate\b|REDIRECT_THRESHOLD|shouldRedirect/.test(catalogSource), 'Catalog must not independently redirect paginated selections in the SPA');
+assert.ok(catalogSource.includes('Página ${safePage}'), 'Pagination has its own contextual title');
+assert.ok(fs.readFileSync('scripts/build-deploy.mjs', 'utf8').includes("run('npm run test:catalog-pagination:browser', { essential: true })"), 'Actual browser pagination is a required publication gate');

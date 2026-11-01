@@ -68,6 +68,8 @@ console.log('[build-deploy] HTML inicial obrigatório para todo o inventário in
 run('npm run sitemap', { essential: true });
 run('npm run redirects', { essential: true });
 run('npm run build:spa', { essential: true });
+// Preserve actual browser pagination too: HTTP checks alone miss SPA redirects.
+run('npm run test:catalog-pagination:browser', { essential: true });
 
 // 404 real: captura o shell SPA limpo agora, antes de qualquer geração estática.
 emit404();

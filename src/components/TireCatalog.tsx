@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, ListFilter as Filter, X, MessageSquare, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight, Star, Tag, CarFront, Ruler, BadgeCheck, ChevronDown, Phone } from 'lucide-react';
-import { Link, Navigate, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { TIRES, Tire } from '../data';
 import { ARO_PAGES } from '../data/seoLanding';
 import Navbar from './Navbar';
@@ -11,7 +11,7 @@ import TrustBar from './TrustBar';
 import FinalCTA from './FinalCTA';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductListSchema, generateBreadcrumbSchema, generateFaqSchema, generateProductSchema } from '../lib/schema';
-import { detectDominantProfile, resolveThematicLanding, REDIRECT_THRESHOLD } from '../lib/seoIndexing';
+import { detectDominantProfile, resolveThematicLanding } from '../lib/seoIndexing';
 
 const BRANDS = ["Pirelli", "Michelin", "Goodyear", "Continental", "Firestone", "Bridgestone", "Yokohama", "Prinx", "Delinte"];
 const RIMS = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -230,11 +230,8 @@ export default function TireCatalog() {
     selectedCategories.length > 0 || selectedVehicleTypes.length > 0 ||
     search.trim().length > 0;
 
-  // ───── Perfil dominante da paginação ─────
-  // Detecta o padrão predominante (marca/aro/categoria) entre os pneus exibidos.
-  // Em páginas paginadas puras (sem filtros), um padrão forte (≥60%) permite
-  // substituir o título genérico "Página N" por uma intenção real e concentrar a
-  // autoridade na landing temática já existente (ex.: /pneus-michelin-curitiba).
+  // A thematic page is only an optional related link. It never replaces the
+  // selected catalog page, its title or its navigation state.
   const dominantProfile = useMemo(
     () => detectDominantProfile(paginatedTires),
     [paginatedTires],
@@ -242,27 +239,12 @@ export default function TireCatalog() {
   const thematicLanding =
     safePage > 1 && !hasActiveFilters ? resolveThematicLanding(dominantProfile) : null;
 
-  // ───── SEO dinâmico por página ─────
-  let seoTitle: string;
-  let seoDescription: string;
-  let seoCanonical: string;
-
-  if (thematicLanding) {
-    // Página de paginação com padrão forte → intenção de busca real + canonical
-    // apontando para a landing temática indexável (consolida o link equity).
-    seoTitle = `${thematicLanding.label} | Carplus Pneus`;
-    seoDescription = `${thematicLanding.label} na Carplus, no bairro Portão. Confira modelos, medidas e preços com montagem sob consulta e até 10x sem juros. Orçamento no WhatsApp (41) 3082-7282.`;
-    seoCanonical = `${BASE_URL}/${thematicLanding.slug}`;
-  } else if (safePage > 1) {
-    // Sem padrão forte: mantém genérica, porém noindex e fora do sitemap.
-    seoTitle = "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
-    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem sob consulta, até 10x sem juros.";
-    seoCanonical = `${BASE_URL}/pneus`;
-  } else {
-    seoTitle = "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
-    seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem sob consulta, até 10x sem juros.";
-    seoCanonical = `${BASE_URL}/pneus`;
-  }
+  // Preserve pagination identity; page 2+ and filtered URLs remain noindex.
+  const seoTitle = safePage > 1
+    ? `Catálogo de Pneus em Curitiba – Página ${safePage} | Carplus`
+    : "Catálogo de Pneus em Curitiba | Carplus Centro Automotivo – Portão";
+  const seoDescription = "Encontre o pneu ideal para seu carro na Carplus em Curitiba. Pneus Pirelli, Michelin, Goodyear, Continental e mais. Montagem sob consulta, até 10x sem juros.";
+  const seoCanonical = `${BASE_URL}/pneus`;
 
   useSEO({
     title: seoTitle,
@@ -278,12 +260,11 @@ export default function TireCatalog() {
       'pneu aro 22', 'pneu aro 23',
     ],
     schemaJSON,
-    // Quando a página vira landing temática (canonical apontando para outra URL),
-    // suprimimos prev/next para não enviar sinais de paginação contraditórios.
-    prevUrl: !hasActiveFilters && !thematicLanding && safePage > 1
+    // Related thematic suggestions never suppress actual catalog pagination.
+    prevUrl: !hasActiveFilters && safePage > 1
       ? (safePage - 1 === 1 ? `${BASE_URL}/pneus` : `${BASE_URL}/pneus?page=${safePage - 1}`)
       : undefined,
-    nextUrl: !hasActiveFilters && !thematicLanding && safePage < totalPages
+    nextUrl: !hasActiveFilters && safePage < totalPages
       ? `${BASE_URL}/pneus?page=${safePage + 1}`
       : undefined,
   });
@@ -334,22 +315,6 @@ export default function TireCatalog() {
     setSearch(value);
     resetToFirstPage();
   };
-
-  // ───── 301-equivalente (SPA) para paginações fortemente dominadas ─────
-  // Quando a paginação tem dominância ≥ REDIRECT_THRESHOLD (85%) e existe landing
-  // temática correspondente, redirecionamos definitivamente para consolidar a
-  // autoridade. No edge, o vercel.json aplica o 301 real; aqui garantimos a mesma
-  // experiência dentro da SPA (e para crawlers que executam JS).
-  const shouldRedirect =
-    safePage > 1 &&
-    !hasActiveFilters &&
-    !!thematicLanding &&
-    !!dominantProfile &&
-    dominantProfile.share >= REDIRECT_THRESHOLD;
-
-  if (shouldRedirect && thematicLanding) {
-    return <Navigate to={`/${thematicLanding.slug}`} replace />;
-  }
 
   return (
     <div className="min-h-screen bg-gray-50">

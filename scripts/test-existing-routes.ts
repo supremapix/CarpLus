@@ -85,6 +85,7 @@ function runBuild(flag: string, fail?: string) {
 }
 const receipt = 'node scripts/emit-build-receipt.mjs';
 const requiredPipeline = [
+  'npm run test:catalog-pagination:browser',
   generate,
   'node scripts/run-ts.mjs scripts/generate-static-customer-pages.ts',
   'npm run generate:static:all',
