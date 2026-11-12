@@ -160,7 +160,12 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Por que escolher uma oficina especializada em Fiat',
         conteudo:
-          'Os veículos Fiat têm soluções de engenharia próprias — como o câmbio automatizado Dualogic e os motores da família Firefly — que exigem scanner compatível e experiência de quem já resolveu esses problemas centenas de vezes. Uma oficina generalista pode até fazer a troca de óleo, mas dificilmente domina a calibração do Dualogic ou a leitura correta dos módulos Fiat. A equipe da Carplus trata cada Fiat com o cuidado técnico que a marca pede, evitando trocas desnecessárias e indo direto à causa do problema.',
+          'O nome do modelo não basta para definir uma revisão Fiat: ano, versão, motorização e transmissão mudam os procedimentos e as peças aplicáveis. Informe esses dados antes da avaliação. Um sintoma ou código de falha é um ponto de partida para investigar, não uma autorização para trocar componentes. Confirme com a Carplus quais verificações são necessárias e solicite o orçamento discriminado antes de aprovar o reparo.',
+      },
+      {
+        titulo: 'O que enviar para consultar a revisão do seu Fiat',
+        conteudo:
+          'Envie modelo, ano, versão, quilometragem e o motivo da consulta: revisão programada, ruído, luz no painel ou mudança no funcionamento. Se souber, informe a motorização e o tipo de câmbio. Argo, Strada e Toro podem ter configurações diferentes conforme o ano; não escolha óleo, peças ou intervalo de manutenção apenas pelo nome do carro. Leve o manual e o histórico de serviços para comparar o que já foi feito com o plano da versão.',
       },
       {
         titulo: 'Revisão do seu Fiat: consulte manual e garantia',
@@ -180,7 +185,8 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     ],
     faq: [
       { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Fiat?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
-      { pergunta: 'Quanto custa a revisão do Fiat em Curitiba?', resposta: 'O valor depende do modelo e da quilometragem (10.000, 20.000, 30.000 km etc.). Fazemos um diagnóstico e apresentamos o orçamento detalhado antes de iniciar, normalmente com preço mais acessível que a concessionária. Peça um orçamento sem compromisso pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Quanto custa a revisão do Fiat em Curitiba?', resposta: 'O valor depende do modelo, ano, versão, quilometragem e dos itens necessários. Solicite à Carplus a discriminação de diagnóstico, peças, fluidos e mão de obra, além do prazo e das condições de garantia do serviço. Confirme o orçamento antes de autorizar. WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Qual é o intervalo de revisão do meu Fiat?', resposta: 'Consulte o manual do ano e da versão, incluindo os critérios de tempo, quilometragem e uso previstos pelo fabricante. Não existe um intervalo único para todos os modelos Fiat. Envie esses dados e o histórico de manutenção para organizar a avaliação.' },
       { pergunta: 'Vocês têm scanner para Fiat?', resposta: 'Sim. Contamos com scanner automotivo profissional que lê injeção eletrônica, ABS, airbag e módulos Fiat, incluindo o câmbio Dualogic, além de reset de painel e limpeza de bicos.' },
       { pergunta: 'Vocês resolvem problema de câmbio Dualogic?', resposta: 'Sim. Fazemos leitura do módulo, calibração do ponto de embreagem, troca do fluido correto e avaliação do atuador para corrigir trepidação e demora nas trocas do Dualogic.' },
       { pergunta: 'Atendem qual região de Curitiba?', resposta: 'Estamos no Portão e atendemos toda Curitiba e região metropolitana, com fácil acesso para Água Verde, Novo Mundo, Fazendinha, Capão Raso, Santa Quitéria e demais bairros.' },
@@ -570,12 +576,17 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     alternativaAutorizada:
       'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Renault. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Se você procura uma oficina especializada em Renault em Curitiba para cuidar do seu Kwid, Sandero, Logan, Duster ou Captur, a Carplus, no Portão, é a alternativa inteligente à concessionária. Conhecemos os pontos de atenção da linha Renault — de bobinas de ignição ao câmbio automatizado — e usamos diagnóstico computadorizado para investigar a causa do problema, com preço justo e garantia mantida.',
+      'Procura uma oficina para revisão ou diagnóstico do seu Renault em Curitiba? A Carplus atende no Portão como oficina independente, sem vínculo de autorização com a montadora. Informe modelo, ano, versão e o serviço desejado para confirmar o atendimento. Kwid, Sandero, Logan, Duster e Captur têm configurações que variam por ano; a avaliação deve considerar o veículo específico, o manual e seu histórico de manutenção.',
     secoes: [
       {
         titulo: 'Conhecimento técnico da linha Renault',
         conteudo:
           'O Kwid e o Sandero estão entre os carros mais econômicos do mercado, e o Duster é um dos SUVs mais versáteis — todos com boa presença em Curitiba. Esses modelos têm características próprias, como o comportamento das bobinas de ignição e do câmbio automatizado, que pedem uma oficina experiente. A Carplus reúne experiência e scanner compatível para diagnosticar e resolver esses casos com precisão.',
+      },
+      {
+        titulo: 'Kwid, Sandero ou Duster: prepare uma consulta específica',
+        conteudo:
+          'Antes de pedir o orçamento, separe modelo, ano, versão, quilometragem e histórico de revisões. Informe se a transmissão é manual, automática ou automatizada quando souber; não trate essas configurações como equivalentes. Descreva quando o sintoma começou e se houve serviço recente, sem tentar reproduzir uma falha no trânsito. Uma luz no painel ou um ruído não identifica sozinho a peça a substituir. Peça que o orçamento diferencie diagnóstico, peças, fluidos, mão de obra e prazo antes de aprovar.',
       },
       {
         titulo: 'Revisão Renault: consulte manual e garantia',
@@ -595,7 +606,8 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     ],
     faq: [
       { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Renault?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
-      { pergunta: 'Quanto custa a revisão do Renault em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Quanto custa a revisão do Renault em Curitiba?', resposta: 'Depende do modelo, ano, versão, quilometragem e dos serviços necessários. Peça um orçamento com diagnóstico, peças, fluidos e mão de obra separados, além do prazo e das condições de garantia do serviço. Confirme valores e agenda no WhatsApp (41) 3082-7282 antes de autorizar.' },
+      { pergunta: 'A revisão do Kwid é igual à do Duster ou Sandero?', resposta: 'Não se deve usar um único plano para toda a linha. Ano, versão, motor, transmissão e condições de uso podem alterar os itens previstos. Consulte o manual do veículo e apresente o histórico de manutenção; confirme o atendimento da sua configuração com a Carplus.' },
       { pergunta: 'Vocês têm scanner para Renault?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Renault, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Resolvem trancos do câmbio automatizado?', resposta: 'Sim. Fazemos leitura de módulo, calibração e avaliação do atuador para suavizar as trocas do câmbio automatizado Renault.' },
       { pergunta: 'Atendem qual região de Curitiba?', resposta: 'Estamos no Portão e atendemos toda Curitiba e região metropolitana, com fácil acesso para Água Verde, Novo Mundo, Fazendinha, Capão Raso e demais bairros.' },
