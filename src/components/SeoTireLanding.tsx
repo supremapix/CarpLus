@@ -445,6 +445,12 @@ export default function SeoTireLanding({
           ))}
         </section>
 
+        {canonicalPath === '/centro-automotivo-para-troca-de-pneus-curitiba' && (
+          <aside className="mb-10 text-sm text-gray-700 border-l-4 border-primary pl-4" aria-label="Referências técnicas">
+            <p>Orientações gerais: <a className="underline" href="https://www.michelin.com.br/auto/conselhos/troca-de-pneus/montagem-de-pneus" target="_blank" rel="noopener noreferrer">montagem de pneus, Michelin</a> e <a className="underline" href="https://www.michelin.com.br/auto/conselhos/auto/conselhos/cuidados-com-pneus/rodizio-de-pneus" target="_blank" rel="noopener noreferrer">posição do par novo e rodízio, Michelin</a>. Consulte sempre o manual do seu veículo e a avaliação presencial.</p>
+          </aside>
+        )}
+
         {/* Grid de pneus reais do catálogo */}
         {displayTires.length > 0 && (
           <section className="mb-16">

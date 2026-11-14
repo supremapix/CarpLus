@@ -39,6 +39,7 @@ export default function TireReplacementAdvice({ name, measure, rim, loadIndex, s
             <Link className="min-h-11 inline-flex items-center font-semibold underline text-gray-900" to="/servico/montagem-de-pneu">Montagem de pneus</Link>
             <Link className="min-h-11 inline-flex items-center font-semibold underline text-gray-900" to="/servico/alinhamento-e-balanceamento">Alinhamento e balanceamento</Link>
             <Link className="min-h-11 inline-flex items-center font-semibold underline text-gray-900" to="/pneus">Comparar pneus no catálogo</Link>
+            <Link className="min-h-11 inline-flex items-center font-semibold underline text-gray-900" to="/centro-automotivo-para-troca-de-pneus-curitiba">Onde trocar pneus em Curitiba</Link>
           </nav>
           <a href={`https://wa.me/554130827282?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer" className="mt-4 min-h-12 inline-flex items-center rounded-xl px-5 py-3 bg-primary text-black font-bold">Consultar este pneu e a avaliação</a>
         </div>

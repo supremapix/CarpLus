@@ -2628,45 +2628,55 @@ export const INTENT_PAGES: IntentPage[] = [
   },
   {
     slug: 'centro-automotivo-para-troca-de-pneus-curitiba',
-    badge: 'Centro Automotivo · Curitiba',
-    h1: 'Centro Automotivo para Troca de Pneus em Curitiba',
+    badge: 'Troca de Pneus · Portão, Curitiba',
+    h1: 'Onde trocar pneus em Curitiba: Carplus no Portão',
     highlight: 'Troca de Pneus',
-    metaTitle: 'Centro Automotivo para Troca de Pneus em Curitiba | Carplus Centro Automotivo',
+    metaTitle: 'Onde trocar pneus em Curitiba | Carplus no Portão',
     metaDescription:
-      'Centro automotivo para troca de pneus em Curitiba: Carplus, no bairro Portão. Pneus, alinhamento, balanceamento, freios, suspensão e troca de óleo. WhatsApp: (41) 3082-7282.',
+      'Troca de pneus no Portão, Curitiba. Saiba como conferir a medida, pedir orçamento de montagem e balanceamento e consultar agenda na Carplus: (41) 3082-7282.',
     intro:
-      'A Carplus é o centro automotivo completo para troca de pneus em Curitiba, no bairro Portão. Além dos pneus, você faz alinhamento, balanceamento, freios, suspensão e troca de óleo em um único lugar.',
-    tags: ['Centro automotivo', 'Troca de pneus', 'Oficina completa', 'Tudo em um lugar'],
+      'Para trocar pneus em Curitiba, a Carplus atende no Portão, na Av. Presidente Arthur da Silva Bernardes, 1323. Consulte a medida indicada para seu veículo, a disponibilidade e o orçamento antes de sair de casa. Aqui você encontra um roteiro para comparar pneus e organizar a instalação sem confundir o preço do produto com o valor dos serviços.',
+    tags: ['Troca de pneus no Portão', 'Medida e aplicação', 'Orçamento detalhado', 'Agenda sob consulta'],
     sections: [
       {
-        title: 'Muito além da troca de pneus',
-        content:
-          'Como centro automotivo, a Carplus resolve a troca de pneus e ainda cuida de alinhamento, balanceamento, freios, suspensão e revisão. Você economiza tempo fazendo tudo em uma visita.',
+        title: 'Como escolher onde trocar pneus em Curitiba',
+        content: 'Comece por uma loja com endereço e atendimento identificados. Compare propostas para a mesma medida, modelo, quantidade e índices de carga e velocidade, respeitando o manual do seu carro. Pergunte quais serviços estão incluídos e quais dependem de inspeção. Na Carplus, a referência é a unidade do Portão; estar em outro bairro não significa que exista uma filial próxima de você.',
       },
       {
-        title: 'Estrutura e equipe técnica',
-        content:
-          'Contamos com equipamentos modernos de montagem e balanceamento, alinhamento 3D computadorizado e mecânicos experientes, sempre com garantia e nota fiscal.',
+        title: 'O que enviar para pedir um orçamento de pneus',
+        content: 'Informe marca, modelo, ano e versão do carro, medida completa do pneu, quantidade desejada e como usa o veículo. Uma foto legível da lateral ajuda a identificar a medida atual, mas não substitui a conferência da especificação no manual. Avise sobre sensores de pressão, rodas modificadas ou pneus diferentes nos eixos. Se ainda não souber a medida, peça orientação antes de comprar.',
+      },
+      {
+        title: 'Preço do pneu não é o mesmo que custo da troca',
+        content: 'Peça o valor dos pneus separado de montagem, balanceamento, válvulas e alinhamento, quando aplicáveis. Confirme também o que será feito com os pneus retirados, prazo, forma de pagamento e condições de garantia. Se aparecer um serviço adicional após a inspeção, peça a explicação e o novo orçamento antes de autorizar. Disponibilidade no catálogo não confirma estoque reservado ou instalação no mesmo dia.',
+      },
+      {
+        title: 'Montagem, balanceamento e alinhamento: o que muda',
+        content: 'A montagem instala o pneu na roda; o balanceamento corrige o desequilíbrio do conjunto pneu e roda; o alinhamento verifica e ajusta a geometria conforme a especificação do veículo. São procedimentos diferentes. Desgaste irregular ou direção puxando justificam avaliação para entender a causa, inclusive de suspensão e rodas. Não presuma que comprar pneus novos resolve sozinho todos esses sintomas.',
+      },
+      {
+        title: 'Trocar dois ou quatro pneus?',
+        content: 'A decisão depende do desgaste, dos danos e das exigências do veículo. Quando é permitida a substituição de apenas dois, a Michelin recomenda colocar o par novo ou menos desgastado no eixo traseiro. Veículos com tração integral ou medidas diferentes entre eixos podem ter exigências próprias: consulte o manual e peça avaliação do conjunto, sem escolher apenas pelo menor desembolso inicial.',
+      },
+      {
+        title: 'Pneu com bolha, corte ou perda de pressão',
+        content: 'Bolha, corte profundo, perda rápida de pressão ou instabilidade exigem interromper o uso em local seguro e buscar assistência. Não siga dirigindo até a loja para testar o pneu. Desgaste e danos precisam de inspeção presencial; uma foto ou conversa pelo WhatsApp não confirma que o veículo pode rodar. Consulte o manual para uso do estepe e não execute uma troca em local inseguro.',
+      },
+      {
+        title: 'Vindo de outro bairro ou da região metropolitana',
+        content: 'Quem sai do Água Verde, Novo Mundo, Fazendinha, Capão Raso ou de outra cidade deve confirmar a medida disponível, o atendimento e o prazo antes do deslocamento até o Portão. Informe também se precisa deixar o veículo ou aguardar. Não há promessa de fila, tempo de viagem ou conclusão imediata: o planejamento depende da agenda e da avaliação.',
       },
     ],
     faq: [
-      {
-        question: 'O que é um centro automotivo para troca de pneus?',
-        answer:
-          'É um local que une a venda e a troca de pneus a uma oficina mecânica completa. Na Carplus, você troca os pneus e ainda faz alinhamento, balanceamento, freios e suspensão no mesmo lugar.',
-      },
-      {
-        question: 'A Carplus faz só pneus ou também serviços de oficina?',
-        answer:
-          'Faz os dois. Somos um centro automotivo completo: pneus, alinhamento, balanceamento, freios, suspensão, troca de óleo e mais.',
-      },
-      {
-        question: 'Onde fica o centro automotivo Carplus?',
-        answer:
-          'Na Av. Presidente Arthur da Silva Bernardes, 1323, bairro Portão, Curitiba – PR. WhatsApp: (41) 3082-7282.',
-      },
+      { question: 'Onde trocar pneus em Curitiba?', answer: 'A Carplus realiza atendimento na Av. Presidente Arthur da Silva Bernardes, 1323, Portão, Curitiba. Consulte medida, disponibilidade, serviços e agenda pelo WhatsApp (41) 3082-7282 antes de se deslocar.' },
+      { question: 'Quanto custa trocar pneus em Curitiba?', answer: 'O total depende do modelo e da medida dos pneus, da quantidade e dos serviços necessários. Peça pneus, montagem, balanceamento, válvulas e eventual alinhamento discriminados. Não há um preço único adequado a todos os veículos.' },
+      { question: 'Preciso agendar a troca dos pneus?', answer: 'Consulte a agenda e confirme a disponibilidade da medida com a equipe. O catálogo não equivale a reserva de estoque e o prazo deve ser confirmado antes da visita.' },
+      { question: 'Posso levar pneus comprados em outro lugar?', answer: 'Consulte previamente a equipe informando medida, modelo do pneu, veículo e serviço desejado. Confirme aceitação, valores e condições de montagem antes de levar o produto; não presuma que a instalação está incluída na compra externa.' },
+      { question: 'Alinhamento e balanceamento são a mesma coisa?', answer: 'Não. O balanceamento atua no equilíbrio do conjunto pneu e roda. O alinhamento trata da geometria das rodas conforme o veículo. A necessidade de cada procedimento e de reparos adicionais deve ser explicada na avaliação e no orçamento.' },
+      { question: 'A Carplus tem uma loja em cada bairro?', answer: 'Esta página apresenta o atendimento na unidade do Portão, na Av. Presidente Arthur da Silva Bernardes, 1323. As referências a outros bairros orientam quem vem até essa unidade, sem indicar filiais nesses locais.' },
     ],
-    whatsappMsg: 'Olá! Quero fazer a troca de pneus no centro automotivo Carplus em Curitiba.',
+    whatsappMsg: 'Olá! Quero consultar a troca de pneus na Carplus Portão. Vou informar modelo, ano, versão, medida e quantidade para receber orçamento e confirmar a agenda.',
+
   },
 ];
 

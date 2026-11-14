@@ -268,6 +268,18 @@ export default function PneusCuritibaHub() {
         </div>
       </section>
 
+      <section className="py-10 bg-white" aria-labelledby="onde-trocar-pneus-title">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <h2 id="onde-trocar-pneus-title" className="text-2xl font-bold text-gray-900">Onde trocar pneus em Curitiba?</h2>
+          <p className="mt-3 text-gray-700 leading-relaxed">A Carplus atende no Portão, na Av. Presidente Arthur da Silva Bernardes, 1323. Antes de vir, confira a medida indicada para seu veículo, a disponibilidade e a agenda. Peça o valor dos pneus separado dos serviços de instalação.</p>
+          <nav aria-label="Guia de troca de pneus em Curitiba" className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+            <Link to="/centro-automotivo-para-troca-de-pneus-curitiba" className="min-h-11 inline-flex items-center underline font-bold">Como planejar a troca de pneus</Link>
+            <Link to="/servico/montagem-de-pneu" className="min-h-11 inline-flex items-center underline font-bold">Montagem de pneus</Link>
+            <Link to="/servico/alinhamento-e-balanceamento" className="min-h-11 inline-flex items-center underline font-bold">Alinhamento e balanceamento</Link>
+          </nav>
+        </div>
+      </section>
+
       {/* Pneus por Medida */}
       <Section icon={Ruler} title="Pneus por Medida" subtitle="As medidas mais procuradas no catálogo Carplus Curitiba">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
