@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import { OFICINA_MARCA_PAGES } from '../src/data/oficinaMarcas';
+import * as faqs from '../src/data/serviceFaqs';
+import * as services from '../src/data/services';
+const h=OFICINA_MARCA_PAGES.find(p=>p.marca==='Hyundai'&&p.tipo==='marca');
+assert.ok(h);
+const text=JSON.stringify(h);
+assert.ok(text.includes('uso normal e severo'));
+assert.ok(text.includes('não garante eliminar o problema'));
+assert.ok(text.includes('mão de obra discriminados'));
+assert.ok(!text.includes('normalmente mais acessível'));
+assert.ok(!text.includes('suavizando as trocas'));
+assert.ok(!JSON.stringify(faqs).includes('Recomendamos revisão a cada 20.000 km ou anualmente'));
+assert.ok(JSON.stringify(faqs).includes('Não é possível confirmar a segurança'));
+assert.ok(!JSON.stringify(services).includes('segurança em todas as condições de uso'));
+console.log('PASS: Hyundai quote/transmission qualifications and suspension advice.');

@@ -383,7 +383,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     servicosDestaque: servicosPorMarca('Hyundai'),
     problemasComuns: [
       {
-        problema: 'Embreagem do HB20 com desgaste precoce',
+        problema: 'Dificuldade de engate ou sinais de desgaste da embreagem do HB20',
         solucao:
           'Avaliamos platô, disco e rolamento e trocamos o kit de embreagem com peças de qualidade, recuperando o engate suave do HB20.',
       },
@@ -400,7 +400,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         problema: 'Câmbio automático do Creta com trocas bruscas',
         solucao:
-          'Fazemos a troca do fluido de câmbio automático com equipamento adequado e leitura do módulo, suavizando as trocas do Creta.',
+          'Trancos exigem avaliação do veículo e leitura do módulo antes de definir o reparo. A necessidade, a especificação do fluido e o procedimento de troca dependem do ano, versão, transmissão e plano de manutenção; trocar fluido não garante resolver o sintoma.',
       },
       {
         problema: 'Luz de injeção acesa por sonda lambda',
@@ -416,7 +416,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Especialistas na linha Hyundai',
         conteudo:
-          'O HB20 é um dos hatches mais populares do país e o Creta lidera vendas entre os SUVs compactos — o que faz da Hyundai uma marca muito presente nas ruas de Curitiba. Esses modelos têm pontos de atenção conhecidos, como o desgaste de embreagem do HB20 e o comportamento do câmbio automático do Creta. Na Carplus, a experiência da equipe e o scanner compatível permitem diagnosticar e resolver esses casos com segurança.',
+          'Ao consultar uma oficina para seu HB20, Creta, Tucson ou outro Hyundai, informe ano, versão, motorização, tipo de câmbio e quilometragem. Descreva quando o sintoma começou e os serviços recentes. Dificuldade de engate, ruídos ou trancos não identificam sozinhos uma peça defeituosa; a avaliação deve orientar o orçamento e evitar trocas por tentativa.',
       },
       {
         titulo: 'Revisão Hyundai: consulte manual e garantia',
@@ -426,7 +426,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       {
         titulo: 'Câmbio automático e diagnóstico Hyundai',
         conteudo:
-          'A troca de fluido do câmbio automático é fundamental para a durabilidade do Creta e do Tucson, e deve ser feita com o equipamento e o fluido corretos. Fazemos esse serviço com equipamento adequado, além de leitura de módulos, teste de sensores e limpeza de bicos. Nosso scanner lê injeção, ABS e airbag, e você recebe um laudo claro antes de aprovar qualquer serviço.',
+          'Antes de agendar troca de fluido, confira o manual do modelo e ano, a transmissão instalada e as condições de uso. Os planos podem distinguir uso normal e severo; não existe um intervalo único válido para todos os Hyundai. Confirme com a equipe a necessidade do serviço, a especificação do fluido e o procedimento aplicável. Se houver trancos, relate o sintoma para diagnóstico: a troca do fluido não deve ser apresentada como solução garantida.',
       },
       {
         titulo: 'Oficina Hyundai no Portão, Curitiba',
@@ -436,9 +436,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     ],
     faq: [
       { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Hyundai?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
-      { pergunta: 'Quanto custa a revisão do Hyundai em Curitiba?', resposta: 'Depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, normalmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Quanto custa a revisão do Hyundai em Curitiba?', resposta: 'Depende do modelo, ano, versão, quilometragem e serviços indicados após a avaliação. Peça peças, fluidos e mão de obra discriminados, prazo e condições de garantia. Compare propostas com o mesmo escopo, sem presumir um valor único para toda a linha. Consulte pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Hyundai?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos Hyundai, com reset de painel e limpeza de bicos.' },
-      { pergunta: 'Fazem troca de óleo do câmbio automático do Creta?', resposta: 'Sim. Fazemos a troca do fluido de câmbio automático com equipamento adequado e leitura do módulo para suavizar as trocas.' },
+      { pergunta: 'Fazem troca de óleo do câmbio automático do Creta?', resposta: 'Consulte a equipe informando ano, versão, transmissão e histórico do veículo. A indicação e o procedimento devem seguir o manual aplicável e a avaliação. Se houver trancos, é necessário investigar a causa antes de indicar a troca de fluido; ela não garante eliminar o problema.' },
       { pergunta: 'Atendem qual região de Curitiba?', resposta: 'Estamos no Portão e atendemos toda Curitiba e região metropolitana, com fácil acesso para Água Verde, Novo Mundo, Fazendinha, Capão Raso e demais bairros.' },
       { pergunta: 'Resolvem embreagem do HB20?', resposta: 'Sim. Avaliamos platô, disco e rolamento e trocamos o kit de embreagem com peças de qualidade, recuperando o engate suave.' },
       { pergunta: 'É possível parcelar os serviços?', resposta: 'Sim, parcelamos em até 10x sem juros e aceitamos cartão, débito, dinheiro e PIX.' },

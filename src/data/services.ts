@@ -226,7 +226,7 @@ export const SERVICE_CATEGORIES: Category[] = [
         name: "Revisão e Reparo de Suspensão",
         slug: "revisao-de-suspensao",
         shortDescription: "Diagnóstico e reparo completo de amortecedores, molas, buchas, terminais e barra estabilizadora.",
-        fullDescription: "A suspensão é responsável pelo conforto e pela estabilidade do veículo. Na Carplus, realizamos a revisão completa de todos os componentes: amortecedores, molas, buchas, terminais, barra estabilizadora e suportes. Identificamos e corrigimos problemas com precisão, garantindo estabilidade em curvas, conforto nas irregularidades do asfalto e segurança em todas as condições de uso.",
+        fullDescription: "A suspensão é responsável pelo conforto e pela estabilidade do veículo. Na Carplus, realizamos a revisão completa de todos os componentes: amortecedores, molas, buchas, terminais, barra estabilizadora e suportes. A avaliação identifica folgas, desgaste e danos para orientar os reparos necessários. Solicite um orçamento com as peças indicadas e a mão de obra, e confirme as condições de garantia antes de autorizar.",
         highlights: ["Amortecedores e molas", "Buchas e terminais", "Barra estabilizadora", "Diagnóstico antes do orçamento", "Garantia"],
         estimatedTime: "Consulte a agenda e o prazo após avaliação",
         icon: "Sliders"
