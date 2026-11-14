@@ -290,7 +290,7 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     tipo: 'marca',
     titleTag: 'Oficina Especializada Chevrolet em Curitiba | Carplus',
     metaDescription:
-      'Oficina especializada em Chevrolet no Portão, Curitiba. Revisão do Onix, motores 1.0/1.4, câmbio e diagnóstico com garantia. WhatsApp (41) 3082-7282.',
+      'Oficina especializada em Chevrolet no Portão, Curitiba. Revisão por modelo, ano e motor, câmbio e diagnóstico. Consulte procedimentos e orçamento. WhatsApp (41) 3082-7282.',
     h1: 'Oficina Especializada em Chevrolet em Curitiba',
     heroSubtitulo:
       'Revisão, mecânica e diagnóstico computadorizado para veículos Chevrolet no Portão, em Curitiba. Especialistas em Onix, Tracker, S10 e toda a linha GM.',
@@ -299,9 +299,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     servicosDestaque: servicosPorMarca('Chevrolet'),
     problemasComuns: [
       {
-        problema: 'Barulho de corrente de comando nos motores 1.0 e 1.4',
+        problema: 'Ruído no motor e dúvidas sobre correia ou corrente',
         solucao:
-          'Avaliamos o tensionador e a folga da corrente e substituímos o kit completo quando necessário, evitando salto de sincronismo nos motores GM.',
+          'O sistema de distribuição varia conforme modelo, ano e motor. Informe esses dados e o histórico de manutenção para avaliar a origem do ruído e consultar o procedimento correto; não escolha peças apenas pela cilindrada.',
       },
       {
         problema: 'Superaquecimento no Cruze',
@@ -327,12 +327,12 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
     alternativaAutorizada:
       'A Carplus é uma oficina ESPECIALIZADA e INDEPENDENTE — não é concessionária nem autorizada Chevrolet/GM. Consulte o plano de manutenção e as condições de garantia do fabricante para o ano e a versão do veículo. Informe o serviço desejado à unidade do Portão, em Curitiba, para confirmar procedimentos, peças, valores e agenda antes de contratar.',
     intro:
-      'Procurando uma oficina especializada em Chevrolet em Curitiba? A Carplus, no Portão, é a alternativa inteligente para cuidar do seu Onix, Tracker, S10, Spin, Cruze e demais modelos GM. Conhecemos os motores 1.0 e 1.4 turbo, o comportamento da corrente de comando e os pontos de atenção elétricos e de arrefecimento que a linha Chevrolet costuma apresentar. Cada atendimento começa com diagnóstico computadorizado, garantindo um orçamento preciso e sem surpresas.',
+      'Procurando uma oficina especializada em Chevrolet em Curitiba? A Carplus fica no Portão e atende Onix, Tracker, S10, Spin, Cruze e outros modelos GM. Para pedir uma avaliação, informe modelo, ano, versão, motor, quilometragem e o sintoma percebido. Essas informações ajudam a definir a inspeção e o orçamento: carros da mesma linha podem ter sistemas de distribuição, fluidos e planos de manutenção diferentes.',
     secoes: [
       {
-        titulo: 'Conhecimento técnico da linha Chevrolet',
+        titulo: 'Correia ou corrente: confirme o motor do seu Chevrolet',
         conteudo:
-          'O Onix é um dos carros mais vendidos do Brasil, e junto com Tracker, Spin e S10 forma a base da frota Chevrolet em Curitiba. Esses modelos têm particularidades — como a corrente de comando dos motores 1.0/1.4 e o histórico de superaquecimento do Cruze — que pedem uma oficina que já resolveu esses casos muitas vezes. A Carplus reúne experiência e scanner compatível para tratar cada Chevrolet com precisão, indo direto à causa do problema.',
+          'Não é seguro concluir que todo Chevrolet 1.0 ou 1.4 usa corrente de comando. O manual do Onix 2013, por exemplo, menciona correia dentada da distribuição; outras versões e gerações devem ser conferidas em seus próprios manuais. Antes de autorizar uma troca, confirme modelo, ano, versão e motor, o histórico do veículo e o plano de manutenção correspondente. Peça que o orçamento identifique o procedimento e as peças indicadas após a avaliação, sem adotar um intervalo de troca único para toda a linha.',
       },
       {
         titulo: 'Revisão Chevrolet: consulte manual e garantia',
@@ -351,8 +351,9 @@ export const OFICINA_MARCA_PAGES: OficinaMarcaPage[] = [
       },
     ],
     faq: [
+      { pergunta: 'Como saber se meu Chevrolet usa correia ou corrente de comando?', resposta: 'Confira o manual correspondente ao modelo, ano e motor. A cilindrada sozinha não identifica o sistema: o manual do Onix 2013, por exemplo, menciona correia dentada. Leve o histórico de manutenção e confirme com a equipe a identificação do veículo antes de escolher peças ou definir uma troca.' },
       { pergunta: 'A revisão na Carplus mantém a garantia de fábrica do meu Chevrolet?', resposta: 'Antes de agendar uma revisão, consulte o plano de manutenção do manual e as condições de garantia do fabricante para o ano e a versão do veículo. Confirme com a equipe os procedimentos, peças, fluidos, registros e valores do orçamento. A Carplus é uma oficina independente no Portão, em Curitiba; não é concessionária nem oficina autorizada das montadoras.' },
-      { pergunta: 'Quanto custa a revisão do Chevrolet em Curitiba?', resposta: 'O valor depende do modelo e da quilometragem. Fazemos o diagnóstico e apresentamos o orçamento antes de iniciar, geralmente mais acessível que a concessionária. Peça pelo WhatsApp (41) 3082-7282.' },
+      { pergunta: 'Quanto custa a revisão do Chevrolet em Curitiba?', resposta: 'O valor depende do modelo, ano, versão, motor, quilometragem e serviços indicados após a avaliação. Informe o histórico de manutenção e peça um orçamento com peças, fluidos e mão de obra discriminados, além de prazo e condições de garantia. Compare propostas com o mesmo escopo; não há um preço único para toda a linha. Consulte pelo WhatsApp (41) 3082-7282.' },
       { pergunta: 'Vocês têm scanner para Chevrolet?', resposta: 'Sim. Nosso scanner profissional lê injeção eletrônica, ABS, airbag e módulos GM, com reset de painel e limpeza de bicos.' },
       { pergunta: 'Resolvem superaquecimento do Cruze?', resposta: 'Sim. Testamos válvula termostática, bomba d\u2019água, radiador e sensores para corrigir a causa do superaquecimento antes que danifique o motor.' },
       { pergunta: 'Atendem qual região de Curitiba?', resposta: 'Estamos no Portão e atendemos toda Curitiba e região metropolitana, com acesso fácil para Água Verde, Novo Mundo, Fazendinha, Capão Raso e demais bairros.' },
