@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 
 const summary = JSON.parse(fs.readFileSync('reports/e6-generation-summary.json', 'utf8'));
 const validation = fs.readFileSync('reports/e6-validation.md', 'utf8');
-if (summary.selected !== 1533 || summary.ok !== 1533 || summary.falha !== 0 || summary.byType?.produto?.ok !== 1350 || !validation.includes('VALIDAÇÃO GLOBAL APROVADA — 1533 arquivos íntegros, 0 problemas')) {
+if (summary.selected !== 1535 || summary.ok !== 1535 || summary.falha !== 0 || summary.byType?.produto?.ok !== 1350 || !validation.includes('VALIDAÇÃO GLOBAL APROVADA — 1535 arquivos íntegros, 0 problemas')) {
   throw new Error('Build receipt requires successful complete indexed inventory generation and validation');
 }
 const commit = process.env.VERCEL_GIT_COMMIT_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
@@ -18,5 +18,5 @@ const receipt = {
 };
 fs.writeFileSync('dist/build-info.json', `${JSON.stringify(receipt, null, 2)}\n`);
 const verified = JSON.parse(fs.readFileSync('dist/build-info.json', 'utf8'));
-if (verified.commit !== commit || verified.validated.indexedPages !== 1533 || verified.validated.productPages !== 1350) throw new Error('Invalid build receipt round trip');
+if (verified.commit !== commit || verified.validated.indexedPages !== 1535 || verified.validated.productPages !== 1350) throw new Error('Invalid build receipt round trip');
 console.log(`[build-receipt] ${commit}: ${verified.validated.indexedPages} indexed pages validated.`);

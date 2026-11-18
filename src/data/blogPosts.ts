@@ -7,6 +7,181 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
+{
+  "slug": "pneus-carros-eletricos-duvidas-curitiba",
+  "title": "Pneus para elétricos e híbridos em Curitiba: desgaste, autonomia e escolha",
+  "description": "Entenda o que conferir antes de trocar pneus de um elétrico ou híbrido: especificação, desgaste irregular, ruído e orçamento sem promessas de autonomia.",
+  "category": "Carros elétricos e híbridos",
+  "publishedAt": "2026-11-18",
+  "image": "/images/galeria/display-pneus.webp",
+  "imageAlt": "Exposição de pneus da Carplus; consulte a compatibilidade com seu veículo",
+  "readMinutes": 4,
+  "sections": [
+    {
+      "heading": "Preciso comprar um pneu com a palavra EV?",
+      "paragraphs": [
+        "A identificação comercial não basta para decidir. A Michelin explica que carros elétricos podem se beneficiar de pneus desenvolvidos para suas características, mas isso não transforma uma marcação EV em requisito universal. Confira primeiro as especificações exigidas para o modelo e a versão do veículo.",
+        "O mesmo cuidado vale para híbridos. Não escolha apenas pelo aro: peça a medida completa, os índices de carga e velocidade e a confirmação de eventuais exigências da montadora. Uma recomendação para outro carro não substitui o manual do seu."
+      ]
+    },
+    {
+      "heading": "Por que o pneu parece estar acabando rápido?",
+      "paragraphs": [
+        "Carga, torque e condução influenciam o trabalho dos pneus; não há uma quilometragem única de duração para todo elétrico. Aceleradas intensas, condições de uso e manutenção também entram na avaliação. Evite concluir que o problema é simplesmente a propulsão elétrica.",
+        "A Michelin relaciona desgaste irregular a causas como pressão inadequada e problemas de geometria. Uma região mais gasta precisa ser examinada, não apenas escondida com a troca do pneu. Peça avaliação do conjunto e um registro do padrão de desgaste encontrado."
+      ]
+    },
+    {
+      "heading": "Como comparar silêncio e autonomia sem cair em promessas?",
+      "paragraphs": [
+        "Solicite a ficha da medida exata e pergunte qual característica sustenta a recomendação. Pneus projetados para elétricos podem priorizar eficiência e conforto acústico, mas uma promessa de ganho fixo de autonomia não considera todas as condições do seu trajeto.",
+        "Na conversa com a loja, explique se o incômodo é ruído, vibração, desgaste ou custo da troca. São perguntas diferentes: comparar só o preço da unidade pode deixar de fora o problema que motivou a compra."
+      ]
+    },
+    {
+      "heading": "Um pedido de orçamento útil para quem roda em Curitiba",
+      "paragraphs": [
+        "Antes de procurar atendimento no Portão ou programar uma parada entre compromissos, envie dados que permitam identificar a aplicação. Uma foto legível da lateral do pneu e da etiqueta do veículo ajuda a evitar proposta para uma medida parecida, mas diferente.",
+        "Peça que disponibilidade, compatibilidade e serviços incluídos sejam confirmados antes do deslocamento. Este guia não afirma estoque imediato nem atendimento especializado para qualquer modelo elétrico."
+      ],
+      "bullets": [
+        "Marca, modelo, ano e versão do carro.",
+        "Medida completa dos pneus dianteiros e traseiros, se diferentes.",
+        "Motivo da procura: troca preventiva, desgaste, ruído ou dano.",
+        "Quantidade desejada e uso principal: cidade, estrada ou ambos.",
+        "Solicitação de orçamento discriminando pneus, montagem e demais serviços."
+      ]
+    },
+    {
+      "heading": "Perguntas para levar à avaliação",
+      "paragraphs": [
+        "Vale anotar: o desgaste é uniforme? A recomendação atende ao manual? O preço inclui quais etapas? Há alguma condição do veículo que precisa ser corrigida antes da troca? O objetivo é sair com uma explicação verificável, não apenas com o nome de um produto.",
+        "Para calibragem, utilize a referência do fabricante do veículo e siga as orientações de medição a frio. No manual do Model Y consultado, a monitorização de pressão auxilia o motorista, mas exige compreender a configuração do sistema. Procedimentos de um modelo não devem ser transplantados para outro."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Michelin: pneus para carro elétrico",
+      "url": "https://www.michelin.com.br/auto/conselhos/guia-veiculo-eletrico/pneus-para-carro-eletrico"
+    },
+    {
+      "label": "Michelin: causas de desgaste irregular",
+      "url": "https://www.michelin.com.br/auto/conselhos/troca-de-pneus/desgaste-de-pneu"
+    },
+    {
+      "label": "Tesla Model Y: cuidados com os pneus, exemplo específico de modelo",
+      "url": "https://www.tesla.com/ownersmanual/modely/pt_pt/GUID-94F63B13-EA2C-45D9-83AB-5DCA6295D587.html"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "label": "Pneu elétrico furado e aviso de pressão",
+      "href": "/blog/pneu-eletrico-furado-tpms-orcamento"
+    },
+    {
+      "label": "Consultar a Carplus",
+      "href": "/contato"
+    },
+    {
+      "label": "Comparar pneus por medida",
+      "href": "/medidas-de-pneus-curitiba"
+    }
+  ]
+},
+{
+  "slug": "pneu-eletrico-furado-tpms-orcamento",
+  "title": "Pneu de elétrico furado: espuma acústica, TPMS e o que perguntar à oficina",
+  "description": "Saiba por que a reparação depende de inspeção, como explicar um alerta de pressão e quais informações enviar antes de levar seu elétrico ou híbrido à oficina.",
+  "category": "Carros elétricos e híbridos",
+  "publishedAt": "2026-11-18",
+  "image": "/images/centro-automotivo/mecanico-pneus.webp",
+  "imageAlt": "Área de atendimento de pneus da Carplus; imagem ilustrativa de manutenção",
+  "readMinutes": 4,
+  "sections": [
+    {
+      "heading": "Um pneu com espuma pode ser reparado?",
+      "paragraphs": [
+        "Não existe resposta única para todo pneu de elétrico. Um boletim da Kia para pneus com espuma do EV6 2022 descreve reparação com etapas específicas e condições que impedem o conserto. Isso demonstra que a espuma não significa descarte automático, mas também não autoriza qualquer reparo em qualquer modelo.",
+        "A oficina precisa identificar o pneu e consultar as orientações aplicáveis. Não remova espuma nem improvise reparos em casa com base em vídeos ou relatos de outros proprietários."
+      ]
+    },
+    {
+      "heading": "O que decide entre reparar e substituir?",
+      "paragraphs": [
+        "Segundo a Michelin, localização do furo, condição interna e danos causados por rodar com pressão baixa precisam ser avaliados. Ver apenas o objeto preso na borracha não permite concluir que o pneu está seguro. A inspeção interna é importante para descobrir danos que a fotografia não mostra.",
+        "Peça a explicação da decisão: onde está o dano, qual condição inviabiliza o reparo e qual orientação técnica foi utilizada. Não continue rodando com pneu vazio ou dano visível para tentar economizar o deslocamento de assistência. Pare em local seguro e procure ajuda adequada à situação."
+      ]
+    },
+    {
+      "heading": "A luz do TPMS acendeu: o sensor está quebrado?",
+      "paragraphs": [
+        "O alerta não deve ser tratado automaticamente como defeito eletrônico. O manual do Model Y distingue configurações de monitoramento direto e indireto e orienta verificar a pressão diante do aviso. O procedimento para calibrar ou reinicializar varia conforme o veículo.",
+        "Anote a mensagem exata, quando surgiu e se houve troca de pneus ou rodas. Não apague o aviso como primeira solução: confirme a pressão e investigue perdas. A instrução do seu manual tem prioridade sobre um passo a passo feito para outro carro."
+      ]
+    },
+    {
+      "heading": "Por que proprietários procuram uma segunda avaliação?",
+      "paragraphs": [
+        "Em um relato público no fórum BoltEV, um proprietário descreve dificuldade para encontrar quem avaliasse um pneu com espuma acústica. O relato ajuda a identificar uma dúvida real, mas não é prova de que toda oficina possa realizar o serviço nem de que seu pneu seja reparável.",
+        "Ao telefonar, pergunte se a equipe avalia a especificação exata e quais informações precisa receber. Confirmar capacidade de atendimento antes de sair evita chegar esperando um procedimento que não foi combinado."
+      ]
+    },
+    {
+      "heading": "Mensagem pronta para organizar o orçamento",
+      "paragraphs": [
+        "Você pode escrever: ‘Tenho um [modelo, ano e versão], com pneu [medida e identificação]. Apareceu [descrever alerta ou dano]. O veículo [está parado ou apresentou perda de pressão]. Vocês conseguem avaliar essa aplicação? Qual é a orientação para levar o carro com segurança e quais etapas entram no orçamento?’.",
+        "Não envie senhas ou documentos pessoais para uma consulta inicial. Identificação do carro, fotos do pneu e descrição do problema normalmente são mais úteis para começar a conversa. A confirmação do diagnóstico depende de avaliação, não de um orçamento por mensagem."
+      ],
+      "bullets": [
+        "Avise se utilizou selante ou kit emergencial.",
+        "Informe se o pneu tem espuma acústica, quando souber.",
+        "Pergunte sobre inspeção interna e condições de reparabilidade.",
+        "Confirme previamente os serviços disponíveis para seu modelo.",
+        "Se houver risco para rodar, combine assistência em vez de conduzir até a loja."
+      ]
+    },
+    {
+      "heading": "Atendimento em Curitiba sem diagnóstico à distância",
+      "paragraphs": [
+        "Use os canais da Carplus para consultar a possibilidade de avaliação e obter orientação sobre o próximo passo. Este conteúdo não representa promessa de reparo de espuma acústica, manutenção de bateria ou intervenção em sistemas de alta tensão.",
+        "Para escolher pneus novos, veja também o guia de desgaste e especificações de elétricos e híbridos. Ele ajuda a organizar as perguntas antes da compra, sem atribuir a todos os carros a mesma calibragem, duração ou autonomia."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Kia: boletim técnico sobre pneus com espuma do EV6 2022",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2022/MC-10212201-0001.pdf"
+    },
+    {
+      "label": "Michelin: quando um pneu pode ser reparado",
+      "url": "https://www.michelin.com.br/auto/conselhos/troca-de-pneus/conserto-de-pneus"
+    },
+    {
+      "label": "Tesla Model Y: cuidados e monitoramento de pressão",
+      "url": "https://www.tesla.com/ownersmanual/modely/pt_pt/GUID-94F63B13-EA2C-45D9-83AB-5DCA6295D587.html"
+    },
+    {
+      "label": "Relato de proprietário no BoltEV: inspiração editorial, não orientação técnica",
+      "url": "https://www.reddit.com/r/BoltEV/comments/1wixnyb/had_a_slow_leak_flat_on_my_bolt_goodyear_electric/"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "label": "Pneus de elétricos: desgaste e escolha",
+      "href": "/blog/pneus-carros-eletricos-duvidas-curitiba"
+    },
+    {
+      "label": "Consultar atendimento",
+      "href": "/contato"
+    },
+    {
+      "label": "Serviços da Carplus",
+      "href": "/servicos"
+    }
+  ]
+},
   {
     slug: 'calibragem-pneus-frios-carga',
     title: 'Calibragem dos pneus: como acertar a pressão a frio e com carga',
