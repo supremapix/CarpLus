@@ -197,7 +197,7 @@ export const BLOG_POSTS: BlogPost[] = [
     sources: [
       { label: 'Michelin: como calibrar pneus', url: 'https://www.michelin.com.br/auto/conselhos/calibragem-do-pneu/calibrar-pneus' },
       { label: 'Continental: pressão dos pneus e carga do veículo', url: 'https://www.continental-tires.com/pt/pt/tire-knowledge/tire-pressure/' }
-    ], relatedLinks: [{ label: 'Conheça nossos serviços', href: '/servicos' }, { label: 'Fale com a Carplus', href: '/contato' }]
+    ], relatedLinks: [{ label: 'Conheça nossos serviços', href: '/servicos' }, { label: 'Fale com a Carplus', href: '/contato' }, { label: 'Pneu de elétrico furado: o que fazer diante do alerta de pressão', href: '/blog/pneu-eletrico-furado-tpms-orcamento' }]
   },
   {
     slug: 'bolha-no-pneu-apos-buraco', title: 'Bolha no pneu após um buraco: o que fazer e o que não tentar',
@@ -229,7 +229,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { label: 'Inmetro: critérios avaliados na etiqueta de pneus', url: 'https://www.gov.br/inmetro/pt-br/acesso-a-informacao/perguntas-frequentes/avaliacao-da-conformidade/pneus-novos/quais-sao-e-como-sao-avaliados-os-criterios-de-desempenho-presentes-na-etiqueta-de-pneus-2' },
       { label: 'Michelin: como conferir a etiqueta do Inmetro', url: 'https://pro.michelin.com.br/blog/articles/aprenda-a-conferir-a-etiqueta-do-inmetro-antes-de-escolher-o-pneu' },
       { label: 'ANIP: escolha segura dos pneus', url: 'https://www.anip.org.br/releases/como-escolher-seu-pneu-de-forma-segura/' }
-    ], relatedLinks: [{ label: 'Compare opções no catálogo', href: '/pneus' }, { label: 'Encontre pneus por medida', href: '/medidas-de-pneus-curitiba' }]
+    ], relatedLinks: [{ label: 'Compare opções no catálogo', href: '/pneus' }, { label: 'Encontre pneus por medida', href: '/medidas-de-pneus-curitiba' }, { label: 'Pneus para elétricos e híbridos: como comparar sem promessas de autonomia', href: '/blog/pneus-carros-eletricos-duvidas-curitiba' }]
   },
   {
     slug: 'estepe-temporario-cuidados-viagem', title: 'Estepe temporário: o que conferir antes de viajar',
