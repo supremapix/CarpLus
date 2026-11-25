@@ -58,6 +58,16 @@ try {
   const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]', a => a.map(x => (x as HTMLAnchorElement).href));
   assert(links.every(link => { const url = new URL(link); return url.hostname === 'wa.me' && url.pathname === '/554130827282' && url.searchParams.get('text')?.includes('CP4X4-'); }));
   const selector = '[aria-label="Resultados do catálogo de suspensão 4x4"] li';
+  const ironman = SUSPENSAO_4X4.filter(item => item.brand === 'Ironman');
+  assert.equal(ironman.length, 114);
+  assert.equal(await page.$eval('aside[aria-labelledby="linha-ironman-4x4"] img', img => img.getAttribute('src')), '/images/suspensao-4x4/produtos/cp4x4-001.webp');
+  await page.click('::-p-text(Ver linha Ironman 4x4)');
+  await page.waitForFunction((sel) => document.querySelectorAll(sel).length === 114, {}, selector);
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'filtros-catalogo-4x4');
+  const shownRefs = await page.$$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
+  assert.deepEqual(shownRefs, ironman.map(item => item.ref));
+  await page.click('::-p-text(Limpar filtros)');
+  assert.equal((await page.$$(selector)).length, 202);
   await page.type('main input[type=search]', 'hilux');
   await page.waitForFunction((s) => document.querySelectorAll(s).length < 202, {}, selector);
   const hilux = await page.$$eval(selector, rs => rs.map(r => r.textContent?.toLowerCase()));
