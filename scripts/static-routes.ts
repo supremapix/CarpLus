@@ -152,6 +152,7 @@ export function getStaticRoutes(): StaticRoute[] {
     { path: '/pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/comparar-anuncios-pneus-curitiba', priority: '0.7', changefreq: 'monthly', type: 'institucional' },
     { path: '/manutencao-automotiva-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
+    { path: '/suspensao-4x4-curitiba', priority: '0.8', changefreq: 'weekly', type: 'hub' },
     { path: '/borracharia-portao', priority: '0.9', changefreq: 'weekly', type: 'landing-comercial' },
     { path: '/medidas-de-pneus-curitiba', priority: '0.9', changefreq: 'weekly', type: 'hub' },
     { path: '/loja-de-pneus-curitiba-perto-de-mim', priority: '0.9', changefreq: 'weekly', type: 'hub' },
