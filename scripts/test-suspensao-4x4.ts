@@ -58,6 +58,16 @@ try {
   const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]', a => a.map(x => (x as HTMLAnchorElement).href));
   assert(links.every(link => { const url = new URL(link); return url.hostname === 'wa.me' && url.pathname === '/554130827282' && url.searchParams.get('text')?.includes('CP4X4-'); }));
   const selector = '[aria-label="Resultados do catálogo de suspensão 4x4"] li';
+  const ironman = SUSPENSAO_4X4.filter(item => item.brand === 'Ironman');
+  assert.equal(ironman.length, 114);
+  assert.equal(await page.$eval('aside[aria-labelledby="linha-ironman-4x4"] img', img => img.getAttribute('src')), '/images/suspensao-4x4/produtos/cp4x4-001.webp');
+  await page.click('::-p-text(Ver linha Ironman 4x4)');
+  await page.waitForFunction((sel) => document.querySelectorAll(sel).length === 114, {}, selector);
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'filtros-catalogo-4x4');
+  const shownRefs = await page.$$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
+  assert.deepEqual(shownRefs, ironman.map(item => item.ref));
+  await page.click('::-p-text(Limpar filtros)');
+  assert.equal((await page.$$(selector)).length, 202);
   await page.type('main input[type=search]', 'hilux');
   await page.waitForFunction((s) => document.querySelectorAll(s).length < 202, {}, selector);
   const hilux = await page.$$eval(selector, rs => rs.map(r => r.textContent?.toLowerCase()));
@@ -70,7 +80,7 @@ try {
   assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
   await page.click('::-p-text(Carregar vídeo)');
   await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
-  for (const item of [SUSPENSAO_4X4[0], SUSPENSAO_4X4[201]]) {
+  for (const item of [ironman[0], SUSPENSAO_4X4[201], SUSPENSAO_4X4.find(row => row.brand !== 'Ironman')!]) {
     const target = suspensionPath(item);
     assert.equal((await page.goto(origin + target, { waitUntil: 'networkidle0' }))?.status(), 200);
     await page.waitForSelector('main h1');
@@ -78,6 +88,13 @@ try {
     assert.equal(await page.$eval('link[rel="canonical"]', a => (a as HTMLLinkElement).href), BASE_URL + target);
     assert(await page.$eval('main figure img', a => (a as HTMLImageElement).naturalWidth) > 0);
     assert((await page.$eval('main a[href*="wa.me"]', a => (a as HTMLAnchorElement).href)).includes(item.ref));
+    const mark = 'main img[src="/images/suspensao-4x4/ironman-4x4.svg"]';
+    assert.equal(Boolean(await page.$(mark)), item.brand === 'Ironman');
+    if (item.brand === 'Ironman') assert(await page.$eval(mark, a => (a as HTMLImageElement).naturalWidth) > 0);
+    assert.equal(await page.$('iframe[src*="instagram"]'), null);
+    assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
+    await page.click('::-p-text(Carregar vídeo do catálogo)');
+    await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
   }
   assert.equal(errors.length, 0, errors.join('; '));
   console.log('Suspensão 4x4: widths 320/390/1440, 202 unique quote references, filters, local asset, canonical, sitemap inventory and click-to-load frame passed. No external quote or reel requests allowed by test.');
