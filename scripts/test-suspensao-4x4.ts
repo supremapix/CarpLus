@@ -105,6 +105,23 @@ try {
     await page.click('::-p-text(Carregar vídeo do catálogo)');
     await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
   }
+  for (const width of [320, 390, 1440]) {
+    await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+    assert.equal((await page.goto(origin, { waitUntil: 'networkidle0' }))?.status(), 200);
+    const callout = 'section[aria-labelledby="home-ironman-4x4"]';
+    await page.waitForSelector(callout);
+    assert.equal(await page.$eval(callout + ' h2', el => el.textContent), 'Linha Ironman 4x4 na Carplus');
+    assert.equal(await page.$eval(callout, el => el.getBoundingClientRect().right <= window.innerWidth), true);
+    await page.click(callout + ' a');
+    await page.waitForFunction(() => window.location.hash === '#linha-ironman-4x4' && !!document.getElementById('linha-ironman-4x4'));
+    await page.waitForFunction(() => {
+      const heading = document.getElementById('linha-ironman-4x4');
+      if (!heading) return false;
+      const rect = heading.getBoundingClientRect();
+      return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    });
+    assert.equal(await page.$eval('h3#linha-ironman-4x4', el => el.textContent), 'Ironman 4x4');
+  }
   assert.equal(errors.length, 0, errors.join('; '));
   console.log('Suspensão 4x4: widths 320/390/1440, 202 unique quote references, filters, local asset, canonical, sitemap inventory and click-to-load frame passed. No external quote or reel requests allowed by test.');
 } finally { await browser?.close(); await new Promise<void>((resolve, reject) => server.httpServer.close(e => e ? reject(e) : resolve())); }

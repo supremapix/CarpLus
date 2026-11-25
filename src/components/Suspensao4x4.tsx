@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ClipboardList, MapPin, MessageCircle, Phone, Play, Search, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
@@ -44,6 +44,13 @@ export default function Suspensao4x4() {
       generateFaqSchema(FAQ),
     ],
   });
+  useEffect(() => {
+    if (window.location.hash !== '#linha-ironman-4x4') return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById('linha-ironman-4x4')?.scrollIntoView({ block: 'start' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState('');
   const [brand, setBrand] = useState('');
@@ -117,7 +124,7 @@ export default function Suspensao4x4() {
             <aside aria-labelledby="linha-ironman-4x4" className="mb-7 overflow-hidden rounded-xl border border-neutral-800 bg-dark text-white sm:grid sm:grid-cols-[1fr_0.64fr]">
               <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-8">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">Marca em destaque</p>
-                <h3 id="linha-ironman-4x4" className="mt-2 text-3xl font-black uppercase italic tracking-tight md:text-5xl">Ironman <span className="text-primary">4x4</span></h3>
+                <h3 id="linha-ironman-4x4" className="scroll-mt-40 mt-2 text-3xl font-black uppercase italic tracking-tight md:text-5xl">Ironman <span className="text-primary">4x4</span></h3>
                 <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">Explore {IRONMAN_COUNT} referências da Ironman 4x4, entre kits, amortecedores e componentes. Informe modelo, ano e versão para a Carplus confirmar a aplicação e preparar a cotação.</p>
                 <button type="button" onClick={showIronman} className={`${BTN} mt-5 self-start`}>Ver linha Ironman 4x4 <ArrowRight size={18} aria-hidden="true" /></button>
               </div>
