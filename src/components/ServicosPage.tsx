@@ -261,6 +261,7 @@ export default function ServicosPage() {
               <Wrench size={16} />
               Hub de Manutenção Automotiva no Portão
             </Link>
+            <Link to="/suspensao-4x4-curitiba" className="inline-flex min-h-11 items-center gap-2 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-bold text-dark hover:border-amber-600"><Wrench size={16} aria-hidden="true" /> Catálogo de suspensão 4x4</Link>
             <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-gray-700 px-4 py-2.5 rounded-md text-xs sm:text-sm font-semibold">
               {totalServices} Serviços Disponíveis
             </div>
