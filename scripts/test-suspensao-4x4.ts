@@ -80,7 +80,7 @@ try {
   assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
   await page.click('::-p-text(Carregar vídeo)');
   await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
-  for (const item of [ironman[0], SUSPENSAO_4X4[201], SUSPENSAO_4X4.find(row => row.brand !== 'Ironman')!]) {
+  for (const item of [ironman[0], SUSPENSAO_4X4.find(row => row.ref === 'CP4X4-062')!, SUSPENSAO_4X4[201], SUSPENSAO_4X4.find(row => row.brand !== 'Ironman' && row.ref !== 'CP4X4-062')!]) {
     const target = suspensionPath(item);
     assert.equal((await page.goto(origin + target, { waitUntil: 'networkidle0' }))?.status(), 200);
     await page.waitForSelector('main h1');
@@ -90,6 +90,32 @@ try {
     assert((await page.$eval('main a[href*="wa.me"]', a => (a as HTMLAnchorElement).href)).includes(item.ref));
     const mark = 'main img[src="/images/suspensao-4x4/ironman-4x4.svg"]';
     assert.equal(Boolean(await page.$(mark)), item.brand === 'Ironman');
+    const photoButton = 'button[aria-label="Ampliar foto do produto"]';
+    const premium = item.brand === 'Ironman' || item.ref === 'CP4X4-062';
+    assert.equal(Boolean(await page.$(photoButton)), premium);
+    if (premium) {
+      assert.equal(await page.$eval(photoButton + ' img', img => getComputedStyle(img).objectFit), 'contain');
+      const second = 'button[aria-label="Ver foto 2"]';
+      if (await page.$(second)) {
+        const firstSrc = await page.$eval(photoButton + ' img', img => img.getAttribute('src'));
+        await page.click(second);
+        assert.equal(await page.$eval(second, item => item.getAttribute('aria-pressed')), 'true');
+        assert.notEqual(await page.$eval(photoButton + ' img', img => img.getAttribute('src')), firstSrc);
+      }
+      await page.click(photoButton);
+      await page.waitForSelector('dialog[aria-label="Foto ampliada do produto"][open]');
+      await page.click('button[aria-label="Aumentar zoom"]');
+      assert.equal(await page.$eval('button[aria-label="Reduzir zoom"]', el => el.getAttribute('aria-pressed')), 'true');
+      await page.click('button[aria-label="Reduzir zoom"]');
+      if (await page.$(second)) {
+        const before = await page.$eval('dialog[open] img', img => img.getAttribute('src'));
+        await page.keyboard.press('ArrowRight');
+        assert.notEqual(await page.$eval('dialog[open] img', img => img.getAttribute('src')), before);
+      }
+      await page.keyboard.press('Escape');
+      await page.waitForSelector('dialog[aria-label="Foto ampliada do produto"][open]', {hidden: true});
+      assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('aria-label')), 'Ampliar foto do produto');
+    }
     if (item.brand === 'Ironman') assert(await page.$eval(mark, a => (a as HTMLImageElement).naturalWidth) > 0);
     assert.equal(await page.$('iframe[src*="instagram"]'), null);
     assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
