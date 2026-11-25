@@ -12,7 +12,7 @@ import FinalCTA from './FinalCTA';
 import BrandsCarousel from './BrandsCarousel';
 import Footer from './Footer';
 import DeferredSection from './DeferredSection';
-import { MessageSquare } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
 // Componentes abaixo da dobra com lazy loading
@@ -90,6 +90,22 @@ export default function Home() {
 
         {/* 3. Três caminhos principais: Comprar pneus, Agendar serviço, Como chegar */}
         <MainPaths />
+
+        <section aria-labelledby="home-ironman-4x4" className="mx-auto max-w-7xl px-4 py-7 md:px-6 md:py-10">
+          <div className="grid overflow-hidden rounded-2xl border border-neutral-800 bg-dark text-white sm:grid-cols-[1fr_0.55fr]">
+            <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-9">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary">Suspensão 4x4 · Portão, Curitiba</p>
+              <h2 id="home-ironman-4x4" className="mt-2 text-2xl font-black italic leading-tight sm:text-3xl lg:text-4xl">Linha Ironman 4x4 na Carplus</h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">Vai preparar a picape para carga, estrada de terra ou trilha? Compare kits, molas e amortecedores e confirme a aplicação com a Carplus pelo modelo, ano e versão do seu veículo.</p>
+              <a href="/suspensao-4x4-curitiba#linha-ironman-4x4" className="mt-5 inline-flex min-h-12 max-w-full items-center justify-center gap-2 self-start rounded-md bg-primary px-4 py-2.5 text-sm font-bold text-dark hover:bg-yellow-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Ver produtos Ironman 4x4 <ArrowRight size={18} aria-hidden="true" /></a>
+            </div>
+            <figure className="flex flex-col items-center justify-center gap-1 border-t border-neutral-200 bg-white p-4 text-dark sm:border-t-0 sm:border-l sm:px-6">
+              <img src="/images/suspensao-4x4/ironman-4x4.svg" alt="Ironman 4x4" width={152} height={34} loading="lazy" decoding="async" className="h-auto w-32" />
+              <img src="/images/suspensao-4x4/produtos/cp4x4-001.webp" alt="Foto do kit Ironman NitroGás para Ford Ranger 2024" width={800} height={800} loading="lazy" decoding="async" className="h-32 w-full object-contain sm:h-40" />
+              <figcaption className="text-center text-xs text-neutral-700">Kit NitroGás para Ford Ranger 2024 · CP4X4-001</figcaption>
+            </figure>
+          </div>
+        </section>
 
         {/* 4. Serviços principais em grid compacto */}
         <HomeServicesCompact />

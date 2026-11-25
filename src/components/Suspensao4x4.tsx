@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ClipboardList, MapPin, MessageCircle, Phone, Play, Search, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
@@ -44,6 +44,13 @@ export default function Suspensao4x4() {
       generateFaqSchema(FAQ),
     ],
   });
+  useEffect(() => {
+    if (window.location.hash !== '#linha-ironman-4x4') return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById('linha-ironman-4x4')?.scrollIntoView({ block: 'start' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState('');
   const [brand, setBrand] = useState('');
@@ -65,27 +72,34 @@ export default function Suspensao4x4() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
       <main>
-        <section className="bg-dark pb-12 pt-32 text-white md:pb-16">
+        <section aria-labelledby="suspensao-4x4-title" className="bg-dark bg-[radial-gradient(ellipse_at_top_right,rgba(255,199,0,0.16),transparent_55%)] pb-10 pt-28 text-white md:pb-16 md:pt-32">
           <div className={CX}>
-            <nav aria-label="Caminho da página" className="mb-7 flex flex-wrap items-center gap-2 text-sm text-white/80">
+            <nav aria-label="Caminho da página" className="mb-5 flex flex-wrap items-center gap-2 text-sm text-white/80">
               <Link to="/" className="hover:text-primary">Início</Link><ChevronRight size={15} aria-hidden="true" />
               <Link to="/servicos" className="hover:text-primary">Serviços</Link><ChevronRight size={15} aria-hidden="true" />
               <span aria-current="page">Suspensão 4x4</span>
             </nav>
-            <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+            <div className="grid items-center gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
               <div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Carplus Pneus e Oficina · Curitiba</p>
-                <h1 className="mb-5 text-3xl font-black uppercase italic leading-tight tracking-tight sm:text-4xl xl:text-5xl">Suspensão 4x4 <span className="text-primary">no Portão</span></h1>
-                <p className="max-w-xl text-base leading-relaxed text-white/90 md:text-lg">Kits lift, amortecedores, molas, bandejas e peças para picapes e SUVs. Encontre a referência no catálogo e peça uma cotação com conferência de aplicação para o seu veículo.</p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={CTA()} target="_blank" rel="noopener noreferrer" className={BTN}><MessageCircle size={19} aria-hidden="true" /> Pedir orçamento no WhatsApp</a>
-                  <a href="#catalogo-4x4" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/40 px-5 py-3 text-sm font-bold hover:bg-white/10">Ver catálogo <ArrowRight size={17} aria-hidden="true" /></a>
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">Catálogo de suspensão 4x4 · Curitiba</p>
+                <h1 id="suspensao-4x4-title" className="max-w-2xl text-4xl font-black italic leading-[1.05] tracking-tight sm:text-5xl xl:text-6xl">O kit certo começa <span className="text-primary">pelo seu 4×4.</span></h1>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">Quer preparar a picape para carga, estrada de terra ou trilha? Compare kits lift, amortecedores, molas e componentes. A Carplus, no Portão, confere a aplicação com você antes do orçamento.</p>
+                <div className="mt-5 grid gap-2.5 sm:flex sm:flex-wrap">
+                  <a href="#catalogo-4x4" className={BTN}>Explorar catálogo <ArrowRight size={18} aria-hidden="true" /></a>
+                  <button type="button" onClick={showIronman} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/50 px-5 py-3 text-sm font-bold hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Ver linha Ironman <ArrowRight size={18} aria-hidden="true" /></button>
                 </div>
-                <p className="mt-4 text-sm text-white/75">Informe modelo, ano e versão. Peças, serviços, valores e prazos são confirmados no orçamento.</p>
+                <p className="mt-4 text-sm text-white/80"><strong className="text-white">Tenha em mãos:</strong> modelo, ano e versão. A equipe confirma a aplicação e as condições na cotação.</p>
+                <a href={CTA()} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-bold text-primary underline underline-offset-4 hover:text-yellow-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"><MessageCircle size={17} aria-hidden="true" /> Pedir orçamento no WhatsApp</a>
               </div>
-              <figure className="overflow-hidden rounded-xl border border-white/15 bg-white/5">
-                <img src={HERO} alt="Ilustração de picape 4x4 em uma oficina, com amortecedor e mola no primeiro plano" width={1200} height={800} fetchPriority="high" decoding="async" className="aspect-[3/2] w-full object-cover" />
-                <figcaption className="px-3 py-1.5 text-[11px] leading-tight text-white/70">Cena ilustrativa.</figcaption>
+              <figure className="overflow-hidden rounded-2xl border border-white/20 bg-white text-dark shadow-lg shadow-black/25">
+                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-neutral-200 bg-neutral-50 px-4 py-3 sm:px-6">
+                  <img src="/images/suspensao-4x4/ironman-4x4.svg" alt="Ironman 4x4" width={152} height={34} className="h-auto w-28 sm:w-36" decoding="async" />
+                  <span className="rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-neutral-700">Na Carplus</span>
+                </div>
+                <img src={IRONMAN_HERO} alt="Foto do kit Ironman 4x4 NitroGás para Ford Ranger 2024, com molas e amortecedores" width={800} height={800} fetchPriority="high" decoding="async" className="mx-auto h-auto max-h-80 w-full object-contain px-3 sm:px-5" />
+                <figcaption className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 border-t border-neutral-200 px-4 py-3 sm:px-6">
+                  <span className="text-sm font-bold">Kit Ironman NitroGás · Ford Ranger 2024</span><span className="text-xs text-neutral-600">Referência CP4X4-001</span>
+                </figcaption>
               </figure>
             </div>
           </div>
@@ -110,7 +124,7 @@ export default function Suspensao4x4() {
             <aside aria-labelledby="linha-ironman-4x4" className="mb-7 overflow-hidden rounded-xl border border-neutral-800 bg-dark text-white sm:grid sm:grid-cols-[1fr_0.64fr]">
               <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-8">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">Marca em destaque</p>
-                <h3 id="linha-ironman-4x4" className="mt-2 text-3xl font-black uppercase italic tracking-tight md:text-5xl">Ironman <span className="text-primary">4x4</span></h3>
+                <h3 id="linha-ironman-4x4" className="scroll-mt-40 mt-2 text-3xl font-black uppercase italic tracking-tight md:text-5xl">Ironman <span className="text-primary">4x4</span></h3>
                 <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">Explore {IRONMAN_COUNT} referências da Ironman 4x4, entre kits, amortecedores e componentes. Informe modelo, ano e versão para a Carplus confirmar a aplicação e preparar a cotação.</p>
                 <button type="button" onClick={showIronman} className={`${BTN} mt-5 self-start`}>Ver linha Ironman 4x4 <ArrowRight size={18} aria-hidden="true" /></button>
               </div>
