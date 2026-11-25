@@ -64,7 +64,7 @@ try {
   await page.click('::-p-text(Ver linha Ironman 4x4)');
   await page.waitForFunction((sel) => document.querySelectorAll(sel).length === 114, {}, selector);
   assert.equal(await page.evaluate(() => document.activeElement?.id), 'filtros-catalogo-4x4');
-  const shownRefs = await page.$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
+  const shownRefs = await page.$$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
   assert.deepEqual(shownRefs, ironman.map(item => item.ref));
   await page.click('::-p-text(Limpar filtros)');
   assert.equal((await page.$(selector)).length, 202);
