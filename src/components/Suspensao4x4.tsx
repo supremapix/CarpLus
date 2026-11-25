@@ -7,6 +7,7 @@ import { useSEO } from '../hooks/useSEO';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
 import { SUSPENSAO_4X4 } from '../data/suspensao4x4';
+import { SUSPENSION_IMAGES } from '../data/suspensao4x4Images';
 import { SuspensionCard } from './SuspensionCard';
 
 export const SUSPENSAO_4X4_PATH = '/suspensao-4x4-curitiba';
@@ -20,6 +21,9 @@ const CTA = (ref?: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURI
   `Olá! Quero um orçamento de suspensão 4x4 na Carplus.${ref ? ` Referência: ${ref}.` : ''} Meu veículo é [marca/modelo], ano [ano], versão [versão]. Uso principal: [cidade, carga, estrada de terra ou trilha].`
 )}`;
 const norm = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const IRONMAN_BRAND = 'Ironman';
+const IRONMAN_COUNT = SUSPENSAO_4X4.filter(item => item.brand === IRONMAN_BRAND).length;
+const IRONMAN_HERO = SUSPENSION_IMAGES['CP4X4-001'];
 const FAQ = [
   { question: 'O catálogo confirma que a peça serve no meu veículo?', answer: 'Não. As famílias e gerações são referências de catálogo. Para confirmar, envie marca, modelo, ano, versão e tração. A equipe verifica a aplicação e as peças adicionais antes de indicar a configuração.' },
   { question: 'Qual é a diferença entre revisar e elevar a suspensão?', answer: 'A revisão procura desgaste, folgas e a origem de ruídos. Um kit lift altera a altura e pode exigir verificação de geometria, pneus, carga e requisitos aplicáveis. Converse com a oficina antes de comprar ou instalar.' },
@@ -42,12 +46,21 @@ export default function Suspensao4x4() {
   });
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState('');
+  const [brand, setBrand] = useState('');
+  const showIronman = () => {
+    setQuery('');
+    setFamily('');
+    setBrand(IRONMAN_BRAND);
+    const results = document.getElementById('filtros-catalogo-4x4');
+    results?.focus({ preventScroll: true });
+    results?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  };
   const [video, setVideo] = useState(false);
   const groups = useMemo(() => Array.from(new Set(SUSPENSAO_4X4.map(item => item.group))).sort((a, b) => a.localeCompare(b, 'pt-BR')), []);
   const filtered = useMemo(() => {
     const words = norm(query).trim().split(/\s+/).filter(Boolean);
-    return SUSPENSAO_4X4.filter(item => (!family || item.group === family) && words.every(w => norm(`${item.name} ${item.group} ${item.vehicle} ${item.brand} ${item.ref}`).includes(w)));
-  }, [query, family]);
+    return SUSPENSAO_4X4.filter(item => (!family || item.group === family) && (!brand || item.brand === brand) && words.every(w => norm(`${item.name} ${item.group} ${item.vehicle} ${item.brand} ${item.ref}`).includes(w)));
+  }, [query, family, brand]);
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
@@ -94,7 +107,19 @@ export default function Suspensao4x4() {
             <p className="mb-2 text-xs font-bold uppercase tracking-widest text-amber-700">Consulta por aplicação</p>
             <h2 id="catalogo-4x4-title" className="text-2xl font-black uppercase italic tracking-tight md:text-4xl">Catálogo de suspensão 4x4</h2>
             <p className="mt-3 mb-5 max-w-3xl text-gray-700">Pesquise pelo modelo do veículo, fabricante ou nome da peça. As referências comerciais não confirmam estoque, ano compatível, componentes incluídos ou serviço de instalação. Consulte a equipe antes de fechar.</p>
-            <div className="grid gap-4 rounded-xl border border-gray-200 bg-white p-4 sm:grid-cols-[2fr_1fr] sm:p-5">
+            <aside aria-labelledby="linha-ironman-4x4" className="mb-7 overflow-hidden rounded-xl border border-neutral-800 bg-dark text-white sm:grid sm:grid-cols-[1fr_0.64fr]">
+              <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-8">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary">Marca em destaque</p>
+                <h3 id="linha-ironman-4x4" className="mt-2 text-3xl font-black uppercase italic tracking-tight md:text-5xl">Ironman <span className="text-primary">4x4</span></h3>
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">Explore {IRONMAN_COUNT} referências da Ironman 4x4, entre kits, amortecedores e componentes. Informe modelo, ano e versão para a Carplus confirmar a aplicação e preparar a cotação.</p>
+                <button type="button" onClick={showIronman} className={`${BTN} mt-5 self-start`}>Ver linha Ironman 4x4 <ArrowRight size={18} aria-hidden="true" /></button>
+              </div>
+              <figure className="bg-white text-dark">
+                <img src={IRONMAN_HERO} alt="Kit de suspensão Ironman 4x4 NitroGás para Ford Ranger 2024" width={800} height={800} loading="lazy" decoding="async" className="mx-auto h-48 w-full object-contain sm:h-56" />
+                <figcaption className="px-3 pb-2 text-center text-xs">Kit NitroGás para Ford Ranger 2024 · CP4X4-001</figcaption>
+              </figure>
+            </aside>
+            <div id="filtros-catalogo-4x4" tabIndex={-1} aria-label="Filtros do catálogo" role="group" className="scroll-mt-36 grid gap-4 rounded-xl border border-gray-200 bg-white p-4 sm:grid-cols-[2fr_1fr] sm:p-5">
               <label className="block min-w-0 font-bold text-sm">
                 Buscar peça ou veículo
                 <span className="relative mt-2 block">
@@ -112,7 +137,8 @@ export default function Suspensao4x4() {
             </div>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
               <p aria-live="polite" role="status" className="text-sm text-gray-700"><strong>{filtered.length}</strong> {filtered.length === 1 ? 'referência encontrada' : 'referências encontradas'}</p>
-              {(query || family) && <button type="button" onClick={() => { setQuery(''); setFamily(''); }} className="min-h-11 px-2 text-sm font-bold underline underline-offset-4">Limpar filtros</button>}
+              {brand && <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-bold text-amber-900">Marca: Ironman 4x4</span>}
+              {(query || family || brand) && <button type="button" onClick={() => { setQuery(''); setFamily(''); setBrand(''); }} className="min-h-11 px-2 text-sm font-bold underline underline-offset-4">Limpar filtros</button>}
             </div>
             {filtered.length === 0 ? <p className="mt-4 rounded-lg border border-gray-200 bg-white p-4">Nenhuma referência combina com os filtros. Experimente só o modelo do veículo ou <a href={CTA()} className="font-bold underline">consulte a oficina</a>.</p> :
               <ul className="mt-4 grid grid-cols-2 items-start gap-2 sm:gap-4 lg:grid-cols-4" aria-label="Resultados do catálogo de suspensão 4x4">
