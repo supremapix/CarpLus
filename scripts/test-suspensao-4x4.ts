@@ -80,7 +80,7 @@ try {
   assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
   await page.click('::-p-text(Carregar vídeo)');
   await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
-  for (const item of [SUSPENSAO_4X4[0], SUSPENSAO_4X4[201]]) {
+  for (const item of [ironman[0], SUSPENSAO_4X4[201], SUSPENSAO_4X4.find(row => row.brand !== 'Ironman')!]) {
     const target = suspensionPath(item);
     assert.equal((await page.goto(origin + target, { waitUntil: 'networkidle0' }))?.status(), 200);
     await page.waitForSelector('main h1');
@@ -88,6 +88,13 @@ try {
     assert.equal(await page.$eval('link[rel="canonical"]', a => (a as HTMLLinkElement).href), BASE_URL + target);
     assert(await page.$eval('main figure img', a => (a as HTMLImageElement).naturalWidth) > 0);
     assert((await page.$eval('main a[href*="wa.me"]', a => (a as HTMLAnchorElement).href)).includes(item.ref));
+    const mark = 'main img[src="/images/suspensao-4x4/ironman-4x4.svg"]';
+    assert.equal(Boolean(await page.$(mark)), item.brand === 'Ironman');
+    if (item.brand === 'Ironman') assert(await page.$eval(mark, a => (a as HTMLImageElement).naturalWidth) > 0);
+    assert.equal(await page.$('iframe[src*="instagram"]'), null);
+    assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
+    await page.click('::-p-text(Carregar vídeo do catálogo)');
+    await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
   }
   assert.equal(errors.length, 0, errors.join('; '));
   console.log('Suspensão 4x4: widths 320/390/1440, 202 unique quote references, filters, local asset, canonical, sitemap inventory and click-to-load frame passed. No external quote or reel requests allowed by test.');
