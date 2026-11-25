@@ -45,6 +45,7 @@ const AdminSeoDashboard = lazy(() => import('./components/AdminSeoDashboard'));
 const CentroAutomotivoSeoPage = lazy(() => import('./components/CentroAutomotivoSeoPage'));
 const OficinaMarcaPage = lazy(() => import('./components/OficinaMarcaPage'));
 const ManutencaoAutomotivaHub = lazy(() => import('./components/ManutencaoAutomotivaHub'));
+const SuspensionProduct = lazy(() => import('./components/SuspensionProduct'));
 const Suspensao4x4 = lazy(() => import('./components/Suspensao4x4'));
 
 const BlogIndex = lazy(() => import('./components/Blog').then(m => ({ default: m.BlogIndex })));
@@ -172,6 +173,7 @@ export default function App() {
       {/* ───── Hubs Principais de Serviços e Pneus ───── */}
       <Route path="/manutencao-automotiva-curitiba" element={<ManutencaoAutomotivaHub />} />
       <Route path="/suspensao-4x4-curitiba" element={<Suspensao4x4 />} />
+      <Route path="/suspensao-4x4-curitiba/:slug" element={<SuspensionProduct />} />
       <Route path="/catalogo" element={<Navigate to="/pneus" replace />} />
       <Route path="/pneus-curitiba" element={<PneusCuritibaHub />} />
       <Route path="/comparar-anuncios-pneus-curitiba" element={<CompararAnunciosPneus />} />

@@ -4,6 +4,8 @@ import { launchBrowser } from './launch-browser';
 import { getStaticRoutes, BASE_URL } from './static-routes';
 import { SUSPENSAO_4X4 } from '../src/data/suspensao4x4';
 
+import { suspensionPath } from '../src/data/suspensao4x4Details';
+
 const route = '/suspensao-4x4-curitiba';
 const canonical = BASE_URL + route;
 assert.equal(SUSPENSAO_4X4.length, 202);
@@ -37,7 +39,9 @@ try {
       overflow: document.documentElement.scrollWidth > window.innerWidth,
       imgReady: document.querySelector<HTMLImageElement>('main img')?.naturalWidth,
       outstanding: [...document.querySelectorAll('main a[href^="#"]')].some((a) => !document.getElementById(a.getAttribute('href')!.slice(1))),
-      quote: [...document.querySelectorAll<HTMLAnchorElement>('[aria-label="Resultados do catálogo de suspensão 4x4"] a')].map(a => new URL(a.href)),
+      quote: [...document.querySelectorAll<HTMLAnchorElement>('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]')].map(a => new URL(a.href)),
+      cols: getComputedStyle(document.querySelector('[aria-label="Resultados do catálogo de suspensão 4x4"]')!).gridTemplateColumns.split(' ').length,
+      itemLinks: document.querySelectorAll('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href^="/suspensao-4x4-curitiba/"]').length,
       noEmbed: !document.querySelector('iframe[src*="instagram"]'),
     }));
     assert.equal(state.h1, 1);
@@ -46,10 +50,12 @@ try {
     assert(state.imgReady && state.imgReady > 0);
     assert(!state.outstanding);
     assert.equal(state.quote.length, 202);
+    assert.equal(state.cols, width >= 1024 ? 4 : 2);
+    assert.equal(state.itemLinks, 202);
     assert(state.noEmbed);
   }
   assert.equal(embeds.length, 0);
-  const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a', a => a.map(x => (x as HTMLAnchorElement).href));
+  const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]', a => a.map(x => (x as HTMLAnchorElement).href));
   assert(links.every(link => { const url = new URL(link); return url.hostname === 'wa.me' && url.pathname === '/554130827282' && url.searchParams.get('text')?.includes('CP4X4-'); }));
   const selector = '[aria-label="Resultados do catálogo de suspensão 4x4"] li';
   await page.type('main input[type=search]', 'hilux');
@@ -64,6 +70,15 @@ try {
   assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');
   await page.click('::-p-text(Carregar vídeo)');
   await page.waitForSelector('iframe[src="https://www.instagram.com/reel/Dfrqw4itmjx/embed/"]');
+  for (const item of [SUSPENSAO_4X4[0], SUSPENSAO_4X4[201]]) {
+    const target = suspensionPath(item);
+    assert.equal((await page.goto(origin + target, { waitUntil: 'networkidle0' }))?.status(), 200);
+    await page.waitForSelector('main h1');
+    assert.equal(await page.$eval('main h1', h => h.textContent), item.name);
+    assert.equal(await page.$eval('link[rel="canonical"]', a => (a as HTMLLinkElement).href), BASE_URL + target);
+    assert(await page.$eval('main figure img', a => (a as HTMLImageElement).naturalWidth) > 0);
+    assert((await page.$eval('main a[href*="wa.me"]', a => (a as HTMLAnchorElement).href)).includes(item.ref));
+  }
   assert.equal(errors.length, 0, errors.join('; '));
   console.log('Suspensão 4x4: widths 320/390/1440, 202 unique quote references, filters, local asset, canonical, sitemap inventory and click-to-load frame passed. No external quote or reel requests allowed by test.');
 } finally { await browser?.close(); await new Promise<void>((resolve, reject) => server.httpServer.close(e => e ? reject(e) : resolve())); }

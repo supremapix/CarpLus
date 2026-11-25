@@ -15,6 +15,8 @@
 // A ordem de emissão espelha 1:1 a ordem histórica do sitemap, garantindo
 // paridade byte-a-byte das URLs.
 
+import { SUSPENSAO_4X4 } from '../src/data/suspensao4x4';
+import { suspensionPath } from '../src/data/suspensao4x4Details';
 import { BLOG_POSTS } from '../src/data/blogPosts';
 import { getIndexableTireSlugs, isMeasureIndexable } from '../src/lib/seoIndexing';
 import {
@@ -178,6 +180,11 @@ export function getStaticRoutes(): StaticRoute[] {
       genPriority: sp.path === '/' ? 0 : 5,
       isHome: sp.path === '/',
     });
+  }
+
+  for (const product of SUSPENSAO_4X4) {
+    const path = suspensionPath(product);
+    routes.push({ path, type: 'hub', id: product.ref, dataSource: 'src/data/suspensao4x4.ts', indexable: true, expectedCanonical: abs(path), sitemap: 'sitemap-servicos.xml', priority: '0.5', changefreq: 'monthly', genPriority: 7 });
   }
 
   for (const post of BLOG_POSTS) {
