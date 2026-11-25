@@ -1,6 +1,7 @@
 
 import { Mail, Phone, MapPin, Instagram, Facebook, MessageSquare, Clock, ShieldCheck, Star, Heart, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { CATALOG_LINKS } from '../data/catalogLinks';
 import { SERVICE_CATEGORIES } from '../data/services';
 
 export default function Footer() {
@@ -67,7 +68,14 @@ export default function Footer() {
             <div className="pt-4 mt-4 border-t border-white/10 flex flex-col gap-2">
                <Link to="/manutencao-automotiva-curitiba" className="font-bold text-primary hover:text-white transition-colors text-sm uppercase tracking-tight">Manutenção Automotiva em Curitiba</Link>
                <Link to="/blog" className="font-bold text-white/70 hover:text-white transition-colors text-xs uppercase tracking-tight">Blog: dicas e cuidados</Link>
-               <Link to="/pneus" className="font-bold text-white/70 hover:text-white transition-colors text-xs uppercase tracking-tight">Ver Todos os Pneus</Link>
+               <nav aria-label="Catálogos Carplus">
+                  <h5 className="mt-2 text-xs font-bold uppercase tracking-widest text-primary">Catálogos</h5>
+                  <ul>
+                     {CATALOG_LINKS.map((catalog) => (
+                        <li key={catalog.to}><Link to={catalog.to} className="font-bold text-white/80 hover:text-white focus-visible:outline-2 focus-visible:outline-primary transition-colors text-sm">{catalog.label}</Link></li>
+                     ))}
+                  </ul>
+               </nav>
             </div>
          </div>
 

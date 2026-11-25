@@ -6,6 +6,7 @@ import { TIRES, Tire } from '../data';
 import { ARO_PAGES } from '../data/seoLanding';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CatalogCrossLink from './CatalogCrossLink';
 import TireCard from './TireCard';
 import TrustBar from './TrustBar';
 import FinalCTA from './FinalCTA';
@@ -644,6 +645,7 @@ export default function TireCatalog() {
             <CatalogFaqBlock />
           </div>
         </div>
+        <CatalogCrossLink from="tires" />
       </main>
       
       {/* CTA Final Padronizado */}

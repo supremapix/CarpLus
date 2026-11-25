@@ -1,7 +1,8 @@
 
-import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageSquare, Menu, X, Search, ChevronDown } from 'lucide-react';
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { CATALOG_LINKS } from '../data/catalogLinks';
 
 // Carrega o modal de busca (e o catalogo de pneus que ele usa) somente sob demanda.
 const GlobalSearch = lazy(() => import('./GlobalSearch'));
@@ -10,6 +11,10 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [catalogMenu, setCatalogMenu] = useState<'desktop' | 'mobile' | null>(null);
+  const catalogRef = useRef<HTMLDivElement>(null);
+  const catalogTriggerRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);
   const searchTriggerRef = useRef<HTMLElement | null>(null);
@@ -18,6 +23,29 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
     setIsSearchOpen(true);
   };
+
+  useEffect(() => {
+    setCatalogMenu(null);
+  }, [location.key, isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (catalogMenu !== 'desktop') return;
+    const dismiss = (event: PointerEvent) => {
+      if (!catalogRef.current?.contains(event.target as Node)) setCatalogMenu(null);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setCatalogMenu(null);
+        catalogTriggerRef.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [catalogMenu]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -49,7 +77,7 @@ export default function Navbar() {
     menuRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
     const trapFocus = (event: KeyboardEvent) => {
       if (event.key !== 'Tab') return;
-      const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []);
+      const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []).filter((item) => item.getClientRects().length > 0);
       const first = items[0];
       const last = items[items.length - 1];
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
@@ -77,7 +105,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Início', href: '/#inicio' },
     { name: 'Quem Somos', href: '/quem-somos' },
-    { name: 'Catálogo', href: '/pneus' },
+    { name: 'Catálogos', href: null },
     { name: 'Serviços', href: '/servicos' },
     { name: 'Como Chegar', href: '/como-chegar' },
     { name: 'FAQ', href: '/faq' },
@@ -145,11 +173,26 @@ export default function Navbar() {
               </kbd>
             </button>
             
-            {navLinks.map((link) => (
+            {navLinks.map((link) => link.href === null ? (
+              <div key={link.name} ref={catalogRef} className="relative" onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) setCatalogMenu(null);
+              }}>
+                <button ref={catalogTriggerRef} type="button" aria-expanded={catalogMenu === 'desktop'} aria-controls="desktop-catalog-links" onClick={() => setCatalogMenu(catalogMenu === 'desktop' ? null : 'desktop')} className="inline-flex min-h-11 items-center gap-1 font-display text-sm uppercase tracking-tight text-white transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  {link.name}<ChevronDown size={16} aria-hidden="true" className={catalogMenu === 'desktop' ? 'rotate-180' : ''} />
+                </button>
+                <ul id="desktop-catalog-links" hidden={catalogMenu !== 'desktop'} className="absolute left-0 top-full z-10 min-w-56 rounded-lg border border-white/15 bg-dark p-2 shadow-xl">
+                  {CATALOG_LINKS.map((catalog) => (
+                    <li key={catalog.to}>
+                      <Link to={catalog.to} onClick={() => setCatalogMenu(null)} className="flex min-h-11 items-center rounded-md px-3 text-sm font-bold text-white hover:bg-white/10 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary">{catalog.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
               <Link
                 key={link.name}
                 to={link.href}
-                onClick={(e: any) => handleLinkClick(e, link.href)}
+                onClick={(e) => handleLinkClick(e, link.href!)}
                 className="inline-flex min-h-11 items-center whitespace-nowrap font-display text-sm uppercase tracking-tight hover:text-primary transition-colors text-white"
               >
                 {link.name}
@@ -217,11 +260,24 @@ export default function Navbar() {
               </button>
               <div className="flex flex-col gap-1">
                 <p className="px-2 pb-2 text-[11px] font-bold uppercase tracking-widest text-primary">Menu principal</p>
-                {navLinks.map((link) => (
+                {navLinks.map((link) => link.href === null ? (
+                  <div key={link.name}>
+                    <button type="button" aria-expanded={catalogMenu === 'mobile'} aria-controls="mobile-catalog-links" onClick={() => setCatalogMenu(catalogMenu === 'mobile' ? null : 'mobile')} className="flex min-h-12 w-full items-center justify-between rounded-md border-l-2 border-transparent px-3 text-left font-display text-lg font-bold uppercase transition-colors hover:border-primary hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-primary">
+                      {link.name}<ChevronDown size={20} aria-hidden="true" className={catalogMenu === 'mobile' ? 'rotate-180' : ''} />
+                    </button>
+                    <ul id="mobile-catalog-links" hidden={catalogMenu !== 'mobile'} className="ml-3 rounded-md border border-gray-200 bg-gray-50 px-2 py-1">
+                      {CATALOG_LINKS.map((catalog) => (
+                        <li key={catalog.to}>
+                          <Link to={catalog.to} onClick={() => { setCatalogMenu(null); setIsMobileMenuOpen(false); }} className="flex min-h-12 items-center rounded-md px-3 font-bold text-dark hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-primary">{catalog.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
                   <Link
                     key={link.name}
                     to={link.href}
-                    onClick={(e: any) => handleLinkClick(e, link.href)}
+                    onClick={(e) => handleLinkClick(e, link.href!)}
                     className="flex min-h-12 items-center rounded-md px-3 font-display text-lg font-bold uppercase transition-colors hover:bg-gray-100 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary border-l-2 border-transparent hover:border-primary"
                   >
                     {link.name}

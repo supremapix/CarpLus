@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ClipboardList, MapPin, MessageCircle, Phone, Play, Search, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CatalogCrossLink from './CatalogCrossLink';
 import { useSEO } from '../hooks/useSEO';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
@@ -209,6 +210,7 @@ export default function Suspensao4x4() {
             <div className="mt-6 grid gap-3">{FAQ.map(({ question, answer }) => <details key={question} className="rounded-lg border border-gray-200 bg-white p-4"><summary className="cursor-pointer font-bold">{question}</summary><p className="mt-3 text-sm leading-relaxed text-gray-700">{answer}</p></details>)}</div>
           </div>
         </section>
+        <CatalogCrossLink from="ironman" />
       </main>
       <Footer />
     </div>
