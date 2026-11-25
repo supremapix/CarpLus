@@ -23,7 +23,7 @@ export default function SuspensionHeroCarousel() {
   const count = slides.length;
   const item = slides[index];
   const rotating = playing && visible && !hovered && !productFocused;
-  const nextIndex = (index + 1) % count;
+  const nextIndex = count ? (index + 1) % count : 0;
 
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -35,7 +35,8 @@ export default function SuspensionHeroCarousel() {
 
   useEffect(() => {
     const element = figure.current;
-    if (!element || !('IntersectionObserver' in window)) return;
+    if (!element) return;
+    if (!('IntersectionObserver' in window)) { setVisible(true); return; }
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.15 });
     observer.observe(element);
     return () => observer.disconnect();

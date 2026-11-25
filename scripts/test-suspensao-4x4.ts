@@ -72,6 +72,7 @@ try {
   assert.equal(await page.$eval(carousel + ' > a', el => el.getAttribute('href')), suspensionPath(SUSPENSAO_4X4[0]));
   assert.match(await page.$eval(carousel + ' figcaption', el => el.textContent || ''), /1 de 202/);
   assert(await page.$('button[aria-label="Reproduzir carrossel"]'));
+  await page.setViewport({ width: 1600, height: 900 });
   const menu = 'header button[aria-controls="desktop-catalog-links"]';
   await page.click(menu);
   assert.equal(await page.$eval('#desktop-catalog-links a', links => links.length), 2);
@@ -105,13 +106,14 @@ try {
   assert.deepEqual(shownRefs, ironman.slice(0, 24).map(item => item.ref));
   await page.click('::-p-text(Limpar filtros)');
   assert.equal((await page.$$(selector)).length, 24);
+  const hiluxMatches = SUSPENSAO_4X4.filter(item => [item.name, item.group, item.vehicle, item.brand, item.ref].join(' ').toLowerCase().includes('hilux'));
   await page.type('main input[type=search]', 'hilux');
-  await page.waitForFunction((s) => document.querySelectorAll(s).length < 24, {}, selector);
+  await page.waitForFunction((count) => document.querySelector('#resultados-catalogo-4x4')?.textContent?.includes(count + ' referências'), {}, hiluxMatches.length);
   const hilux = await page.$$eval(selector, rs => rs.map(r => r.textContent?.toLowerCase()));
-  assert(hilux.length > 0 && hilux.length < 202 && hilux.every(r => r?.includes('hilux')));
+  assert(hilux.length > 0 && hilux.length <= 24 && hilux.every(r => r?.includes('hilux')));
   await page.select('main select', 'Kits de suspensão');
-  const kits = await page.$$(selector);
-  assert(kits.length > 0 && kits.length < hilux.length);
+  const kits = hiluxMatches.filter(item => item.group === 'Kits de suspensão');
+  assert.deepEqual(await readRefs(), kits.slice(0, 24).map(item => item.ref));
   await page.click('::-p-text(Limpar filtros)');
   assert.equal((await page.$(selector)).length, 24);
   assert.equal(await page.$eval('a[href="https://www.instagram.com/reel/Dfrqw4itmjx/"]', a => a.getAttribute('target')), '_blank');

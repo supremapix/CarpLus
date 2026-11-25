@@ -21,7 +21,7 @@ export default function CatalogCrossLink({ from }: { from: 'tires' | 'ironman' }
           </p>
         </div>
         <Link to={destination.to} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-center text-sm font-black text-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-fit lg:shrink-0">
-          Ver {destination.label.toLowerCase().replace('ironman', 'Ironman')}
+          {fromTires ? 'Ver catálogo Ironman 4x4' : 'Ver catálogo de pneus'}
           <ArrowRight size={18} aria-hidden="true" className="shrink-0" />
         </Link>
       </div>
