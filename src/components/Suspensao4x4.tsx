@@ -7,6 +7,7 @@ import { useSEO } from '../hooks/useSEO';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
 import { SUSPENSAO_4X4 } from '../data/suspensao4x4';
+import { SuspensionCard } from './SuspensionCard';
 
 export const SUSPENSAO_4X4_PATH = '/suspensao-4x4-curitiba';
 const TITLE = 'Suspensão 4x4 em Curitiba | Catálogo Carplus no Portão';
@@ -71,7 +72,7 @@ export default function Suspensao4x4() {
               </div>
               <figure className="overflow-hidden rounded-xl border border-white/15 bg-white/5">
                 <img src={HERO} alt="Ilustração de picape 4x4 em uma oficina, com amortecedor e mola no primeiro plano" width={1200} height={800} fetchPriority="high" decoding="async" className="aspect-[3/2] w-full object-cover" />
-                <figcaption className="px-4 py-2 text-xs text-white/80">Imagem ilustrativa. Não representa peça específica nem as instalações da Carplus.</figcaption>
+                <figcaption className="px-3 py-1.5 text-[11px] leading-tight text-white/70">Cena ilustrativa.</figcaption>
               </figure>
             </div>
           </div>
@@ -114,14 +115,9 @@ export default function Suspensao4x4() {
               {(query || family) && <button type="button" onClick={() => { setQuery(''); setFamily(''); }} className="min-h-11 px-2 text-sm font-bold underline underline-offset-4">Limpar filtros</button>}
             </div>
             {filtered.length === 0 ? <p className="mt-4 rounded-lg border border-gray-200 bg-white p-4">Nenhuma referência combina com os filtros. Experimente só o modelo do veículo ou <a href={CTA()} className="font-bold underline">consulte a oficina</a>.</p> :
-              <div className="mt-3 max-h-[38rem] overflow-y-auto rounded-xl border border-gray-200 bg-white shadow-sm focus-visible:outline-2 focus-visible:outline-amber-600" tabIndex={0} role="region" aria-label="Resultados do catálogo de suspensão 4x4">
-                <ul className="divide-y divide-gray-200">
-                  {filtered.map(item => <li key={item.ref} className="grid gap-y-1 p-3.5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-4 sm:px-5">
-                    <div className="min-w-0"><span className="block text-xs font-semibold text-gray-600">{item.group}</span><span className="block break-words text-sm font-bold leading-snug text-dark sm:text-base">{item.name}</span><span className="block text-xs text-gray-600">{item.vehicle !== 'Diversos' && <>{item.vehicle} · </>}Ref. {item.ref}</span></div>
-                    <a href={CTA(item.ref + ' — ' + item.name)} target="_blank" rel="noopener noreferrer" aria-label={`Orçar ${item.name} no WhatsApp`} className="inline-flex min-h-11 w-fit items-center gap-1.5 rounded-md px-2 text-sm font-bold text-green-800 underline-offset-4 hover:bg-green-50 hover:underline"><MessageCircle size={17} aria-hidden="true" /> Pedir cotação</a>
-                  </li>)}
-                </ul>
-              </div>}
+              <ul className="mt-4 grid grid-cols-2 items-start gap-2 sm:gap-4 lg:grid-cols-4" aria-label="Resultados do catálogo de suspensão 4x4">
+                {filtered.map(item => <SuspensionCard key={item.ref} item={item} quote={CTA(item.ref + ' — ' + item.name)} />)}
+              </ul>}
           </div>
         </section>
 
