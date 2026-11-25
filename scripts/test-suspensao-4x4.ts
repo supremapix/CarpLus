@@ -67,7 +67,7 @@ try {
   const shownRefs = await page.$$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
   assert.deepEqual(shownRefs, ironman.map(item => item.ref));
   await page.click('::-p-text(Limpar filtros)');
-  assert.equal((await page.$(selector)).length, 202);
+  assert.equal((await page.$$(selector)).length, 202);
   await page.type('main input[type=search]', 'hilux');
   await page.waitForFunction((s) => document.querySelectorAll(s).length < 202, {}, selector);
   const hilux = await page.$$eval(selector, rs => rs.map(r => r.textContent?.toLowerCase()));
