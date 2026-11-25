@@ -53,6 +53,15 @@ try {
     assert.equal(state.cols, width >= 1024 ? 4 : 2);
     assert.equal(state.itemLinks, 202);
     assert(state.noEmbed);
+    const hero = await page.$eval('section[aria-labelledby="suspensao-4x4-title"]', el => ({
+      title: el.querySelector('h1')?.textContent,
+      images: [...el.querySelectorAll<HTMLImageElement>('figure img')].map(img => [img.getAttribute('src'), img.naturalWidth]),
+      callToAction: el.querySelector('a[href="#catalogo-4x4"]')?.textContent?.trim(),
+    }));
+    assert.equal(hero.title, 'O kit certo começa pelo seu 4×4.');
+    assert.equal(hero.callToAction, 'Explorar catálogo');
+    assert.deepEqual(hero.images.map(row => row[0]), ['/images/suspensao-4x4/ironman-4x4.svg', '/images/suspensao-4x4/produtos/cp4x4-001.webp']);
+    assert(hero.images.every(([, width]) => Number(width) > 0));
   }
   assert.equal(embeds.length, 0);
   const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]', a => a.map(x => (x as HTMLAnchorElement).href));
@@ -61,7 +70,7 @@ try {
   const ironman = SUSPENSAO_4X4.filter(item => item.brand === 'Ironman');
   assert.equal(ironman.length, 114);
   assert.equal(await page.$eval('aside[aria-labelledby="linha-ironman-4x4"] img', img => img.getAttribute('src')), '/images/suspensao-4x4/produtos/cp4x4-001.webp');
-  await page.click('::-p-text(Ver linha Ironman 4x4)');
+  await page.click('section[aria-labelledby="suspensao-4x4-title"] button');
   await page.waitForFunction((sel) => document.querySelectorAll(sel).length === 114, {}, selector);
   assert.equal(await page.evaluate(() => document.activeElement?.id), 'filtros-catalogo-4x4');
   const shownRefs = await page.$$eval(selector + ' a[href*="wa.me"]', list => list.map(a => new URL((a as HTMLAnchorElement).href).searchParams.get('text')?.match(/CP4X4-[0-9]{3}/)?.[0]));
