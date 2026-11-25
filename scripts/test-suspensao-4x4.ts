@@ -63,6 +63,22 @@ try {
     assert.deepEqual(hero.images.map(row => row[0]), ['/images/suspensao-4x4/ironman-4x4.svg', '/images/suspensao-4x4/produtos/cp4x4-001.webp']);
     assert(hero.images.every(([, width]) => Number(width) > 0));
   }
+  await page.click('button[aria-label="Produto anterior"]');
+  const carousel = 'figure[aria-roledescription="carrossel"]';
+  assert.match(await page.$eval(carousel + ' figcaption', el => el.textContent || ''), /202 de 202/);
+  assert.equal(await page.$(carousel + ' img[alt="Ironman 4x4"]'), null);
+  await page.click('button[aria-label="Próximo produto"]');
+  assert.equal(await page.$eval(carousel + ' > a', el => el.getAttribute('href')), suspensionPath(SUSPENSAO_4X4[0]));
+  assert.match(await page.$eval(carousel + ' figcaption', el => el.textContent || ''), /1 de 202/);
+  assert(await page.$('button[aria-label="Reproduzir carrossel"]'));
+  const menu = 'header button[aria-controls="desktop-catalog-links"]';
+  await page.click(menu);
+  assert.equal(await page.$eval('#desktop-catalog-links a', links => links.length), 2);
+  await page.keyboard.press('Escape');
+  assert.equal(await page.$eval(menu, el => el.getAttribute('aria-expanded')), 'false');
+  const crossLink = 'main section[aria-labelledby="outro-catalogo"] a';
+  assert.equal(await page.$eval(crossLink, el => el.getAttribute('href')), '/pneus');
+  assert.deepEqual(await page.$eval('footer nav[aria-label="Catálogos Carplus"] a', links => links.map(el => el.getAttribute('href'))), ['/pneus', '/suspensao-4x4-curitiba#linha-ironman-4x4']);
   assert.equal(embeds.length, 0);
   const links = await page.$$eval('[aria-label="Resultados do catálogo de suspensão 4x4"] a[href*="wa.me"]', a => a.map(x => (x as HTMLAnchorElement).href));
   assert(links.every(link => { const url = new URL(link); return url.hostname === 'wa.me' && url.pathname === '/554130827282' && url.searchParams.get('text')?.includes('CP4X4-'); }));

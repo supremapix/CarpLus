@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ClipboardList, MapPin, MessageCircle, Phone, Play, Search, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import CatalogCrossLink from './CatalogCrossLink';
+import SuspensionHeroCarousel from './SuspensionHeroCarousel';
 import { useSEO } from '../hooks/useSEO';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
@@ -45,13 +46,14 @@ export default function Suspensao4x4() {
       generateFaqSchema(FAQ),
     ],
   });
+  const { hash, key } = useLocation();
   useEffect(() => {
-    if (window.location.hash !== '#linha-ironman-4x4') return;
+    if (hash !== '#linha-ironman-4x4') return;
     const frame = window.requestAnimationFrame(() => {
       document.getElementById('linha-ironman-4x4')?.scrollIntoView({ block: 'start' });
     });
     return () => window.cancelAnimationFrame(frame);
-  }, []);
+  }, [hash, key]);
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState('');
   const [brand, setBrand] = useState('');
@@ -92,16 +94,7 @@ export default function Suspensao4x4() {
                 <p className="mt-4 text-sm text-white/80"><strong className="text-white">Tenha em mãos:</strong> modelo, ano e versão. A equipe confirma a aplicação e as condições na cotação.</p>
                 <a href={CTA()} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-bold text-primary underline underline-offset-4 hover:text-yellow-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"><MessageCircle size={17} aria-hidden="true" /> Pedir orçamento no WhatsApp</a>
               </div>
-              <figure className="overflow-hidden rounded-2xl border border-white/20 bg-white text-dark shadow-lg shadow-black/25">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-neutral-200 bg-neutral-50 px-4 py-3 sm:px-6">
-                  <img src="/images/suspensao-4x4/ironman-4x4.svg" alt="Ironman 4x4" width={152} height={34} className="h-auto w-28 sm:w-36" decoding="async" />
-                  <span className="rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-neutral-700">Na Carplus</span>
-                </div>
-                <img src={IRONMAN_HERO} alt="Foto do kit Ironman 4x4 NitroGás para Ford Ranger 2024, com molas e amortecedores" width={800} height={800} fetchPriority="high" decoding="async" className="mx-auto h-auto max-h-80 w-full object-contain px-3 sm:px-5" />
-                <figcaption className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 border-t border-neutral-200 px-4 py-3 sm:px-6">
-                  <span className="text-sm font-bold">Kit Ironman NitroGás · Ford Ranger 2024</span><span className="text-xs text-neutral-600">Referência CP4X4-001</span>
-                </figcaption>
-              </figure>
+              <SuspensionHeroCarousel />
             </div>
           </div>
         </section>
