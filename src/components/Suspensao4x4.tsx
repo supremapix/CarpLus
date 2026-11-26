@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ClipboardList, MapPin, MessageCircle, Phone, Play, Search, Wrench } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CatalogCrossLink from './CatalogCrossLink';
+import SuspensionHeroCarousel from './SuspensionHeroCarousel';
 import { useSEO } from '../hooks/useSEO';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../lib/schema';
 import { BASE_URL, WHATSAPP_NUMBER, PHONE_DISPLAY } from '../data/seoLanding';
@@ -21,6 +23,7 @@ const CTA = (ref?: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURI
   `Olá! Quero um orçamento de suspensão 4x4 na Carplus.${ref ? ` Referência: ${ref}.` : ''} Meu veículo é [marca/modelo], ano [ano], versão [versão]. Uso principal: [cidade, carga, estrada de terra ou trilha].`
 )}`;
 const norm = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const PAGE_SIZE = 24;
 const IRONMAN_BRAND = 'Ironman';
 const IRONMAN_COUNT = SUSPENSAO_4X4.filter(item => item.brand === IRONMAN_BRAND).length;
 const IRONMAN_HERO = SUSPENSION_IMAGES['CP4X4-001'];
@@ -44,20 +47,23 @@ export default function Suspensao4x4() {
       generateFaqSchema(FAQ),
     ],
   });
+  const { hash, key } = useLocation();
   useEffect(() => {
-    if (window.location.hash !== '#linha-ironman-4x4') return;
+    if (hash !== '#linha-ironman-4x4') return;
     const frame = window.requestAnimationFrame(() => {
       document.getElementById('linha-ironman-4x4')?.scrollIntoView({ block: 'start' });
     });
     return () => window.cancelAnimationFrame(frame);
-  }, []);
+  }, [hash, key]);
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState('');
   const [brand, setBrand] = useState('');
+  const [page, setPage] = useState(1);
   const showIronman = () => {
     setQuery('');
     setFamily('');
     setBrand(IRONMAN_BRAND);
+    setPage(1);
     const results = document.getElementById('filtros-catalogo-4x4');
     results?.focus({ preventScroll: true });
     results?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
@@ -68,6 +74,17 @@ export default function Suspensao4x4() {
     const words = norm(query).trim().split(/\s+/).filter(Boolean);
     return SUSPENSAO_4X4.filter(item => (!family || item.group === family) && (!brand || item.brand === brand) && words.every(w => norm(`${item.name} ${item.group} ${item.vehicle} ${item.brand} ${item.ref}`).includes(w)));
   }, [query, family, brand]);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, pageCount);
+  const firstResult = (currentPage - 1) * PAGE_SIZE;
+  const pageItems = filtered.slice(firstResult, firstResult + PAGE_SIZE);
+  const goToPage = (next: number) => {
+    if (next < 1 || next > pageCount) return;
+    setPage(next);
+    const heading = document.getElementById('resultados-catalogo-4x4');
+    heading?.focus({ preventScroll: true });
+    heading?.scrollIntoView({ block: 'start' });
+  };
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Navbar />
@@ -91,16 +108,7 @@ export default function Suspensao4x4() {
                 <p className="mt-4 text-sm text-white/80"><strong className="text-white">Tenha em mãos:</strong> modelo, ano e versão. A equipe confirma a aplicação e as condições na cotação.</p>
                 <a href={CTA()} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-bold text-primary underline underline-offset-4 hover:text-yellow-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"><MessageCircle size={17} aria-hidden="true" /> Pedir orçamento no WhatsApp</a>
               </div>
-              <figure className="overflow-hidden rounded-2xl border border-white/20 bg-white text-dark shadow-lg shadow-black/25">
-                <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-neutral-200 bg-neutral-50 px-4 py-3 sm:px-6">
-                  <img src="/images/suspensao-4x4/ironman-4x4.svg" alt="Ironman 4x4" width={152} height={34} className="h-auto w-28 sm:w-36" decoding="async" />
-                  <span className="rounded-full border border-neutral-300 bg-white px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-neutral-700">Na Carplus</span>
-                </div>
-                <img src={IRONMAN_HERO} alt="Foto do kit Ironman 4x4 NitroGás para Ford Ranger 2024, com molas e amortecedores" width={800} height={800} fetchPriority="high" decoding="async" className="mx-auto h-auto max-h-80 w-full object-contain px-3 sm:px-5" />
-                <figcaption className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1 border-t border-neutral-200 px-4 py-3 sm:px-6">
-                  <span className="text-sm font-bold">Kit Ironman NitroGás · Ford Ranger 2024</span><span className="text-xs text-neutral-600">Referência CP4X4-001</span>
-                </figcaption>
-              </figure>
+              <SuspensionHeroCarousel />
             </div>
           </div>
         </section>
@@ -138,26 +146,33 @@ export default function Suspensao4x4() {
                 Buscar peça ou veículo
                 <span className="relative mt-2 block">
                   <Search size={18} aria-hidden="true" className="pointer-events-none absolute left-3 top-3.5 text-gray-600" />
-                  <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Ex.: Hilux, Ranger ou amortecedor" className="min-h-12 w-full rounded-md border border-gray-400 bg-white pr-3 pl-10 text-base font-normal text-dark focus:border-amber-600 focus:outline-2 focus:outline-amber-600" />
+                  <input type="search" value={query} onChange={e => { setQuery(e.target.value); setPage(1); }} placeholder="Ex.: Hilux, Ranger ou amortecedor" className="min-h-12 w-full rounded-md border border-gray-400 bg-white pr-3 pl-10 text-base font-normal text-dark focus:border-amber-600 focus:outline-2 focus:outline-amber-600" />
                 </span>
               </label>
               <label className="block min-w-0 text-sm font-bold">
                 Grupo de produtos
-                <select value={family} onChange={e => setFamily(e.target.value)} className="mt-2 min-h-12 w-full rounded-md border border-gray-400 bg-white px-3 text-base font-normal focus:border-amber-600 focus:outline-2 focus:outline-amber-600">
+                <select value={family} onChange={e => { setFamily(e.target.value); setPage(1); }} className="mt-2 min-h-12 w-full rounded-md border border-gray-400 bg-white px-3 text-base font-normal focus:border-amber-600 focus:outline-2 focus:outline-amber-600">
                   <option value="">Todos os grupos</option>
                   {groups.map(group => <option value={group} key={group}>{group}</option>)}
                 </select>
               </label>
             </div>
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-              <p aria-live="polite" role="status" className="text-sm text-gray-700"><strong>{filtered.length}</strong> {filtered.length === 1 ? 'referência encontrada' : 'referências encontradas'}</p>
+            <div id="resultados-catalogo-4x4" tabIndex={-1} aria-label="Resultados da pesquisa" role="group" className="mt-4 flex scroll-mt-36 flex-wrap items-center justify-between gap-2">
+              <p aria-live="polite" role="status" className="text-sm text-gray-700"><strong>{filtered.length}</strong> {filtered.length === 1 ? 'referência encontrada' : 'referências encontradas'}{filtered.length > 0 && <> · Exibindo {firstResult + 1}–{firstResult + pageItems.length}</>}</p>
               {brand && <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-bold text-amber-900">Marca: Ironman 4x4</span>}
-              {(query || family || brand) && <button type="button" onClick={() => { setQuery(''); setFamily(''); setBrand(''); }} className="min-h-11 px-2 text-sm font-bold underline underline-offset-4">Limpar filtros</button>}
+              {(query || family || brand) && <button type="button" onClick={() => { setQuery(''); setFamily(''); setBrand(''); setPage(1); }} className="min-h-11 px-2 text-sm font-bold underline underline-offset-4">Limpar filtros</button>}
             </div>
             {filtered.length === 0 ? <p className="mt-4 rounded-lg border border-gray-200 bg-white p-4">Nenhuma referência combina com os filtros. Experimente só o modelo do veículo ou <a href={CTA()} className="font-bold underline">consulte a oficina</a>.</p> :
               <ul className="mt-4 grid grid-cols-2 items-start gap-2 sm:gap-4 lg:grid-cols-4" aria-label="Resultados do catálogo de suspensão 4x4">
-                {filtered.map(item => <SuspensionCard key={item.ref} item={item} quote={CTA(item.ref + ' — ' + item.name)} />)}
+                {pageItems.map(item => <SuspensionCard key={item.ref} item={item} quote={CTA(item.ref + ' — ' + item.name)} />)}
               </ul>}
+            {pageCount > 1 && (
+              <nav aria-label="Paginação do catálogo 4x4" className="mt-6 flex flex-wrap items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-3 sm:gap-3">
+                <button type="button" disabled={currentPage === 1} onClick={() => goToPage(currentPage - 1)} className="inline-flex min-h-11 items-center rounded-md border border-gray-300 px-3 text-sm font-bold hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-amber-700 disabled:cursor-default disabled:opacity-45">Anterior</button>
+                <span className="min-w-24 text-center text-sm font-bold text-gray-700">Página {currentPage} de {pageCount}</span>
+                <button type="button" disabled={currentPage === pageCount} onClick={() => goToPage(currentPage + 1)} className="inline-flex min-h-11 items-center rounded-md bg-primary px-3 text-sm font-bold text-dark hover:bg-yellow-400 focus-visible:outline-2 focus-visible:outline-amber-700 disabled:cursor-default disabled:opacity-45">Próxima</button>
+              </nav>
+            )}
           </div>
         </section>
 
@@ -209,6 +224,7 @@ export default function Suspensao4x4() {
             <div className="mt-6 grid gap-3">{FAQ.map(({ question, answer }) => <details key={question} className="rounded-lg border border-gray-200 bg-white p-4"><summary className="cursor-pointer font-bold">{question}</summary><p className="mt-3 text-sm leading-relaxed text-gray-700">{answer}</p></details>)}</div>
           </div>
         </section>
+        <CatalogCrossLink from="ironman" />
       </main>
       <Footer />
     </div>
