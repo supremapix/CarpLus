@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CarplusSearchHubs from './CarplusSearchHubs';
 import { useSEO } from '../hooks/useSEO';
 import { generateProductListSchema, generateBreadcrumbSchema } from '../lib/schema';
 import { PROMO_TIRES } from '../data/promoTires';
@@ -297,6 +298,7 @@ export default function PneusPromocaoLista() {
             </div>
           </div>
         </section>
+        <CarplusSearchHubs page="offers" />
       </main>
 
       <Footer />

@@ -11,6 +11,7 @@ import HomeFAQ, { getHomeFaqSchema } from './HomeFAQ';
 import FinalCTA from './FinalCTA';
 import BrandsCarousel from './BrandsCarousel';
 import Footer from './Footer';
+import CarplusSearchHubs from './CarplusSearchHubs';
 import DeferredSection from './DeferredSection';
 import { ArrowRight } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
@@ -130,6 +131,7 @@ export default function Home() {
 
         {/* 7. FAQ curto */}
         <HomeFAQ />
+        <CarplusSearchHubs page="home" />
 
         {/* 8. CTA final de conversão */}
         <FinalCTA

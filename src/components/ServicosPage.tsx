@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import CarplusSearchHubs from './CarplusSearchHubs';
 import { SERVICE_CATEGORIES, BUSINESS_INFO, type Category, type Service } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
 import { getIcon } from './iconMap';
@@ -349,6 +350,7 @@ export default function ServicosPage() {
             <CategorySection key={category.id} category={category} />
           ))}
         </div>
+        <CarplusSearchHubs page="workshop" />
       </main>
 
       {/* CTA Final */}
